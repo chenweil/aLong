@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MacOS on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong.github.io/tags/macos/</link>
+    <link>https://blog.51ai.vip/aLong/tags/macos/</link>
     <description>Recent content in MacOS on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 May 2021 11:06:20 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 May 2021 11:06:20 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac OS自己安装的小软件</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</link>
+      <link>https://blog.51ai.vip/aLong/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Thu, 06 May 2021 11:06:20 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</guid>
       <description>自己使用Mac一年多 自己在19年12月换了mac 16&amp;quot; 笔记本。之前一直windwos，后来看很多讲师在讲课的时候都是mac本本。又觉得windws10更新频繁，还强制让我很不爽。
 最后凑巧16&amp;quot;出来后，自己媳妇送了我一台。美滋滋～
 讲讲我说的小软件 一些好玩的，实用的软件。
@@ -21,10 +21,10 @@
     
     <item>
       <title>解决MAC软件提示已损坏或移到废纸篓</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</link>
+      <link>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</link>
       <pubDate>Fri, 07 Feb 2020 20:24:02 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</guid>
       <description>系统版本 macOS Catalina 10.15.1
   方法一
 允许任何来源的应用。
@@ -41,10 +41,10 @@ sudo xattr -r -d com.apple.quarantine /Applications/xxxx.app/
     
     <item>
       <title>Mac book pro 终端走代理配置</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 20 Jan 2020 08:13:10 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</guid>
       <description>mac 终端走ssr代理 前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。
 看下自己ssr 代理端口号是多少 高级设置看下 本地Socks5监听端口 记住这个端口号。 后面： mac 现在默认终端是用的zsh 编辑 vi ～/.zshrc 在最后加入 //alias 后面的名字自己可以按照习惯定义， 比如我定义proxy 是 ss。 每当我需要时候 ss 一下就可以了。 不需要的时候执行第二句。
 //端口按照你的来配置alias unproxy=&amp;#39;unset all_proxy&amp;#39; alias proxy=&amp;#39;export all_proxy=socks5://127.0.0.1:1086&amp;#39; 测试： 首先在没有走ss 的时候， curl cip.cc 得到一个国内的信息。 当使用ss之后， 再通过这个查询就可以看到变化了。
@@ -54,10 +54,10 @@ sudo xattr -r -d com.apple.quarantine /Applications/xxxx.app/
     
     <item>
       <title>VMware安装MacOS系统</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</link>
+      <link>https://blog.51ai.vip/aLong/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Mon, 12 Aug 2019 11:29:38 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</guid>
       <description>虚拟机安装 macOS 准备工作:  VM关闭进程,利用macOS Unlocker修改VM使其能安装macOS系统, 执行程序 win-install.cmd 使用管理员权限运行脚本. 准备好macOS镜象. 利用VM创建虚机,系统类型选择macOS,版本号选择与下载的镜象版本相同.  装系统:  启动虚拟机,并通过cdrom加载镜象. 首次安装需要先利用系统内硬盘工具格式化硬盘,之后利用安装工具进行系统安装.  异常问题:  开启虚拟机弹出错误:vcpu-0 错误.  修改虚机镜象文件.vmx 在smc.present = “TRUE”下面插入一行代码: smc.version = 0
  不能正常登陆APPID  需要修改虚拟机,利用Chameleon Wizard 伪造设备信息. 保存 生成的信息 去修改镜象所在文件下的.vmx
 修改 board-id.reflectHost = &amp;ldquo;TRUE&amp;rdquo; 为FALSE,并在下面插入需要的伪造设备信息例子:

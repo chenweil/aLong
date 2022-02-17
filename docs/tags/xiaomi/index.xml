@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xiaomi on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong.github.io/tags/xiaomi/</link>
+    <link>https://blog.51ai.vip/aLong/tags/xiaomi/</link>
     <description>Recent content in xiaomi on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 May 2021 16:51:23 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 16:51:23 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>小米手环解锁MacOS系统笔记本MacBookPro</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</link>
+      <link>https://blog.51ai.vip/aLong/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</link>
       <pubDate>Fri, 21 May 2021 16:51:23 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</guid>
       <description>通过小米手环解锁笔记本 官方windows是提供了方法的。 我目前用的MacBookPro，所以说下苹果笔记本的解锁方式。
 安装软件BLEUnlock 库
 安装方式： brew 安装 brew install bleunlock
@@ -32,10 +32,10 @@
     
     <item>
       <title>小米手环表盘自定义</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
+      <link>https://blog.51ai.vip/aLong/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Thu, 20 May 2021 16:34:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
       <description>前阵子媳妇给买了个手环。小米手环5NFC，价格还可以。 定义表盘 手环就不做评价了，我感觉续航不错。屏幕划痕太容了吧。
 吐槽完了说下能玩的也就表盘了吧。
 出小米运动能同步的那些之外，总想搞点与众不同的。

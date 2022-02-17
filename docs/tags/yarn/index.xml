@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yarn on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong.github.io/tags/yarn/</link>
+    <link>https://blog.51ai.vip/aLong/tags/yarn/</link>
     <description>Recent content in yarn on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jan 2020 14:21:26 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/yarn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2020 14:21:26 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/yarn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>yarn install phantomjs-prebuilt: Command failed.</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/yarn-install-phantomjs-prebuilt-command-failed/</link>
+      <link>https://blog.51ai.vip/aLong/posts/yarn-install-phantomjs-prebuilt-command-failed/</link>
       <pubDate>Thu, 16 Jan 2020 14:21:26 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/yarn-install-phantomjs-prebuilt-command-failed/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/yarn-install-phantomjs-prebuilt-command-failed/</guid>
       <description>项目yarn install 出现phantomjs-prebuilt： Command failed. 自己在项目中发现执行 yarn install时候，一直卡住没走完。
 最后报错， error phantomjs-prebuilt： Command failed.
 可以看到错误中，他是从 github.com/Medium/&amp;hellip; 感觉就是没下载成功吧。

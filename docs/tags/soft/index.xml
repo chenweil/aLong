@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>soft on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong.github.io/tags/soft/</link>
+    <link>https://blog.51ai.vip/aLong/tags/soft/</link>
     <description>Recent content in soft on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Oct 2019 17:31:55 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Oct 2019 17:31:55 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/soft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>网络传输速度测试工具</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+      <link>https://blog.51ai.vip/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
       <description>网络传输测试软件 最近公司测试限速,搜集软件发现两款,iperf,LANSpeedTest. iperf,多平台. LANSpeedTest,读写显示,操作简单. 局域网测试传输,优先考虑UDP.
 iperf Iperf可以报告带宽,延迟抖动和数据包丢失. 官方文档 安装不写了.跳过
 iperf常用参数介绍

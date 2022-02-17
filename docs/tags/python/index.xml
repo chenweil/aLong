@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong.github.io/tags/python/</link>
+    <link>https://blog.51ai.vip/aLong/tags/python/</link>
     <description>Recent content in Python on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jun 2019 10:23:11 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jun 2019 10:23:11 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python建立SocketSSL连接</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link>
+      <link>https://blog.51ai.vip/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid>
       <description>Python Socket连接 5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.
 这块没接触,Python也是hello world水平.
 赶紧恶补一下:
@@ -26,10 +26,10 @@ import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) c = ssl.wrap
     
     <item>
       <title>Ubutun16.04安装Python</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link>
+      <link>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link>
       <pubDate>Fri, 24 May 2019 11:17:59 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid>
       <description>目的 安装python3.7.3 安装pip
 准备工作  系统内置python2.X,去除默认python的软链, sudo rm /usr/bin/python 安装一些软件包&amp;amp;软件包保持最新状态.  sudo apt-get update
 sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget

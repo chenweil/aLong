@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>curl on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong.github.io/tags/curl/</link>
+    <link>https://blog.51ai.vip/aLong/tags/curl/</link>
     <description>Recent content in curl on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2019 14:45:13 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/curl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Oct 2019 14:45:13 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/curl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>curl: (3) Illegal characters found in URL</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/curl-3-illegal-characters-found-in-url/</link>
+      <link>https://blog.51ai.vip/aLong/posts/curl-3-illegal-characters-found-in-url/</link>
       <pubDate>Wed, 09 Oct 2019 14:45:13 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/curl-3-illegal-characters-found-in-url/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/curl-3-illegal-characters-found-in-url/</guid>
       <description>curl: (3) Illegal characters found in URL 昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里. 结果执行的时候报错了. 问题就是 curl:(3)Illegal characters found in URL
 看着一脸懵逼啊!~
 google了一下,看到几个方法.其中一个我感觉还不错:

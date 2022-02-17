@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>zabbix on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong.github.io/tags/zabbix/</link>
+    <link>https://blog.51ai.vip/aLong/tags/zabbix/</link>
     <description>Recent content in zabbix on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Jan 2022 10:15:53 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jan 2022 10:15:53 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zabbix6 网络发现</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link>
+      <link>https://blog.51ai.vip/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link>
       <pubDate>Fri, 14 Jan 2022 10:15:53 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid>
       <description>Zabbix6 网络发现
 功能   快速发现并添加主机
   简单的管理
@@ -30,10 +30,10 @@
     
     <item>
       <title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link>
+      <link>https://blog.51ai.vip/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link>
       <pubDate>Wed, 27 Oct 2021 15:06:44 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid>
       <description>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache 情况 接上次做完容器部署proxy后，为其添加host进行添加任务。
 发现一直没有数据，就到item里面执行 execute now。
 然后过了几分钟回来一看，还是没有。
@@ -49,10 +49,10 @@ docker run --name zbxproxy -d \ -e ZBX_SERVER_HOST=192.168.10.66 \ -e ZBX_HOSTNA
     
     <item>
       <title>Zabbix-Proxy 部署运行</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link>
+      <link>https://blog.51ai.vip/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link>
       <pubDate>Thu, 24 Jun 2021 17:20:40 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid>
       <description>前提 版本： zabbix-server 5.4
 任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。
 安装Zabbix-Proxy  安装Zabbix仓库  wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb dpkg -i zabbix-release_5.4-1+ubuntu20.04_all.deb apt update 安装Zabbix-proxy &amp;amp; mysql  这里我选择的是mysql作为数据库

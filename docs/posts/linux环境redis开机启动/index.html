@@ -12,12 +12,12 @@
 编写文件 vi /usr/lib/systemd/system/redis.service
 [Unit] #服务描述 Description=Redis persistent key-value database #服务依赖 After=network.target After=network-online.target Wants=network-online.target [Service] #启动 命令 ExecStart=/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no #停止命令 ExecStop=/home/monitor/redis-6.0.8/src/redis-cli shutdown # Restart=always #服务类型 Type=forking #User=redis #Group=redis RuntimeDirectory=redis RuntimeDirectoryMode=0755 [Install] #服务安装设置 WantedBy=multi-user.target 服务配置文件分为[Unit]、[Service]和[Install]三部分。 具体详细的解释需要结合linux知识补充。
 服务生效 系统重新读取所有服务文件： systemctl daemon-reload 启用/禁用开机自启动: systemctl enable/disable redis 启动/重启redis： systemctl start/restart redis">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/normalize.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
   
   
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
   
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -46,13 +46,13 @@
       
       
       
-      <a href="/aLong.github.io/" class="btn">Blog</a>
+      <a href="/aLong/" class="btn">Blog</a>
     
       
       
       
       
-      <a href="/aLong.github.io/tags/" class="btn">Tags</a>
+      <a href="/aLong/tags/" class="btn">Tags</a>
     
   </nav>
 </section>

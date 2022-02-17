@@ -9,12 +9,12 @@
   <meta name="description" content="Centos7启动级别 启动级别分为7个： 0 - 系统停机状态 1 - 单用户工作状态 2 - 多用户状态（没有NFS） 3 - 多用户状态（有NFS） 4 - 系统未使用，留给用户 5 - 图形界面 6 - 系统正常关闭并重新启动
 切换启动级别 之前一直都是在种端中输入指令 init3 切换启动级别。 设置永久启动3级别， vi /etc/inittab 把init3设置默认即可。
 centos7 设置出现不同 runlevels被targets所取代，即CentOS7采用加载target的方式来替代之前的启动级别。 multi-user.target = init3 graphical.target = init5 我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。 systemctl set-default multi-user.target 设置为init3 systemctl set-default graphical.target 设置为init5">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/normalize.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
   
   
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
   
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -43,13 +43,13 @@ centos7 设置出现不同 runlevels被targets所取代，即CentOS7采用加载
       
       
       
-      <a href="/aLong.github.io/" class="btn">Blog</a>
+      <a href="/aLong/" class="btn">Blog</a>
     
       
       
       
       
-      <a href="/aLong.github.io/tags/" class="btn">Tags</a>
+      <a href="/aLong/tags/" class="btn">Tags</a>
     
   </nav>
 </section>

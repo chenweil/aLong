@@ -17,12 +17,12 @@ Server没一场，那问题就在proxy了吧。
 为了验证，就等了1小时看看： 实锤了，1小时。后面也就有了数据。 Host是1小时之后开始有数据的，也就是他同步后就开始执行监控项了。
 查询到的内容： [地址](https://subscription.packtpub.com/book/networking_and_servers/9781784399764/1/ch01lvl1sec10/understanding-the-zabbix-proxies-data-flow)  解决 Ok，那么在重新部署的容器加上此参数(ZBX_CONFIGFREQUENCY)。
 docker run --name zbxproxy -d \ -e ZBX_SERVER_HOST=192.168.10.66 \ -e ZBX_HOSTNAME=&#34;testproxy&#34; \ -e ZBX_TIMEOUT=&#34;10&#34; \ -e ZBX_TLSACCEPT=psk \ -e ZBX_TLSCONNECT=psk \ -e ZBX_TLSPSKIDENTITY=helloworld \ -e ZBX_TLSPSKFILE=zbx_proxy.psk \ -e ZBX_CONFIGFREQUENCY=600 \ -v /etc/localtime:/etc/localtime:ro \ -v /zbx_proxy.">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/normalize.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
   
   
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
   
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -51,13 +51,13 @@ docker run --name zbxproxy -d \ -e ZBX_SERVER_HOST=192.168.10.66 \ -e ZBX_HOSTNA
       
       
       
-      <a href="/aLong.github.io/" class="btn">Blog</a>
+      <a href="/aLong/" class="btn">Blog</a>
     
       
       
       
       
-      <a href="/aLong.github.io/tags/" class="btn">Tags</a>
+      <a href="/aLong/tags/" class="btn">Tags</a>
     
   </nav>
 </section>

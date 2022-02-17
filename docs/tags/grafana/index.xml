@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Grafana on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong.github.io/tags/grafana/</link>
+    <link>https://blog.51ai.vip/aLong/tags/grafana/</link>
     <description>Recent content in Grafana on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Nov 2020 13:46:47 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Nov 2020 13:46:47 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Grafana插件Plugin中文汉化</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</link>
+      <link>https://blog.51ai.vip/aLong/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</link>
       <pubDate>Mon, 30 Nov 2020 13:46:47 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</guid>
       <description>汉化三方插件 前面说过汉化Grafana的工作。目前在7.2.1上面，大部分已经完成。细节继续完善。 今天考虑在第三方插件上做一些汉化。点到插件一看全是英文感觉很突出。领导看到了也不爽啊-.-！。
 找个软的捏 饼图在展示方面比较直观。Grafana上有一个插件Pie Chart 。这个现象比较少，同时在一些模版上使用中。就拿这个热热身。
 具体步骤   下载项目
@@ -37,10 +37,10 @@ After：
     
     <item>
       <title>docker-compose编排搭建prometheus&#43;grafana&#43;alertmanager&#43;node-exporter&#43;snmp-exporter</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link>
+      <link>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link>
       <pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid>
       <description>Docker-compose 目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。
 科普之后感觉自己对k8s还有有些发怵的。从简单的一个入手吧，选择了docker-compose。
    Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。
@@ -51,10 +51,10 @@ curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-c
     
     <item>
       <title>Grafana中文化</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/grafana%E6%B1%89%E5%8C%96/</link>
+      <link>https://blog.51ai.vip/aLong/posts/grafana%E6%B1%89%E5%8C%96/</link>
       <pubDate>Mon, 16 Sep 2019 15:37:46 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/grafana%E6%B1%89%E5%8C%96/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/grafana%E6%B1%89%E5%8C%96/</guid>
       <description>可视化图表 Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。
 仪表盘Dashboard 通过数据源定义好可视化的数据来源之后，对于用户而言最重要的事情就是实现数据的可视化。
 面板 Panel Panel是Grafana中最基本的可视化单元。每一种类型的面板都提供了相应的查询编辑器(Query Editor)，让用户可以从不同的数据源（如Prometheus）中查询出相应的监控数据，并且以可视化的方式展现。 Grafana中所有的面板均以插件的形式进行使用，当前内置了5种类型的面板，分别是：Graph，Singlestat，Heatmap, Dashlist，Table以及Text。
@@ -74,10 +74,10 @@ curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-c
     
     <item>
       <title>Prometheus&#43;Grafana安装搭建</title>
-      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link>
+      <link>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid>
       <description>介绍  Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
   Prometheus的特点:
  多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。   架构图 Prometheus服务大致过程：   Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。
