@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="Centos7启动级别 启动级别分为7个： 0 - 系统停机状态 1 - 单用户工作状态 2 - 多用户状态（没有NFS） 3 - 多用户状态（有NFS） 4 - 系统未使用，留给用户 5 - 图形界面 6 - 系统正常关闭并重新启动
+切换启动级别 之前一直都是在种端中输入指令 init3 切换启动级别。 设置永久启动3级别， vi /etc/inittab 把init3设置默认即可。
+centos7 设置出现不同 runlevels被targets所取代，即CentOS7采用加载target的方式来替代之前的启动级别。 multi-user.target = init3 graphical.target = init5 我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。 systemctl set-default multi-user.target 设置为init3 systemctl set-default graphical.target 设置为init5">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Centos7启动等级设置 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Centos7启动等级设置</h1>
+  <h4 id="centos7启动级别">Centos7启动级别</h4>
+<p>启动级别分为7个：
+0 - 系统停机状态
+1 - 单用户工作状态
+2 - 多用户状态（没有NFS）
+3 - 多用户状态（有NFS）
+4 - 系统未使用，留给用户
+5 - 图形界面
+6 - 系统正常关闭并重新启动</p>
+<h4 id="切换启动级别">切换启动级别</h4>
+<p>之前一直都是在种端中输入指令 init3 切换启动级别。
+设置永久启动3级别， <code>vi /etc/inittab</code>  把init3设置默认即可。</p>
+<p><strong>centos7 设置出现不同</strong>
+runlevels被targets所取代，即CentOS7采用加载target的方式来替代之前的启动级别。
+multi-user.target  = init3
+graphical.target    = init5
+我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。
+<code>systemctl set-default multi-user.target</code>  设置为init3
+<code>systemctl set-default graphical.target</code> 设置为init5</p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

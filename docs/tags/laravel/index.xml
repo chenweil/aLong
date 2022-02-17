@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Laravel on aLong blog</title>
+    <link>https://blog.51ai.vip/aLong/tags/laravel/</link>
+    <description>Recent content in Laravel on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Aug 2019 10:01:03 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laradock安装与使用</title>
+      <link>https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <description>Laradock 安装与使用 官网
+GitHub: https://github.com/laradock/laradock
+要求   Git Docker &amp;gt;= 17.12   项目的位置  已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录.  结构 :
+  project-a    laradock-a project-b  laradock-b    没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目.     laradock project-x project-y  启动环境 clone下来还没有生成.
+进入laradock目录,编辑Web服务器站点配置. cp env-exalpme .env 环境是laradock环境,里面可以对相应的版本,配置进行修改. 例如指定mysql版本为5.7 ,vim .env ,搜索到mysql部分, 修改MYSQL_VERSION=5.7.26 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)
+例如我们需要启动环境需要 mysql,redis,nginx.
+执行 docker-compose up -d nginx mysql redis</description>
+    </item>
+    
+    <item>
+      <title>数据库迁移</title>
+      <link>https://blog.51ai.vip/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Fri, 26 Jul 2019 14:30:25 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid>
+      <description>Laravel5 数据库迁移笔记   创建迁移文件 命令: make:migration
+举例: php artisan make:migration create_users_table --create=users
+生成位置: 项目/database/migrations/下 文件名已时间开头,后面是自己创建迁移文件名字.
+&amp;ndash;creat 指定数据库中表的名字
+  编辑迁移文件 打开迁移文件:
+use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateUsersTable extends Migration { /** * Run the migrations. * * @return void */ public function up() { Schema::create(&amp;#39;users&amp;#39;, function (Blueprint $table) { $table-&amp;gt;bigIncrements(&amp;#39;id&amp;#39;); $table-&amp;gt;string(&amp;#39;name&amp;#39;); $table-&amp;gt;string(&amp;#39;email&amp;#39;)-&amp;gt;unique(); $table-&amp;gt;timestamp(&amp;#39;email_verified_at&amp;#39;)-&amp;gt;nullable(); $table-&amp;gt;string(&amp;#39;password&amp;#39;); $table-&amp;gt;rememberToken(); $table-&amp;gt;timestamps(); }); } /** * Reverse the migrations. * * @return void */ public function down() { Schema::dropIfExists(&amp;#39;users&amp;#39;); } }   文件中有两个方法,up/down .</description>
+    </item>
+    
+    <item>
+      <title>Composer笔记</title>
+      <link>https://blog.51ai.vip/aLong/posts/composer%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 15 Jul 2019 17:24:45 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/composer%E7%AC%94%E8%AE%B0/</guid>
+      <description>composer - laravel5 创建laravel项目： conposer create-project laravel/laravel=5.8.* --prefer-dist ./XXX
+laravel=5.8.* 这里代表要部署5.8中最高版本 &amp;ndash;prefer-dist 参数代表优先下载zip
+安装vendor: composer install
+composer install --prefer-dist
+更新： composer update
+composer版本更新： composer self-update
+利用composer 创建laravel控制器： php artisan make:controller HomeController 会在http下 创建一Home的控制器
+如果存在分目录情况，需要指定目录： php artisan make:controller Home/HomeController
+Laravel config: 编写一些类的别名，controller中 use 简短的别名为目的。
+位置：config/app 存在一数组 aliases 在里面添加
+创建模型： 创建一个user 的model
+php artisan make:model User
+指定目录加入目录即可
+获取项目路由： php artisan route:list
+composer在项目中安装三方库时候出现报错： 执行命令： composer Install
+返回错误： Your requirements could not be resolved to an installable set of packages.</description>
+    </item>
+    
+  </channel>
+</rss>

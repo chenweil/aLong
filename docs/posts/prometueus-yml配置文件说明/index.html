@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="整体配置 prometueus.yml 配置文件注解与说明
+global:# 全局配置scrape_interval:15s # 默认值为 1m，用于设置每次数据收集的间隔scrape_timeout:10s # 默认10s,收集超时时间evaluation_interval:15s # 记录规则/告警的执行周期 默认1mexternal_labels:# 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签monitor:&#39;ctmonitor&#39;rule_files:# 指定告警规则文件&amp;记录文件- &#34;/usr/local/prometheus/rules.yml&#34;alerting:# 告警管理配置alert_relable_configs:# 修改告警内容- alertmanagers:# 告警管理起配置- static_configs:# 静态配置- targets:# 警告器地址- 172.16.23.12:9093# 用于配置 scrape 的 endpoint 配置需要 scrape 的 targets 以及相应的参数# 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 scrape_configs:# 抓取配置选项- job_name:prometheus # 默认情况下分配给刮削度量的作业名称。scrape_interval:5s # 从这项工作中获取目标的频率。scrape_timeout:3s # 每次获取超时时间honor_timestamps:true# 默认false, 在获取时是否使用当前的时间戳metrics_path:/metrics # 从目标获取度量的http资源路径。scheme:http # static_configs:# 为此作业标记的静态配置目标的列表。- targets:# 目监控标- 172.16.23.12:9090# 设备地址&#43;端口- job_name:&#39;snmp-10.0.0.1&#39;scrape_interval:30sscrape_timeout:20sstatic_configs:- targets:- 10.0.0.1# SNMP设备,端口默认5060metrics_path:/snmpparams:module:[if_mib]relabel_configs:# 重定义标签- source_labels:[__address__] # 需要修改的标签target_label:__param_target # 改成的标签- source_labels:[__param_target]target_label:instance- target_label:__address__replacement:172.16.23.12:9117各部分详解  部分官方文档的译文
+ 官方文档中,使用了通用占位符来解释设定值的定义.">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Prometueus.yml配置文件说明 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Prometueus.yml配置文件说明</h1>
+  <h2 id="整体配置">整体配置</h2>
+<p>prometueus.yml 配置文件注解与说明</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#008000;font-weight:bold">global</span>:<span style="color:#bbb">                       </span><span style="color:#408080;font-style:italic"># 全局配置</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>15s       <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 默认值为 1m，用于设置每次数据收集的间隔</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>10s        <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 默认10s,收集超时时间</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">evaluation_interval</span>:<span style="color:#bbb"> </span>15s   <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 记录规则/告警的执行周期 默认1m</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">external_labels</span>:<span style="color:#bbb">            </span><span style="color:#408080;font-style:italic"># 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">monitor</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;ctmonitor&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">rule_files</span>:<span style="color:#bbb">                   </span><span style="color:#408080;font-style:italic"># 指定告警规则文件&amp;记录文件</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#ba2121">&#34;/usr/local/prometheus/rules.yml&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">alerting</span>:<span style="color:#bbb">                     </span><span style="color:#408080;font-style:italic"># 告警管理配置</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">alert_relable_configs</span>:<span style="color:#bbb">      </span><span style="color:#408080;font-style:italic"># 修改告警内容</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">alertmanagers</span>:<span style="color:#bbb">              </span><span style="color:#408080;font-style:italic"># 告警管理起配置</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">           </span><span style="color:#408080;font-style:italic"># 静态配置</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#008000;font-weight:bold">targets</span>:<span style="color:#bbb">                </span><span style="color:#408080;font-style:italic"># 警告器地址</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- <span style="color:#666">172.16.23.12</span>:<span style="color:#666">9093</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 用于配置 scrape 的 endpoint  配置需要 scrape 的 targets 以及相应的参数</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 </span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">scrape_configs</span>:<span style="color:#bbb">               </span><span style="color:#408080;font-style:italic"># 抓取配置选项</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#008000;font-weight:bold">job_name</span>:<span style="color:#bbb"> </span>prometheus       <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 默认情况下分配给刮削度量的作业名称。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>5s        <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 从这项工作中获取目标的频率。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>3s         <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 每次获取超时时间</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">honor_timestamps</span>:<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">true</span><span style="color:#bbb">      </span><span style="color:#408080;font-style:italic"># 默认false, 在获取时是否使用当前的时间戳</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">metrics_path</span>:<span style="color:#bbb"> </span>/metrics     <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 从目标获取度量的http资源路径。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scheme</span>:<span style="color:#bbb"> </span>http               <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># </span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">             </span><span style="color:#408080;font-style:italic"># 为此作业标记的静态配置目标的列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">targets</span>:<span style="color:#bbb">                  </span><span style="color:#408080;font-style:italic"># 目监控标</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#666">172.16.23.12</span>:<span style="color:#666">9090</span><span style="color:#bbb">       </span><span style="color:#408080;font-style:italic"># 设备地址+端口</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#008000;font-weight:bold">job_name</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;snmp-10.0.0.1&#39;</span><span style="color:#bbb">  
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>30s<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>20s<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#008000;font-weight:bold">targets</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- <span style="color:#666">10.0.0.1</span><span style="color:#bbb">                  </span><span style="color:#408080;font-style:italic"># SNMP设备,端口默认5060</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">metrics_path</span>:<span style="color:#bbb"> </span>/snmp<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">params</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">module</span>:<span style="color:#bbb"> </span>[if_mib]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">relabel_configs</span>:<span style="color:#bbb">                </span><span style="color:#408080;font-style:italic"># 重定义标签</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">source_labels</span>:<span style="color:#bbb"> </span>[__address__] <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 需要修改的标签</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>__param_target <span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 改成的标签</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">source_labels</span>:<span style="color:#bbb"> </span>[__param_target]<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>instance<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>__address__<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">replacement</span>:<span style="color:#bbb"> </span><span style="color:#666">172.16.23.12</span>:<span style="color:#666">9117</span><span style="color:#bbb">
+</span></code></pre></div><h2 id="各部分详解">各部分详解</h2>
+<hr>
+<p>部分官方文档的译文</p>
+<hr>
+<p>官方文档中,使用了通用占位符来解释设定值的定义.</p>
+<p>通用占位符由下面定义：</p>
+<ul>
+<li><code>\&lt;boolean\&gt;</code>: 一个布尔值，包括<code>true</code>或者<code>false</code>.</li>
+<li><code>\&lt;duration\&gt;</code>: 持续时间，与正则表达式<code>[0-9]+(ms|smhdwy)</code>匹配</li>
+<li><code>\&lt;labelname\&gt;</code>: 一个与正则表达式<code>[a-zA-Z_][a-zA-Z0-9_]*</code>匹配的字符串</li>
+<li><code>\&lt;labelvalue\&gt;</code>: 一个为unicode字符串</li>
+<li><code>\&lt;filename\&gt;</code>: 当前工作目录下的有效路径</li>
+<li><code>\&lt;host\&gt;</code>: 一个包含主机名或者IP地址，并且可以带上一个非必需的端口号的有效字符串</li>
+<li><code>\&lt;path\&gt;</code>: 一个有效的URL路径</li>
+<li><code>\&lt;scheme\&gt;</code>: 一个可以是<code>http</code>或者<code>https</code>的字符串</li>
+<li><code>\&lt;string\&gt;</code>: 一个正则表达式字符串</li>
+</ul>
+<h3 id="scrape_configs">scrape_configs</h3>
+<p>监控配置</p>
+<p>&lt;scrape_configs&gt;
+配置采集目标
+1、根据配置的任务（job）以http/s周期性的收刮（scrape/pull）
+2、指定目标（target）上的指标（metric）。目标（target）
+3、可以以静态方式或者自动发现方式指定。Prometheus将收刮（scrape）的指标（metric）保存在本地或者远程存储上。</p>
+<p>&lt;scrape_config&gt;部分指定一组描述如何刮除它们的目标和参数。 在一般情况下，一个scrape配置指定单个作业。 在高级配置中，这可能会改变。
+目标可以通过&lt;static_configs&gt;参数静态配置，也可以使用其中一种支持的服务发现机制动态发现。
+此外，&lt;relabel_configs&gt;允许在抓取之前对任何目标及其标签进行高级修改。
+其中&lt;job_name&gt;在所有scrape配置中必须是唯一的。</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#408080;font-style:italic"># 默认分配给已抓取指标的job名称。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">job_name</span>:<span style="color:#bbb"> </span>&lt;job_name&gt;<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 从job中抓取目标的频率.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ scrape_interval</span>:<span style="color:#bbb"> </span>&lt;duration&gt; | default = &lt;global_config.scrape_interval&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 抓取此job时，每次抓取超时时间.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ scrape_timeout</span>:<span style="color:#bbb"> </span>&lt;duration&gt; | default = &lt;global_config.scrape_timeout&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 从目标获取指标的HTTP资源路径.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ metrics_path</span>:<span style="color:#bbb"> </span>&lt;path&gt; | default = /metrics ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># honor_labels控制Prometheus如何处理已经存在于已抓取数据中的标签与Prometheus将附加服务器端的标签之间的冲突（&#34;job&#34;和&#34;instance&#34;标签，手动配置的目标标签以及服务发现实现生成的标签）。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># </span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 如果honor_labels设置为&#34;true&#34;，则通过保留已抓取数据的标签值并忽略冲突的服务器端标签来解决标签冲突。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic">#</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 如果honor_labels设置为&#34;false&#34;，则通过将已抓取数据中的冲突标签重命名为&#34;exported_ &lt;original-label&gt;&#34;（例如&#34;exported_instance&#34;，&#34;exported_job&#34;）然后附加服务器端标签来解决标签冲突。 这对于联合等用例很有用，其中应保留目标中指定的所有标签。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># </span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 请注意，任何全局配置的&#34;external_labels&#34;都不受此设置的影响。 在与外部系统通信时，它们始终仅在时间序列尚未具有给定标签时应用，否则将被忽略。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 当设置为 true, 以拉取数据为准，否则以服务配置为准</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ honor_labels</span>:<span style="color:#bbb"> </span>&lt;boolean&gt; | default = false ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 配置用于请求的协议方案.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ scheme</span>:<span style="color:#bbb"> </span>&lt;scheme&gt; | default = http ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 可选的HTTP URL参数.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">params</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ &lt;string&gt;</span>:<span style="color:#bbb"> </span>[&lt;string&gt;, ...] ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的用户名和密码在每个scrape请求上设置`Authorization`标头。 password和password_file是互斥的。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">basic_auth</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ username</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ password</span>:<span style="color:#bbb"> </span>&lt;secret&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ password_file</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的承载令牌在每个scrape请求上设置`Authorization`标头。 它`bearer_token_file`和是互斥的。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ bearer_token</span>:<span style="color:#bbb"> </span>&lt;secret&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的承载令牌在每个scrape请求上设置`Authorization`标头。 它`bearer_token`和是互斥的。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ bearer_token_file</span>:<span style="color:#bbb"> </span>/path/to/bearer/token/file ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 配置scrape请求的TLS设置.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">tls_config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>&lt;tls_config&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 可选的代理URL.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ proxy_url</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Azure服务发现配置列表.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">azure_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;azure_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Consul服务发现配置列表.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">consul_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;consul_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># DNS服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">dns_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;dns_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># EC2服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">ec2_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;ec2_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># OpenStack服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">openstack_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;openstack_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 文件服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">file_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;file_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># GCE服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">gce_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;gce_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Kubernetes服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">kubernetes_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;kubernetes_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Marathon服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">marathon_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;marathon_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># AirBnB的神经服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">nerve_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;nerve_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Zookeeper Serverset服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">serverset_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;serverset_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Triton服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">triton_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;triton_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 此job的标记静态配置目标列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;static_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 目标重新标记配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">relabel_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;relabel_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 度量标准重新配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">metric_relabel_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;relabel_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 对每个将被接受的样本数量的每次抓取限制。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 如果在度量重新标记后存在超过此数量的样本，则整个抓取将被视为失败。 0表示没有限制。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ sample_limit</span>:<span style="color:#bbb"> </span>&lt;int&gt; | default = 0 ]<span style="color:#bbb">
+</span></code></pre></div><h3 id="rule_files">rule_files</h3>
+<p>记录规则,编写的记录规则是定义一些常用计算规则.这些规则会存储到数据中.
+告警的警报规则文件需要在这里引入.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#008000;font-weight:bold">rule_files</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;filepath_glob&gt; ... ]<span style="color:#bbb">
+</span></code></pre></div><h3 id="alerting">alerting</h3>
+<p>Alertmanager相关配置</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#008000;font-weight:bold">alerting</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">alert_relabel_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>[<span style="color:#bbb"> </span>- &lt;relabel_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">alertmanagers</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>[<span style="color:#bbb"> </span>- &lt;alertmanager_config&gt; ... ]<span style="color:#bbb">
+</span></code></pre></div><p>&lt;alertmanager_config&gt;
+alertmanager_config部分指定Prometheus服务器向其发送警报的Alertmanager实例。 它还提供参数以配置如何与这些Alertmanagers进行通信。
+Alertmanagers可以通过static_configs参数静态配置，也可以使用其中一种支持的服务发现机制动态发现。
+此外，relabel_configs允许从发现的实体中选择Alertmanagers，并对使用的API路径提供高级修改，该路径通过__alerts_path__标签公开。</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#408080;font-style:italic"># 推送警报时按目标Alertmanager超时。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ timeout</span>:<span style="color:#bbb"> </span>&lt;duration&gt; | default = 10s ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 将推送HTTP路径警报的前缀。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ path_prefix</span>:<span style="color:#bbb"> </span>&lt;path&gt; | default = / ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 配置用于请求的协议方案。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ scheme</span>:<span style="color:#bbb"> </span>&lt;scheme&gt; | default = http ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的用户名和密码在每个请求上设置`Authorization`标头。 password和password_file是互斥的。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">basic_auth</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ username</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ password</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ password_file</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的承载令牌在每个请求上设置“Authorization”标头。 它与`bearer_token_file`互斥。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ bearer_token</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的承载令牌在每个请求上设置“Authorization”标头。 它与`bearer_token`互斥。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ bearer_token_file</span>:<span style="color:#bbb"> </span>/path/to/bearer/token/file ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 配置scrape请求的TLS设置。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">tls_config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>&lt;tls_config&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 可选的代理URL。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ proxy_url</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Azure服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">azure_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;azure_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Consul服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">consul_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;consul_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># DNS服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">dns_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;dns_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># ECS服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">ec2_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;ec2_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 文件服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">file_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;file_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># GCE服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">gce_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;gce_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># K8S服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">kubernetes_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;kubernetes_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Marathon服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">marathon_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;marathon_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># AirBnB&#39;s Nerve 服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">nerve_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;nerve_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Zookepper服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">serverset_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;serverset_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Triton服务发现配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">triton_sd_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;triton_sd_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 标记为静态配置的Alertmanagers列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;static_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># Alertmanager重新配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">relabel_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;relabel_config&gt; ... ]<span style="color:#bbb">
+</span></code></pre></div><h3 id="remote_write">remote_write</h3>
+<p>云端写入数据
+&lt;remote_write&gt;
+write_relabel_configs是在将样本发送到远程端点之前应用于样本的重新标记。 在外部标签之后应用写入重新标记。 这可用于限制发送的样本。</p>
+<p>有一个如何使用此功能的小型演示。</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#408080;font-style:italic"># 要发送样本的端点的URL.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">url</span>:<span style="color:#bbb"> </span>&lt;string&gt;<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 对远程写端点的请求超时。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ remote_timeout</span>:<span style="color:#bbb"> </span>&lt;duration&gt; | default = 30s ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 远程写入重新标记配置列表。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">write_relabel_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>- &lt;relabel_config&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的用户名和密码在每个远程写请求上设置`Authorization`标头.password和password_file是互斥的。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">basic_auth</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ username</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ password</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ password_file</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的承载令牌在每个远程写请求上设置`Authorization`头。 它与`bearer_token_file`互斥。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ bearer_token</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的承载令牌在每个远程写请求上设置`Authorization`头。 它与`bearer_token`互斥。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ bearer_token_file</span>:<span style="color:#bbb"> </span>/path/to/bearer/token/file ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 配置远程写入请求的TLS设置。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">tls_config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>&lt;tls_config&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 可选的代理URL。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ proxy_url</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 配置用于写入远程存储的队列。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">queue_config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#408080;font-style:italic"># 在我们开始删除之前每个分片缓冲的样本数。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ capacity</span>:<span style="color:#bbb"> </span>&lt;int&gt; | default = 10000 ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#408080;font-style:italic"># 最大分片数，即并发数。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ max_shards</span>:<span style="color:#bbb"> </span>&lt;int&gt; | default = 1000 ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#408080;font-style:italic"># 最小分片数，即并发数。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ min_shards</span>:<span style="color:#bbb"> </span>&lt;int&gt; | default = 1 ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#408080;font-style:italic"># 每次发送的最大样本数。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ max_samples_per_send</span>:<span style="color:#bbb"> </span>&lt;int&gt; | default = 100]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#408080;font-style:italic"># 样本在缓冲区中等待的最长时间。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ batch_send_deadline</span>:<span style="color:#bbb"> </span>&lt;duration&gt; | default = 5s ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#408080;font-style:italic"># 在可恢复错误上重试批处理的最大次数。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ max_retries</span>:<span style="color:#bbb"> </span>&lt;int&gt; | default = 3 ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#408080;font-style:italic"># 初始重试延迟。 每次重试都会加倍。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ min_backoff</span>:<span style="color:#bbb"> </span>&lt;duration&gt; | default = 30ms ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#408080;font-style:italic"># 最大重试延迟。</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ max_backoff</span>:<span style="color:#bbb"> </span>&lt;duration&gt; | default = 100ms ]<span style="color:#bbb">
+</span></code></pre></div><h3 id="remote_read">remote_read</h3>
+<p>云端读取数据
+&lt;remote_read&gt;</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#408080;font-style:italic"># 要发送样本的端点的URL.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">url</span>:<span style="color:#bbb"> </span>&lt;string&gt;<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 可选的匹配器列表，必须存在于选择器中以查询远程读取端点。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">required_matchers</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ &lt;labelname&gt;</span>:<span style="color:#bbb"> </span>&lt;labelvalue&gt; ... ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 对远程读取端点的请求超时。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ remote_timeout</span>:<span style="color:#bbb"> </span>&lt;duration&gt; | default = 1m ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 本地存储应该有完整的数据。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ read_recent</span>:<span style="color:#bbb"> </span>&lt;boolean&gt; | default = false ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的用户名和密码在每个远程写请求上设置`Authorization`标头.password和password_file是互斥的。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">basic_auth</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ username</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ password</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">[ password_file</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的承载令牌在每个远程写请求上设置`Authorization`头。 它与`bearer_toke_filen`互斥。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ bearer_token</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 使用配置的承载令牌在每个远程写请求上设置`Authorization`头。 它与`bearer_token`互斥。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ bearer_token_file</span>:<span style="color:#bbb"> </span>/path/to/bearer/token/file ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 配置远程写入请求的TLS设置。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">tls_config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>[<span style="color:#bbb"> </span>&lt;tls_config&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 可选的代理URL。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ proxy_url</span>:<span style="color:#bbb"> </span>&lt;string&gt; ]<span style="color:#bbb">
+</span></code></pre></div><h3 id="relabel_configs">relabel_configs</h3>
+<p>用来重新打标记,修改标签.</p>
+<p>请注意labels 的取名格式:
+**标签label名称可以包含ASCII字母、数字和下划线。它们必须匹配正则表达式[a-zA-Z_][a-zA-Z0-9_]*。带有_下划线的标签名称被保留内部使用。**</p>
+<p>标签labels值包含任意的Unicode码。</p>
+<p>&lt;relabel_configs&gt;
+Prometheus 重新标签
+允许在采集之前对任何目标及其标签进行修改</p>
+<p>　　• 重命名标签名
+　　• 删除标签
+　　• 过滤目标</p>
+<p>action：重新标签动作</p>
+<ul>
+<li>replace：默认，通过regex匹配source_label的值，使用replacement来引用表达式匹配的分组</li>
+<li>keep：删除regex与连接不匹配的目标 source_labels</li>
+<li>drop：删除regex与连接匹配的目标 source_labels</li>
+<li>labeldrop：删除regex匹配的标签</li>
+<li>labelkeep：删除regex不匹配的标签</li>
+<li>hashmod：设置target_label为modulus连接的哈希值source_labels</li>
+<li>labelmap：匹配regex所有标签名称。然后复制匹配标签的值进行分组，replacement分组引用（${1},${2},…）替代</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#008000;font-weight:bold">relable_configs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 源标签从现有标签中选择值。 它们的内容使用已配置的分隔符进行连接，并与已配置的正则表达式进行匹配，以进行替换，保留和删除操作。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ source_labels</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;[&#39;</span><span style="color:#bbb"> </span>&lt;labelname&gt; [, ...] &#39;]&#39; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 分隔符放置在连接的源标签值之间。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ separator</span>:<span style="color:#bbb"> </span>&lt;string&gt; | default = ; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 在替换操作中将结果值写入的标签。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 替换操作是强制性的。 正则表达式捕获组可用。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ target_label</span>:<span style="color:#bbb"> </span>&lt;labelname&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 与提取的值匹配的正则表达式。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ regex</span>:<span style="color:#bbb"> </span>&lt;regex&gt; | default = (.*) ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 采用源标签值的散列的模数。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ modulus</span>:<span style="color:#bbb"> </span>&lt;uint64&gt; ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 如果正则表达式匹配，则执行正则表达式替换的替换值。 正则表达式捕获组可用。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ replacement</span>:<span style="color:#bbb"> </span>&lt;string&gt; | default = $1 ]<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#408080;font-style:italic"># 基于正则表达式匹配执行的操作。</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ action</span>:<span style="color:#bbb"> </span>&lt;relabel_action&gt; | default = replace ]<span style="color:#bbb">
+</span></code></pre></div>
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="约束&amp;软删除冲突 本咸鱼对数据库方面研究甚少。能存数据就没多考虑其他问题。尤其是在设计方面。都是按照接口或者业务推到一下就好了。 这次考虑一个问题，学习了一个小问题的处理。 就是标题所述 约束与软删除的冲突。
+场景问题例子：
+一表单 字段为：
+|:–| | id | | name | |… | | u_number | | deleted_at |
+考虑 u_number 唯一问题，添加 约束 UNIQUE。 u_number 是可复用的一些唯一数据。
+那么问题来了：
+当操作软删除时候，deleted_at (类型 datetime) 填充删除时间后，我理想化数据已经被删除。当 u_number 被其他用户使用插入此表结果是失败的。
+解决方式 u_number 因为唯一，导致后续使用此前删除的数据是不可行的，如果直接删前者数据也是不太有B格，不科学的事情。 通过 联合的约束来完善此事，deleted_at 正好是时间， 与其联合使用即解决此事。
+约束不再是单一约束 u_number 修改成 u_number,deleted_at。
+-OK，完结。-">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>解决约束与软删除冲突 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>解决约束与软删除冲突</h1>
+  <h3 id="约束软删除冲突">约束&amp;软删除冲突</h3>
+<p>本咸鱼对数据库方面研究甚少。能存数据就没多考虑其他问题。尤其是在设计方面。都是按照接口或者业务推到一下就好了。
+这次考虑一个问题，学习了一个小问题的处理。
+就是标题所述 约束与软删除的冲突。</p>
+<p><em>场景问题例子：</em></p>
+<p>一表单 字段为：</p>
+<p>|:&ndash;|
+| id |
+| name |
+|&hellip; |
+| u_number |
+| deleted_at |</p>
+<p>考虑 <code>u_number</code> 唯一问题，添加 约束 <code>UNIQUE</code>。
+<code>u_number</code> 是可复用的一些唯一数据。</p>
+<p>那么问题来了：</p>
+<p>当操作软删除时候，deleted_at (类型 <code>datetime</code>) 填充删除时间后，我理想化数据已经被删除。当 <code>u_number</code> 被其他用户使用插入此表结果是失败的。</p>
+<h4 id="解决方式">解决方式</h4>
+<p><code>u_number</code> 因为唯一，导致后续使用此前删除的数据是不可行的，如果直接删前者数据也是不太有B格，不科学的事情。
+通过 联合的约束来完善此事，<code>deleted_at</code> 正好是时间， 与其联合使用即解决此事。</p>
+<p>约束不再是单一约束 <code>u_number</code> 修改成 <code>u_number,deleted_at</code>。</p>
+<p>-OK，完结。-</p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

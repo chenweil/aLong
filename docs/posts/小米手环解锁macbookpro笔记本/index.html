@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="通过小米手环解锁笔记本 官方windows是提供了方法的。 我目前用的MacBookPro，所以说下苹果笔记本的解锁方式。
+安装软件BLEUnlock 库
+安装方式： brew 安装 brew install bleunlock
+或下载程序 下载发布的程序
+安装好打开软件： 设备列表选择手环，如果发现不到就在小米运动app中打开实验室选项里小米笔记本解锁开关。
+设备列表选择你的小米手环。
+解锁RSSI与锁定RSSI 是根据你dBM值来判断是否锁定/解锁笔记本。是一个阈值。
+延迟锁定，无信号超时是时间阈值。功能顾名思义。
+我这里选择开启了屏保来锁定、以及开机启动。
+通过以上配置之后，我们就可以通过小米手环来解锁MacOS笔记本了。
+请注意一点 如果你是每天背着本上下班的话，那我建议上下班前后别开启此功能。 为什么呢，因为你设定的RSSI值肯定是离近笔记本的。这时候你带着手环和笔记本的时候。他很容易就吧本解锁了。然后你发现从书包拿出来本巨热无比。
+为啥呢，他唤醒了设备啊 还解锁了～
+这点我不知道怎么搞定呢，好 结束～
+祝好
+拜拜～">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>小米手环解锁MacOS系统笔记本MacBookPro | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>小米手环解锁MacOS系统笔记本MacBookPro</h1>
+  <h2 id="通过小米手环解锁笔记本">通过小米手环解锁笔记本</h2>
+<p>官方windows是提供了方法的。
+我目前用的MacBookPro，所以说下苹果笔记本的解锁方式。</p>
+<h2 id="安装软件bleunlock">安装软件<code>BLEUnlock</code></h2>
+<p><a href="https://github.com/ts1/BLEUnlock">库</a></p>
+<h3 id="安装方式">安装方式：</h3>
+<p>brew 安装 <code>brew install bleunlock</code></p>
+<p>或下载程序 <a href="https://github.com/ts1/BLEUnlock/releases">下载发布的程序</a></p>
+<h3 id="安装好打开软件">安装好打开软件：</h3>
+<p><img src="https://i.loli.net/2021/05/21/BAINRZxyTp3zV5Y.png" alt=""></p>
+<p>设备列表选择手环，如果发现不到就在<code>小米运动app</code>中打开<code>实验室</code>选项里<code>小米笔记本解锁</code>开关。</p>
+<p><img src="https://i.loli.net/2021/05/21/vtHLPFJ2jIfoAWR.jpg" alt="实验室功能"></p>
+<p>设备列表选择你的小米手环。</p>
+<p><img src="https://i.loli.net/2021/05/21/JjhRDlLHA4idP3O.png" alt="选择设备"></p>
+<p>解锁RSSI与锁定RSSI 是根据你dBM值来判断是否锁定/解锁笔记本。是一个阈值。</p>
+<p><img src="https://i.loli.net/2021/05/21/wJcOye9SYs7QLXM.png" alt="锁定RSSI"></p>
+<p>延迟锁定，无信号超时是时间阈值。功能顾名思义。</p>
+<p>我这里选择开启了屏保来锁定、以及开机启动。</p>
+<p>通过以上配置之后，我们就可以通过小米手环来解锁MacOS笔记本了。</p>
+<h2 id="请注意一点">请注意一点</h2>
+<p>如果你是每天背着本上下班的话，那我建议上下班前后别开启此功能。
+为什么呢，因为你设定的RSSI值肯定是离近笔记本的。这时候你带着手环和笔记本的时候。他很容易就吧本解锁了。然后你发现从书包拿出来本巨热无比。</p>
+<p>为啥呢，他唤醒了设备啊 还解锁了～</p>
+<p>这点我不知道怎么搞定呢，好 结束～</p>
+<p>祝好</p>
+<p>拜拜～</p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

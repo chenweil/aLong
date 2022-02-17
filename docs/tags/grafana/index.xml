@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grafana on aLong blog</title>
+    <link>https://blog.51ai.vip/aLong/tags/grafana/</link>
+    <description>Recent content in Grafana on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Nov 2020 13:46:47 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grafana插件Plugin中文汉化</title>
+      <link>https://blog.51ai.vip/aLong/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</link>
+      <pubDate>Mon, 30 Nov 2020 13:46:47 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</guid>
+      <description>汉化三方插件 前面说过汉化Grafana的工作。目前在7.2.1上面，大部分已经完成。细节继续完善。 今天考虑在第三方插件上做一些汉化。点到插件一看全是英文感觉很突出。领导看到了也不爽啊-.-！。
+找个软的捏 饼图在展示方面比较直观。Grafana上有一个插件Pie Chart 。这个现象比较少，同时在一些模版上使用中。就拿这个热热身。
+具体步骤   下载项目
+项目地址：piechart-panel 文件结构：
+git clone git@github.com:grafana/piechart-panel.git cd piechart-panel # 进入到目录 yarn install 我直接把项目clone到grafana存放插件的位置，我的grafana是为了测试run的一个docker镜像。把插件目录挂载到本机，代码clone到目录中。
+  汉化工作
+根据上面目录看，主要修改文件都在src里面。 IDE打开此项目，在src中修改需要编辑的文件。
+图片举例，选项第一项选择图形类型。选项内容pie / donut。通过翻译我修改成了 派/甜甜圈。根据修改内容其他地方设计修改的都需要修改。我通过查询替换方式，在其他文件中修改了代码中的判断。例如上图右侧展示的文件类似。
+  build插件
+修改完需要的内容之后，grafana是能识别到有一个插件，但没有build时候他会提示你没有build插件。就是他不认识你的项目代码。
+这个怎么处理呢？看官方的文档
+执行 yarn dev
+# 执行结束提示，美滋滋～ ✔ Bundling plugin in dev mode ✨ Done in 4.91s. 执行完毕我们重启grafana就可以看到成果了。
+对比下原来的版本和汉化后的版本：
+before：
+After：
+  测试&amp;amp;调试
+以上2，3步骤基本就是一个测试、调试的过程。
+ 我开始先把所有配置项汉化。然后再处理选项参数。 接着build，重启grafana查看。如此往复达到预期目标。    我本机调试用docker启动grafana，测完删了容器就好了。
+持续改进 考虑持续处理某个插件，可以考虑fork原插件项目，remote add XXX源。 然后新建分之来做自己的处理。master fetch XXX源 以跟踪上游的更新。 这样自己项目安装插件时候拉自己的就好啦，美滋滋。</description>
+    </item>
+    
+    <item>
+      <title>docker-compose编排搭建prometheus&#43;grafana&#43;alertmanager&#43;node-exporter&#43;snmp-exporter</title>
+      <link>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link>
+      <pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid>
+      <description>Docker-compose 目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。
+科普之后感觉自己对k8s还有有些发怵的。从简单的一个入手吧，选择了docker-compose。
+   Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。
+   安装 安装方式看了一下，我选择直接下载bin文件方式：
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose``` 通过 docker-compose version 看到版本信息算是安装完成。
+编写docker-compose.yml  目录结构：  ├── docker-compose.yaml ├── prometheus │ ├── rules │ │ └── *(rules).yaml/json │ ├── nodes │ │ └── *(nodes).yaml │ ├── data │ │ └── ... # 挂载prom的data数据 │ └── prometheus.yaml ├── alertmanager │ ├── templates │ │ └── *.tmpl │ └── alertmanager.</description>
+    </item>
+    
+    <item>
+      <title>Grafana中文化</title>
+      <link>https://blog.51ai.vip/aLong/posts/grafana%E6%B1%89%E5%8C%96/</link>
+      <pubDate>Mon, 16 Sep 2019 15:37:46 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/grafana%E6%B1%89%E5%8C%96/</guid>
+      <description>可视化图表 Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。
+仪表盘Dashboard 通过数据源定义好可视化的数据来源之后，对于用户而言最重要的事情就是实现数据的可视化。
+面板 Panel Panel是Grafana中最基本的可视化单元。每一种类型的面板都提供了相应的查询编辑器(Query Editor)，让用户可以从不同的数据源（如Prometheus）中查询出相应的监控数据，并且以可视化的方式展现。 Grafana中所有的面板均以插件的形式进行使用，当前内置了5种类型的面板，分别是：Graph，Singlestat，Heatmap, Dashlist，Table以及Text。
+翻译工作 上面简单介绍了一下工具，主要是让我们方便查看监控的数据。这里我还是没有更深入的去研究公式等图形的设置。这里先主要写一下翻译方面的工作。
+公司也考虑展示内容为中文化比较好，这里Grafana没有提供语言包的方式来处理多语言问题。在我查看代码过程中，发现工具后台是在GO里面写死的很多导航，返回值等数据。前台是在页面上直接写的很多内容。所以我个人认为无法使用语言包来直接处理多语言问题。那就只好自己来搞定了。
+翻译的内容 更具代码查看，主要分为两大部分：
+ 后端： go文件，主要内容在/pkg 目录下。 前端： 1. 系统页面 2. 插件页面 这些在/public 目录下  准备工作 首先git clone Grafana库 git clone https://github.com/chenweil/grafana.git
+之后我们根据自己翻译的版本来检出自己的项目。 这里我们使用的v6.3.4 ，官方版本中可以查看到tag v6.3.4,并重命名自己的分支为6.3.4-chs： git checkout -b 6.3.4-chs
+通过 git branch 命令查看自己处于哪个分支上。 这里如果你不是很熟悉git命令行，可以使用sourcetree工具操作，相对来说点点鼠标就可以搞定了。
+我们在自己创建的分支就可以来处理我们的工作了。
+前端调试环境 需要 npm，nodejs，yarn
+终端执行命令 yarn install --pure-lockfile 初始化. 如果没有报错的情况,证明ok.
+出现错误请先处理问题. 开启调试环境时候，是开启前端的热加载来协助我们调试。 这里安装完三个环境可能在执行 yarn start 时报错，这里如果你是在windows上，需要再安装一下sass.(根据报错来看问题，我这里遇到缺少sass问题)
+当我们yarn start 执行后，等待一段时间，build at 时间证明准备工作已完成，下面就需要我们在调试模式下测试了。
+还需要一个调试的Grafana服务程序，这里是windows环境，所以直接从官方下载了zip包，执行bin下的grafana-server.exe 来启动服务。需要再conf文件夹修改一下public前端资源的配置，如果不修改那么你翻译的信息是看不到的，服务会直接读取的当前的public，我们这需要读取翻译的public文件位置。</description>
+    </item>
+    
+    <item>
+      <title>Prometheus&#43;Grafana安装搭建</title>
+      <link>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid>
+      <description>介绍  Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
+  Prometheus的特点:
+ 多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。   架构图 Prometheus服务大致过程：   Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。
+  Prometheus在本地存储抓取的所有数据，并通过一定规则进行清理和整理数据，并把得到的结果存储到新的时间序列中。
+  Prometheus通过PromQL和其他API可视化地展示收集的数据。Prometheus支持很多方式的图表可视化，例如Grafana、自带的Promdash以及自身提供的模版引擎等等。Prometheus还提供HTTP API的查询方式，自定义所需要的输出。
+  PushGateway支持Client主动推送metrics到PushGateway，而Prometheus只是定时去Gateway上抓取数据。
+  Alertmanager是独立于Prometheus的一个组件，可以支持Prometheus的查询语句，提供十分灵活的报警方式。
+  Prometheus 支持通过SNMP协议获取mertics数据.通过配置job,利用snmp_export读取设备监控信息.
+  指标(Metric)类型  Counter 计数器,从数据0开始累计计算. 理想状态会永远增长. 累计计算请求次数等 Gauges 瞬时状态的值. 可以任意变化的数值，适用 CPU 使用率 温度等 Histogram 对一段时间范围内数据进行采样，并对所有数值求和与统计数量、柱状图. 某个时间对某个度量值，分组，一段时间http相应大小，请求耗时的时间。 Summary 同样产生多个指标，分别带有后缀_bucket(仅histogram)、_sum、_count   Histogram和Summary都可以获取分位数。 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数histogram_quantile()计算出来。 Summary则是在应用程序中直接计算出了分位数。 Histograms and summaries中阐述了两者的区别，特别是Summary的的分位数不能被聚合。 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。 LatencyTipOfTheDay: You can’t average percentiles.</description>
+    </item>
+    
+  </channel>
+</rss>

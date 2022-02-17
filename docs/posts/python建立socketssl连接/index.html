@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="Python Socket连接 5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.
+这块没接触,Python也是hello world水平.
+赶紧恶补一下:
+Socket是网络编程的一个抽象概念。
+通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。
+服务端我也不知道什么样,这里只记录客户端的相关.
+这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.
+非ssl的socket: import socket # 创建一个socket: s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # 建立连接: s.connect((&#39;192.168.1.230&#39;, 80)) SSL socket: 端口是3344,ssl跳过验证,如果验证参数需要修改.
+import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) c = ssl.wrap_socket(s, cert_reqs=ssl.CERT_NONE) try: c.connect((&#39;192.168.1.230&#39;, &#39;3344&#39;)) except: return 2 这下与那台设备可以正常通讯了,后面实现具体功能就ok了.">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Python建立SocketSSL连接 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Python建立SocketSSL连接</h1>
+  <h3 id="python-socket连接">Python Socket连接</h3>
+<p>5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.</p>
+<p>这块没接触,Python也是hello world水平.</p>
+<p>赶紧恶补一下:</p>
+<p>Socket是网络编程的一个抽象概念。</p>
+<p>通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。</p>
+<p>服务端我也不知道什么样,这里只记录客户端的相关.</p>
+<p>这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.</p>
+<h4 id="非ssl的socket">非ssl的socket:</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">import</span> <span style="color:#00f;font-weight:bold">socket</span>
+
+<span style="color:#408080;font-style:italic"># 创建一个socket:</span>
+s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
+
+<span style="color:#408080;font-style:italic"># 建立连接:</span>
+s<span style="color:#666">.</span>connect((<span style="color:#ba2121">&#39;192.168.1.230&#39;</span>, <span style="color:#666">80</span>))
+</code></pre></div><h4 id="ssl-socket">SSL socket:</h4>
+<p>端口是3344,ssl跳过验证,如果验证参数需要修改.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">import</span> <span style="color:#00f;font-weight:bold">socket</span>
+
+ s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
+        
+ c <span style="color:#666">=</span> ssl<span style="color:#666">.</span>wrap_socket(s, cert_reqs<span style="color:#666">=</span>ssl<span style="color:#666">.</span>CERT_NONE)
+ <span style="color:#008000;font-weight:bold">try</span>:
+    c<span style="color:#666">.</span>connect((<span style="color:#ba2121">&#39;192.168.1.230&#39;</span>, <span style="color:#ba2121">&#39;3344&#39;</span>))
+<span style="color:#008000;font-weight:bold">except</span>:
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">2</span>
+</code></pre></div><p>这下与那台设备可以正常通讯了,后面实现具体功能就ok了.</p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

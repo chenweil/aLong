@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xiaomi on aLong blog</title>
+    <link>https://blog.51ai.vip/aLong/tags/xiaomi/</link>
+    <description>Recent content in xiaomi on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 May 2021 16:51:23 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小米手环解锁MacOS系统笔记本MacBookPro</title>
+      <link>https://blog.51ai.vip/aLong/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</link>
+      <pubDate>Fri, 21 May 2021 16:51:23 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</guid>
+      <description>通过小米手环解锁笔记本 官方windows是提供了方法的。 我目前用的MacBookPro，所以说下苹果笔记本的解锁方式。
+安装软件BLEUnlock 库
+安装方式： brew 安装 brew install bleunlock
+或下载程序 下载发布的程序
+安装好打开软件： 设备列表选择手环，如果发现不到就在小米运动app中打开实验室选项里小米笔记本解锁开关。
+设备列表选择你的小米手环。
+解锁RSSI与锁定RSSI 是根据你dBM值来判断是否锁定/解锁笔记本。是一个阈值。
+延迟锁定，无信号超时是时间阈值。功能顾名思义。
+我这里选择开启了屏保来锁定、以及开机启动。
+通过以上配置之后，我们就可以通过小米手环来解锁MacOS笔记本了。
+请注意一点 如果你是每天背着本上下班的话，那我建议上下班前后别开启此功能。 为什么呢，因为你设定的RSSI值肯定是离近笔记本的。这时候你带着手环和笔记本的时候。他很容易就吧本解锁了。然后你发现从书包拿出来本巨热无比。
+为啥呢，他唤醒了设备啊 还解锁了～
+这点我不知道怎么搞定呢，好 结束～
+祝好
+拜拜～</description>
+    </item>
+    
+    <item>
+      <title>小米手环表盘自定义</title>
+      <link>https://blog.51ai.vip/aLong/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Thu, 20 May 2021 16:34:55 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</guid>
+      <description>前阵子媳妇给买了个手环。小米手环5NFC，价格还可以。 定义表盘 手环就不做评价了，我感觉续航不错。屏幕划痕太容了吧。
+吐槽完了说下能玩的也就表盘了吧。
+出小米运动能同步的那些之外，总想搞点与众不同的。
+ 请访问-&amp;gt;AW  不仅是小米5，6都有了。
+我们根据自己的设备来选择。
+可以看到有面上方有个分类，语言筛选。
+这个还是很有用的，如果你只希望看到中文表盘，那就选择中文。 但是中文可能相对较少，我建议所有，然后看喜欢的界面吧。毕竟表盘上也没几个字。
+当我们点中某一个表盘，他会进到详情页。  点击下载，可以弹出来具体的表盘文件。  可以看到不同的文件有一些描述，比如语言，以及其他的一些描述。根据喜好下载。
+我建议手机下载，省的再从电脑发到手机上。
+下完之后，下面就需要同步表盘了。
+我目前知道的方式，就是通过一些APP来同步。其他方式我没研究过。
+我使用的手机是Iphone，所以我安装此软件：amaztools。  安装完软件进入： 主页同步信息等这些不重要略过。  这里app也提供了一些表盘。相比之下，这里面内容不多。喜欢可以看看，下载。在这里的下载后，同步就好。
+这里展示从app下载的表盘。 在More里面，有我们需要的功能，install custom file。安装我们下载的表盘。
+点击 install custom file 选择我们下载的变盘，然后同步到手环上。 过程就结束了。
+真的结束了吗？！ 还要下载好多一个个去试～ 哈哈哈哈
+结束 祝好 </description>
+    </item>
+    
+  </channel>
+</rss>

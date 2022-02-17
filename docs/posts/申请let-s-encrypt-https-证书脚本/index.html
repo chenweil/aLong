@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件  Let’s Encrypt是一个由非营利性组织互联网安全研究小组（ISRG）提供的免费、自动化和开放的证书颁发机构（CA）。 简单的说，借助Let’s Encrypt颁发的证书可以为我们的网站免费启用HTTPS(SSL/TLS) 。
+ 那我们通过一个脚本来申请：
+脚本名称： acme.sh
+安装acme.sh：   curl https://get.acme.sh | sh
+  创建指令： alias acme.sh=~/.acme.sh/acme.sh
+  测试收否安装成功： acme.sh --Version 出现版本，安装完成。
+  生成证书 acme.sh --issue -d demo.com -d www.demo.con -w /home/wwwroot/demo.com
+–issue是acme.sh脚本用来颁发证书的指令； -d是–domain的简称，其后面须填写已备案的域名； -w是–webroot的简称，其后面须填写网站的根目录。
+查看证书 acme.sh --list
+ Nginx 配置 项目是Nginx，下面是对Nginx的配置。
+acme.sh –installcert -d demo.com
+–key-file /etc/nginx/ssl/demo.com.key
+–fullchain-file /etc/nginx/ssl/fullchain.cer
+–reloadcmd “service nginx force-reload”
+通过 installcert 来完成安装，此处我们需要把*.key,fullchain.cer 文件拷贝到指定位置。最后通过reload命令让Nginx重载（force-reload 我环境中无法使用此参数，这里换成 restart）。
+最后我们需要配置Nginx的443 server">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>申请Let&#39;s Encrypt HTTPS 证书脚本 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>申请Let&#39;s Encrypt HTTPS 证书脚本</h1>
+  <h2 id="最近需要到ssl证书又想免懒选择脚本来更新ssl证书文件">最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件</h2>
+<blockquote>
+<p>Let’s Encrypt是一个由非营利性组织互联网安全研究小组（ISRG）提供的免费、自动化和开放的证书颁发机构（CA）。
+简单的说，借助Let’s Encrypt颁发的证书可以为我们的网站免费启用HTTPS(SSL/TLS) 。</p>
+</blockquote>
+<p>那我们通过一个脚本来申请：</p>
+<p>脚本名称： <a href="https://github.com/acmesh-official/acme.sh">acme.sh</a></p>
+<h3 id="安装acmesh">安装acme.sh：</h3>
+<ul>
+<li>
+<p><code>curl https://get.acme.sh | sh</code></p>
+</li>
+<li>
+<p>创建指令： <code>alias acme.sh=~/.acme.sh/acme.sh</code></p>
+</li>
+<li>
+<p>测试收否安装成功： <code>acme.sh --Version</code>
+出现版本，安装完成。</p>
+</li>
+</ul>
+<h3 id="生成证书">生成证书</h3>
+<p><code>acme.sh --issue -d demo.com -d www.demo.con -w  /home/wwwroot/demo.com</code></p>
+<p>–issue是acme.sh脚本用来颁发证书的指令；
+-d是–domain的简称，其后面须填写已备案的域名；
+-w是–webroot的简称，其后面须填写网站的根目录。</p>
+<h3 id="查看证书">查看证书</h3>
+<p><code>acme.sh --list</code></p>
+<hr>
+<h3 id="nginx-配置">Nginx 配置</h3>
+<p>项目是Nginx，下面是对Nginx的配置。</p>
+<p>acme.sh  &ndash;installcert -d demo.com<br>
+&ndash;key-file /etc/nginx/ssl/demo.com.key<br>
+&ndash;fullchain-file /etc/nginx/ssl/fullchain.cer<br>
+&ndash;reloadcmd &ldquo;service nginx force-reload&rdquo;</p>
+<p>通过 installcert 来完成安装，此处我们需要把*.key,fullchain.cer 文件拷贝到指定位置。最后通过reload命令让Nginx重载（force-reload 我环境中无法使用此参数，这里换成 restart）。</p>
+<p>最后我们需要配置Nginx的443 server</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#008000;font-weight:bold">server</span> {
+        <span style="color:#008000;font-weight:bold">listen</span> <span style="color:#666">443</span> <span style="color:#ba2121">ssl</span>;
+        <span style="color:#008000;font-weight:bold">server_name</span> <span style="color:#ba2121">demo.com</span>;
+        
+        <span style="color:#008000;font-weight:bold">ssl</span> <span style="color:#800">on</span>;
+        <span style="color:#008000;font-weight:bold">ssl_certificate</span>      <span style="color:#ba2121">/etc/nginx/ssl/fullchain.cer</span>;
+        <span style="color:#008000;font-weight:bold">ssl_certificate_key</span>  <span style="color:#ba2121">/etc/nginx/ssl/esofar.cn.key</span>;
+        
+        <span style="color:#008000;font-weight:bold">...</span>
+</code></pre></div><p>到此基本上配置完成了。
+Acme.sh 通过定时任务可以实现定期更新。 查看 <code>crontab -l</code></p>
+<h3 id="acmesh的更新维护">acme.sh的更新维护</h3>
+<p>acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步。</p>
+<p>手动更新： <code>acme.sh --upgrade</code></p>
+<p>自动更新：<code>acme.sh --upgrade --auto-upgrade</code></p>
+<p>取消自动更新： <code>acme.sh --upgrade --auto-upgrade 0</code></p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

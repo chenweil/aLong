@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="目的 之前配置告警之后,可以发送告警信息.但对于数据具体的结构信息,在模板中数据读取都比较懵.原因是不太清除警报都提供了哪些数据,除了我们设置的信息,还有没有其他的信息.
+告警数据结构 官方docs
+推送数据结构:
+Alerts数据 KV数据的处理方式 KV结构很简单,键值对.通过键获取对应的值.下面提供了一些方法处理这种结构的一些方法.
+字符串相关方法 警报提供的数据是通过GO模板解析的,GO模板的功能通过GO模板文档可以了解.
+下面提供了一些处理字符串的方法:
+微信通知的DEMO 上图中是微信接受的通知,下面展示通知模板的代码.
+{{- define &#34;_alert_list&#34; -}} {{- range .Alerts.Firing -}} ----------------------- 告警类型：{{ .Labels.alertname }} 告警主题: {{ .Annotations.summary }} 告警详情: {{ .Annotations.description }} 触发时间: {{ (.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }} {{ end -}} ---------结束----------------- {{- end -}} {{- define &#34;_resolve_list&#34; -}} {{- range .Alerts.Resolved -}} ************************** 告警类型：{{ .Labels.alertname }} 告警主题: {{ .Annotations.summary }} 告警详情: {{ .Annotations.description }} 触发时间: {{ (.StartsAt.Add 28800e9).">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Prometheus告警模板详解 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Prometheus告警模板详解</h1>
+  <h2 id="目的">目的</h2>
+<p>之前配置告警之后,可以发送告警信息.但对于数据具体的结构信息,在模板中数据读取都比较懵.原因是不太清除警报都提供了哪些数据,除了我们设置的信息,还有没有其他的信息.</p>
+<h3 id="告警数据结构">告警数据结构</h3>
+<p><a href="https://prometheus.io/docs/alerting/notifications/#alert">官方docs</a></p>
+<p>推送数据结构:</p>
+<!-- raw HTML omitted -->
+<h3 id="alerts数据">Alerts数据</h3>
+<!-- raw HTML omitted -->
+<h3 id="kv数据的处理方式">KV数据的处理方式</h3>
+<p>KV结构很简单,键值对.通过键获取对应的值.下面提供了一些方法处理这种结构的一些方法.</p>
+<!-- raw HTML omitted -->
+<h3 id="字符串相关方法">字符串相关方法</h3>
+<p>警报提供的数据是通过GO模板解析的,GO模板的功能通过<a href="https://golang.org/pkg/text/template/#hdr-Functions">GO模板文档</a>可以了解.</p>
+<p>下面提供了一些处理字符串的方法:</p>
+<p><img src="https://t1.picb.cc/uploads/2019/12/05/kngppe.png" alt=""></p>
+<h3 id="微信通知的demo">微信通知的DEMO</h3>
+<p><img src="https://t1.picb.cc/uploads/2019/12/05/kngxOt.png" alt=""></p>
+<p>上图中是微信接受的通知,下面展示通知模板的代码.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tmpl" data-lang="tmpl">{{- define &#34;_alert_list&#34; -}}
+{{- range .Alerts.Firing -}}
+-----------------------
+告警类型：{{ .Labels.alertname }}
+告警主题: {{ .Annotations.summary }}
+告警详情: {{ .Annotations.description }}
+触发时间: {{ (.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
+{{ end -}}
+---------结束-----------------
+{{- end -}}
+
+{{- define &#34;_resolve_list&#34; -}}
+{{- range .Alerts.Resolved -}}
+**************************
+告警类型：{{ .Labels.alertname }}
+告警主题: {{ .Annotations.summary }}
+告警详情: {{ .Annotations.description }}
+触发时间: {{ (.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
+恢复时间: {{ (.EndsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
+{{ end -}}
+************结束*****************
+{{- end -}}
+
+
+{{- define &#34;wechat.message&#34; -}}
+{{- if and (gt (len .Alerts.Firing) 0) (gt (len .Alerts.Resolved) 0) -}}
+告警数量:{{.Alerts.Firing | len}}
+告警设备:{{ .GroupLabels.server}}
+{{ template &#34;_alert_list&#34; . }}
+====================================
+告警恢复:{{len .Alerts.Resolved}}
+告警设备:{{ .GroupLabels.server}}
+{{ template &#34;_resolve_list&#34; . }}
+{{- else -}}
+  {{- if gt (len .Alerts.Firing) 0 -}}
+告警数量:{{.Alerts.Firing | len}}
+告警设备:{{ .GroupLabels.server}}  
+{{ template &#34;_alert_list&#34; . }}
+  {{- end -}}
+  {{- if gt (len .Alerts.Resolved) 0 -}}
+告警恢复:{{len .Alerts.Resolved}}
+告警设备:{{ .GroupLabels.server}}
+{{ template &#34;_resolve_list&#34; . }}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+</code></pre></div><p><strong>其中告警设备 server 这个标签是自定义的.如果没有可以删除此行或根据自己标签定义.</strong></p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

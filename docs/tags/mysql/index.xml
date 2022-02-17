@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on aLong blog</title>
+    <link>https://blog.51ai.vip/aLong/tags/mysql/</link>
+    <description>Recent content in MySQL on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Jun 2020 11:15:55 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决约束与软删除冲突</title>
+      <link>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3%E7%BA%A6%E6%9D%9F-%E8%BD%AF%E5%88%A0%E9%99%A4%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Thu, 11 Jun 2020 11:15:55 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3%E7%BA%A6%E6%9D%9F-%E8%BD%AF%E5%88%A0%E9%99%A4%E5%86%B2%E7%AA%81/</guid>
+      <description>约束&amp;amp;软删除冲突 本咸鱼对数据库方面研究甚少。能存数据就没多考虑其他问题。尤其是在设计方面。都是按照接口或者业务推到一下就好了。 这次考虑一个问题，学习了一个小问题的处理。 就是标题所述 约束与软删除的冲突。
+场景问题例子：
+一表单 字段为：
+|:&amp;ndash;| | id | | name | |&amp;hellip; | | u_number | | deleted_at |
+考虑 u_number 唯一问题，添加 约束 UNIQUE。 u_number 是可复用的一些唯一数据。
+那么问题来了：
+当操作软删除时候，deleted_at (类型 datetime) 填充删除时间后，我理想化数据已经被删除。当 u_number 被其他用户使用插入此表结果是失败的。
+解决方式 u_number 因为唯一，导致后续使用此前删除的数据是不可行的，如果直接删前者数据也是不太有B格，不科学的事情。 通过 联合的约束来完善此事，deleted_at 正好是时间， 与其联合使用即解决此事。
+约束不再是单一约束 u_number 修改成 u_number,deleted_at。
+-OK，完结。-</description>
+    </item>
+    
+    <item>
+      <title>MySQL5.7修改root密码</title>
+      <link>https://blog.51ai.vip/aLong/posts/mysql5-7%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81/</link>
+      <pubDate>Wed, 15 Jan 2020 15:23:54 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/mysql5-7%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81/</guid>
+      <description>最近维护一个MySQL数据库，由于各种原因，密码已经不知道了。现在让我在这台服务器上使用里面的MySQL数据库。
+怎么办？
+首先问了一圈没有人知道。那么只能靠自己了。
+查看软件版本: mysql --version
+之后通过神奇的Google科普了一下。 知道了具体的方法：
+  关闭mysql服务。
+  修改my.conf 在里面[mysqld] 下面最后加入一行
+[mysqld] ... skip-grant-tables 修改完保存退出。
+  重启mysql服务。
+  mysql 进入mysql 不需要密码了。
+show databases; 查看数据库
+use mysql; 选择 mysql 数据库 在此数据库执行更新语句（修改root用户的密码为root）： update user set authentication_string=password(&#39;root&#39;) where user=&#39;root&#39;; flush privileges; 更新权限
+退出mysql
+  把最开始my.conf加入的语句删除。
+  重启mysql服务
+  最后可以通过设置的密码登陆数据库了。</description>
+    </item>
+    
+  </channel>
+</rss>

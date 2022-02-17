@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on aLong blog</title>
+    <link>https://blog.51ai.vip/aLong/tags/nodejs/</link>
+    <description>Recent content in Nodejs on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Sep 2019 10:15:01 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Centos7安装nodejs</title>
+      <link>https://blog.51ai.vip/aLong/posts/centos7%E5%AE%89%E8%A3%85nodejs/</link>
+      <pubDate>Mon, 02 Sep 2019 10:15:01 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/centos7%E5%AE%89%E8%A3%85nodejs/</guid>
+      <description>安装nodejs 下载官方node的tar包: https://nodejs.org/en/download/
+wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz
+解压下载文件 tar -xvf node-v10.16.3-linux-x64.tar.xz
+部署bin 这里下载位置为家里面 ~/
+ln -s ~/node-v10.16.3-linux-x64/bin/node /usr/bin/node
+ln -s ~/node-v10.16.3-linux-x64/bin/npm /usr/bin/npm
+一个是node 另一个是npm
+验证 node -v npm -v</description>
+    </item>
+    
+  </channel>
+</rss>

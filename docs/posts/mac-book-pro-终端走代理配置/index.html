@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="mac 终端走ssr代理 前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。
+看下自己ssr 代理端口号是多少 高级设置看下 本地Socks5监听端口 记住这个端口号。 后面： mac 现在默认终端是用的zsh 编辑 vi ～/.zshrc 在最后加入 //alias 后面的名字自己可以按照习惯定义， 比如我定义proxy 是 ss。 每当我需要时候 ss 一下就可以了。 不需要的时候执行第二句。
+//端口按照你的来配置alias unproxy=&#39;unset all_proxy&#39; alias proxy=&#39;export all_proxy=socks5://127.0.0.1:1086&#39; 测试： 首先在没有走ss 的时候， curl cip.cc 得到一个国内的信息。 当使用ss之后， 再通过这个查询就可以看到变化了。
+为了便捷，我觉得这个命令也可以设置成别名方式。
+设置一个where 每次当我迷茫不知道自己出没出去的时候，就可以 输入where 看下。 alias where=&#39;curl cip.cc&#39;">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Mac book pro 终端走代理配置 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Mac book pro 终端走代理配置</h1>
+  <h3 id="mac-终端走ssr代理">mac 终端走ssr代理</h3>
+<p><strong>前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。</strong></p>
+<p>看下自己ssr 代理端口号是多少
+高级设置看下 本地Socks5监听端口
+<img src="https://s2.ax1x.com/2020/01/20/1PYNKs.png" alt="高级设置">
+<img src="https://s2.ax1x.com/2020/01/20/1PYabq.png" alt="端口号">
+记住这个端口号。
+后面：
+mac 现在默认终端是用的zsh
+编辑 <code>vi ～/.zshrc</code>
+在最后加入
+//alias 后面的名字自己可以按照习惯定义， 比如我定义proxy 是 ss。 每当我需要时候 ss 一下就可以了。 不需要的时候执行第二句。</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#7d9029">//端口按照你的来配置alias unproxy</span><span style="color:#666">=</span><span style="color:#ba2121">&#39;unset all_proxy&#39;</span>
+<span style="color:#7d9029">alias proxy</span><span style="color:#666">=</span><span style="color:#ba2121">&#39;export all_proxy=socks5://127.0.0.1:1086&#39;</span>
+</code></pre></div><p>测试：
+首先在没有走ss 的时候， <code>curl cip.cc</code> 得到一个国内的信息。
+当使用ss之后， 再通过这个查询就可以看到变化了。</p>
+<p>为了便捷，我觉得这个命令也可以设置成别名方式。</p>
+<p>设置一个where 每次当我迷茫不知道自己出没出去的时候，就可以 输入where 看下。
+<code>alias where='curl cip.cc'</code></p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

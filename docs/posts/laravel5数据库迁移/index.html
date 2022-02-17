@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="Laravel5 数据库迁移笔记   创建迁移文件 命令: make:migration
+举例: php artisan make:migration create_users_table --create=users
+生成位置: 项目/database/migrations/下 文件名已时间开头,后面是自己创建迁移文件名字.
+–creat 指定数据库中表的名字
+  编辑迁移文件 打开迁移文件:
+use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateUsersTable extends Migration { /** * Run the migrations. * * @return void */ public function up() { Schema::create(&#39;users&#39;, function (Blueprint $table) { $table-&gt;bigIncrements(&#39;id&#39;); $table-&gt;string(&#39;name&#39;); $table-&gt;string(&#39;email&#39;)-&gt;unique(); $table-&gt;timestamp(&#39;email_verified_at&#39;)-&gt;nullable(); $table-&gt;string(&#39;password&#39;); $table-&gt;rememberToken(); $table-&gt;timestamps(); }); } /** * Reverse the migrations. * * @return void */ public function down() { Schema::dropIfExists(&#39;users&#39;); } }   文件中有两个方法,up/down .">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>数据库迁移 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>数据库迁移</h1>
+  <h2 id="laravel5-数据库迁移笔记">Laravel5 数据库迁移笔记</h2>
+<ul>
+<li>
+<h3 id="创建迁移文件">创建迁移文件</h3>
+<p>命令: <code>make:migration</code></p>
+<p>举例: <code>php artisan make:migration create_users_table --create=users</code></p>
+<p>生成位置: 项目/database/migrations/下 文件名已时间开头,后面是自己创建迁移文件名字.</p>
+<p>&ndash;creat 指定数据库中表的名字</p>
+</li>
+<li>
+<h3 id="编辑迁移文件">编辑迁移文件</h3>
+<p>打开迁移文件:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+   <span style="color:#008000;font-weight:bold">use</span> Illuminate\Support\Facades\Schema;
+   <span style="color:#008000;font-weight:bold">use</span> Illuminate\Database\Schema\Blueprint;
+   <span style="color:#008000;font-weight:bold">use</span> Illuminate\Database\Migrations\Migration;
+
+   <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">CreateUsersTable</span> <span style="color:#008000;font-weight:bold">extends</span> Migration
+   {
+       <span style="color:#ba2121;font-style:italic">/**
+</span><span style="color:#ba2121;font-style:italic">        * Run the migrations.
+</span><span style="color:#ba2121;font-style:italic">        *
+</span><span style="color:#ba2121;font-style:italic">        * @return void
+</span><span style="color:#ba2121;font-style:italic">        */</span>
+       <span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">function</span> <span style="color:#00f">up</span>()
+       {
+           Schema<span style="color:#666">::</span><span style="color:#7d9029">create</span>(<span style="color:#ba2121">&#39;users&#39;</span>, <span style="color:#008000;font-weight:bold">function</span> (Blueprint <span style="color:#19177c">$table</span>) {
+               <span style="color:#19177c">$table</span><span style="color:#666">-&gt;</span><span style="color:#7d9029">bigIncrements</span>(<span style="color:#ba2121">&#39;id&#39;</span>);
+               <span style="color:#19177c">$table</span><span style="color:#666">-&gt;</span><span style="color:#7d9029">string</span>(<span style="color:#ba2121">&#39;name&#39;</span>);
+               <span style="color:#19177c">$table</span><span style="color:#666">-&gt;</span><span style="color:#7d9029">string</span>(<span style="color:#ba2121">&#39;email&#39;</span>)<span style="color:#666">-&gt;</span><span style="color:#7d9029">unique</span>();
+               <span style="color:#19177c">$table</span><span style="color:#666">-&gt;</span><span style="color:#7d9029">timestamp</span>(<span style="color:#ba2121">&#39;email_verified_at&#39;</span>)<span style="color:#666">-&gt;</span><span style="color:#7d9029">nullable</span>();
+               <span style="color:#19177c">$table</span><span style="color:#666">-&gt;</span><span style="color:#7d9029">string</span>(<span style="color:#ba2121">&#39;password&#39;</span>);
+               <span style="color:#19177c">$table</span><span style="color:#666">-&gt;</span><span style="color:#7d9029">rememberToken</span>();
+               <span style="color:#19177c">$table</span><span style="color:#666">-&gt;</span><span style="color:#7d9029">timestamps</span>();
+           });
+       }
+
+       <span style="color:#ba2121;font-style:italic">/**
+</span><span style="color:#ba2121;font-style:italic">        * Reverse the migrations.
+</span><span style="color:#ba2121;font-style:italic">        *
+</span><span style="color:#ba2121;font-style:italic">        * @return void
+</span><span style="color:#ba2121;font-style:italic">        */</span>
+       <span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">function</span> <span style="color:#00f">down</span>()
+       {
+           Schema<span style="color:#666">::</span><span style="color:#7d9029">dropIfExists</span>(<span style="color:#ba2121">&#39;users&#39;</span>);
+       }
+   }
+</code></pre></div></li>
+</ul>
+<pre><code>文件中有两个方法,up/down . 可以理解为创建执行时up方法,rollback时候是执行down方法.
+
+up方法中:
+    创建了7个字段,表明为 users.
+    
+    创建字段操作 `$table-&gt;` 后面加上字段类型 `string` ,指定字段名称`('name')` 字段被指 `-&gt;comment('名子')`; 
+    
+    具体每个字段类型,以及其他属性定义,请查询手册.
+    
+
+
+* ### 执行迁移文件
+
+  这个迁移文件是创建表,所以down是删除表.也就是当我们执行 `php artisan migrate:rollback` 回滚到上一步就是把这表删除(前提创建之后).
+
+  执行命令: `php artisan migrate` 执行迁移文件创建表单.
+  
+  如果我们后悔创建:可以执行回滚. `php artisan migrate:rollback `  --step 指定回滚次数 `php artisan migrate:rollback --step=2` 执行回滚迁移2次钱.
+  
+  `php artisan migrate:reset` 回滚所有迁移
+  
+  `php artisan migrate:fresh` 删除所有回滚
+  
+  
+* ### 为前迁移文件修改字段,改名.
+当我们上面的文件执行后,需要增加一个字段,那么就需要新建一个迁移文件.不要直接操作数据库.
+
+    `php artisan make:migration add_id_to_users_table --table=users` 
+    
+    这里为users表新增身份证字段.
+    
+    打开文件 新建身份证id列. 
+    
+    之后我们执行迁移文件.成功后就能看到新得ID字段已经出现.对于编辑和修改都可以.
+
+    `$table-&gt;renameColumn('ID', 'id')` 改名id
+    
+    对应dorop 也需要dropColumn 此字段.
+    
+    最后执行此迁移文件.
+
+
+    
+</code></pre>
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

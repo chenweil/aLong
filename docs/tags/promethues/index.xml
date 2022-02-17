@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Promethues on aLong blog</title>
+    <link>https://blog.51ai.vip/aLong/tags/promethues/</link>
+    <description>Recent content in Promethues on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Aug 2019 10:06:01 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/promethues/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prometheus-snmp_export部署</title>
+      <link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Thu, 29 Aug 2019 10:06:01 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid>
+      <description>SNMP SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。
+目的 通过snmp_export,获取设备信息.
+准备 系统: centos7,docker19. 之前已经安装好 Prometheus
+此处目标设备是华为交换机 s2700
+部署snmp_expoer snmp.yml 配置文件不是自己定义的,是通过注册生成或下载的.这里我通过github下载配置文件.
+snmp.yml
+ 配置snmp_export 配置文件 snmp.yml  version:2auth:community:**交换机设置的团体名**查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
+部署snmp_expor docker run -d --restart always \ -v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml \ -p 9116:9116 --name snmp-exporter prom/snmp-exporter \ --config.file=&amp;#34;/etc/snmp_exporter/snmp.yml&amp;#34; 配置华为s2700交换机 自行查阅文档.懒得写了.
+验证服务 访问 http://IP:9116/metrics 能返回数据,snmp_export服务正常.
+测试是否能获取到目标设备的数据: 访问 http://IP:9116/snmp?target=DEVIP 能获取到数据,配置成功.
+注意防火墙 把需要的端口加入规则中,不然访问不到排查绕弯路
+配置promthues 修改 promthues.yml文件. 添加一个新的job.
+- job_name:snmphonor_timestamps:trueparams:module:- if_mibscrape_interval:15sscrape_timeout:10smetrics_path:/snmpscheme:httpstatic_configs:- targets:- 172.16.23.253labels:tag:huawei-switch-s2700relabel_configs:- source_labels:[__address__]separator:;regex:(.*)target_label:__param_targetreplacement:$1action:replace- source_labels:[__param_target]separator:;regex:(.*)target_label:instancereplacement:$1action:replace- separator:;regex:(.</description>
+    </item>
+    
+  </channel>
+</rss>

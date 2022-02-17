@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.86.0" />
+  
+  <meta name="description" content="前提 公司需要环境Centos5, 又不能升级内核.
+查了一下 大概是 需要 yum –exclude=kernel* update 或者修改 yum.conf
+测试一下 出现一个问题: Loaded plugins: fastestmirror, security Loading mirror speeds from cached hostfile YumRepo Error: All mirror URLs are not using ftp, http[s] or file. Eg. Invalid release/ removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt Error: Cannot find a valid baseurl for repo: base 根据查询到的信息是,没有正常的源.
+解决问题 根据网上的源地址 修改一下: 位置: /etc/yum.repos.d/CentOS-Base.repo
+修改内容: [base] name=CentOS-5.11 - Base #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=os baseurl=http://vault.centos.org/5.11/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #released updates [updates] name=CentOS-5.">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Centos5不升级内核更新 | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Centos5不升级内核更新</h1>
+  <h3 id="前提">前提</h3>
+<p>公司需要环境Centos5, 又不能升级内核.</p>
+<p>查了一下 大概是 需要 <code>yum –exclude=kernel* update</code>   或者修改 yum.conf</p>
+<h3 id="测试一下-出现一个问题">测试一下 出现一个问题:</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Loaded plugins: fastestmirror, security
+Loading mirror speeds from cached hostfile
+YumRepo Error: All mirror URLs are not using ftp, http<span style="color:#666">[</span>s<span style="color:#666">]</span> or file.
+ Eg. Invalid release/
+removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt
+Error: Cannot find a valid baseurl <span style="color:#008000;font-weight:bold">for</span> repo: base
+</code></pre></div><p>根据查询到的信息是,没有正常的源.</p>
+<h3 id="解决问题-根据网上的源地址-修改一下">解决问题 根据网上的源地址 修改一下:</h3>
+<p>位置: <em>/etc/yum.repos.d/CentOS-Base.repo</em></p>
+<h3 id="修改内容">修改内容:</h3>
+<pre><code class="language-conf" data-lang="conf">[base]
+name=CentOS-5.11 - Base
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=os
+baseurl=http://vault.centos.org/5.11/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#released updates
+[updates]
+name=CentOS-5.11 - Updates
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=updates
+baseurl=http://vault.centos.org/5.11/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#packages used/produced in the build but not released
+[addons]
+name=CentOS-5.11 - Addons
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=addons
+baseurl=http://vault.centos.org/5.11/addons/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#additional packages that may be useful
+[extras]
+name=CentOS-5.11 - Extras
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=extras
+baseurl=http://vault.centos.org/5.11/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-5.11 - Plus
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=centosplus
+baseurl=http://vault.centos.org/5.11/centosplus/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-5.11 - Contrib
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=contrib
+baseurl=http://vault.centos.org/5.11/contrib/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+</code></pre><p>之后 再使用上面的yum 去更新,发现yum 语句是有问题的.</p>
+<p>正确的命令是: <code>yum --exclude=kernel\* update</code>   或者  <code>yum -x 'kernel*' update  </code></p>
+<h3 id="确认是否生效">确认是否生效</h3>
+<p>首先 <code>yum update</code> 内容可以看到 安装内容中 包含 &lsquo;kernel&rsquo; 信息.</p>
+<p>之后 执行上句命令后,可以看到 更新信息里没有 &lsquo;kernel&rsquo; .</p>
+<p>最后可以确定,这个方案是有效的.</p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

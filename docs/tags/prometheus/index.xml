@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prometheus on aLong blog</title>
+    <link>https://blog.51ai.vip/aLong/tags/prometheus/</link>
+    <description>Recent content in Prometheus on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Nov 2020 13:02:50 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/prometheus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker-compose编排搭建prometheus&#43;grafana&#43;alertmanager&#43;node-exporter&#43;snmp-exporter</title>
+      <link>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link>
+      <pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid>
+      <description>Docker-compose 目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。
+科普之后感觉自己对k8s还有有些发怵的。从简单的一个入手吧，选择了docker-compose。
+   Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。
+   安装 安装方式看了一下，我选择直接下载bin文件方式：
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose``` 通过 docker-compose version 看到版本信息算是安装完成。
+编写docker-compose.yml  目录结构：  ├── docker-compose.yaml ├── prometheus │ ├── rules │ │ └── *(rules).yaml/json │ ├── nodes │ │ └── *(nodes).yaml │ ├── data │ │ └── ... # 挂载prom的data数据 │ └── prometheus.yaml ├── alertmanager │ ├── templates │ │ └── *.tmpl │ └── alertmanager.</description>
+    </item>
+    
+    <item>
+      <title>Prometheus-SNMP_Exporter Generator</title>
+      <link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</link>
+      <pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid>
+      <description>Prometheus-SNMP Exporter  生成器从generator.yml读取并写入snmp.yml。
+ 之前在说Prometheus-snmp_export部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置).
+因为刚好所有通用的指标都取得通用的mib树. 在后期我搜集设备的信息需要一些私有mib的数据,这时候需要自己通过生成器来生成snmp.yml.
+Generator 的操作步骤 下载需要的程序(Docker方式跳过此步骤) # Debian-based distributions. sudo apt-get install unzip build-essential libsnmp-dev # Debian-based distros # Redhat-based distributions. sudo yum install gcc gcc-g++ make net-snmp net-snmp-utils net-snmp-libs net-snmp-devel # RHEL-based distros go get github.com/prometheus/snmp_exporter/generator cd ${GOPATH-$HOME/go}/src/github.com/prometheus/snmp_exporter/generator go build make mibs(不建议直接make) 这里直接make mibs 可能会失败,在make文件里设置的源有些已经不能访问了或执行出现错误.
+我建议先下载好mibs ,我已经上传github.
+建议自行搜集mib 不执行make mibs会方便一些
+把所有的mib放入mibs 目录下.
+需要准备好所有需要涉及到的mib文件. 除了公有的mib,我们还需要监控目标设备的私有mib.思科/华为之类的会提供这些mib,像锐捷这种需要和商务部联系.
+ 一些mib:
+https://github.com/netdisco/netdisco-mibs
+https://github.com/pgmillon/observium/tree/master/mibs
+https://github.com/librenms/librenms/tree/master/mibs
+ 当我们准备好所有的mib后,需要编写一个generator.yml. 下面是一个翻译的官方文档(翻译比较烂,自行查阅原文):
+modules:module_name:# 模块名称。您可以根据需要拥有任意数量的模块。walk:# 要walk的OID列表。 也可以是SNMP对象名称或特定实例。- 1.</description>
+    </item>
+    
+    <item>
+      <title>Prometheus告警模板详解</title>
+      <link>https://blog.51ai.vip/aLong/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Wed, 04 Dec 2019 11:51:43 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</guid>
+      <description>目的 之前配置告警之后,可以发送告警信息.但对于数据具体的结构信息,在模板中数据读取都比较懵.原因是不太清除警报都提供了哪些数据,除了我们设置的信息,还有没有其他的信息.
+告警数据结构 官方docs
+推送数据结构:
+Alerts数据 KV数据的处理方式 KV结构很简单,键值对.通过键获取对应的值.下面提供了一些方法处理这种结构的一些方法.
+字符串相关方法 警报提供的数据是通过GO模板解析的,GO模板的功能通过GO模板文档可以了解.
+下面提供了一些处理字符串的方法:
+微信通知的DEMO 上图中是微信接受的通知,下面展示通知模板的代码.
+{{- define &amp;#34;_alert_list&amp;#34; -}} {{- range .Alerts.Firing -}} ----------------------- 告警类型：{{ .Labels.alertname }} 告警主题: {{ .Annotations.summary }} 告警详情: {{ .Annotations.description }} 触发时间: {{ (.StartsAt.Add 28800e9).Format &amp;#34;2006-01-02 15:04:05&amp;#34; }} {{ end -}} ---------结束----------------- {{- end -}} {{- define &amp;#34;_resolve_list&amp;#34; -}} {{- range .Alerts.Resolved -}} ************************** 告警类型：{{ .Labels.alertname }} 告警主题: {{ .Annotations.summary }} 告警详情: {{ .Annotations.description }} 触发时间: {{ (.StartsAt.Add 28800e9).</description>
+    </item>
+    
+    <item>
+      <title>Prometheus标签处理&amp;服务发现</title>
+      <link>https://blog.51ai.vip/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link>
+      <pubDate>Tue, 03 Dec 2019 15:14:16 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid>
+      <description>标签处理的重要性 之前的[配置](https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/中提到了标签的处理,不过由于写的是静态的配置,标签可以自己设置或者不设置都可以.
+当使用服务发现之后发现标签处理的重要性提升了更高的级别.
+标签处理 - job_name:&amp;#39;node&amp;#39;static_configs:- targets:[&amp;#39;172.16.23.110:9100&amp;#39;,&amp;#39;172.16.23.111:9100&amp;#39;]metric_relable_configs:#通过正则重命名标签- action:replace #replace替换是默认动作。keep（只参加匹配标签的实例）、drop（不采集匹配正则的实例）、labelkeep\labeldrop(对标签进行过滤处理而非实例)等动作source_labels:[&amp;#39;job&amp;#39;]#原标签，job是默认就会产生的标签，这里job标签的值是noderegex:(.*) #正则匹配，这里匹配job标签内的内容，也就是nodereplacement:beijing #替换成什么内容，如果写$1就是将正则里读取的值target_label:idc #把替换内容赋值给idc标签- action:labeldrop #删除标签regex:job #把原job标签删除- job_name:&amp;#39;prometheus&amp;#39;static_configs:- targets:[&amp;#39;localhost:9090&amp;#39;]labels:location:bj3relabel_configs:- action:replacesource_labels:[&amp;#39;job&amp;#39;]regex:(.*)replacement:$1target_label:server以上两个例子都是替换标签,job:node中,删除了前job标签,下面的job新增了&amp;rsquo;server&amp;rsquo;标签内容取的job内容,但没删除job标签.
+通过标签我们组成多维模型.可以对标签重命名,删除,过滤信息等.
+服务发现 之前配置中的静态配置需要一个一些写配置,设备或者服务多的时候容易头大.
+这里可以通过服务发现简化手动配置工作.
+Prometheus支持多种服务发现机制,例如: consul、dns、openstack、file、kubernetes等.
+这里举例file.比较简单的方式.
+file机制中:需要提供文件来获取内容.文件格式为YAML 或 JSON格式.
+prometheus配置:
+scrape_configs:- job_name: &#39;prometheus&#39;file_sd_configs: - files: [&#39;/usr/local/prometheus/files_sd_configs/*.yaml&#39;] ##指定服务发现文件位置refresh_interval: 5s##刷新间隔改为5秒Prometheus 每5秒扫描一次指定位置的配置文件.
+服务发现文件格式:
+- targets:[&amp;#39;localhost:9090&amp;#39;]# 监控目标labels:# 配置标签server:local </description>
+    </item>
+    
+    <item>
+      <title>Prometheus-AlertManager警告管理搭建与配置</title>
+      <link>https://blog.51ai.vip/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 19 Oct 2019 09:40:15 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>AlertManager  AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。 它还负责消除和抑制警报。
+ 通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具. AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.
+Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发送警报到指定通知渠道.
+为了能让Prometheus发送警报,我们需要:
+ 搭建AlertManager服务. 定义AlertManager通知配置. 定义Prometheus警报规则并引入. 测试警报. 定义通知模板.  定义AlertManager通知配置 global:smtp_smarthost:&amp;#39;smtp.163.com:25&amp;#39;# 邮箱smtp服务器代理smtp_from:&amp;#39;shitu-0071@163.com&amp;#39;# 发送邮箱名称resolve_timeout:5m # 处理超时时间，默认为5minsmtp_auth_username:&amp;#39;shitu-0071@163.com&amp;#39;# 邮箱帐户smtp_auth_password:&amp;#39;******&amp;#39;# 邮箱授权码(注意是授权码,不知道自己查一下)wechat_api_url:&amp;#39;https://qyapi.weixin.qq.com/cgi-bin/&amp;#39;# 企业微信地址# 定义模板信心templates:- &amp;#39;template/*.tmpl&amp;#39;# 定义路由树信息route:group_by:[&amp;#39;alertname&amp;#39;,&amp;#39;cluster&amp;#39;,&amp;#39;service&amp;#39;]# 报警分组依据,设置后会按照设定值分组,例如instance,alertname等# 同标签警告会在作为一组警报发送group_wait:10s # 组内等待时间,触发阈值后,XXs后发送本组警报group_interval:10s # 每个组之前间隔时间(group_by设定的值划分的组)repeat_interval:1m # 重复发送警报的周期(对于email配置中，此项不可以设置过低，否则将会由于邮件发送太多频繁，被smtp服务器拒绝)receiver:&amp;#39;email&amp;#39;# 发送警报的接收者的名称# 以下receivers name的名称routes:- match:# 普通匹配serverity:critical # 警告级别criticalreceiver:email # 通过邮件发送- match_re:# 正则匹配severity:^(warning)$ # 匹配警告级别为warning的receiver:wechat # 通过微信发送告警- receiver:along # 定义接收者match:# 匹配severity:test # 等级为test# 定义警报接收者信息receivers:- name:&amp;#39;email&amp;#39;# 警报email_configs:# 邮箱配置- to:&amp;#39;******@163.com&amp;#39;# 接收警报的email配置html:&amp;#39;{{ template &amp;#34;test.html&amp;#34; . }}&amp;#39;# 设定邮箱的内容模板headers:{Subject:&amp;#34;[WARN] 报警邮件&amp;#34;}# 接收邮件的标题webhook_configs:# webhook配置- url:&amp;#39;http://127.</description>
+    </item>
+    
+    <item>
+      <title>Prometueus.yml配置文件说明</title>
+      <link>https://blog.51ai.vip/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Wed, 09 Oct 2019 15:20:58 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</guid>
+      <description>整体配置 prometueus.yml 配置文件注解与说明
+global:# 全局配置scrape_interval:15s # 默认值为 1m，用于设置每次数据收集的间隔scrape_timeout:10s # 默认10s,收集超时时间evaluation_interval:15s # 记录规则/告警的执行周期 默认1mexternal_labels:# 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签monitor:&amp;#39;ctmonitor&amp;#39;rule_files:# 指定告警规则文件&amp;amp;记录文件- &amp;#34;/usr/local/prometheus/rules.yml&amp;#34;alerting:# 告警管理配置alert_relable_configs:# 修改告警内容- alertmanagers:# 告警管理起配置- static_configs:# 静态配置- targets:# 警告器地址- 172.16.23.12:9093# 用于配置 scrape 的 endpoint 配置需要 scrape 的 targets 以及相应的参数# 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 scrape_configs:# 抓取配置选项- job_name:prometheus # 默认情况下分配给刮削度量的作业名称。scrape_interval:5s # 从这项工作中获取目标的频率。scrape_timeout:3s # 每次获取超时时间honor_timestamps:true# 默认false, 在获取时是否使用当前的时间戳metrics_path:/metrics # 从目标获取度量的http资源路径。scheme:http # static_configs:# 为此作业标记的静态配置目标的列表。- targets:# 目监控标- 172.16.23.12:9090# 设备地址+端口- job_name:&amp;#39;snmp-10.0.0.1&amp;#39;scrape_interval:30sscrape_timeout:20sstatic_configs:- targets:- 10.0.0.1# SNMP设备,端口默认5060metrics_path:/snmpparams:module:[if_mib]relabel_configs:# 重定义标签- source_labels:[__address__] # 需要修改的标签target_label:__param_target # 改成的标签- source_labels:[__param_target]target_label:instance- target_label:__address__replacement:172.16.23.12:9117各部分详解  部分官方文档的译文
+ 官方文档中,使用了通用占位符来解释设定值的定义.</description>
+    </item>
+    
+    <item>
+      <title>Prometheus&#43;Grafana安装搭建</title>
+      <link>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid>
+      <description>介绍  Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
+  Prometheus的特点:
+ 多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。   架构图 Prometheus服务大致过程：   Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。
+  Prometheus在本地存储抓取的所有数据，并通过一定规则进行清理和整理数据，并把得到的结果存储到新的时间序列中。
+  Prometheus通过PromQL和其他API可视化地展示收集的数据。Prometheus支持很多方式的图表可视化，例如Grafana、自带的Promdash以及自身提供的模版引擎等等。Prometheus还提供HTTP API的查询方式，自定义所需要的输出。
+  PushGateway支持Client主动推送metrics到PushGateway，而Prometheus只是定时去Gateway上抓取数据。
+  Alertmanager是独立于Prometheus的一个组件，可以支持Prometheus的查询语句，提供十分灵活的报警方式。
+  Prometheus 支持通过SNMP协议获取mertics数据.通过配置job,利用snmp_export读取设备监控信息.
+  指标(Metric)类型  Counter 计数器,从数据0开始累计计算. 理想状态会永远增长. 累计计算请求次数等 Gauges 瞬时状态的值. 可以任意变化的数值，适用 CPU 使用率 温度等 Histogram 对一段时间范围内数据进行采样，并对所有数值求和与统计数量、柱状图. 某个时间对某个度量值，分组，一段时间http相应大小，请求耗时的时间。 Summary 同样产生多个指标，分别带有后缀_bucket(仅histogram)、_sum、_count   Histogram和Summary都可以获取分位数。 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数histogram_quantile()计算出来。 Summary则是在应用程序中直接计算出了分位数。 Histograms and summaries中阐述了两者的区别，特别是Summary的的分位数不能被聚合。 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。 LatencyTipOfTheDay: You can’t average percentiles.</description>
+    </item>
+    
+  </channel>
+</rss>
