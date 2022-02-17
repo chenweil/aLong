@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hosts on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/hosts/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/hosts/</link>
     <description>Recent content in hosts on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Aug 2019 09:41:55 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/hosts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Aug 2019 09:41:55 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/hosts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SwitchHosts管理编辑hosts工具</title>
-      <link>https://blog.51ai.vip/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</guid>
       <description>管理Hosts工具 SwitchHosts 地址: SwitchHosts
 开发工程中,针对不同项目设置不同的域名.
 办法很多,例如直接编辑hosts文件,通过环境工具提供的功能设置等.

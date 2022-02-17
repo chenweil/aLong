@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Liunx on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/liunx/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/liunx/</link>
     <description>Recent content in Liunx on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 May 2019 11:17:59 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/liunx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 May 2019 11:17:59 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/liunx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubutun16.04安装Python</title>
-      <link>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link>
       <pubDate>Fri, 24 May 2019 11:17:59 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid>
       <description>目的 安装python3.7.3 安装pip
 准备工作  系统内置python2.X,去除默认python的软链, sudo rm /usr/bin/python 安装一些软件包&amp;amp;软件包保持最新状态.  sudo apt-get update
 sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
@@ -28,10 +28,10 @@ make之后 该 make install 嘛? NO! 是 sudo make altinstall
     
     <item>
       <title>Ubutun下安装Docker</title>
-      <link>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link>
       <pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid>
       <description>Docker简介  一个能够把开发的应用程序自动部署到容器的开源引擎 三大概念：镜像（Image）容器（Container）仓库（Repository）
  具体信息请参考官方。官方概述（养成看文档习惯）
 安装环境 Ubuntu 16.04 LTS

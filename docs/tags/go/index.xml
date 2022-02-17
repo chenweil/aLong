@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/go/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/go/</link>
     <description>Recent content in Go on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Feb 2021 09:06:08 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Feb 2021 09:06:08 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解决/usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied问题</title>
-      <link>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 22 Feb 2021 09:06:08 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</guid>
       <description>最近Goland在run的时候发现一个问题 open /usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied
 情况具体是当我run的时候有问题。debug可以。根据错误提示看到是权限的事。
 解决方式 执行 sudo chown -R xxx:yyy /usr/local/go
@@ -24,10 +24,10 @@ xxx 用户名， yyy 组名
     
     <item>
       <title>GORM 创建联合约束/索引</title>
-      <link>https://blog.51ai.vip/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link>
       <pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid>
       <description>GROM创建联合索引 之前提到一个联合约束，那么根据需求再次做一个演示：
 type Demo struct { ID uint `gorm:&amp;#34;primary_key&amp;#34;` CreatedAt time.Time UpdatedAt time.Time DeletedAt *time.Time `gorm:&amp;#34;index;unique_index:name_d&amp;#34;` Name string `gorm:&amp;#34;unique_index:name_d&amp;#34;` Status int } 通过demo 迁移后，deleted_at 与 name 会形成一个联合约束。
 -OK,完结-</description>
@@ -35,10 +35,10 @@ type Demo struct { ID uint `gorm:&amp;#34;primary_key&amp;#34;` CreatedAt time.T
     
     <item>
       <title>golang.org/x/xerrors：undefined: errors.Frame</title>
-      <link>https://blog.51ai.vip/aLong/posts/golang-org-x-xerrorsundefined-errors-frame/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/golang-org-x-xerrorsundefined-errors-frame/</link>
       <pubDate>Thu, 16 Jan 2020 19:05:39 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/golang-org-x-xerrorsundefined-errors-frame/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/golang-org-x-xerrorsundefined-errors-frame/</guid>
       <description>项目初始化遇到问题 错误为：
 ../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/adaptor_go1_13.go:16:14: undefined: errors.Frame ../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/format_go1_13.go:12:18: undefined: errors.Formatter exit status 2 exit status 1 通过科普得到一个方法： go get -u golang.org/x/xerrors
 问题解决了。</description>
@@ -46,10 +46,10 @@ type Demo struct { ID uint `gorm:&amp;#34;primary_key&amp;#34;` CreatedAt time.T
     
     <item>
       <title>Golang 环境准备</title>
-      <link>https://blog.51ai.vip/aLong/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</link>
       <pubDate>Thu, 16 Jan 2020 18:51:34 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid>
       <description>安装GOlang 环境:macOS
 shell: zsh
  安装步骤：  brew update &amp;amp;&amp;amp; brew upgrade # 更新 brew install go # 安装 go  配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc  # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin  退出保存后，使文件生效 source ~/.zshrc=  </description>
@@ -57,10 +57,10 @@ shell: zsh
     
     <item>
       <title>Go学习笔记</title>
-      <link>https://blog.51ai.vip/aLong/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 15 May 2019 11:05:52 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>变量 var 声明,支持类型判断.
 var name string string类型 name
 var s string 值初始化

@@ -14,12 +14,12 @@ Alerts数据 KV数据的处理方式 KV结构很简单,键值对.通过键获取
 下面提供了一些处理字符串的方法:
 微信通知的DEMO 上图中是微信接受的通知,下面展示通知模板的代码.
 {{- define &#34;_alert_list&#34; -}} {{- range .Alerts.Firing -}} ----------------------- 告警类型：{{ .Labels.alertname }} 告警主题: {{ .Annotations.summary }} 告警详情: {{ .Annotations.description }} 触发时间: {{ (.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }} {{ end -}} ---------结束----------------- {{- end -}} {{- define &#34;_resolve_list&#34; -}} {{- range .Alerts.Resolved -}} ************************** 告警类型：{{ .Labels.alertname }} 告警主题: {{ .Annotations.summary }} 告警详情: {{ .Annotations.description }} 触发时间: {{ (.StartsAt.Add 28800e9).">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
   
   
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
   
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -48,13 +48,13 @@ Alerts数据 KV数据的处理方式 KV结构很简单,键值对.通过键获取
       
       
       
-      <a href="/aLong/" class="btn">Blog</a>
+      <a href="/aLong.github.io/" class="btn">Blog</a>
     
       
       
       
       
-      <a href="/aLong/tags/" class="btn">Tags</a>
+      <a href="/aLong.github.io/tags/" class="btn">Tags</a>
     
   </nav>
 </section>

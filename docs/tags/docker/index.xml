@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/docker/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/docker/</link>
     <description>Recent content in Docker on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 May 2020 11:03:48 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 May 2020 11:03:48 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid>
       <description>Linux系统重启后Docker自动启动 系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。 配置过一次总是忘记命令，这里特意记录一下： systemctl enable docker.service
 容器自动启动配置 容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。 涉及到的参数为： --restart=always
 参数有：
@@ -25,10 +25,10 @@
     
     <item>
       <title>Laradock安装与使用</title>
-      <link>https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
       <description>Laradock 安装与使用 官网
 GitHub: https://github.com/laradock/laradock
 要求   Git Docker &amp;gt;= 17.12   项目的位置  已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录.  结构 :
@@ -40,10 +40,10 @@ GitHub: https://github.com/laradock/laradock
     
     <item>
       <title>Docker常用命令</title>
-      <link>https://blog.51ai.vip/aLong/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 11 Apr 2019 15:09:19 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>Docker常用命令 说常用不如说自己用到的命令。
 容器相关 学习了一下docker，基础常用命令记录下。 ####docker run/新建并启动容器 这个run其实包含两个不走，先执行新建容器(docker create),接着启动容器(docker start)。敲两个是不是有点麻烦吧。
 docker run xx [COMMAND]
@@ -57,10 +57,10 @@ docker exec 可以在容器内直接执行任意命令。 docker exec -it xx /bi
     
     <item>
       <title>Ubutun下安装Docker</title>
-      <link>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link>
       <pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid>
       <description>Docker简介  一个能够把开发的应用程序自动部署到容器的开源引擎 三大概念：镜像（Image）容器（Container）仓库（Repository）
  具体信息请参考官方。官方概述（养成看文档习惯）
 安装环境 Ubuntu 16.04 LTS

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NetWork on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/network/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/network/</link>
     <description>Recent content in NetWork on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Nov 2021 14:04:47 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Nov 2021 14:04:47 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>armbian配置-N1盒子</title>
-      <link>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sat, 20 Nov 2021 14:04:47 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
       <description>armbian配置（N1盒子）
 设置时区： timedatectl set-timezone Asia/Shanghai
 安装docker   apt update
@@ -27,10 +27,10 @@ wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker
     
     <item>
       <title>S5720 SNMP v3配置</title>
-      <link>https://blog.51ai.vip/aLong/posts/s5720-snmp-v3/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/s5720-snmp-v3/</link>
       <pubDate>Tue, 16 Nov 2021 16:38:35 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/s5720-snmp-v3/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/s5720-snmp-v3/</guid>
       <description>S5720 SNMP v3配置 系统视图 system-view
 SNMP服务 snmp-agent
 管理端口(默认161) snmp-agent udp-port *port-num*

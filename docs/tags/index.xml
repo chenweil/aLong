@@ -2,368 +2,368 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/</link>
     <description>Recent content in Tags on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Jan 2022 10:15:53 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jan 2022 10:15:53 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>zabbix</title>
-      <link>https://blog.51ai.vip/aLong/tags/zabbix/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/zabbix/</link>
       <pubDate>Fri, 14 Jan 2022 10:15:53 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/zabbix/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/zabbix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://blog.51ai.vip/aLong/tags/linux/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/linux/</link>
       <pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/linux/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Redis</title>
-      <link>https://blog.51ai.vip/aLong/tags/redis/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/redis/</link>
       <pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/redis/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/redis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NetWork</title>
-      <link>https://blog.51ai.vip/aLong/tags/network/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/network/</link>
       <pubDate>Sat, 20 Nov 2021 14:04:47 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/network/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SNMP</title>
-      <link>https://blog.51ai.vip/aLong/tags/snmp/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/snmp/</link>
       <pubDate>Tue, 16 Nov 2021 16:38:35 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/snmp/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/snmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xiaomi</title>
-      <link>https://blog.51ai.vip/aLong/tags/xiaomi/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/xiaomi/</link>
       <pubDate>Fri, 21 May 2021 16:51:23 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/xiaomi/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/xiaomi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MacOS</title>
-      <link>https://blog.51ai.vip/aLong/tags/macos/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/macos/</link>
       <pubDate>Thu, 06 May 2021 11:06:20 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/macos/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/macos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SSH</title>
-      <link>https://blog.51ai.vip/aLong/tags/ssh/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/ssh/</link>
       <pubDate>Sat, 13 Mar 2021 18:21:50 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/ssh/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>https://blog.51ai.vip/aLong/tags/go/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/go/</link>
       <pubDate>Mon, 22 Feb 2021 09:06:08 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/go/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Grafana</title>
-      <link>https://blog.51ai.vip/aLong/tags/grafana/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/grafana/</link>
       <pubDate>Mon, 30 Nov 2020 13:46:47 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/grafana/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/grafana/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Prometheus</title>
-      <link>https://blog.51ai.vip/aLong/tags/prometheus/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/prometheus/</link>
       <pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/prometheus/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/prometheus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>office</title>
-      <link>https://blog.51ai.vip/aLong/tags/office/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/office/</link>
       <pubDate>Tue, 13 Oct 2020 13:14:34 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/office/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/office/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SSL</title>
-      <link>https://blog.51ai.vip/aLong/tags/ssl/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/ssl/</link>
       <pubDate>Wed, 24 Jun 2020 13:33:18 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/ssl/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/ssl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GORM</title>
-      <link>https://blog.51ai.vip/aLong/tags/gorm/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/gorm/</link>
       <pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/gorm/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/gorm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>https://blog.51ai.vip/aLong/tags/mysql/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/mysql/</link>
       <pubDate>Thu, 11 Jun 2020 11:15:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/mysql/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://blog.51ai.vip/aLong/tags/docker/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/docker/</link>
       <pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/docker/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>terminal</title>
-      <link>https://blog.51ai.vip/aLong/tags/terminal/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/terminal/</link>
       <pubDate>Mon, 20 Jan 2020 08:13:10 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/terminal/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/terminal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>yarn</title>
-      <link>https://blog.51ai.vip/aLong/tags/yarn/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/yarn/</link>
       <pubDate>Thu, 16 Jan 2020 14:21:26 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/yarn/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/yarn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AlertManager</title>
-      <link>https://blog.51ai.vip/aLong/tags/alertmanager/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/alertmanager/</link>
       <pubDate>Wed, 04 Dec 2019 11:51:43 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/alertmanager/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/alertmanager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>M3DB</title>
-      <link>https://blog.51ai.vip/aLong/tags/m3db/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/m3db/</link>
       <pubDate>Fri, 29 Nov 2019 17:41:43 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/m3db/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/m3db/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iperf</title>
-      <link>https://blog.51ai.vip/aLong/tags/iperf/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/iperf/</link>
       <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/iperf/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/iperf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LANSpeedTest</title>
-      <link>https://blog.51ai.vip/aLong/tags/lanspeedtest/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/lanspeedtest/</link>
       <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/lanspeedtest/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/lanspeedtest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>soft</title>
-      <link>https://blog.51ai.vip/aLong/tags/soft/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/soft/</link>
       <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/soft/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/soft/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>https://blog.51ai.vip/aLong/tags/windows/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/windows/</link>
       <pubDate>Tue, 15 Oct 2019 11:35:11 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/windows/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>curl</title>
-      <link>https://blog.51ai.vip/aLong/tags/curl/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/curl/</link>
       <pubDate>Wed, 09 Oct 2019 14:45:13 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/curl/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/curl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>yaml</title>
-      <link>https://blog.51ai.vip/aLong/tags/yaml/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/yaml/</link>
       <pubDate>Tue, 24 Sep 2019 10:20:31 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/yaml/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/yaml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nodejs</title>
-      <link>https://blog.51ai.vip/aLong/tags/nodejs/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/nodejs/</link>
       <pubDate>Mon, 02 Sep 2019 10:15:01 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/nodejs/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/nodejs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Promethues</title>
-      <link>https://blog.51ai.vip/aLong/tags/promethues/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/promethues/</link>
       <pubDate>Thu, 29 Aug 2019 10:06:01 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/promethues/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/promethues/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Laravel</title>
-      <link>https://blog.51ai.vip/aLong/tags/laravel/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/laravel/</link>
       <pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/laravel/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/laravel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hosts</title>
-      <link>https://blog.51ai.vip/aLong/tags/hosts/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/hosts/</link>
       <pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/hosts/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/hosts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>https://blog.51ai.vip/aLong/tags/tools/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/tools/</link>
       <pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/tools/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VM</title>
-      <link>https://blog.51ai.vip/aLong/tags/vm/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/vm/</link>
       <pubDate>Mon, 12 Aug 2019 11:29:38 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/vm/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/vm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Composer</title>
-      <link>https://blog.51ai.vip/aLong/tags/composer/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/composer/</link>
       <pubDate>Mon, 15 Jul 2019 17:24:45 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/composer/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/composer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>material</title>
-      <link>https://blog.51ai.vip/aLong/tags/material/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/material/</link>
       <pubDate>Thu, 27 Jun 2019 09:58:04 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/material/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/material/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo</title>
-      <link>https://blog.51ai.vip/aLong/tags/hexo/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/hexo/</link>
       <pubDate>Tue, 04 Jun 2019 10:46:48 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/hexo/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://blog.51ai.vip/aLong/tags/python/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/python/</link>
       <pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/python/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Socket</title>
-      <link>https://blog.51ai.vip/aLong/tags/socket/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/socket/</link>
       <pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/socket/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/socket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Liunx</title>
-      <link>https://blog.51ai.vip/aLong/tags/liunx/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/liunx/</link>
       <pubDate>Fri, 24 May 2019 11:17:59 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/liunx/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/liunx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubutun</title>
-      <link>https://blog.51ai.vip/aLong/tags/ubutun/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/ubutun/</link>
       <pubDate>Fri, 24 May 2019 11:17:59 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/ubutun/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/ubutun/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gulp</title>
-      <link>https://blog.51ai.vip/aLong/tags/gulp/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/tags/gulp/</link>
       <pubDate>Mon, 22 Apr 2019 18:08:54 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/tags/gulp/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/tags/gulp/</guid>
       <description></description>
     </item>
     

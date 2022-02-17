@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prometheus on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/prometheus/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/prometheus/</link>
     <description>Recent content in Prometheus on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Nov 2020 13:02:50 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/prometheus/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Nov 2020 13:02:50 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/prometheus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker-compose编排搭建prometheus&#43;grafana&#43;alertmanager&#43;node-exporter&#43;snmp-exporter</title>
-      <link>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link>
       <pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid>
       <description>Docker-compose 目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。
 科普之后感觉自己对k8s还有有些发怵的。从简单的一个入手吧，选择了docker-compose。
    Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。
@@ -23,10 +23,10 @@ curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-c
     
     <item>
       <title>Prometheus-SNMP_Exporter Generator</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus-snmp-exporter-generator/</link>
       <pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus-snmp-exporter-generator/</guid>
       <description>Prometheus-SNMP Exporter  生成器从generator.yml读取并写入snmp.yml。
  之前在说Prometheus-snmp_export部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置).
 因为刚好所有通用的指标都取得通用的mib树. 在后期我搜集设备的信息需要一些私有mib的数据,这时候需要自己通过生成器来生成snmp.yml.
@@ -45,10 +45,10 @@ modules:module_name:# 模块名称。您可以根据需要拥有任意数量的�
     
     <item>
       <title>Prometheus告警模板详解</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Wed, 04 Dec 2019 11:51:43 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</guid>
       <description>目的 之前配置告警之后,可以发送告警信息.但对于数据具体的结构信息,在模板中数据读取都比较懵.原因是不太清除警报都提供了哪些数据,除了我们设置的信息,还有没有其他的信息.
 告警数据结构 官方docs
 推送数据结构:
@@ -61,10 +61,10 @@ Alerts数据 KV数据的处理方式 KV结构很简单,键值对.通过键获取
     
     <item>
       <title>Prometheus标签处理&amp;服务发现</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link>
       <pubDate>Tue, 03 Dec 2019 15:14:16 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid>
       <description>标签处理的重要性 之前的[配置](https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/中提到了标签的处理,不过由于写的是静态的配置,标签可以自己设置或者不设置都可以.
 当使用服务发现之后发现标签处理的重要性提升了更高的级别.
 标签处理 - job_name:&amp;#39;node&amp;#39;static_configs:- targets:[&amp;#39;172.16.23.110:9100&amp;#39;,&amp;#39;172.16.23.111:9100&amp;#39;]metric_relable_configs:#通过正则重命名标签- action:replace #replace替换是默认动作。keep（只参加匹配标签的实例）、drop（不采集匹配正则的实例）、labelkeep\labeldrop(对标签进行过滤处理而非实例)等动作source_labels:[&amp;#39;job&amp;#39;]#原标签，job是默认就会产生的标签，这里job标签的值是noderegex:(.*) #正则匹配，这里匹配job标签内的内容，也就是nodereplacement:beijing #替换成什么内容，如果写$1就是将正则里读取的值target_label:idc #把替换内容赋值给idc标签- action:labeldrop #删除标签regex:job #把原job标签删除- job_name:&amp;#39;prometheus&amp;#39;static_configs:- targets:[&amp;#39;localhost:9090&amp;#39;]labels:location:bj3relabel_configs:- action:replacesource_labels:[&amp;#39;job&amp;#39;]regex:(.*)replacement:$1target_label:server以上两个例子都是替换标签,job:node中,删除了前job标签,下面的job新增了&amp;rsquo;server&amp;rsquo;标签内容取的job内容,但没删除job标签.
@@ -82,10 +82,10 @@ scrape_configs:- job_name: &#39;prometheus&#39;file_sd_configs: - files: [&#39
     
     <item>
       <title>Prometheus-AlertManager警告管理搭建与配置</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sat, 19 Oct 2019 09:40:15 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
       <description>AlertManager  AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。 它还负责消除和抑制警报。
  通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具. AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.
 Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发送警报到指定通知渠道.
@@ -95,10 +95,10 @@ Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发�
     
     <item>
       <title>Prometueus.yml配置文件说明</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</link>
       <pubDate>Wed, 09 Oct 2019 15:20:58 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</guid>
       <description>整体配置 prometueus.yml 配置文件注解与说明
 global:# 全局配置scrape_interval:15s # 默认值为 1m，用于设置每次数据收集的间隔scrape_timeout:10s # 默认10s,收集超时时间evaluation_interval:15s # 记录规则/告警的执行周期 默认1mexternal_labels:# 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签monitor:&amp;#39;ctmonitor&amp;#39;rule_files:# 指定告警规则文件&amp;amp;记录文件- &amp;#34;/usr/local/prometheus/rules.yml&amp;#34;alerting:# 告警管理配置alert_relable_configs:# 修改告警内容- alertmanagers:# 告警管理起配置- static_configs:# 静态配置- targets:# 警告器地址- 172.16.23.12:9093# 用于配置 scrape 的 endpoint 配置需要 scrape 的 targets 以及相应的参数# 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 scrape_configs:# 抓取配置选项- job_name:prometheus # 默认情况下分配给刮削度量的作业名称。scrape_interval:5s # 从这项工作中获取目标的频率。scrape_timeout:3s # 每次获取超时时间honor_timestamps:true# 默认false, 在获取时是否使用当前的时间戳metrics_path:/metrics # 从目标获取度量的http资源路径。scheme:http # static_configs:# 为此作业标记的静态配置目标的列表。- targets:# 目监控标- 172.16.23.12:9090# 设备地址+端口- job_name:&amp;#39;snmp-10.0.0.1&amp;#39;scrape_interval:30sscrape_timeout:20sstatic_configs:- targets:- 10.0.0.1# SNMP设备,端口默认5060metrics_path:/snmpparams:module:[if_mib]relabel_configs:# 重定义标签- source_labels:[__address__] # 需要修改的标签target_label:__param_target # 改成的标签- source_labels:[__param_target]target_label:instance- target_label:__address__replacement:172.16.23.12:9117各部分详解  部分官方文档的译文
  官方文档中,使用了通用占位符来解释设定值的定义.</description>
@@ -106,10 +106,10 @@ global:# 全局配置scrape_interval:15s # 默认值为 1m，用于设置每次�
     
     <item>
       <title>Prometheus&#43;Grafana安装搭建</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid>
       <description>介绍  Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
   Prometheus的特点:
  多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。   架构图 Prometheus服务大致过程：   Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。

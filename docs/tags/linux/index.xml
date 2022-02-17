@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/linux/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/linux/</link>
     <description>Recent content in Linux on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jan 2022 10:16:39 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 10:16:39 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux环境redis开机启动</title>
-      <link>https://blog.51ai.vip/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link>
       <pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid>
       <description>前提 系统部署在ubuntu20.04中，用到redis数据库。 但是测试时候，设备重启发现redis服务没有启动。 由于是变异安装的，系统找不到redis.service。
 解决方案 系统添加服务文件，并执行。
 编写文件 文件路径/usr/lib/systemd/system
@@ -23,10 +23,10 @@
     
     <item>
       <title>armbian配置-N1盒子</title>
-      <link>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sat, 20 Nov 2021 14:04:47 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
       <description>armbian配置（N1盒子）
 设置时区： timedatectl set-timezone Asia/Shanghai
 安装docker   apt update
@@ -41,10 +41,10 @@ wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker
     
     <item>
       <title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid>
       <description>Linux系统重启后Docker自动启动 系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。 配置过一次总是忘记命令，这里特意记录一下： systemctl enable docker.service
 容器自动启动配置 容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。 涉及到的参数为： --restart=always
 参数有：
@@ -57,10 +57,10 @@ wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker
     
     <item>
       <title>Centos5不升级内核更新</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/</link>
       <pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/</guid>
       <description>前提 公司需要环境Centos5, 又不能升级内核.
 查了一下 大概是 需要 yum –exclude=kernel* update 或者修改 yum.conf
 测试一下 出现一个问题: Loaded plugins: fastestmirror, security Loading mirror speeds from cached hostfile YumRepo Error: All mirror URLs are not using ftp, http[s] or file. Eg. Invalid release/ removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt Error: Cannot find a valid baseurl for repo: base 根据查询到的信息是,没有正常的源.
@@ -70,10 +70,10 @@ wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker
     
     <item>
       <title>Centos5不升级内核更新</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link>
       <pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid>
       <description>前提 公司需要环境Centos5, 又不能升级内核.
 查了一下 大概是 需要 yum –exclude=kernel* update 或者修改 yum.conf
 测试一下 出现一个问题: Loaded plugins: fastestmirror, security Loading mirror speeds from cached hostfile YumRepo Error: All mirror URLs are not using ftp, http[s] or file. Eg. Invalid release/ removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt Error: Cannot find a valid baseurl for repo: base 根据查询到的信息是,没有正常的源.
@@ -83,10 +83,10 @@ wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker
     
     <item>
       <title>Centos7时间设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Fri, 19 Apr 2019 11:42:02 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid>
       <description>Centos7时间相关 查看时间 date hwclock 硬件时间 timedatectl 各时间状态
 设置&amp;amp;更新服务时间 安装ntpdate yum install utp ntpdate
 设置同步 ntpdate cn.pool.ntp.org (time.windows.com) 地址看喜好
@@ -97,10 +97,10 @@ timedatectl 很多设置，需要请查相关资料。</description>
     
     <item>
       <title>Centos7防火墙相关设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Thu, 18 Apr 2019 17:44:22 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid>
       <description>Centos7与之前不太一样 以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。 这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。
 查看防火墙服务状态 systemctl status firewalld
 ####查看f防火墙状态 firewall-cmd --state
@@ -117,10 +117,10 @@ timedatectl 很多设置，需要请查相关资料。</description>
     
     <item>
       <title>Centos7启动等级设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Mon, 15 Apr 2019 16:55:19 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid>
       <description>Centos7启动级别 启动级别分为7个： 0 - 系统停机状态 1 - 单用户工作状态 2 - 多用户状态（没有NFS） 3 - 多用户状态（有NFS） 4 - 系统未使用，留给用户 5 - 图形界面 6 - 系统正常关闭并重新启动
 切换启动级别 之前一直都是在种端中输入指令 init3 切换启动级别。 设置永久启动3级别， vi /etc/inittab 把init3设置默认即可。
 centos7 设置出现不同 runlevels被targets所取代，即CentOS7采用加载target的方式来替代之前的启动级别。 multi-user.target = init3 graphical.target = init5 我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。 systemctl set-default multi-user.target 设置为init3 systemctl set-default graphical.target 设置为init5</description>

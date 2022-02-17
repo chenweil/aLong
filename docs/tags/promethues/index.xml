@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Promethues on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/promethues/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/promethues/</link>
     <description>Recent content in Promethues on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Aug 2019 10:06:01 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/promethues/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Aug 2019 10:06:01 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/promethues/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prometheus-snmp_export部署</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Thu, 29 Aug 2019 10:06:01 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid>
       <description>SNMP SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。
 目的 通过snmp_export,获取设备信息.
 准备 系统: centos7,docker19. 之前已经安装好 Prometheus

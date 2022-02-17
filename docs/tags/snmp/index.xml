@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SNMP on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/snmp/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/snmp/</link>
     <description>Recent content in SNMP on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Nov 2021 16:38:35 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/snmp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Nov 2021 16:38:35 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/snmp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>S5720 SNMP v3配置</title>
-      <link>https://blog.51ai.vip/aLong/posts/s5720-snmp-v3/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/s5720-snmp-v3/</link>
       <pubDate>Tue, 16 Nov 2021 16:38:35 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/s5720-snmp-v3/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/s5720-snmp-v3/</guid>
       <description>S5720 SNMP v3配置 系统视图 system-view
 SNMP服务 snmp-agent
 管理端口(默认161) snmp-agent udp-port *port-num*
@@ -26,10 +26,10 @@ SNMP服务 snmp-agent
     
     <item>
       <title>Prometheus-SNMP_Exporter Generator</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus-snmp-exporter-generator/</link>
       <pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus-snmp-exporter-generator/</guid>
       <description>Prometheus-SNMP Exporter  生成器从generator.yml读取并写入snmp.yml。
  之前在说Prometheus-snmp_export部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置).
 因为刚好所有通用的指标都取得通用的mib树. 在后期我搜集设备的信息需要一些私有mib的数据,这时候需要自己通过生成器来生成snmp.yml.
@@ -48,10 +48,10 @@ modules:module_name:# 模块名称。您可以根据需要拥有任意数量的�
     
     <item>
       <title>Prometheus-snmp_export部署</title>
-      <link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Thu, 29 Aug 2019 10:06:01 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid>
       <description>SNMP SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。
 目的 通过snmp_export,获取设备信息.
 准备 系统: centos7,docker19. 之前已经安装好 Prometheus

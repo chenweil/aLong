@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Composer on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/composer/</link>
+    <link>https://blog.51ai.vip/aLong.github.io/tags/composer/</link>
     <description>Recent content in Composer on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jul 2019 17:24:45 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/composer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Jul 2019 17:24:45 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong.github.io/tags/composer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Composer笔记</title>
-      <link>https://blog.51ai.vip/aLong/posts/composer%E7%AC%94%E8%AE%B0/</link>
+      <link>https://blog.51ai.vip/aLong.github.io/posts/composer%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 15 Jul 2019 17:24:45 +0000</pubDate>
       
-      <guid>https://blog.51ai.vip/aLong/posts/composer%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://blog.51ai.vip/aLong.github.io/posts/composer%E7%AC%94%E8%AE%B0/</guid>
       <description>composer - laravel5 创建laravel项目： conposer create-project laravel/laravel=5.8.* --prefer-dist ./XXX
 laravel=5.8.* 这里代表要部署5.8中最高版本 &amp;ndash;prefer-dist 参数代表优先下载zip
 安装vendor: composer install

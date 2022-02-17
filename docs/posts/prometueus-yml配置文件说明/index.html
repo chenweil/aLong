@@ -9,12 +9,12 @@
   <meta name="description" content="整体配置 prometueus.yml 配置文件注解与说明
 global:# 全局配置scrape_interval:15s # 默认值为 1m，用于设置每次数据收集的间隔scrape_timeout:10s # 默认10s,收集超时时间evaluation_interval:15s # 记录规则/告警的执行周期 默认1mexternal_labels:# 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签monitor:&#39;ctmonitor&#39;rule_files:# 指定告警规则文件&amp;记录文件- &#34;/usr/local/prometheus/rules.yml&#34;alerting:# 告警管理配置alert_relable_configs:# 修改告警内容- alertmanagers:# 告警管理起配置- static_configs:# 静态配置- targets:# 警告器地址- 172.16.23.12:9093# 用于配置 scrape 的 endpoint 配置需要 scrape 的 targets 以及相应的参数# 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 scrape_configs:# 抓取配置选项- job_name:prometheus # 默认情况下分配给刮削度量的作业名称。scrape_interval:5s # 从这项工作中获取目标的频率。scrape_timeout:3s # 每次获取超时时间honor_timestamps:true# 默认false, 在获取时是否使用当前的时间戳metrics_path:/metrics # 从目标获取度量的http资源路径。scheme:http # static_configs:# 为此作业标记的静态配置目标的列表。- targets:# 目监控标- 172.16.23.12:9090# 设备地址&#43;端口- job_name:&#39;snmp-10.0.0.1&#39;scrape_interval:30sscrape_timeout:20sstatic_configs:- targets:- 10.0.0.1# SNMP设备,端口默认5060metrics_path:/snmpparams:module:[if_mib]relabel_configs:# 重定义标签- source_labels:[__address__] # 需要修改的标签target_label:__param_target # 改成的标签- source_labels:[__param_target]target_label:instance- target_label:__address__replacement:172.16.23.12:9117各部分详解  部分官方文档的译文
  官方文档中,使用了通用占位符来解释设定值的定义.">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
   
   
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
   
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -43,13 +43,13 @@ global:# 全局配置scrape_interval:15s # 默认值为 1m，用于设置每次�
       
       
       
-      <a href="/aLong/" class="btn">Blog</a>
+      <a href="/aLong.github.io/" class="btn">Blog</a>
     
       
       
       
       
-      <a href="/aLong/tags/" class="btn">Tags</a>
+      <a href="/aLong.github.io/tags/" class="btn">Tags</a>
     
   </nav>
 </section>

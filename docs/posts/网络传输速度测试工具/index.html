@@ -10,12 +10,12 @@
 iperf Iperf可以报告带宽,延迟抖动和数据包丢失. 官方文档 安装不写了.跳过
 iperf常用参数介绍
 -i 2	#表示每2秒显示一次报告 -w 80k	#对于TCP方式，此设置为TCP窗口大小。对于UDP方式，此设置为接受UDP数据包的缓冲区大小，限制可以接受数据包的最大值 -B 192.168.122.1	#绑定到主机的多个地址中的一个。对于客户端来说，这个参数设置了出栈接口。对于服务器端来说，这个参数设置入栈接口。这个参数只用于具有多网络接口的主机。 #在Iperf的UDP模式下，此参数用于绑 定和加入一个多播组。使用范围在224.0.0.0至239.255.255.255的多播地址 #常用客户端参数 -b 100m	#用于udp测试时，设置测试发送的带宽，单位：bit/秒，不设置时默认为：1Mbit/秒 -c #指定服务端ip地址 -d #同时测试上行和下行 -t 10	#设置传输时间，为10秒	 -P 5	#指定发起5个线程 UDP测试 服务端 iperf -u -s # -u表示以udp模式运行，-s表示作为服务端, 这里需要设置ip 客户端 iperf -u -c 192.168.100.11 -b 100M -t 60 -i 2 #解释：在udp模式下，以100Mbps为数据发送速率，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒 iperf -u -c 192.168.100.11 5M -P 30 -t 6	#客户端同时向服务器端发起30个连接线程，以5Mbps为数据发送速率 iperf -u -c 192.168.100.11 -b 100M -d -t 60 #以100M为数据发送速率，进行上下行带宽测试 TCP测试 服务端 iperf -s 客户端 iperf -c 192.">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
   
   
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
   
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -44,13 +44,13 @@ iperf常用参数介绍
       
       
       
-      <a href="/aLong/" class="btn">Blog</a>
+      <a href="/aLong.github.io/" class="btn">Blog</a>
     
       
       
       
       
-      <a href="/aLong/tags/" class="btn">Tags</a>
+      <a href="/aLong.github.io/tags/" class="btn">Tags</a>
     
   </nav>
 </section>

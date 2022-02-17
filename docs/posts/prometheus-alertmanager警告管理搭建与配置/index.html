@@ -11,12 +11,12 @@
 Prometheus-&gt;触发定义的警报规则-&gt;AlertManager-&gt;发送警报到指定通知渠道.
 为了能让Prometheus发送警报,我们需要:
  搭建AlertManager服务. 定义AlertManager通知配置. 定义Prometheus警报规则并引入. 测试警报. 定义通知模板.  定义AlertManager通知配置 global:smtp_smarthost:&#39;smtp.163.com:25&#39;# 邮箱smtp服务器代理smtp_from:&#39;shitu-0071@163.com&#39;# 发送邮箱名称resolve_timeout:5m # 处理超时时间，默认为5minsmtp_auth_username:&#39;shitu-0071@163.com&#39;# 邮箱帐户smtp_auth_password:&#39;******&#39;# 邮箱授权码(注意是授权码,不知道自己查一下)wechat_api_url:&#39;https://qyapi.weixin.qq.com/cgi-bin/&#39;# 企业微信地址# 定义模板信心templates:- &#39;template/*.tmpl&#39;# 定义路由树信息route:group_by:[&#39;alertname&#39;,&#39;cluster&#39;,&#39;service&#39;]# 报警分组依据,设置后会按照设定值分组,例如instance,alertname等# 同标签警告会在作为一组警报发送group_wait:10s # 组内等待时间,触发阈值后,XXs后发送本组警报group_interval:10s # 每个组之前间隔时间(group_by设定的值划分的组)repeat_interval:1m # 重复发送警报的周期(对于email配置中，此项不可以设置过低，否则将会由于邮件发送太多频繁，被smtp服务器拒绝)receiver:&#39;email&#39;# 发送警报的接收者的名称# 以下receivers name的名称routes:- match:# 普通匹配serverity:critical # 警告级别criticalreceiver:email # 通过邮件发送- match_re:# 正则匹配severity:^(warning)$ # 匹配警告级别为warning的receiver:wechat # 通过微信发送告警- receiver:along # 定义接收者match:# 匹配severity:test # 等级为test# 定义警报接收者信息receivers:- name:&#39;email&#39;# 警报email_configs:# 邮箱配置- to:&#39;******@163.com&#39;# 接收警报的email配置html:&#39;{{ template &#34;test.html&#34; . }}&#39;# 设定邮箱的内容模板headers:{Subject:&#34;[WARN] 报警邮件&#34;}# 接收邮件的标题webhook_configs:# webhook配置- url:&#39;http://127.">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
   
   
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
   
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -45,13 +45,13 @@ Prometheus-&gt;触发定义的警报规则-&gt;AlertManager-&gt;发送警报到�
       
       
       
-      <a href="/aLong/" class="btn">Blog</a>
+      <a href="/aLong.github.io/" class="btn">Blog</a>
     
       
       
       
       
-      <a href="/aLong/tags/" class="btn">Tags</a>
+      <a href="/aLong.github.io/tags/" class="btn">Tags</a>
     
   </nav>
 </section>

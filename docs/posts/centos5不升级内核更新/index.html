@@ -11,12 +11,12 @@
 测试一下 出现一个问题: Loaded plugins: fastestmirror, security Loading mirror speeds from cached hostfile YumRepo Error: All mirror URLs are not using ftp, http[s] or file. Eg. Invalid release/ removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt Error: Cannot find a valid baseurl for repo: base 根据查询到的信息是,没有正常的源.
 解决问题 根据网上的源地址 修改一下: 位置: /etc/yum.repos.d/CentOS-Base.repo
 修改内容: [base] name=CentOS-5.11 - Base #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=os baseurl=http://vault.centos.org/5.11/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #released updates [updates] name=CentOS-5.">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
   
   
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong.github.io/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
   
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -45,13 +45,13 @@
       
       
       
-      <a href="/aLong/" class="btn">Blog</a>
+      <a href="/aLong.github.io/" class="btn">Blog</a>
     
       
       
       
       
-      <a href="/aLong/tags/" class="btn">Tags</a>
+      <a href="/aLong.github.io/tags/" class="btn">Tags</a>
     
   </nav>
 </section>
