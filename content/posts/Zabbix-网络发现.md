@@ -28,7 +28,7 @@ Zabbix6 网络发现
 
 1. 创建 Discovery rule
    
-   ![3qoFJE](https://gitee.com/chenweil/aLong_note/raw/master/upimg/3qoFJE.png)
+   ![3qoFJE.png](https://s2.loli.net/2022/05/30/8kqFzeiKIAr6fDN.png)
    
    - Name：规则名称（唯一）
    
@@ -48,7 +48,7 @@ Zabbix6 网络发现
 
 - Checks: 发现的方式
   
-  ![FTCW1e](https://gitee.com/chenweil/aLong_note/raw/master/upimg/FTCW1e.png)
+  ![FTCW1e.png](https://s2.loli.net/2022/05/30/Y8R6VhGNgmFq7KS.png)
 
 - Device uniqueness criteria：设备唯一标识
 
@@ -56,19 +56,17 @@ Zabbix6 网络发现
 
 - Visible name：描述名
   
-  ![ohbmIZ](https://gitee.com/chenweil/aLong_note/raw/master/upimg/ohbmIZ.png)
-
+  ![ohbmIZ.png](https://s2.loli.net/2022/05/30/8azsd4mVbDPU39L.png)
+  
    这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。
-
+  
   唯一标识可以通过IP(默认)，或者SNMP的取值，或者zabbix agent取值。重复的名称不会处理。
-
+  
   Host name 和 Visible name选项类似。Host name肯定是要唯一的。
-
 2. 创建 Discovery actions
    
    action配置：
-   
-   ![UnF5zk](https://gitee.com/chenweil/aLong_note/raw/master/upimg/UnF5zk.png)
+   ![UnF5zk.png](https://s2.loli.net/2022/05/30/NWKO1iMeCRHqAgp.png)
    
    Name ： action 名称
    
@@ -78,11 +76,11 @@ Zabbix6 网络发现
    
    条件详情：
    
-   ![mbUrYY](https://gitee.com/chenweil/aLong_note/raw/master/upimg/mbUrYY.png)
+   ![mbUrYY.png](https://s2.loli.net/2022/05/30/W3ELpOmN2x5tU8e.png)
    
    Type多个方式：
    
-   ![T7qbkT](https://gitee.com/chenweil/aLong_note/raw/master/upimg/T7qbkT.png)
+   ![T7qbkT.png](https://s2.loli.net/2022/05/30/mVhnrkE9f2tlBUp.png)
    
    可以通过多种类型适配条件。
    
@@ -98,7 +96,7 @@ Zabbix6 网络发现
    
    配置这个Operations 的意思是，当通过前面action条件匹配的到数据后续的操作内容。例如加入/移除设备组、关联/取消模版、发送通知等操作。
    
-   ![yUO3dE](https://gitee.com/chenweil/aLong_note/raw/master/upimg/yUO3dE.png)
+   ![yUO3dE.png](https://s2.loli.net/2022/05/30/DOEN57RnsWM8cmA.png)
    
    ### 验证结果
    
@@ -110,4 +108,4 @@ Zabbix6 网络发现
    
    在内网找到很多摄像头
    
-   ![aj6697](https://gitee.com/chenweil/aLong_note/raw/master/upimg/aj6697.png)
+   ![aj6697.png](https://s2.loli.net/2022/05/30/sExWG2UNDCO3ld1.png)

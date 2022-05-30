@@ -99,7 +99,7 @@
 <ol>
 <li>
 <p>创建 Discovery rule</p>
-<p><img src="https://gitee.com/chenweil/aLong_note/raw/master/upimg/3qoFJE.png" alt="3qoFJE"></p>
+<p><img src="https://s2.loli.net/2022/05/30/8kqFzeiKIAr6fDN.png" alt="3qoFJE.png"></p>
 <ul>
 <li>
 <p>Name：规则名称（唯一）</p>
@@ -128,7 +128,7 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。</p>
 </li>
 <li>
 <p>Checks: 发现的方式</p>
-<p><img src="https://gitee.com/chenweil/aLong_note/raw/master/upimg/FTCW1e.png" alt="FTCW1e"></p>
+<p><img src="https://s2.loli.net/2022/05/30/Y8R6VhGNgmFq7KS.png" alt="FTCW1e.png"></p>
 </li>
 <li>
 <p>Device uniqueness criteria：设备唯一标识</p>
@@ -138,7 +138,7 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。</p>
 </li>
 <li>
 <p>Visible name：描述名</p>
-<p><img src="https://gitee.com/chenweil/aLong_note/raw/master/upimg/ohbmIZ.png" alt="ohbmIZ"></p>
+<p><img src="https://s2.loli.net/2022/05/30/8azsd4mVbDPU39L.png" alt="ohbmIZ.png"></p>
 <p>这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。</p>
 <p>唯一标识可以通过IP(默认)，或者SNMP的取值，或者zabbix agent取值。重复的名称不会处理。</p>
 <p>Host name 和 Visible name选项类似。Host name肯定是要唯一的。</p>
@@ -147,15 +147,15 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。</p>
 <ol start="2">
 <li>
 <p>创建 Discovery actions</p>
-<p>action配置：</p>
-<p><img src="https://gitee.com/chenweil/aLong_note/raw/master/upimg/UnF5zk.png" alt="UnF5zk"></p>
+<p>action配置：
+<img src="https://s2.loli.net/2022/05/30/NWKO1iMeCRHqAgp.png" alt="UnF5zk.png"></p>
 <p>Name ： action 名称</p>
 <p>Conditions：action的条件</p>
 <p>Enabled: action的开关</p>
 <p>条件详情：</p>
-<p><img src="https://gitee.com/chenweil/aLong_note/raw/master/upimg/mbUrYY.png" alt="mbUrYY"></p>
+<p><img src="https://s2.loli.net/2022/05/30/W3ELpOmN2x5tU8e.png" alt="mbUrYY.png"></p>
 <p>Type多个方式：</p>
-<p><img src="https://gitee.com/chenweil/aLong_note/raw/master/upimg/T7qbkT.png" alt="T7qbkT"></p>
+<p><img src="https://s2.loli.net/2022/05/30/mVhnrkE9f2tlBUp.png" alt="T7qbkT.png"></p>
 <p>可以通过多种类型适配条件。</p>
 <p>根据选择的Type类型，下面的Operator是根据Type来配置的选项。</p>
 <p>Operator： 基本就是 等于或不等于。</p>
@@ -163,13 +163,13 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。</p>
 <p>如果Type 是Host IP，那么第三个选项就变成了Value。</p>
 <p>配置Operations：</p>
 <p>配置这个Operations 的意思是，当通过前面action条件匹配的到数据后续的操作内容。例如加入/移除设备组、关联/取消模版、发送通知等操作。</p>
-<p><img src="https://gitee.com/chenweil/aLong_note/raw/master/upimg/yUO3dE.png" alt="yUO3dE"></p>
+<p><img src="https://s2.loli.net/2022/05/30/DOEN57RnsWM8cmA.png" alt="yUO3dE.png"></p>
 <h3 id="验证结果">验证结果</h3>
 <p>我上面截图的例子中：</p>
 <p>actions 配置的内容为，通过icmp ping 发现负责此条件的设备，把这些设备分配到xxx网络摄像头的设备组里；并把主机关联的模版是icmp ping。</p>
 <p>发现之后的结果就是：</p>
 <p>在内网找到很多摄像头</p>
-<p><img src="https://gitee.com/chenweil/aLong_note/raw/master/upimg/aj6697.png" alt="aj6697"></p>
+<p><img src="https://s2.loli.net/2022/05/30/sExWG2UNDCO3ld1.png" alt="aj6697.png"></p>
 </li>
 </ol>
 
