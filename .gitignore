@@ -1,2 +1,4 @@
-./themes/*
+/resource/_gen/
+#/themes/
 .obsidian*
+.DS_Store
