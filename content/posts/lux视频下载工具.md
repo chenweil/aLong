@@ -1,7 +1,7 @@
 ---
 title: "Lux视频下载工具"
 date: 2022-09-01T13:03:41+08:00
-draft: true
+draft: false
 ---
 
 ## 简介
