@@ -6,7 +6,24 @@
     <description>Recent content on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Sep 2022 13:03:41 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 11:15:29 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zabbix自动发现SNMP设备</title>
+      <link>https://blog.51ai.vip/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link>
+      <pubDate>Wed, 12 Oct 2022 11:15:29 +0800</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid>
+      <description>Zabbix提供高效灵活的网络自动发现功能。 网络发现的优势：
+ 加快部署速度 简化管理 在快速变化的环境中避免过度管理 manual-zh   发现SNMP例子 网段内存在几天设备，其中一台是SNMPv2，一台SNMPv3，通过发现将他们加入并监控
+大概流程：
+ 发现规则，通过发现规则去发现设备。 发现后的动作，发现设备后做什么。 验证发现结果。  创建发现规则 Configuration -&amp;gt; Discovery -&amp;gt; Create discovery rule 
+通过SNMPv2协议，根据oid检查。 这个oid是设备名。 community是根据设备来的。通过SNMP取设备名，host名称是IP地址，可见名称是SNMP取的设备名称。
+重点配置内容：
+ IP range 发现IP范围 Update interval 发现周期 Checks 使用此检查列表来执行网络发现 Device uniqueness criteria 唯一标识 Host name 主机名称 Visible name 可见名称  创建发现动作 Configuration -&amp;gt; Actions -&amp;gt; Discovery actions
+Action 选项中： 主要配置Conditions内容： 我写了两个条件，因为我发现写了v2，v3版本的协议。所以有两个条件。如果都是v2就写一个就ok。简单来讲满足我demo。
+Operations 选项：  发现的设备添加， Add host 。 加入设备组， Add to host groups：组名。 关联模版，Link to templates：模版名。 开启Host。  通过这个配置后，发现的主机会根据这个配置进行操作。</description>
+    </item>
+    
     <item>
       <title>Lux视频下载工具</title>
       <link>https://blog.51ai.vip/aLong/posts/lux%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/</link>
