@@ -1,5 +1,5 @@
 ---
-title: "IOS使用Shadowrocket激活EmbyX"
+title: "IOS使用Shadowrocket激活Emby"
 date: 2022-11-16T10:44:11+08:00
 draft: false
 ---
@@ -29,11 +29,11 @@ hostname = mb3admin.com
 ![wVqbC231FH945Zn](https://s2.loli.net/2022/11/16/wVqbC231FH945Zn.png)
 注意在Shadowrocket的首页上，全局路由选择配置。
 
-最后进入EmbyX软件。可能会提示证书点OK。如果没有提示，点一个影片后也会提示，点OK。如果Shadowrocket开启通知可以看到提示认证成功。
+最后进入Emby软件。可能会提示证书点OK。如果没有提示，点一个影片后也会提示，点OK。如果Shadowrocket开启通知可以看到提示认证成功。
 ![TgfoqKyI2pFNrt8](https://s2.loli.net/2022/11/16/TgfoqKyI2pFNrt8.png)
 后面就可以畅快看影视啦。
 
-下次进入EmbyX时不需要Shadowrocket的配置了。
+下次进入Emby时不需要Shadowrocket的配置了。当出现付费提示再开启那个配置就可以激活了。
 
 完结～
 祝好！

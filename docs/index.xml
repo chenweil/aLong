@@ -6,7 +6,20 @@
     <description>Recent content on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Oct 2022 11:15:29 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 10:44:11 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IOS使用Shadowrocket激活Emby</title>
+      <link>https://blog.51ai.vip/aLong/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</link>
+      <pubDate>Wed, 16 Nov 2022 10:44:11 +0800</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</guid>
+      <description>前提需要手机安装ShadowRocket。没有可以自己去找共享ID。 长按后弹出选项： 打开配置，例如在default上添加规则。点击default，编辑纯文本。 在文本最下面加入内容：
+[Script] EmbyPremiere = type=http-response,script-path=https://gitlab.com/iptv-org/embypublic/-/raw/master/Script/EmbyPremiere.js,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,max-size=131072,requires-body=true,timeout=10,enable=true [MITM] hostname = mb3admin.com 点击保存后，点右侧!进入。点击HTTPS解密。 开启HTTPS加密，会生成证书。同意安装描述文件。右上角点击勾。 去手机设置中，通用-&amp;gt;描述文件与设备管理-&amp;gt;点击描述文件(名称大概有Shadowrocket那个)-&amp;gt;安装。 注意在Shadowrocket的首页上，全局路由选择配置。
+最后进入Emby软件。可能会提示证书点OK。如果没有提示，点一个影片后也会提示，点OK。如果Shadowrocket开启通知可以看到提示认证成功。 后面就可以畅快看影视啦。
+下次进入Emby时不需要Shadowrocket的配置了。当出现付费提示再开启那个配置就可以激活了。
+完结～ 祝好！</description>
+    </item>
+    
     <item>
       <title>Zabbix自动发现SNMP设备</title>
       <link>https://blog.51ai.vip/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link>
