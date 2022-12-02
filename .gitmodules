@@ -1,3 +1,3 @@
-[submodule "cayman-hugo-theme"]
-	path = cayman-hugo-theme
-	url = https://github.com/zwbetz-gh/cayman-hugo-theme.git
+[submodule "themes/cayman-hugo-theme"]
+path = cayman-hugo-theme
+url = https://github.com/zwbetz-gh/cayman-hugo-theme.git
