@@ -6,7 +6,41 @@
     <description>Recent content on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Nov 2022 10:44:11 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Jan 2023 16:30:47 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu22.04安装kubeadm</title>
+      <link>https://blog.51ai.vip/aLong/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link>
+      <pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid>
+      <description>学习k8s 学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04
+系统安装docker Docker官方手册
+master、node设备各安装docker、kubelet、 kubeadm、 kubectl。
+为kubeadm准备 master、node进行准备工作：
+将cgroup处理改成systemd nano /etc/docker/daemon.json
+{ &amp;#34;exec-opts&amp;#34;: [&amp;#34;native.cgroupdriver=systemd&amp;#34;], &amp;#34;log-driver&amp;#34;: &amp;#34;json-file&amp;#34;, &amp;#34;log-opts&amp;#34;: { &amp;#34;max-size&amp;#34;: &amp;#34;100m&amp;#34; }, &amp;#34;storage-driver&amp;#34;: &amp;#34;overlay2&amp;#34; } sudo systemctl enable docker sudo systemctl daemon-reload sudo systemctl restart docker
+为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块 nano /etc/modules-load.d/k8s.conf
+br_netfilter nano /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward=1 sudo sysctl --system
+修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能 sudo swapoff -a sudo sed -ri &amp;#39;/\sswap\s/s/^#?/#/&amp;#39; /etc/fstab 安装kubeadm Kuneadm官方手册 在master、node上都需要安装</description>
+    </item>
+    
+    <item>
+      <title>通过minikube部署K8S学习环境</title>
+      <link>https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid>
+      <description>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。
+MacOS部署方式: 官方教程
+本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 sudo install minikube-darwin-amd64 /usr/local/bin/minikube 通过minikube启动集群 minikube start \ --kubernetes-version=v1.23.9 \ --image-mirror-country=&amp;#39;cn&amp;#39; \ --registry-mirror=https://？？？？？.mirror.aliyuncs.com 因为是国内，所以--image-mirror-country=&#39;cn&#39;。通过--registry-mirror为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。 因为我学习的版本是1.23.x，所以制定了版本--kubernetes-version=v1.23.9。 默认他读去了驱动配置，识别是parallels,自己定义方式--driver=hyperkit。
+安装结果： 错误： 如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。
+驱动选择： 使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见drivers page
+验证结果 查询minikube状态 进入面板 kubectl控制 minikube kubectl -- get pods -A kubectl在minikube中使用，需要写 nimikune kubectl --后面加入执行的命令。 macos默认使用的zsh，在zsh加入alias就可以敲的少的了。
+vi ~/.zshrc #加入一行 alias kubectl=&amp;#34;minikube kubectl --&amp;#34; #退出 source ~/.zshrc 再创建一个Pod 创建： kubectl run nginx --image=nginx:alpine 查询： kubectl get pods nginx 详情： kubectl describe pods nginx 到这里k8s可以使用了。</description>
+    </item>
+    
     <item>
       <title>IOS使用Shadowrocket激活Emby</title>
       <link>https://blog.51ai.vip/aLong/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</link>
@@ -27,14 +61,13 @@
       
       <guid>https://blog.51ai.vip/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid>
       <description>Zabbix提供高效灵活的网络自动发现功能。 网络发现的优势：
- 加快部署速度 简化管理 在快速变化的环境中避免过度管理 manual-zh   发现SNMP例子 网段内存在几天设备，其中一台是SNMPv2，一台SNMPv3，通过发现将他们加入并监控
+加快部署速度 简化管理 在快速变化的环境中避免过度管理 manual-zh 发现SNMP例子 网段内存在几天设备，其中一台是SNMPv2，一台SNMPv3，通过发现将他们加入并监控
 大概流程：
- 发现规则，通过发现规则去发现设备。 发现后的动作，发现设备后做什么。 验证发现结果。  创建发现规则 Configuration -&amp;gt; Discovery -&amp;gt; Create discovery rule 
-通过SNMPv2协议，根据oid检查。 这个oid是设备名。 community是根据设备来的。通过SNMP取设备名，host名称是IP地址，可见名称是SNMP取的设备名称。
+发现规则，通过发现规则去发现设备。 发现后的动作，发现设备后做什么。 验证发现结果。 创建发现规则 Configuration -&amp;gt; Discovery -&amp;gt; Create discovery rule 通过SNMPv2协议，根据oid检查。 这个oid是设备名。 community是根据设备来的。通过SNMP取设备名，host名称是IP地址，可见名称是SNMP取的设备名称。
 重点配置内容：
- IP range 发现IP范围 Update interval 发现周期 Checks 使用此检查列表来执行网络发现 Device uniqueness criteria 唯一标识 Host name 主机名称 Visible name 可见名称  创建发现动作 Configuration -&amp;gt; Actions -&amp;gt; Discovery actions
+IP range 发现IP范围 Update interval 发现周期 Checks 使用此检查列表来执行网络发现 Device uniqueness criteria 唯一标识 Host name 主机名称 Visible name 可见名称 创建发现动作 Configuration -&amp;gt; Actions -&amp;gt; Discovery actions
 Action 选项中： 主要配置Conditions内容： 我写了两个条件，因为我发现写了v2，v3版本的协议。所以有两个条件。如果都是v2就写一个就ok。简单来讲满足我demo。
-Operations 选项：  发现的设备添加， Add host 。 加入设备组， Add to host groups：组名。 关联模版，Link to templates：模版名。 开启Host。  通过这个配置后，发现的主机会根据这个配置进行操作。</description>
+Operations 选项： 发现的设备添加， Add host 。 加入设备组， Add to host groups：组名。 关联模版，Link to templates：模版名。 开启Host。 通过这个配置后，发现的主机会根据这个配置进行操作。</description>
     </item>
     
     <item>
@@ -49,7 +82,7 @@ Operations 选项：  发现的设备添加， Add host 。 加入设备组， A
 需要的依赖 ffmpeg
 使用 命令: lux [OPTIONS] URL [URL...]
 例子:
-#我想下载某专辑视频,首先创建一个文件夹 mkdir golang #然后进入文件夹 cd golang ##执行lux 下载专辑 (-eto bilibili每集文件名不包含播放列表标题) lux -p -eto https://www.bilibiLi.com/video/BV1SF411z7XW ##选择性下载 例如只下载 10-20集 lux -p -eto -items 10-20 https://www.bilibiLi.com/video/BV1SF411z7XW ## 选择清晰度 需要-i查看一下清晰度.查看 download with值 lux -i https://www.bilibili.com/video/BV1SF411z7XW ## 加入清晰度参数1080(不建议,列表执行清晰度可能不全是1080会导致报错) lux -p -eto -f 80-7 https://www.bilibili.com/video/BV1SF411z7XW 图片展示  下载:  下载完成结果  查询清晰度   </description>
+#我想下载某专辑视频,首先创建一个文件夹 mkdir golang #然后进入文件夹 cd golang ##执行lux 下载专辑 (-eto bilibili每集文件名不包含播放列表标题) lux -p -eto https://www.bilibiLi.com/video/BV1SF411z7XW ##选择性下载 例如只下载 10-20集 lux -p -eto -items 10-20 https://www.bilibiLi.com/video/BV1SF411z7XW ## 选择清晰度 需要-i查看一下清晰度.查看 download with值 lux -i https://www.bilibili.com/video/BV1SF411z7XW ## 加入清晰度参数1080(不建议,列表执行清晰度可能不全是1080会导致报错) lux -p -eto -f 80-7 https://www.bilibili.com/video/BV1SF411z7XW 图片展示 下载: 下载完成结果 查询清晰度 </description>
     </item>
     
     <item>
@@ -59,18 +92,24 @@ Operations 选项：  发现的设备添加， Add host 。 加入设备组， A
       
       <guid>https://blog.51ai.vip/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid>
       <description>Zabbix6 网络发现
-功能   快速发现并添加主机
-  简单的管理
-  随着环境的改变而快速搭建系统
-  发现配置依据   IP地址段
-  基于服务(FTP、SSH、Web、POP3、IMAP、TCP&amp;hellip;)的
-  从Zabbix-Agent接收到的信息
-  SNMP agent接收的信息
-  添加方式   创建 Discovery rule
-  Name：规则名称（唯一）
-  Discovery by proxy： 是否由代理执行
-  IP range： IP地址范围
-     单个IP: 192.168.1.33 IP段: 192.168.1-10.1-255. 范围受限于覆盖地址的总数（小于64K）。 子网掩码: : 192.168.4.0/24 支持的子网掩码: /16 - /30 for IPv4 addresses /112 - /128 for IPv6 addresses\IP列表: 192.</description>
+功能 快速发现并添加主机
+简单的管理
+随着环境的改变而快速搭建系统
+发现配置依据 IP地址段
+基于服务(FTP、SSH、Web、POP3、IMAP、TCP&amp;hellip;)的
+从Zabbix-Agent接收到的信息
+SNMP agent接收的信息
+添加方式 创建 Discovery rule
+Name：规则名称（唯一）
+Discovery by proxy： 是否由代理执行
+IP range： IP地址范围
+单个IP: 192.168.1.33 IP段: 192.168.1-10.1-255. 范围受限于覆盖地址的总数（小于64K）。 子网掩码: : 192.168.4.0/24 支持的子网掩码: /16 - /30 for IPv4 addresses /112 - /128 for IPv6 addresses\IP列表: 192.168.1.1-255, 192.168.2.1-100, 192.168.2.200, 192.168.4.0/24 Zabbix 3.0.0起，此字段支持空格，表格和多行。
+Update interval: Zabbix执行规则的频率
+Checks: 发现的方式
+Device uniqueness criteria：设备唯一标识
+Host name ： 主机名
+Visible name：描述名
+这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。</description>
     </item>
     
     <item>
@@ -95,14 +134,17 @@ Operations 选项：  发现的设备添加， Add host 。 加入设备组， A
       <guid>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
       <description>armbian配置（N1盒子）
 设置时区： timedatectl set-timezone Asia/Shanghai
-安装docker   apt update
-  apt install ca-certificates curl gnupg lsb-release
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-  echo \ &amp;quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&amp;quot; | tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
-  apt update
-  apt install docker-ce docker-ce-cli containerd.io
-  安装docker-compose wget地址是加速器转换地址，版本和地址请根据版本号编辑地址
-wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker-compose-linux-aarch64 &amp;amp;&amp;amp; mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-compose</description>
+安装docker apt update
+apt install ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \ &amp;quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&amp;quot; | tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
+apt update
+apt install docker-ce docker-ce-cli containerd.io
+安装docker-compose wget地址是加速器转换地址，版本和地址请根据版本号编辑地址
+wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker-compose-linux-aarch64 &amp;amp;&amp;amp; mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-compose
+WIFI 查看附近无线网络信号：nmcli dev wifi list
+无密码的 WIFI：nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt;
+加密WIFI： nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt; password 网卡配置 设置多IP auto eth0:1 allow-hotplug eth0:1 iface eth0:1 inet static address 1.</description>
     </item>
     
     <item>
@@ -117,8 +159,7 @@ SNMP服务 snmp-agent
 配置版本(默认v3) snmp-agent sys-info version *v3*
 配置用户组 snmp-agent group v3 *group-name* {authentication | privacy | noauthentication}
 三种认证加密方式
-配置v3用户 snmp-agent usm-user v3 *user-name* [ group *group-name*] 
-配置用户认证密码 snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]
+配置v3用户 snmp-agent usm-user v3 *user-name* [ group *group-name*] 配置用户认证密码 snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]
 配置加密密码 snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]</description>
     </item>
     
@@ -137,8 +178,8 @@ Server没一场，那问题就在proxy了吧。
 原因 因为是主动的proxy，那他会定期去server要数据。
 这个3600就是配置的更新周期了。1个小时才去要一次，所以肯定是没监控了。
 为了验证，就等了1小时看看： 实锤了，1小时。后面也就有了数据。 Host是1小时之后开始有数据的，也就是他同步后就开始执行监控项了。
-查询到的内容： [地址](https://subscription.packtpub.com/book/networking_and_servers/9781784399764/1/ch01lvl1sec10/understanding-the-zabbix-proxies-data-flow)  解决 Ok，那么在重新部署的容器加上此参数(ZBX_CONFIGFREQUENCY)。
-docker run --name zbxproxy -d \ -e ZBX_SERVER_HOST=192.168.10.66 \ -e ZBX_HOSTNAME=&amp;#34;testproxy&amp;#34; \ -e ZBX_TIMEOUT=&amp;#34;10&amp;#34; \ -e ZBX_TLSACCEPT=psk \ -e ZBX_TLSCONNECT=psk \ -e ZBX_TLSPSKIDENTITY=helloworld \ -e ZBX_TLSPSKFILE=zbx_proxy.psk \ -e ZBX_CONFIGFREQUENCY=600 \ -v /etc/localtime:/etc/localtime:ro \ -v /zbx_proxy.</description>
+查询到的内容： [地址](https://subscription.packtpub.com/book/networking_and_servers/9781784399764/1/ch01lvl1sec10/understanding-the-zabbix-proxies-data-flow) 解决 Ok，那么在重新部署的容器加上此参数(ZBX_CONFIGFREQUENCY)。
+docker run --name zbxproxy -d \ -e ZBX_SERVER_HOST=192.168.10.66 \ -e ZBX_HOSTNAME=&amp;#34;testproxy&amp;#34; \ -e ZBX_TIMEOUT=&amp;#34;10&amp;#34; \ -e ZBX_TLSACCEPT=psk \ -e ZBX_TLSCONNECT=psk \ -e ZBX_TLSPSKIDENTITY=helloworld \ -e ZBX_TLSPSKFILE=zbx_proxy.psk \ -e ZBX_CONFIGFREQUENCY=600 \ -v /etc/localtime:/etc/localtime:ro \ -v /zbx_proxy.psk:/var/lib/zabbix/enc/zbx_proxy.psk \ --restart=always \ zabbix/zabbix-proxy-sqlite3:alpine-trunk &amp;ndash;祝好</description>
     </item>
     
     <item>
@@ -149,10 +190,10 @@ docker run --name zbxproxy -d \ -e ZBX_SERVER_HOST=192.168.10.66 \ -e ZBX_HOSTNA
       <guid>https://blog.51ai.vip/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid>
       <description>前提 版本： zabbix-server 5.4
 任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。
-安装Zabbix-Proxy  安装Zabbix仓库  wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb dpkg -i zabbix-release_5.4-1+ubuntu20.04_all.deb apt update 安装Zabbix-proxy &amp;amp; mysql  这里我选择的是mysql作为数据库
+安装Zabbix-Proxy 安装Zabbix仓库 wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb dpkg -i zabbix-release_5.4-1+ubuntu20.04_all.deb apt update 安装Zabbix-proxy &amp;amp; mysql 这里我选择的是mysql作为数据库
 apt install mysql-server
 apt install zabbix-proxy-mysql
-导入数据  zcat /usr/share/doc/zabbix-proxy-mysql/schema.sql.gz | mysql -uzabbix -p zabbix
+导入数据 zcat /usr/share/doc/zabbix-proxy-mysql/schema.sql.gz | mysql -uzabbix -p zabbix
 这里可能跑不通。我装了两次都发现没有 schema.sql.gz 这个文件。 如果你也是，那需要找一下这个sql文件。
 下载5.4源码包： wget https://cdn.zabbix.com/zabbix/sources/stable/5.4/zabbix-5.4.1.tar.gz 解压之后，在 /zabbix-5.4.1/databases/mysql/ 中
 通过 cat schema.sql | mysql -uzabbix -p 导入到数据库中。
@@ -161,7 +202,7 @@ vim /etc/zabbix/zabbix_proxy.conf
 修改Zabbix Server地址,Hostname，在server添加中，此名称要与这里一致。
 修改为正确的数据库名字、用户名、密码。
 其他配置可以酌情配置。例如server配置频率，log位置，本地缓存时间、主动被动、监听端口等等。
-启动zabbix-proxy systemctl start zabbix-proxy &amp;amp;&amp;amp; systemctl enable zabbix-proxy 在zabbix-server 中添加proxy，然后在对应的host主机上选择proxy。   zabbix-proxy log 默认配置的位置： /var/log/zabbix/zabbix_proxy.</description>
+启动zabbix-proxy systemctl start zabbix-proxy &amp;amp;&amp;amp; systemctl enable zabbix-proxy 在zabbix-server 中添加proxy，然后在对应的host主机上选择proxy。 zabbix-proxy log 默认配置的位置： /var/log/zabbix/zabbix_proxy.</description>
     </item>
     
     <item>
@@ -196,15 +237,15 @@ vim /etc/zabbix/zabbix_proxy.conf
       <description>前阵子媳妇给买了个手环。小米手环5NFC，价格还可以。 定义表盘 手环就不做评价了，我感觉续航不错。屏幕划痕太容了吧。
 吐槽完了说下能玩的也就表盘了吧。
 出小米运动能同步的那些之外，总想搞点与众不同的。
- 请访问-&amp;gt;AW  不仅是小米5，6都有了。
+请访问-&amp;gt;AW 不仅是小米5，6都有了。
 我们根据自己的设备来选择。
 可以看到有面上方有个分类，语言筛选。
 这个还是很有用的，如果你只希望看到中文表盘，那就选择中文。 但是中文可能相对较少，我建议所有，然后看喜欢的界面吧。毕竟表盘上也没几个字。
-当我们点中某一个表盘，他会进到详情页。  点击下载，可以弹出来具体的表盘文件。  可以看到不同的文件有一些描述，比如语言，以及其他的一些描述。根据喜好下载。
+当我们点中某一个表盘，他会进到详情页。 点击下载，可以弹出来具体的表盘文件。 可以看到不同的文件有一些描述，比如语言，以及其他的一些描述。根据喜好下载。
 我建议手机下载，省的再从电脑发到手机上。
 下完之后，下面就需要同步表盘了。
 我目前知道的方式，就是通过一些APP来同步。其他方式我没研究过。
-我使用的手机是Iphone，所以我安装此软件：amaztools。  安装完软件进入： 主页同步信息等这些不重要略过。  这里app也提供了一些表盘。相比之下，这里面内容不多。喜欢可以看看，下载。在这里的下载后，同步就好。
+我使用的手机是Iphone，所以我安装此软件：amaztools。 安装完软件进入： 主页同步信息等这些不重要略过。 这里app也提供了一些表盘。相比之下，这里面内容不多。喜欢可以看看，下载。在这里的下载后，同步就好。
 这里展示从app下载的表盘。 在More里面，有我们需要的功能，install custom file。安装我们下载的表盘。
 点击 install custom file 选择我们下载的变盘，然后同步到手环上。 过程就结束了。
 真的结束了吗？！ 还要下载好多一个个去试～ 哈哈哈哈
@@ -220,7 +261,7 @@ vim /etc/zabbix/zabbix_proxy.conf
       <description>自己使用Mac一年多 自己在19年12月换了mac 16&amp;quot; 笔记本。之前一直windwos，后来看很多讲师在讲课的时候都是mac本本。又觉得windws10更新频繁，还强制让我很不爽。
 最后凑巧16&amp;quot;出来后，自己媳妇送了我一台。美滋滋～
 讲讲我说的小软件 一些好玩的，实用的软件。
- Bob Hidden Bar itsycal pap.er uPic Go2Shell uTools PicGo electerm BLEUnlock Clipy  </description>
+Bob Hidden Bar itsycal pap.er uPic Go2Shell uTools PicGo electerm BLEUnlock Clipy </description>
     </item>
     
     <item>
@@ -262,13 +303,13 @@ xxx 用户名， yyy 组名
       <guid>https://blog.51ai.vip/aLong/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</guid>
       <description>汉化三方插件 前面说过汉化Grafana的工作。目前在7.2.1上面，大部分已经完成。细节继续完善。 今天考虑在第三方插件上做一些汉化。点到插件一看全是英文感觉很突出。领导看到了也不爽啊-.-！。
 找个软的捏 饼图在展示方面比较直观。Grafana上有一个插件Pie Chart 。这个现象比较少，同时在一些模版上使用中。就拿这个热热身。
-具体步骤   下载项目
+具体步骤 下载项目
 项目地址：piechart-panel 文件结构：
 git clone git@github.com:grafana/piechart-panel.git cd piechart-panel # 进入到目录 yarn install 我直接把项目clone到grafana存放插件的位置，我的grafana是为了测试run的一个docker镜像。把插件目录挂载到本机，代码clone到目录中。
-  汉化工作
+汉化工作
 根据上面目录看，主要修改文件都在src里面。 IDE打开此项目，在src中修改需要编辑的文件。
 图片举例，选项第一项选择图形类型。选项内容pie / donut。通过翻译我修改成了 派/甜甜圈。根据修改内容其他地方设计修改的都需要修改。我通过查询替换方式，在其他文件中修改了代码中的判断。例如上图右侧展示的文件类似。
-  build插件
+build插件
 修改完需要的内容之后，grafana是能识别到有一个插件，但没有build时候他会提示你没有build插件。就是他不认识你的项目代码。
 这个怎么处理呢？看官方的文档
 执行 yarn dev
@@ -276,9 +317,9 @@ git clone git@github.com:grafana/piechart-panel.git cd piechart-panel # 进入�
 对比下原来的版本和汉化后的版本：
 before：
 After：
-  测试&amp;amp;调试
+测试&amp;amp;调试
 以上2，3步骤基本就是一个测试、调试的过程。
- 我开始先把所有配置项汉化。然后再处理选项参数。 接着build，重启grafana查看。如此往复达到预期目标。    我本机调试用docker启动grafana，测完删了容器就好了。
+我开始先把所有配置项汉化。然后再处理选项参数。 接着build，重启grafana查看。如此往复达到预期目标。 我本机调试用docker启动grafana，测完删了容器就好了。
 持续改进 考虑持续处理某个插件，可以考虑fork原插件项目，remote add XXX源。 然后新建分之来做自己的处理。master fetch XXX源 以跟踪上游的更新。 这样自己项目安装插件时候拉自己的就好啦，美滋滋。</description>
     </item>
     
@@ -290,10 +331,10 @@ After：
       <guid>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid>
       <description>Docker-compose 目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。
 科普之后感觉自己对k8s还有有些发怵的。从简单的一个入手吧，选择了docker-compose。
-   Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。
-   安装 安装方式看了一下，我选择直接下载bin文件方式：
+Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。
+安装 安装方式看了一下，我选择直接下载bin文件方式：
 curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose``` 通过 docker-compose version 看到版本信息算是安装完成。
-编写docker-compose.yml  目录结构：  ├── docker-compose.yaml ├── prometheus │ ├── rules │ │ └── *(rules).yaml/json │ ├── nodes │ │ └── *(nodes).yaml │ ├── data │ │ └── ... # 挂载prom的data数据 │ └── prometheus.yaml ├── alertmanager │ ├── templates │ │ └── *.tmpl │ └── alertmanager.</description>
+编写docker-compose.yml 目录结构： ├── docker-compose.yaml ├── prometheus │ ├── rules │ │ └── *(rules).yaml/json │ ├── nodes │ │ └── *(nodes).yaml │ ├── data │ │ └── ... # 挂载prom的data数据 │ └── prometheus.yaml ├── alertmanager │ ├── templates │ │ └── *.tmpl │ └── alertmanager.yaml ├── grafana │ ├── data │ │ ├── plugins #插件目录 │ │ ├── png │ │ └── grafana.</description>
     </item>
     
     <item>
@@ -316,22 +357,20 @@ cd /Library/Application\ Support/Microsoft/MAU2.0 sudo chmod 000 Microsoft\ Auto
       <pubDate>Wed, 24 Jun 2020 13:33:18 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/%E7%94%B3%E8%AF%B7let-s-encrypt-https-%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</guid>
-      <description>最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件  Let’s Encrypt是一个由非营利性组织互联网安全研究小组（ISRG）提供的免费、自动化和开放的证书颁发机构（CA）。 简单的说，借助Let’s Encrypt颁发的证书可以为我们的网站免费启用HTTPS(SSL/TLS) 。
- 那我们通过一个脚本来申请：
+      <description>最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件 Let’s Encrypt是一个由非营利性组织互联网安全研究小组（ISRG）提供的免费、自动化和开放的证书颁发机构（CA）。 简单的说，借助Let’s Encrypt颁发的证书可以为我们的网站免费启用HTTPS(SSL/TLS) 。
+那我们通过一个脚本来申请：
 脚本名称： acme.sh
-安装acme.sh：   curl https://get.acme.sh | sh
-  创建指令： alias acme.sh=~/.acme.sh/acme.sh
-  测试收否安装成功： acme.sh --Version 出现版本，安装完成。
-  生成证书 acme.sh --issue -d demo.com -d www.demo.con -w /home/wwwroot/demo.com
+安装acme.sh： curl https://get.acme.sh | sh
+创建指令： alias acme.sh=~/.acme.sh/acme.sh
+测试收否安装成功： acme.sh --Version 出现版本，安装完成。
+生成证书 acme.sh --issue -d demo.com -d www.demo.con -w /home/wwwroot/demo.com
 –issue是acme.sh脚本用来颁发证书的指令； -d是–domain的简称，其后面须填写已备案的域名； -w是–webroot的简称，其后面须填写网站的根目录。
 查看证书 acme.sh --list
- Nginx 配置 项目是Nginx，下面是对Nginx的配置。
-acme.sh &amp;ndash;installcert -d demo.com
-&amp;ndash;key-file /etc/nginx/ssl/demo.com.key
-&amp;ndash;fullchain-file /etc/nginx/ssl/fullchain.cer
-&amp;ndash;reloadcmd &amp;ldquo;service nginx force-reload&amp;rdquo;
+Nginx 配置 项目是Nginx，下面是对Nginx的配置。
+acme.sh &amp;ndash;installcert -d demo.com &amp;ndash;key-file /etc/nginx/ssl/demo.com.key &amp;ndash;fullchain-file /etc/nginx/ssl/fullchain.cer &amp;ndash;reloadcmd &amp;ldquo;service nginx force-reload&amp;rdquo;
 通过 installcert 来完成安装，此处我们需要把*.key,fullchain.cer 文件拷贝到指定位置。最后通过reload命令让Nginx重载（force-reload 我环境中无法使用此参数，这里换成 restart）。
-最后我们需要配置Nginx的443 server</description>
+最后我们需要配置Nginx的443 server
+server { listen 443 ssl; server_name demo.com; ssl on; ssl_certificate /etc/nginx/ssl/fullchain.cer; ssl_certificate_key /etc/nginx/ssl/esofar.</description>
     </item>
     
     <item>
@@ -372,11 +411,11 @@ type Demo struct { ID uint `gorm:&amp;#34;primary_key&amp;#34;` CreatedAt time.T
       <description>Linux系统重启后Docker自动启动 系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。 配置过一次总是忘记命令，这里特意记录一下： systemctl enable docker.service
 容器自动启动配置 容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。 涉及到的参数为： --restart=always
 参数有：
-  no，默认策略，在容器退出时不重启容器
-  on-failure，在容器非正常退出时（退出状态非0），才会重启容器。例如：on-failure:3，在容器非正常退出时重启容器，最多重启3次
-  always，在容器退出时总是重启容器
-  unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器
-  容器已存在更新重启配置 可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令： docker container update --restart=always 容器名XXX 这样就达到了想要的目的。</description>
+no，默认策略，在容器退出时不重启容器
+on-failure，在容器非正常退出时（退出状态非0），才会重启容器。例如：on-failure:3，在容器非正常退出时重启容器，最多重启3次
+always，在容器退出时总是重启容器
+unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器
+容器已存在更新重启配置 可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令： docker container update --restart=always 容器名XXX 这样就达到了想要的目的。</description>
     </item>
     
     <item>
@@ -386,17 +425,16 @@ type Demo struct { ID uint `gorm:&amp;#34;primary_key&amp;#34;` CreatedAt time.T
       
       <guid>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</guid>
       <description>系统版本 macOS Catalina 10.15.1
-  方法一
+方法一
 允许任何来源的应用。
 系统偏好设置 -&amp;gt; 安全性和隐私： 在 允许从以下位置下载的应用程序 选项中选择 任何来源
 在 Sierra 10.12 中可能看不到这个选项，开启此功能需要执行命令sudo spctl --master-disable,
 输入密码就可以看到此选项。
-  方法二
+方法二
 如果上面发法还是打不开，可能需要此方法。
 sudo xattr -r -d com.apple.quarantine /Applications/xxxx.app/
 这里的x x.app如果你不知道名字，可以通过应用中查看应用简介中的名称与扩展名,
-或者在Applications目录下输入名称补全
-  </description>
+或者在Applications目录下输入名称补全</description>
     </item>
     
     <item>
@@ -431,7 +469,7 @@ sudo xattr -r -d com.apple.quarantine /Applications/xxxx.app/
       <guid>https://blog.51ai.vip/aLong/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid>
       <description>安装GOlang 环境:macOS
 shell: zsh
- 安装步骤：  brew update &amp;amp;&amp;amp; brew upgrade # 更新 brew install go # 安装 go  配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc  # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin  退出保存后，使文件生效 source ~/.zshrc=  </description>
+安装步骤： brew update &amp;amp;&amp;amp; brew upgrade # 更新 brew install go # 安装 go 配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin 退出保存后，使文件生效 source ~/.zshrc= </description>
     </item>
     
     <item>
@@ -445,8 +483,8 @@ shell: zsh
 可以看到错误中，他是从 github.com/Medium/&amp;hellip; 感觉就是没下载成功吧。
 最开始以为网络问题，翻墙等方式都试过后发现还是没完成。
 没办法，借助网络得知。可以轻松搞定：
- npm config set phantomjs_cdnurl=http://cdn.npm.taobao.org/dis&amp;hellip; yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;https://npm.taobao.org/mirrors/phantomjs&amp;quot;
- 看你是npm 还是node。按照上面方式设置一下。
+npm config set phantomjs_cdnurl=http://cdn.npm.taobao.org/dis&amp;hellip; yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;https://npm.taobao.org/mirrors/phantomjs&amp;quot;
+看你是npm 还是node。按照上面方式设置一下。
 rm -rf path/node_moudels
 yarn install
 解决问题，美滋滋。
@@ -464,17 +502,17 @@ yarn install
 首先问了一圈没有人知道。那么只能靠自己了。
 查看软件版本: mysql --version
 之后通过神奇的Google科普了一下。 知道了具体的方法：
-  关闭mysql服务。
-  修改my.conf 在里面[mysqld] 下面最后加入一行
+关闭mysql服务。
+修改my.conf 在里面[mysqld] 下面最后加入一行
 [mysqld] ... skip-grant-tables 修改完保存退出。
-  重启mysql服务。
-  mysql 进入mysql 不需要密码了。
+重启mysql服务。
+mysql 进入mysql 不需要密码了。
 show databases; 查看数据库
 use mysql; 选择 mysql 数据库 在此数据库执行更新语句（修改root用户的密码为root）： update user set authentication_string=password(&#39;root&#39;) where user=&#39;root&#39;; flush privileges; 更新权限
 退出mysql
-  把最开始my.conf加入的语句删除。
-  重启mysql服务
-  最后可以通过设置的密码登陆数据库了。</description>
+把最开始my.conf加入的语句删除。
+重启mysql服务
+最后可以通过设置的密码登陆数据库了。</description>
     </item>
     
     <item>
@@ -483,20 +521,20 @@ use mysql; 选择 mysql 数据库 在此数据库执行更新语句（修改root
       <pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid>
-      <description>Prometheus-SNMP Exporter  生成器从generator.yml读取并写入snmp.yml。
- 之前在说Prometheus-snmp_export部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置).
+      <description>Prometheus-SNMP Exporter 生成器从generator.yml读取并写入snmp.yml。
+之前在说Prometheus-snmp_export部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置).
 因为刚好所有通用的指标都取得通用的mib树. 在后期我搜集设备的信息需要一些私有mib的数据,这时候需要自己通过生成器来生成snmp.yml.
 Generator 的操作步骤 下载需要的程序(Docker方式跳过此步骤) # Debian-based distributions. sudo apt-get install unzip build-essential libsnmp-dev # Debian-based distros # Redhat-based distributions. sudo yum install gcc gcc-g++ make net-snmp net-snmp-utils net-snmp-libs net-snmp-devel # RHEL-based distros go get github.com/prometheus/snmp_exporter/generator cd ${GOPATH-$HOME/go}/src/github.com/prometheus/snmp_exporter/generator go build make mibs(不建议直接make) 这里直接make mibs 可能会失败,在make文件里设置的源有些已经不能访问了或执行出现错误.
 我建议先下载好mibs ,我已经上传github.
 建议自行搜集mib 不执行make mibs会方便一些
 把所有的mib放入mibs 目录下.
 需要准备好所有需要涉及到的mib文件. 除了公有的mib,我们还需要监控目标设备的私有mib.思科/华为之类的会提供这些mib,像锐捷这种需要和商务部联系.
- 一些mib:
+一些mib:
 https://github.com/netdisco/netdisco-mibs
 https://github.com/pgmillon/observium/tree/master/mibs
 https://github.com/librenms/librenms/tree/master/mibs
- 当我们准备好所有的mib后,需要编写一个generator.yml. 下面是一个翻译的官方文档(翻译比较烂,自行查阅原文):
-modules:module_name:# 模块名称。您可以根据需要拥有任意数量的模块。walk:# 要walk的OID列表。 也可以是SNMP对象名称或特定实例。- 1.</description>
+当我们准备好所有的mib后,需要编写一个generator.yml. 下面是一个翻译的官方文档(翻译比较烂,自行查阅原文):
+modules: module_name: # 模块名称。您可以根据需要拥有任意数量的模块。 walk: # 要walk的OID列表。 也可以是SNMP对象名称或特定实例。 - 1.</description>
     </item>
     
     <item>
@@ -523,17 +561,14 @@ Alerts数据 KV数据的处理方式 KV结构很简单,键值对.通过键获取
       <guid>https://blog.51ai.vip/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid>
       <description>标签处理的重要性 之前的[配置](https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/中提到了标签的处理,不过由于写的是静态的配置,标签可以自己设置或者不设置都可以.
 当使用服务发现之后发现标签处理的重要性提升了更高的级别.
-标签处理 - job_name:&amp;#39;node&amp;#39;static_configs:- targets:[&amp;#39;172.16.23.110:9100&amp;#39;,&amp;#39;172.16.23.111:9100&amp;#39;]metric_relable_configs:#通过正则重命名标签- action:replace #replace替换是默认动作。keep（只参加匹配标签的实例）、drop（不采集匹配正则的实例）、labelkeep\labeldrop(对标签进行过滤处理而非实例)等动作source_labels:[&amp;#39;job&amp;#39;]#原标签，job是默认就会产生的标签，这里job标签的值是noderegex:(.*) #正则匹配，这里匹配job标签内的内容，也就是nodereplacement:beijing #替换成什么内容，如果写$1就是将正则里读取的值target_label:idc #把替换内容赋值给idc标签- action:labeldrop #删除标签regex:job #把原job标签删除- job_name:&amp;#39;prometheus&amp;#39;static_configs:- targets:[&amp;#39;localhost:9090&amp;#39;]labels:location:bj3relabel_configs:- action:replacesource_labels:[&amp;#39;job&amp;#39;]regex:(.*)replacement:$1target_label:server以上两个例子都是替换标签,job:node中,删除了前job标签,下面的job新增了&amp;rsquo;server&amp;rsquo;标签内容取的job内容,但没删除job标签.
+标签处理 - job_name: &amp;#39;node&amp;#39; static_configs: - targets: [&amp;#39;172.16.23.110:9100&amp;#39;,&amp;#39;172.16.23.111:9100&amp;#39;] metric_relable_configs: #通过正则重命名标签 - action: replace #replace替换是默认动作。keep（只参加匹配标签的实例）、drop（不采集匹配正则的实例）、labelkeep\labeldrop(对标签进行过滤处理而非实例)等动作 source_labels: [&amp;#39;job&amp;#39;] #原标签，job是默认就会产生的标签，这里job标签的值是node regex: (.*) #正则匹配，这里匹配job标签内的内容，也就是node replacement: beijing #替换成什么内容，如果写$1就是将正则里读取的值 target_label: idc #把替换内容赋值给idc标签 - action: labeldrop #删除标签 regex: job #把原job标签删除 - job_name: &amp;#39;prometheus&amp;#39; static_configs: - targets: [&amp;#39;localhost:9090&amp;#39;] labels: location: bj3 relabel_configs: - action: replace source_labels: [&amp;#39;job&amp;#39;] regex: (.*) replacement: $1 target_label: server 以上两个例子都是替换标签,job:node中,删除了前job标签,下面的job新增了&amp;rsquo;server&amp;rsquo;标签内容取的job内容,但没删除job标签.
 通过标签我们组成多维模型.可以对标签重命名,删除,过滤信息等.
 服务发现 之前配置中的静态配置需要一个一些写配置,设备或者服务多的时候容易头大.
 这里可以通过服务发现简化手动配置工作.
 Prometheus支持多种服务发现机制,例如: consul、dns、openstack、file、kubernetes等.
 这里举例file.比较简单的方式.
 file机制中:需要提供文件来获取内容.文件格式为YAML 或 JSON格式.
-prometheus配置:
-scrape_configs:- job_name: &#39;prometheus&#39;file_sd_configs: - files: [&#39;/usr/local/prometheus/files_sd_configs/*.yaml&#39;] ##指定服务发现文件位置refresh_interval: 5s##刷新间隔改为5秒Prometheus 每5秒扫描一次指定位置的配置文件.
-服务发现文件格式:
-- targets:[&amp;#39;localhost:9090&amp;#39;]# 监控目标labels:# 配置标签server:local </description>
+prometheus配置:</description>
     </item>
     
     <item>
@@ -545,23 +580,24 @@ scrape_configs:- job_name: &#39;prometheus&#39;file_sd_configs: - files: [&#39
       <description>M3DB笔记 前阵子研究prometheus,初期没有考虑存储问题.本地默认存储30天数据.
 监控已经折腾完毕,现在需要来处理存储的方案.
 通过互联网的科普,发现目前有两个方案可以解决这个问题.
-  thanos
-  M3DB
+thanos
+M3DB
 thanos是需要存储云端数据(本地存储官方不推荐).不符合我们的考虑范围内.那就来学习M3DB了.
-  简介  M3可以在较长的保留时间内可靠地存储大规模指标。为了向更广泛的社区中的其他人提供这些好处，我们决定开放M3平台作为Prometheus的远程存储后端，Prometheus是一种流行的监控和警报解决方案。正如其文档所述，Prometheus的可扩展性和耐用性受到单个节点的限制。 M3平台旨在为Prometheus指标提供安全，可扩展且可配置的多租户的存储。
+简介 M3可以在较长的保留时间内可靠地存储大规模指标。为了向更广泛的社区中的其他人提供这些好处，我们决定开放M3平台作为Prometheus的远程存储后端，Prometheus是一种流行的监控和警报解决方案。正如其文档所述，Prometheus的可扩展性和耐用性受到单个节点的限制。 M3平台旨在为Prometheus指标提供安全，可扩展且可配置的多租户的存储。
 M3于2015年发布，目前拥有超过66亿个时间序列。 M3每秒聚合5亿个指标，并在全球范围内（使用M3DB）每秒持续存储2000万个度量指标，批量写入将每个指标持久保存到区域中的三个副本。它还允许工程师编写度量策略，告诉M3以更短或更长的保留时间（两天，一个月，六个月，一年，三年，五年等）以特定的粒度（一秒，十秒，一分钟，十分钟等）。这允许工程师和数据科学家使用与定义的存储策略匹配的度量标签（标签），在精细和粗粒度范围内智能地存储不同保留的时间序列。例如，工程师可以选择存储“应用程序”标记为“mobile_api”且“端点”标记为“注册”的所有度量标准，这些标记在10秒粒度下为30天，在一小时粒度下为5年。
- 相关组件  M3 Coordinator M3 Coordinator是一种服务，用于协调上游系统（如Prometheus和M3DB）之间的读写操作。它还提供了管理API，用于设置和配置M3的不同部分。它是用户可以部署以访问M3DB的优势的桥梁，例如长期存储和与其他监控系统（如Prometheus）的多DC设置。
+相关组件 M3 Coordinator M3 Coordinator是一种服务，用于协调上游系统（如Prometheus和M3DB）之间的读写操作。它还提供了管理API，用于设置和配置M3的不同部分。它是用户可以部署以访问M3DB的优势的桥梁，例如长期存储和与其他监控系统（如Prometheus）的多DC设置。
 M3DB M3DB是一个分布式时间序列数据库，提供可扩展存储和时间序列的反向索引。它经过优化，具有成本效益和可靠的实时和长期保留指标存储和索引
 M3 Query M3 Query是一种服务，它包含一个分布式查询引擎，用于查询实时和历史指标，支持多种不同的查询语言。它旨在支持低延迟实时查询和可能需要更长时间执行的查询，聚合更大的数据集，用于分析用例
 M3 Aggregator M3 Aggregator是一种作为专用度量聚合器运行的服务，它基于存储在etcd中的动态规则提供基于流的下采样。它使用领导者选举和聚合窗口跟踪，利用etcd来管理此状态，从而可靠地为低采样度量标准发送至少一次聚合到长期存储。这提供了成本有效且可靠的下采样和汇总指标。这些功能也存在于M3协调器中，但专用聚合器是分片和复制的，而M3协调器则不需要并且需要谨慎部署和以高可用性方式运行。还有一些工作要使用户更容易访问聚合器，而无需他们编写自己的兼容生产者和消费者。
- 入门 上面的组件通俗讲:
+入门 上面的组件通俗讲:
 prometheus 需要通过M3 Coordinator来协调存储与查询到M3DB,prometheus本地存储数据时间与这个没关系.
 上面没有提到一个名字etcd服务.此服务推断拓扑\配置功能. 如果db嵌入此服务就称为种子节点SeedNode.
- 官方提供了一个镜象,里面包含 M3 Coordinator + SeedNode.
+官方提供了一个镜象,里面包含 M3 Coordinator + SeedNode.
 拉取镜象:docker pull quay.io/m3db/m3dbnode:latest
 启动名为m3db容器:docker run -d -p 7201:7201 -p 7203:7203 -p 9003:9003 --name m3db -v $(pwd)/m3db_data:/var/lib/m3db quay.io/m3db/m3dbnode:latest
 该容器的端口为7201（用于管理集群拓扑），端口为7203，Prometheus用来刮除M3DB和M3Coordinator生成的度量，端口9003（用于读取和写入度量）已公开。
-这时候m3db已经启动,需要创建一个初始命名空间.官方镜象默认是type:local,namespace:default. 这个可以进入容器查看到配置位置/etc/d3dbnode/m3dbnode.yml.如果我们创建其他命名空间需要在m3coordinator中配置好.</description>
+这时候m3db已经启动,需要创建一个初始命名空间.官方镜象默认是type:local,namespace:default. 这个可以进入容器查看到配置位置/etc/d3dbnode/m3dbnode.yml.如果我们创建其他命名空间需要在m3coordinator中配置好.
+curl -X POST http://localhost:7201/api/v1/database/create -d &#39;{ &amp;quot;type&amp;quot;: &amp;quot;local&amp;quot;, &amp;quot;namespaceName&amp;quot;: &amp;quot;default&amp;quot;, &amp;quot;retentionTime&amp;quot;: &amp;quot;24h&amp;quot; }&#39;</description>
     </item>
     
     <item>
@@ -573,7 +609,7 @@ prometheus 需要通过M3 Coordinator来协调存储与查询到M3DB,prometheus�
       <description>网络传输测试软件 最近公司测试限速,搜集软件发现两款,iperf,LANSpeedTest. iperf,多平台. LANSpeedTest,读写显示,操作简单. 局域网测试传输,优先考虑UDP.
 iperf Iperf可以报告带宽,延迟抖动和数据包丢失. 官方文档 安装不写了.跳过
 iperf常用参数介绍
--i 2	#表示每2秒显示一次报告 -w 80k	#对于TCP方式，此设置为TCP窗口大小。对于UDP方式，此设置为接受UDP数据包的缓冲区大小，限制可以接受数据包的最大值 -B 192.168.122.1	#绑定到主机的多个地址中的一个。对于客户端来说，这个参数设置了出栈接口。对于服务器端来说，这个参数设置入栈接口。这个参数只用于具有多网络接口的主机。 #在Iperf的UDP模式下，此参数用于绑 定和加入一个多播组。使用范围在224.0.0.0至239.255.255.255的多播地址 #常用客户端参数 -b 100m	#用于udp测试时，设置测试发送的带宽，单位：bit/秒，不设置时默认为：1Mbit/秒 -c #指定服务端ip地址 -d #同时测试上行和下行 -t 10	#设置传输时间，为10秒	 -P 5	#指定发起5个线程 UDP测试 服务端 iperf -u -s # -u表示以udp模式运行，-s表示作为服务端, 这里需要设置ip 客户端 iperf -u -c 192.168.100.11 -b 100M -t 60 -i 2 #解释：在udp模式下，以100Mbps为数据发送速率，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒 iperf -u -c 192.168.100.11 5M -P 30 -t 6	#客户端同时向服务器端发起30个连接线程，以5Mbps为数据发送速率 iperf -u -c 192.168.100.11 -b 100M -d -t 60 #以100M为数据发送速率，进行上下行带宽测试 TCP测试 服务端 iperf -s 客户端 iperf -c 192.</description>
+-i 2	#表示每2秒显示一次报告 -w 80k	#对于TCP方式，此设置为TCP窗口大小。对于UDP方式，此设置为接受UDP数据包的缓冲区大小，限制可以接受数据包的最大值 -B 192.168.122.1	#绑定到主机的多个地址中的一个。对于客户端来说，这个参数设置了出栈接口。对于服务器端来说，这个参数设置入栈接口。这个参数只用于具有多网络接口的主机。 #在Iperf的UDP模式下，此参数用于绑 定和加入一个多播组。使用范围在224.0.0.0至239.255.255.255的多播地址 #常用客户端参数 -b 100m	#用于udp测试时，设置测试发送的带宽，单位：bit/秒，不设置时默认为：1Mbit/秒 -c #指定服务端ip地址 -d #同时测试上行和下行 -t 10	#设置传输时间，为10秒	-P 5	#指定发起5个线程 UDP测试 服务端 iperf -u -s # -u表示以udp模式运行，-s表示作为服务端, 这里需要设置ip 客户端 iperf -u -c 192.168.100.11 -b 100M -t 60 -i 2 #解释：在udp模式下，以100Mbps为数据发送速率，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒 iperf -u -c 192.168.100.11 5M -P 30 -t 6	#客户端同时向服务器端发起30个连接线程，以5Mbps为数据发送速率 iperf -u -c 192.168.100.11 -b 100M -d -t 60 #以100M为数据发送速率，进行上下行带宽测试 TCP测试 服务端 iperf -s 客户端 iperf -c 192.</description>
     </item>
     
     <item>
@@ -582,11 +618,11 @@ iperf常用参数介绍
       <pubDate>Sat, 19 Oct 2019 09:40:15 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
-      <description>AlertManager  AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。 它还负责消除和抑制警报。
- 通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具. AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.
+      <description>AlertManager AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。 它还负责消除和抑制警报。
+通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具. AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.
 Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发送警报到指定通知渠道.
 为了能让Prometheus发送警报,我们需要:
- 搭建AlertManager服务. 定义AlertManager通知配置. 定义Prometheus警报规则并引入. 测试警报. 定义通知模板.  定义AlertManager通知配置 global:smtp_smarthost:&amp;#39;smtp.163.com:25&amp;#39;# 邮箱smtp服务器代理smtp_from:&amp;#39;shitu-0071@163.com&amp;#39;# 发送邮箱名称resolve_timeout:5m # 处理超时时间，默认为5minsmtp_auth_username:&amp;#39;shitu-0071@163.com&amp;#39;# 邮箱帐户smtp_auth_password:&amp;#39;******&amp;#39;# 邮箱授权码(注意是授权码,不知道自己查一下)wechat_api_url:&amp;#39;https://qyapi.weixin.qq.com/cgi-bin/&amp;#39;# 企业微信地址# 定义模板信心templates:- &amp;#39;template/*.tmpl&amp;#39;# 定义路由树信息route:group_by:[&amp;#39;alertname&amp;#39;,&amp;#39;cluster&amp;#39;,&amp;#39;service&amp;#39;]# 报警分组依据,设置后会按照设定值分组,例如instance,alertname等# 同标签警告会在作为一组警报发送group_wait:10s # 组内等待时间,触发阈值后,XXs后发送本组警报group_interval:10s # 每个组之前间隔时间(group_by设定的值划分的组)repeat_interval:1m # 重复发送警报的周期(对于email配置中，此项不可以设置过低，否则将会由于邮件发送太多频繁，被smtp服务器拒绝)receiver:&amp;#39;email&amp;#39;# 发送警报的接收者的名称# 以下receivers name的名称routes:- match:# 普通匹配serverity:critical # 警告级别criticalreceiver:email # 通过邮件发送- match_re:# 正则匹配severity:^(warning)$ # 匹配警告级别为warning的receiver:wechat # 通过微信发送告警- receiver:along # 定义接收者match:# 匹配severity:test # 等级为test# 定义警报接收者信息receivers:- name:&amp;#39;email&amp;#39;# 警报email_configs:# 邮箱配置- to:&amp;#39;******@163.com&amp;#39;# 接收警报的email配置html:&amp;#39;{{ template &amp;#34;test.html&amp;#34; . }}&amp;#39;# 设定邮箱的内容模板headers:{Subject:&amp;#34;[WARN] 报警邮件&amp;#34;}# 接收邮件的标题webhook_configs:# webhook配置- url:&amp;#39;http://127.</description>
+搭建AlertManager服务. 定义AlertManager通知配置. 定义Prometheus警报规则并引入. 测试警报. 定义通知模板. 定义AlertManager通知配置 global: smtp_smarthost: &amp;#39;smtp.163.com:25&amp;#39; # 邮箱smtp服务器代理 smtp_from: &amp;#39;shitu-0071@163.com&amp;#39; # 发送邮箱名称 resolve_timeout: 5m # 处理超时时间，默认为5min smtp_auth_username: &amp;#39;shitu-0071@163.com&amp;#39; # 邮箱帐户 smtp_auth_password: &amp;#39;******&amp;#39; # 邮箱授权码(注意是授权码,不知道自己查一下) wechat_api_url: &amp;#39;https://qyapi.weixin.qq.com/cgi-bin/&amp;#39; # 企业微信地址 # 定义模板信心 templates: - &amp;#39;template/*.tmpl&amp;#39; # 定义路由树信息 route: group_by: [&amp;#39;alertname&amp;#39;, &amp;#39;cluster&amp;#39;, &amp;#39;service&amp;#39;] # 报警分组依据,设置后会按照设定值分组,例如instance,alertname等 # 同标签警告会在作为一组警报发送 group_wait: 10s # 组内等待时间,触发阈值后,XXs后发送本组警报 group_interval: 10s # 每个组之前间隔时间(group_by设定的值划分的组) repeat_interval: 1m # 重复发送警报的周期 (对于email配置中，此项不可以设置过低，否则将会由于邮件发送太多频繁，被smtp服务器拒绝) receiver: &amp;#39;email&amp;#39; # 发送警报的接收者的名称 # 以下receivers name的名称 routes: - match: # 普通匹配 serverity: critical # 警告级别critical receiver: email # 通过邮件发送 - match_re: # 正则匹配 severity: ^(warning)$ # 匹配警告级别为warning的 receiver: wechat # 通过微信发送告警 - receiver: along # 定义接收者 match: # 匹配 severity: test # 等级为test # 定义警报接收者信息 receivers: - name: &amp;#39;email&amp;#39; # 警报 email_configs: # 邮箱配置 - to: &amp;#39;******@163.</description>
     </item>
     
     <item>
@@ -596,7 +632,7 @@ Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发�
       
       <guid>https://blog.51ai.vip/aLong/posts/windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%90%AF%E7%94%A8%E7%BB%84%E7%AD%96%E7%95%A5gpedit-msc/</guid>
       <description>启用组策略gpedit.msc 家庭版很多功能不能使用,凑巧用的就是家庭版. 还想使用gpedit.msc来关闭windows10的更新. 找到一个可行的方法.
- 需要创建一个脚本. 如果你没有编辑器,那么可以创建一个文本文档. 复制下面一段到本文中.  @echo off pushd &amp;#34;%~dp0&amp;#34; dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &amp;gt;List.txt dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &amp;gt;&amp;gt;List.txt for /f %%i in (&amp;#39;findstr /i . List.txt 2^&amp;gt;nul&amp;#39;) do dism /online /norestart /add-package:&amp;#34;C:\Windows\servicing\Packages\%%i&amp;#34; pause 如果编辑器直接复制一个文档另存到XX.cmd 即可. 如果是文本文档那么就是把后缀的.txt改成.cmd. 管理员身份运行这个脚本.等他走完会退出,win+r 即可使用gpedit.msc了. 美滋滋!~  禁用windows10更新  win+r 输入gpedit.msc. “本地计算机策略”-“计算机配置”-“管理模板”-“Windows组件”-“Windows 更新”-“配置自动更新”. 点击配置自动更新设置为禁用  </description>
+需要创建一个脚本. 如果你没有编辑器,那么可以创建一个文本文档. 复制下面一段到本文中. @echo off pushd &amp;#34;%~dp0&amp;#34; dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &amp;gt;List.txt dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &amp;gt;&amp;gt;List.txt for /f %%i in (&amp;#39;findstr /i . List.txt 2^&amp;gt;nul&amp;#39;) do dism /online /norestart /add-package:&amp;#34;C:\Windows\servicing\Packages\%%i&amp;#34; pause 如果编辑器直接复制一个文档另存到XX.cmd 即可. 如果是文本文档那么就是把后缀的.txt改成.cmd. 管理员身份运行这个脚本.等他走完会退出,win+r 即可使用gpedit.msc了. 美滋滋!~ 禁用windows10更新 win+r 输入gpedit.msc. “本地计算机策略”-“计算机配置”-“管理模板”-“Windows组件”-“Windows 更新”-“配置自动更新”. 点击配置自动更新设置为禁用 </description>
     </item>
     
     <item>
@@ -606,8 +642,7 @@ Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发�
       
       <guid>https://blog.51ai.vip/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</guid>
       <description>整体配置 prometueus.yml 配置文件注解与说明
-global:# 全局配置scrape_interval:15s # 默认值为 1m，用于设置每次数据收集的间隔scrape_timeout:10s # 默认10s,收集超时时间evaluation_interval:15s # 记录规则/告警的执行周期 默认1mexternal_labels:# 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签monitor:&amp;#39;ctmonitor&amp;#39;rule_files:# 指定告警规则文件&amp;amp;记录文件- &amp;#34;/usr/local/prometheus/rules.yml&amp;#34;alerting:# 告警管理配置alert_relable_configs:# 修改告警内容- alertmanagers:# 告警管理起配置- static_configs:# 静态配置- targets:# 警告器地址- 172.16.23.12:9093# 用于配置 scrape 的 endpoint 配置需要 scrape 的 targets 以及相应的参数# 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 scrape_configs:# 抓取配置选项- job_name:prometheus # 默认情况下分配给刮削度量的作业名称。scrape_interval:5s # 从这项工作中获取目标的频率。scrape_timeout:3s # 每次获取超时时间honor_timestamps:true# 默认false, 在获取时是否使用当前的时间戳metrics_path:/metrics # 从目标获取度量的http资源路径。scheme:http # static_configs:# 为此作业标记的静态配置目标的列表。- targets:# 目监控标- 172.16.23.12:9090# 设备地址+端口- job_name:&amp;#39;snmp-10.0.0.1&amp;#39;scrape_interval:30sscrape_timeout:20sstatic_configs:- targets:- 10.0.0.1# SNMP设备,端口默认5060metrics_path:/snmpparams:module:[if_mib]relabel_configs:# 重定义标签- source_labels:[__address__] # 需要修改的标签target_label:__param_target # 改成的标签- source_labels:[__param_target]target_label:instance- target_label:__address__replacement:172.16.23.12:9117各部分详解  部分官方文档的译文
- 官方文档中,使用了通用占位符来解释设定值的定义.</description>
+global: # 全局配置 scrape_interval: 15s # 默认值为 1m，用于设置每次数据收集的间隔 scrape_timeout: 10s # 默认10s,收集超时时间 evaluation_interval: 15s # 记录规则/告警的执行周期 默认1m external_labels: # 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签 monitor: &amp;#39;ctmonitor&amp;#39; rule_files: # 指定告警规则文件&amp;amp;记录文件 - &amp;#34;/usr/local/prometheus/rules.yml&amp;#34; alerting: # 告警管理配置 alert_relable_configs: # 修改告警内容 - alertmanagers: # 告警管理起配置 - static_configs: # 静态配置 - targets: # 警告器地址 - 172.16.23.12:9093 # 用于配置 scrape 的 endpoint 配置需要 scrape 的 targets 以及相应的参数 # 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 scrape_configs: # 抓取配置选项 - job_name: prometheus # 默认情况下分配给刮削度量的作业名称。 scrape_interval: 5s # 从这项工作中获取目标的频率。 scrape_timeout: 3s # 每次获取超时时间 honor_timestamps: true # 默认false, 在获取时是否使用当前的时间戳 metrics_path: /metrics # 从目标获取度量的http资源路径。 scheme: http # static_configs: # 为此作业标记的静态配置目标的列表。 - targets: # 目监控标 - 172.</description>
     </item>
     
     <item>
@@ -619,7 +654,7 @@ global:# 全局配置scrape_interval:15s # 默认值为 1m，用于设置每次�
       <description>curl: (3) Illegal characters found in URL 昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里. 结果执行的时候报错了. 问题就是 curl:(3)Illegal characters found in URL
 看着一脸懵逼啊!~
 google了一下,看到几个方法.其中一个我感觉还不错:
- 首先vi 进入sh脚本 vi XXX.sh :set ff? # 这里我现实的是 fileforma=dos 我这里显示是这个 :set fileformat=unix # 把fileforma 设置好 :wq  通过这个方式,可以解决这个问题,网上也有人提出其他方法把\r\n 手动替换\n的.
+首先vi 进入sh脚本 vi XXX.sh :set ff? # 这里我现实的是 fileforma=dos 我这里显示是这个 :set fileformat=unix # 把fileforma 设置好 :wq 通过这个方式,可以解决这个问题,网上也有人提出其他方法把\r\n 手动替换\n的.
 参考: http://www.itbiancheng.com/linux/4885.html</description>
     </item>
     
@@ -630,12 +665,12 @@ google了一下,看到几个方法.其中一个我感觉还不错:
       
       <guid>https://blog.51ai.vip/aLong/posts/yaml%E8%A7%84%E5%88%99/</guid>
       <description>yml 语法 最近经常配置一些服务，发现大部分都是yml类型文件。小记一下。
-规则  大小写敏感 缩进表示层级 注释 #  结构： 对象： ：符号
-name:admin数组： - 符号
-user:- name:admin- height:178- age:30字符串： 默认无引号，内部含有空格或特殊符号需要加&#39;&#39;
-name:admindesc:&amp;#39;he was cool&amp;#39;null： ~
-value:~层级依靠缩进：
-job:- jobconfig:name:&amp;#39;snmp-sw01&amp;#39;- target:- 192.</description>
+规则 大小写敏感 缩进表示层级 注释 # 结构： 对象： ：符号
+name: admin 数组： - 符号
+user: - name: admin - height: 178 - age: 30 字符串： 默认无引号，内部含有空格或特殊符号需要加&#39;&#39;
+name: admin desc: &amp;#39;he was cool&amp;#39; null： ~
+value: ~ 层级依靠缩进：
+job: - jobconfig: name: &amp;#39;snmp-sw01&amp;#39; - target: - 192.168.1.88 </description>
     </item>
     
     <item>
@@ -650,7 +685,7 @@ job:- jobconfig:name:&amp;#39;snmp-sw01&amp;#39;- target:- 192.</description>
 翻译工作 上面简单介绍了一下工具，主要是让我们方便查看监控的数据。这里我还是没有更深入的去研究公式等图形的设置。这里先主要写一下翻译方面的工作。
 公司也考虑展示内容为中文化比较好，这里Grafana没有提供语言包的方式来处理多语言问题。在我查看代码过程中，发现工具后台是在GO里面写死的很多导航，返回值等数据。前台是在页面上直接写的很多内容。所以我个人认为无法使用语言包来直接处理多语言问题。那就只好自己来搞定了。
 翻译的内容 更具代码查看，主要分为两大部分：
- 后端： go文件，主要内容在/pkg 目录下。 前端： 1. 系统页面 2. 插件页面 这些在/public 目录下  准备工作 首先git clone Grafana库 git clone https://github.com/chenweil/grafana.git
+后端： go文件，主要内容在/pkg 目录下。 前端： 1. 系统页面 2. 插件页面 这些在/public 目录下 准备工作 首先git clone Grafana库 git clone https://github.com/chenweil/grafana.git
 之后我们根据自己翻译的版本来检出自己的项目。 这里我们使用的v6.3.4 ，官方版本中可以查看到tag v6.3.4,并重命名自己的分支为6.3.4-chs： git checkout -b 6.3.4-chs
 通过 git branch 命令查看自己处于哪个分支上。 这里如果你不是很熟悉git命令行，可以使用sourcetree工具操作，相对来说点点鼠标就可以搞定了。
 我们在自己创建的分支就可以来处理我们的工作了。
@@ -658,7 +693,8 @@ job:- jobconfig:name:&amp;#39;snmp-sw01&amp;#39;- target:- 192.</description>
 终端执行命令 yarn install --pure-lockfile 初始化. 如果没有报错的情况,证明ok.
 出现错误请先处理问题. 开启调试环境时候，是开启前端的热加载来协助我们调试。 这里安装完三个环境可能在执行 yarn start 时报错，这里如果你是在windows上，需要再安装一下sass.(根据报错来看问题，我这里遇到缺少sass问题)
 当我们yarn start 执行后，等待一段时间，build at 时间证明准备工作已完成，下面就需要我们在调试模式下测试了。
-还需要一个调试的Grafana服务程序，这里是windows环境，所以直接从官方下载了zip包，执行bin下的grafana-server.exe 来启动服务。需要再conf文件夹修改一下public前端资源的配置，如果不修改那么你翻译的信息是看不到的，服务会直接读取的当前的public，我们这需要读取翻译的public文件位置。</description>
+还需要一个调试的Grafana服务程序，这里是windows环境，所以直接从官方下载了zip包，执行bin下的grafana-server.exe 来启动服务。需要再conf文件夹修改一下public前端资源的配置，如果不修改那么你翻译的信息是看不到的，服务会直接读取的当前的public，我们这需要读取翻译的public文件位置。
+配置在windows服务程序的 /conf/defaults.ini 修改内容：</description>
     </item>
     
     <item>
@@ -689,13 +725,13 @@ ln -s ~/node-v10.16.3-linux-x64/bin/npm /usr/bin/npm
 此处目标设备是华为交换机 s2700
 部署snmp_expoer snmp.yml 配置文件不是自己定义的,是通过注册生成或下载的.这里我通过github下载配置文件.
 snmp.yml
- 配置snmp_export 配置文件 snmp.yml  version:2auth:community:**交换机设置的团体名**查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
+配置snmp_export 配置文件 snmp.yml version: 2 auth: community: **交换机设置的团体名** 查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
 部署snmp_expor docker run -d --restart always \ -v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml \ -p 9116:9116 --name snmp-exporter prom/snmp-exporter \ --config.file=&amp;#34;/etc/snmp_exporter/snmp.yml&amp;#34; 配置华为s2700交换机 自行查阅文档.懒得写了.
 验证服务 访问 http://IP:9116/metrics 能返回数据,snmp_export服务正常.
 测试是否能获取到目标设备的数据: 访问 http://IP:9116/snmp?target=DEVIP 能获取到数据,配置成功.
 注意防火墙 把需要的端口加入规则中,不然访问不到排查绕弯路
 配置promthues 修改 promthues.yml文件. 添加一个新的job.
-- job_name:snmphonor_timestamps:trueparams:module:- if_mibscrape_interval:15sscrape_timeout:10smetrics_path:/snmpscheme:httpstatic_configs:- targets:- 172.16.23.253labels:tag:huawei-switch-s2700relabel_configs:- source_labels:[__address__]separator:;regex:(.*)target_label:__param_targetreplacement:$1action:replace- source_labels:[__param_target]separator:;regex:(.*)target_label:instancereplacement:$1action:replace- separator:;regex:(.</description>
+- job_name: snmp honor_timestamps: true params: module: - if_mib scrape_interval: 15s scrape_timeout: 10s metrics_path: /snmp scheme: http static_configs: - targets: - 172.</description>
     </item>
     
     <item>
@@ -704,15 +740,21 @@ snmp.yml
       <pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid>
-      <description>介绍  Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
-  Prometheus的特点:
- 多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。   架构图 Prometheus服务大致过程：   Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。
-  Prometheus在本地存储抓取的所有数据，并通过一定规则进行清理和整理数据，并把得到的结果存储到新的时间序列中。
-  Prometheus通过PromQL和其他API可视化地展示收集的数据。Prometheus支持很多方式的图表可视化，例如Grafana、自带的Promdash以及自身提供的模版引擎等等。Prometheus还提供HTTP API的查询方式，自定义所需要的输出。
-  PushGateway支持Client主动推送metrics到PushGateway，而Prometheus只是定时去Gateway上抓取数据。
-  Alertmanager是独立于Prometheus的一个组件，可以支持Prometheus的查询语句，提供十分灵活的报警方式。
-  Prometheus 支持通过SNMP协议获取mertics数据.通过配置job,利用snmp_export读取设备监控信息.
-  指标(Metric)类型  Counter 计数器,从数据0开始累计计算. 理想状态会永远增长. 累计计算请求次数等 Gauges 瞬时状态的值. 可以任意变化的数值，适用 CPU 使用率 温度等 Histogram 对一段时间范围内数据进行采样，并对所有数值求和与统计数量、柱状图. 某个时间对某个度量值，分组，一段时间http相应大小，请求耗时的时间。 Summary 同样产生多个指标，分别带有后缀_bucket(仅histogram)、_sum、_count   Histogram和Summary都可以获取分位数。 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数histogram_quantile()计算出来。 Summary则是在应用程序中直接计算出了分位数。 Histograms and summaries中阐述了两者的区别，特别是Summary的的分位数不能被聚合。 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。 LatencyTipOfTheDay: You can’t average percentiles.</description>
+      <description>介绍 Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
+Prometheus的特点:
+多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。 架构图 Prometheus服务大致过程： Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。
+Prometheus在本地存储抓取的所有数据，并通过一定规则进行清理和整理数据，并把得到的结果存储到新的时间序列中。
+Prometheus通过PromQL和其他API可视化地展示收集的数据。Prometheus支持很多方式的图表可视化，例如Grafana、自带的Promdash以及自身提供的模版引擎等等。Prometheus还提供HTTP API的查询方式，自定义所需要的输出。
+PushGateway支持Client主动推送metrics到PushGateway，而Prometheus只是定时去Gateway上抓取数据。
+Alertmanager是独立于Prometheus的一个组件，可以支持Prometheus的查询语句，提供十分灵活的报警方式。
+Prometheus 支持通过SNMP协议获取mertics数据.通过配置job,利用snmp_export读取设备监控信息.
+指标(Metric)类型 Counter 计数器,从数据0开始累计计算. 理想状态会永远增长. 累计计算请求次数等 Gauges 瞬时状态的值. 可以任意变化的数值，适用 CPU 使用率 温度等 Histogram 对一段时间范围内数据进行采样，并对所有数值求和与统计数量、柱状图. 某个时间对某个度量值，分组，一段时间http相应大小，请求耗时的时间。 Summary 同样产生多个指标，分别带有后缀_bucket(仅histogram)、_sum、_count Histogram和Summary都可以获取分位数。 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数histogram_quantile()计算出来。 Summary则是在应用程序中直接计算出了分位数。 Histograms and summaries中阐述了两者的区别，特别是Summary的的分位数不能被聚合。 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。 LatencyTipOfTheDay: You can’t average percentiles. Period中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。
+主要我们监控用到最上面两种,下面两种类型目前我没有接触,上面这段文字与介绍引用自lijiaocn
+安装Prometheus 本次搭建利用docker方式.整体搭建完成需要两个容器.暂不配置告警相关,只做监控数据
+前提 搭建位置: /home/aLong/prometheus/
+环境:docker19.03.1 需要指定版本请查阅官方文档.
+系统:centos7
+准备工作 Prometheus的配置文件: prometheus.</description>
     </item>
     
     <item>
@@ -749,11 +791,14 @@ snmp.yml
       <guid>https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
       <description>Laradock 安装与使用 官网
 GitHub: https://github.com/laradock/laradock
-要求   Git Docker &amp;gt;= 17.12   项目的位置  已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录.  结构 :
-  project-a    laradock-a project-b  laradock-b    没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目.     laradock project-x project-y  启动环境 clone下来还没有生成.
+要求 Git Docker &amp;gt;= 17.12 项目的位置 已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录. 结构 :
+project-a laradock-a project-b laradock-b 没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目. laradock project-x project-y 启动环境 clone下来还没有生成.
 进入laradock目录,编辑Web服务器站点配置. cp env-exalpme .env 环境是laradock环境,里面可以对相应的版本,配置进行修改. 例如指定mysql版本为5.7 ,vim .env ,搜索到mysql部分, 修改MYSQL_VERSION=5.7.26 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)
 例如我们需要启动环境需要 mysql,redis,nginx.
-执行 docker-compose up -d nginx mysql redis</description>
+执行 docker-compose up -d nginx mysql redis
+经过漫长等待后,可以得到我们想要的环境,通过 docker ps 或者 docker-compose ps 查看容器.
+如果先生成容器,在之后编辑环境时,需要停掉容器,修改完 build之后 再start 容器. 例如修改nginx:
+docker-compose stop nginx 修改.env 或者 nginx conf docker-compose build nginx (完全重建,加参数: &amp;ndash;no-cache) docker-compose start nginx Nginx 配置项目 我们再laradock中,进入nginx/sites/ 下.</description>
     </item>
     
     <item>
@@ -781,8 +826,8 @@ GitHub: https://github.com/laradock/laradock
       <pubDate>Mon, 12 Aug 2019 11:29:38 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</guid>
-      <description>虚拟机安装 macOS 准备工作:  VM关闭进程,利用macOS Unlocker修改VM使其能安装macOS系统, 执行程序 win-install.cmd 使用管理员权限运行脚本. 准备好macOS镜象. 利用VM创建虚机,系统类型选择macOS,版本号选择与下载的镜象版本相同.  装系统:  启动虚拟机,并通过cdrom加载镜象. 首次安装需要先利用系统内硬盘工具格式化硬盘,之后利用安装工具进行系统安装.  异常问题:  开启虚拟机弹出错误:vcpu-0 错误.  修改虚机镜象文件.vmx 在smc.present = “TRUE”下面插入一行代码: smc.version = 0
- 不能正常登陆APPID  需要修改虚拟机,利用Chameleon Wizard 伪造设备信息. 保存 生成的信息 去修改镜象所在文件下的.vmx
+      <description>虚拟机安装 macOS 准备工作: VM关闭进程,利用macOS Unlocker修改VM使其能安装macOS系统, 执行程序 win-install.cmd 使用管理员权限运行脚本. 准备好macOS镜象. 利用VM创建虚机,系统类型选择macOS,版本号选择与下载的镜象版本相同. 装系统: 启动虚拟机,并通过cdrom加载镜象. 首次安装需要先利用系统内硬盘工具格式化硬盘,之后利用安装工具进行系统安装. 异常问题: 开启虚拟机弹出错误:vcpu-0 错误. 修改虚机镜象文件.vmx 在smc.present = “TRUE”下面插入一行代码: smc.version = 0
+不能正常登陆APPID 需要修改虚拟机,利用Chameleon Wizard 伪造设备信息. 保存 生成的信息 去修改镜象所在文件下的.vmx
 修改 board-id.reflectHost = &amp;ldquo;TRUE&amp;rdquo; 为FALSE,并在下面插入需要的伪造设备信息例子:
 board-id = &amp;ldquo;Mac-94245B3640C91C81&amp;rdquo; hw.model.reflectHost = &amp;ldquo;FALSE&amp;rdquo; hw.model = &amp;ldquo;MacBook Pro&amp;rdquo; serialNumber.reflectHost = &amp;ldquo;FALSE&amp;rdquo; serialNumber = &amp;ldquo;C02JJ8B3DH2G&amp;rdquo; smbios.reflectHost = &amp;ldquo;FALSE&amp;rdquo;
 这段信息中的board-id 与 serialNumber 不要与例子的相同.其他可以参考.最后保存,重启.
@@ -795,12 +840,12 @@ board-id = &amp;ldquo;Mac-94245B3640C91C81&amp;rdquo; hw.model.reflectHost = &am
       <pubDate>Fri, 26 Jul 2019 14:30:25 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid>
-      <description>Laravel5 数据库迁移笔记   创建迁移文件 命令: make:migration
+      <description>Laravel5 数据库迁移笔记 创建迁移文件 命令: make:migration
 举例: php artisan make:migration create_users_table --create=users
 生成位置: 项目/database/migrations/下 文件名已时间开头,后面是自己创建迁移文件名字.
 &amp;ndash;creat 指定数据库中表的名字
-  编辑迁移文件 打开迁移文件:
-use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateUsersTable extends Migration { /** * Run the migrations. * * @return void */ public function up() { Schema::create(&amp;#39;users&amp;#39;, function (Blueprint $table) { $table-&amp;gt;bigIncrements(&amp;#39;id&amp;#39;); $table-&amp;gt;string(&amp;#39;name&amp;#39;); $table-&amp;gt;string(&amp;#39;email&amp;#39;)-&amp;gt;unique(); $table-&amp;gt;timestamp(&amp;#39;email_verified_at&amp;#39;)-&amp;gt;nullable(); $table-&amp;gt;string(&amp;#39;password&amp;#39;); $table-&amp;gt;rememberToken(); $table-&amp;gt;timestamps(); }); } /** * Reverse the migrations. * * @return void */ public function down() { Schema::dropIfExists(&amp;#39;users&amp;#39;); } }   文件中有两个方法,up/down .</description>
+编辑迁移文件 打开迁移文件:
+use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateUsersTable extends Migration { /** * Run the migrations. * * @return void */ public function up() { Schema::create(&amp;#39;users&amp;#39;, function (Blueprint $table) { $table-&amp;gt;bigIncrements(&amp;#39;id&amp;#39;); $table-&amp;gt;string(&amp;#39;name&amp;#39;); $table-&amp;gt;string(&amp;#39;email&amp;#39;)-&amp;gt;unique(); $table-&amp;gt;timestamp(&amp;#39;email_verified_at&amp;#39;)-&amp;gt;nullable(); $table-&amp;gt;string(&amp;#39;password&amp;#39;); $table-&amp;gt;rememberToken(); $table-&amp;gt;timestamps(); }); } /** * Reverse the migrations. * * @return void */ public function down() { Schema::dropIfExists(&amp;#39;users&amp;#39;); } } 文件中有两个方法,up/down .</description>
     </item>
     
     <item>
@@ -833,7 +878,7 @@ composer在项目中安装三方库时候出现报错： 执行命令： compose
       <pubDate>Thu, 27 Jun 2019 09:58:04 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/%E6%97%A0%E7%89%88%E6%9D%83%E7%B4%A0%E6%9D%90%E7%AB%99%E7%82%B9/</guid>
-      <description>最近找素材收集一些站点 无版权对于我们来说可以放心使用  列表如下：
+      <description>最近找素材收集一些站点 无版权对于我们来说可以放心使用 列表如下：
 http://www.pexels.com/
 http://www.gratisography.com/　https://visualhunt.com/
 http://finda.photo
@@ -901,16 +946,16 @@ import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) c = ssl.wrap
       
       <guid>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid>
       <description>目的 安装python3.7.3 安装pip
-准备工作  系统内置python2.X,去除默认python的软链, sudo rm /usr/bin/python 安装一些软件包&amp;amp;软件包保持最新状态.  sudo apt-get update
+准备工作 系统内置python2.X,去除默认python的软链, sudo rm /usr/bin/python 安装一些软件包&amp;amp;软件包保持最新状态. sudo apt-get update
 sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 安装Python 通过编译安装python
 默认我下载在home里, cd
-下载新python文件, wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
-解压文件, tar zxf Python-3.7.3.tgz
-把这个文件拷贝到放置的位置. 这里我放到/usr/local/python  mkdir -p /usr/local/python
+下载新python文件, wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz 解压文件, tar zxf Python-3.7.3.tgz
+把这个文件拷贝到放置的位置. 这里我放到/usr/local/python mkdir -p /usr/local/python
 进入这个目录, 执行 ./configure --enable-optimizations 之后执行 sudo make -j 8 这里8根据设备cpu核心数来的,不知道你可以写1(手动滑稽)
 make之后 该 make install 嘛? NO! 是 sudo make altinstall
-装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在.</description>
+装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在. 需要手动添加一下,我这个是没有给我创建成功.
+sudo ln -s /usr/local/Python-3.</description>
     </item>
     
     <item>
@@ -928,18 +973,23 @@ i,j,k := 3.8,true,100 声明一组变量
 _, res := 123,321 _特殊变量名,赋予他的值会被丢弃
 常量 const 声明
 const Pi = 3.14 声明一个常量Pi
-const( apple = &amp;quot;fruit&amp;quot; banana ) banana 常量未定义初始化值会与apple值相同
+const( apple = &amp;#34;fruit&amp;#34; banana ) banana 常量未定义初始化值会与apple值相同
 数据类型 boolean,整型,浮点型,字符串,错误
-  布尔 bool 初始化默认fasle
-  整型
+布尔 bool 初始化默认fasle
+整型
 int8,int16,int32,int64 (有符号)
 uint8(byte),uint16,uint32(rune),uint64 (无符号)
 uintptr
 byte,rune 与uint8,uint32别名
 整形初始化默认值0
-  浮点型
+浮点型
 float32,float64(默认浮点类型)
-complex64,complex128</description>
+complex64,complex128
+float32,float64 初始化默认值0
+字符串
+双引号或``,UTF8编码,\转义
+初始化默认值&amp;quot;&amp;quot;
+修改需要转换类型为 rune或byte 操作后再转换</description>
     </item>
     
     <item>
@@ -951,12 +1001,12 @@ complex64,complex128</description>
       <description>redis笔记 单进程,默认16库,
 select N 切换库
 flushdb 清空库
-类型  string 字符串 list 列表 set 集合 sorted set有序集合 hash哈希  一个字符串支持512M
+类型 string 字符串 list 列表 set 集合 sorted set有序集合 hash哈希 一个字符串支持512M
 有序集合 每个元素会关联一个double类型分数。成员唯一，分数可以重复。
-常用命令 key： keys * exists key move key db 移除key 从库中 expire key 为key 设置过期时间 ttl key 查看多少秒过期，-1 永不过期， -2已过期 type key 查看类型 del key 删除  string： getrange key 0-N setrange key 0-N XXX 获取字符串范围内容， 设置范围内为XXX
+常用命令 key： keys * exists key move key db 移除key 从库中 expire key 为key 设置过期时间 ttl key 查看多少秒过期，-1 永不过期， -2已过期 type key 查看类型 del key 删除 string： getrange key 0-N setrange key 0-N XXX 获取字符串范围内容， 设置范围内为XXX
 setex 设置生命值多少秒 setnx key 设置一个不存在的key
 mset mget msetnx
-list： lpush rpush lrange lpop rpop lindex llen lrem key 2 value 删除2个value ltrim key 0-N 截取并复制给key （其他的删除了） rpoplpush 弹出前面key的值 加入后面的key中 lset key index value 设置key中 index下标的值 linsert key before/afrer value1 value2 key中1值得前面后后面加入2值  set： sadd key value 添加到key集合 smembers key 查询集合 sismember key m 查询m是否在key集合中 scard key 集合ket的基数 spop key 随机移除一个元素并返回元素的值 srem key m 移除m从key的集合中 smove K1 K2 m 将k1的m一刀k2里 sinter key1 key2 交集 sunion key1 key2 并集 sdiff key1 key2 差集  hash： hset user name ali hset user age 33 设置user数据 hget user name 获取user.</description>
+list： lpush rpush lrange lpop rpop lindex llen lrem key 2 value 删除2个value ltrim key 0-N 截取并复制给key （其他的删除了） rpoplpush 弹出前面key的值 加入后面的key中 lset key index value 设置key中 index下标的值 linsert key before/afrer value1 value2 key中1值得前面后后面加入2值 set： sadd key value 添加到key集合 smembers key 查询集合 sismember key m 查询m是否在key集合中 scard key 集合ket的基数 spop key 随机移除一个元素并返回元素的值 srem key m 移除m从key的集合中 smove K1 K2 m 将k1的m一刀k2里 sinter key1 key2 交集 sunion key1 key2 并集 sdiff key1 key2 差集 hash： hset user name ali hset user age 33 设置user数据 hget user name 获取user.</description>
     </item>
     
     <item>
@@ -966,9 +1016,11 @@ list： lpush rpush lrange lpop rpop lindex llen lrem key 2 value 删除2个valu
       
       <guid>https://blog.51ai.vip/aLong/posts/gulp%E7%AC%94%E8%AE%B0/</guid>
       <description>gulp gulp.js是一个前端构建工具。
-安装  npm 安装全局gulp，npm install -g gulp。（如果没有梯子，最好安装下cnpm） cnpm 安装 npm install -g cnpm --registry=https://registry.npm.taobao.org 安装完cnpm，下面所有npm操作替换cnpm 执行即可。 进入项目，初始化（npm init） 项目安装gulp，项目文件夹下，npm install --save-dev gulp。 (&amp;ndash;save-dev 加入此项目依赖中，不需要可取消这个参数) 项目根创建gulpfile.js文件，文件内创建任务测试。  var gulp = require(&#39;gulp&#39;); gulp.task(&#39;default&#39;,function(){ console.log(&#39;hello world!&#39;); }); 运行 gulp，可以看到默认执行，输出 hello world! 。测试成功。  gulp API 上面运行 gulp 执行default ，这个是gulp API。 [文档](https://www.gulpjs.com.cn/docs/api/)  gulp工作方式 gulp.src 获取文件流,通过pipe方法导入到插件，插件处理的流通过pipe方法导入 gulp.dest中, gulp.dest 输出目标文件。
-  gulp src gulp.src(globs[, options])
- 输出（Emits）符合所提供的匹配模式（glob）或者匹配模式的数组（array of globs）的文件。 将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中。</description>
+安装 npm 安装全局gulp，npm install -g gulp。（如果没有梯子，最好安装下cnpm） cnpm 安装 npm install -g cnpm --registry=https://registry.npm.taobao.org 安装完cnpm，下面所有npm操作替换cnpm 执行即可。 进入项目，初始化（npm init） 项目安装gulp，项目文件夹下，npm install --save-dev gulp。 (&amp;ndash;save-dev 加入此项目依赖中，不需要可取消这个参数) 项目根创建gulpfile.js文件，文件内创建任务测试。 var gulp = require(&amp;#39;gulp&amp;#39;); gulp.task(&amp;#39;default&amp;#39;,function(){ console.log(&amp;#39;hello world!&amp;#39;); }); 运行 gulp，可以看到默认执行，输出 hello world! 。测试成功。 gulp API 上面运行 gulp 执行default ，这个是gulp API。 [文档](https://www.gulpjs.com.cn/docs/api/) gulp工作方式 gulp.src 获取文件流,通过pipe方法导入到插件，插件处理的流通过pipe方法导入 gulp.dest中, gulp.dest 输出目标文件。
+gulp src gulp.src(globs[, options])
+输出（Emits）符合所提供的匹配模式（glob）或者匹配模式的数组（array of globs）的文件。 将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中。
+文档这意思看着有点费劲，理解为获取文件路径。gulp通过这个方法获取到处理的文件流。
+参数：</description>
     </item>
     
     <item>
@@ -994,8 +1046,7 @@ timedatectl 很多设置，需要请查相关资料。</description>
       <description>Centos7与之前不太一样 以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。 这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。
 查看防火墙服务状态 systemctl status firewalld
 ####查看f防火墙状态 firewall-cmd --state
-查看规则 firewall-cmd --list-all 
-####停止&amp;amp;开启防&amp;amp;重启火墙 systemctl stop firewalld.service systemctl start firewalld.service systemctl restart firewalld.service
+查看规则 firewall-cmd --list-all ####停止&amp;amp;开启防&amp;amp;重启火墙 systemctl stop firewalld.service systemctl start firewalld.service systemctl restart firewalld.service
 关闭防火墙 systemctl disable firewalld.service
 重载防火墙 firewall-cmd —reload
 查询开放端口 firewall-cmd --list-ports
@@ -1039,8 +1090,8 @@ docker exec 可以在容器内直接执行任意命令。 docker exec -it xx /bi
       <pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid>
-      <description>Docker简介  一个能够把开发的应用程序自动部署到容器的开源引擎 三大概念：镜像（Image）容器（Container）仓库（Repository）
- 具体信息请参考官方。官方概述（养成看文档习惯）
+      <description>Docker简介 一个能够把开发的应用程序自动部署到容器的开源引擎 三大概念：镜像（Image）容器（Container）仓库（Repository）
+具体信息请参考官方。官方概述（养成看文档习惯）
 安装环境 Ubuntu 16.04 LTS
 Docker安装 根据官方doc安装。官方doc 1.如果你之前装过，命令卸载。 sudo apt-get remove docker docker-engine docker.io containerd runc
 2.更新包索引 apt-get update
@@ -1059,7 +1110,7 @@ Docker安装 根据官方doc安装。官方doc 1.如果你之前装过，命令�
       <description>wordpress 之后 wordpress 使用很方便，但是折腾几次之后。由于一次意外，导致管理者把我的vps被停掉。虽然有些文章还是保留了。但是这次之后感觉自己还是找一个稳妥的家。连接hexo搭建的博客之后，打算自己来折腾一下。
 记录笔记环境 在windows上写笔记，环境目前是windows下操作。linux，mac系统中需要注意一些细节吧。存在提不到情况，先做好出现问题考虑自行排查。
 准备 看下hexo的安装提示。 hexo 需要Node.js 和 Git 。
- 安装 Node.js 官网: 官网 widows，mac，linux 都有对应的安装方法。根据自己的环境来安装。 安装 Git 官网: 官网 根据自己环境安装。 安装Hexo 通过npm来安装 Hexo。 命令: npm install -g hexo-cli 什么鬼，通过这个命令发现没有实现正常安装。理由，我们在天朝。 解决方式： 替换国内npm源。 命令: npm install -g cnpm --registry=https://registry.npm.taobao.org 请注意不同系统在操作此命令时，需要一些设置。linux 如果使用下面命令需要自建软链。 cnpm ln -s /yourdir/bin/cnpm /usr/local/npm 下一步用cnpm 来安装 Hexo： cnpm install hexo-cli -g 验证hexo 是否安装： hexo v 会列出版本信息。  下面使用Hexo来创建blog：  创建项目文件夹。这里开始通过git bash来使用命令行操作。 进入项目文件夹，初始化。 hexo init （这里也可以，通过 hexo init 你的项目文件夹名 结果一样） 这里会看到目录有相关文件了。具体这些文件，看下 手册 是什么意思。 这时候其实已经是一个博客站点了。 命令 hexo g , hexo s 得到信息：Hexo is running at http：//lcoalhost:4000` 注意4000端口需要未被占用。 访问地址就可以看到初始化的站点了。 （不喜欢默认主题可以修改主题）  写文章 写文章需要先创建文档，这个文档默认生成在_post 文件夹下。</description>
+安装 Node.js 官网: 官网 widows，mac，linux 都有对应的安装方法。根据自己的环境来安装。 安装 Git 官网: 官网 根据自己环境安装。 安装Hexo 通过npm来安装 Hexo。 命令: npm install -g hexo-cli 什么鬼，通过这个命令发现没有实现正常安装。理由，我们在天朝。 解决方式： 替换国内npm源。 命令: npm install -g cnpm --registry=https://registry.npm.taobao.org 请注意不同系统在操作此命令时，需要一些设置。linux 如果使用下面命令需要自建软链。 cnpm ln -s /yourdir/bin/cnpm /usr/local/npm 下一步用cnpm 来安装 Hexo： cnpm install hexo-cli -g 验证hexo 是否安装： hexo v 会列出版本信息。 下面使用Hexo来创建blog： 创建项目文件夹。这里开始通过git bash来使用命令行操作。 进入项目文件夹，初始化。 hexo init （这里也可以，通过 hexo init 你的项目文件夹名 结果一样） 这里会看到目录有相关文件了。具体这些文件，看下 手册 是什么意思。 这时候其实已经是一个博客站点了。 命令 hexo g , hexo s 得到信息：Hexo is running at http：//lcoalhost:4000` 注意4000端口需要未被占用。 访问地址就可以看到初始化的站点了。 （不喜欢默认主题可以修改主题） 写文章 写文章需要先创建文档，这个文档默认生成在_post 文件夹下。</description>
     </item>
     
     <item>

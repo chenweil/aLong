@@ -15,11 +15,14 @@
       <guid>https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
       <description>Laradock 安装与使用 官网
 GitHub: https://github.com/laradock/laradock
-要求   Git Docker &amp;gt;= 17.12   项目的位置  已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录.  结构 :
-  project-a    laradock-a project-b  laradock-b    没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目.     laradock project-x project-y  启动环境 clone下来还没有生成.
+要求 Git Docker &amp;gt;= 17.12 项目的位置 已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录. 结构 :
+project-a laradock-a project-b laradock-b 没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目. laradock project-x project-y 启动环境 clone下来还没有生成.
 进入laradock目录,编辑Web服务器站点配置. cp env-exalpme .env 环境是laradock环境,里面可以对相应的版本,配置进行修改. 例如指定mysql版本为5.7 ,vim .env ,搜索到mysql部分, 修改MYSQL_VERSION=5.7.26 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)
 例如我们需要启动环境需要 mysql,redis,nginx.
-执行 docker-compose up -d nginx mysql redis</description>
+执行 docker-compose up -d nginx mysql redis
+经过漫长等待后,可以得到我们想要的环境,通过 docker ps 或者 docker-compose ps 查看容器.
+如果先生成容器,在之后编辑环境时,需要停掉容器,修改完 build之后 再start 容器. 例如修改nginx:
+docker-compose stop nginx 修改.env 或者 nginx conf docker-compose build nginx (完全重建,加参数: &amp;ndash;no-cache) docker-compose start nginx Nginx 配置项目 我们再laradock中,进入nginx/sites/ 下.</description>
     </item>
     
     <item>
@@ -28,12 +31,12 @@ GitHub: https://github.com/laradock/laradock
       <pubDate>Fri, 26 Jul 2019 14:30:25 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid>
-      <description>Laravel5 数据库迁移笔记   创建迁移文件 命令: make:migration
+      <description>Laravel5 数据库迁移笔记 创建迁移文件 命令: make:migration
 举例: php artisan make:migration create_users_table --create=users
 生成位置: 项目/database/migrations/下 文件名已时间开头,后面是自己创建迁移文件名字.
 &amp;ndash;creat 指定数据库中表的名字
-  编辑迁移文件 打开迁移文件:
-use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateUsersTable extends Migration { /** * Run the migrations. * * @return void */ public function up() { Schema::create(&amp;#39;users&amp;#39;, function (Blueprint $table) { $table-&amp;gt;bigIncrements(&amp;#39;id&amp;#39;); $table-&amp;gt;string(&amp;#39;name&amp;#39;); $table-&amp;gt;string(&amp;#39;email&amp;#39;)-&amp;gt;unique(); $table-&amp;gt;timestamp(&amp;#39;email_verified_at&amp;#39;)-&amp;gt;nullable(); $table-&amp;gt;string(&amp;#39;password&amp;#39;); $table-&amp;gt;rememberToken(); $table-&amp;gt;timestamps(); }); } /** * Reverse the migrations. * * @return void */ public function down() { Schema::dropIfExists(&amp;#39;users&amp;#39;); } }   文件中有两个方法,up/down .</description>
+编辑迁移文件 打开迁移文件:
+use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateUsersTable extends Migration { /** * Run the migrations. * * @return void */ public function up() { Schema::create(&amp;#39;users&amp;#39;, function (Blueprint $table) { $table-&amp;gt;bigIncrements(&amp;#39;id&amp;#39;); $table-&amp;gt;string(&amp;#39;name&amp;#39;); $table-&amp;gt;string(&amp;#39;email&amp;#39;)-&amp;gt;unique(); $table-&amp;gt;timestamp(&amp;#39;email_verified_at&amp;#39;)-&amp;gt;nullable(); $table-&amp;gt;string(&amp;#39;password&amp;#39;); $table-&amp;gt;rememberToken(); $table-&amp;gt;timestamps(); }); } /** * Reverse the migrations. * * @return void */ public function down() { Schema::dropIfExists(&amp;#39;users&amp;#39;); } } 文件中有两个方法,up/down .</description>
     </item>
     
     <item>

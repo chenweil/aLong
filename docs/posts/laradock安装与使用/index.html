@@ -4,15 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="Laradock 安装与使用 官网
 GitHub: https://github.com/laradock/laradock
-要求   Git Docker &gt;= 17.12   项目的位置  已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录.  结构 :
-  project-a    laradock-a project-b  laradock-b    没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目.     laradock project-x project-y  启动环境 clone下来还没有生成.
+要求 Git Docker &gt;= 17.12 项目的位置 已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录. 结构 :
+project-a laradock-a project-b laradock-b 没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目. laradock project-x project-y 启动环境 clone下来还没有生成.
 进入laradock目录,编辑Web服务器站点配置. cp env-exalpme .env 环境是laradock环境,里面可以对相应的版本,配置进行修改. 例如指定mysql版本为5.7 ,vim .env ,搜索到mysql部分, 修改MYSQL_VERSION=5.7.26 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)
 例如我们需要启动环境需要 mysql,redis,nginx.
-执行 docker-compose up -d nginx mysql redis">
+执行 docker-compose up -d nginx mysql redis
+经过漫长等待后,可以得到我们想要的环境,通过 docker ps 或者 docker-compose ps 查看容器.
+如果先生成容器,在之后编辑环境时,需要停掉容器,修改完 build之后 再start 容器. 例如修改nginx:
+docker-compose stop nginx 修改.env 或者 nginx conf docker-compose build nginx (完全重建,加参数: –no-cache) docker-compose start nginx Nginx 配置项目 我们再laradock中,进入nginx/sites/ 下.">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   

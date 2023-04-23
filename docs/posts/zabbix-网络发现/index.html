@@ -4,21 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="Zabbix6 网络发现
-功能   快速发现并添加主机
-  简单的管理
-  随着环境的改变而快速搭建系统
-  发现配置依据   IP地址段
-  基于服务(FTP、SSH、Web、POP3、IMAP、TCP…)的
-  从Zabbix-Agent接收到的信息
-  SNMP agent接收的信息
-  添加方式   创建 Discovery rule
-  Name：规则名称（唯一）
-  Discovery by proxy： 是否由代理执行
-  IP range： IP地址范围
-     单个IP: 192.168.1.33 IP段: 192.168.1-10.1-255. 范围受限于覆盖地址的总数（小于64K）。 子网掩码: : 192.168.4.0/24 支持的子网掩码: /16 - /30 for IPv4 addresses /112 - /128 for IPv6 addresses\IP列表: 192.">
+功能 快速发现并添加主机
+简单的管理
+随着环境的改变而快速搭建系统
+发现配置依据 IP地址段
+基于服务(FTP、SSH、Web、POP3、IMAP、TCP…)的
+从Zabbix-Agent接收到的信息
+SNMP agent接收的信息
+添加方式 创建 Discovery rule
+Name：规则名称（唯一）
+Discovery by proxy： 是否由代理执行
+IP range： IP地址范围
+单个IP: 192.168.1.33 IP段: 192.168.1-10.1-255. 范围受限于覆盖地址的总数（小于64K）。 子网掩码: : 192.168.4.0/24 支持的子网掩码: /16 - /30 for IPv4 addresses /112 - /128 for IPv6 addresses\IP列表: 192.168.1.1-255, 192.168.2.1-100, 192.168.2.200, 192.168.4.0/24 Zabbix 3.0.0起，此字段支持空格，表格和多行。
+Update interval: Zabbix执行规则的频率
+Checks: 发现的方式
+Device uniqueness criteria：设备唯一标识
+Host name ： 主机名
+Visible name：描述名
+这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   

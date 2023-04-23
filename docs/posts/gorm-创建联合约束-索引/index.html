@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="GROM创建联合索引 之前提到一个联合约束，那么根据需求再次做一个演示：
 type Demo struct { ID uint `gorm:&#34;primary_key&#34;` CreatedAt time.Time UpdatedAt time.Time DeletedAt *time.Time `gorm:&#34;index;unique_index:name_d&#34;` Name string `gorm:&#34;unique_index:name_d&#34;` Status int } 通过demo 迁移后，deleted_at 与 name 会形成一个联合约束。
@@ -59,15 +59,15 @@ type Demo struct { ID uint `gorm:&#34;primary_key&#34;` CreatedAt time.Time Upda
   <h1>GORM 创建联合约束/索引</h1>
   <h3 id="grom创建联合索引">GROM创建联合索引</h3>
 <p>之前提到一个联合约束，那么根据需求再次做一个演示：</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Demo <span style="color:#008000;font-weight:bold">struct</span> {
-	ID           <span style="color:#b00040">uint</span>          <span style="color:#ba2121">`gorm:&#34;primary_key&#34;`</span>
-	CreatedAt    time.Time
-	UpdatedAt    time.Time
-	DeletedAt    <span style="color:#666">*</span>time.Time    <span style="color:#ba2121">`gorm:&#34;index;unique_index:name_d&#34;`</span>
-	Name     <span style="color:#b00040">string</span>            <span style="color:#ba2121">`gorm:&#34;unique_index:name_d&#34;`</span>
-	Status       <span style="color:#b00040">int</span>         
-}
-</code></pre></div><p>通过demo 迁移后，<code>deleted_at</code> 与 <code>name</code> 会形成一个联合约束。</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Demo <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	ID           <span style="color:#b00040">uint</span>          <span style="color:#ba2121">`gorm:&#34;primary_key&#34;`</span>
+</span></span><span style="display:flex;"><span>	CreatedAt    time.Time
+</span></span><span style="display:flex;"><span>	UpdatedAt    time.Time
+</span></span><span style="display:flex;"><span>	DeletedAt    <span style="color:#666">*</span>time.Time    <span style="color:#ba2121">`gorm:&#34;index;unique_index:name_d&#34;`</span>
+</span></span><span style="display:flex;"><span>	Name     <span style="color:#b00040">string</span>            <span style="color:#ba2121">`gorm:&#34;unique_index:name_d&#34;`</span>
+</span></span><span style="display:flex;"><span>	Status       <span style="color:#b00040">int</span>         
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>通过demo 迁移后，<code>deleted_at</code> 与 <code>name</code> 会形成一个联合约束。</p>
 <p>-OK,完结-</p>
 
 

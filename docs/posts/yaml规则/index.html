@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="yml 语法 最近经常配置一些服务，发现大部分都是yml类型文件。小记一下。
-规则  大小写敏感 缩进表示层级 注释 #  结构： 对象： ：符号
-name:admin数组： - 符号
-user:- name:admin- height:178- age:30字符串： 默认无引号，内部含有空格或特殊符号需要加&#39;&#39;
-name:admindesc:&#39;he was cool&#39;null： ~
-value:~层级依靠缩进：
-job:- jobconfig:name:&#39;snmp-sw01&#39;- target:- 192.">
+规则 大小写敏感 缩进表示层级 注释 # 结构： 对象： ：符号
+name: admin 数组： - 符号
+user: - name: admin - height: 178 - age: 30 字符串： 默认无引号，内部含有空格或特殊符号需要加&#39;&#39;
+name: admin desc: &#39;he was cool&#39; null： ~
+value: ~ 层级依靠缩进：
+job: - jobconfig: name: &#39;snmp-sw01&#39; - target: - 192.168.1.88 ">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
@@ -71,24 +71,24 @@ job:- jobconfig:name:&#39;snmp-sw01&#39;- target:- 192.">
 </ol>
 <h3 id="结构">结构：</h3>
 <p>对象： ：符号</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span>admin<span style="color:#bbb">
-</span></code></pre></div><p>数组： - 符号</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#008000;font-weight:bold">user</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span>admin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">height</span>:<span style="color:#bbb"> </span><span style="color:#666">178</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">age</span>:<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb">
-</span></code></pre></div><p>字符串： 默认无引号，内部含有空格或特殊符号需要加''</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span>admin<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">desc</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;he was cool&#39;</span><span style="color:#bbb">
-</span></code></pre></div><p>null： ~</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#008000;font-weight:bold">value</span>:<span style="color:#bbb"> </span>~<span style="color:#bbb">
-</span></code></pre></div><p>层级依靠缩进：</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#008000;font-weight:bold">job</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">jobconfig</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;snmp-sw01&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#008000;font-weight:bold">target</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>- <span style="color:#666">192.168.1.88</span><span style="color:#bbb">
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span>admin<span style="color:#bbb">
+</span></span></span></code></pre></div><p>数组： - 符号</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">user</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span>admin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">height</span>:<span style="color:#bbb"> </span><span style="color:#666">178</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">age</span>:<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>字符串： 默认无引号，内部含有空格或特殊符号需要加''</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span>admin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">desc</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;he was cool&#39;</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>null： ~</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">value</span>:<span style="color:#bbb"> </span>~<span style="color:#bbb">
+</span></span></span></code></pre></div><p>层级依靠缩进：</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">job</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">jobconfig</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;snmp-sw01&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#008000;font-weight:bold">target</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#666">192.168.1.88</span><span style="color:#bbb">
+</span></span></span></code></pre></div>
 
     <footer class="site-footer">
   <span class="site-footer-credits">

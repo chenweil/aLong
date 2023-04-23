@@ -36,17 +36,17 @@
 首先问了一圈没有人知道。那么只能靠自己了。
 查看软件版本: mysql --version
 之后通过神奇的Google科普了一下。 知道了具体的方法：
-  关闭mysql服务。
-  修改my.conf 在里面[mysqld] 下面最后加入一行
+关闭mysql服务。
+修改my.conf 在里面[mysqld] 下面最后加入一行
 [mysqld] ... skip-grant-tables 修改完保存退出。
-  重启mysql服务。
-  mysql 进入mysql 不需要密码了。
+重启mysql服务。
+mysql 进入mysql 不需要密码了。
 show databases; 查看数据库
 use mysql; 选择 mysql 数据库 在此数据库执行更新语句（修改root用户的密码为root）： update user set authentication_string=password(&#39;root&#39;) where user=&#39;root&#39;; flush privileges; 更新权限
 退出mysql
-  把最开始my.conf加入的语句删除。
-  重启mysql服务
-  最后可以通过设置的密码登陆数据库了。</description>
+把最开始my.conf加入的语句删除。
+重启mysql服务
+最后可以通过设置的密码登陆数据库了。</description>
     </item>
     
   </channel>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="目的 之前配置告警之后,可以发送告警信息.但对于数据具体的结构信息,在模板中数据读取都比较懵.原因是不太清除警报都提供了哪些数据,除了我们设置的信息,还有没有其他的信息.
 告警数据结构 官方docs
@@ -80,53 +80,53 @@ Alerts数据 KV数据的处理方式 KV结构很简单,键值对.通过键获取
 <h3 id="微信通知的demo">微信通知的DEMO</h3>
 <p><img src="https://t1.picb.cc/uploads/2019/12/05/kngxOt.png" alt=""></p>
 <p>上图中是微信接受的通知,下面展示通知模板的代码.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tmpl" data-lang="tmpl">{{- define &#34;_alert_list&#34; -}}
-{{- range .Alerts.Firing -}}
------------------------
-告警类型：{{ .Labels.alertname }}
-告警主题: {{ .Annotations.summary }}
-告警详情: {{ .Annotations.description }}
-触发时间: {{ (.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
-{{ end -}}
----------结束-----------------
-{{- end -}}
-
-{{- define &#34;_resolve_list&#34; -}}
-{{- range .Alerts.Resolved -}}
-**************************
-告警类型：{{ .Labels.alertname }}
-告警主题: {{ .Annotations.summary }}
-告警详情: {{ .Annotations.description }}
-触发时间: {{ (.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
-恢复时间: {{ (.EndsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
-{{ end -}}
-************结束*****************
-{{- end -}}
-
-
-{{- define &#34;wechat.message&#34; -}}
-{{- if and (gt (len .Alerts.Firing) 0) (gt (len .Alerts.Resolved) 0) -}}
-告警数量:{{.Alerts.Firing | len}}
-告警设备:{{ .GroupLabels.server}}
-{{ template &#34;_alert_list&#34; . }}
-====================================
-告警恢复:{{len .Alerts.Resolved}}
-告警设备:{{ .GroupLabels.server}}
-{{ template &#34;_resolve_list&#34; . }}
-{{- else -}}
-  {{- if gt (len .Alerts.Firing) 0 -}}
-告警数量:{{.Alerts.Firing | len}}
-告警设备:{{ .GroupLabels.server}}  
-{{ template &#34;_alert_list&#34; . }}
-  {{- end -}}
-  {{- if gt (len .Alerts.Resolved) 0 -}}
-告警恢复:{{len .Alerts.Resolved}}
-告警设备:{{ .GroupLabels.server}}
-{{ template &#34;_resolve_list&#34; . }}
-  {{- end -}}
-{{- end -}}
-{{- end -}}
-</code></pre></div><p><strong>其中告警设备 server 这个标签是自定义的.如果没有可以删除此行或根据自己标签定义.</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tmpl" data-lang="tmpl"><span style="display:flex;"><span>{{- define &#34;_alert_list&#34; -}}
+</span></span><span style="display:flex;"><span>{{- range .Alerts.Firing -}}
+</span></span><span style="display:flex;"><span>-----------------------
+</span></span><span style="display:flex;"><span>告警类型：{{ .Labels.alertname }}
+</span></span><span style="display:flex;"><span>告警主题: {{ .Annotations.summary }}
+</span></span><span style="display:flex;"><span>告警详情: {{ .Annotations.description }}
+</span></span><span style="display:flex;"><span>触发时间: {{ (.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
+</span></span><span style="display:flex;"><span>{{ end -}}
+</span></span><span style="display:flex;"><span>---------结束-----------------
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- define &#34;_resolve_list&#34; -}}
+</span></span><span style="display:flex;"><span>{{- range .Alerts.Resolved -}}
+</span></span><span style="display:flex;"><span>**************************
+</span></span><span style="display:flex;"><span>告警类型：{{ .Labels.alertname }}
+</span></span><span style="display:flex;"><span>告警主题: {{ .Annotations.summary }}
+</span></span><span style="display:flex;"><span>告警详情: {{ .Annotations.description }}
+</span></span><span style="display:flex;"><span>触发时间: {{ (.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
+</span></span><span style="display:flex;"><span>恢复时间: {{ (.EndsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}
+</span></span><span style="display:flex;"><span>{{ end -}}
+</span></span><span style="display:flex;"><span>************结束*****************
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- define &#34;wechat.message&#34; -}}
+</span></span><span style="display:flex;"><span>{{- if and (gt (len .Alerts.Firing) 0) (gt (len .Alerts.Resolved) 0) -}}
+</span></span><span style="display:flex;"><span>告警数量:{{.Alerts.Firing | len}}
+</span></span><span style="display:flex;"><span>告警设备:{{ .GroupLabels.server}}
+</span></span><span style="display:flex;"><span>{{ template &#34;_alert_list&#34; . }}
+</span></span><span style="display:flex;"><span>====================================
+</span></span><span style="display:flex;"><span>告警恢复:{{len .Alerts.Resolved}}
+</span></span><span style="display:flex;"><span>告警设备:{{ .GroupLabels.server}}
+</span></span><span style="display:flex;"><span>{{ template &#34;_resolve_list&#34; . }}
+</span></span><span style="display:flex;"><span>{{- else -}}
+</span></span><span style="display:flex;"><span>  {{- if gt (len .Alerts.Firing) 0 -}}
+</span></span><span style="display:flex;"><span>告警数量:{{.Alerts.Firing | len}}
+</span></span><span style="display:flex;"><span>告警设备:{{ .GroupLabels.server}}  
+</span></span><span style="display:flex;"><span>{{ template &#34;_alert_list&#34; . }}
+</span></span><span style="display:flex;"><span>  {{- end -}}
+</span></span><span style="display:flex;"><span>  {{- if gt (len .Alerts.Resolved) 0 -}}
+</span></span><span style="display:flex;"><span>告警恢复:{{len .Alerts.Resolved}}
+</span></span><span style="display:flex;"><span>告警设备:{{ .GroupLabels.server}}
+</span></span><span style="display:flex;"><span>{{ template &#34;_resolve_list&#34; . }}
+</span></span><span style="display:flex;"><span>  {{- end -}}
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span></code></pre></div><p><strong>其中告警设备 server 这个标签是自定义的.如果没有可以删除此行或根据自己标签定义.</strong></p>
 
 
     <footer class="site-footer">

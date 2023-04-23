@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="redis笔记 单进程,默认16库,
 select N 切换库
 flushdb 清空库
-类型  string 字符串 list 列表 set 集合 sorted set有序集合 hash哈希  一个字符串支持512M
+类型 string 字符串 list 列表 set 集合 sorted set有序集合 hash哈希 一个字符串支持512M
 有序集合 每个元素会关联一个double类型分数。成员唯一，分数可以重复。
-常用命令 key： keys * exists key move key db 移除key 从库中 expire key 为key 设置过期时间 ttl key 查看多少秒过期，-1 永不过期， -2已过期 type key 查看类型 del key 删除  string： getrange key 0-N setrange key 0-N XXX 获取字符串范围内容， 设置范围内为XXX
+常用命令 key： keys * exists key move key db 移除key 从库中 expire key 为key 设置过期时间 ttl key 查看多少秒过期，-1 永不过期， -2已过期 type key 查看类型 del key 删除 string： getrange key 0-N setrange key 0-N XXX 获取字符串范围内容， 设置范围内为XXX
 setex 设置生命值多少秒 setnx key 设置一个不存在的key
 mset mget msetnx
-list： lpush rpush lrange lpop rpop lindex llen lrem key 2 value 删除2个value ltrim key 0-N 截取并复制给key （其他的删除了） rpoplpush 弹出前面key的值 加入后面的key中 lset key index value 设置key中 index下标的值 linsert key before/afrer value1 value2 key中1值得前面后后面加入2值  set： sadd key value 添加到key集合 smembers key 查询集合 sismember key m 查询m是否在key集合中 scard key 集合ket的基数 spop key 随机移除一个元素并返回元素的值 srem key m 移除m从key的集合中 smove K1 K2 m 将k1的m一刀k2里 sinter key1 key2 交集 sunion key1 key2 并集 sdiff key1 key2 差集  hash： hset user name ali hset user age 33 设置user数据 hget user name 获取user.">
+list： lpush rpush lrange lpop rpop lindex llen lrem key 2 value 删除2个value ltrim key 0-N 截取并复制给key （其他的删除了） rpoplpush 弹出前面key的值 加入后面的key中 lset key index value 设置key中 index下标的值 linsert key before/afrer value1 value2 key中1值得前面后后面加入2值 set： sadd key value 添加到key集合 smembers key 查询集合 sismember key m 查询m是否在key集合中 scard key 集合ket的基数 spop key 随机移除一个元素并返回元素的值 srem key m 移除m从key的集合中 smove K1 K2 m 将k1的m一刀k2里 sinter key1 key2 交集 sunion key1 key2 并集 sdiff key1 key2 差集 hash： hset user name ali hset user age 33 设置user数据 hget user name 获取user.">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   

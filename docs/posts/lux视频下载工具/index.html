@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="简介 是一个下载视频的软件. 我一般通过此软件下载b站视频.支持专辑下载. 支持的站点: 介绍
 仓库 github:lux
@@ -12,7 +12,7 @@
 需要的依赖 ffmpeg
 使用 命令: lux [OPTIONS] URL [URL...]
 例子:
-#我想下载某专辑视频,首先创建一个文件夹 mkdir golang #然后进入文件夹 cd golang ##执行lux 下载专辑 (-eto bilibili每集文件名不包含播放列表标题) lux -p -eto https://www.bilibiLi.com/video/BV1SF411z7XW ##选择性下载 例如只下载 10-20集 lux -p -eto -items 10-20 https://www.bilibiLi.com/video/BV1SF411z7XW ## 选择清晰度 需要-i查看一下清晰度.查看 download with值 lux -i https://www.bilibili.com/video/BV1SF411z7XW ## 加入清晰度参数1080(不建议,列表执行清晰度可能不全是1080会导致报错) lux -p -eto -f 80-7 https://www.bilibili.com/video/BV1SF411z7XW 图片展示  下载:  下载完成结果  查询清晰度   ">
+#我想下载某专辑视频,首先创建一个文件夹 mkdir golang #然后进入文件夹 cd golang ##执行lux 下载专辑 (-eto bilibili每集文件名不包含播放列表标题) lux -p -eto https://www.bilibiLi.com/video/BV1SF411z7XW ##选择性下载 例如只下载 10-20集 lux -p -eto -items 10-20 https://www.bilibiLi.com/video/BV1SF411z7XW ## 选择清晰度 需要-i查看一下清晰度.查看 download with值 lux -i https://www.bilibili.com/video/BV1SF411z7XW ## 加入清晰度参数1080(不建议,列表执行清晰度可能不全是1080会导致报错) lux -p -eto -f 80-7 https://www.bilibili.com/video/BV1SF411z7XW 图片展示 下载: 下载完成结果 查询清晰度 ">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
@@ -73,19 +73,19 @@
 <h2 id="使用">使用</h2>
 <p>命令: <code>lux [OPTIONS] URL [URL...]</code></p>
 <p>例子:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#408080;font-style:italic">#我想下载某专辑视频,首先创建一个文件夹</span>
-mkdir golang
-<span style="color:#408080;font-style:italic">#然后进入文件夹</span>
-<span style="color:#008000">cd</span> golang
-<span style="color:#408080;font-style:italic">##执行lux 下载专辑 (-eto bilibili每集文件名不包含播放列表标题)</span>
-lux -p -eto https://www.bilibiLi.com/video/BV1SF411z7XW
-<span style="color:#408080;font-style:italic">##选择性下载 例如只下载 10-20集</span>
-lux -p -eto -items 10-20 https://www.bilibiLi.com/video/BV1SF411z7XW
-<span style="color:#408080;font-style:italic">## 选择清晰度 需要-i查看一下清晰度.查看 download with值</span>
-lux -i https://www.bilibili.com/video/BV1SF411z7XW
-<span style="color:#408080;font-style:italic">## 加入清晰度参数1080(不建议,列表执行清晰度可能不全是1080会导致报错)</span>
-lux -p -eto -f 80-7 https://www.bilibili.com/video/BV1SF411z7XW
-</code></pre></div><h2 id="图片展示">图片展示</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#我想下载某专辑视频,首先创建一个文件夹</span>
+</span></span><span style="display:flex;"><span>mkdir golang
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#然后进入文件夹</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">cd</span> golang
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">##执行lux 下载专辑 (-eto bilibili每集文件名不包含播放列表标题)</span>
+</span></span><span style="display:flex;"><span>lux -p -eto https://www.bilibiLi.com/video/BV1SF411z7XW
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">##选择性下载 例如只下载 10-20集</span>
+</span></span><span style="display:flex;"><span>lux -p -eto -items 10-20 https://www.bilibiLi.com/video/BV1SF411z7XW
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">## 选择清晰度 需要-i查看一下清晰度.查看 download with值</span>
+</span></span><span style="display:flex;"><span>lux -i https://www.bilibili.com/video/BV1SF411z7XW
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">## 加入清晰度参数1080(不建议,列表执行清晰度可能不全是1080会导致报错)</span>
+</span></span><span style="display:flex;"><span>lux -p -eto -f 80-7 https://www.bilibili.com/video/BV1SF411z7XW
+</span></span></code></pre></div><h2 id="图片展示">图片展示</h2>
 <ul>
 <li>下载:
 <img src="https://s2.loli.net/2022/08/24/5MYUxakfXPiBZIq.png" alt="下载"></li>

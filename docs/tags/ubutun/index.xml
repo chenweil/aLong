@@ -6,7 +6,25 @@
     <description>Recent content in Ubutun on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 May 2019 11:17:59 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/ubutun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Jan 2023 16:30:47 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/ubutun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu22.04安装kubeadm</title>
+      <link>https://blog.51ai.vip/aLong/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link>
+      <pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid>
+      <description>学习k8s 学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04
+系统安装docker Docker官方手册
+master、node设备各安装docker、kubelet、 kubeadm、 kubectl。
+为kubeadm准备 master、node进行准备工作：
+将cgroup处理改成systemd nano /etc/docker/daemon.json
+{ &amp;#34;exec-opts&amp;#34;: [&amp;#34;native.cgroupdriver=systemd&amp;#34;], &amp;#34;log-driver&amp;#34;: &amp;#34;json-file&amp;#34;, &amp;#34;log-opts&amp;#34;: { &amp;#34;max-size&amp;#34;: &amp;#34;100m&amp;#34; }, &amp;#34;storage-driver&amp;#34;: &amp;#34;overlay2&amp;#34; } sudo systemctl enable docker sudo systemctl daemon-reload sudo systemctl restart docker
+为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块 nano /etc/modules-load.d/k8s.conf
+br_netfilter nano /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward=1 sudo sysctl --system
+修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能 sudo swapoff -a sudo sed -ri &amp;#39;/\sswap\s/s/^#?/#/&amp;#39; /etc/fstab 安装kubeadm Kuneadm官方手册 在master、node上都需要安装</description>
+    </item>
+    
     <item>
       <title>Ubutun16.04安装Python</title>
       <link>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link>
@@ -14,16 +32,16 @@
       
       <guid>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid>
       <description>目的 安装python3.7.3 安装pip
-准备工作  系统内置python2.X,去除默认python的软链, sudo rm /usr/bin/python 安装一些软件包&amp;amp;软件包保持最新状态.  sudo apt-get update
+准备工作 系统内置python2.X,去除默认python的软链, sudo rm /usr/bin/python 安装一些软件包&amp;amp;软件包保持最新状态. sudo apt-get update
 sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 安装Python 通过编译安装python
 默认我下载在home里, cd
-下载新python文件, wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
-解压文件, tar zxf Python-3.7.3.tgz
-把这个文件拷贝到放置的位置. 这里我放到/usr/local/python  mkdir -p /usr/local/python
+下载新python文件, wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz 解压文件, tar zxf Python-3.7.3.tgz
+把这个文件拷贝到放置的位置. 这里我放到/usr/local/python mkdir -p /usr/local/python
 进入这个目录, 执行 ./configure --enable-optimizations 之后执行 sudo make -j 8 这里8根据设备cpu核心数来的,不知道你可以写1(手动滑稽)
 make之后 该 make install 嘛? NO! 是 sudo make altinstall
-装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在.</description>
+装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在. 需要手动添加一下,我这个是没有给我创建成功.
+sudo ln -s /usr/local/Python-3.</description>
     </item>
     
     <item>
@@ -32,8 +50,8 @@ make之后 该 make install 嘛? NO! 是 sudo make altinstall
       <pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid>
-      <description>Docker简介  一个能够把开发的应用程序自动部署到容器的开源引擎 三大概念：镜像（Image）容器（Container）仓库（Repository）
- 具体信息请参考官方。官方概述（养成看文档习惯）
+      <description>Docker简介 一个能够把开发的应用程序自动部署到容器的开源引擎 三大概念：镜像（Image）容器（Container）仓库（Repository）
+具体信息请参考官方。官方概述（养成看文档习惯）
 安装环境 Ubuntu 16.04 LTS
 Docker安装 根据官方doc安装。官方doc 1.如果你之前装过，命令卸载。 sudo apt-get remove docker docker-engine docker.io containerd runc
 2.更新包索引 apt-get update

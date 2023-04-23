@@ -14,12 +14,12 @@
       
       <guid>https://blog.51ai.vip/aLong/posts/yaml%E8%A7%84%E5%88%99/</guid>
       <description>yml 语法 最近经常配置一些服务，发现大部分都是yml类型文件。小记一下。
-规则  大小写敏感 缩进表示层级 注释 #  结构： 对象： ：符号
-name:admin数组： - 符号
-user:- name:admin- height:178- age:30字符串： 默认无引号，内部含有空格或特殊符号需要加&#39;&#39;
-name:admindesc:&amp;#39;he was cool&amp;#39;null： ~
-value:~层级依靠缩进：
-job:- jobconfig:name:&amp;#39;snmp-sw01&amp;#39;- target:- 192.</description>
+规则 大小写敏感 缩进表示层级 注释 # 结构： 对象： ：符号
+name: admin 数组： - 符号
+user: - name: admin - height: 178 - age: 30 字符串： 默认无引号，内部含有空格或特殊符号需要加&#39;&#39;
+name: admin desc: &amp;#39;he was cool&amp;#39; null： ~
+value: ~ 层级依靠缩进：
+job: - jobconfig: name: &amp;#39;snmp-sw01&amp;#39; - target: - 192.168.1.88 </description>
     </item>
     
   </channel>

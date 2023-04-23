@@ -4,17 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
-  <meta name="description" content="介绍  Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
-  Prometheus的特点:
- 多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。   架构图 Prometheus服务大致过程：   Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。
-  Prometheus在本地存储抓取的所有数据，并通过一定规则进行清理和整理数据，并把得到的结果存储到新的时间序列中。
-  Prometheus通过PromQL和其他API可视化地展示收集的数据。Prometheus支持很多方式的图表可视化，例如Grafana、自带的Promdash以及自身提供的模版引擎等等。Prometheus还提供HTTP API的查询方式，自定义所需要的输出。
-  PushGateway支持Client主动推送metrics到PushGateway，而Prometheus只是定时去Gateway上抓取数据。
-  Alertmanager是独立于Prometheus的一个组件，可以支持Prometheus的查询语句，提供十分灵活的报警方式。
-  Prometheus 支持通过SNMP协议获取mertics数据.通过配置job,利用snmp_export读取设备监控信息.
-  指标(Metric)类型  Counter 计数器,从数据0开始累计计算. 理想状态会永远增长. 累计计算请求次数等 Gauges 瞬时状态的值. 可以任意变化的数值，适用 CPU 使用率 温度等 Histogram 对一段时间范围内数据进行采样，并对所有数值求和与统计数量、柱状图. 某个时间对某个度量值，分组，一段时间http相应大小，请求耗时的时间。 Summary 同样产生多个指标，分别带有后缀_bucket(仅histogram)、_sum、_count   Histogram和Summary都可以获取分位数。 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数histogram_quantile()计算出来。 Summary则是在应用程序中直接计算出了分位数。 Histograms and summaries中阐述了两者的区别，特别是Summary的的分位数不能被聚合。 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。 LatencyTipOfTheDay: You can’t average percentiles.">
+  <meta name="description" content="介绍 Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
+Prometheus的特点:
+多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。 架构图 Prometheus服务大致过程： Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。
+Prometheus在本地存储抓取的所有数据，并通过一定规则进行清理和整理数据，并把得到的结果存储到新的时间序列中。
+Prometheus通过PromQL和其他API可视化地展示收集的数据。Prometheus支持很多方式的图表可视化，例如Grafana、自带的Promdash以及自身提供的模版引擎等等。Prometheus还提供HTTP API的查询方式，自定义所需要的输出。
+PushGateway支持Client主动推送metrics到PushGateway，而Prometheus只是定时去Gateway上抓取数据。
+Alertmanager是独立于Prometheus的一个组件，可以支持Prometheus的查询语句，提供十分灵活的报警方式。
+Prometheus 支持通过SNMP协议获取mertics数据.通过配置job,利用snmp_export读取设备监控信息.
+指标(Metric)类型 Counter 计数器,从数据0开始累计计算. 理想状态会永远增长. 累计计算请求次数等 Gauges 瞬时状态的值. 可以任意变化的数值，适用 CPU 使用率 温度等 Histogram 对一段时间范围内数据进行采样，并对所有数值求和与统计数量、柱状图. 某个时间对某个度量值，分组，一段时间http相应大小，请求耗时的时间。 Summary 同样产生多个指标，分别带有后缀_bucket(仅histogram)、_sum、_count Histogram和Summary都可以获取分位数。 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数histogram_quantile()计算出来。 Summary则是在应用程序中直接计算出了分位数。 Histograms and summaries中阐述了两者的区别，特别是Summary的的分位数不能被聚合。 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。 LatencyTipOfTheDay: You can’t average percentiles. Period中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。
+主要我们监控用到最上面两种,下面两种类型目前我没有接触,上面这段文字与介绍引用自lijiaocn
+安装Prometheus 本次搭建利用docker方式.整体搭建完成需要两个容器.暂不配置告警相关,只做监控数据
+前提 搭建位置: /home/aLong/prometheus/
+环境:docker19.03.1 需要指定版本请查阅官方文档.
+系统:centos7
+准备工作 Prometheus的配置文件: prometheus.">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
@@ -137,32 +143,32 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 <p>Prometheus的配置文件: prometheus.yml
 我们建立在搭建位置的根下: <code>touch prometheus.yml</code>
 在配置文件中加入测试演示配置</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#008000;font-weight:bold">global</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>15s<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>10s<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">evaluation_interval</span>:<span style="color:#bbb"> </span>15s<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">scrape_configs</span>:<span style="color:#bbb">
-</span><span style="color:#bbb"></span>- <span style="color:#008000;font-weight:bold">job_name</span>:<span style="color:#bbb"> </span>prometheus<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">honor_timestamps</span>:<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">true</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>5s<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>3s<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">metrics_path</span>:<span style="color:#bbb"> </span>/metrics<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scheme</span>:<span style="color:#bbb"> </span>http<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">targets</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- localhost:9090<span style="color:#bbb">
-</span></code></pre></div><p><strong>注意配置文件的格式为yaml,语法问题请参考<a href="https://blog.51ai.vip/2019/09/24/yaml%E8%A7%84%E5%88%99/">这里</a>.</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">global</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>15s<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>10s<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">evaluation_interval</span>:<span style="color:#bbb"> </span>15s<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">scrape_configs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>- <span style="color:#008000;font-weight:bold">job_name</span>:<span style="color:#bbb"> </span>prometheus<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">honor_timestamps</span>:<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>5s<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>3s<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">metrics_path</span>:<span style="color:#bbb"> </span>/metrics<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scheme</span>:<span style="color:#bbb"> </span>http<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">targets</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- localhost:9090<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>注意配置文件的格式为yaml,语法问题请参考<a href="https://blog.51ai.vip/2019/09/24/yaml%E8%A7%84%E5%88%99/">这里</a>.</strong></p>
 <h3 id="安装与运行">安装与运行</h3>
 <ul>
 <li>
 <p>通过docker 启动 prometheus.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -d -p 9090:9090 <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>         -v /home/along/prometheus.yml:/etc/prometheus/prometheus.yml <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>          --name prometheus <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>          prom/prometheus <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>          --config.file<span style="color:#666">=</span>/etc/prometheus/prometheus.yml <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>          --web.enable-lifecycle
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d -p 9090:9090 <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>         -v /home/along/prometheus.yml:/etc/prometheus/prometheus.yml <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>          --name prometheus <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>          prom/prometheus <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>          --config.file<span style="color:#666">=</span>/etc/prometheus/prometheus.yml <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>          --web.enable-lifecycle
+</span></span></code></pre></div></li>
 </ul>
 <p><strong>&ndash;web.enable-lifecycle 启用远程热加载配置文件</strong>
 <code>curl -X POST http://IP:9090/-/reload</code></p>

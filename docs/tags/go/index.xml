@@ -52,7 +52,7 @@ type Demo struct { ID uint `gorm:&amp;#34;primary_key&amp;#34;` CreatedAt time.T
       <guid>https://blog.51ai.vip/aLong/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid>
       <description>安装GOlang 环境:macOS
 shell: zsh
- 安装步骤：  brew update &amp;amp;&amp;amp; brew upgrade # 更新 brew install go # 安装 go  配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc  # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin  退出保存后，使文件生效 source ~/.zshrc=  </description>
+安装步骤： brew update &amp;amp;&amp;amp; brew upgrade # 更新 brew install go # 安装 go 配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin 退出保存后，使文件生效 source ~/.zshrc= </description>
     </item>
     
     <item>
@@ -70,18 +70,23 @@ i,j,k := 3.8,true,100 声明一组变量
 _, res := 123,321 _特殊变量名,赋予他的值会被丢弃
 常量 const 声明
 const Pi = 3.14 声明一个常量Pi
-const( apple = &amp;quot;fruit&amp;quot; banana ) banana 常量未定义初始化值会与apple值相同
+const( apple = &amp;#34;fruit&amp;#34; banana ) banana 常量未定义初始化值会与apple值相同
 数据类型 boolean,整型,浮点型,字符串,错误
-  布尔 bool 初始化默认fasle
-  整型
+布尔 bool 初始化默认fasle
+整型
 int8,int16,int32,int64 (有符号)
 uint8(byte),uint16,uint32(rune),uint64 (无符号)
 uintptr
 byte,rune 与uint8,uint32别名
 整形初始化默认值0
-  浮点型
+浮点型
 float32,float64(默认浮点类型)
-complex64,complex128</description>
+complex64,complex128
+float32,float64 初始化默认值0
+字符串
+双引号或``,UTF8编码,\转义
+初始化默认值&amp;quot;&amp;quot;
+修改需要转换类型为 rune或byte 操作后再转换</description>
     </item>
     
   </channel>

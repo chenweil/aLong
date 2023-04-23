@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="SNMP SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。
 目的 通过snmp_export,获取设备信息.
@@ -12,13 +12,13 @@
 此处目标设备是华为交换机 s2700
 部署snmp_expoer snmp.yml 配置文件不是自己定义的,是通过注册生成或下载的.这里我通过github下载配置文件.
 snmp.yml
- 配置snmp_export 配置文件 snmp.yml  version:2auth:community:**交换机设置的团体名**查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
+配置snmp_export 配置文件 snmp.yml version: 2 auth: community: **交换机设置的团体名** 查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
 部署snmp_expor docker run -d --restart always \ -v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml \ -p 9116:9116 --name snmp-exporter prom/snmp-exporter \ --config.file=&#34;/etc/snmp_exporter/snmp.yml&#34; 配置华为s2700交换机 自行查阅文档.懒得写了.
 验证服务 访问 http://IP:9116/metrics 能返回数据,snmp_export服务正常.
 测试是否能获取到目标设备的数据: 访问 http://IP:9116/snmp?target=DEVIP 能获取到数据,配置成功.
 注意防火墙 把需要的端口加入规则中,不然访问不到排查绕弯路
 配置promthues 修改 promthues.yml文件. 添加一个新的job.
-- job_name:snmphonor_timestamps:trueparams:module:- if_mibscrape_interval:15sscrape_timeout:10smetrics_path:/snmpscheme:httpstatic_configs:- targets:- 172.16.23.253labels:tag:huawei-switch-s2700relabel_configs:- source_labels:[__address__]separator:;regex:(.*)target_label:__param_targetreplacement:$1action:replace- source_labels:[__param_target]separator:;regex:(.*)target_label:instancereplacement:$1action:replace- separator:;regex:(.">
+- job_name: snmp honor_timestamps: true params: module: - if_mib scrape_interval: 15s scrape_timeout: 10s metrics_path: /snmp scheme: http static_configs: - targets: - 172.">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
@@ -81,16 +81,16 @@ snmp.yml
 <ul>
 <li>配置snmp_export 配置文件 snmp.yml</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#008000;font-weight:bold">version</span>:<span style="color:#bbb"> </span><span style="color:#666">2</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">auth</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">community</span>:<span style="color:#bbb"> </span><span style="color:#bc7a00">**交换机设置的团体名**</span><span style="color:#bbb">
-</span></code></pre></div><p>查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">version</span>:<span style="color:#bbb"> </span><span style="color:#666">2</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">auth</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">community</span>:<span style="color:#bbb"> </span><span style="color:#bc7a00">**交换机设置的团体名**</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).</p>
 <p><img src="https://t1.picb.cc/uploads/2019/08/29/gjuSAc.png" alt="demo"></p>
 <h3 id="部署snmp_expor">部署snmp_expor</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -d --restart always <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>-v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>-p 9116:9116 --name snmp-exporter prom/snmp-exporter <span style="color:#b62;font-weight:bold">\ </span>--config.file<span style="color:#666">=</span><span style="color:#ba2121">&#34;/etc/snmp_exporter/snmp.yml&#34;</span>
-</code></pre></div><h3 id="配置华为s2700交换机">配置华为s2700交换机</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d --restart always <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>-v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>-p 9116:9116 --name snmp-exporter prom/snmp-exporter <span style="color:#b62;font-weight:bold">\ </span>--config.file<span style="color:#666">=</span><span style="color:#ba2121">&#34;/etc/snmp_exporter/snmp.yml&#34;</span>
+</span></span></code></pre></div><h3 id="配置华为s2700交换机">配置华为s2700交换机</h3>
 <p>自行查阅文档.懒得写了.</p>
 <h3 id="验证服务">验证服务</h3>
 <p>访问 http://IP:9116/metrics 能返回数据,snmp_export服务正常.</p>
@@ -100,39 +100,39 @@ snmp.yml
 <p><strong>注意防火墙 把需要的端口加入规则中,不然访问不到排查绕弯路</strong></p>
 <h3 id="配置promthues">配置promthues</h3>
 <p>修改 promthues.yml文件. 添加一个新的job.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#008000;font-weight:bold">job_name</span>:<span style="color:#bbb"> </span>snmp<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">honor_timestamps</span>:<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">true</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">params</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">module</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- if_mib<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>15s<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>10s<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">metrics_path</span>:<span style="color:#bbb"> </span>/snmp<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scheme</span>:<span style="color:#bbb"> </span>http<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">targets</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#666">172.16.23.253</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">labels</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#008000;font-weight:bold">tag</span>:<span style="color:#bbb"> </span>huawei-switch-s2700<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">relabel_configs</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">source_labels</span>:<span style="color:#bbb"> </span>[__address__]<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">separator</span>:<span style="color:#bbb"> </span>;<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">regex</span>:<span style="color:#bbb"> </span>(.*)<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>__param_target<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">replacement</span>:<span style="color:#bbb"> </span>$1<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">action</span>:<span style="color:#bbb"> </span>replace<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">source_labels</span>:<span style="color:#bbb"> </span>[__param_target]<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">separator</span>:<span style="color:#bbb"> </span>;<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">regex</span>:<span style="color:#bbb"> </span>(.*)<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>instance<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">replacement</span>:<span style="color:#bbb"> </span>$1<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">action</span>:<span style="color:#bbb"> </span>replace<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">separator</span>:<span style="color:#bbb"> </span>;<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">regex</span>:<span style="color:#bbb"> </span>(.*)<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>__address__<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">replacement</span>:<span style="color:#bbb"> </span><span style="color:#666">172.16.23.12</span>:<span style="color:#666">9116</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">action</span>:<span style="color:#bbb"> </span>replace<span style="color:#bbb">
-</span></code></pre></div><p>之前部署prometheus 有一个参数是为了热加载配置的.
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>- <span style="color:#008000;font-weight:bold">job_name</span>:<span style="color:#bbb"> </span>snmp<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">honor_timestamps</span>:<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">params</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">module</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- if_mib<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_interval</span>:<span style="color:#bbb"> </span>15s<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scrape_timeout</span>:<span style="color:#bbb"> </span>10s<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">metrics_path</span>:<span style="color:#bbb"> </span>/snmp<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">scheme</span>:<span style="color:#bbb"> </span>http<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">static_configs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">targets</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#666">172.16.23.253</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">labels</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#008000;font-weight:bold">tag</span>:<span style="color:#bbb"> </span>huawei-switch-s2700<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">relabel_configs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">source_labels</span>:<span style="color:#bbb"> </span>[__address__]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">separator</span>:<span style="color:#bbb"> </span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">regex</span>:<span style="color:#bbb"> </span>(.*)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>__param_target<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">replacement</span>:<span style="color:#bbb"> </span>$1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">action</span>:<span style="color:#bbb"> </span>replace<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">source_labels</span>:<span style="color:#bbb"> </span>[__param_target]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">separator</span>:<span style="color:#bbb"> </span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">regex</span>:<span style="color:#bbb"> </span>(.*)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>instance<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">replacement</span>:<span style="color:#bbb"> </span>$1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">action</span>:<span style="color:#bbb"> </span>replace<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#008000;font-weight:bold">separator</span>:<span style="color:#bbb"> </span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">regex</span>:<span style="color:#bbb"> </span>(.*)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">target_label</span>:<span style="color:#bbb"> </span>__address__<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">replacement</span>:<span style="color:#bbb"> </span><span style="color:#666">172.16.23.12</span>:<span style="color:#666">9116</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">action</span>:<span style="color:#bbb"> </span>replace<span style="color:#bbb">
+</span></span></span></code></pre></div><p>之前部署prometheus 有一个参数是为了热加载配置的.
 这里需要reload一下配置,<code>curl -X POST http://IP:9090/-/reload</code>,如果你没有就重启服务吧.</p>
 <h3 id="验证-prometheus配置">验证 Prometheus配置</h3>
 <p>访问 http://IP:9090/

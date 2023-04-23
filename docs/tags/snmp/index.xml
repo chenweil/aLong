@@ -19,8 +19,7 @@ SNMP服务 snmp-agent
 配置版本(默认v3) snmp-agent sys-info version *v3*
 配置用户组 snmp-agent group v3 *group-name* {authentication | privacy | noauthentication}
 三种认证加密方式
-配置v3用户 snmp-agent usm-user v3 *user-name* [ group *group-name*] 
-配置用户认证密码 snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]
+配置v3用户 snmp-agent usm-user v3 *user-name* [ group *group-name*] 配置用户认证密码 snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]
 配置加密密码 snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]</description>
     </item>
     
@@ -30,20 +29,20 @@ SNMP服务 snmp-agent
       <pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate>
       
       <guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid>
-      <description>Prometheus-SNMP Exporter  生成器从generator.yml读取并写入snmp.yml。
- 之前在说Prometheus-snmp_export部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置).
+      <description>Prometheus-SNMP Exporter 生成器从generator.yml读取并写入snmp.yml。
+之前在说Prometheus-snmp_export部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置).
 因为刚好所有通用的指标都取得通用的mib树. 在后期我搜集设备的信息需要一些私有mib的数据,这时候需要自己通过生成器来生成snmp.yml.
 Generator 的操作步骤 下载需要的程序(Docker方式跳过此步骤) # Debian-based distributions. sudo apt-get install unzip build-essential libsnmp-dev # Debian-based distros # Redhat-based distributions. sudo yum install gcc gcc-g++ make net-snmp net-snmp-utils net-snmp-libs net-snmp-devel # RHEL-based distros go get github.com/prometheus/snmp_exporter/generator cd ${GOPATH-$HOME/go}/src/github.com/prometheus/snmp_exporter/generator go build make mibs(不建议直接make) 这里直接make mibs 可能会失败,在make文件里设置的源有些已经不能访问了或执行出现错误.
 我建议先下载好mibs ,我已经上传github.
 建议自行搜集mib 不执行make mibs会方便一些
 把所有的mib放入mibs 目录下.
 需要准备好所有需要涉及到的mib文件. 除了公有的mib,我们还需要监控目标设备的私有mib.思科/华为之类的会提供这些mib,像锐捷这种需要和商务部联系.
- 一些mib:
+一些mib:
 https://github.com/netdisco/netdisco-mibs
 https://github.com/pgmillon/observium/tree/master/mibs
 https://github.com/librenms/librenms/tree/master/mibs
- 当我们准备好所有的mib后,需要编写一个generator.yml. 下面是一个翻译的官方文档(翻译比较烂,自行查阅原文):
-modules:module_name:# 模块名称。您可以根据需要拥有任意数量的模块。walk:# 要walk的OID列表。 也可以是SNMP对象名称或特定实例。- 1.</description>
+当我们准备好所有的mib后,需要编写一个generator.yml. 下面是一个翻译的官方文档(翻译比较烂,自行查阅原文):
+modules: module_name: # 模块名称。您可以根据需要拥有任意数量的模块。 walk: # 要walk的OID列表。 也可以是SNMP对象名称或特定实例。 - 1.</description>
     </item>
     
     <item>
@@ -58,13 +57,13 @@ modules:module_name:# 模块名称。您可以根据需要拥有任意数量的�
 此处目标设备是华为交换机 s2700
 部署snmp_expoer snmp.yml 配置文件不是自己定义的,是通过注册生成或下载的.这里我通过github下载配置文件.
 snmp.yml
- 配置snmp_export 配置文件 snmp.yml  version:2auth:community:**交换机设置的团体名**查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
+配置snmp_export 配置文件 snmp.yml version: 2 auth: community: **交换机设置的团体名** 查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
 部署snmp_expor docker run -d --restart always \ -v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml \ -p 9116:9116 --name snmp-exporter prom/snmp-exporter \ --config.file=&amp;#34;/etc/snmp_exporter/snmp.yml&amp;#34; 配置华为s2700交换机 自行查阅文档.懒得写了.
 验证服务 访问 http://IP:9116/metrics 能返回数据,snmp_export服务正常.
 测试是否能获取到目标设备的数据: 访问 http://IP:9116/snmp?target=DEVIP 能获取到数据,配置成功.
 注意防火墙 把需要的端口加入规则中,不然访问不到排查绕弯路
 配置promthues 修改 promthues.yml文件. 添加一个新的job.
-- job_name:snmphonor_timestamps:trueparams:module:- if_mibscrape_interval:15sscrape_timeout:10smetrics_path:/snmpscheme:httpstatic_configs:- targets:- 172.16.23.253labels:tag:huawei-switch-s2700relabel_configs:- source_labels:[__address__]separator:;regex:(.*)target_label:__param_targetreplacement:$1action:replace- source_labels:[__param_target]separator:;regex:(.*)target_label:instancereplacement:$1action:replace- separator:;regex:(.</description>
+- job_name: snmp honor_timestamps: true params: module: - if_mib scrape_interval: 15s scrape_timeout: 10s metrics_path: /snmp scheme: http static_configs: - targets: - 172.</description>
     </item>
     
   </channel>

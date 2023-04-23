@@ -15,14 +15,17 @@
       <guid>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
       <description>armbian配置（N1盒子）
 设置时区： timedatectl set-timezone Asia/Shanghai
-安装docker   apt update
-  apt install ca-certificates curl gnupg lsb-release
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-  echo \ &amp;quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&amp;quot; | tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
-  apt update
-  apt install docker-ce docker-ce-cli containerd.io
-  安装docker-compose wget地址是加速器转换地址，版本和地址请根据版本号编辑地址
-wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker-compose-linux-aarch64 &amp;amp;&amp;amp; mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-compose</description>
+安装docker apt update
+apt install ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \ &amp;quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&amp;quot; | tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
+apt update
+apt install docker-ce docker-ce-cli containerd.io
+安装docker-compose wget地址是加速器转换地址，版本和地址请根据版本号编辑地址
+wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker-compose-linux-aarch64 &amp;amp;&amp;amp; mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-compose
+WIFI 查看附近无线网络信号：nmcli dev wifi list
+无密码的 WIFI：nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt;
+加密WIFI： nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt; password 网卡配置 设置多IP auto eth0:1 allow-hotplug eth0:1 iface eth0:1 inet static address 1.</description>
     </item>
     
     <item>
@@ -37,8 +40,7 @@ SNMP服务 snmp-agent
 配置版本(默认v3) snmp-agent sys-info version *v3*
 配置用户组 snmp-agent group v3 *group-name* {authentication | privacy | noauthentication}
 三种认证加密方式
-配置v3用户 snmp-agent usm-user v3 *user-name* [ group *group-name*] 
-配置用户认证密码 snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]
+配置v3用户 snmp-agent usm-user v3 *user-name* [ group *group-name*] 配置用户认证密码 snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]
 配置加密密码 snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]</description>
     </item>
     

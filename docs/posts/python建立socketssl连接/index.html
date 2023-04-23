@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="Python Socket连接 5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.
 这块没接触,Python也是hello world水平.
@@ -72,25 +72,25 @@ import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) c = ssl.wrap
 <p>服务端我也不知道什么样,这里只记录客户端的相关.</p>
 <p>这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.</p>
 <h4 id="非ssl的socket">非ssl的socket:</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">import</span> <span style="color:#00f;font-weight:bold">socket</span>
-
-<span style="color:#408080;font-style:italic"># 创建一个socket:</span>
-s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
-
-<span style="color:#408080;font-style:italic"># 建立连接:</span>
-s<span style="color:#666">.</span>connect((<span style="color:#ba2121">&#39;192.168.1.230&#39;</span>, <span style="color:#666">80</span>))
-</code></pre></div><h4 id="ssl-socket">SSL socket:</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#00f;font-weight:bold">socket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># 创建一个socket:</span>
+</span></span><span style="display:flex;"><span>s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># 建立连接:</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#666">.</span>connect((<span style="color:#ba2121">&#39;192.168.1.230&#39;</span>, <span style="color:#666">80</span>))
+</span></span></code></pre></div><h4 id="ssl-socket">SSL socket:</h4>
 <p>端口是3344,ssl跳过验证,如果验证参数需要修改.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">import</span> <span style="color:#00f;font-weight:bold">socket</span>
-
- s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
-        
- c <span style="color:#666">=</span> ssl<span style="color:#666">.</span>wrap_socket(s, cert_reqs<span style="color:#666">=</span>ssl<span style="color:#666">.</span>CERT_NONE)
- <span style="color:#008000;font-weight:bold">try</span>:
-    c<span style="color:#666">.</span>connect((<span style="color:#ba2121">&#39;192.168.1.230&#39;</span>, <span style="color:#ba2121">&#39;3344&#39;</span>))
-<span style="color:#008000;font-weight:bold">except</span>:
-    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">2</span>
-</code></pre></div><p>这下与那台设备可以正常通讯了,后面实现具体功能就ok了.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#00f;font-weight:bold">socket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span> c <span style="color:#666">=</span> ssl<span style="color:#666">.</span>wrap_socket(s, cert_reqs<span style="color:#666">=</span>ssl<span style="color:#666">.</span>CERT_NONE)
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>    c<span style="color:#666">.</span>connect((<span style="color:#ba2121">&#39;192.168.1.230&#39;</span>, <span style="color:#ba2121">&#39;3344&#39;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">except</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">2</span>
+</span></span></code></pre></div><p>这下与那台设备可以正常通讯了,后面实现具体功能就ok了.</p>
 
 
     <footer class="site-footer">

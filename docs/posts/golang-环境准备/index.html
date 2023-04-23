@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="安装GOlang 环境:macOS
 shell: zsh
- 安装步骤：  brew update &amp;&amp; brew upgrade # 更新 brew install go # 安装 go  配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc  # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin  退出保存后，使文件生效 source ~/.zshrc=  ">
+安装步骤： brew update &amp;&amp; brew upgrade # 更新 brew install go # 安装 go 配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin 退出保存后，使文件生效 source ~/.zshrc= ">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
@@ -63,23 +63,23 @@ shell: zsh
 <ul>
 <li>安装步骤：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew update <span style="color:#666">&amp;&amp;</span> brew upgrade <span style="color:#408080;font-style:italic"># 更新</span>
-brew install go             <span style="color:#408080;font-style:italic"># 安装 go</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew update <span style="color:#666">&amp;&amp;</span> brew upgrade <span style="color:#408080;font-style:italic"># 更新</span>
+</span></span><span style="display:flex;"><span>brew install go             <span style="color:#408080;font-style:italic"># 安装 go</span>
+</span></span></code></pre></div><ul>
 <li>配置环境变量
 我的本shell 是zsh 下面是按照zsh配置：
 如果需要修改默认的环境变量配置修改 <code>vim ~/.bash_profile</code> 或 <code>vim ~/.zshrc</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#408080;font-style:italic"># GOROOT安装的路径</span>
-<span style="color:#008000">export</span> <span style="color:#19177c">GOROOT</span><span style="color:#666">=</span>/usr/local/Cellar/go/1.9/libexec
-<span style="color:#408080;font-style:italic">#GOPATH root bin</span>
-<span style="color:#008000">export</span> <span style="color:#19177c">GOBIN</span><span style="color:#666">=</span><span style="color:#19177c">$GOROOT</span>/bin
-<span style="color:#008000">export</span> <span style="color:#19177c">PATH</span><span style="color:#666">=</span><span style="color:#19177c">$PATH</span>:<span style="color:#19177c">$GOBIN</span>
-<span style="color:#408080;font-style:italic">#GOPATH</span>
-<span style="color:#008000">export</span> <span style="color:#19177c">GOPATH</span><span style="color:#666">=</span><span style="color:#19177c">$HOME</span>/go
-<span style="color:#408080;font-style:italic">#GOPATH bin</span>
-<span style="color:#008000">export</span> <span style="color:#19177c">PATH</span><span style="color:#666">=</span><span style="color:#19177c">$PATH</span>:<span style="color:#19177c">$GOPATH</span>/bin
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># GOROOT安装的路径</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">export</span> <span style="color:#19177c">GOROOT</span><span style="color:#666">=</span>/usr/local/Cellar/go/1.9/libexec
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#GOPATH root bin</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">export</span> <span style="color:#19177c">GOBIN</span><span style="color:#666">=</span><span style="color:#19177c">$GOROOT</span>/bin
+</span></span><span style="display:flex;"><span><span style="color:#008000">export</span> <span style="color:#19177c">PATH</span><span style="color:#666">=</span><span style="color:#19177c">$PATH</span>:<span style="color:#19177c">$GOBIN</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#GOPATH</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">export</span> <span style="color:#19177c">GOPATH</span><span style="color:#666">=</span><span style="color:#19177c">$HOME</span>/go
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#GOPATH bin</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">export</span> <span style="color:#19177c">PATH</span><span style="color:#666">=</span><span style="color:#19177c">$PATH</span>:<span style="color:#19177c">$GOPATH</span>/bin
+</span></span></code></pre></div><ul>
 <li>退出保存后，使文件生效 <code>source ~/.zshrc=</code></li>
 </ul>
 

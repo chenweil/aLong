@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="最近维护一个MySQL数据库，由于各种原因，密码已经不知道了。现在让我在这台服务器上使用里面的MySQL数据库。
 怎么办？
 首先问了一圈没有人知道。那么只能靠自己了。
 查看软件版本: mysql --version
 之后通过神奇的Google科普了一下。 知道了具体的方法：
-  关闭mysql服务。
-  修改my.conf 在里面[mysqld] 下面最后加入一行
+关闭mysql服务。
+修改my.conf 在里面[mysqld] 下面最后加入一行
 [mysqld] ... skip-grant-tables 修改完保存退出。
-  重启mysql服务。
-  mysql 进入mysql 不需要密码了。
+重启mysql服务。
+mysql 进入mysql 不需要密码了。
 show databases; 查看数据库
 use mysql; 选择 mysql 数据库 在此数据库执行更新语句（修改root用户的密码为root）： update user set authentication_string=password(&#39;root&#39;) where user=&#39;root&#39;; flush privileges; 更新权限
 退出mysql
-  把最开始my.conf加入的语句删除。
-  重启mysql服务
-  最后可以通过设置的密码登陆数据库了。">
+把最开始my.conf加入的语句删除。
+重启mysql服务
+最后可以通过设置的密码登陆数据库了。">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
@@ -83,10 +83,10 @@ use mysql; 选择 mysql 数据库 在此数据库执行更新语句（修改root
 <li>
 <p>修改my.conf
 在里面[mysqld] 下面最后加入一行</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#008000;font-weight:bold">[mysqld]</span>
-<span style="color:#7d9029">...</span>
-<span style="color:#7d9029">skip-grant-tables</span>
-</code></pre></div><p>修改完保存退出。</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">[mysqld]</span>
+</span></span><span style="display:flex;"><span><span style="color:#7d9029">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#7d9029">skip-grant-tables</span>
+</span></span></code></pre></div><p>修改完保存退出。</p>
 </li>
 <li>
 <p>重启mysql服务。</p>
@@ -96,7 +96,7 @@ use mysql; 选择 mysql 数据库 在此数据库执行更新语句（修改root
 <p><code>show databases;</code>  查看数据库</p>
 <p><code>use mysql;</code> 选择 mysql 数据库
 在此数据库执行更新语句（修改root用户的密码为root）：
-<code>update user set authentication_string=password('root') where user='root';</code>
+<code>update user set authentication_string=password('root') where user='root'; </code>
 <code>flush privileges;</code> 更新权限</p>
 <p>退出mysql</p>
 </li>

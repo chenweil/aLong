@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.109.0">
+  
+  <meta name="description" content="学习k8s 学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04
+系统安装docker Docker官方手册
+master、node设备各安装docker、kubelet、 kubeadm、 kubectl。
+为kubeadm准备 master、node进行准备工作：
+将cgroup处理改成systemd nano /etc/docker/daemon.json
+{ &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;], &#34;log-driver&#34;: &#34;json-file&#34;, &#34;log-opts&#34;: { &#34;max-size&#34;: &#34;100m&#34; }, &#34;storage-driver&#34;: &#34;overlay2&#34; } sudo systemctl enable docker sudo systemctl daemon-reload sudo systemctl restart docker
+为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块 nano /etc/modules-load.d/k8s.conf
+br_netfilter nano /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward=1 sudo sysctl --system
+修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能 sudo swapoff -a sudo sed -ri &#39;/\sswap\s/s/^#?/#/&#39; /etc/fstab 安装kubeadm Kuneadm官方手册 在master、node上都需要安装">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Ubuntu22.04安装kubeadm | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Ubuntu22.04安装kubeadm</h1>
+  <h1 id="学习k8s">学习k8s</h1>
+<p>学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04</p>
+<h2 id="系统安装docker">系统安装docker</h2>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/">Docker官方手册</a></p>
+<p>master、node设备各安装docker、kubelet、 kubeadm、 kubectl。</p>
+<h2 id="为kubeadm准备">为kubeadm准备</h2>
+<p>master、node进行准备工作：</p>
+<ol>
+<li>将cgroup处理改成systemd</li>
+</ol>
+<p>nano /etc/docker/daemon.json</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#008000;font-weight:bold">&#34;exec-opts&#34;</span>: [<span style="color:#ba2121">&#34;native.cgroupdriver=systemd&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#008000;font-weight:bold">&#34;log-driver&#34;</span>: <span style="color:#ba2121">&#34;json-file&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#008000;font-weight:bold">&#34;log-opts&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">&#34;max-size&#34;</span>: <span style="color:#ba2121">&#34;100m&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#008000;font-weight:bold">&#34;storage-driver&#34;</span>: <span style="color:#ba2121">&#34;overlay2&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>sudo systemctl enable docker</code>
+<code>sudo systemctl daemon-reload</code>
+<code>sudo systemctl restart docker</code></p>
+<ol start="2">
+<li>为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块</li>
+</ol>
+<p><code>nano /etc/modules-load.d/k8s.conf</code></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#7d9029">br_netfilter</span>
+</span></span></code></pre></div><p><code>nano /etc/sysctl.d/k8s.conf</code></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#7d9029">net.bridge.bridge-nf-call-ip6tables</span> <span style="color:#666">=</span> <span style="color:#ba2121">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#7d9029">net.bridge.bridge-nf-call-iptables</span> <span style="color:#666">=</span> <span style="color:#ba2121">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#7d9029">net.ipv4.ip_forward</span><span style="color:#666">=</span><span style="color:#ba2121">1</span>
+</span></span></code></pre></div><p><code>sudo sysctl --system</code></p>
+<ol start="3">
+<li>修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#7d9029">sudo swapoff -a</span>
+</span></span><span style="display:flex;"><span><span style="color:#7d9029">sudo sed -ri &#39;/\sswap\s/s/^#?/#/&#39; /etc/fstab</span>
+</span></span></code></pre></div><h3 id="安装kubeadm">安装kubeadm</h3>
+<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">Kuneadm官方手册</a>
+<strong>在master、node上都需要安装</strong></p>
+<ul>
+<li>更新 <code>apt</code> 包索引并安装使用 Kubernetes <code>apt</code> 仓库所需要的包：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get install -y apt-transport-https ca-certificates curl
+</span></span></code></pre></div><ul>
+<li>(有条件)下载 Google Cloud 公开签名秘钥：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+</span></span></code></pre></div><p>如果上面访问不到，可选择其他,例如<a href="https://mirrors.tuna.tsinghua.edu.cn/help/kubernetes/">清华源</a>提供：
+导入gpg key</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+</span></span></code></pre></div><p>创建<code>/etc/apt/sources.list.d/kubernetes.list</code>，内容：</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>deb <span style="color:#666">[</span>signed-by<span style="color:#666">=</span>/usr/share/keyrings/kubernetes-archive-keyring.gpg<span style="color:#666">]</span> https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main
+</span></span></code></pre></div><p>之后 <code>sudo apt update</code> 更新一下。</p>
+<ul>
+<li>
+<p>安装所需的1.23.x 版本：
+<code>sudo apt install -y kubeadm=1.23.3-00 kubelet=1.23.3-00 kubectl=1.23.3-00</code></p>
+</li>
+<li>
+<p>锁定这三个软件的版本:
+<code>sudo apt-mark hold kubelet kubeadm kubectl</code></p>
+</li>
+</ul>
+<h2 id="master配置">Master配置</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubeadm init <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>--apiserver-advertise-address<span style="color:#666">=</span>172.20.20.12 <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>--kubernetes-version v1.23.3 <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>--pod-network-cidr<span style="color:#666">=</span>10.20.0.0/16
+</span></span></code></pre></div><p>安装完成后按提示执行：</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir -p <span style="color:#19177c">$HOME</span>/.kube
+</span></span><span style="display:flex;"><span>sudo cp -i /etc/kubernetes/admin.conf <span style="color:#19177c">$HOME</span>/.kube/config
+</span></span><span style="display:flex;"><span>sudo chown <span style="color:#008000;font-weight:bold">$(</span>id -u<span style="color:#008000;font-weight:bold">)</span>:<span style="color:#008000;font-weight:bold">$(</span>id -g<span style="color:#008000;font-weight:bold">)</span> <span style="color:#19177c">$HOME</span>/.kube/config
+</span></span></code></pre></div><p>同时还有一个提示：
+<em>Then you can join any number of worker nodes by running the following on each as root:</em>
+下面那行命令是其他节点就爱如集群的命令。</p>
+<p>Master的token是有时效性的，默认超过24H后失效，要再创建新的token。在master上执行<code>kubeadm token create --print-join-command</code></p>
+<ul>
+<li>安装网络插件flannel
+<a href="https://github.com/flannel-io/flannel/blob/master/Documentation/kube-flannel.yml" title="kube-flannel.yml">kube-flannel.yml</a>
+修改 <code>net-conf.json</code>： NetWrok地址，与Kubernetes的<code>--pod-network-cidr</code> 网段地址。</li>
+</ul>
+<p>修改完成，<code>kubectl apply -f kube-flannel.yml</code>。</p>
+<h2 id="node节点配置">Node节点配置</h2>
+<p>Node安装好kubeadm之后，通过join指令加入。
+例如：</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo kubeadm join 172.20.20.12:6443 --token 80duqn.gzxz6rv5gkgosxkb <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>--discovery-token-ca-cert-hash sha256:84d55c1168e9830b4f66e1c0816a218da55f96cce50f750456186fcc726a79ab 
+</span></span></code></pre></div><h2 id="验证">验证</h2>
+<p>在Master上<code>kubectl get node</code> 查看。</p>
+<p>完结
+祝好</p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

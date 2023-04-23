@@ -4,20 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="系统版本 macOS Catalina 10.15.1
-  方法一
+方法一
 允许任何来源的应用。
 系统偏好设置 -&gt; 安全性和隐私： 在 允许从以下位置下载的应用程序 选项中选择 任何来源
 在 Sierra 10.12 中可能看不到这个选项，开启此功能需要执行命令sudo spctl --master-disable,
 输入密码就可以看到此选项。
-  方法二
+方法二
 如果上面发法还是打不开，可能需要此方法。
 sudo xattr -r -d com.apple.quarantine /Applications/xxxx.app/
 这里的x x.app如果你不知道名字，可以通过应用中查看应用简介中的名称与扩展名,
-或者在Applications目录下输入名称补全
-  ">
+或者在Applications目录下输入名称补全">
   <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   

@@ -18,8 +18,8 @@
 可以看到错误中，他是从 github.com/Medium/&amp;hellip; 感觉就是没下载成功吧。
 最开始以为网络问题，翻墙等方式都试过后发现还是没完成。
 没办法，借助网络得知。可以轻松搞定：
- npm config set phantomjs_cdnurl=http://cdn.npm.taobao.org/dis&amp;hellip; yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;https://npm.taobao.org/mirrors/phantomjs&amp;quot;
- 看你是npm 还是node。按照上面方式设置一下。
+npm config set phantomjs_cdnurl=http://cdn.npm.taobao.org/dis&amp;hellip; yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;https://npm.taobao.org/mirrors/phantomjs&amp;quot;
+看你是npm 还是node。按照上面方式设置一下。
 rm -rf path/node_moudels
 yarn install
 解决问题，美滋滋。

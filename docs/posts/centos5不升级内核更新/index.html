@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="前提 公司需要环境Centos5, 又不能升级内核.
 查了一下 大概是 需要 yum –exclude=kernel* update 或者修改 yum.conf
@@ -63,17 +63,17 @@
 <p>公司需要环境Centos5, 又不能升级内核.</p>
 <p>查了一下 大概是 需要 <code>yum –exclude=kernel* update</code>   或者修改 yum.conf</p>
 <h3 id="测试一下-出现一个问题">测试一下 出现一个问题:</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Loaded plugins: fastestmirror, security
-Loading mirror speeds from cached hostfile
-YumRepo Error: All mirror URLs are not using ftp, http<span style="color:#666">[</span>s<span style="color:#666">]</span> or file.
- Eg. Invalid release/
-removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt
-Error: Cannot find a valid baseurl <span style="color:#008000;font-weight:bold">for</span> repo: base
-</code></pre></div><p>根据查询到的信息是,没有正常的源.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Loaded plugins: fastestmirror, security
+</span></span><span style="display:flex;"><span>Loading mirror speeds from cached hostfile
+</span></span><span style="display:flex;"><span>YumRepo Error: All mirror URLs are not using ftp, http<span style="color:#666">[</span>s<span style="color:#666">]</span> or file.
+</span></span><span style="display:flex;"><span> Eg. Invalid release/
+</span></span><span style="display:flex;"><span>removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt
+</span></span><span style="display:flex;"><span>Error: Cannot find a valid baseurl <span style="color:#008000;font-weight:bold">for</span> repo: base
+</span></span></code></pre></div><p>根据查询到的信息是,没有正常的源.</p>
 <h3 id="解决问题-根据网上的源地址-修改一下">解决问题 根据网上的源地址 修改一下:</h3>
 <p>位置: <em>/etc/yum.repos.d/CentOS-Base.repo</em></p>
 <h3 id="修改内容">修改内容:</h3>
-<pre><code class="language-conf" data-lang="conf">[base]
+<pre tabindex="0"><code class="language-conf" data-lang="conf">[base]
 name=CentOS-5.11 - Base
 #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=os
 baseurl=http://vault.centos.org/5.11/os/$basearch/
@@ -121,7 +121,6 @@ baseurl=http://vault.centos.org/5.11/contrib/$basearch/
 gpgcheck=1
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-
 </code></pre><p>之后 再使用上面的yum 去更新,发现yum 语句是有问题的.</p>
 <p>正确的命令是: <code>yum --exclude=kernel\* update</code>   或者  <code>yum -x 'kernel*' update  </code></p>
 <h3 id="确认是否生效">确认是否生效</h3>
