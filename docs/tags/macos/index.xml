@@ -6,7 +6,27 @@
     <description>Recent content in MacOS on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 May 2021 11:06:20 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 May 2023 14:33:25 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title>
+      <link>https://blog.51ai.vip/aLong/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Sat, 06 May 2023 14:33:25 +0800</pubDate>
+      
+      <guid>https://blog.51ai.vip/aLong/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid>
+      <description>Colima GitHub
+Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。
+Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：
+由于它只是一个容器运行时，因此相对于 Docker Desktop，它的安装和启动速度更快，所需的资源更少。 它使用了轻量级的虚拟化技术，例如 HyperKit 和 VPNKit，以提高容器的性能和安全性。 Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动、停止、删除容器，以及执行其他常见操作。 它还提供了一些有用的功能，例如在本地浏览器中打开容器中运行的应用程序、自动重启容器等。 总的来说，Colima 是一个轻量级、易于使用的容器运行时，旨在为开发者提供一种更快、更安全的容器环境，使得开发和测试容器应用程序变得更加轻松。
+安装 在 macOS 上安装 Colima 很简单，只需要执行以下几个步骤：
+首先，您需要打开终端并使用 Homebrew 包管理器安装 Colima。如果您没有安装 Homebrew，请先安装 Homebrew： /bin/bash -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot;
+安装 Colima： brew install colima
+安装完成后，您可以使用 colima 命令来启动 Colima： colima start
+如果您想停止 Colima，可以使用以下命令： colima stop
+要卸载 Colima，请运行以下命令： brew uninstall colima
+安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。
+docker交互 启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 docker 命令来管理容器。</description>
+    </item>
+    
     <item>
       <title>Mac OS自己安装的小软件</title>
       <link>https://blog.51ai.vip/aLong/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</link>

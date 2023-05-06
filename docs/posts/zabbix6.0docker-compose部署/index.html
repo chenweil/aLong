@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.86.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   
   <meta name="description" content="zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。
 根据踩坑，记录docker-compose 执行后遇到的一些问题。
@@ -77,14 +77,14 @@ docker-compose 文件内容 version: &#39;3.5&#39; services: m-server: container
 <p>下载完成后解压到同一目录，  并执行<code>docker-compose up -d</code></p>
 <p>这时候可以看到各服务拉取镜像并启动。</p>
 <h2 id="docker-compose-文件内容">docker-compose 文件内容</h2>
-<pre><code>version: '3.5'
+<pre tabindex="0"><code>version: &#39;3.5&#39;
 services:
   m-server:
     container_name: m-server
     image: zabbix/zabbix-server-mysql:alpine-trunk
     restart: always
     ports:
-      - &quot;10051:10051&quot;
+      - &#34;10051:10051&#34;
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
@@ -116,7 +116,7 @@ services:
           - m-server-mysql-alpine
       zbx_net_frontend: null
         #  devices:
-        #   - &quot;/dev/ttyUSB0:/dev/ttyUSB0&quot;
+        #   - &#34;/dev/ttyUSB0:/dev/ttyUSB0&#34;
     stop_grace_period: 30s
     sysctls:
       - net.ipv4.ip_local_port_range=1024 65000
@@ -124,18 +124,18 @@ services:
       - net.ipv4.conf.all.secure_redirects=0
       - net.ipv4.conf.all.send_redirects=0
     labels:
-      com.zabbix.description: &quot;Zabbix server with MySQL database support&quot;
-      com.zabbix.company: &quot;Zabbix LLC&quot;
-      com.zabbix.component: &quot;m-server&quot;
-      com.zabbix.dbtype: &quot;mysql&quot;
-      com.zabbix.os: &quot;alpine&quot;
+      com.zabbix.description: &#34;Zabbix server with MySQL database support&#34;
+      com.zabbix.company: &#34;Zabbix LLC&#34;
+      com.zabbix.component: &#34;m-server&#34;
+      com.zabbix.dbtype: &#34;mysql&#34;
+      com.zabbix.os: &#34;alpine&#34;
   m-web-nginx-mysql:
     container_name: m-web-nginx-mysql
     #  image: zabbix/zabbix-web-nginx-mysql:alpine-trunk
     image: chenwl2016/m-web-nginx-mysql:v1-alpine-trunk
     ports:
-      - &quot;8082:8080&quot;
-      - &quot;8443:8443&quot;
+      - &#34;8082:8080&#34;
+      - &#34;8443:8443&#34;
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
@@ -154,7 +154,7 @@ services:
       - mysql-server
       - m-server
     healthcheck:
-      test: [ &quot;CMD&quot;, &quot;curl&quot;, &quot;-f&quot;, &quot;http://localhost:8080/&quot; ]
+      test: [ &#34;CMD&#34;, &#34;curl&#34;, &#34;-f&#34;, &#34;http://localhost:8080/&#34; ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -170,18 +170,18 @@ services:
     sysctls:
       - net.core.somaxconn=65535
     labels:
-      com.zabbix.description: &quot;Zabbix frontend on Nginx web-server with MySQL database support&quot;
-      com.zabbix.company: &quot;Zabbix LLC&quot;
-      com.zabbix.component: &quot;m-frontend&quot;
-      com.zabbix.webserver: &quot;nginx&quot;
-      com.zabbix.dbtype: &quot;mysql&quot;
-      com.zabbix.os: &quot;alpine&quot;
+      com.zabbix.description: &#34;Zabbix frontend on Nginx web-server with MySQL database support&#34;
+      com.zabbix.company: &#34;Zabbix LLC&#34;
+      com.zabbix.component: &#34;m-frontend&#34;
+      com.zabbix.webserver: &#34;nginx&#34;
+      com.zabbix.dbtype: &#34;mysql&#34;
+      com.zabbix.os: &#34;alpine&#34;
   m-agent:
     container_name: m-agent
     image: zabbix/zabbix-agent:alpine-trunk
     restart: always
     ports:
-      - &quot;10050:10050&quot;
+      - &#34;10050:10050&#34;
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
@@ -192,7 +192,7 @@ services:
     env_file:
       - ./env_vars/.env_agent
     privileged: true
-    pid: &quot;host&quot;
+    pid: &#34;host&#34;
     networks:
       zbx_net_backend:
         aliases:
@@ -201,10 +201,10 @@ services:
           - zabbix-agent-alpine
     stop_grace_period: 5s
     labels:
-      com.zabbix.description: &quot;Zabbix agent&quot;
-      com.zabbix.company: &quot;Zabbix LLC&quot;
-      com.zabbix.component: &quot;zabbix-agentd&quot;
-      com.zabbix.os: &quot;alpine&quot;
+      com.zabbix.description: &#34;Zabbix agent&#34;
+      com.zabbix.company: &#34;Zabbix LLC&#34;
+      com.zabbix.component: &#34;zabbix-agentd&#34;
+      com.zabbix.os: &#34;alpine&#34;
   mysql-server:
     container_name: mysql-server
     image: mysql:8.0
@@ -212,7 +212,7 @@ services:
     security_opt:
       - seccomp:unconfined
     ports:
-      - &quot;3316:3306&quot;
+      - &#34;3316:3306&#34;
     command:
       - mysqld
       - --character-set-client=utf8mb4
@@ -252,7 +252,7 @@ networks:
   zbx_net_frontend:
     driver: bridge
     driver_opts:
-      com.docker.network.enable_ipv6: &quot;false&quot;
+      com.docker.network.enable_ipv6: &#34;false&#34;
     ipam:
       driver: default
       config:
@@ -260,7 +260,7 @@ networks:
   zbx_net_backend:
     driver: bridge
     driver_opts:
-      com.docker.network.enable_ipv6: &quot;false&quot;
+      com.docker.network.enable_ipv6: &#34;false&#34;
     internal: true
     ipam:
       driver: default
@@ -284,7 +284,6 @@ secrets:
 #    file: ./env_vars/.DB_CERT_FILE
 #  server-key.pem:
 #    file: ./env_vars/.DB_KEY_FILE
-
 </code></pre><p>其中有基础更改，主要是使用的镜像非zabbix镜像。数据库考虑暴露3316端口（但是这里没有成功）
 使用非官方容器的目的是遇到一些情况。</p>
 <h3 id="zabbix-图字体口口口">zabbix 图字体口口口</h3>
