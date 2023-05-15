@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.51ai.vip/aLong/</loc>
-    <lastmod>2023-04-07T19:33:25+08:00</lastmod>
+    <lastmod>2023-05-15T14:53:11+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.51ai.vip/aLong/tags/go/</loc>
+    <lastmod>2023-05-15T14:53:11+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.51ai.vip/aLong/posts/</loc>
+    <lastmod>2023-05-15T14:53:11+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.51ai.vip/aLong/posts/roadmapgo/</loc>
+    <lastmod>2023-05-15T14:53:11+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.51ai.vip/aLong/tags/</loc>
+    <lastmod>2023-05-15T14:53:11+08:00</lastmod>
   </url><url>
     <loc>https://blog.51ai.vip/aLong/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</loc>
     <lastmod>2023-04-07T19:33:25+08:00</lastmod>
@@ -15,12 +27,6 @@
     <lastmod>2023-04-07T19:33:25+08:00</lastmod>
   </url><url>
     <loc>https://blog.51ai.vip/aLong/tags/macos/</loc>
-    <lastmod>2023-04-07T19:33:25+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.51ai.vip/aLong/posts/</loc>
-    <lastmod>2023-04-07T19:33:25+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.51ai.vip/aLong/tags/</loc>
     <lastmod>2023-04-07T19:33:25+08:00</lastmod>
   </url><url>
     <loc>https://blog.51ai.vip/aLong/tags/kubernetes/</loc>
@@ -100,9 +106,6 @@
   </url><url>
     <loc>https://blog.51ai.vip/aLong/posts/ssh-%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E8%AE%BF%E9%97%AE/</loc>
     <lastmod>2021-03-13T18:21:50+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.51ai.vip/aLong/tags/go/</loc>
-    <lastmod>2021-02-22T09:06:08+00:00</lastmod>
   </url><url>
     <loc>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2021-02-22T09:06:08+00:00</lastmod>
