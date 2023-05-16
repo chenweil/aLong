@@ -17,7 +17,7 @@ tags: [Go]
 
 此图整体可以看到通过颜色来区分了一些作者划分的知识点优先级，以便确定哪些内容应优先进行。此图我觉得有个遗憾就是没能够持续进行更新。后面还好我找到另一个认为不错的[roadmap](https://roadmap.sh/)进行补充和完善。
 
-主体还是golang-developer-roadmap](https://github.com/Alikhll/golang-developer-roadmap)，顺便在前后加入了 [Backend Developer](https://roadmap.sh/backend) ,后面加入了[Full Stack Developer](https://roadmap.sh/full-stack)。 其实还有很多roadmap相关，比如`devops`，`docker`，`Frontend Developer`等等吧都会涉及到一些内容。并且这个[roadmap](https://roadmap.sh/)还可以在图中交互，我觉得不错。
+主体还是[golang-developer-roadmap](https://github.com/Alikhll/golang-developer-roadmap)，顺便在前后加入了 [Backend Developer](https://roadmap.sh/backend) ,后面加入了[Full Stack Developer](https://roadmap.sh/full-stack)。 其实还有很多roadmap相关，比如`devops`，`docker`，`Frontend Developer`等等吧都会涉及到一些内容。并且这个[roadmap](https://roadmap.sh/)还可以在图中交互，我觉得不错。
 
 主要不错地方包含：
 1. 可交互。
