@@ -6,108 +6,49 @@
     <description>Recent content in Go on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 May 2023 14:53:11 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 May 2023 14:53:11 +0800</lastBuildDate>
+    <atom:link href="https://blog.51ai.vip/aLong/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Roadmap&amp;Go</title>
       <link>https://blog.51ai.vip/aLong/posts/roadmapgo/</link>
       <pubDate>Mon, 15 May 2023 14:53:11 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/roadmapgo/</guid>
-      <description>技术类的Roadmap（路线图）具有许多好处，下面是其中几个主要的好处：
-明确目标：Roadmap可以帮助技术团队明确目标和愿景。它提供了一个清晰的计划，使团队成员知道他们正在朝着什么方向前进，并且可以更好地集中精力和资源。 规划优先级：Roadmap可以帮助团队确定优先级和时间表。通过将不同的功能、项目和任务安排在时间轴上，团队可以了解何时开始和完成每个任务，从而更好地分配资源和人力。 沟通和协作：Roadmap是与团队成员、管理层和利益相关者进行沟通和协作的重要工具。它提供了一个共同的视觉框架，帮助各方理解技术发展的方向和计划，从而促进更好的合作和决策制定。 风险管理：Roadmap有助于识别和管理潜在的风险和挑战。通过在Roadmap中考虑外部因素、技术依赖关系和风险因素，团队可以更好地规划和应对可能的问题，降低项目失败的风险。 激励和动力：Roadmap可以为团队提供激励和动力。清晰的目标和规划可以激发团队成员的工作热情和投入，使他们感到对项目和组织的价值和重要性。 我之前保存过GitHub: Alikhll/golang-developer-roadmap的roadmap。正好在上周末想看看自己找一块内容来学习学习。我发现作者还是2021年的版本，后面也没有更新什么。那我想在obsidian中把这个图复刻一个，然后根据内容去做计划去学习。后来我又想到另一个roadmap也不错。正好两个整合一下。那么就有了一个我魔改的内容。
-此图是通过Obsidian的canvas 功能进行的制作。并且我后面打算通过双链来完成此图中部分内容的笔记。
-此图整体可以看到通过颜色来区分了一些作者划分的知识点优先级，以便确定哪些内容应优先进行。此图我觉得有个遗憾就是没能够持续进行更新。后面还好我找到另一个认为不错的roadmap进行补充和完善。
-主体还是golang-developer-roadmap，顺便在前后加入了 Backend Developer ,后面加入了Full Stack Developer。 其实还有很多roadmap相关，比如devops，docker，Frontend Developer等等吧都会涉及到一些内容。并且这个roadmap还可以在图中交互，我觉得不错。
-主要不错地方包含：
-可交互。 此roadmap是持续更新的。 比如这个后端内容中，你点击 What is HTTP？ 在右侧弹出内容中，可以看到具体内容，并有相关的链接可以去访问。 最上面还有个状态，可通过状态编辑此内容是否已经达到目的。
-点击Update Status后可以看到有三个选项。
-点击Done之后，图中将做出变化：
-个人认为是个不错的方式。
-个人认为技术类的Roadmap可以帮助团队提高效率、降低风险、改善沟通和协作，并为实现技术目标提供清晰的指导。它是一个重要的管理工具，有助于组织和规划技术团队的工作，使其能够更好地满足业务需求并取得成功。
-完结 祝好 ～</description>
+      <description>技术类的Roadmap（路线图）具有许多好处，下面是其中几个主要的好处：&#xA;明确目标：Roadmap可以帮助技术团队明确目标和愿景。它提供了一个清晰的计划，使团队成员知道他们正在朝着什么方向前进，并且可以更好地集中精力和资源。 规划优先级：Roadmap可以帮助团队确定优先级和时间表。通过将不同的功能、项目和任务安排在时间轴上，团队可以了解何时开始和完成每个任务，从而更好地分配资源和人力。 沟通和协作：Roadmap是与团队成员、管理层和利益相关者进行沟通和协作的重要工具。它提供了一个共同的视觉框架，帮助各方理解技术发展的方向和计划，从而促进更好的合作和决策制定。 风险管理：Roadmap有助于识别和管理潜在的风险和挑战。通过在Roadmap中考虑外部因素、技术依赖关系和风险因素，团队可以更好地规划和应对可能的问题，降低项目失败的风险。 激励和动力：Roadmap可以为团队提供激励和动力。清晰的目标和规划可以激发团队成员的工作热情和投入，使他们感到对项目和组织的价值和重要性。 我之前保存过GitHub: Alikhll/golang-developer-roadmap的roadmap。正好在上周末想看看自己找一块内容来学习学习。我发现作者还是2021年的版本，后面也没有更新什么。那我想在obsidian中把这个图复刻一个，然后根据内容去做计划去学习。后来我又想到另一个roadmap也不错。正好两个整合一下。那么就有了一个我魔改的内容。&#xA;此图是通过Obsidian的canvas 功能进行的制作。并且我后面打算通过双链来完成此图中部分内容的笔记。&#xA;此图整体可以看到通过颜色来区分了一些作者划分的知识点优先级，以便确定哪些内容应优先进行。此图我觉得有个遗憾就是没能够持续进行更新。后面还好我找到另一个认为不错的roadmap进行补充和完善。&#xA;主体还是golang-developer-roadmap，顺便在前后加入了 Backend Developer ,后面加入了Full Stack Developer。 其实还有很多roadmap相关，比如devops，docker，Frontend Developer等等吧都会涉及到一些内容。并且这个roadmap还可以在图中交互，我觉得不错。&#xA;主要不错地方包含：&#xA;可交互。 此roadmap是持续更新的。 比如这个后端内容中，你点击 What is HTTP？ 在右侧弹出内容中，可以看到具体内容，并有相关的链接可以去访问。 最上面还有个状态，可通过状态编辑此内容是否已经达到目的。&#xA;点击Update Status后可以看到有三个选项。&#xA;点击Done之后，图中将做出变化：&#xA;个人认为是个不错的方式。&#xA;个人认为技术类的Roadmap可以帮助团队提高效率、降低风险、改善沟通和协作，并为实现技术目标提供清晰的指导。它是一个重要的管理工具，有助于组织和规划技术团队的工作，使其能够更好地满足业务需求并取得成功。&#xA;完结 祝好 ～</description>
     </item>
-    
     <item>
       <title>解决/usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied问题</title>
       <link>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 22 Feb 2021 09:06:08 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</guid>
-      <description>最近Goland在run的时候发现一个问题 open /usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied
-情况具体是当我run的时候有问题。debug可以。根据错误提示看到是权限的事。
-解决方式 执行 sudo chown -R xxx:yyy /usr/local/go
-xxx 用户名， yyy 组名
-命令的目的：更改go目录的所有者用户和组。
-查看用户名&amp;amp;用户组 当前用户名 常用命令 who am i 查看当前用户名和组 ls -la
-参考 https://github.com/golang/go/issues/37962</description>
+      <description>最近Goland在run的时候发现一个问题 open /usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied&#xA;情况具体是当我run的时候有问题。debug可以。根据错误提示看到是权限的事。&#xA;解决方式 执行 sudo chown -R xxx:yyy /usr/local/go&#xA;xxx 用户名， yyy 组名&#xA;命令的目的：更改go目录的所有者用户和组。&#xA;查看用户名&amp;amp;用户组 当前用户名 常用命令 who am i 查看当前用户名和组 ls -la&#xA;参考 https://github.com/golang/go/issues/37962</description>
     </item>
-    
     <item>
       <title>GORM 创建联合约束/索引</title>
       <link>https://blog.51ai.vip/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link>
       <pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid>
-      <description>GROM创建联合索引 之前提到一个联合约束，那么根据需求再次做一个演示：
-type Demo struct { ID uint `gorm:&amp;#34;primary_key&amp;#34;` CreatedAt time.Time UpdatedAt time.Time DeletedAt *time.Time `gorm:&amp;#34;index;unique_index:name_d&amp;#34;` Name string `gorm:&amp;#34;unique_index:name_d&amp;#34;` Status int } 通过demo 迁移后，deleted_at 与 name 会形成一个联合约束。
--OK,完结-</description>
+      <description>GROM创建联合索引 之前提到一个联合约束，那么根据需求再次做一个演示：&#xA;type Demo struct { ID uint `gorm:&amp;#34;primary_key&amp;#34;` CreatedAt time.Time UpdatedAt time.Time DeletedAt *time.Time `gorm:&amp;#34;index;unique_index:name_d&amp;#34;` Name string `gorm:&amp;#34;unique_index:name_d&amp;#34;` Status int } 通过demo 迁移后，deleted_at 与 name 会形成一个联合约束。&#xA;-OK,完结-</description>
     </item>
-    
     <item>
       <title>golang.org/x/xerrors：undefined: errors.Frame</title>
       <link>https://blog.51ai.vip/aLong/posts/golang-org-x-xerrorsundefined-errors-frame/</link>
       <pubDate>Thu, 16 Jan 2020 19:05:39 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/golang-org-x-xerrorsundefined-errors-frame/</guid>
-      <description>项目初始化遇到问题 错误为：
-../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/adaptor_go1_13.go:16:14: undefined: errors.Frame ../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/format_go1_13.go:12:18: undefined: errors.Formatter exit status 2 exit status 1 通过科普得到一个方法： go get -u golang.org/x/xerrors
-问题解决了。</description>
+      <description>项目初始化遇到问题 错误为：&#xA;../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/adaptor_go1_13.go:16:14: undefined: errors.Frame ../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/format_go1_13.go:12:18: undefined: errors.Formatter exit status 2 exit status 1 通过科普得到一个方法： go get -u golang.org/x/xerrors&#xA;问题解决了。</description>
     </item>
-    
     <item>
       <title>Golang 环境准备</title>
       <link>https://blog.51ai.vip/aLong/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</link>
       <pubDate>Thu, 16 Jan 2020 18:51:34 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid>
-      <description>安装GOlang 环境:macOS
-shell: zsh
-安装步骤： brew update &amp;amp;&amp;amp; brew upgrade # 更新 brew install go # 安装 go 配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin 退出保存后，使文件生效 source ~/.zshrc= </description>
+      <description>安装GOlang 环境:macOS&#xA;shell: zsh&#xA;安装步骤： brew update &amp;amp;&amp;amp; brew upgrade # 更新 brew install go # 安装 go 配置环境变量 我的本shell 是zsh 下面是按照zsh配置： 如果需要修改默认的环境变量配置修改 vim ~/.bash_profile 或 vim ~/.zshrc # GOROOT安装的路径 export GOROOT=/usr/local/Cellar/go/1.9/libexec #GOPATH root bin export GOBIN=$GOROOT/bin export PATH=$PATH:$GOBIN #GOPATH export GOPATH=$HOME/go #GOPATH bin export PATH=$PATH:$GOPATH/bin 退出保存后，使文件生效 source ~/.zshrc= </description>
     </item>
-    
     <item>
       <title>Go学习笔记</title>
       <link>https://blog.51ai.vip/aLong/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 15 May 2019 11:05:52 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>变量 var 声明,支持类型判断.
-var name string string类型 name
-var s string 值初始化
-var age = 20 age 类型自动推断
-height := 165 简短声明(仅限函数使用)
-i,j,k := 3.8,true,100 声明一组变量
-_, res := 123,321 _特殊变量名,赋予他的值会被丢弃
-常量 const 声明
-const Pi = 3.14 声明一个常量Pi
-const( apple = &amp;#34;fruit&amp;#34; banana ) banana 常量未定义初始化值会与apple值相同
-数据类型 boolean,整型,浮点型,字符串,错误
-布尔 bool 初始化默认fasle
-整型
-int8,int16,int32,int64 (有符号)
-uint8(byte),uint16,uint32(rune),uint64 (无符号)
-uintptr
-byte,rune 与uint8,uint32别名
-整形初始化默认值0
-浮点型
-float32,float64(默认浮点类型)
-complex64,complex128
-float32,float64 初始化默认值0
-字符串
-双引号或``,UTF8编码,\转义
-初始化默认值&amp;quot;&amp;quot;
-修改需要转换类型为 rune或byte 操作后再转换</description>
+      <description>变量 var 声明,支持类型判断.&#xA;var name string string类型 name&#xA;var s string 值初始化&#xA;var age = 20 age 类型自动推断&#xA;height := 165 简短声明(仅限函数使用)&#xA;i,j,k := 3.8,true,100 声明一组变量&#xA;_, res := 123,321 _特殊变量名,赋予他的值会被丢弃&#xA;常量 const 声明&#xA;const Pi = 3.14 声明一个常量Pi&#xA;const( apple = &amp;#34;fruit&amp;#34; banana ) banana 常量未定义初始化值会与apple值相同&#xA;数据类型 boolean,整型,浮点型,字符串,错误&#xA;布尔 bool 初始化默认fasle&#xA;整型&#xA;int8,int16,int32,int64 (有符号)&#xA;uint8(byte),uint16,uint32(rune),uint64 (无符号)&#xA;uintptr&#xA;byte,rune 与uint8,uint32别名&#xA;整形初始化默认值0&#xA;浮点型&#xA;float32,float64(默认浮点类型)&#xA;complex64,complex128&#xA;float32,float64 初始化默认值0&#xA;字符串&#xA;双引号或``,UTF8编码,\转义&#xA;初始化默认值&amp;quot;&amp;quot;&#xA;修改需要转换类型为 rune或byte 操作后再转换</description>
     </item>
-    
   </channel>
 </rss>

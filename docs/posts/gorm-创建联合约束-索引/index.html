@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.109.0">
+  <meta name="generator" content="Hugo 0.122.0">
   
   <meta name="description" content="GROM创建联合索引 之前提到一个联合约束，那么根据需求再次做一个演示：
 type Demo struct { ID uint `gorm:&#34;primary_key&#34;` CreatedAt time.Time UpdatedAt time.Time DeletedAt *time.Time `gorm:&#34;index;unique_index:name_d&#34;` Name string `gorm:&#34;unique_index:name_d&#34;` Status int } 通过demo 迁移后，deleted_at 与 name 会形成一个联合约束。

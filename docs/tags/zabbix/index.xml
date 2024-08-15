@@ -6,91 +6,35 @@
     <description>Recent content in zabbix on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Oct 2022 11:15:29 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 11:15:29 +0800</lastBuildDate>
+    <atom:link href="https://blog.51ai.vip/aLong/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zabbix自动发现SNMP设备</title>
       <link>https://blog.51ai.vip/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link>
       <pubDate>Wed, 12 Oct 2022 11:15:29 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid>
-      <description>Zabbix提供高效灵活的网络自动发现功能。 网络发现的优势：
-加快部署速度 简化管理 在快速变化的环境中避免过度管理 manual-zh 发现SNMP例子 网段内存在几天设备，其中一台是SNMPv2，一台SNMPv3，通过发现将他们加入并监控
-大概流程：
-发现规则，通过发现规则去发现设备。 发现后的动作，发现设备后做什么。 验证发现结果。 创建发现规则 Configuration -&amp;gt; Discovery -&amp;gt; Create discovery rule 通过SNMPv2协议，根据oid检查。 这个oid是设备名。 community是根据设备来的。通过SNMP取设备名，host名称是IP地址，可见名称是SNMP取的设备名称。
-重点配置内容：
-IP range 发现IP范围 Update interval 发现周期 Checks 使用此检查列表来执行网络发现 Device uniqueness criteria 唯一标识 Host name 主机名称 Visible name 可见名称 创建发现动作 Configuration -&amp;gt; Actions -&amp;gt; Discovery actions
-Action 选项中： 主要配置Conditions内容： 我写了两个条件，因为我发现写了v2，v3版本的协议。所以有两个条件。如果都是v2就写一个就ok。简单来讲满足我demo。
-Operations 选项： 发现的设备添加， Add host 。 加入设备组， Add to host groups：组名。 关联模版，Link to templates：模版名。 开启Host。 通过这个配置后，发现的主机会根据这个配置进行操作。</description>
+      <description>Zabbix提供高效灵活的网络自动发现功能。 网络发现的优势：&#xA;加快部署速度 简化管理 在快速变化的环境中避免过度管理 manual-zh 发现SNMP例子 网段内存在几天设备，其中一台是SNMPv2，一台SNMPv3，通过发现将他们加入并监控&#xA;大概流程：&#xA;发现规则，通过发现规则去发现设备。 发现后的动作，发现设备后做什么。 验证发现结果。 创建发现规则 Configuration -&amp;gt; Discovery -&amp;gt; Create discovery rule 通过SNMPv2协议，根据oid检查。 这个oid是设备名。 community是根据设备来的。通过SNMP取设备名，host名称是IP地址，可见名称是SNMP取的设备名称。&#xA;重点配置内容：&#xA;IP range 发现IP范围 Update interval 发现周期 Checks 使用此检查列表来执行网络发现 Device uniqueness criteria 唯一标识 Host name 主机名称 Visible name 可见名称 创建发现动作 Configuration -&amp;gt; Actions -&amp;gt; Discovery actions&#xA;Action 选项中： 主要配置Conditions内容： 我写了两个条件，因为我发现写了v2，v3版本的协议。所以有两个条件。如果都是v2就写一个就ok。简单来讲满足我demo。&#xA;Operations 选项： 发现的设备添加， Add host 。 加入设备组， Add to host groups：组名。 关联模版，Link to templates：模版名。 开启Host。 通过这个配置后，发现的主机会根据这个配置进行操作。</description>
     </item>
-    
     <item>
       <title>Zabbix6 网络发现</title>
       <link>https://blog.51ai.vip/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link>
       <pubDate>Fri, 14 Jan 2022 10:15:53 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid>
-      <description>Zabbix6 网络发现
-功能 快速发现并添加主机
-简单的管理
-随着环境的改变而快速搭建系统
-发现配置依据 IP地址段
-基于服务(FTP、SSH、Web、POP3、IMAP、TCP&amp;hellip;)的
-从Zabbix-Agent接收到的信息
-SNMP agent接收的信息
-添加方式 创建 Discovery rule
-Name：规则名称（唯一）
-Discovery by proxy： 是否由代理执行
-IP range： IP地址范围
-单个IP: 192.168.1.33 IP段: 192.168.1-10.1-255. 范围受限于覆盖地址的总数（小于64K）。 子网掩码: : 192.168.4.0/24 支持的子网掩码: /16 - /30 for IPv4 addresses /112 - /128 for IPv6 addresses\IP列表: 192.168.1.1-255, 192.168.2.1-100, 192.168.2.200, 192.168.4.0/24 Zabbix 3.0.0起，此字段支持空格，表格和多行。
-Update interval: Zabbix执行规则的频率
-Checks: 发现的方式
-Device uniqueness criteria：设备唯一标识
-Host name ： 主机名
-Visible name：描述名
-这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。</description>
+      <description>Zabbix6 网络发现&#xA;功能 快速发现并添加主机&#xA;简单的管理&#xA;随着环境的改变而快速搭建系统&#xA;发现配置依据 IP地址段&#xA;基于服务(FTP、SSH、Web、POP3、IMAP、TCP&amp;hellip;)的&#xA;从Zabbix-Agent接收到的信息&#xA;SNMP agent接收的信息&#xA;添加方式 创建 Discovery rule&#xA;Name：规则名称（唯一）&#xA;Discovery by proxy： 是否由代理执行&#xA;IP range： IP地址范围&#xA;单个IP: 192.168.1.33 IP段: 192.168.1-10.1-255. 范围受限于覆盖地址的总数（小于64K）。 子网掩码: : 192.168.4.0/24 支持的子网掩码: /16 - /30 for IPv4 addresses /112 - /128 for IPv6 addresses\IP列表: 192.168.1.1-255, 192.168.2.1-100, 192.168.2.200, 192.168.4.0/24 Zabbix 3.0.0起，此字段支持空格，表格和多行。&#xA;Update interval: Zabbix执行规则的频率&#xA;Checks: 发现的方式&#xA;Device uniqueness criteria：设备唯一标识&#xA;Host name ： 主机名&#xA;Visible name：描述名&#xA;这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。</description>
     </item>
-    
     <item>
       <title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title>
       <link>https://blog.51ai.vip/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link>
       <pubDate>Wed, 27 Oct 2021 15:06:44 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid>
-      <description>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache 情况 接上次做完容器部署proxy后，为其添加host进行添加任务。
-发现一直没有数据，就到item里面执行 execute now。
-然后过了几分钟回来一看，还是没有。
-Emmm，看下log吧。
-Server没一场，那问题就在proxy了吧。
-连上proxy去看看： 提示好像是去检查对应的itemid，然后说item不在还cache中。 赶紧上网科普！
-原因 因为是主动的proxy，那他会定期去server要数据。
-这个3600就是配置的更新周期了。1个小时才去要一次，所以肯定是没监控了。
-为了验证，就等了1小时看看： 实锤了，1小时。后面也就有了数据。 Host是1小时之后开始有数据的，也就是他同步后就开始执行监控项了。
-查询到的内容： [地址](https://subscription.packtpub.com/book/networking_and_servers/9781784399764/1/ch01lvl1sec10/understanding-the-zabbix-proxies-data-flow) 解决 Ok，那么在重新部署的容器加上此参数(ZBX_CONFIGFREQUENCY)。
-docker run --name zbxproxy -d \ -e ZBX_SERVER_HOST=192.168.10.66 \ -e ZBX_HOSTNAME=&amp;#34;testproxy&amp;#34; \ -e ZBX_TIMEOUT=&amp;#34;10&amp;#34; \ -e ZBX_TLSACCEPT=psk \ -e ZBX_TLSCONNECT=psk \ -e ZBX_TLSPSKIDENTITY=helloworld \ -e ZBX_TLSPSKFILE=zbx_proxy.psk \ -e ZBX_CONFIGFREQUENCY=600 \ -v /etc/localtime:/etc/localtime:ro \ -v /zbx_proxy.psk:/var/lib/zabbix/enc/zbx_proxy.psk \ --restart=always \ zabbix/zabbix-proxy-sqlite3:alpine-trunk &amp;ndash;祝好</description>
+      <description>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache 情况 接上次做完容器部署proxy后，为其添加host进行添加任务。&#xA;发现一直没有数据，就到item里面执行 execute now。&#xA;然后过了几分钟回来一看，还是没有。&#xA;Emmm，看下log吧。&#xA;Server没一场，那问题就在proxy了吧。&#xA;连上proxy去看看： 提示好像是去检查对应的itemid，然后说item不在还cache中。 赶紧上网科普！&#xA;原因 因为是主动的proxy，那他会定期去server要数据。&#xA;这个3600就是配置的更新周期了。1个小时才去要一次，所以肯定是没监控了。&#xA;为了验证，就等了1小时看看： 实锤了，1小时。后面也就有了数据。 Host是1小时之后开始有数据的，也就是他同步后就开始执行监控项了。&#xA;查询到的内容： [地址](https://subscription.packtpub.com/book/networking_and_servers/9781784399764/1/ch01lvl1sec10/understanding-the-zabbix-proxies-data-flow) 解决 Ok，那么在重新部署的容器加上此参数(ZBX_CONFIGFREQUENCY)。&#xA;docker run --name zbxproxy -d \ -e ZBX_SERVER_HOST=192.168.10.66 \ -e ZBX_HOSTNAME=&amp;#34;testproxy&amp;#34; \ -e ZBX_TIMEOUT=&amp;#34;10&amp;#34; \ -e ZBX_TLSACCEPT=psk \ -e ZBX_TLSCONNECT=psk \ -e ZBX_TLSPSKIDENTITY=helloworld \ -e ZBX_TLSPSKFILE=zbx_proxy.psk \ -e ZBX_CONFIGFREQUENCY=600 \ -v /etc/localtime:/etc/localtime:ro \ -v /zbx_proxy.psk:/var/lib/zabbix/enc/zbx_proxy.psk \ --restart=always \ zabbix/zabbix-proxy-sqlite3:alpine-trunk &amp;ndash;祝好</description>
     </item>
-    
     <item>
       <title>Zabbix-Proxy 部署运行</title>
       <link>https://blog.51ai.vip/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link>
       <pubDate>Thu, 24 Jun 2021 17:20:40 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid>
-      <description>前提 版本： zabbix-server 5.4
-任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。
-安装Zabbix-Proxy 安装Zabbix仓库 wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb dpkg -i zabbix-release_5.4-1+ubuntu20.04_all.deb apt update 安装Zabbix-proxy &amp;amp; mysql 这里我选择的是mysql作为数据库
-apt install mysql-server
-apt install zabbix-proxy-mysql
-导入数据 zcat /usr/share/doc/zabbix-proxy-mysql/schema.sql.gz | mysql -uzabbix -p zabbix
-这里可能跑不通。我装了两次都发现没有 schema.sql.gz 这个文件。 如果你也是，那需要找一下这个sql文件。
-下载5.4源码包： wget https://cdn.zabbix.com/zabbix/sources/stable/5.4/zabbix-5.4.1.tar.gz 解压之后，在 /zabbix-5.4.1/databases/mysql/ 中
-通过 cat schema.sql | mysql -uzabbix -p 导入到数据库中。
-4.配置zabbix-proxy
-vim /etc/zabbix/zabbix_proxy.conf
-修改Zabbix Server地址,Hostname，在server添加中，此名称要与这里一致。
-修改为正确的数据库名字、用户名、密码。
-其他配置可以酌情配置。例如server配置频率，log位置，本地缓存时间、主动被动、监听端口等等。
-启动zabbix-proxy systemctl start zabbix-proxy &amp;amp;&amp;amp; systemctl enable zabbix-proxy 在zabbix-server 中添加proxy，然后在对应的host主机上选择proxy。 zabbix-proxy log 默认配置的位置： /var/log/zabbix/zabbix_proxy.</description>
+      <description>前提 版本： zabbix-server 5.4&#xA;任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。&#xA;安装Zabbix-Proxy 安装Zabbix仓库 wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb dpkg -i zabbix-release_5.4-1+ubuntu20.04_all.deb apt update 安装Zabbix-proxy &amp;amp; mysql 这里我选择的是mysql作为数据库&#xA;apt install mysql-server&#xA;apt install zabbix-proxy-mysql&#xA;导入数据 zcat /usr/share/doc/zabbix-proxy-mysql/schema.sql.gz | mysql -uzabbix -p zabbix&#xA;这里可能跑不通。我装了两次都发现没有 schema.sql.gz 这个文件。 如果你也是，那需要找一下这个sql文件。&#xA;下载5.4源码包： wget https://cdn.zabbix.com/zabbix/sources/stable/5.4/zabbix-5.4.1.tar.gz 解压之后，在 /zabbix-5.4.1/databases/mysql/ 中&#xA;通过 cat schema.sql | mysql -uzabbix -p 导入到数据库中。&#xA;4.配置zabbix-proxy&#xA;vim /etc/zabbix/zabbix_proxy.conf&#xA;修改Zabbix Server地址,Hostname，在server添加中，此名称要与这里一致。&#xA;修改为正确的数据库名字、用户名、密码。&#xA;其他配置可以酌情配置。例如server配置频率，log位置，本地缓存时间、主动被动、监听端口等等。&#xA;启动zabbix-proxy systemctl start zabbix-proxy &amp;amp;&amp;amp; systemctl enable zabbix-proxy 在zabbix-server 中添加proxy，然后在对应的host主机上选择proxy。 zabbix-proxy log 默认配置的位置： /var/log/zabbix/zabbix_proxy.</description>
     </item>
-    
   </channel>
 </rss>

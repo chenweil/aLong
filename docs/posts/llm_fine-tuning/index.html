@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.122.0">
+  
+  <meta name="description" content="微调 fine-tuning 微调是一种监督学习过程,在这个过程中可以使用一组带标签的示例数据来更新LLM的权重.使其为特定任务生成良好完成的能力.
+指令微调特别擅长提高模型在各种任务中的性能. 比如想让模型翻译能力增强,那就给他一些示例是包括翻译这句话之类的说明.即时完成示例允许模型学习生成遵循给定说明的响应.
+微调大致步骤 准备训练数据,需要特定的格式. 也可以通过数据集&#43;模版来处理使其既是模版又是数据集(指令数据集). 将数据集划分为训练验证和测试.然后使用计算出的损失来更新标准反向传播中的模型权重(standard backpropagation)。多批次重复操作. 更新完进行最终的性能评估.通过测试得出精度. 最终得到一个微调模型(Instruct LLM). ">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>LLM_fine Tuning | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>LLM_fine Tuning</h1>
+  <h1 id="微调-fine-tuning">微调 fine-tuning</h1>
+<p>微调是一种监督学习过程,在这个过程中可以使用一组带标签的示例数据来更新LLM的权重.使其为特定任务生成良好完成的能力.</p>
+<p>指令微调特别擅长提高模型在各种任务中的性能.
+<img src="https://s2.loli.net/2024/08/15/zdjLFeb17cpSwvO.png" alt="image.png"></p>
+<p>比如想让模型翻译能力增强,那就给他一些示例是包括翻译这句话之类的说明.即时完成示例允许模型学习生成遵循给定说明的响应.</p>
+<h2 id="微调大致步骤">微调大致步骤</h2>
+<ol>
+<li>准备训练数据,需要特定的格式. 也可以通过数据集+模版来处理使其既是模版又是数据集(指令数据集).</li>
+<li>将数据集划分为训练验证和测试.然后使用计算出的损失来更新标准反向传播中的模型权重(standard backpropagation)。多批次重复操作.
+<img src="https://s2.loli.net/2024/08/15/NnuGVBHyRJAmeSQ.png" alt="image.png"></li>
+<li>更新完进行最终的性能评估.通过测试得出精度.
+<img src="https://s2.loli.net/2024/08/15/7V1TbfgcANhPyk5.png" alt="image.png"></li>
+<li>最终得到一个微调模型(Instruct LLM).
+<img src="https://s2.loli.net/2024/08/15/4dINakbHTDw2WRJ.png" alt="image.png"></li>
+</ol>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

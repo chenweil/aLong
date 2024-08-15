@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.109.0">
+  <meta name="generator" content="Hugo 0.122.0">
   
   <meta name="description" content="整体配置 prometueus.yml 配置文件注解与说明
 global: # 全局配置 scrape_interval: 15s # 默认值为 1m，用于设置每次数据收集的间隔 scrape_timeout: 10s # 默认10s,收集超时时间 evaluation_interval: 15s # 记录规则/告警的执行周期 默认1m external_labels: # 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签 monitor: &#39;ctmonitor&#39; rule_files: # 指定告警规则文件&amp;记录文件 - &#34;/usr/local/prometheus/rules.yml&#34; alerting: # 告警管理配置 alert_relable_configs: # 修改告警内容 - alertmanagers: # 告警管理起配置 - static_configs: # 静态配置 - targets: # 警告器地址 - 172.16.23.12:9093 # 用于配置 scrape 的 endpoint 配置需要 scrape 的 targets 以及相应的参数 # 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 scrape_configs: # 抓取配置选项 - job_name: prometheus # 默认情况下分配给刮削度量的作业名称。 scrape_interval: 5s # 从这项工作中获取目标的频率。 scrape_timeout: 3s # 每次获取超时时间 honor_timestamps: true # 默认false, 在获取时是否使用当前的时间戳 metrics_path: /metrics # 从目标获取度量的http资源路径。 scheme: http # static_configs: # 为此作业标记的静态配置目标的列表。 - targets: # 目监控标 - 172.">

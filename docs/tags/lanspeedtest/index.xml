@@ -6,18 +6,14 @@
     <description>Recent content in LANSpeedTest on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Oct 2019 17:31:55 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/lanspeedtest/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Oct 2019 17:31:55 +0000</lastBuildDate>
+    <atom:link href="https://blog.51ai.vip/aLong/tags/lanspeedtest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>网络传输速度测试工具</title>
       <link>https://blog.51ai.vip/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
-      <description>网络传输测试软件 最近公司测试限速,搜集软件发现两款,iperf,LANSpeedTest. iperf,多平台. LANSpeedTest,读写显示,操作简单. 局域网测试传输,优先考虑UDP.
-iperf Iperf可以报告带宽,延迟抖动和数据包丢失. 官方文档 安装不写了.跳过
-iperf常用参数介绍
--i 2	#表示每2秒显示一次报告 -w 80k	#对于TCP方式，此设置为TCP窗口大小。对于UDP方式，此设置为接受UDP数据包的缓冲区大小，限制可以接受数据包的最大值 -B 192.168.122.1	#绑定到主机的多个地址中的一个。对于客户端来说，这个参数设置了出栈接口。对于服务器端来说，这个参数设置入栈接口。这个参数只用于具有多网络接口的主机。 #在Iperf的UDP模式下，此参数用于绑 定和加入一个多播组。使用范围在224.0.0.0至239.255.255.255的多播地址 #常用客户端参数 -b 100m	#用于udp测试时，设置测试发送的带宽，单位：bit/秒，不设置时默认为：1Mbit/秒 -c #指定服务端ip地址 -d #同时测试上行和下行 -t 10	#设置传输时间，为10秒	-P 5	#指定发起5个线程 UDP测试 服务端 iperf -u -s # -u表示以udp模式运行，-s表示作为服务端, 这里需要设置ip 客户端 iperf -u -c 192.168.100.11 -b 100M -t 60 -i 2 #解释：在udp模式下，以100Mbps为数据发送速率，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒 iperf -u -c 192.168.100.11 5M -P 30 -t 6	#客户端同时向服务器端发起30个连接线程，以5Mbps为数据发送速率 iperf -u -c 192.168.100.11 -b 100M -d -t 60 #以100M为数据发送速率，进行上下行带宽测试 TCP测试 服务端 iperf -s 客户端 iperf -c 192.</description>
+      <description>网络传输测试软件 最近公司测试限速,搜集软件发现两款,iperf,LANSpeedTest. iperf,多平台. LANSpeedTest,读写显示,操作简单. 局域网测试传输,优先考虑UDP.&#xA;iperf Iperf可以报告带宽,延迟抖动和数据包丢失. 官方文档 安装不写了.跳过&#xA;iperf常用参数介绍&#xA;-i 2&#x9;#表示每2秒显示一次报告 -w 80k&#x9;#对于TCP方式，此设置为TCP窗口大小。对于UDP方式，此设置为接受UDP数据包的缓冲区大小，限制可以接受数据包的最大值 -B 192.168.122.1&#x9;#绑定到主机的多个地址中的一个。对于客户端来说，这个参数设置了出栈接口。对于服务器端来说，这个参数设置入栈接口。这个参数只用于具有多网络接口的主机。 #在Iperf的UDP模式下，此参数用于绑 定和加入一个多播组。使用范围在224.0.0.0至239.255.255.255的多播地址 #常用客户端参数 -b 100m&#x9;#用于udp测试时，设置测试发送的带宽，单位：bit/秒，不设置时默认为：1Mbit/秒 -c #指定服务端ip地址 -d #同时测试上行和下行 -t 10&#x9;#设置传输时间，为10秒&#x9;-P 5&#x9;#指定发起5个线程 UDP测试 服务端 iperf -u -s # -u表示以udp模式运行，-s表示作为服务端, 这里需要设置ip 客户端 iperf -u -c 192.168.100.11 -b 100M -t 60 -i 2 #解释：在udp模式下，以100Mbps为数据发送速率，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒 iperf -u -c 192.168.100.11 5M -P 30 -t 6&#x9;#客户端同时向服务器端发起30个连接线程，以5Mbps为数据发送速率 iperf -u -c 192.168.100.11 -b 100M -d -t 60 #以100M为数据发送速率，进行上下行带宽测试 TCP测试 服务端 iperf -s 客户端 iperf -c 192.</description>
     </item>
-    
   </channel>
 </rss>

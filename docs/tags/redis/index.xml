@@ -6,37 +6,21 @@
     <description>Recent content in Redis on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jan 2022 10:16:39 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 10:16:39 +0000</lastBuildDate>
+    <atom:link href="https://blog.51ai.vip/aLong/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux环境redis开机启动</title>
       <link>https://blog.51ai.vip/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link>
       <pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid>
-      <description>前提 系统部署在ubuntu20.04中，用到redis数据库。 但是测试时候，设备重启发现redis服务没有启动。 由于是变异安装的，系统找不到redis.service。
-解决方案 系统添加服务文件，并执行。
-编写文件 文件路径/usr/lib/systemd/system
-编写文件 vi /usr/lib/systemd/system/redis.service
-[Unit] #服务描述 Description=Redis persistent key-value database #服务依赖 After=network.target After=network-online.target Wants=network-online.target [Service] #启动 命令 ExecStart=/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no #停止命令 ExecStop=/home/monitor/redis-6.0.8/src/redis-cli shutdown # Restart=always #服务类型 Type=forking #User=redis #Group=redis RuntimeDirectory=redis RuntimeDirectoryMode=0755 [Install] #服务安装设置 WantedBy=multi-user.target 服务配置文件分为[Unit]、[Service]和[Install]三部分。 具体详细的解释需要结合linux知识补充。
-服务生效 系统重新读取所有服务文件： systemctl daemon-reload 启用/禁用开机自启动: systemctl enable/disable redis 启动/重启redis： systemctl start/restart redis</description>
+      <description>前提 系统部署在ubuntu20.04中，用到redis数据库。 但是测试时候，设备重启发现redis服务没有启动。 由于是变异安装的，系统找不到redis.service。&#xA;解决方案 系统添加服务文件，并执行。&#xA;编写文件 文件路径/usr/lib/systemd/system&#xA;编写文件 vi /usr/lib/systemd/system/redis.service&#xA;[Unit] #服务描述 Description=Redis persistent key-value database #服务依赖 After=network.target After=network-online.target Wants=network-online.target [Service] #启动 命令 ExecStart=/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no #停止命令 ExecStop=/home/monitor/redis-6.0.8/src/redis-cli shutdown # Restart=always #服务类型 Type=forking #User=redis #Group=redis RuntimeDirectory=redis RuntimeDirectoryMode=0755 [Install] #服务安装设置 WantedBy=multi-user.target 服务配置文件分为[Unit]、[Service]和[Install]三部分。 具体详细的解释需要结合linux知识补充。&#xA;服务生效 系统重新读取所有服务文件： systemctl daemon-reload 启用/禁用开机自启动: systemctl enable/disable redis 启动/重启redis： systemctl start/restart redis</description>
     </item>
-    
     <item>
       <title>redis笔记</title>
       <link>https://blog.51ai.vip/aLong/posts/redis%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 25 Apr 2019 17:12:52 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/redis%E7%AC%94%E8%AE%B0/</guid>
-      <description>redis笔记 单进程,默认16库,
-select N 切换库
-flushdb 清空库
-类型 string 字符串 list 列表 set 集合 sorted set有序集合 hash哈希 一个字符串支持512M
-有序集合 每个元素会关联一个double类型分数。成员唯一，分数可以重复。
-常用命令 key： keys * exists key move key db 移除key 从库中 expire key 为key 设置过期时间 ttl key 查看多少秒过期，-1 永不过期， -2已过期 type key 查看类型 del key 删除 string： getrange key 0-N setrange key 0-N XXX 获取字符串范围内容， 设置范围内为XXX
-setex 设置生命值多少秒 setnx key 设置一个不存在的key
-mset mget msetnx
-list： lpush rpush lrange lpop rpop lindex llen lrem key 2 value 删除2个value ltrim key 0-N 截取并复制给key （其他的删除了） rpoplpush 弹出前面key的值 加入后面的key中 lset key index value 设置key中 index下标的值 linsert key before/afrer value1 value2 key中1值得前面后后面加入2值 set： sadd key value 添加到key集合 smembers key 查询集合 sismember key m 查询m是否在key集合中 scard key 集合ket的基数 spop key 随机移除一个元素并返回元素的值 srem key m 移除m从key的集合中 smove K1 K2 m 将k1的m一刀k2里 sinter key1 key2 交集 sunion key1 key2 并集 sdiff key1 key2 差集 hash： hset user name ali hset user age 33 设置user数据 hget user name 获取user.</description>
+      <description>redis笔记 单进程,默认16库,&#xA;select N 切换库&#xA;flushdb 清空库&#xA;类型 string 字符串 list 列表 set 集合 sorted set有序集合 hash哈希 一个字符串支持512M&#xA;有序集合 每个元素会关联一个double类型分数。成员唯一，分数可以重复。&#xA;常用命令 key： keys * exists key move key db 移除key 从库中 expire key 为key 设置过期时间 ttl key 查看多少秒过期，-1 永不过期， -2已过期 type key 查看类型 del key 删除 string： getrange key 0-N setrange key 0-N XXX 获取字符串范围内容， 设置范围内为XXX&#xA;setex 设置生命值多少秒 setnx key 设置一个不存在的key&#xA;mset mget msetnx&#xA;list： lpush rpush lrange lpop rpop lindex llen lrem key 2 value 删除2个value ltrim key 0-N 截取并复制给key （其他的删除了） rpoplpush 弹出前面key的值 加入后面的key中 lset key index value 设置key中 index下标的值 linsert key before/afrer value1 value2 key中1值得前面后后面加入2值 set： sadd key value 添加到key集合 smembers key 查询集合 sismember key m 查询m是否在key集合中 scard key 集合ket的基数 spop key 随机移除一个元素并返回元素的值 srem key m 移除m从key的集合中 smove K1 K2 m 将k1的m一刀k2里 sinter key1 key2 交集 sunion key1 key2 并集 sdiff key1 key2 差集 hash： hset user name ali hset user age 33 设置user数据 hget user name 获取user.</description>
     </item>
-    
   </channel>
 </rss>

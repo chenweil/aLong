@@ -6,40 +6,21 @@
     <description>Recent content in Kubernetes on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Jan 2023 16:30:47 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Jan 2023 16:30:47 +0800</lastBuildDate>
+    <atom:link href="https://blog.51ai.vip/aLong/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu22.04安装kubeadm</title>
       <link>https://blog.51ai.vip/aLong/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link>
       <pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid>
-      <description>学习k8s 学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04
-系统安装docker Docker官方手册
-master、node设备各安装docker、kubelet、 kubeadm、 kubectl。
-为kubeadm准备 master、node进行准备工作：
-将cgroup处理改成systemd nano /etc/docker/daemon.json
-{ &amp;#34;exec-opts&amp;#34;: [&amp;#34;native.cgroupdriver=systemd&amp;#34;], &amp;#34;log-driver&amp;#34;: &amp;#34;json-file&amp;#34;, &amp;#34;log-opts&amp;#34;: { &amp;#34;max-size&amp;#34;: &amp;#34;100m&amp;#34; }, &amp;#34;storage-driver&amp;#34;: &amp;#34;overlay2&amp;#34; } sudo systemctl enable docker sudo systemctl daemon-reload sudo systemctl restart docker
-为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块 nano /etc/modules-load.d/k8s.conf
-br_netfilter nano /etc/sysctl.d/k8s.conf
-net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward=1 sudo sysctl --system
-修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能 sudo swapoff -a sudo sed -ri &amp;#39;/\sswap\s/s/^#?/#/&amp;#39; /etc/fstab 安装kubeadm Kuneadm官方手册 在master、node上都需要安装</description>
+      <description>学习k8s 学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04&#xA;系统安装docker Docker官方手册&#xA;master、node设备各安装docker、kubelet、 kubeadm、 kubectl。&#xA;为kubeadm准备 master、node进行准备工作：&#xA;将cgroup处理改成systemd nano /etc/docker/daemon.json&#xA;{ &amp;#34;exec-opts&amp;#34;: [&amp;#34;native.cgroupdriver=systemd&amp;#34;], &amp;#34;log-driver&amp;#34;: &amp;#34;json-file&amp;#34;, &amp;#34;log-opts&amp;#34;: { &amp;#34;max-size&amp;#34;: &amp;#34;100m&amp;#34; }, &amp;#34;storage-driver&amp;#34;: &amp;#34;overlay2&amp;#34; } sudo systemctl enable docker sudo systemctl daemon-reload sudo systemctl restart docker&#xA;为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块 nano /etc/modules-load.d/k8s.conf&#xA;br_netfilter nano /etc/sysctl.d/k8s.conf&#xA;net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward=1 sudo sysctl --system&#xA;修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能 sudo swapoff -a sudo sed -ri &amp;#39;/\sswap\s/s/^#?/#/&amp;#39; /etc/fstab 安装kubeadm Kuneadm官方手册 在master、node上都需要安装</description>
     </item>
-    
     <item>
       <title>通过minikube部署K8S学习环境</title>
       <link>https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid>
-      <description>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。
-MacOS部署方式: 官方教程
-本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 sudo install minikube-darwin-amd64 /usr/local/bin/minikube 通过minikube启动集群 minikube start \ --kubernetes-version=v1.23.9 \ --image-mirror-country=&amp;#39;cn&amp;#39; \ --registry-mirror=https://？？？？？.mirror.aliyuncs.com 因为是国内，所以--image-mirror-country=&#39;cn&#39;。通过--registry-mirror为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。 因为我学习的版本是1.23.x，所以制定了版本--kubernetes-version=v1.23.9。 默认他读去了驱动配置，识别是parallels,自己定义方式--driver=hyperkit。
-安装结果： 错误： 如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。
-驱动选择： 使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见drivers page
-验证结果 查询minikube状态 进入面板 kubectl控制 minikube kubectl -- get pods -A kubectl在minikube中使用，需要写 nimikune kubectl --后面加入执行的命令。 macos默认使用的zsh，在zsh加入alias就可以敲的少的了。
-vi ~/.zshrc #加入一行 alias kubectl=&amp;#34;minikube kubectl --&amp;#34; #退出 source ~/.zshrc 再创建一个Pod 创建： kubectl run nginx --image=nginx:alpine 查询： kubectl get pods nginx 详情： kubectl describe pods nginx 到这里k8s可以使用了。</description>
+      <description>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&#xA;MacOS部署方式: 官方教程&#xA;本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：&#xA;curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 sudo install minikube-darwin-amd64 /usr/local/bin/minikube 通过minikube启动集群 minikube start \ --kubernetes-version=v1.23.9 \ --image-mirror-country=&amp;#39;cn&amp;#39; \ --registry-mirror=https://？？？？？.mirror.aliyuncs.com 因为是国内，所以--image-mirror-country=&#39;cn&#39;。通过--registry-mirror为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。 因为我学习的版本是1.23.x，所以制定了版本--kubernetes-version=v1.23.9。 默认他读去了驱动配置，识别是parallels,自己定义方式--driver=hyperkit。&#xA;安装结果： 错误： 如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。&#xA;驱动选择： 使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见drivers page&#xA;验证结果 查询minikube状态 进入面板 kubectl控制 minikube kubectl -- get pods -A kubectl在minikube中使用，需要写 nimikune kubectl --后面加入执行的命令。 macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&#xA;vi ~/.zshrc #加入一行 alias kubectl=&amp;#34;minikube kubectl --&amp;#34; #退出 source ~/.zshrc 再创建一个Pod 创建： kubectl run nginx --image=nginx:alpine 查询： kubectl get pods nginx 详情： kubectl describe pods nginx 到这里k8s可以使用了。</description>
     </item>
-    
   </channel>
 </rss>

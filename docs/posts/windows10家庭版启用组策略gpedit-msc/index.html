@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.109.0">
+  <meta name="generator" content="Hugo 0.122.0">
   
   <meta name="description" content="启用组策略gpedit.msc 家庭版很多功能不能使用,凑巧用的就是家庭版. 还想使用gpedit.msc来关闭windows10的更新. 找到一个可行的方法.
 需要创建一个脚本. 如果你没有编辑器,那么可以创建一个文本文档. 复制下面一段到本文中. @echo off pushd &#34;%~dp0&#34; dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &gt;List.txt dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &gt;&gt;List.txt for /f %%i in (&#39;findstr /i . List.txt 2^&gt;nul&#39;) do dism /online /norestart /add-package:&#34;C:\Windows\servicing\Packages\%%i&#34; pause 如果编辑器直接复制一个文档另存到XX.cmd 即可. 如果是文本文档那么就是把后缀的.txt改成.cmd. 管理员身份运行这个脚本.等他走完会退出,win&#43;r 即可使用gpedit.msc了. 美滋滋!~ 禁用windows10更新 win&#43;r 输入gpedit.msc. “本地计算机策略”-“计算机配置”-“管理模板”-“Windows组件”-“Windows 更新”-“配置自动更新”. 点击配置自动更新设置为禁用 ">

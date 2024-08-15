@@ -6,25 +6,14 @@
     <description>Recent content in yarn on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jan 2020 14:21:26 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/yarn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2020 14:21:26 +0000</lastBuildDate>
+    <atom:link href="https://blog.51ai.vip/aLong/tags/yarn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>yarn install phantomjs-prebuilt: Command failed.</title>
       <link>https://blog.51ai.vip/aLong/posts/yarn-install-phantomjs-prebuilt-command-failed/</link>
       <pubDate>Thu, 16 Jan 2020 14:21:26 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/yarn-install-phantomjs-prebuilt-command-failed/</guid>
-      <description>项目yarn install 出现phantomjs-prebuilt： Command failed. 自己在项目中发现执行 yarn install时候，一直卡住没走完。
-最后报错， error phantomjs-prebuilt： Command failed.
-可以看到错误中，他是从 github.com/Medium/&amp;hellip; 感觉就是没下载成功吧。
-最开始以为网络问题，翻墙等方式都试过后发现还是没完成。
-没办法，借助网络得知。可以轻松搞定：
-npm config set phantomjs_cdnurl=http://cdn.npm.taobao.org/dis&amp;hellip; yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;https://npm.taobao.org/mirrors/phantomjs&amp;quot;
-看你是npm 还是node。按照上面方式设置一下。
-rm -rf path/node_moudels
-yarn install
-解决问题，美滋滋。
-引用地址</description>
+      <description>项目yarn install 出现phantomjs-prebuilt： Command failed. 自己在项目中发现执行 yarn install时候，一直卡住没走完。&#xA;最后报错， error phantomjs-prebuilt： Command failed.&#xA;可以看到错误中，他是从 github.com/Medium/&amp;hellip; 感觉就是没下载成功吧。&#xA;最开始以为网络问题，翻墙等方式都试过后发现还是没完成。&#xA;没办法，借助网络得知。可以轻松搞定：&#xA;npm config set phantomjs_cdnurl=http://cdn.npm.taobao.org/dis&amp;hellip; yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;https://npm.taobao.org/mirrors/phantomjs&amp;quot;&#xA;看你是npm 还是node。按照上面方式设置一下。&#xA;rm -rf path/node_moudels&#xA;yarn install&#xA;解决问题，美滋滋。&#xA;引用地址</description>
     </item>
-    
   </channel>
 </rss>

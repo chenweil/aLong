@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.109.0">
+  <meta name="generator" content="Hugo 0.122.0">
   
   <meta name="description" content="Linux系统重启后Docker自动启动 系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。 配置过一次总是忘记命令，这里特意记录一下： systemctl enable docker.service
 容器自动启动配置 容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。 涉及到的参数为： --restart=always

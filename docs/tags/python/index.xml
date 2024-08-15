@@ -6,42 +6,21 @@
     <description>Recent content in Python on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jun 2019 10:23:11 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jun 2019 10:23:11 +0000</lastBuildDate>
+    <atom:link href="https://blog.51ai.vip/aLong/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python建立SocketSSL连接</title>
       <link>https://blog.51ai.vip/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid>
-      <description>Python Socket连接 5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.
-这块没接触,Python也是hello world水平.
-赶紧恶补一下:
-Socket是网络编程的一个抽象概念。
-通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。
-服务端我也不知道什么样,这里只记录客户端的相关.
-这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.
-非ssl的socket: import socket # 创建一个socket: s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # 建立连接: s.connect((&amp;#39;192.168.1.230&amp;#39;, 80)) SSL socket: 端口是3344,ssl跳过验证,如果验证参数需要修改.
-import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) c = ssl.wrap_socket(s, cert_reqs=ssl.CERT_NONE) try: c.connect((&amp;#39;192.168.1.230&amp;#39;, &amp;#39;3344&amp;#39;)) except: return 2 这下与那台设备可以正常通讯了,后面实现具体功能就ok了.</description>
+      <description>Python Socket连接 5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.&#xA;这块没接触,Python也是hello world水平.&#xA;赶紧恶补一下:&#xA;Socket是网络编程的一个抽象概念。&#xA;通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。&#xA;服务端我也不知道什么样,这里只记录客户端的相关.&#xA;这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.&#xA;非ssl的socket: import socket # 创建一个socket: s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # 建立连接: s.connect((&amp;#39;192.168.1.230&amp;#39;, 80)) SSL socket: 端口是3344,ssl跳过验证,如果验证参数需要修改.&#xA;import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) c = ssl.wrap_socket(s, cert_reqs=ssl.CERT_NONE) try: c.connect((&amp;#39;192.168.1.230&amp;#39;, &amp;#39;3344&amp;#39;)) except: return 2 这下与那台设备可以正常通讯了,后面实现具体功能就ok了.</description>
     </item>
-    
     <item>
       <title>Ubutun16.04安装Python</title>
       <link>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link>
       <pubDate>Fri, 24 May 2019 11:17:59 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid>
-      <description>目的 安装python3.7.3 安装pip
-准备工作 系统内置python2.X,去除默认python的软链, sudo rm /usr/bin/python 安装一些软件包&amp;amp;软件包保持最新状态. sudo apt-get update
-sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
-安装Python 通过编译安装python
-默认我下载在home里, cd
-下载新python文件, wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz 解压文件, tar zxf Python-3.7.3.tgz
-把这个文件拷贝到放置的位置. 这里我放到/usr/local/python mkdir -p /usr/local/python
-进入这个目录, 执行 ./configure --enable-optimizations 之后执行 sudo make -j 8 这里8根据设备cpu核心数来的,不知道你可以写1(手动滑稽)
-make之后 该 make install 嘛? NO! 是 sudo make altinstall
-装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在. 需要手动添加一下,我这个是没有给我创建成功.
-sudo ln -s /usr/local/Python-3.</description>
+      <description>目的 安装python3.7.3 安装pip&#xA;准备工作 系统内置python2.X,去除默认python的软链, sudo rm /usr/bin/python 安装一些软件包&amp;amp;软件包保持最新状态. sudo apt-get update&#xA;sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget&#xA;安装Python 通过编译安装python&#xA;默认我下载在home里, cd&#xA;下载新python文件, wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz 解压文件, tar zxf Python-3.7.3.tgz&#xA;把这个文件拷贝到放置的位置. 这里我放到/usr/local/python mkdir -p /usr/local/python&#xA;进入这个目录, 执行 ./configure --enable-optimizations 之后执行 sudo make -j 8 这里8根据设备cpu核心数来的,不知道你可以写1(手动滑稽)&#xA;make之后 该 make install 嘛? NO! 是 sudo make altinstall&#xA;装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在. 需要手动添加一下,我这个是没有给我创建成功.&#xA;sudo ln -s /usr/local/Python-3.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,384 +6,315 @@
     <description>Recent content in Tags on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 May 2023 14:53:11 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Aug 2024 13:39:15 +0800</lastBuildDate>
+    <atom:link href="https://blog.51ai.vip/aLong/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://blog.51ai.vip/aLong/tags/ai/</link>
+      <pubDate>Thu, 15 Aug 2024 13:39:15 +0800</pubDate>
+      <guid>https://blog.51ai.vip/aLong/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>https://blog.51ai.vip/aLong/tags/llm/</link>
+      <pubDate>Thu, 15 Aug 2024 13:39:15 +0800</pubDate>
+      <guid>https://blog.51ai.vip/aLong/tags/llm/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Go</title>
       <link>https://blog.51ai.vip/aLong/tags/go/</link>
       <pubDate>Mon, 15 May 2023 14:53:11 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/go/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Container</title>
       <link>https://blog.51ai.vip/aLong/tags/container/</link>
       <pubDate>Fri, 07 Apr 2023 19:33:25 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/container/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Docker</title>
       <link>https://blog.51ai.vip/aLong/tags/docker/</link>
       <pubDate>Fri, 07 Apr 2023 19:33:25 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MacOS</title>
       <link>https://blog.51ai.vip/aLong/tags/macos/</link>
       <pubDate>Fri, 07 Apr 2023 19:33:25 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/macos/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Kubernetes</title>
       <link>https://blog.51ai.vip/aLong/tags/kubernetes/</link>
       <pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/kubernetes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Liunx</title>
       <link>https://blog.51ai.vip/aLong/tags/liunx/</link>
       <pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/liunx/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Ubutun</title>
       <link>https://blog.51ai.vip/aLong/tags/ubutun/</link>
       <pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/ubutun/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux</title>
       <link>https://blog.51ai.vip/aLong/tags/linux/</link>
       <pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>zabbix</title>
       <link>https://blog.51ai.vip/aLong/tags/zabbix/</link>
       <pubDate>Wed, 12 Oct 2022 11:15:29 +0800</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/zabbix/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Redis</title>
       <link>https://blog.51ai.vip/aLong/tags/redis/</link>
       <pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/redis/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>NetWork</title>
       <link>https://blog.51ai.vip/aLong/tags/network/</link>
       <pubDate>Sat, 20 Nov 2021 14:04:47 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/network/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SNMP</title>
       <link>https://blog.51ai.vip/aLong/tags/snmp/</link>
       <pubDate>Tue, 16 Nov 2021 16:38:35 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/snmp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>xiaomi</title>
       <link>https://blog.51ai.vip/aLong/tags/xiaomi/</link>
       <pubDate>Fri, 21 May 2021 16:51:23 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/xiaomi/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SSH</title>
       <link>https://blog.51ai.vip/aLong/tags/ssh/</link>
       <pubDate>Sat, 13 Mar 2021 18:21:50 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/ssh/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Grafana</title>
       <link>https://blog.51ai.vip/aLong/tags/grafana/</link>
       <pubDate>Mon, 30 Nov 2020 13:46:47 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/grafana/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Prometheus</title>
       <link>https://blog.51ai.vip/aLong/tags/prometheus/</link>
       <pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/prometheus/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>office</title>
       <link>https://blog.51ai.vip/aLong/tags/office/</link>
       <pubDate>Tue, 13 Oct 2020 13:14:34 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/office/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SSL</title>
       <link>https://blog.51ai.vip/aLong/tags/ssl/</link>
       <pubDate>Wed, 24 Jun 2020 13:33:18 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/ssl/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>GORM</title>
       <link>https://blog.51ai.vip/aLong/tags/gorm/</link>
       <pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/gorm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MySQL</title>
       <link>https://blog.51ai.vip/aLong/tags/mysql/</link>
       <pubDate>Thu, 11 Jun 2020 11:15:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/mysql/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>terminal</title>
       <link>https://blog.51ai.vip/aLong/tags/terminal/</link>
       <pubDate>Mon, 20 Jan 2020 08:13:10 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/terminal/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>yarn</title>
       <link>https://blog.51ai.vip/aLong/tags/yarn/</link>
       <pubDate>Thu, 16 Jan 2020 14:21:26 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/yarn/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AlertManager</title>
       <link>https://blog.51ai.vip/aLong/tags/alertmanager/</link>
       <pubDate>Wed, 04 Dec 2019 11:51:43 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/alertmanager/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>M3DB</title>
       <link>https://blog.51ai.vip/aLong/tags/m3db/</link>
       <pubDate>Fri, 29 Nov 2019 17:41:43 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/m3db/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>iperf</title>
       <link>https://blog.51ai.vip/aLong/tags/iperf/</link>
       <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/iperf/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>LANSpeedTest</title>
       <link>https://blog.51ai.vip/aLong/tags/lanspeedtest/</link>
       <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/lanspeedtest/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>soft</title>
       <link>https://blog.51ai.vip/aLong/tags/soft/</link>
       <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/soft/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Windows</title>
       <link>https://blog.51ai.vip/aLong/tags/windows/</link>
       <pubDate>Tue, 15 Oct 2019 11:35:11 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/windows/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>curl</title>
       <link>https://blog.51ai.vip/aLong/tags/curl/</link>
       <pubDate>Wed, 09 Oct 2019 14:45:13 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/curl/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>yaml</title>
       <link>https://blog.51ai.vip/aLong/tags/yaml/</link>
       <pubDate>Tue, 24 Sep 2019 10:20:31 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/yaml/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Nodejs</title>
       <link>https://blog.51ai.vip/aLong/tags/nodejs/</link>
       <pubDate>Mon, 02 Sep 2019 10:15:01 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/nodejs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Promethues</title>
       <link>https://blog.51ai.vip/aLong/tags/promethues/</link>
       <pubDate>Thu, 29 Aug 2019 10:06:01 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/promethues/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Laravel</title>
       <link>https://blog.51ai.vip/aLong/tags/laravel/</link>
       <pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/laravel/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>hosts</title>
       <link>https://blog.51ai.vip/aLong/tags/hosts/</link>
       <pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/hosts/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tools</title>
       <link>https://blog.51ai.vip/aLong/tags/tools/</link>
       <pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/tools/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>VM</title>
       <link>https://blog.51ai.vip/aLong/tags/vm/</link>
       <pubDate>Mon, 12 Aug 2019 11:29:38 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/vm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Composer</title>
       <link>https://blog.51ai.vip/aLong/tags/composer/</link>
       <pubDate>Mon, 15 Jul 2019 17:24:45 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/composer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>material</title>
       <link>https://blog.51ai.vip/aLong/tags/material/</link>
       <pubDate>Thu, 27 Jun 2019 09:58:04 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/material/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hexo</title>
       <link>https://blog.51ai.vip/aLong/tags/hexo/</link>
       <pubDate>Tue, 04 Jun 2019 10:46:48 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/hexo/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
       <link>https://blog.51ai.vip/aLong/tags/python/</link>
       <pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Socket</title>
       <link>https://blog.51ai.vip/aLong/tags/socket/</link>
       <pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/socket/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>gulp</title>
       <link>https://blog.51ai.vip/aLong/tags/gulp/</link>
       <pubDate>Mon, 22 Apr 2019 18:08:54 +0000</pubDate>
-      
       <guid>https://blog.51ai.vip/aLong/tags/gulp/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
