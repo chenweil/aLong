@@ -79,6 +79,13 @@
       <description>前提 系统部署在ubuntu20.04中，用到redis数据库。 但是测试时候，设备重启发现redis服务没有启动。 由于是变异安装的，系统找不到redis.service。&#xA;解决方案 系统添加服务文件，并执行。&#xA;编写文件 文件路径/usr/lib/systemd/system&#xA;编写文件 vi /usr/lib/systemd/system/redis.service&#xA;[Unit] #服务描述 Description=Redis persistent key-value database #服务依赖 After=network.target After=network-online.target Wants=network-online.target [Service] #启动 命令 ExecStart=/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no #停止命令 ExecStop=/home/monitor/redis-6.0.8/src/redis-cli shutdown # Restart=always #服务类型 Type=forking #User=redis #Group=redis RuntimeDirectory=redis RuntimeDirectoryMode=0755 [Install] #服务安装设置 WantedBy=multi-user.target 服务配置文件分为[Unit]、[Service]和[Install]三部分。 具体详细的解释需要结合linux知识补充。&#xA;服务生效 系统重新读取所有服务文件： systemctl daemon-reload 启用/禁用开机自启动: systemctl enable/disable redis 启动/重启redis： systemctl start/restart redis</description>
     </item>
     <item>
+      <title>zabbix 6.0 docker-compose 部署</title>
+      <link>https://blog.51ai.vip/aLong/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Mon, 10 Jan 2022 14:33:10 +0800</pubDate>
+      <guid>https://blog.51ai.vip/aLong/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</guid>
+      <description>zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。&#xA;根据踩坑，记录docker-compose 执行后遇到的一些问题。&#xA;zabbix 6.0 LTS已发布 本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发布。 请结合 官方镜像&#xA;部署 主机安装好docker、docker-compose。&#xA;文件包含:env_vars ,&#xA;docker-compose.yml。&#xA;密码6387&#xA;下载完成后解压到同一目录， 并执行docker-compose up -d&#xA;这时候可以看到各服务拉取镜像并启动。&#xA;docker-compose 文件内容 version: &amp;#39;3.5&amp;#39; services: m-server: container_name: m-server image: zabbix/zabbix-server-mysql:alpine-trunk restart: always ports: - &amp;#34;10051:10051&amp;#34; volumes: - /etc/localtime:/etc/localtime:ro - /etc/timezone:/etc/timezone:ro - ./zbx_env/usr/lib/zabbix/alertscripts:/usr/lib/zabbix/alertscripts:ro - ./zbx_env/usr/lib/zabbix/externalscripts:/usr/lib/zabbix/externalscripts:ro - ./zbx_env/var/lib/zabbix/export:/var/lib/zabbix/export:rw - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro - ./zbx_env/var/lib/zabbix/mibs:/var/lib/zabbix/mibs:ro env_file: - ./env_vars/.env_db_mysql - ./env_vars/.env_srv secrets: - MYSQL_USER - MYSQL_PASSWORD - MYSQL_ROOT_PASSWORD # - client-key.pem # - client-cert.</description>
+    </item>
+    <item>
       <title>armbian配置-N1盒子</title>
       <link>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sat, 20 Nov 2021 14:04:47 +0000</pubDate>
