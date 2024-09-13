@@ -16,13 +16,16 @@ tags: [Tools]
 下面我介绍一下我使用这个arc浏览器喜欢的点.
 ## space
 在每个Space可放不同的标签,做到了管理和分类. 同时还可以定制颜色,样式.
+
 ![](https://s2.loli.net/2024/09/13/hU8qgeYufw4FO1Z.png)
 
 可以根据不同账号(profile)分配不同的**会话信息**. 也就是一个浏览器不同space区分账号.满足挂小号、测试等需要多身份在同一个浏览器访问.
+
 ![](https://s2.loli.net/2024/09/13/HP3ZGCYNQDEjoFe.png)
 
 如上图,我新建了一个along的profile,创建了一个space.
 在访问linux.do时,如图.如果我有小号就可以这么搞拉.
+
 ![](https://s2.loli.net/2024/09/13/VGZ7zqwAcmxr5kR.png)
 
 ## Easel
@@ -35,6 +38,7 @@ tags: [Tools]
 上面是我自己创建的两个页面. 这俩一个是没事看看模型排行. 另一个是关注自己的其他信息.
 
 可能图片不能直观解释这个用途.放个动图,看那个时间的变化:
+
 ![](https://s2.loli.net/2024/09/13/l8gcuOXb7v2QU3B.gif)
 
 当我想看周刊我就直接在这里点就好了,不需要单独打开此网站去查看这个列表,美滋滋.
@@ -42,25 +46,34 @@ tags: [Tools]
 我能想到画架的用途还有: 头脑风暴、协作、笔记、可视化信息、素材灵感搜集、整理内容、组织结构.
 
 这些做完可以分享.
+
 ![](https://s2.loli.net/2024/09/13/hjCG9XRnslwztSo.png)
 
 
 ## Boost
 这个功能可更改网页一些元素的颜色，字体类型、字体大小等.
 还是以佬友为例:
+
 ![](https://s2.loli.net/2024/09/13/XScBNmgVJFWzdUC.png)
-主题是默认,我通过boost功能将颜色、字体、已经文字是蛇形、全大写、全小写的配置来自定义了一下.
+
+主题是默认,我通过boost功能将颜色、字体、英文文字是蛇形、全大写、全小写的配置来自定义一下.
 
 boost中我最喜欢的是zap.
 可以隐藏掉自己不喜欢的页面元素.
+
 继续以佬友为例:
 点击zap后,可以选择页面元素.
+
 ![](https://s2.loli.net/2024/09/13/Ahv7iQMr49Dd1Vt.png)
+
 当选择元素后点击 zap this 就可以干掉他.
+
 ![](https://s2.loli.net/2024/09/13/F3lUHbRMhV8qmcD.png)
+
 这是隐藏掉一些页面元素后的样子.
 
 ## Favorite
+
 ![](https://s2.loli.net/2024/09/13/UoHBwWDEJAt1ZQP.png)
 
 这是左上角那部分内容,做多可以放12个块.块支持split的组合tab.特定适配过的还有奇效,比如gmail、outlook、slack等等等. 我把常用的网站放在这里,佬友有消息提示,这icon上会有标记的.以便我打开查看消息.
@@ -80,9 +93,11 @@ boost中我最喜欢的是zap.
 我更喜欢在`command + T` 弹出来的对话框里进行搜索.  他像 `raycast` 功能那样快捷搜索.
 
 GitHub:
+
 ![](https://s2.loli.net/2024/09/13/aQN8Z9GPMEFWfnY.gif)
 
 linux.do:
+
 ![](https://s2.loli.net/2024/09/13/9p3WQyInxj7UVaS.gif)
 
 在设置中添加:
@@ -96,17 +111,22 @@ linux.do:
 很显然我喜欢arc的一些功能和交互.尤其是在快捷键上也挺顺手的.
 举个例子:
 我打开[佬友](linux.do)后,默认看话题是自定进入话题页面的.有人希望每次单开tab什么的.在arc上选择很多.
+
 ![](https://s2.loli.net/2024/09/13/aitBXLC1cFs3hO9.gif)
+
 在split上看主题(一般的网页是直接`option`+链接就打开split模型):
 
 
 如果我不知道是否值得,想简单了解一下再做决定呢?那就按住`shift`  弹出一个浏览器进行浏览,之后可以查看、分屏、关闭等操作.
+
 ![](https://s2.loli.net/2024/09/13/m2nQp5NMdCzvjZW.gif)
 
 如果你想打开新tab查看主题,也可以按住`shift`+`command` 点击主题,就是在新的tab也查看.
 
 如果我想完成上一条的功能,不想记住哪些快捷键怎么办? 那你可以按住`control` 点击话题,这是浏览器会让你选择一些操作,这里面满足你.
-![](https://s2.loli.net/2024/09/13/aitBXLC1cFs3hO9.gif)
+
+![](https://s2.loli.net/2024/09/13/1ZCDdlmBHghjNMk.png)
+
 
 肯定还有很多不同需求, 这需要个人针对工具进行探索了.
 
