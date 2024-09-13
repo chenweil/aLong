@@ -74,6 +74,23 @@ boost中我最喜欢的是zap.
 
 能分能拆,用起来体验不错.但有一点不太好,就是在分屏中关闭的tab就没了.只能重新pinned.
 
+## 搜索
+默认地址栏输入内容能搜索,或者自己访问搜索引擎.
+
+我更喜欢在`command + T` 弹出来的对话框里进行搜索.  他像 `raycast` 功能那样快捷搜索.
+
+GitHub:
+![](https://s2.loli.net/2024/09/13/aQN8Z9GPMEFWfnY.gif)
+
+linux.do:
+![](https://s2.loli.net/2024/09/13/9p3WQyInxj7UVaS.gif)
+
+在设置中添加:
+
+![](https://s2.loli.net/2024/09/13/IyVzdqZDsLaQNRS.png)
+
+红框中就是演示的两个.
+
 ## 操作
 使用工具我比较看重工具是否符合我的需求.已经使用上顺不顺手.
 很显然我喜欢arc的一些功能和交互.尤其是在快捷键上也挺顺手的.
