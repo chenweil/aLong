@@ -6,8 +6,15 @@
     <description>Recent content in Tools on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Sep 2024 14:23:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2024 10:42:26 +0800</lastBuildDate>
     <atom:link href="https://blog.51ai.vip/aLong/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Snapbox</title>
+      <link>https://blog.51ai.vip/aLong/posts/snapbox/</link>
+      <pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate>
+      <guid>https://blog.51ai.vip/aLong/posts/snapbox/</guid>
+      <description>一款macOS的APP app网站 : https://snapbox.app/&#xA;我在v2ex上看到此贴.&#xA;作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.&#xA;看起来像是spotlight,raycast这种工具的方式启动,调出后实现与AI的一系列操作. 比如翻译、对话、优化内容等工作.&#xA;支持ollama和服务提供商API.&#xA;配置内容简单,支持prompt.&#xA;接入配置 呼出主界面时,进入 settings.&#xA;设置界面中的 SELECT PROVIDER中选择模型的厂商.&#xA;我这里配置过Ollama和Custom Endpoint.Custom Endpoint我选择了 siliconflow.&#xA;配置时,输入完 CUSTOM ENDPOINT URL 和 ** CUSTOM ENDPOINT API KEY**后可以获取模型.&#xA;勾选自己使用的模型名字即可.如果API服务商不支持获取可以自己点击+号添加.&#xA;功能演示 我觉得此软件的特色是:&#xA;此软件支持全局快捷键,呼出程序,快捷进入某特定prompt等.&#xA;选择文字后会被程序捕获. 免去了复制粘贴.&#xA;常规对话 复制粘贴、打字与AI交互. 快捷上支持重新生成、继续、继续输入.&#xA;放个视频演示:&#xA;https://watch.wave.video/6UP7usIlnYJ9vC0B&#xA;Reactor 模式 此模式是监听你的指针选择,剪切板内容.快速响应.&#xA;放个视频演示:&#xA;https://watch.wave.video/KRjgWJQ5nJmSj0yX&#xA;最后 看到作者仅用几天时间借助大模型开发出一个功能丰富的app，令人惊叹。&#xA;既体现了大模型的强大能力，也展示了作者高超的开发技巧和创新思维。&#xA;反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。&#xA;展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。&#xA;完结~ 感谢观看</description>
+    </item>
     <item>
       <title>Arc</title>
       <link>https://blog.51ai.vip/aLong/posts/arc/</link>

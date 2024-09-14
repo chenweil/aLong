@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.122.0">
+  
+  <meta name="description" content="一款macOS的APP app网站 : https://snapbox.app/
+我在v2ex上看到此贴.
+作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.
+看起来像是spotlight,raycast这种工具的方式启动,调出后实现与AI的一系列操作. 比如翻译、对话、优化内容等工作.
+支持ollama和服务提供商API.
+配置内容简单,支持prompt.
+接入配置 呼出主界面时,进入 settings.
+设置界面中的 SELECT PROVIDER中选择模型的厂商.
+我这里配置过Ollama和Custom Endpoint.Custom Endpoint我选择了 siliconflow.
+配置时,输入完 CUSTOM ENDPOINT URL 和 ** CUSTOM ENDPOINT API KEY**后可以获取模型.
+勾选自己使用的模型名字即可.如果API服务商不支持获取可以自己点击&#43;号添加.
+功能演示 我觉得此软件的特色是:
+此软件支持全局快捷键,呼出程序,快捷进入某特定prompt等.
+选择文字后会被程序捕获. 免去了复制粘贴.
+常规对话 复制粘贴、打字与AI交互. 快捷上支持重新生成、继续、继续输入.
+放个视频演示:
+https://watch.wave.video/6UP7usIlnYJ9vC0B
+Reactor 模式 此模式是监听你的指针选择,剪切板内容.快速响应.
+放个视频演示:
+https://watch.wave.video/KRjgWJQ5nJmSj0yX
+最后 看到作者仅用几天时间借助大模型开发出一个功能丰富的app，令人惊叹。
+既体现了大模型的强大能力，也展示了作者高超的开发技巧和创新思维。
+反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。
+展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。
+完结~ 感谢观看">
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Snapbox | aLong blog</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    aLong
+  </h1>
+  <h2 class="project-tagline">
+    Hello world
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/aLong/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/aLong/tags/" class="btn">Tags</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Snapbox</h1>
+  <h1 id="一款macos的app">一款macOS的APP</h1>
+<p>app网站 : <a href="https://snapbox.app/">https://snapbox.app/</a></p>
+<p>我在<a href="https://www.v2ex.com/t/1062087">v2ex</a>上看到此贴.</p>
+<p>作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.</p>
+<p>看起来像是<code>spotlight</code>,<code>raycast</code>这种工具的方式启动,调出后实现与AI的一系列操作.
+比如翻译、对话、优化内容等工作.</p>
+<p>支持ollama和服务提供商API.</p>
+<p>配置内容简单,支持prompt.</p>
+<h1 id="接入配置">接入配置</h1>
+<p><img src="https://s2.loli.net/2024/09/14/z83RnpaOZh56Hwu.png" alt=""></p>
+<p>呼出主界面时,进入 <code>settings</code>.</p>
+<p><img src="https://s2.loli.net/2024/09/14/CpLyGafc6xA7eRm.png" alt=""></p>
+<p>设置界面中的 <strong>SELECT PROVIDER</strong>中选择模型的厂商.</p>
+<p>我这里配置过<code>Ollama</code>和<code>Custom Endpoint</code>.<code>Custom Endpoint</code>我选择了 <strong>siliconflow</strong>.</p>
+<p>配置时,输入完 <strong>CUSTOM ENDPOINT URL</strong> 和 ** CUSTOM ENDPOINT API KEY**后可以获取模型.</p>
+<p><img src="https://s2.loli.net/2024/09/14/itNTZsmAGuX17Ik.png" alt=""></p>
+<p>勾选自己使用的模型名字即可.如果API服务商不支持获取可以自己点击<code>+</code>号添加.</p>
+<p><img src="https://s2.loli.net/2024/09/14/Gmbf93cek286JBT.png" alt=""></p>
+<h1 id="功能演示">功能演示</h1>
+<p>我觉得此软件的特色是:</p>
+<p>此软件支持全局快捷键,呼出程序,快捷进入某特定prompt等.</p>
+<p>选择文字后会被程序捕获. 免去了复制粘贴.</p>
+<ul>
+<li>常规对话</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/09/14/jAsTeFm9kKUSqGV.png" alt=""></p>
+<p>复制粘贴、打字与AI交互. 快捷上支持重新生成、继续、继续输入.</p>
+<p>放个视频演示:</p>
+<p><a href="https://watch.wave.video/6UP7usIlnYJ9vC0B">https://watch.wave.video/6UP7usIlnYJ9vC0B</a></p>
+<ul>
+<li>Reactor 模式</li>
+</ul>
+<p>此模式是监听你的指针选择,剪切板内容.快速响应.</p>
+<p>放个视频演示:</p>
+<p><a href="https://watch.wave.video/KRjgWJQ5nJmSj0yX">https://watch.wave.video/KRjgWJQ5nJmSj0yX</a></p>
+<h1 id="最后">最后</h1>
+<p>看到作者仅用几天时间借助大模型开发出一个功能丰富的app，令人惊叹。</p>
+<p>既体现了大模型的强大能力，也展示了作者高超的开发技巧和创新思维。</p>
+<p>反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。</p>
+<p>展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。</p>
+<p>完结~
+感谢观看</p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>
