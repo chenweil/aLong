@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Curl on aLong blog</title>
+    <link>http://localhost:1313/aLong/tags/curl/</link>
+    <description>Recent content in Curl on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Oct 2019 14:45:13 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/curl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>curl: (3) Illegal characters found in URL</title>
+      <link>http://localhost:1313/aLong/posts/curl-3-illegal-characters-found-in-url/</link>
+      <pubDate>Wed, 09 Oct 2019 14:45:13 +0000</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/curl-3-illegal-characters-found-in-url/</guid>
+      <description>&lt;h3 id=&#34;curl-3-illegal-characters-found-in-url&#34;&gt;curl: (3) Illegal characters found in URL&lt;/h3&gt;
+&lt;p&gt;昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里.
+结果执行的时候报错了. 问题就是 curl:(3)Illegal characters found in URL&lt;/p&gt;
+&lt;p&gt;看着一脸懵逼啊!~&lt;/p&gt;
+&lt;p&gt;google了一下,看到几个方法.其中一个我感觉还不错:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先vi 进入sh脚本 &lt;code&gt;vi XXX.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:set ff?&lt;/code&gt;    # 这里我现实的是 &lt;em&gt;fileforma=dos&lt;/em&gt; 我这里显示是这个&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:set fileformat=unix&lt;/code&gt; # 把fileforma 设置好&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:wq&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过这个方式,可以解决这个问题,网上也有人提出其他方法把\r\n 手动替换\n的.&lt;/p&gt;
+&lt;p&gt;参考:
+&lt;a href=&#34;http://www.itbiancheng.com/linux/4885.html&#34;&gt;http://www.itbiancheng.com/linux/4885.html&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

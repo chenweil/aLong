@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Curl
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">curl: (3) Illegal characters found in URL
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>curl: (3) Illegal characters found in URL 昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里. 结果执行的时候报错了. 问题就是 curl:(3)Illegal characters found in URL
+看着一脸懵逼啊!~
+google了一下,看到几个方法.其中一个我感觉还不错:
+首先vi 进入sh脚本 vi XXX.sh :set ff? # 这里我现实的是 fileforma=dos 我这里显示是这个 :set fileformat=unix # 把fileforma 设置好 :wq 通过这个方式,可以解决这个问题,网上也有人提出其他方法把\r\n 手动替换\n的.
+参考: http://www.itbiancheng.com/linux/4885.html
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-10-09 14:45:13 +0000 UTC'>2019-10-09</span></footer>
+  <a class="entry-link" aria-label="post link to curl: (3) Illegal characters found in URL" href="http://localhost:1313/aLong/posts/curl-3-illegal-characters-found-in-url/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

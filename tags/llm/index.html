@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    LLM
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">LLM_fine Tuning
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>微调 fine-tuning 微调是一种监督学习过程,在这个过程中可以使用一组带标签的示例数据来更新LLM的权重.使其为特定任务生成良好完成的能力.
+指令微调特别擅长提高模型在各种任务中的性能. 比如想让模型翻译能力增强,那就给他一些示例是包括翻译这句话之类的说明.即时完成示例允许模型学习生成遵循给定说明的响应.
+微调大致步骤 准备训练数据,需要特定的格式. 也可以通过数据集&#43;模版来处理使其既是模版又是数据集(指令数据集). 将数据集划分为训练验证和测试.然后使用计算出的损失来更新标准反向传播中的模型权重(standard backpropagation)。多批次重复操作. 更新完进行最终的性能评估.通过测试得出精度. 最终得到一个微调模型(Instruct LLM). </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-15 13:39:15 +0800 CST'>2024-08-15</span></footer>
+  <a class="entry-link" aria-label="post link to LLM_fine Tuning" href="http://localhost:1313/aLong/posts/llm_fine-tuning/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

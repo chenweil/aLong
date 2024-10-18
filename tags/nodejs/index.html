@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Nodejs
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Centos7安装nodejs
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>安装nodejs 下载官方node的tar包: https://nodejs.org/en/download/
+wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz
+解压下载文件 tar -xvf node-v10.16.3-linux-x64.tar.xz
+部署bin 这里下载位置为家里面 ~/
+ln -s ~/node-v10.16.3-linux-x64/bin/node /usr/bin/node
+ln -s ~/node-v10.16.3-linux-x64/bin/npm /usr/bin/npm
+一个是node 另一个是npm
+验证 node -v npm -v
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-09-02 10:15:01 +0000 UTC'>2019-09-02</span></footer>
+  <a class="entry-link" aria-label="post link to Centos7安装nodejs" href="http://localhost:1313/aLong/posts/centos7%E5%AE%89%E8%A3%85nodejs/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

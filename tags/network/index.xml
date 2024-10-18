@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NetWork on aLong blog</title>
+    <link>http://localhost:1313/aLong/tags/network/</link>
+    <description>Recent content in NetWork on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Nov 2021 14:04:47 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>armbian配置-N1盒子</title>
+      <link>http://localhost:1313/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 20 Nov 2021 14:04:47 +0000</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;armbian配置（N1盒子）&lt;/p&gt;
+&lt;h2 id=&#34;设置时区&#34;&gt;设置时区：&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;timedatectl set-timezone Asia/Shanghai&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装docker&#34;&gt;安装docker&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt update&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt install ca-certificates  curl  gnupg  lsb-release&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;echo \ &amp;quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&amp;quot; | tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt update&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt install docker-ce docker-ce-cli containerd.io&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;安装docker-compose&#34;&gt;安装docker-compose&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;wget地址是加速器转换地址，版本和地址请根据版本号编辑地址&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker-compose-linux-aarch64 &amp;amp;&amp;amp; mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-compose&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wifi&#34;&gt;WIFI&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;查看附近无线网络信号：nmcli dev wifi list&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无密码的 WIFI：nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加密WIFI： nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt; password &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>S5720 SNMP v3配置</title>
+      <link>http://localhost:1313/aLong/posts/s5720-snmp-v3/</link>
+      <pubDate>Tue, 16 Nov 2021 16:38:35 +0000</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/s5720-snmp-v3/</guid>
+      <description>&lt;h2 id=&#34;s5720-snmp-v3配置&#34;&gt;S5720 SNMP v3配置&lt;/h2&gt;
+&lt;h3 id=&#34;系统视图&#34;&gt;系统视图&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;system-view&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;snmp服务&#34;&gt;SNMP服务&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;snmp-agent&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;管理端口默认161&#34;&gt;管理端口(默认161)&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;snmp-agent udp-port *port-num*&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置版本默认v3&#34;&gt;配置版本(默认v3)&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;snmp-agent sys-info version *v3*&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置用户组&#34;&gt;配置用户组&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;snmp-agent group v3 *group-name* {authentication | privacy | noauthentication}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;三种认证加密方式&lt;/p&gt;
+&lt;h3 id=&#34;配置v3用户&#34;&gt;配置v3用户&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;snmp-agent usm-user v3 *user-name* [ group *group-name*] &lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置用户认证密码&#34;&gt;配置用户认证密码&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置加密密码&#34;&gt;配置加密密码&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

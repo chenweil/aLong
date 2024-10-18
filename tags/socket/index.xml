@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Socket on aLong blog</title>
+    <link>http://localhost:1313/aLong/tags/socket/</link>
+    <description>Recent content in Socket on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Jun 2019 10:23:11 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/socket/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python建立SocketSSL连接</title>
+      <link>http://localhost:1313/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link>
+      <pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid>
+      <description>&lt;h3 id=&#34;python-socket连接&#34;&gt;Python Socket连接&lt;/h3&gt;
+&lt;p&gt;5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.&lt;/p&gt;
+&lt;p&gt;这块没接触,Python也是hello world水平.&lt;/p&gt;
+&lt;p&gt;赶紧恶补一下:&lt;/p&gt;
+&lt;p&gt;Socket是网络编程的一个抽象概念。&lt;/p&gt;
+&lt;p&gt;通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。&lt;/p&gt;
+&lt;p&gt;服务端我也不知道什么样,这里只记录客户端的相关.&lt;/p&gt;
+&lt;p&gt;这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.&lt;/p&gt;
+&lt;h4 id=&#34;非ssl的socket&#34;&gt;非ssl的socket:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#00f;font-weight:bold&#34;&gt;socket&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;# 创建一个socket:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;socket(socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;AF_INET, socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;SOCK_STREAM)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;# 建立连接:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;connect((&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;192.168.1.230&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#666&#34;&gt;80&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;ssl-socket&#34;&gt;SSL socket:&lt;/h4&gt;
+&lt;p&gt;端口是3344,ssl跳过验证,如果验证参数需要修改.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#00f;font-weight:bold&#34;&gt;socket&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; s &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;socket(socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;AF_INET, socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;SOCK_STREAM)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; c &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; ssl&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;wrap_socket(s, cert_reqs&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;ssl&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;CERT_NONE)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    c&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;connect((&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;192.168.1.230&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;3344&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;except&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这下与那台设备可以正常通讯了,后面实现具体功能就ok了.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

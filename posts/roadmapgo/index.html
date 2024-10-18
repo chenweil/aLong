@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class="" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Roadmap&amp;Go
+    </h1>
+    <div class="post-meta"><span title='2023-05-15 14:53:11 +0800 CST'>2023-05-15</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>技术类的Roadmap（路线图）具有许多好处，下面是其中几个主要的好处：</p>
+<ol>
+<li>明确目标：Roadmap可以帮助技术团队明确目标和愿景。它提供了一个清晰的计划，使团队成员知道他们正在朝着什么方向前进，并且可以更好地集中精力和资源。</li>
+<li>规划优先级：Roadmap可以帮助团队确定优先级和时间表。通过将不同的功能、项目和任务安排在时间轴上，团队可以了解何时开始和完成每个任务，从而更好地分配资源和人力。</li>
+<li>沟通和协作：Roadmap是与团队成员、管理层和利益相关者进行沟通和协作的重要工具。它提供了一个共同的视觉框架，帮助各方理解技术发展的方向和计划，从而促进更好的合作和决策制定。</li>
+<li>风险管理：Roadmap有助于识别和管理潜在的风险和挑战。通过在Roadmap中考虑外部因素、技术依赖关系和风险因素，团队可以更好地规划和应对可能的问题，降低项目失败的风险。</li>
+<li>激励和动力：Roadmap可以为团队提供激励和动力。清晰的目标和规划可以激发团队成员的工作热情和投入，使他们感到对项目和组织的价值和重要性。</li>
+</ol>
+<p>我之前保存过<a href="https://github.com/Alikhll/golang-developer-roadmap">GitHub: Alikhll/golang-developer-roadmap</a>的roadmap。正好在上周末想看看自己找一块内容来学习学习。我发现作者还是2021年的版本，后面也没有更新什么。那我想在obsidian中把这个图复刻一个，然后根据内容去做计划去学习。后来我又想到另一个roadmap也不错。正好两个整合一下。那么就有了一个我魔改的内容。</p>
+<p><img loading="lazy" src="https://i.imgur.com/IkaIOP6.jpg" alt="IkaIOP6"  />
+
+此图是通过Obsidian的canvas 功能进行的制作。并且我后面打算通过双链来完成此图中部分内容的笔记。</p>
+<p>此图整体可以看到通过颜色来区分了一些作者划分的知识点优先级，以便确定哪些内容应优先进行。此图我觉得有个遗憾就是没能够持续进行更新。后面还好我找到另一个认为不错的<a href="https://roadmap.sh/">roadmap</a>进行补充和完善。</p>
+<p>主体还是<a href="https://github.com/Alikhll/golang-developer-roadmap">golang-developer-roadmap</a>，顺便在前后加入了 <a href="https://roadmap.sh/backend">Backend Developer</a> ,后面加入了<a href="https://roadmap.sh/full-stack">Full Stack Developer</a>。 其实还有很多roadmap相关，比如<code>devops</code>，<code>docker</code>，<code>Frontend Developer</code>等等吧都会涉及到一些内容。并且这个<a href="https://roadmap.sh/">roadmap</a>还可以在图中交互，我觉得不错。</p>
+<p>主要不错地方包含：</p>
+<ol>
+<li>可交互。</li>
+<li>此roadmap是持续更新的。</li>
+</ol>
+<p><img loading="lazy" src="https://i.imgur.com/E4QRa5M.png" alt="E4QRa5M"  />
+
+比如这个后端内容中，你点击 <code>What is HTTP？</code> 在右侧弹出内容中，可以看到具体内容，并有相关的链接可以去访问。 最上面还有个状态，可通过状态编辑此内容是否已经达到目的。</p>
+<p><img loading="lazy" src="https://i.imgur.com/dLk2tVY.png" alt="dLk2tVY"  />
+
+点击<code>Update Status</code>后可以看到有三个选项。</p>
+<p>点击<code>Done</code>之后，图中将做出变化：</p>
+<p><img loading="lazy" src="https://i.imgur.com/krk3YT0.png" alt="krk3YT0"  />
+</p>
+<p>个人认为是个不错的方式。</p>
+<p>个人认为技术类的Roadmap可以帮助团队提高效率、降低风险、改善沟通和协作，并为实现技术目标提供清晰的指导。它是一个重要的管理工具，有助于组织和规划技术团队的工作，使其能够更好地满足业务需求并取得成功。</p>
+<p>完结
+祝好
+～</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/aLong/tags/go/">Go</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

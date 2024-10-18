@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class="" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Python建立SocketSSL连接
+    </h1>
+    <div class="post-meta"><span title='2019-06-04 10:23:11 +0000 UTC'>2019-06-04</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="python-socket连接">Python Socket连接<a hidden class="anchor" aria-hidden="true" href="#python-socket连接">#</a></h3>
+<p>5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.</p>
+<p>这块没接触,Python也是hello world水平.</p>
+<p>赶紧恶补一下:</p>
+<p>Socket是网络编程的一个抽象概念。</p>
+<p>通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。</p>
+<p>服务端我也不知道什么样,这里只记录客户端的相关.</p>
+<p>这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.</p>
+<h4 id="非ssl的socket">非ssl的socket:<a hidden class="anchor" aria-hidden="true" href="#非ssl的socket">#</a></h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#00f;font-weight:bold">socket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># 创建一个socket:</span>
+</span></span><span style="display:flex;"><span>s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># 建立连接:</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#666">.</span>connect((<span style="color:#ba2121">&#39;192.168.1.230&#39;</span>, <span style="color:#666">80</span>))
+</span></span></code></pre></div><h4 id="ssl-socket">SSL socket:<a hidden class="anchor" aria-hidden="true" href="#ssl-socket">#</a></h4>
+<p>端口是3344,ssl跳过验证,如果验证参数需要修改.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#00f;font-weight:bold">socket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span> c <span style="color:#666">=</span> ssl<span style="color:#666">.</span>wrap_socket(s, cert_reqs<span style="color:#666">=</span>ssl<span style="color:#666">.</span>CERT_NONE)
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>    c<span style="color:#666">.</span>connect((<span style="color:#ba2121">&#39;192.168.1.230&#39;</span>, <span style="color:#ba2121">&#39;3344&#39;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">except</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">2</span>
+</span></span></code></pre></div><p>这下与那台设备可以正常通讯了,后面实现具体功能就ok了.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/aLong/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/aLong/tags/socket/">Socket</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

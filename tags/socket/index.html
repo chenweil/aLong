@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Socket
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Python建立SocketSSL连接
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Python Socket连接 5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.
+这块没接触,Python也是hello world水平.
+赶紧恶补一下:
+Socket是网络编程的一个抽象概念。
+通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。
+服务端我也不知道什么样,这里只记录客户端的相关.
+这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.
+非ssl的socket: import socket # 创建一个socket: s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # 建立连接: s.connect((&#39;192.168.1.230&#39;, 80)) SSL socket: 端口是3344,ssl跳过验证,如果验证参数需要修改.
+import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) c = ssl.wrap_socket(s, cert_reqs=ssl.CERT_NONE) try: c.connect((&#39;192.168.1.230&#39;, &#39;3344&#39;)) except: return 2 这下与那台设备可以正常通讯了,后面实现具体功能就ok了.
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-06-04 10:23:11 +0000 UTC'>2019-06-04</span></footer>
+  <a class="entry-link" aria-label="post link to Python建立SocketSSL连接" href="http://localhost:1313/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

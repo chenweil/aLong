@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zabbix on aLong blog</title>
+    <link>http://localhost:1313/aLong/tags/zabbix/</link>
+    <description>Recent content in Zabbix on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Oct 2022 11:15:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zabbix自动发现SNMP设备</title>
+      <link>http://localhost:1313/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link>
+      <pubDate>Wed, 12 Oct 2022 11:15:29 +0800</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Zabbix提供高效灵活的网络自动发现功能。
+网络发现的优势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加快部署速度&lt;/li&gt;
+&lt;li&gt;简化管理&lt;/li&gt;
+&lt;li&gt;在快速变化的环境中避免过度管理
+&lt;a href=&#34;https://www.zabbix.com/documentation/6.0/zh/manual/discovery/network_discovery&#34;&gt;manual-zh&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;发现snmp例子&#34;&gt;发现SNMP例子&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;网段内存在几天设备，其中一台是SNMPv2，一台SNMPv3，通过发现将他们加入并监控&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;大概流程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;发现规则，通过发现规则去发现设备。&lt;/li&gt;
+&lt;li&gt;发现后的动作，发现设备后做什么。&lt;/li&gt;
+&lt;li&gt;验证发现结果。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;创建发现规则&#34;&gt;创建发现规则&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/09/21/QkadRCY9h4MlpH1.png&#34; alt=&#34;QkadRCY9h4MlpH1&#34;  /&gt;
+
+&lt;code&gt;Configuration -&amp;gt; Discovery -&amp;gt; Create discovery rule &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/09/21/lUKJ59gjF6wtWzv.png&#34; alt=&#34;lUKJ59gjF6wtWzv&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;通过SNMPv2协议，根据oid检查。 这个oid是设备名。 community是根据设备来的。通过SNMP取设备名，host名称是IP地址，可见名称是SNMP取的设备名称。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;重点配置内容&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IP range  发现IP范围&lt;/li&gt;
+&lt;li&gt;Update interval 发现周期&lt;/li&gt;
+&lt;li&gt;Checks  使用此检查列表来执行网络发现&lt;/li&gt;
+&lt;li&gt;Device uniqueness criteria 唯一标识&lt;/li&gt;
+&lt;li&gt;Host name  主机名称&lt;/li&gt;
+&lt;li&gt;Visible name 可见名称&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;创建发现动作&#34;&gt;创建发现动作&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/09/21/aE74jtgmZpHCJkG.png&#34; alt=&#34;aE74jtgmZpHCJkG&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Configuration -&amp;gt; Actions -&amp;gt; Discovery actions&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/09/21/k2zJWCjy13bVt7Z.png&#34; alt=&#34;k2zJWCjy13bVt7Z&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Action 选项中：
+主要配置Conditions内容：
+我写了两个条件，因为我发现写了v2，v3版本的协议。所以有两个条件。如果都是v2就写一个就ok。简单来讲满足我demo。&lt;/p&gt;
+&lt;p&gt;Operations 选项：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/09/21/rEc2Y5apTeO6JK3.png&#34; alt=&#34;rEc2Y5apTeO6JK3&#34;  /&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;发现的设备添加， Add host 。&lt;/li&gt;
+&lt;li&gt;加入设备组， Add to host groups：组名。&lt;/li&gt;
+&lt;li&gt;关联模版，Link to templates：模版名。&lt;/li&gt;
+&lt;li&gt;开启Host。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过这个配置后，发现的主机会根据这个配置进行操作。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Zabbix6 网络发现</title>
+      <link>http://localhost:1313/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link>
+      <pubDate>Fri, 14 Jan 2022 10:15:53 +0000</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid>
+      <description>&lt;p&gt;Zabbix6 网络发现&lt;/p&gt;
+&lt;h3 id=&#34;功能&#34;&gt;功能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;快速发现并添加主机&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;简单的管理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;随着环境的改变而快速搭建系统&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;发现配置依据&#34;&gt;发现配置依据&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;IP地址段&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基于服务(FTP、SSH、Web、POP3、IMAP、TCP&amp;hellip;)的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;从Zabbix-Agent接收到的信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SNMP agent接收的信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;添加方式&#34;&gt;添加方式&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建 Discovery rule&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/05/30/8kqFzeiKIAr6fDN.png&#34; alt=&#34;3qoFJE.png&#34;  /&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Name：规则名称（唯一）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Discovery by proxy： 是否由代理执行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IP range： IP地址范围&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;单个IP: 192.168.1.33
+IP段: 192.168.1-10.1-255. 范围受限于覆盖地址的总数（小于64K）。
+子网掩码: : 192.168.4.0/24
+支持的子网掩码:
+/16 - /30 for IPv4 addresses
+/112 - /128 for IPv6 addresses\IP列表: 192.168.1.1-255, 192.168.2.1-100, 192.168.2.200, 192.168.4.0/24
+Zabbix 3.0.0起，此字段支持空格，表格和多行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Update interval: Zabbix执行规则的频率&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Checks: 发现的方式&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/05/30/Y8R6VhGNgmFq7KS.png&#34; alt=&#34;FTCW1e.png&#34;  /&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Device uniqueness criteria：设备唯一标识&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host name ： 主机名&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Visible name：描述名&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/05/30/8azsd4mVbDPU39L.png&#34; alt=&#34;ohbmIZ.png&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title>
+      <link>http://localhost:1313/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link>
+      <pubDate>Wed, 27 Oct 2021 15:06:44 +0000</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid>
+      <description>&lt;h1 id=&#34;zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache&#34;&gt;zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache&lt;/h1&gt;
+&lt;h2 id=&#34;情况&#34;&gt;情况&lt;/h2&gt;
+&lt;p&gt;接上次做完容器部署proxy后，为其添加host进行添加任务。&lt;/p&gt;
+&lt;p&gt;发现一直没有数据，就到item里面执行 &lt;code&gt;execute now&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;然后过了几分钟回来一看，还是没有。&lt;/p&gt;
+&lt;p&gt;Emmm，看下log吧。&lt;/p&gt;
+&lt;p&gt;Server没一场，那问题就在proxy了吧。&lt;/p&gt;
+&lt;p&gt;连上proxy去看看：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/05/30/LSCEA9yqXHwiZmk.png&#34; alt=&#34;TQcfjq.png&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;提示好像是去检查对应的itemid，然后说item不在还cache中。
+赶紧上网科普！&lt;/p&gt;
+&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/05/30/lorCR8jJaw1OAQ6.png&#34; alt=&#34;I5WWwc.png&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;因为是主动的proxy，那他会定期去server要数据。&lt;/p&gt;
+&lt;p&gt;这个3600就是配置的更新周期了。1个小时才去要一次，所以肯定是没监控了。&lt;/p&gt;
+&lt;p&gt;为了验证，就等了1小时看看：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/05/30/jBIEmozFDgJ6dq5.png&#34; alt=&#34;EWJu2V.png&#34;  /&gt;
+
+实锤了，1小时。后面也就有了数据。
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2022/05/30/oN5DvPXsLW6gyVQ.png&#34; alt=&#34;C0pDSl.png&#34;  /&gt;
+
+Host是1小时之后开始有数据的，也就是他同步后就开始执行监控项了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;查询到的内容：
+[地址](https://subscription.packtpub.com/book/networking_and_servers/9781784399764/1/ch01lvl1sec10/understanding-the-zabbix-proxies-data-flow)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;解决&#34;&gt;解决&lt;/h2&gt;
+&lt;p&gt;Ok，那么在重新部署的容器加上此参数(ZBX_CONFIGFREQUENCY)。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name zbxproxy -d &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-e &lt;span style=&#34;color:#19177c&#34;&gt;ZBX_SERVER_HOST&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;192.168.10.66 &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-e &lt;span style=&#34;color:#19177c&#34;&gt;ZBX_HOSTNAME&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;testproxy&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-e &lt;span style=&#34;color:#19177c&#34;&gt;ZBX_TIMEOUT&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;10&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-e &lt;span style=&#34;color:#19177c&#34;&gt;ZBX_TLSACCEPT&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;psk &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-e &lt;span style=&#34;color:#19177c&#34;&gt;ZBX_TLSCONNECT&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;psk &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-e &lt;span style=&#34;color:#19177c&#34;&gt;ZBX_TLSPSKIDENTITY&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;helloworld &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-e &lt;span style=&#34;color:#19177c&#34;&gt;ZBX_TLSPSKFILE&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;zbx_proxy.psk &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-e &lt;span style=&#34;color:#19177c&#34;&gt;ZBX_CONFIGFREQUENCY&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;600&lt;/span&gt; &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-v /etc/localtime:/etc/localtime:ro &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;-v /zbx_proxy.psk:/var/lib/zabbix/enc/zbx_proxy.psk &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;--restart&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;always &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;zabbix/zabbix-proxy-sqlite3:alpine-trunk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&amp;ndash;祝好&lt;/p&gt;
+&lt;p&gt;本文结束&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Zabbix-Proxy 部署运行</title>
+      <link>http://localhost:1313/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link>
+      <pubDate>Thu, 24 Jun 2021 17:20:40 +0000</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid>
+      <description>&lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
+&lt;p&gt;版本： zabbix-server 5.4&lt;/p&gt;
+&lt;p&gt;任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。&lt;/p&gt;
+&lt;h2 id=&#34;安装zabbix-proxy&#34;&gt;安装Zabbix-Proxy&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装Zabbix仓库&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    dpkg -i zabbix-release_5.4-1+ubuntu20.04_all.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    apt update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;安装Zabbix-proxy &amp;amp; mysql&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;这里我选择的是mysql作为数据库&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt install mysql-server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt install zabbix-proxy-mysql&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;导入数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;zcat /usr/share/doc/zabbix-proxy-mysql/schema.sql.gz | mysql -uzabbix -p zabbix&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这里可能跑不通。我装了两次都发现没有 schema.sql.gz 这个文件。
+如果你也是，那需要找一下这个sql文件。&lt;/p&gt;
+&lt;p&gt;下载5.4源码包：
+&lt;code&gt;wget https://cdn.zabbix.com/zabbix/sources/stable/5.4/zabbix-5.4.1.tar.gz&lt;/code&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://img-blog.csdnimg.cn/img_convert/8eadb68dbe4f2051e1c72a2919286f07.png#id=yP1Gu&amp;amp;originHeight=1340&amp;amp;originWidth=652&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; alt=&#34;&#34;  /&gt;
+
+解压之后，在 &lt;code&gt;/zabbix-5.4.1/databases/mysql/&lt;/code&gt; 中&lt;/p&gt;
+&lt;p&gt;通过 &lt;code&gt;cat schema.sql | mysql -uzabbix -p&lt;/code&gt; 导入到数据库中。&lt;/p&gt;
+&lt;p&gt;4.配置zabbix-proxy&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vim /etc/zabbix/zabbix_proxy.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;修改Zabbix Server地址,Hostname，在server添加中，此名称要与这里一致。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://img-blog.csdnimg.cn/img_convert/8e3e758e82804c0909ee74bd40d1b988.png#id=HVbW6&amp;amp;originHeight=820&amp;amp;originWidth=1968&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;修改为正确的数据库名字、用户名、密码。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://img-blog.csdnimg.cn/img_convert/4f0b8f22d1c7753e24705f37025297a1.png#id=ogGz5&amp;amp;originHeight=994&amp;amp;originWidth=1230&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;其他配置可以酌情配置。例如server配置频率，log位置，本地缓存时间、主动被动、监听端口等等。&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;启动zabbix-proxy
+&lt;code&gt;systemctl start zabbix-proxy &amp;amp;&amp;amp; systemctl enable zabbix-proxy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在zabbix-server 中添加proxy，然后在对应的host主机上选择proxy。
+&lt;img loading=&#34;lazy&#34; src=&#34;https://img-blog.csdnimg.cn/img_convert/c869c5c2e48a6d94965c4ee9afd1d3a3.png#id=XryPJ&amp;amp;originHeight=1252&amp;amp;originWidth=1686&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; alt=&#34;&#34;  /&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://img-blog.csdnimg.cn/img_convert/4236f0501054b223da6b5dde07a340a0.png#id=UMgsH&amp;amp;originHeight=930&amp;amp;originWidth=3870&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

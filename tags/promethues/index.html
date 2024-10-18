@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Promethues
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Prometheus-snmp_export部署
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>SNMP SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。
+目的 通过snmp_export,获取设备信息.
+准备 系统: centos7,docker19. 之前已经安装好 Prometheus
+此处目标设备是华为交换机 s2700
+部署snmp_expoer snmp.yml 配置文件不是自己定义的,是通过注册生成或下载的.这里我通过github下载配置文件.
+snmp.yml
+配置snmp_export 配置文件 snmp.yml version: 2 auth: community: **交换机设置的团体名** 查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
+部署snmp_expor docker run -d --restart always \ -v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml \ -p 9116:9116 --name snmp-exporter prom/snmp-exporter \ --config.file=&#34;/etc/snmp_exporter/snmp.yml&#34; 配置华为s2700交换机 自行查阅文档.懒得写了.
+验证服务 访问 http://IP:9116/metrics 能返回数据,snmp_export服务正常.
+测试是否能获取到目标设备的数据: 访问 http://IP:9116/snmp?target=DEVIP 能获取到数据,配置成功.
+注意防火墙 把需要的端口加入规则中,不然访问不到排查绕弯路
+配置promthues 修改 promthues.yml文件. 添加一个新的job.
+- job_name: snmp honor_timestamps: true params: module: - if_mib scrape_interval: 15s scrape_timeout: 10s metrics_path: /snmp scheme: http static_configs: - targets: - 172.16.23.253 labels: tag: huawei-switch-s2700 relabel_configs: - source_labels: [__address__] separator: ; regex: (.*) target_label: __param_target replacement: $1 action: replace - source_labels: [__param_target] separator: ; regex: (.*) target_label: instance replacement: $1 action: replace - separator: ; regex: (.*) target_label: __address__ replacement: 172.16.23.12:9116 action: replace 之前部署prometheus 有一个参数是为了热加载配置的. 这里需要reload一下配置,curl -X POST http://IP:9090/-/reload,如果你没有就重启服务吧.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-29 10:06:01 +0000 UTC'>2019-08-29</span></footer>
+  <a class="entry-link" aria-label="post link to Prometheus-snmp_export部署" href="http://localhost:1313/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

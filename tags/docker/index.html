@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Docker
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Colima GitHub
+Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。
+Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：
+由于它只是一个容器运行时，因此相对于 Docker Desktop，它的安装和启动速度更快，所需的资源更少。 它使用了轻量级的虚拟化技术，例如 HyperKit 和 VPNKit，以提高容器的性能和安全性。 Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动、停止、删除容器，以及执行其他常见操作。 它还提供了一些有用的功能，例如在本地浏览器中打开容器中运行的应用程序、自动重启容器等。 总的来说，Colima 是一个轻量级、易于使用的容器运行时，旨在为开发者提供一种更快、更安全的容器环境，使得开发和测试容器应用程序变得更加轻松。
+安装 在 macOS 上安装 Colima 很简单，只需要执行以下几个步骤：
+首先，您需要打开终端并使用 Homebrew 包管理器安装 Colima。如果您没有安装 Homebrew，请先安装 Homebrew： /bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
+安装 Colima： brew install colima
+安装完成后，您可以使用 colima 命令来启动 Colima： colima start
+如果您想停止 Colima，可以使用以下命令： colima stop
+要卸载 Colima，请运行以下命令： brew uninstall colima
+安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。
+docker交互 启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 docker 命令来管理容器。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-04-07 19:33:25 +0800 CST'>2023-04-07</span></footer>
+  <a class="entry-link" aria-label="post link to Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案" href="http://localhost:1313/aLong/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Linux重启后Docker设置自动启动&amp;容器自动启动设置
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Linux系统重启后Docker自动启动 系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。 配置过一次总是忘记命令，这里特意记录一下： systemctl enable docker.service
+容器自动启动配置 容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。 涉及到的参数为： --restart=always
+参数有：
+no，默认策略，在容器退出时不重启容器
+on-failure，在容器非正常退出时（退出状态非0），才会重启容器。例如：on-failure:3，在容器非正常退出时重启容器，最多重启3次
+always，在容器退出时总是重启容器
+unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器
+容器已存在更新重启配置 可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令： docker container update --restart=always 容器名XXX 这样就达到了想要的目的。
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-05-18 11:03:48 +0000 UTC'>2020-05-18</span></footer>
+  <a class="entry-link" aria-label="post link to Linux重启后Docker设置自动启动&容器自动启动设置" href="http://localhost:1313/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Laradock安装与使用
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Laradock 安装与使用 官网
+GitHub: https://github.com/laradock/laradock
+要求 Git Docker &gt;= 17.12 项目的位置 已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录. 结构 :
+project-a laradock-a project-b laradock-b 没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目. laradock project-x project-y 启动环境 clone下来还没有生成.
+进入laradock目录,编辑Web服务器站点配置. cp env-exalpme .env 环境是laradock环境,里面可以对相应的版本,配置进行修改. 例如指定mysql版本为5.7 ,vim .env ,搜索到mysql部分, 修改MYSQL_VERSION=5.7.26 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)
+例如我们需要启动环境需要 mysql,redis,nginx.
+执行 docker-compose up -d nginx mysql redis
+经过漫长等待后,可以得到我们想要的环境,通过 docker ps 或者 docker-compose ps 查看容器.
+如果先生成容器,在之后编辑环境时,需要停掉容器,修改完 build之后 再start 容器. 例如修改nginx:
+docker-compose stop nginx 修改.env 或者 nginx conf docker-compose build nginx (完全重建,加参数: –no-cache) docker-compose start nginx Nginx 配置项目 我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-15 10:01:03 +0000 UTC'>2019-08-15</span></footer>
+  <a class="entry-link" aria-label="post link to Laradock安装与使用" href="http://localhost:1313/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Docker常用命令
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Docker常用命令 说常用不如说自己用到的命令。
+容器相关 学习了一下docker，基础常用命令记录下。 ####docker run/新建并启动容器 这个run其实包含两个不走，先执行新建容器(docker create),接着启动容器(docker start)。敲两个是不是有点麻烦吧。
+docker run xx [COMMAND]
+例子 docker run -it ubuntu:14.04 /bin/bash
+这里希望启动一个基于 ubuntu 14.04镜像 来创建一个容器，-t选项让Docker分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上，-i则让容器的标准输入保持打开。更多的命令选项可以通过man docker-run命令来查看。之后命令还有一项，启动一个bash终端。 这条命令涉及到很多知识了。 -参数 常用 -i -d -t -p， -d 是否在后台运行，-p 映射到本地主机端口。剩下的看手册来补下。
+docker create &amp;&amp; docker start &amp;&amp; docker stop 创建，启动，停止。 有一个容易停止了，可以用 docker start XX容器 启动。 XX 可以是容器的ID，也可以是name。
+docker rm 删除一个容器（最好先把这个容器停止了再删除）。 -f 可以强制删除。-v 删除与容器关联的卷（如果刚学习还真不知道什么是卷）。
+docker attach 进入容器，如果开启了一个 -d 后台启动容器。 我们怎么进去看看？ docker attach XX容器 这个命令我学习时候用过，感觉有时候不太好使。命令执行完卡那不动。
+docker exec 可以在容器内直接执行任意命令。 docker exec -it xx /bin/bash 这可以进入xx镜像，并打开bash。 相比这个比上面的attach 好多了。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-04-11 15:09:19 +0000 UTC'>2019-04-11</span></footer>
+  <a class="entry-link" aria-label="post link to Docker常用命令" href="http://localhost:1313/aLong/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ubutun下安装Docker
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Docker简介 一个能够把开发的应用程序自动部署到容器的开源引擎 三大概念：镜像（Image）容器（Container）仓库（Repository）
+具体信息请参考官方。官方概述（养成看文档习惯）
+安装环境 Ubuntu 16.04 LTS
+Docker安装 根据官方doc安装。官方doc 1.如果你之前装过，命令卸载。 sudo apt-get remove docker docker-engine docker.io containerd runc
+2.更新包索引 apt-get update
+3.安装包以允许apt通过HTTPS使用存储库: sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common （斜线换行，一条命令）
+4.添加Docker的官方GPG密钥: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo apt-key fingerprint 0EBFCD88
+5.使用以下命令设置稳定存储库。要添加 夜间或测试存储库，请在下面的命令中的单词后添加单词nightly或test（或两者）stable。 $ sudo add-apt-repository \ &#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&#34; (lsb_release -cs子命令返回Ubuntu发行版的名称)
+6.安装最新版本的Docker CE和containerd，或者转到下一步安装特定版本： sudo apt-get install docker-ce docker-ce-cli containerd.io
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-04-04 14:57:16 +0000 UTC'>2019-04-04</span></footer>
+  <a class="entry-link" aria-label="post link to Ubutun下安装Docker" href="http://localhost:1313/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

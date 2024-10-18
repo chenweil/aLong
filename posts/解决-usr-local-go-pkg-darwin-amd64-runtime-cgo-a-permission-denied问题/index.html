@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class="" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      解决/usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied问题
+    </h1>
+    <div class="post-meta"><span title='2021-02-22 09:06:08 +0000 UTC'>2021-02-22</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="最近goland在run的时候发现一个问题">最近Goland在run的时候发现一个问题<a hidden class="anchor" aria-hidden="true" href="#最近goland在run的时候发现一个问题">#</a></h3>
+<p><code>open /usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied</code></p>
+<p>情况具体是当我run的时候有问题。debug可以。根据错误提示看到是权限的事。</p>
+<h3 id="解决方式">解决方式<a hidden class="anchor" aria-hidden="true" href="#解决方式">#</a></h3>
+<p>执行 <code>sudo chown -R xxx:yyy /usr/local/go</code></p>
+<p><em>xxx 用户名， yyy 组名</em></p>
+<p>命令的目的：更改go目录的所有者用户和组。</p>
+<h3 id="查看用户名用户组">查看用户名&amp;用户组<a hidden class="anchor" aria-hidden="true" href="#查看用户名用户组">#</a></h3>
+<p>当前用户名 常用命令 <code>who am i</code>
+查看当前用户名和组 <code>ls -la</code></p>
+<h3 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h3>
+<p><a href="https://github.com/golang/go/issues/37962">https://github.com/golang/go/issues/37962</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/aLong/tags/go/">Go</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

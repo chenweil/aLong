@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    SNMP
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">S5720 SNMP v3配置
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>S5720 SNMP v3配置 系统视图 system-view
+SNMP服务 snmp-agent
+管理端口(默认161) snmp-agent udp-port *port-num*
+配置版本(默认v3) snmp-agent sys-info version *v3*
+配置用户组 snmp-agent group v3 *group-name* {authentication | privacy | noauthentication}
+三种认证加密方式
+配置v3用户 snmp-agent usm-user v3 *user-name* [ group *group-name*] 配置用户认证密码 snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]
+配置加密密码 snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-11-16 16:38:35 +0000 UTC'>2021-11-16</span></footer>
+  <a class="entry-link" aria-label="post link to S5720 SNMP v3配置" href="http://localhost:1313/aLong/posts/s5720-snmp-v3/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Prometheus-SNMP_Exporter Generator
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Prometheus-SNMP Exporter 生成器从generator.yml读取并写入snmp.yml。
+之前在说Prometheus-snmp_export部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置).
+因为刚好所有通用的指标都取得通用的mib树. 在后期我搜集设备的信息需要一些私有mib的数据,这时候需要自己通过生成器来生成snmp.yml.
+Generator 的操作步骤 下载需要的程序(Docker方式跳过此步骤) # Debian-based distributions. sudo apt-get install unzip build-essential libsnmp-dev # Debian-based distros # Redhat-based distributions. sudo yum install gcc gcc-g&#43;&#43; make net-snmp net-snmp-utils net-snmp-libs net-snmp-devel # RHEL-based distros go get github.com/prometheus/snmp_exporter/generator cd ${GOPATH-$HOME/go}/src/github.com/prometheus/snmp_exporter/generator go build make mibs(不建议直接make) 这里直接make mibs 可能会失败,在make文件里设置的源有些已经不能访问了或执行出现错误.
+我建议先下载好mibs ,我已经上传github.
+建议自行搜集mib 不执行make mibs会方便一些
+把所有的mib放入mibs 目录下.
+需要准备好所有需要涉及到的mib文件. 除了公有的mib,我们还需要监控目标设备的私有mib.思科/华为之类的会提供这些mib,像锐捷这种需要和商务部联系.
+一些mib:
+https://github.com/netdisco/netdisco-mibs
+https://github.com/pgmillon/observium/tree/master/mibs
+https://github.com/librenms/librenms/tree/master/mibs
+当我们准备好所有的mib后,需要编写一个generator.yml. 下面是一个翻译的官方文档(翻译比较烂,自行查阅[原文]([https://github.com/prometheus/snmp\_exporter/tree/master/generator](https://github.com/prometheus/snmp\_exporter/tree/master/generator))):
+modules: module_name: # 模块名称。您可以根据需要拥有任意数量的模块。 walk: # 要walk的OID列表。 也可以是SNMP对象名称或特定实例。 - 1.3.6.1.2.1.2 # 与“接口”相同。 - sysUpTime # 与“ 1.3.6.1.2.1.1.3”相同。 - 1.3.6.1.2.1.31.1.1.1.6.40 # 索引为“ 40”的“ ifHCInOctets”的实例。 version: 2 # 要使用的SNMP版本。 默认2。 # 1将使用GETNEXT，2和3将使用GETBULK。 max_repetitions: 25 # 使用GET / GETBULK请求多少个对象，默认为25。 # 对于有故障的设备，可能需要减少。 retries: 3 # 重试失败请求的次数，默认为3。 timeout: 10s # 每次步行的超时时间，默认为10秒。 auth: # 社区字符串与SNMP v1和v2一起使用。 默认为“ public”。 community: public # v3具有不同且更复杂的设置。 # 需要哪些取决于security_level。 # 还列出了NetSNMP命令上的等效选项，例如snmpbulkwalk和snmpget。 # 请参见snmpcmd（1）。 username: user # 必需，无默认值。 NetSNMP的-u选项。 security_level: noAuthNoPriv # 默认为noAuthNoPriv。 NetSNMP的-l选项。 # 可以是noAuthNoPriv，authNoPriv或authPriv。 password: pass # 没有默认值。 也称为authKey，NetSNMP的-A选项。 # 如果security_level是authNoPriv或authPriv，则为必需。 auth_protocol: MD5 # MD5或SHA，默认为MD5。 -NetSNMP的选项。 # 如果security_level为authNoPriv或authPriv，则使用此属性。 priv_protocol: DES # DES或AES，默认为DES。 NetSNMP的-x选项。 # 如果security_level为authPriv，则使用。 priv_password: otherPass # 没有默认值。 也称为privKey，NetSNMP的-X选项。 # 如果security_level是authPriv，则为必需。 context_name: context # 没有默认值。 NetSNMP的-n选项。 # 如果在设备上配置了上下文，则为必需。 lookups: # 要执行的查找的可选列表。 # “keep_source_indexes”的默认值为false。 # 索引必须唯一，才能使用此选项。 # 如果表的索引是bsnDot11EssIndex，则通常是该表结果度量的标签。 # 相反,使用索引查找bsnDot11EssSsid表条目，并使用该值创建一个bsnDot11EssSsid标签。 - source_indexes: [bsnDot11EssIndex] lookup: bsnDot11EssSsid drop_source_indexes: false # 如果为true，则删除此查找的源索引标签。 # 当新索引唯一时，这可以避免标签混乱。 overrides: # 允许每个模块覆盖MIB的位 metricName: ignore: true # 从输出中删除度量。 regex_extracts: Temp: # 将创建一个新的度量，并将其附加到metricName上，成为metricNameTemp。 - regex: &#39;(.*)&#39; # 正则表达式从返回的SNMP walk的值中提取一个值。 value: &#39;$1&#39; # 结果将解析为float64，默认为$1。 Status: - regex: &#39;.*Example&#39; value: &#39;1&#39; - regex: &#39;.*&#39; value: &#39;0&#39; type: DisplayString # 覆盖度量标准类型，可能的类型有： # gauge: 带gauge的整数。 # counter: 带类型计数器的整数。 # OctetString: 一个位字符串，呈现为0xff34。 # DateAndTime: RFC 2579日期和时间字节序列。如果设备没有时区数据，则使用UTC。 # DisplayString: ASCII或UTF-8字符串。 # PhysAddress48: 一个48位的MAC地址，呈现为00:01:02:03:04:ff。 # Float: 一个32位浮点值，带有类型gauge。 # Double: 一个64位浮点值，带有类型gauge。 # InetAddressIPv4: IPv4地址，呈现为1.2.3.4。 # InetAddressIPv6: IPv6地址，呈现为0102:0304:0506:0708:090A:0B0C:0D0E:0F10。 # InetAddress: 每个RFC 4001有一个InetAddress。必须以InetAddressType开头。 # InetAddressMissingSize: 因索引中没有大小而违反RFC 4001第4.1节的InetAddress。 # 必须以InetAddressType开头。 # EnumAsInfo: 为其创建单个时间序列的枚举。适用于恒定值。 # EnumAsStateSet: 每个状态具有时间序列的枚举。适用于可变低基数枚举。 # Bits: 一种RFC2578位结构，它产生一个具有每位时间序列的状态集。 下面提供一个自己编写的generator.yml
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-12-24 15:26:33 +0000 UTC'>2019-12-24</span></footer>
+  <a class="entry-link" aria-label="post link to Prometheus-SNMP_Exporter Generator" href="http://localhost:1313/aLong/posts/prometheus-snmp-exporter-generator/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Prometheus-snmp_export部署
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>SNMP SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。
+目的 通过snmp_export,获取设备信息.
+准备 系统: centos7,docker19. 之前已经安装好 Prometheus
+此处目标设备是华为交换机 s2700
+部署snmp_expoer snmp.yml 配置文件不是自己定义的,是通过注册生成或下载的.这里我通过github下载配置文件.
+snmp.yml
+配置snmp_export 配置文件 snmp.yml version: 2 auth: community: **交换机设置的团体名** 查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
+部署snmp_expor docker run -d --restart always \ -v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml \ -p 9116:9116 --name snmp-exporter prom/snmp-exporter \ --config.file=&#34;/etc/snmp_exporter/snmp.yml&#34; 配置华为s2700交换机 自行查阅文档.懒得写了.
+验证服务 访问 http://IP:9116/metrics 能返回数据,snmp_export服务正常.
+测试是否能获取到目标设备的数据: 访问 http://IP:9116/snmp?target=DEVIP 能获取到数据,配置成功.
+注意防火墙 把需要的端口加入规则中,不然访问不到排查绕弯路
+配置promthues 修改 promthues.yml文件. 添加一个新的job.
+- job_name: snmp honor_timestamps: true params: module: - if_mib scrape_interval: 15s scrape_timeout: 10s metrics_path: /snmp scheme: http static_configs: - targets: - 172.16.23.253 labels: tag: huawei-switch-s2700 relabel_configs: - source_labels: [__address__] separator: ; regex: (.*) target_label: __param_target replacement: $1 action: replace - source_labels: [__param_target] separator: ; regex: (.*) target_label: instance replacement: $1 action: replace - separator: ; regex: (.*) target_label: __address__ replacement: 172.16.23.12:9116 action: replace 之前部署prometheus 有一个参数是为了热加载配置的. 这里需要reload一下配置,curl -X POST http://IP:9090/-/reload,如果你没有就重启服务吧.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-29 10:06:01 +0000 UTC'>2019-08-29</span></footer>
+  <a class="entry-link" aria-label="post link to Prometheus-snmp_export部署" href="http://localhost:1313/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

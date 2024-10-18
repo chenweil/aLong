@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Composer
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Composer笔记
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>composer - laravel5 创建laravel项目： conposer create-project laravel/laravel=5.8.* --prefer-dist ./XXX
+laravel=5.8.* 这里代表要部署5.8中最高版本 –prefer-dist 参数代表优先下载zip
+安装vendor: composer install
+composer install --prefer-dist
+更新： composer update
+composer版本更新： composer self-update
+利用composer 创建laravel控制器： php artisan make:controller HomeController 会在http下 创建一Home的控制器
+如果存在分目录情况，需要指定目录： php artisan make:controller Home/HomeController
+Laravel config: 编写一些类的别名，controller中 use 简短的别名为目的。
+位置：config/app 存在一数组 aliases 在里面添加
+创建模型： 创建一个user 的model
+php artisan make:model User
+指定目录加入目录即可
+获取项目路由： php artisan route:list
+composer在项目中安装三方库时候出现报错： 执行命令： composer Install
+返回错误： Your requirements could not be resolved to an installable set of packages.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-07-15 17:24:45 +0000 UTC'>2019-07-15</span></footer>
+  <a class="entry-link" aria-label="post link to Composer笔记" href="http://localhost:1313/aLong/posts/composer%E7%AC%94%E8%AE%B0/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

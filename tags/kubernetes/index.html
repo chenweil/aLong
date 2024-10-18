@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Kubernetes
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ubuntu22.04安装kubeadm
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>学习k8s 学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04
+系统安装docker Docker官方手册
+master、node设备各安装docker、kubelet、 kubeadm、 kubectl。
+为kubeadm准备 master、node进行准备工作：
+将cgroup处理改成systemd nano /etc/docker/daemon.json
+{ &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;], &#34;log-driver&#34;: &#34;json-file&#34;, &#34;log-opts&#34;: { &#34;max-size&#34;: &#34;100m&#34; }, &#34;storage-driver&#34;: &#34;overlay2&#34; } sudo systemctl enable docker sudo systemctl daemon-reload sudo systemctl restart docker
+为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块 nano /etc/modules-load.d/k8s.conf
+br_netfilter nano /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward=1 sudo sysctl --system
+修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能 sudo swapoff -a sudo sed -ri &#39;/\sswap\s/s/^#?/#/&#39; /etc/fstab 安装kubeadm Kuneadm官方手册 在master、node上都需要安装
+更新 apt 包索引并安装使用 Kubernetes apt 仓库所需要的包： sudo apt-get update sudo apt-get install -y apt-transport-https ca-certificates curl (有条件)下载 Google Cloud 公开签名秘钥： sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg 如果上面访问不到，可选择其他,例如清华源提供： 导入gpg key
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-01-11 16:30:47 +0800 CST'>2023-01-11</span></footer>
+  <a class="entry-link" aria-label="post link to Ubuntu22.04安装kubeadm" href="http://localhost:1313/aLong/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">通过minikube部署K8S学习环境
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。
+MacOS部署方式: 官方教程
+本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 sudo install minikube-darwin-amd64 /usr/local/bin/minikube 通过minikube启动集群 minikube start \ --kubernetes-version=v1.23.9 \ --image-mirror-country=&#39;cn&#39; \ --registry-mirror=https://？？？？？.mirror.aliyuncs.com 因为是国内，所以--image-mirror-country=&#39;cn&#39;。通过--registry-mirror为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。 因为我学习的版本是1.23.x，所以制定了版本--kubernetes-version=v1.23.9。 默认他读去了驱动配置，识别是parallels,自己定义方式--driver=hyperkit。
+安装结果： 错误： 如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。
+驱动选择： 使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见drivers page
+验证结果 查询minikube状态 进入面板 kubectl控制 minikube kubectl -- get pods -A kubectl在minikube中使用，需要写 nimikune kubectl --后面加入执行的命令。 macos默认使用的zsh，在zsh加入alias就可以敲的少的了。
+vi ~/.zshrc #加入一行 alias kubectl=&#34;minikube kubectl --&#34; #退出 source ~/.zshrc 再创建一个Pod 创建： kubectl run nginx --image=nginx:alpine 查询： kubectl get pods nginx 详情： kubectl describe pods nginx 到这里k8s可以使用了。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-01-06 15:35:43 +0800 CST'>2023-01-06</span></footer>
+  <a class="entry-link" aria-label="post link to 通过minikube部署K8S学习环境" href="http://localhost:1313/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

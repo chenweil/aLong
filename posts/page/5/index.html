@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir=" auto">
+
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+</head>
+
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Posts
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">windows10家庭版启用组策略gpedit.msc
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>启用组策略gpedit.msc 家庭版很多功能不能使用,凑巧用的就是家庭版. 还想使用gpedit.msc来关闭windows10的更新. 找到一个可行的方法.
+需要创建一个脚本. 如果你没有编辑器,那么可以创建一个文本文档. 复制下面一段到本文中. @echo off pushd &#34;%~dp0&#34; dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &gt;List.txt dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &gt;&gt;List.txt for /f %%i in (&#39;findstr /i . List.txt 2^&gt;nul&#39;) do dism /online /norestart /add-package:&#34;C:\Windows\servicing\Packages\%%i&#34; pause 如果编辑器直接复制一个文档另存到XX.cmd 即可. 如果是文本文档那么就是把后缀的.txt改成.cmd. 管理员身份运行这个脚本.等他走完会退出,win&#43;r 即可使用gpedit.msc了. 美滋滋!~ 禁用windows10更新 win&#43;r 输入gpedit.msc. “本地计算机策略”-“计算机配置”-“管理模板”-“Windows组件”-“Windows 更新”-“配置自动更新”. 点击配置自动更新设置为禁用 </p>
+  </div>
+  <footer class="entry-footer"><span title='2019-10-15 11:35:11 +0000 UTC'>2019-10-15</span></footer>
+  <a class="entry-link" aria-label="post link to windows10家庭版启用组策略gpedit.msc" href="http://localhost:1313/aLong/posts/windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%90%AF%E7%94%A8%E7%BB%84%E7%AD%96%E7%95%A5gpedit-msc/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Prometueus.yml配置文件说明
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>整体配置 prometueus.yml 配置文件注解与说明
+global: # 全局配置 scrape_interval: 15s # 默认值为 1m，用于设置每次数据收集的间隔 scrape_timeout: 10s # 默认10s,收集超时时间 evaluation_interval: 15s # 记录规则/告警的执行周期 默认1m external_labels: # 时间序列和警告与外部通信(远程存储/警报灯)时用的外部标签 monitor: &#39;ctmonitor&#39; rule_files: # 指定告警规则文件&amp;记录文件 - &#34;/usr/local/prometheus/rules.yml&#34; alerting: # 告警管理配置 alert_relable_configs: # 修改告警内容 - alertmanagers: # 告警管理起配置 - static_configs: # 静态配置 - targets: # 警告器地址 - 172.16.23.12:9093 # 用于配置 scrape 的 endpoint 配置需要 scrape 的 targets 以及相应的参数 # 抓取(pull)，即监控目标配置。默认只有主机本身的监控配置 scrape_configs: # 抓取配置选项 - job_name: prometheus # 默认情况下分配给刮削度量的作业名称。 scrape_interval: 5s # 从这项工作中获取目标的频率。 scrape_timeout: 3s # 每次获取超时时间 honor_timestamps: true # 默认false, 在获取时是否使用当前的时间戳 metrics_path: /metrics # 从目标获取度量的http资源路径。 scheme: http # static_configs: # 为此作业标记的静态配置目标的列表。 - targets: # 目监控标 - 172.16.23.12:9090 # 设备地址&#43;端口 - job_name: &#39;snmp-10.0.0.1&#39; scrape_interval: 30s scrape_timeout: 20s static_configs: - targets: - 10.0.0.1 # SNMP设备,端口默认5060 metrics_path: /snmp params: module: [if_mib] relabel_configs: # 重定义标签 - source_labels: [__address__] # 需要修改的标签 target_label: __param_target # 改成的标签 - source_labels: [__param_target] target_label: instance - target_label: __address__ replacement: 172.16.23.12:9117 各部分详解 部分官方文档的译文
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-10-09 15:20:58 +0000 UTC'>2019-10-09</span></footer>
+  <a class="entry-link" aria-label="post link to Prometueus.yml配置文件说明" href="http://localhost:1313/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">curl: (3) Illegal characters found in URL
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>curl: (3) Illegal characters found in URL 昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里. 结果执行的时候报错了. 问题就是 curl:(3)Illegal characters found in URL
+看着一脸懵逼啊!~
+google了一下,看到几个方法.其中一个我感觉还不错:
+首先vi 进入sh脚本 vi XXX.sh :set ff? # 这里我现实的是 fileforma=dos 我这里显示是这个 :set fileformat=unix # 把fileforma 设置好 :wq 通过这个方式,可以解决这个问题,网上也有人提出其他方法把\r\n 手动替换\n的.
+参考: http://www.itbiancheng.com/linux/4885.html
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-10-09 14:45:13 +0000 UTC'>2019-10-09</span></footer>
+  <a class="entry-link" aria-label="post link to curl: (3) Illegal characters found in URL" href="http://localhost:1313/aLong/posts/curl-3-illegal-characters-found-in-url/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">yaml规则
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>yml 语法 最近经常配置一些服务，发现大部分都是yml类型文件。小记一下。
+规则 大小写敏感 缩进表示层级 注释 # 结构： 对象： ：符号
+name: admin 数组： - 符号
+user: - name: admin - height: 178 - age: 30 字符串： 默认无引号，内部含有空格或特殊符号需要加&#39;&#39;
+name: admin desc: &#39;he was cool&#39; null： ~
+value: ~ 层级依靠缩进：
+job: - jobconfig: name: &#39;snmp-sw01&#39; - target: - 192.168.1.88 </p>
+  </div>
+  <footer class="entry-footer"><span title='2019-09-24 10:20:31 +0000 UTC'>2019-09-24</span></footer>
+  <a class="entry-link" aria-label="post link to yaml规则" href="http://localhost:1313/aLong/posts/yaml%E8%A7%84%E5%88%99/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Grafana中文化
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>可视化图表 Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。
+仪表盘Dashboard 通过数据源定义好可视化的数据来源之后，对于用户而言最重要的事情就是实现数据的可视化。
+面板 Panel Panel是Grafana中最基本的可视化单元。每一种类型的面板都提供了相应的查询编辑器(Query Editor)，让用户可以从不同的数据源（如Prometheus）中查询出相应的监控数据，并且以可视化的方式展现。 Grafana中所有的面板均以插件的形式进行使用，当前内置了5种类型的面板，分别是：Graph，Singlestat，Heatmap, Dashlist，Table以及Text。
+翻译工作 上面简单介绍了一下工具，主要是让我们方便查看监控的数据。这里我还是没有更深入的去研究公式等图形的设置。这里先主要写一下翻译方面的工作。
+公司也考虑展示内容为中文化比较好，这里Grafana没有提供语言包的方式来处理多语言问题。在我查看代码过程中，发现工具后台是在GO里面写死的很多导航，返回值等数据。前台是在页面上直接写的很多内容。所以我个人认为无法使用语言包来直接处理多语言问题。那就只好自己来搞定了。
+翻译的内容 更具代码查看，主要分为两大部分：
+后端： go文件，主要内容在/pkg 目录下。 前端： 1. 系统页面 2. 插件页面 这些在/public 目录下 准备工作 首先git clone Grafana库 git clone https://github.com/chenweil/grafana.git
+之后我们根据自己翻译的版本来检出自己的项目。 这里我们使用的v6.3.4 ，官方版本中可以查看到tag v6.3.4,并重命名自己的分支为6.3.4-chs： git checkout -b 6.3.4-chs
+通过 git branch 命令查看自己处于哪个分支上。 这里如果你不是很熟悉git命令行，可以使用sourcetree工具操作，相对来说点点鼠标就可以搞定了。
+我们在自己创建的分支就可以来处理我们的工作了。
+前端调试环境 需要 npm，nodejs，yarn
+终端执行命令 yarn install --pure-lockfile 初始化. 如果没有报错的情况,证明ok.
+出现错误请先处理问题. 开启调试环境时候，是开启前端的热加载来协助我们调试。 这里安装完三个环境可能在执行 yarn start 时报错，这里如果你是在windows上，需要再安装一下sass.(根据报错来看问题，我这里遇到缺少sass问题)
+当我们yarn start 执行后，等待一段时间，build at 时间证明准备工作已完成，下面就需要我们在调试模式下测试了。
+还需要一个调试的Grafana服务程序，这里是windows环境，所以直接从官方下载了zip包，执行bin下的grafana-server.exe 来启动服务。需要再conf文件夹修改一下public前端资源的配置，如果不修改那么你翻译的信息是看不到的，服务会直接读取的当前的public，我们这需要读取翻译的public文件位置。
+配置在windows服务程序的 /conf/defaults.ini 修改内容：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-09-16 15:37:46 +0000 UTC'>2019-09-16</span></footer>
+  <a class="entry-link" aria-label="post link to Grafana中文化" href="http://localhost:1313/aLong/posts/grafana%E6%B1%89%E5%8C%96/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Centos7安装nodejs
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>安装nodejs 下载官方node的tar包: https://nodejs.org/en/download/
+wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz
+解压下载文件 tar -xvf node-v10.16.3-linux-x64.tar.xz
+部署bin 这里下载位置为家里面 ~/
+ln -s ~/node-v10.16.3-linux-x64/bin/node /usr/bin/node
+ln -s ~/node-v10.16.3-linux-x64/bin/npm /usr/bin/npm
+一个是node 另一个是npm
+验证 node -v npm -v
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-09-02 10:15:01 +0000 UTC'>2019-09-02</span></footer>
+  <a class="entry-link" aria-label="post link to Centos7安装nodejs" href="http://localhost:1313/aLong/posts/centos7%E5%AE%89%E8%A3%85nodejs/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Prometheus-snmp_export部署
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>SNMP SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。
+目的 通过snmp_export,获取设备信息.
+准备 系统: centos7,docker19. 之前已经安装好 Prometheus
+此处目标设备是华为交换机 s2700
+部署snmp_expoer snmp.yml 配置文件不是自己定义的,是通过注册生成或下载的.这里我通过github下载配置文件.
+snmp.yml
+配置snmp_export 配置文件 snmp.yml version: 2 auth: community: **交换机设置的团体名** 查找到if_mib 再此段结尾中加入 上面的配置(大概行数6199).
+部署snmp_expor docker run -d --restart always \ -v /home/along/snmp.yml:/etc/snmp_exporter/snmp.yml \ -p 9116:9116 --name snmp-exporter prom/snmp-exporter \ --config.file=&#34;/etc/snmp_exporter/snmp.yml&#34; 配置华为s2700交换机 自行查阅文档.懒得写了.
+验证服务 访问 http://IP:9116/metrics 能返回数据,snmp_export服务正常.
+测试是否能获取到目标设备的数据: 访问 http://IP:9116/snmp?target=DEVIP 能获取到数据,配置成功.
+注意防火墙 把需要的端口加入规则中,不然访问不到排查绕弯路
+配置promthues 修改 promthues.yml文件. 添加一个新的job.
+- job_name: snmp honor_timestamps: true params: module: - if_mib scrape_interval: 15s scrape_timeout: 10s metrics_path: /snmp scheme: http static_configs: - targets: - 172.16.23.253 labels: tag: huawei-switch-s2700 relabel_configs: - source_labels: [__address__] separator: ; regex: (.*) target_label: __param_target replacement: $1 action: replace - source_labels: [__param_target] separator: ; regex: (.*) target_label: instance replacement: $1 action: replace - separator: ; regex: (.*) target_label: __address__ replacement: 172.16.23.12:9116 action: replace 之前部署prometheus 有一个参数是为了热加载配置的. 这里需要reload一下配置,curl -X POST http://IP:9090/-/reload,如果你没有就重启服务吧.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-29 10:06:01 +0000 UTC'>2019-08-29</span></footer>
+  <a class="entry-link" aria-label="post link to Prometheus-snmp_export部署" href="http://localhost:1313/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Prometheus&#43;Grafana安装搭建
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>介绍 Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。 Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。
+Prometheus的特点:
+多维度数据模型。 灵活的查询语言。 不依赖分布式存储，单个服务器节点是自主的。 通过基于HTTP的pull方式采集时序数据。 可以通过中间网关进行时序列数据推送。 通过服务发现或者静态配置来发现目标服务对象。 支持多种多样的图表和界面展示，比如Grafana等。 架构图 Prometheus服务大致过程： Prometheus 定时去目标上抓取metrics(指标)数据，每个抓取目标需要暴露一个http服务的接口给它定时抓取。Prometheus支持通过配置文件、文本文件、Zookeeper、Consul、DNS SRV Lookup等方式指定抓取目标。Prometheus采用PULL的方式进行监控，即服务器可以直接通过目标PULL数据或者间接地通过中间网关来Push数据。
+Prometheus在本地存储抓取的所有数据，并通过一定规则进行清理和整理数据，并把得到的结果存储到新的时间序列中。
+Prometheus通过PromQL和其他API可视化地展示收集的数据。Prometheus支持很多方式的图表可视化，例如Grafana、自带的Promdash以及自身提供的模版引擎等等。Prometheus还提供HTTP API的查询方式，自定义所需要的输出。
+PushGateway支持Client主动推送metrics到PushGateway，而Prometheus只是定时去Gateway上抓取数据。
+Alertmanager是独立于Prometheus的一个组件，可以支持Prometheus的查询语句，提供十分灵活的报警方式。
+Prometheus 支持通过SNMP协议获取mertics数据.通过配置job,利用snmp_export读取设备监控信息.
+指标(Metric)类型 Counter 计数器,从数据0开始累计计算. 理想状态会永远增长. 累计计算请求次数等 Gauges 瞬时状态的值. 可以任意变化的数值，适用 CPU 使用率 温度等 Histogram 对一段时间范围内数据进行采样，并对所有数值求和与统计数量、柱状图. 某个时间对某个度量值，分组，一段时间http相应大小，请求耗时的时间。 Summary 同样产生多个指标，分别带有后缀_bucket(仅histogram)、_sum、_count Histogram和Summary都可以获取分位数。 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数histogram_quantile()计算出来。 Summary则是在应用程序中直接计算出了分位数。 Histograms and summaries中阐述了两者的区别，特别是Summary的的分位数不能被聚合。 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。 LatencyTipOfTheDay: You can’t average percentiles. Period中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。
+主要我们监控用到最上面两种,下面两种类型目前我没有接触,上面这段文字与介绍引用自lijiaocn
+安装Prometheus 本次搭建利用docker方式.整体搭建完成需要两个容器.暂不配置告警相关,只做监控数据
+前提 搭建位置: /home/aLong/prometheus/
+环境:docker19.03.1 需要指定版本请查阅官方文档.
+系统:centos7
+准备工作 Prometheus的配置文件: prometheus.yml 我们建立在搭建位置的根下: touch prometheus.yml 在配置文件中加入测试演示配置
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-28 16:23:05 +0000 UTC'>2019-08-28</span></footer>
+  <a class="entry-link" aria-label="post link to Prometheus&#43;Grafana安装搭建" href="http://localhost:1313/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Centos5不升级内核更新
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前提 公司需要环境Centos5, 又不能升级内核.
+查了一下 大概是 需要 yum –exclude=kernel* update 或者修改 yum.conf
+测试一下 出现一个问题: Loaded plugins: fastestmirror, security Loading mirror speeds from cached hostfile YumRepo Error: All mirror URLs are not using ftp, http[s] or file. Eg. Invalid release/ removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt Error: Cannot find a valid baseurl for repo: base 根据查询到的信息是,没有正常的源.
+解决问题 根据网上的源地址 修改一下: 位置: /etc/yum.repos.d/CentOS-Base.repo
+修改内容: [base] name=CentOS-5.11 - Base #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=os baseurl=http://vault.centos.org/5.11/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #released updates [updates] name=CentOS-5.11 - Updates #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=updates baseurl=http://vault.centos.org/5.11/updates/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #packages used/produced in the build but not released [addons] name=CentOS-5.11 - Addons #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=addons baseurl=http://vault.centos.org/5.11/addons/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #additional packages that may be useful [extras] name=CentOS-5.11 - Extras #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=extras baseurl=http://vault.centos.org/5.11/extras/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #additional packages that extend functionality of existing packages [centosplus] name=CentOS-5.11 - Plus #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=centosplus baseurl=http://vault.centos.org/5.11/centosplus/$basearch/ gpgcheck=1 enabled=0 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #contrib - packages by Centos Users [contrib] name=CentOS-5.11 - Contrib #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=contrib baseurl=http://vault.centos.org/5.11/contrib/$basearch/ gpgcheck=1 enabled=0 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 之后 再使用上面的yum 去更新,发现yum 语句是有问题的.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-23 17:37:03 +0000 UTC'>2019-08-23</span></footer>
+  <a class="entry-link" aria-label="post link to Centos5不升级内核更新" href="http://localhost:1313/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Centos5不升级内核更新
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前提 公司需要环境Centos5, 又不能升级内核.
+查了一下 大概是 需要 yum –exclude=kernel* update 或者修改 yum.conf
+测试一下 出现一个问题: Loaded plugins: fastestmirror, security Loading mirror speeds from cached hostfile YumRepo Error: All mirror URLs are not using ftp, http[s] or file. Eg. Invalid release/ removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt Error: Cannot find a valid baseurl for repo: base 根据查询到的信息是,没有正常的源.
+解决问题 根据网上的源地址 修改一下: 位置: /etc/yum.repos.d/CentOS-Base.repo
+修改内容: [base] name=CentOS-5.11 - Base #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=os baseurl=http://vault.centos.org/5.11/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #released updates [updates] name=CentOS-5.11 - Updates #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=updates baseurl=http://vault.centos.org/5.11/updates/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #packages used/produced in the build but not released [addons] name=CentOS-5.11 - Addons #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=addons baseurl=http://vault.centos.org/5.11/addons/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #additional packages that may be useful [extras] name=CentOS-5.11 - Extras #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=extras baseurl=http://vault.centos.org/5.11/extras/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #additional packages that extend functionality of existing packages [centosplus] name=CentOS-5.11 - Plus #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=centosplus baseurl=http://vault.centos.org/5.11/centosplus/$basearch/ gpgcheck=1 enabled=0 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #contrib - packages by Centos Users [contrib] name=CentOS-5.11 - Contrib #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;arch=$basearch&amp;repo=contrib baseurl=http://vault.centos.org/5.11/contrib/$basearch/ gpgcheck=1 enabled=0 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 之后 再使用上面的yum 去更新,发现yum 语句是有问题的.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-23 17:37:03 +0000 UTC'>2019-08-23</span></footer>
+  <a class="entry-link" aria-label="post link to Centos5不升级内核更新" href="http://localhost:1313/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/aLong/posts/page/4/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/aLong/posts/page/6/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
+
+</html>

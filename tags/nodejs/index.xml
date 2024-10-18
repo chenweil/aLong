@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on aLong blog</title>
+    <link>http://localhost:1313/aLong/tags/nodejs/</link>
+    <description>Recent content in Nodejs on aLong blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Sep 2019 10:15:01 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Centos7安装nodejs</title>
+      <link>http://localhost:1313/aLong/posts/centos7%E5%AE%89%E8%A3%85nodejs/</link>
+      <pubDate>Mon, 02 Sep 2019 10:15:01 +0000</pubDate>
+      
+      <guid>http://localhost:1313/aLong/posts/centos7%E5%AE%89%E8%A3%85nodejs/</guid>
+      <description>&lt;h2 id=&#34;安装nodejs&#34;&gt;安装nodejs&lt;/h2&gt;
+&lt;h3 id=&#34;下载官方node的tar包&#34;&gt;下载官方node的tar包:&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://nodejs.org/en/download/&#34;&gt;https://nodejs.org/en/download/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;解压下载文件&#34;&gt;解压下载文件&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tar -xvf node-v10.16.3-linux-x64.tar.xz&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;部署bin&#34;&gt;部署bin&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;这里下载位置为家里面 ~/&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ln -s ~/node-v10.16.3-linux-x64/bin/node /usr/bin/node&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ln -s ~/node-v10.16.3-linux-x64/bin/npm /usr/bin/npm&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;一个是node 另一个是npm&lt;/p&gt;
+&lt;h3 id=&#34;验证&#34;&gt;验证&lt;/h3&gt;
+&lt;p&gt;node -v
+npm -v&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
