@@ -54,7 +54,7 @@ make mibs(不建议直接make)
 
 ### 当我们准备好所有的mib后,需要编写一个generator.yml.
 
-下面是一个翻译的官方文档(翻译比较烂,自行查阅[原文]([https://github.com/prometheus/snmp_exporter/tree/master/generator](https://github.com/prometheus/snmp_exporter/tree/master/generator))):
+`下面是一个翻译的官方文档(翻译比较烂,自行查阅[原文]([https://github.com/prometheus/snmp\_exporter/tree/master/generator](https://github.com/prometheus/snmp\_exporter/tree/master/generator))):`
 
 ```yaml
 modules:

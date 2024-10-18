@@ -3,6 +3,7 @@ title: "zabbix 6.0 docker-compose 部署"
 date: 2022-01-10T14:33:10+08:00
 draft: true
 tags: "zabbix"
+type: "post"
 ---
 
 zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。

@@ -2,6 +2,7 @@
 title: Prometueus.yml配置文件说明
 date: 2019-10-09 15:20:58
 tags: ["Prometheus"]
+type: "post"
 ---
 
 ## 整体配置

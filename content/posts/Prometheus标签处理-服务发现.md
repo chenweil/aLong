@@ -2,6 +2,7 @@
 title: Prometheus标签处理&服务发现
 date: 2019-12-03 15:14:16
 tags: ["Prometheus"]
+type: "post"
 ---
 
 ### 标签处理的重要性

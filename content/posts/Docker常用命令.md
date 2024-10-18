@@ -2,6 +2,7 @@
 title: Docker常用命令
 date: 2019-04-11 15:09:19
 tags: ["Docker"]
+type: "post"
 ---
 
 

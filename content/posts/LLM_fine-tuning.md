@@ -2,6 +2,7 @@
 title: "LLM_fine Tuning"
 date: 2024-08-15T13:39:15+08:00
 tags: [LLM,AI]
+type: "post"
 ---
 
 # 微调 fine-tuning

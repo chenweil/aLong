@@ -2,6 +2,7 @@
 title: Composer笔记
 date: 2019-07-15 17:24:45
 tags: ["Composer","Laravel"]
+type: "post"
 ---
 
 ### composer - laravel5

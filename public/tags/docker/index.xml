@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on aLong Blog</title><link>http://localhost:1313/aLong/tags/docker/</link><description>Recent content in Docker on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 07 Apr 2023 19:33:25 +0800</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title><link>http://localhost:1313/aLong/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 07 Apr 2023 19:33:25 +0800</pubDate><guid>http://localhost:1313/aLong/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="colima">Colima&lt;/h1>
+&lt;p>&lt;a href="https://github.com/abiosoft/colima">GitHub&lt;/a>&lt;/p>
+&lt;p>Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。&lt;/p>
+&lt;p>Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：&lt;/p>
+&lt;p>由于它只是一个容器运行时，因此相对于 Docker Desktop，它的安装和启动速度更快，所需的资源更少。
+它使用了轻量级的虚拟化技术，例如 HyperKit 和 VPNKit，以提高容器的性能和安全性。
+Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动、停止、删除容器，以及执行其他常见操作。
+它还提供了一些有用的功能，例如在本地浏览器中打开容器中运行的应用程序、自动重启容器等。
+总的来说，Colima 是一个轻量级、易于使用的容器运行时，旨在为开发者提供一种更快、更安全的容器环境，使得开发和测试容器应用程序变得更加轻松。&lt;/p>
+&lt;h2 id="安装">安装&lt;/h2>
+&lt;p>在 macOS 上安装 Colima 很简单，只需要执行以下几个步骤：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>首先，您需要打开终端并使用 Homebrew 包管理器安装 Colima。如果您没有安装 Homebrew，请先安装 Homebrew：
+&lt;code>/bin/bash -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot;&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>安装 Colima：
+&lt;code>brew install colima&lt;/code>&lt;/p>
+&lt;p>安装完成后，您可以使用 colima 命令来启动 Colima：
+&lt;code>colima start&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>如果您想停止 Colima，可以使用以下命令：
+&lt;code>colima stop&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>要卸载 Colima，请运行以下命令：&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>brew uninstall colima&lt;/code>&lt;/p>
+&lt;p>安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。&lt;/p>
+&lt;h2 id="docker交互">docker交互&lt;/h2>
+&lt;p>启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 &lt;code>docker&lt;/code> 命令来管理容器。&lt;/p></description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>http://localhost:1313/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate><guid>http://localhost:1313/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动">Linux系统重启后Docker自动启动&lt;/h2>
+&lt;p>系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。
+配置过一次总是忘记命令，这里特意记录一下：
+&lt;code>systemctl enable docker.service&lt;/code>&lt;/p>
+&lt;h2 id="容器自动启动配置">容器自动启动配置&lt;/h2>
+&lt;p>容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。
+涉及到的参数为：
+&lt;code>--restart=always&lt;/code>&lt;/p>
+&lt;p>参数有：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>no，默认策略，在容器退出时不重启容器&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>on-failure，在容器非正常退出时（退出状态非0），才会重启容器。例如：on-failure:3，在容器非正常退出时重启容器，最多重启3次&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>always，在容器退出时总是重启容器&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="容器已存在更新重启配置">容器已存在更新重启配置&lt;/h3>
+&lt;p>可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令：
+&lt;code>docker container update --restart=always 容器名XXX&lt;/code>
+这样就达到了想要的目的。&lt;/p></description></item><item><title>Laradock安装与使用</title><link>http://localhost:1313/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate><guid>http://localhost:1313/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;h3 id="laradock-安装与使用">Laradock 安装与使用&lt;/h3>
+&lt;p>&lt;a href="https://laradock.io">官网&lt;/a>&lt;/p>
+&lt;p>GitHub: &lt;a href="https://github.com/laradock/laradock">https://github.com/laradock/laradock&lt;/a>&lt;/p>
+&lt;h3 id="要求">要求&lt;/h3>
+&lt;blockquote>
+&lt;ul>
+&lt;li>Git&lt;/li>
+&lt;li>Docker &amp;gt;= 17.12&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h3 id="项目的位置">项目的位置&lt;/h3>
+&lt;ol>
+&lt;li>已有项目情况: &lt;code>git submodule add https://github.com/Laradock/laradock.git&lt;/code> 克隆到项目根目录.&lt;/li>
+&lt;/ol>
+&lt;p>结构 :&lt;/p>
+&lt;blockquote>
+&lt;ul>
+&lt;li>project-a&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>laradock-a&lt;/li>
+&lt;li>project-b
+&lt;ul>
+&lt;li>laradock-b&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>没有项目情况: &lt;code>git clone https://github.com/laradock/laradock.git&lt;/code> 克隆后,在同级部署项目.&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>laradock&lt;/li>
+&lt;li>project-x&lt;/li>
+&lt;li>project-y&lt;/li>
+&lt;/ul>
+&lt;h3 id="启动环境">启动环境&lt;/h3>
+&lt;p>clone下来还没有生成.&lt;/p>
+&lt;p>进入laradock目录,编辑Web服务器站点配置. &lt;code>cp env-exalpme .env&lt;/code>
+环境是laradock环境,里面可以对相应的版本,配置进行修改.
+例如指定mysql版本为5.7 ,&lt;code>vim .env&lt;/code> ,搜索到mysql部分, 修改&lt;strong>MYSQL_VERSION=5.7.26&lt;/strong> 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)&lt;/p>
+&lt;p>例如我们需要启动环境需要 mysql,redis,nginx.&lt;/p>
+&lt;p>执行 docker-compose up -d nginx mysql redis&lt;/p>
+&lt;p>经过漫长等待后,可以得到我们想要的环境,通过 docker ps 或者 docker-compose ps 查看容器.&lt;/p>
+&lt;p>如果先生成容器,在之后编辑环境时,需要停掉容器,修改完 build之后 再start 容器.
+例如修改nginx:&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>docker-compose stop nginx&lt;/code>&lt;/li>
+&lt;li>修改.env 或者 nginx conf&lt;/li>
+&lt;li>&lt;code>docker-compose build nginx&lt;/code> (完全重建,加参数: &amp;ndash;no-cache)&lt;/li>
+&lt;li>&lt;code>docker-compose start nginx&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="nginx-配置项目">Nginx 配置项目&lt;/h3>
+&lt;p>我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.&lt;/p></description></item><item><title>Docker常用命令</title><link>http://localhost:1313/aLong/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 11 Apr 2019 15:09:19 +0000</pubDate><guid>http://localhost:1313/aLong/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="docker常用命令">Docker常用命令&lt;/h2>
+&lt;p>说常用不如说自己用到的命令。&lt;/p>
+&lt;h3 id="容器相关">容器相关&lt;/h3>
+&lt;p>学习了一下docker，基础常用命令记录下。
+####docker run/新建并启动容器
+这个run其实包含两个不走，先执行新建容器(docker create),接着启动容器(docker start)。敲两个是不是有点麻烦吧。&lt;/p>
+&lt;p>docker run xx [COMMAND]&lt;/p>
+&lt;p>例子 &lt;code>docker run -it ubuntu:14.04 /bin/bash&lt;/code>&lt;/p>
+&lt;p>这里希望启动一个基于 ubuntu 14.04镜像 来创建一个容器，-t选项让Docker分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上，-i则让容器的标准输入保持打开。更多的命令选项可以通过man docker-run命令来查看。之后命令还有一项，启动一个bash终端。 这条命令涉及到很多知识了。
+-参数 常用 -i -d -t -p， -d 是否在后台运行，-p 映射到本地主机端口。剩下的看手册来补下。&lt;/p>
+&lt;h4 id="docker-create--docker-start--docker-stop">docker create &amp;amp;&amp;amp; docker start &amp;amp;&amp;amp; docker stop&lt;/h4>
+&lt;p>创建，启动，停止。
+有一个容易停止了，可以用 docker start XX容器 启动。 XX 可以是容器的ID，也可以是name。&lt;/p>
+&lt;h4 id="docker-rm">docker rm&lt;/h4>
+&lt;p>删除一个容器（最好先把这个容器停止了再删除）。
+-f 可以强制删除。-v 删除与容器关联的卷（如果刚学习还真不知道什么是卷）。&lt;/p>
+&lt;h4 id="docker-attach">docker attach&lt;/h4>
+&lt;p>进入容器，如果开启了一个 -d 后台启动容器。 我们怎么进去看看？ &lt;code>docker attach XX容器&lt;/code>
+这个命令我学习时候用过，感觉有时候不太好使。命令执行完卡那不动。&lt;/p>
+&lt;h4 id="docker-exec">docker exec&lt;/h4>
+&lt;p>可以在容器内直接执行任意命令。
+&lt;code>docker exec -it xx /bin/bash&lt;/code> 这可以进入xx镜像，并打开bash。 相比这个比上面的attach 好多了。&lt;/p></description></item><item><title>Ubutun下安装Docker</title><link>http://localhost:1313/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate><guid>http://localhost:1313/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介">Docker简介&lt;/h3>
+&lt;blockquote>
+&lt;p>一个能够把开发的应用程序自动部署到容器的开源引擎
+三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p>
+&lt;/blockquote>
+&lt;p>具体信息请参考官方。&lt;a href="https://docs.docker.com/engine/docker-overview/">官方概述&lt;/a>（养成看文档习惯）&lt;/p>
+&lt;h3 id="安装环境">安装环境&lt;/h3>
+&lt;p>Ubuntu 16.04 LTS&lt;/p>
+&lt;h3 id="docker安装">Docker安装&lt;/h3>
+&lt;p>根据官方doc安装。&lt;a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">官方doc&lt;/a>
+1.如果你之前装过，命令卸载。
+&lt;code>sudo apt-get remove docker docker-engine docker.io containerd runc&lt;/code>&lt;/p>
+&lt;p>2.更新包索引
+&lt;code>apt-get update&lt;/code>&lt;/p>
+&lt;p>3.安装包以允许apt通过HTTPS使用存储库:
+&lt;code>sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common&lt;/code>
+（斜线换行，一条命令）&lt;/p>
+&lt;p>4.添加Docker的官方GPG密钥:
+&lt;code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -&lt;/code>
+&lt;code>sudo apt-key fingerprint 0EBFCD88&lt;/code>&lt;/p>
+&lt;p>5.使用以下命令设置稳定存储库。要添加 夜间或测试存储库，请在下面的命令中的单词后添加单词nightly或test（或两者）stable。
+&lt;code>$ sudo add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot;&lt;/code>
+(lsb_release -cs子命令返回Ubuntu发行版的名称)&lt;/p>
+&lt;p>6.安装最新版本的Docker CE和containerd，或者转到下一步安装特定版本：
+&lt;code>sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code>&lt;/p></description></item></channel></rss>

@@ -2,6 +2,7 @@
 title: Prometheus-snmp_export部署
 date: 2019-08-29 10:06:01
 tags: ["SNMP","Promethues"]
+type: "post"
 ---
 
 ## SNMP

@@ -2,6 +2,7 @@
 title: "golang.org/x/xerrors：undefined: errors.Frame"
 date: 2020-01-16 19:05:39
 tags: ["Go"]
+type: "post"
 ---
 
 

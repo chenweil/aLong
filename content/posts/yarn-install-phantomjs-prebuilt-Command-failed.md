@@ -2,6 +2,7 @@
 title: 'yarn install phantomjs-prebuilt: Command failed.'
 date: 2020-01-16 14:21:26
 tags: ["yarn"]
+type: "post"
 ---
 
 ### 项目yarn install 出现phantomjs-prebuilt： Command failed.

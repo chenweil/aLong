@@ -2,6 +2,7 @@
 title: "Golang 环境准备"
 date: 2020-01-16 18:51:34
 tags: ["Go"]
+type: "post"
 ---
 
 

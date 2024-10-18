@@ -1,102 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.122.0">
-  
-  <meta name="description" content="可视化图表 Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。
-仪表盘Dashboard 通过数据源定义好可视化的数据来源之后，对于用户而言最重要的事情就是实现数据的可视化。
-面板 Panel Panel是Grafana中最基本的可视化单元。每一种类型的面板都提供了相应的查询编辑器(Query Editor)，让用户可以从不同的数据源（如Prometheus）中查询出相应的监控数据，并且以可视化的方式展现。 Grafana中所有的面板均以插件的形式进行使用，当前内置了5种类型的面板，分别是：Graph，Singlestat，Heatmap, Dashlist，Table以及Text。
-翻译工作 上面简单介绍了一下工具，主要是让我们方便查看监控的数据。这里我还是没有更深入的去研究公式等图形的设置。这里先主要写一下翻译方面的工作。
-公司也考虑展示内容为中文化比较好，这里Grafana没有提供语言包的方式来处理多语言问题。在我查看代码过程中，发现工具后台是在GO里面写死的很多导航，返回值等数据。前台是在页面上直接写的很多内容。所以我个人认为无法使用语言包来直接处理多语言问题。那就只好自己来搞定了。
-翻译的内容 更具代码查看，主要分为两大部分：
-后端： go文件，主要内容在/pkg 目录下。 前端： 1. 系统页面 2. 插件页面 这些在/public 目录下 准备工作 首先git clone Grafana库 git clone https://github.com/chenweil/grafana.git
-之后我们根据自己翻译的版本来检出自己的项目。 这里我们使用的v6.3.4 ，官方版本中可以查看到tag v6.3.4,并重命名自己的分支为6.3.4-chs： git checkout -b 6.3.4-chs
-通过 git branch 命令查看自己处于哪个分支上。 这里如果你不是很熟悉git命令行，可以使用sourcetree工具操作，相对来说点点鼠标就可以搞定了。
-我们在自己创建的分支就可以来处理我们的工作了。
-前端调试环境 需要 npm，nodejs，yarn
-终端执行命令 yarn install --pure-lockfile 初始化. 如果没有报错的情况,证明ok.
-出现错误请先处理问题. 开启调试环境时候，是开启前端的热加载来协助我们调试。 这里安装完三个环境可能在执行 yarn start 时报错，这里如果你是在windows上，需要再安装一下sass.(根据报错来看问题，我这里遇到缺少sass问题)
-当我们yarn start 执行后，等待一段时间，build at 时间证明准备工作已完成，下面就需要我们在调试模式下测试了。
-还需要一个调试的Grafana服务程序，这里是windows环境，所以直接从官方下载了zip包，执行bin下的grafana-server.exe 来启动服务。需要再conf文件夹修改一下public前端资源的配置，如果不修改那么你翻译的信息是看不到的，服务会直接读取的当前的public，我们这需要读取翻译的public文件位置。
-配置在windows服务程序的 /conf/defaults.ini 修改内容：">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<html lang="en" dir=" auto">
 
-  <title>Grafana中文化 | aLong blog</title>
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
 </head>
 
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    aLong
-  </h1>
-  <h2 class="project-tagline">
-    Hello world
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/aLong/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/aLong/tags/" class="btn">Tags</a>
-    
-  </nav>
-</section>
+<body class="" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <section class="main-content">
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
     
-  <h1>Grafana中文化</h1>
-  <h2 id="可视化图表">可视化图表</h2>
+    <h1 class="post-title entry-hint-parent">
+      Grafana中文化
+    </h1>
+    <div class="post-meta"><span title='2019-09-16 15:37:46 +0000 UTC'>2019-09-16</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="可视化图表">可视化图表<a hidden class="anchor" aria-hidden="true" href="#可视化图表">#</a></h2>
 <p>Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。</p>
-<h3 id="仪表盘dashboard">仪表盘Dashboard</h3>
+<h3 id="仪表盘dashboard">仪表盘Dashboard<a hidden class="anchor" aria-hidden="true" href="#仪表盘dashboard">#</a></h3>
 <p>通过数据源定义好可视化的数据来源之后，对于用户而言最重要的事情就是实现数据的可视化。</p>
-<h3 id="面板-panel">面板 Panel</h3>
+<h3 id="面板-panel">面板 Panel<a hidden class="anchor" aria-hidden="true" href="#面板-panel">#</a></h3>
 <p>Panel是Grafana中最基本的可视化单元。每一种类型的面板都提供了相应的查询编辑器(Query Editor)，让用户可以从不同的数据源（如Prometheus）中查询出相应的监控数据，并且以可视化的方式展现。
 Grafana中所有的面板均以插件的形式进行使用，当前内置了5种类型的面板，分别是：Graph，Singlestat，Heatmap, Dashlist，Table以及Text。</p>
-<h2 id="翻译工作"><strong>翻译工作</strong></h2>
+<h2 id="翻译工作"><strong>翻译工作</strong><a hidden class="anchor" aria-hidden="true" href="#翻译工作">#</a></h2>
 <p>上面简单介绍了一下工具，主要是让我们方便查看监控的数据。这里我还是没有更深入的去研究公式等图形的设置。这里先主要写一下翻译方面的工作。</p>
 <p>公司也考虑展示内容为中文化比较好，这里Grafana没有提供语言包的方式来处理多语言问题。在我查看代码过程中，发现工具后台是在GO里面写死的很多导航，返回值等数据。前台是在页面上直接写的很多内容。所以我个人认为无法使用语言包来直接处理多语言问题。那就只好自己来搞定了。</p>
-<h3 id="翻译的内容"><strong>翻译的内容</strong></h3>
+<h3 id="翻译的内容"><strong>翻译的内容</strong><a hidden class="anchor" aria-hidden="true" href="#翻译的内容">#</a></h3>
 <p>更具代码查看，主要分为两大部分：</p>
 <ul>
 <li>后端： go文件，主要内容在/pkg 目录下。</li>
 <li>前端： 1. 系统页面  2. 插件页面  这些在/public 目录下</li>
 </ul>
-<h3 id="准备工作"><strong>准备工作</strong></h3>
+<h3 id="准备工作"><strong>准备工作</strong><a hidden class="anchor" aria-hidden="true" href="#准备工作">#</a></h3>
 <p>首先git clone Grafana库
 <code>git clone https://github.com/chenweil/grafana.git</code></p>
 <p>之后我们根据自己翻译的版本来检出自己的项目。
 这里我们使用的v6.3.4 ，官方版本中可以查看到tag v6.3.4,并重命名自己的分支为6.3.4-chs：
 <code>git checkout -b 6.3.4-chs</code></p>
 <p>通过 <code>git branch</code> 命令查看自己处于哪个分支上。
-<img src="https://t1.picb.cc/uploads/2019/09/18/gFRkLM.png" alt="">
+<img loading="lazy" src="https://t1.picb.cc/uploads/2019/09/18/gFRkLM.png" alt=""  />
+
 这里如果你不是很熟悉git命令行，可以使用sourcetree工具操作，相对来说点点鼠标就可以搞定了。</p>
 <p>我们在自己创建的分支就可以来处理我们的工作了。</p>
-<h3 id="前端调试环境"><strong>前端调试环境</strong></h3>
+<h3 id="前端调试环境"><strong>前端调试环境</strong><a hidden class="anchor" aria-hidden="true" href="#前端调试环境">#</a></h3>
 <p>需要 npm，nodejs，yarn</p>
 <p>终端执行命令<code> yarn install --pure-lockfile</code> 初始化. 如果没有报错的情况,证明ok.</p>
 <p>出现错误请先处理问题.
@@ -110,25 +101,28 @@ Grafana中所有的面板均以插件的形式进行使用，当前内置了5种
 </span></span><span style="display:flex;"><span><span style="color:#7d9029">static_root_path</span> <span style="color:#666">=</span> <span style="color:#ba2121">D:\grafana\public #这里配置到git拉取得位置的public</span>
 </span></span></code></pre></div><p>按照正常的操作 是需要开启<code>webpack-dev-server</code>
 我这里没有这么设置，直接利用3000端口调试的。（当我们yarn start 后，通过修改页面可以看修改的内容。）</p>
-<h3 id="翻译前端文件"><strong>翻译前端文件</strong></h3>
+<h3 id="翻译前端文件"><strong>翻译前端文件</strong><a hidden class="anchor" aria-hidden="true" href="#翻译前端文件">#</a></h3>
 <p>前面环境已经搭建好之后，我们通过修改页面文件展示内容来翻译。
 例如翻译登陆页面：
 <code>/public/app/partials/login.html</code>
-<img src="https://t1.picb.cc/uploads/2019/09/18/gFRZft.png" alt="">
+<img loading="lazy" src="https://t1.picb.cc/uploads/2019/09/18/gFRZft.png" alt=""  />
+
 把对应的英文改为中文，保存后webpack会处理。处理完成刷新页面可以看到结果。</p>
 <p>前端翻译文件不止html，还有ts，tsx等文件。这里如果不知道具体文件可以在public文件夹下，通过全局搜索页面的单词等信息定位到文件。
 <strong>我没有翻译带有test 的测试文件。</strong></p>
 <p>最后我们把需要的文件都翻译之后，通过<code>yarn build</code> 生成文件。这些文件都存在生成的目录<code>/public/build</code>中。把这些文件覆盖到自己搭建的项目中完成汉文。
 建议把整体public目录替换。
 重启服务既可以看到中文版的页面了。</p>
-<h3 id="后端环境"><strong>后端环境</strong></h3>
+<h3 id="后端环境"><strong>后端环境</strong><a hidden class="anchor" aria-hidden="true" href="#后端环境">#</a></h3>
 <p>后端是用GO写的。后端我没有调试，不想前端那样可以边调边看。我的办法就是全部改完，build程序，启动查看后端翻译的结果。
 所需，本人是在windows10下处理的，需要gcc，go。</p>
-<h3 id="翻译后端文件"><strong>翻译后端文件</strong></h3>
+<h3 id="翻译后端文件"><strong>翻译后端文件</strong><a hidden class="anchor" aria-hidden="true" href="#翻译后端文件">#</a></h3>
 <p>文件所在位置：    <strong>/pkg/</strong>
-<img src="https://t1.picb.cc/uploads/2019/09/19/gPIwDR.png" alt=""></p>
+<img loading="lazy" src="https://t1.picb.cc/uploads/2019/09/19/gPIwDR.png" alt=""  />
+</p>
 <p>首页我们的导航，二级菜单这些不是前端控制的，这些是在 <strong>/pkg/api/index.go</strong></p>
-<p><img src="https://t1.picb.cc/uploads/2019/09/19/gPIUwX.png" alt=""></p>
+<p><img loading="lazy" src="https://t1.picb.cc/uploads/2019/09/19/gPIUwX.png" alt=""  />
+</p>
 <p>其余还有很多文件，内容包含：html数据，返回值信息，debug信息等。如果你前端翻译完成，那么后端对你来说也是很轻松的。</p>
 <p><em>请注意一些参数或者判断不要给翻译了</em></p>
 <p>当翻译完成后，需要build。
@@ -198,7 +192,7 @@ cmd 测试 gcc -v 有信息即ok。</p>
 完成后，就可以得到bin文件，位置在 <code>/bin/windows-amd64/</code> ， 里面有grafana-server.exe 程序。</p>
 <p>在测试前端时候，用的那个windwos程序可以下岗了，把build之后的bin程序+md5文件一起复制到这目录里。如果你不放心提前先备份一份。</p>
 <p>之后按照测试前端那样，打开服务，访问3000，查看自己汉化后端的成果吧。</p>
-<h3 id="生成docker镜像">生成docker镜像</h3>
+<h3 id="生成docker镜像">生成docker镜像<a hidden class="anchor" aria-hidden="true" href="#生成docker镜像">#</a></h3>
 <p>在windows可以直接加载public,bin生成之后替换原bin程序.</p>
 <p>linux是类似,build出来的bin,需要在linux上build.</p>
 <p>我们这里主要是想利用docker.</p>
@@ -217,15 +211,18 @@ cmd 测试 gcc -v 有信息即ok。</p>
 <p>到此终于结束啦。</p>
 
 
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
+  </div>
 
-  </section>
-  
-  
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/aLong/tags/grafana/">Grafana</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
 
-</body>
 </html>

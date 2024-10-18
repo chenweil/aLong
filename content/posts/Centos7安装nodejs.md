@@ -2,6 +2,7 @@
 title: Centos7安装nodejs
 date: 2019-09-02 10:15:01
 tags: ["Nodejs"]
+type: "post"
 ---
 
 ## 安装nodejs

@@ -2,6 +2,7 @@
 title: 'curl: (3) Illegal characters found in URL'
 date: 2019-10-09 14:45:13
 tags: ["curl"]
+type: "post"
 ---
 
 

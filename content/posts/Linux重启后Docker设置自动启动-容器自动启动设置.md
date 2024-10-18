@@ -2,6 +2,7 @@
 title: Linux重启后Docker设置自动启动&容器自动启动设置
 date: 2020-05-18 11:03:48
 tags: ["Linux","Docker"]
+type: "post"
 ---
 
 ## Linux系统重启后Docker自动启动

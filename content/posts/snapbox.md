@@ -2,6 +2,7 @@
 title: "Snapbox"
 date: 2024-09-14T10:42:26+08:00
 tags: [Tools]
+type: "post"
 ---
 
 # 一款macOS的APP

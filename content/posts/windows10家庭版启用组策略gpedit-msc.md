@@ -2,6 +2,7 @@
 title: windows10家庭版启用组策略gpedit.msc
 date: 2019-10-15 11:35:11
 tags: ["Windows"]
+type: "post"
 ---
 
 

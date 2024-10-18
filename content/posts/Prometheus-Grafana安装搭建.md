@@ -2,6 +2,7 @@
 title: Prometheus+Grafana安装搭建
 date: 2019-08-28 16:23:05
 tags: ["Prometheus","Grafana"]
+type: "post"
 ---
 
 ## 介绍

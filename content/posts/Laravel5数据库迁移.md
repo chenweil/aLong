@@ -3,6 +3,7 @@ layout: laravel5
 title: 数据库迁移
 date: 2019-07-26 14:30:25
 tags: ["Laravel"]
+type: "post"
 ---
 
 ## Laravel5 数据库迁移笔记

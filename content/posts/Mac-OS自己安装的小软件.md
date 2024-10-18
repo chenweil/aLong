@@ -2,6 +2,7 @@
 title: Mac OS自己安装的小软件
 date: 2021-05-06 11:06:20
 tags: ["MacOs"]
+type: "post"
 ---
 
 ## 自己使用Mac一年多

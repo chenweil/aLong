@@ -3,6 +3,7 @@ title: yaml规则
 date: 2019-09-24 10:20:31
 categories: yaml
 tags: ["yaml"]
+type: "post"
 ---
 
 ## yml 语法

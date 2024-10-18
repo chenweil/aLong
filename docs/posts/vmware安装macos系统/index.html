@@ -1,78 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.122.0">
-  
-  <meta name="description" content="虚拟机安装 macOS 准备工作: VM关闭进程,利用macOS Unlocker修改VM使其能安装macOS系统, 执行程序 win-install.cmd 使用管理员权限运行脚本. 准备好macOS镜象. 利用VM创建虚机,系统类型选择macOS,版本号选择与下载的镜象版本相同. 装系统: 启动虚拟机,并通过cdrom加载镜象. 首次安装需要先利用系统内硬盘工具格式化硬盘,之后利用安装工具进行系统安装. 异常问题: 开启虚拟机弹出错误:vcpu-0 错误. 修改虚机镜象文件.vmx 在smc.present = “TRUE”下面插入一行代码: smc.version = 0
-不能正常登陆APPID 需要修改虚拟机,利用Chameleon Wizard 伪造设备信息. 保存 生成的信息 去修改镜象所在文件下的.vmx
-修改 board-id.reflectHost = “TRUE” 为FALSE,并在下面插入需要的伪造设备信息例子:
-board-id = “Mac-94245B3640C91C81” hw.model.reflectHost = “FALSE” hw.model = “MacBook Pro” serialNumber.reflectHost = “FALSE” serialNumber = “C02JJ8B3DH2G” smbios.reflectHost = “FALSE”
-这段信息中的board-id 与 serialNumber 不要与例子的相同.其他可以参考.最后保存,重启.
-重启之后尝试是否可以登陆市场.">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<html lang="en" dir=" auto">
 
-  <title>VMware安装MacOS系统 | aLong blog</title>
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
 </head>
 
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    aLong
-  </h1>
-  <h2 class="project-tagline">
-    Hello world
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/aLong/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/aLong/tags/" class="btn">Tags</a>
-    
-  </nav>
-</section>
+<body class="" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <section class="main-content">
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
     
-  <h1>VMware安装MacOS系统</h1>
-  <h2 id="虚拟机安装-macos">虚拟机安装 macOS</h2>
-<h4 id="准备工作">准备工作:</h4>
+    <h1 class="post-title entry-hint-parent">
+      VMware安装MacOS系统
+    </h1>
+    <div class="post-meta"><span title='2019-08-12 11:29:38 +0000 UTC'>2019-08-12</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="虚拟机安装-macos">虚拟机安装 macOS<a hidden class="anchor" aria-hidden="true" href="#虚拟机安装-macos">#</a></h2>
+<h4 id="准备工作">准备工作:<a hidden class="anchor" aria-hidden="true" href="#准备工作">#</a></h4>
 <ul>
 <li>VM关闭进程,利用macOS Unlocker修改VM使其能安装macOS系统, 执行程序 win-install.cmd 使用管理员权限运行脚本.</li>
 <li>准备好macOS镜象.</li>
 <li>利用VM创建虚机,系统类型选择macOS,版本号选择与下载的镜象版本相同.</li>
 </ul>
-<h3 id="装系统">装系统:</h3>
+<h3 id="装系统">装系统:<a hidden class="anchor" aria-hidden="true" href="#装系统">#</a></h3>
 <ul>
 <li>启动虚拟机,并通过cdrom加载镜象.</li>
 <li>首次安装需要先利用系统内硬盘工具格式化硬盘,之后利用安装工具进行系统安装.</li>
 </ul>
-<h3 id="异常问题">异常问题:</h3>
+<h3 id="异常问题">异常问题:<a hidden class="anchor" aria-hidden="true" href="#异常问题">#</a></h3>
 <ul>
 <li>开启虚拟机弹出错误:vcpu-0 错误.</li>
 </ul>
@@ -92,15 +92,19 @@ smbios.reflectHost = &ldquo;FALSE&rdquo;</p>
 <p>重启之后尝试是否可以登陆市场.</p>
 
 
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
+  </div>
 
-  </section>
-  
-  
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/aLong/tags/vm/">VM</a></li>
+      <li><a href="http://localhost:1313/aLong/tags/macos/">MacOS</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
 
-</body>
 </html>

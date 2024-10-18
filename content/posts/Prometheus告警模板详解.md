@@ -2,6 +2,7 @@
 title: Prometheus告警模板详解
 date: 2019-12-04 11:51:43
 tags: ["AlertManager","Prometheus"]
+type: "post"
 ---
 
 

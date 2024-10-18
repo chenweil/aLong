@@ -2,6 +2,7 @@
 title: "Zabbix-Proxy 部署运行"
 date: 2021-06-24 17:20:40
 tags: ["Zabbix"]
+type: "post"
 ---
 
 ## 前提

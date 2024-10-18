@@ -1,78 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.122.0">
-  
-  <meta name="description" content="前提 版本： zabbix-server 5.4
-任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。
-安装Zabbix-Proxy 安装Zabbix仓库 wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1&#43;ubuntu20.04_all.deb dpkg -i zabbix-release_5.4-1&#43;ubuntu20.04_all.deb apt update 安装Zabbix-proxy &amp; mysql 这里我选择的是mysql作为数据库
-apt install mysql-server
-apt install zabbix-proxy-mysql
-导入数据 zcat /usr/share/doc/zabbix-proxy-mysql/schema.sql.gz | mysql -uzabbix -p zabbix
-这里可能跑不通。我装了两次都发现没有 schema.sql.gz 这个文件。 如果你也是，那需要找一下这个sql文件。
-下载5.4源码包： wget https://cdn.zabbix.com/zabbix/sources/stable/5.4/zabbix-5.4.1.tar.gz 解压之后，在 /zabbix-5.4.1/databases/mysql/ 中
-通过 cat schema.sql | mysql -uzabbix -p 导入到数据库中。
-4.配置zabbix-proxy
-vim /etc/zabbix/zabbix_proxy.conf
-修改Zabbix Server地址,Hostname，在server添加中，此名称要与这里一致。
-修改为正确的数据库名字、用户名、密码。
-其他配置可以酌情配置。例如server配置频率，log位置，本地缓存时间、主动被动、监听端口等等。
-启动zabbix-proxy systemctl start zabbix-proxy &amp;&amp; systemctl enable zabbix-proxy 在zabbix-server 中添加proxy，然后在对应的host主机上选择proxy。 zabbix-proxy log 默认配置的位置： /var/log/zabbix/zabbix_proxy.">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<html lang="en" dir=" auto">
 
-  <title>Zabbix-Proxy 部署运行 | aLong blog</title>
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
 </head>
 
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    aLong
-  </h1>
-  <h2 class="project-tagline">
-    Hello world
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/aLong/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/aLong/tags/" class="btn">Tags</a>
-    
-  </nav>
-</section>
+<body class="" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <section class="main-content">
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
     
-  <h1>Zabbix-Proxy 部署运行</h1>
-  <h2 id="前提">前提</h2>
+    <h1 class="post-title entry-hint-parent">
+      Zabbix-Proxy 部署运行
+    </h1>
+    <div class="post-meta"><span title='2021-06-24 17:20:40 +0000 UTC'>2021-06-24</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="前提">前提<a hidden class="anchor" aria-hidden="true" href="#前提">#</a></h2>
 <p>版本： zabbix-server 5.4</p>
 <p>任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。</p>
-<h2 id="安装zabbix-proxy">安装Zabbix-Proxy</h2>
+<h2 id="安装zabbix-proxy">安装Zabbix-Proxy<a hidden class="anchor" aria-hidden="true" href="#安装zabbix-proxy">#</a></h2>
 <ol>
 <li>安装Zabbix仓库</li>
 </ol>
@@ -95,40 +86,49 @@ vim /etc/zabbix/zabbix_proxy.conf
 如果你也是，那需要找一下这个sql文件。</p>
 <p>下载5.4源码包：
 <code>wget https://cdn.zabbix.com/zabbix/sources/stable/5.4/zabbix-5.4.1.tar.gz</code>
-<img src="https://img-blog.csdnimg.cn/img_convert/8eadb68dbe4f2051e1c72a2919286f07.png#id=yP1Gu&amp;originHeight=1340&amp;originWidth=652&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt="">
+<img loading="lazy" src="https://img-blog.csdnimg.cn/img_convert/8eadb68dbe4f2051e1c72a2919286f07.png#id=yP1Gu&amp;originHeight=1340&amp;originWidth=652&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""  />
+
 解压之后，在 <code>/zabbix-5.4.1/databases/mysql/</code> 中</p>
 <p>通过 <code>cat schema.sql | mysql -uzabbix -p</code> 导入到数据库中。</p>
 <p>4.配置zabbix-proxy</p>
 <p><code>vim /etc/zabbix/zabbix_proxy.conf</code></p>
 <p>修改Zabbix Server地址,Hostname，在server添加中，此名称要与这里一致。</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/8e3e758e82804c0909ee74bd40d1b988.png#id=HVbW6&amp;originHeight=820&amp;originWidth=1968&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""></p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/img_convert/8e3e758e82804c0909ee74bd40d1b988.png#id=HVbW6&amp;originHeight=820&amp;originWidth=1968&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""  />
+</p>
 <p>修改为正确的数据库名字、用户名、密码。</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/4f0b8f22d1c7753e24705f37025297a1.png#id=ogGz5&amp;originHeight=994&amp;originWidth=1230&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""></p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/img_convert/4f0b8f22d1c7753e24705f37025297a1.png#id=ogGz5&amp;originHeight=994&amp;originWidth=1230&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""  />
+</p>
 <p>其他配置可以酌情配置。例如server配置频率，log位置，本地缓存时间、主动被动、监听端口等等。</p>
 <ol start="5">
 <li>启动zabbix-proxy
 <code>systemctl start zabbix-proxy &amp;&amp; systemctl enable zabbix-proxy</code></li>
 <li>在zabbix-server 中添加proxy，然后在对应的host主机上选择proxy。
-<img src="https://img-blog.csdnimg.cn/img_convert/c869c5c2e48a6d94965c4ee9afd1d3a3.png#id=XryPJ&amp;originHeight=1252&amp;originWidth=1686&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""></li>
+<img loading="lazy" src="https://img-blog.csdnimg.cn/img_convert/c869c5c2e48a6d94965c4ee9afd1d3a3.png#id=XryPJ&amp;originHeight=1252&amp;originWidth=1686&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""  />
+</li>
 </ol>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/4236f0501054b223da6b5dde07a340a0.png#id=UMgsH&amp;originHeight=930&amp;originWidth=3870&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/f4604e95270f33648790159d8fcde8f6.png#id=UTV3A&amp;originHeight=1158&amp;originWidth=2394&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""></p>
-<h2 id="zabbix-proxy-log">zabbix-proxy log</h2>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/img_convert/4236f0501054b223da6b5dde07a340a0.png#id=UMgsH&amp;originHeight=930&amp;originWidth=3870&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""  />
+</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/img_convert/f4604e95270f33648790159d8fcde8f6.png#id=UTV3A&amp;originHeight=1158&amp;originWidth=2394&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt=""  />
+</p>
+<h2 id="zabbix-proxy-log">zabbix-proxy log<a hidden class="anchor" aria-hidden="true" href="#zabbix-proxy-log">#</a></h2>
 <p>默认配置的位置： <code>/var/log/zabbix/zabbix_proxy.log</code></p>
 <hr>
 <p>祝好！
 本文结束。</p>
 
 
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
+  </div>
 
-  </section>
-  
-  
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/aLong/tags/zabbix/">Zabbix</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
 
-</body>
 </html>

@@ -2,6 +2,7 @@
 title: 关闭Mac的Microsoft AutoUpdate
 date: 2020-10-13 13:14:34
 tags: ["office"]
+type: "post"
 ---
 
 最近使用Office 发现AutoUpdate一直会启动。我也不需要里面的更新。每次还要把它推出。

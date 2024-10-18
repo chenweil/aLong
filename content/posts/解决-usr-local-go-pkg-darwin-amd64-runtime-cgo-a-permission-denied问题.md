@@ -2,6 +2,7 @@
 title: "解决/usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied问题"
 date: 2021-02-22 09:06:08
 tags: ["Go"]
+type: "post"
 ---
 
 ### 最近Goland在run的时候发现一个问题

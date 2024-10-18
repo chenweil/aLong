@@ -2,6 +2,7 @@
 title: Laradock安装与使用
 date: 2019-08-15 10:01:03
 tags: ["Laravel","docker"]
+type: "post"
 ---
 
 ### Laradock 安装与使用

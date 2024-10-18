@@ -2,6 +2,7 @@
 title: S5720 SNMP v3配置
 date: 2021-11-16 16:38:35
 tags: ["NetWork","SNMP"]
+type: "post"
 ---
 
 

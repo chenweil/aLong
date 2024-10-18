@@ -1,82 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.122.0">
-  
-  <meta name="description" content="LANSpeedTest">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<html lang="en" dir=" auto">
 
-  <title>LANSpeedTest | aLong blog</title>
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
 </head>
 
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    aLong
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    LANSpeedTest
   </h1>
-  <h2 class="project-tagline">
-    Hello world
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/aLong/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/aLong/tags/" class="btn">Tags</a>
-    
-  </nav>
-</section>
+</header>
 
-  <section class="main-content">
-    
-<h1>LANSpeedTest</h1>
-<ul>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">网络传输速度测试工具
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>网络传输测试软件 最近公司测试限速,搜集软件发现两款,iperf,LANSpeedTest. iperf,多平台. LANSpeedTest,读写显示,操作简单. 局域网测试传输,优先考虑UDP.
+iperf Iperf可以报告带宽,延迟抖动和数据包丢失. 官方文档 安装不写了.跳过
+iperf常用参数介绍
+-i 2	#表示每2秒显示一次报告 -w 80k	#对于TCP方式，此设置为TCP窗口大小。对于UDP方式，此设置为接受UDP数据包的缓冲区大小，限制可以接受数据包的最大值 -B 192.168.122.1	#绑定到主机的多个地址中的一个。对于客户端来说，这个参数设置了出栈接口。对于服务器端来说，这个参数设置入栈接口。这个参数只用于具有多网络接口的主机。 #在Iperf的UDP模式下，此参数用于绑 定和加入一个多播组。使用范围在224.0.0.0至239.255.255.255的多播地址 #常用客户端参数 -b 100m	#用于udp测试时，设置测试发送的带宽，单位：bit/秒，不设置时默认为：1Mbit/秒 -c #指定服务端ip地址 -d #同时测试上行和下行 -t 10	#设置传输时间，为10秒	-P 5	#指定发起5个线程 UDP测试 服务端 iperf -u -s # -u表示以udp模式运行，-s表示作为服务端, 这里需要设置ip 客户端 iperf -u -c 192.168.100.11 -b 100M -t 60 -i 2 #解释：在udp模式下，以100Mbps为数据发送速率，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒 iperf -u -c 192.168.100.11 5M -P 30 -t 6	#客户端同时向服务器端发起30个连接线程，以5Mbps为数据发送速率 iperf -u -c 192.168.100.11 -b 100M -d -t 60 #以100M为数据发送速率，进行上下行带宽测试 TCP测试 服务端 iperf -s 客户端 iperf -c 192.168.100.11 -t 60	#在tcp模式下，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒。 iperf -c 192.168.100.11 -P 30 -t 60	#客户端同时向服务器端发起30个连接线程。 iperf -c 192.168.100.11 -d -t 60 -i 2	#进行上下行带宽测试。 测试结果 结果中可以看到: 30秒(-t)的测试,传递数据 70&#43; (-b参数), 监测的带宽约为20M .
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-10-23 17:31:55 +0000 UTC'>2019-10-23</span></footer>
+  <a class="entry-link" aria-label="post link to 网络传输速度测试工具" href="http://localhost:1313/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
 
-
-  <li>
-    
-    2019-10-23
-    <a href="https://blog.51ai.vip/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/">
-      网络传输速度测试工具
-    </a>
-  </li>        
-
-</ul>
-
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
-
-  </section>
-  
-  
-
-</body>
 </html>

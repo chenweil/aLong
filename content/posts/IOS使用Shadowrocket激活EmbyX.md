@@ -2,6 +2,7 @@
 title: "IOS使用Shadowrocket激活Emby"
 date: 2022-11-16T10:44:11+08:00
 draft: false
+type: "post"
 ---
 
 前提需要手机安装ShadowRocket。没有可以自己去找共享ID。

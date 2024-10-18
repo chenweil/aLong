@@ -2,6 +2,7 @@
 title: Prometheus-AlertManager警告管理搭建与配置
 date: 2019-10-19 09:40:15
 tags: ["Prometheus","AlertManager"]
+type: "post"
 ---
 
 ## AlertManager

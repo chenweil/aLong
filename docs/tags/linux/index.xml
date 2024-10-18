@@ -2,74 +2,440 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/linux/</link>
+    <link>http://localhost:1313/aLong/tags/linux/</link>
     <description>Recent content in Linux on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Jan 2023 15:35:43 +0800</lastBuildDate>
-    <atom:link href="https://blog.51ai.vip/aLong/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 15:35:43 +0800</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过minikube部署K8S学习环境</title>
-      <link>https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link>
+      <link>http://localhost:1313/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid>
-      <description>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&#xA;MacOS部署方式: 官方教程&#xA;本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：&#xA;curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 sudo install minikube-darwin-amd64 /usr/local/bin/minikube 通过minikube启动集群 minikube start \ --kubernetes-version=v1.23.9 \ --image-mirror-country=&amp;#39;cn&amp;#39; \ --registry-mirror=https://？？？？？.mirror.aliyuncs.com 因为是国内，所以--image-mirror-country=&#39;cn&#39;。通过--registry-mirror为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。 因为我学习的版本是1.23.x，所以制定了版本--kubernetes-version=v1.23.9。 默认他读去了驱动配置，识别是parallels,自己定义方式--driver=hyperkit。&#xA;安装结果： 错误： 如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。&#xA;驱动选择： 使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见drivers page&#xA;验证结果 查询minikube状态 进入面板 kubectl控制 minikube kubectl -- get pods -A kubectl在minikube中使用，需要写 nimikune kubectl --后面加入执行的命令。 macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&#xA;vi ~/.zshrc #加入一行 alias kubectl=&amp;#34;minikube kubectl --&amp;#34; #退出 source ~/.zshrc 再创建一个Pod 创建： kubectl run nginx --image=nginx:alpine 查询： kubectl get pods nginx 详情： kubectl describe pods nginx 到这里k8s可以使用了。</description>
+      
+      <guid>http://localhost:1313/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;p&gt;Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p&gt;
+&lt;h1 id=&#34;macos部署方式&#34;&gt;MacOS部署方式:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://minikube.sigs.k8s.io/docs/start/&#34;&gt;官方教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
+安装kubectl：&lt;code&gt;brew install kubectl&lt;/code&gt;
+安装minikube：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo install minikube-darwin-amd64 /usr/local/bin/minikube
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;通过minikube启动集群&#34;&gt;通过minikube启动集群&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;minikube start &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;--kubernetes-version&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;v1.23.9 &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;--image-mirror-country&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;cn&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;&lt;/span&gt;--registry-mirror&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;https://？？？？？.mirror.aliyuncs.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;因为是国内，所以&lt;code&gt;--image-mirror-country=&#39;cn&#39;&lt;/code&gt;。通过&lt;code&gt;--registry-mirror&lt;/code&gt;为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。
+因为我学习的版本是1.23.x，所以制定了版本&lt;code&gt;--kubernetes-version=v1.23.9&lt;/code&gt;。
+默认他读去了驱动配置，识别是&lt;code&gt;parallels&lt;/code&gt;,自己定义方式&lt;code&gt;--driver=hyperkit&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;安装结果：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2023/01/06/C3AFxdiPbq8aIuR.jpg&#34; alt=&#34;C3AFxdiPbq8aIuR&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;错误&lt;/em&gt;：
+如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。&lt;/p&gt;
+&lt;h4 id=&#34;驱动选择&#34;&gt;驱动选择：&lt;/h4&gt;
+&lt;p&gt;使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见&lt;a href=&#34;https://minikube.sigs.k8s.io/docs/drivers/&#34;&gt;drivers page&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;验证结果&#34;&gt;验证结果&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;查询minikube状态
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2023/01/06/otU8LYBjuFeDa31.png&#34; alt=&#34;otU8LYBjuFeDa31&#34;  /&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入面板
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2023/01/06/FmrBXOTJ1N2AZgU.png&#34; alt=&#34;FmrBXOTJ1N2AZgU&#34;  /&gt;
+
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2023/01/06/IPBCwUSx7Fb28Ee.png&#34; alt=&#34;IPBCwUSx7Fb28Ee&#34;  /&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;kubectl控制
+&lt;code&gt;minikube kubectl -- get pods -A&lt;/code&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2023/01/06/EziUHcpln27ufeB.png&#34; alt=&#34;EziUHcpln27ufeB&#34;  /&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;kubectl在minikube中使用，需要写 &lt;code&gt;nimikune kubectl --&lt;/code&gt;后面加入执行的命令。
+macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#加入一行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#19177c&#34;&gt;kubectl&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#34;minikube kubectl --&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#退出&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000&#34;&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;再创建一个Pod
+创建：
+&lt;code&gt;kubectl run nginx --image=nginx:alpine&lt;/code&gt;
+查询：
+&lt;code&gt;kubectl get pods nginx&lt;/code&gt;
+详情：
+&lt;code&gt;kubectl describe pods nginx&lt;/code&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2023/01/06/pYPqIgt84LzBcEU.png&#34; alt=&#34;pYPqIgt84LzBcEU&#34;  /&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到这里k8s可以使用了。&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>linux环境redis开机启动</title>
-      <link>https://blog.51ai.vip/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link>
+      <link>http://localhost:1313/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link>
       <pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid>
-      <description>前提 系统部署在ubuntu20.04中，用到redis数据库。 但是测试时候，设备重启发现redis服务没有启动。 由于是变异安装的，系统找不到redis.service。&#xA;解决方案 系统添加服务文件，并执行。&#xA;编写文件 文件路径/usr/lib/systemd/system&#xA;编写文件 vi /usr/lib/systemd/system/redis.service&#xA;[Unit] #服务描述 Description=Redis persistent key-value database #服务依赖 After=network.target After=network-online.target Wants=network-online.target [Service] #启动 命令 ExecStart=/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no #停止命令 ExecStop=/home/monitor/redis-6.0.8/src/redis-cli shutdown # Restart=always #服务类型 Type=forking #User=redis #Group=redis RuntimeDirectory=redis RuntimeDirectoryMode=0755 [Install] #服务安装设置 WantedBy=multi-user.target 服务配置文件分为[Unit]、[Service]和[Install]三部分。 具体详细的解释需要结合linux知识补充。&#xA;服务生效 系统重新读取所有服务文件： systemctl daemon-reload 启用/禁用开机自启动: systemctl enable/disable redis 启动/重启redis： systemctl start/restart redis</description>
+      
+      <guid>http://localhost:1313/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid>
+      <description>&lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
+&lt;p&gt;系统部署在ubuntu20.04中，用到redis数据库。
+但是测试时候，设备重启发现redis服务没有启动。
+由于是变异安装的，系统找不到redis.service。&lt;/p&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;解决方案&lt;/h2&gt;
+&lt;p&gt;系统添加服务文件，并执行。&lt;/p&gt;
+&lt;h3 id=&#34;编写文件&#34;&gt;编写文件&lt;/h3&gt;
+&lt;p&gt;文件路径&lt;code&gt;/usr/lib/systemd/system&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;编写文件 &lt;code&gt;vi /usr/lib/systemd/system/redis.service&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;[Unit]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#服务描述&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;Description&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;Redis persistent key-value database&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#服务依赖&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;After&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;network.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;After&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;network-online.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;Wants&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;network-online.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;[Service]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#启动 命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;ExecStart&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#停止命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;ExecStop&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;/home/monitor/redis-6.0.8/src/redis-cli shutdown&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;Restart&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;always&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#服务类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;Type&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;forking&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#User=redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#Group=redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;RuntimeDirectory&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;RuntimeDirectoryMode&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;0755&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;[Install]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#服务安装设置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;WantedBy&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;multi-user.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;服务配置文件分为[Unit]、[Service]和[Install]三部分。
+具体详细的解释需要结合linux知识补充。&lt;/p&gt;
+&lt;h3 id=&#34;服务生效&#34;&gt;服务生效&lt;/h3&gt;
+&lt;p&gt;系统重新读取所有服务文件： &lt;code&gt;systemctl daemon-reload&lt;/code&gt;
+启用/禁用开机自启动: &lt;code&gt;systemctl enable/disable redis&lt;/code&gt;
+启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>armbian配置-N1盒子</title>
-      <link>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
+      <link>http://localhost:1313/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sat, 20 Nov 2021 14:04:47 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
-      <description>armbian配置（N1盒子）&#xA;设置时区： timedatectl set-timezone Asia/Shanghai&#xA;安装docker apt update&#xA;apt install ca-certificates curl gnupg lsb-release&#xA;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg&#xA;echo \ &amp;quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&amp;quot; | tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null&#xA;apt update&#xA;apt install docker-ce docker-ce-cli containerd.io&#xA;安装docker-compose wget地址是加速器转换地址，版本和地址请根据版本号编辑地址&#xA;wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker-compose-linux-aarch64 &amp;amp;&amp;amp; mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-compose&#xA;WIFI 查看附近无线网络信号：nmcli dev wifi list&#xA;无密码的 WIFI：nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt;&#xA;加密WIFI： nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt; password 网卡配置 设置多IP auto eth0:1 allow-hotplug eth0:1 iface eth0:1 inet static address 1.</description>
+      
+      <guid>http://localhost:1313/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;armbian配置（N1盒子）&lt;/p&gt;
+&lt;h2 id=&#34;设置时区&#34;&gt;设置时区：&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;timedatectl set-timezone Asia/Shanghai&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装docker&#34;&gt;安装docker&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt update&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt install ca-certificates  curl  gnupg  lsb-release&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;echo \ &amp;quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&amp;quot; | tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt update&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt install docker-ce docker-ce-cli containerd.io&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;安装docker-compose&#34;&gt;安装docker-compose&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;wget地址是加速器转换地址，版本和地址请根据版本号编辑地址&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker-compose-linux-aarch64 &amp;amp;&amp;amp; mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-compose&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wifi&#34;&gt;WIFI&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;查看附近无线网络信号：nmcli dev wifi list&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无密码的 WIFI：nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加密WIFI： nmcli device wifi connect &amp;lt;SSID|BSSID&amp;gt; password &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link>
+      <link>http://localhost:1313/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid>
-      <description>Linux系统重启后Docker自动启动 系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。 配置过一次总是忘记命令，这里特意记录一下： systemctl enable docker.service&#xA;容器自动启动配置 容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。 涉及到的参数为： --restart=always&#xA;参数有：&#xA;no，默认策略，在容器退出时不重启容器&#xA;on-failure，在容器非正常退出时（退出状态非0），才会重启容器。例如：on-failure:3，在容器非正常退出时重启容器，最多重启3次&#xA;always，在容器退出时总是重启容器&#xA;unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器&#xA;容器已存在更新重启配置 可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令： docker container update --restart=always 容器名XXX 这样就达到了想要的目的。</description>
+      
+      <guid>http://localhost:1313/aLong/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;h2 id=&#34;linux系统重启后docker自动启动&#34;&gt;Linux系统重启后Docker自动启动&lt;/h2&gt;
+&lt;p&gt;系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。
+配置过一次总是忘记命令，这里特意记录一下：
+&lt;code&gt;systemctl enable docker.service&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;容器自动启动配置&#34;&gt;容器自动启动配置&lt;/h2&gt;
+&lt;p&gt;容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。
+涉及到的参数为：
+&lt;code&gt;--restart=always&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参数有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;no，默认策略，在容器退出时不重启容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;on-failure，在容器非正常退出时（退出状态非0），才会重启容器。例如：on-failure:3，在容器非正常退出时重启容器，最多重启3次&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;always，在容器退出时总是重启容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;容器已存在更新重启配置&#34;&gt;容器已存在更新重启配置&lt;/h3&gt;
+&lt;p&gt;可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令：
+&lt;code&gt;docker container update --restart=always 容器名XXX&lt;/code&gt;
+这样就达到了想要的目的。&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Centos5不升级内核更新</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/</link>
+      <link>http://localhost:1313/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/</link>
       <pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/</guid>
-      <description>前提 公司需要环境Centos5, 又不能升级内核.&#xA;查了一下 大概是 需要 yum –exclude=kernel* update 或者修改 yum.conf&#xA;测试一下 出现一个问题: Loaded plugins: fastestmirror, security Loading mirror speeds from cached hostfile YumRepo Error: All mirror URLs are not using ftp, http[s] or file. Eg. Invalid release/ removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt Error: Cannot find a valid baseurl for repo: base 根据查询到的信息是,没有正常的源.&#xA;解决问题 根据网上的源地址 修改一下: 位置: /etc/yum.repos.d/CentOS-Base.repo&#xA;修改内容: [base] name=CentOS-5.11 - Base #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=os baseurl=http://vault.centos.org/5.11/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #released updates [updates] name=CentOS-5.</description>
+      
+      <guid>http://localhost:1313/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-2/</guid>
+      <description>&lt;h3 id=&#34;前提&#34;&gt;前提&lt;/h3&gt;
+&lt;p&gt;公司需要环境Centos5, 又不能升级内核.&lt;/p&gt;
+&lt;p&gt;查了一下 大概是 需要 &lt;code&gt;yum –exclude=kernel* update&lt;/code&gt;   或者修改 yum.conf&lt;/p&gt;
+&lt;h3 id=&#34;测试一下-出现一个问题&#34;&gt;测试一下 出现一个问题:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Loaded plugins: fastestmirror, security
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Loading mirror speeds from cached hostfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;YumRepo Error: All mirror URLs are not using ftp, http&lt;span style=&#34;color:#666&#34;&gt;[&lt;/span&gt;s&lt;span style=&#34;color:#666&#34;&gt;]&lt;/span&gt; or file.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; Eg. Invalid release/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: Cannot find a valid baseurl &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;for&lt;/span&gt; repo: base
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;根据查询到的信息是,没有正常的源.&lt;/p&gt;
+&lt;h3 id=&#34;解决问题-根据网上的源地址-修改一下&#34;&gt;解决问题 根据网上的源地址 修改一下:&lt;/h3&gt;
+&lt;p&gt;位置: &lt;em&gt;/etc/yum.repos.d/CentOS-Base.repo&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改内容&#34;&gt;修改内容:&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;[base]
+name=CentOS-5.11 - Base
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=os
+baseurl=http://vault.centos.org/5.11/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#released updates
+[updates]
+name=CentOS-5.11 - Updates
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=updates
+baseurl=http://vault.centos.org/5.11/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#packages used/produced in the build but not released
+[addons]
+name=CentOS-5.11 - Addons
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=addons
+baseurl=http://vault.centos.org/5.11/addons/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#additional packages that may be useful
+[extras]
+name=CentOS-5.11 - Extras
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=extras
+baseurl=http://vault.centos.org/5.11/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-5.11 - Plus
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=centosplus
+baseurl=http://vault.centos.org/5.11/centosplus/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-5.11 - Contrib
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=contrib
+baseurl=http://vault.centos.org/5.11/contrib/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后 再使用上面的yum 去更新,发现yum 语句是有问题的.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Centos5不升级内核更新</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link>
+      <link>http://localhost:1313/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link>
       <pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid>
-      <description>前提 公司需要环境Centos5, 又不能升级内核.&#xA;查了一下 大概是 需要 yum –exclude=kernel* update 或者修改 yum.conf&#xA;测试一下 出现一个问题: Loaded plugins: fastestmirror, security Loading mirror speeds from cached hostfile YumRepo Error: All mirror URLs are not using ftp, http[s] or file. Eg. Invalid release/ removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt Error: Cannot find a valid baseurl for repo: base 根据查询到的信息是,没有正常的源.&#xA;解决问题 根据网上的源地址 修改一下: 位置: /etc/yum.repos.d/CentOS-Base.repo&#xA;修改内容: [base] name=CentOS-5.11 - Base #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=os baseurl=http://vault.centos.org/5.11/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 #released updates [updates] name=CentOS-5.</description>
+      
+      <guid>http://localhost:1313/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid>
+      <description>&lt;h3 id=&#34;前提&#34;&gt;前提&lt;/h3&gt;
+&lt;p&gt;公司需要环境Centos5, 又不能升级内核.&lt;/p&gt;
+&lt;p&gt;查了一下 大概是 需要 &lt;code&gt;yum –exclude=kernel* update&lt;/code&gt;   或者修改 yum.conf&lt;/p&gt;
+&lt;h3 id=&#34;测试一下-出现一个问题&#34;&gt;测试一下 出现一个问题:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Loaded plugins: fastestmirror, security
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Loading mirror speeds from cached hostfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;YumRepo Error: All mirror URLs are not using ftp, http&lt;span style=&#34;color:#666&#34;&gt;[&lt;/span&gt;s&lt;span style=&#34;color:#666&#34;&gt;]&lt;/span&gt; or file.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; Eg. Invalid release/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: Cannot find a valid baseurl &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;for&lt;/span&gt; repo: base
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;根据查询到的信息是,没有正常的源.&lt;/p&gt;
+&lt;h3 id=&#34;解决问题-根据网上的源地址-修改一下&#34;&gt;解决问题 根据网上的源地址 修改一下:&lt;/h3&gt;
+&lt;p&gt;位置: &lt;em&gt;/etc/yum.repos.d/CentOS-Base.repo&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改内容&#34;&gt;修改内容:&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;[base]
+name=CentOS-5.11 - Base
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=os
+baseurl=http://vault.centos.org/5.11/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#released updates
+[updates]
+name=CentOS-5.11 - Updates
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=updates
+baseurl=http://vault.centos.org/5.11/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#packages used/produced in the build but not released
+[addons]
+name=CentOS-5.11 - Addons
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=addons
+baseurl=http://vault.centos.org/5.11/addons/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#additional packages that may be useful
+[extras]
+name=CentOS-5.11 - Extras
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=extras
+baseurl=http://vault.centos.org/5.11/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-5.11 - Plus
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=centosplus
+baseurl=http://vault.centos.org/5.11/centosplus/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-5.11 - Contrib
+#mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=contrib
+baseurl=http://vault.centos.org/5.11/contrib/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后 再使用上面的yum 去更新,发现yum 语句是有问题的.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Centos7时间设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link>
+      <link>http://localhost:1313/aLong/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Fri, 19 Apr 2019 11:42:02 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid>
-      <description>Centos7时间相关 查看时间 date hwclock 硬件时间 timedatectl 各时间状态&#xA;设置&amp;amp;更新服务时间 安装ntpdate yum install utp ntpdate&#xA;设置同步 ntpdate cn.pool.ntp.org (time.windows.com) 地址看喜好&#xA;设置硬件时间 hwclock &amp;ndash;systohc&#xA;设置时区 timedatectl set-timezone Asia/Shanghai （上海）&#xA;timedatectl 很多设置，需要请查相关资料。</description>
+      
+      <guid>http://localhost:1313/aLong/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;h3 id=&#34;centos7时间相关&#34;&gt;Centos7时间相关&lt;/h3&gt;
+&lt;h4 id=&#34;查看时间&#34;&gt;查看时间&lt;/h4&gt;
+&lt;p&gt;date
+hwclock 硬件时间
+timedatectl  各时间状态&lt;/p&gt;
+&lt;h4 id=&#34;设置更新服务时间&#34;&gt;设置&amp;amp;更新服务时间&lt;/h4&gt;
+&lt;p&gt;安装ntpdate
+&lt;code&gt;yum install utp ntpdate&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;设置同步&#34;&gt;设置同步&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;ntpdate cn.pool.ntp.org&lt;/code&gt;        (time.windows.com) 地址看喜好&lt;/p&gt;
+&lt;h4 id=&#34;设置硬件时间&#34;&gt;设置硬件时间&lt;/h4&gt;
+&lt;p&gt;hwclock &amp;ndash;systohc&lt;/p&gt;
+&lt;h4 id=&#34;设置时区&#34;&gt;设置时区&lt;/h4&gt;
+&lt;p&gt;timedatectl set-timezone Asia/Shanghai  （上海）&lt;/p&gt;
+&lt;p&gt;timedatectl  很多设置，需要请查相关资料。&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Centos7防火墙相关设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link>
+      <link>http://localhost:1313/aLong/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Thu, 18 Apr 2019 17:44:22 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid>
-      <description>Centos7与之前不太一样 以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。 这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。&#xA;查看防火墙服务状态 systemctl status firewalld&#xA;####查看f防火墙状态 firewall-cmd --state&#xA;查看规则 firewall-cmd --list-all ####停止&amp;amp;开启防&amp;amp;重启火墙 systemctl stop firewalld.service systemctl start firewalld.service systemctl restart firewalld.service&#xA;关闭防火墙 systemctl disable firewalld.service&#xA;重载防火墙 firewall-cmd —reload&#xA;查询开放端口 firewall-cmd --list-ports&#xA;开放一个端口 例如tcp 8010 firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=80/tcp &amp;ndash;permanent&#xA;–zone #作用域 –add-port=8010/tcp #添加端口，格式为：端口/通讯协议 –permanent #永久生效，没有此参数重启后失效&#xA;查询某端口是否开放(8010) firewall-cmd --query-port=8010/tcp&#xA;移除端口规则 firewall-cmd --permanent --remove-port=8010/tcp</description>
+      
+      <guid>http://localhost:1313/aLong/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;h4 id=&#34;centos7与之前不太一样&#34;&gt;Centos7与之前不太一样&lt;/h4&gt;
+&lt;p&gt;以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。
+这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。&lt;/p&gt;
+&lt;h4 id=&#34;查看防火墙服务状态&#34;&gt;查看防火墙服务状态&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;systemctl status firewalld&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####查看f防火墙状态
+&lt;code&gt;firewall-cmd --state&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;查看规则&#34;&gt;查看规则&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --list-all &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####停止&amp;amp;开启防&amp;amp;重启火墙
+&lt;code&gt;systemctl stop firewalld.service&lt;/code&gt;
+&lt;code&gt;systemctl start firewalld.service&lt;/code&gt;
+&lt;code&gt;systemctl restart firewalld.service&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关闭防火墙&#34;&gt;关闭防火墙&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;systemctl disable firewalld.service&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;重载防火墙&#34;&gt;重载防火墙&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd —reload&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;查询开放端口&#34;&gt;查询开放端口&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --list-ports&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;开放一个端口-例如tcp-8010&#34;&gt;开放一个端口 例如tcp 8010&lt;/h4&gt;
+&lt;p&gt;firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=80/tcp &amp;ndash;permanent&lt;/p&gt;
+&lt;p&gt;–zone #作用域
+–add-port=8010/tcp #添加端口，格式为：端口/通讯协议
+–permanent #永久生效，没有此参数重启后失效&lt;/p&gt;
+&lt;h4 id=&#34;查询某端口是否开放8010&#34;&gt;查询某端口是否开放(8010)&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --query-port=8010/tcp&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;移除端口规则&#34;&gt;移除端口规则&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --permanent --remove-port=8010/tcp&lt;/code&gt;&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Centos7启动等级设置</title>
-      <link>https://blog.51ai.vip/aLong/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link>
+      <link>http://localhost:1313/aLong/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Mon, 15 Apr 2019 16:55:19 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid>
-      <description>Centos7启动级别 启动级别分为7个： 0 - 系统停机状态 1 - 单用户工作状态 2 - 多用户状态（没有NFS） 3 - 多用户状态（有NFS） 4 - 系统未使用，留给用户 5 - 图形界面 6 - 系统正常关闭并重新启动&#xA;切换启动级别 之前一直都是在种端中输入指令 init3 切换启动级别。 设置永久启动3级别， vi /etc/inittab 把init3设置默认即可。&#xA;centos7 设置出现不同 runlevels被targets所取代，即CentOS7采用加载target的方式来替代之前的启动级别。 multi-user.target = init3 graphical.target = init5 我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。 systemctl set-default multi-user.target 设置为init3 systemctl set-default graphical.target 设置为init5</description>
+      
+      <guid>http://localhost:1313/aLong/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;h4 id=&#34;centos7启动级别&#34;&gt;Centos7启动级别&lt;/h4&gt;
+&lt;p&gt;启动级别分为7个：
+0 - 系统停机状态
+1 - 单用户工作状态
+2 - 多用户状态（没有NFS）
+3 - 多用户状态（有NFS）
+4 - 系统未使用，留给用户
+5 - 图形界面
+6 - 系统正常关闭并重新启动&lt;/p&gt;
+&lt;h4 id=&#34;切换启动级别&#34;&gt;切换启动级别&lt;/h4&gt;
+&lt;p&gt;之前一直都是在种端中输入指令 init3 切换启动级别。
+设置永久启动3级别， &lt;code&gt;vi /etc/inittab&lt;/code&gt;  把init3设置默认即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;centos7 设置出现不同&lt;/strong&gt;
+runlevels被targets所取代，即CentOS7采用加载target的方式来替代之前的启动级别。
+multi-user.target  = init3
+graphical.target    = init5
+我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。
+&lt;code&gt;systemctl set-default multi-user.target&lt;/code&gt;  设置为init3
+&lt;code&gt;systemctl set-default graphical.target&lt;/code&gt; 设置为init5&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

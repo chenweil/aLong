@@ -2,6 +2,7 @@
 title: Centos7防火墙相关设置
 date: 2019-04-18 17:44:22
 tags: ["Linux"]
+type: "post"
 ---
 
 #### Centos7与之前不太一样

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>armbian配置-N1盒子</title>
+    <meta name="description" content="armbian配置（N1盒子）
+设置时区： timedatectl set-timezone Asia/Shanghai
+安装docker apt update
+apt install ca-certificates curl gnupg lsb-release
+curl -fsSL …">
+    <meta name="keywords" content='NetWork, Linux'>
+
+    <meta property="og:url" content="http://localhost:1313/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="armbian配置-N1盒子">
+    <meta property="og:description" content="armbian配置（N1盒子）
+设置时区： timedatectl set-timezone Asia/Shanghai
+安装docker apt update
+apt install ca-certificates curl gnupg lsb-release
+curl -fsSL …">
+    <meta property="og:image" content="http://localhost:1313/aLong/">
+    <meta property="og:image:secure_url" content="http://localhost:1313/aLong/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="armbian配置-N1盒子">
+    <meta name="twitter:description" content="armbian配置（N1盒子）
+设置时区： timedatectl set-timezone Asia/Shanghai
+安装docker apt update
+apt install ca-certificates curl gnupg lsb-release
+curl -fsSL …">
+    <meta property="twitter:domain" content="http://localhost:1313/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">
+    <meta property="twitter:url" content="http://localhost:1313/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">
+    <meta name="twitter:image" content="http://localhost:1313/aLong/">
+
+    
+    <link rel="canonical" href="http://localhost:1313/aLong/posts/armbian%E7%B3%BB%E7%BB%9F%E6%96%90%E8%AE%AFn1%E7%9B%92%E5%AD%90%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/aLong/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/aLong/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/aLong/css/dark.min.css">
+
+    
+    <script src="/aLong/js/bundle.min.9a920d7dabdbad8363b6a0a94e29a9dfebdb7ee64cfcb193a0145e512ef2bdab.js" integrity="sha256-mpINfavbrYNjtqCpTimp3&#43;vbfuZM/LGToBReUS7yvas="></script>
+
+    
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/aLong/">aLong</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/aLong/posts/" > Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/aLong/tags/" > Tags </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/aLong/posts/" > Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/aLong/tags/" > Tags </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>armbian配置-N1盒子</h1>
+
+        
+
+        
+	
+	
+	
+	
+        
+
+	
+
+	
+
+	
+          <small role="doc-subtitle"></small>
+	
+
+	
+          <p class="post-date">November 20, 2021
+           
+          </p>
+	
+
+        <ul class="post-tags">
+          
+           
+             <li class="post-tag"><a href="http://localhost:1313/aLong/tags/network">NetWork</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="http://localhost:1313/aLong/tags/linux">Linux</a></li>
+           
+         
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>armbian配置（N1盒子）</p>
+<h2 id="设置时区">设置时区：</h2>
+<p><code>timedatectl set-timezone Asia/Shanghai</code></p>
+<h2 id="安装docker">安装docker</h2>
+<ol>
+<li>
+<p><code>apt update</code></p>
+</li>
+<li>
+<p><code>apt install ca-certificates  curl  gnupg  lsb-release</code></p>
+</li>
+<li>
+<p><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></p>
+</li>
+<li>
+<p><code>echo \ &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&quot; | tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</code></p>
+</li>
+<li>
+<p><code>apt update</code></p>
+</li>
+<li>
+<p><code>apt install docker-ce docker-ce-cli containerd.io</code></p>
+</li>
+</ol>
+<h2 id="安装docker-compose">安装docker-compose</h2>
+<p><em>wget地址是加速器转换地址，版本和地址请根据版本号编辑地址</em></p>
+<p><code>wget https://download.fastgit.org/docker/compose/releases/download/v2.1.1/docker-compose-linux-aarch64 &amp;&amp; mv docker-compose-linux-aarch64 /usr/local/bin/docker-compose &amp;&amp; chmod +x /usr/local/bin/docker-compose</code></p>
+<h2 id="wifi">WIFI</h2>
+<ul>
+<li>
+<p>查看附近无线网络信号：nmcli dev wifi list</p>
+</li>
+<li>
+<p>无密码的 WIFI：nmcli device wifi connect &lt;SSID|BSSID&gt;</p>
+</li>
+<li>
+<p>加密WIFI： nmcli device wifi connect &lt;SSID|BSSID&gt; password <!-- raw HTML omitted --></p>
+</li>
+</ul>
+<h2 id="网卡配置">网卡配置</h2>
+<ul>
+<li>设置多IP</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">auto eth0:1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">allow-hotplug eth0:1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">iface eth0:1 inet static</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">address 1.1.1.1/30</span>
+</span></span></code></pre></div>
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+
+    
+
+    
+
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

@@ -1,98 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.122.0">
-  
-  <meta name="description" content="Laravel">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<html lang="en" dir=" auto">
 
-  <title>Laravel | aLong blog</title>
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
 </head>
 
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    aLong
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Laravel
   </h1>
-  <h2 class="project-tagline">
-    Hello world
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/aLong/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/aLong/tags/" class="btn">Tags</a>
-    
-  </nav>
-</section>
+</header>
 
-  <section class="main-content">
-    
-<h1>Laravel</h1>
-<ul>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Laradock安装与使用
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Laradock 安装与使用 官网
+GitHub: https://github.com/laradock/laradock
+要求 Git Docker &gt;= 17.12 项目的位置 已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录. 结构 :
+project-a laradock-a project-b laradock-b 没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目. laradock project-x project-y 启动环境 clone下来还没有生成.
+进入laradock目录,编辑Web服务器站点配置. cp env-exalpme .env 环境是laradock环境,里面可以对相应的版本,配置进行修改. 例如指定mysql版本为5.7 ,vim .env ,搜索到mysql部分, 修改MYSQL_VERSION=5.7.26 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)
+例如我们需要启动环境需要 mysql,redis,nginx.
+执行 docker-compose up -d nginx mysql redis
+经过漫长等待后,可以得到我们想要的环境,通过 docker ps 或者 docker-compose ps 查看容器.
+如果先生成容器,在之后编辑环境时,需要停掉容器,修改完 build之后 再start 容器. 例如修改nginx:
+docker-compose stop nginx 修改.env 或者 nginx conf docker-compose build nginx (完全重建,加参数: –no-cache) docker-compose start nginx Nginx 配置项目 我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-15 10:01:03 +0000 UTC'>2019-08-15</span></footer>
+  <a class="entry-link" aria-label="post link to Laradock安装与使用" href="http://localhost:1313/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">数据库迁移
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Laravel5 数据库迁移笔记 创建迁移文件 命令: make:migration
+举例: php artisan make:migration create_users_table --create=users
+生成位置: 项目/database/migrations/下 文件名已时间开头,后面是自己创建迁移文件名字.
+–creat 指定数据库中表的名字
+编辑迁移文件 打开迁移文件:
+use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateUsersTable extends Migration { /** * Run the migrations. * * @return void */ public function up() { Schema::create(&#39;users&#39;, function (Blueprint $table) { $table-&gt;bigIncrements(&#39;id&#39;); $table-&gt;string(&#39;name&#39;); $table-&gt;string(&#39;email&#39;)-&gt;unique(); $table-&gt;timestamp(&#39;email_verified_at&#39;)-&gt;nullable(); $table-&gt;string(&#39;password&#39;); $table-&gt;rememberToken(); $table-&gt;timestamps(); }); } /** * Reverse the migrations. * * @return void */ public function down() { Schema::dropIfExists(&#39;users&#39;); } } 文件中有两个方法,up/down . 可以理解为创建执行时up方法,rollback时候是执行down方法. up方法中: 创建了7个字段,表明为 users. 创建字段操作 `$table-&gt;` 后面加上字段类型 `string` ,指定字段名称`(&#39;name&#39;)` 字段被指 `-&gt;comment(&#39;名子&#39;)`; 具体每个字段类型,以及其他属性定义,请查询手册. * ### 执行迁移文件 这个迁移文件是创建表,所以down是删除表.也就是当我们执行 `php artisan migrate:rollback` 回滚到上一步就是把这表删除(前提创建之后). 执行命令: `php artisan migrate` 执行迁移文件创建表单. 如果我们后悔创建:可以执行回滚. `php artisan migrate:rollback ` --step 指定回滚次数 `php artisan migrate:rollback --step=2` 执行回滚迁移2次钱. `php artisan migrate:reset` 回滚所有迁移 `php artisan migrate:fresh` 删除所有回滚 * ### 为前迁移文件修改字段,改名. 当我们上面的文件执行后,需要增加一个字段,那么就需要新建一个迁移文件.不要直接操作数据库. `php artisan make:migration add_id_to_users_table --table=users` 这里为users表新增身份证字段. 打开文件 新建身份证id列. 之后我们执行迁移文件.成功后就能看到新得ID字段已经出现.对于编辑和修改都可以. `$table-&gt;renameColumn(&#39;ID&#39;, &#39;id&#39;)` 改名id 对应dorop 也需要dropColumn 此字段. 最后执行此迁移文件. </p>
+  </div>
+  <footer class="entry-footer"><span title='2019-07-26 14:30:25 +0000 UTC'>2019-07-26</span></footer>
+  <a class="entry-link" aria-label="post link to 数据库迁移" href="http://localhost:1313/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/"></a>
+</article>
 
-  <li>
-    
-    2019-08-15
-    <a href="https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">
-      Laradock安装与使用
-    </a>
-  </li>        
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Composer笔记
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>composer - laravel5 创建laravel项目： conposer create-project laravel/laravel=5.8.* --prefer-dist ./XXX
+laravel=5.8.* 这里代表要部署5.8中最高版本 –prefer-dist 参数代表优先下载zip
+安装vendor: composer install
+composer install --prefer-dist
+更新： composer update
+composer版本更新： composer self-update
+利用composer 创建laravel控制器： php artisan make:controller HomeController 会在http下 创建一Home的控制器
+如果存在分目录情况，需要指定目录： php artisan make:controller Home/HomeController
+Laravel config: 编写一些类的别名，controller中 use 简短的别名为目的。
+位置：config/app 存在一数组 aliases 在里面添加
+创建模型： 创建一个user 的model
+php artisan make:model User
+指定目录加入目录即可
+获取项目路由： php artisan route:list
+composer在项目中安装三方库时候出现报错： 执行命令： composer Install
+返回错误： Your requirements could not be resolved to an installable set of packages.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-07-15 17:24:45 +0000 UTC'>2019-07-15</span></footer>
+  <a class="entry-link" aria-label="post link to Composer笔记" href="http://localhost:1313/aLong/posts/composer%E7%AC%94%E8%AE%B0/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
 
-  <li>
-    
-    2019-07-26
-    <a href="https://blog.51ai.vip/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/">
-      数据库迁移
-    </a>
-  </li>        
-
-  <li>
-    
-    2019-07-15
-    <a href="https://blog.51ai.vip/aLong/posts/composer%E7%AC%94%E8%AE%B0/">
-      Composer笔记
-    </a>
-  </li>        
-
-</ul>
-
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
-
-  </section>
-  
-  
-
-</body>
 </html>

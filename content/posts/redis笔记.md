@@ -2,6 +2,7 @@
 title: redis笔记
 date: 2019-04-25 17:12:52
 tags: ["Redis"]
+type: "post"
 ---
 
 ## redis笔记 

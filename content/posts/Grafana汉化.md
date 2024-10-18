@@ -2,6 +2,7 @@
 title: Grafana中文化
 date: 2019-09-16 15:37:46
 tags: ["Grafana"]
+type: "post"
 ---
 
 ## 可视化图表

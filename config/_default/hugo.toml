@@ -1,0 +1,58 @@
+baseURL = "https://blog.51ai.vip/aLong/"
+enableEmoji = true
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+languageCode = "en"
+theme = "gokarna"
+title = "aLong Blog"
+
+[params]
+  accentColor = "#FF4D4D"
+  dateFormat = "2006/01/02"
+  footer = "aLong"
+  metaKeywords = ["blog", "aLong", "blog.51ai.vip"]
+  numberPostsOnHomePage = 4
+  showBackToTopButton = true
+  showPostsOnHomePage = ""
+  pygmentsStyle = "monokai"
+
+  socialIcons = [
+    {name = "email", url = "mailto:longlhero@gmail.com"}
+  ]
+
+  [markup]
+    [markup.tableOfContents]
+      startLevel = 1
+    endLevel = 3
+    ordered = false
+  [minify]
+    minifyOutput = true  
+
+  [menu]
+    [[menu.main]]
+    name = "Home"
+    pre = "<span data-feather='home'></span>"
+    url = "/"
+    weight = 1
+
+    [[menu.main]]
+      # Display name
+      name = "Posts"
+
+      # Relative URL slug (appended to baseURL)
+      url = "/posts/"
+
+      # Lower weights are listed first in the menu (leftmost); higher weights are
+      # listed last in the menu (rightmost)
+      weight = 1
+
+    [[menu.main]]
+      name = "Tags"
+      url = "/tags/"
+      weight = 2
+    
+    [[menu.main]]
+      identifier = "rss"
+      pre = "<span data-feather='rss'></span>"
+     url = "/index.xml"
+    weight = 7

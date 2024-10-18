@@ -2,6 +2,7 @@
 title: Grafana插件Plugin中文汉化
 date: 2020-11-30 13:46:47
 tags: ["Grafana"]
+type: "post"
 ---
 
 ## 汉化三方插件

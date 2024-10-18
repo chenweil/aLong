@@ -3,6 +3,7 @@ title: "Zabbix自动发现SNMP设备"
 date: 2022-10-12T11:15:29+08:00
 tags: ["zabbix"]
 draft: false
+type: "post"
 ---
 
 > Zabbix提供高效灵活的网络自动发现功能。

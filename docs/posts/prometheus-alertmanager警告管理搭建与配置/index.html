@@ -1,65 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.122.0">
-  
-  <meta name="description" content="AlertManager AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。 它还负责消除和抑制警报。
-通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具. AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.
-Prometheus-&gt;触发定义的警报规则-&gt;AlertManager-&gt;发送警报到指定通知渠道.
-为了能让Prometheus发送警报,我们需要:
-搭建AlertManager服务. 定义AlertManager通知配置. 定义Prometheus警报规则并引入. 测试警报. 定义通知模板. 定义AlertManager通知配置 global: smtp_smarthost: &#39;smtp.163.com:25&#39; # 邮箱smtp服务器代理 smtp_from: &#39;shitu-0071@163.com&#39; # 发送邮箱名称 resolve_timeout: 5m # 处理超时时间，默认为5min smtp_auth_username: &#39;shitu-0071@163.com&#39; # 邮箱帐户 smtp_auth_password: &#39;******&#39; # 邮箱授权码(注意是授权码,不知道自己查一下) wechat_api_url: &#39;https://qyapi.weixin.qq.com/cgi-bin/&#39; # 企业微信地址 # 定义模板信心 templates: - &#39;template/*.tmpl&#39; # 定义路由树信息 route: group_by: [&#39;alertname&#39;, &#39;cluster&#39;, &#39;service&#39;] # 报警分组依据,设置后会按照设定值分组,例如instance,alertname等 # 同标签警告会在作为一组警报发送 group_wait: 10s # 组内等待时间,触发阈值后,XXs后发送本组警报 group_interval: 10s # 每个组之前间隔时间(group_by设定的值划分的组) repeat_interval: 1m # 重复发送警报的周期 (对于email配置中，此项不可以设置过低，否则将会由于邮件发送太多频繁，被smtp服务器拒绝) receiver: &#39;email&#39; # 发送警报的接收者的名称 # 以下receivers name的名称 routes: - match: # 普通匹配 serverity: critical # 警告级别critical receiver: email # 通过邮件发送 - match_re: # 正则匹配 severity: ^(warning)$ # 匹配警告级别为warning的 receiver: wechat # 通过微信发送告警 - receiver: along # 定义接收者 match: # 匹配 severity: test # 等级为test # 定义警报接收者信息 receivers: - name: &#39;email&#39; # 警报 email_configs: # 邮箱配置 - to: &#39;******@163.">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<html lang="en" dir=" auto">
 
-  <title>Prometheus-AlertManager警告管理搭建与配置 | aLong blog</title>
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
 </head>
 
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    aLong
-  </h1>
-  <h2 class="project-tagline">
-    Hello world
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/aLong/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/aLong/tags/" class="btn">Tags</a>
-    
-  </nav>
-</section>
+<body class="" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <section class="main-content">
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
     
-  <h1>Prometheus-AlertManager警告管理搭建与配置</h1>
-  <h2 id="alertmanager">AlertManager</h2>
+    <h1 class="post-title entry-hint-parent">
+      Prometheus-AlertManager警告管理搭建与配置
+    </h1>
+    <div class="post-meta"><span title='2019-10-19 09:40:15 +0000 UTC'>2019-10-19</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="alertmanager">AlertManager<a hidden class="anchor" aria-hidden="true" href="#alertmanager">#</a></h2>
 <blockquote>
 <p>AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。
 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。
@@ -76,7 +77,7 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 <li>测试警报.</li>
 <li>定义通知模板.</li>
 </ol>
-<h2 id="定义alertmanager通知配置">定义AlertManager通知配置</h2>
+<h2 id="定义alertmanager通知配置">定义AlertManager通知配置<a hidden class="anchor" aria-hidden="true" href="#定义alertmanager通知配置">#</a></h2>
 <div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">global</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">smtp_smarthost</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;smtp.163.com:25&#39;</span><span style="color:#bbb">               </span><span style="color:#408080;font-style:italic"># 邮箱smtp服务器代理</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">smtp_from</span>:<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;shitu-0071@163.com&#39;</span><span style="color:#bbb">                 </span><span style="color:#408080;font-style:italic"># 发送邮箱名称</span><span style="color:#bbb">
@@ -316,7 +317,7 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ to_user</span>:<span style="color:#bbb"> </span>&lt;string&gt; | default = &#39;{{ template &#34;wechat.default.to_user&#34; . }}&#39; ]<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ to_party</span>:<span style="color:#bbb"> </span>&lt;string&gt; | default = &#39;{{ template &#34;wechat.default.to_party&#34; . }}&#39; ]<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">[ to_tag</span>:<span style="color:#bbb"> </span>&lt;string&gt; | default = &#39;{{ template &#34;wechat.default.to_tag&#34; . }}&#39; ]<span style="color:#bbb">
-</span></span></span></code></pre></div><h2 id="搭建alertmanager服务">搭建AlertManager服务</h2>
+</span></span></span></code></pre></div><h2 id="搭建alertmanager服务">搭建AlertManager服务<a hidden class="anchor" aria-hidden="true" href="#搭建alertmanager服务">#</a></h2>
 <p>部署AlertManager可以通过官网<a href="https://prometheus.io/download/">https://prometheus.io/download/</a>下载二进制文件.
 这里演示docker部署AlertManager服务.其他方式请参考官网.</p>
 <p>docker部署前,需要先完成配置文件的工作.</p>
@@ -357,26 +358,30 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 </span></span><span style="display:flex;"><span>      severity: waring                      <span style="color:#408080;font-style:italic"># 定义警报等级为 waring</span>
 </span></span><span style="display:flex;"><span>    annotations:                            <span style="color:#408080;font-style:italic"># 备注描述</span>
 </span></span><span style="display:flex;"><span>      summary: <span style="color:#ba2121">&#34;设备: {{ </span><span style="color:#19177c">$labels</span><span style="color:#ba2121">.instance }} 已断开5分钟&#34;</span>   <span style="color:#408080;font-style:italic"># 警告中呈现的具体信息可以写在这里</span>
-</span></span></code></pre></div><h3 id="prometheus引入配置">Prometheus引入配置</h3>
+</span></span></code></pre></div><h3 id="prometheus引入配置">Prometheus引入配置<a hidden class="anchor" aria-hidden="true" href="#prometheus引入配置">#</a></h3>
 <p>警报规则是Prometheus引入的文件.
 Prometheus引入文件的方式:</p>
 <div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">rule_files</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#ba2121">&#34;/usr/local/prometheus/alert.yml&#34;</span><span style="color:#bbb"> </span><span style="color:#408080;font-style:italic"># 引入定义的警报规则</span><span style="color:#bbb">
-</span></span></span></code></pre></div><h2 id="测试警报">测试警报</h2>
+</span></span></span></code></pre></div><h2 id="测试警报">测试警报<a hidden class="anchor" aria-hidden="true" href="#测试警报">#</a></h2>
 <p>我们上面配置好之后,需要各服务已经读取到相关配置文件了之后开始测试.
 上面的规则是监测某个监控节点断开,手动断开一个节点.然后5分钟之后观察是否得到警报.</p>
 <p>当由警报时收到的邮件为:</p>
-<p><img src="https://s2.ax1x.com/2019/10/29/KRVQMT.png" alt=""></p>
+<p><img loading="lazy" src="https://s2.ax1x.com/2019/10/29/KRVQMT.png" alt=""  />
+</p>
 <p>访问AlertManager页面也可以看到告警信息:</p>
-<p><img src="https://s2.ax1x.com/2019/10/29/KRV1LF.png" alt=""></p>
+<p><img loading="lazy" src="https://s2.ax1x.com/2019/10/29/KRV1LF.png" alt=""  />
+</p>
 <p>这里图例有些是演示用,与其他可能不存在关系.(不是同时截图的业务,图片仅供参考)</p>
-<h3 id="静默操作演示">静默操作演示</h3>
+<h3 id="静默操作演示">静默操作演示<a hidden class="anchor" aria-hidden="true" href="#静默操作演示">#</a></h3>
 <p>如果有些警报是我们调试的,例如我这里设置值偏低来演示ping值警报,如果我们测时候不想看到警报,可以通过静默来不让他总是发送警报.</p>
-<p><img src="https://s2.ax1x.com/2019/10/29/KRVlsU.md.png" alt=""></p>
-<p><img src="https://s2.ax1x.com/2019/10/29/KRV8Z4.md.png" alt=""></p>
+<p><img loading="lazy" src="https://s2.ax1x.com/2019/10/29/KRVlsU.md.png" alt=""  />
+</p>
+<p><img loading="lazy" src="https://s2.ax1x.com/2019/10/29/KRV8Z4.md.png" alt=""  />
+</p>
 <p>之后点击create 就可以创建此警报的静默操作.</p>
 <p><strong>也可以通过正则,警报组名,实例等来静默各种警报.</strong></p>
-<h2 id="定义通知模板">定义通知模板</h2>
+<h2 id="定义通知模板">定义通知模板<a hidden class="anchor" aria-hidden="true" href="#定义通知模板">#</a></h2>
 <p>默认模板我们看到了,他是默认的一个告警模板,在我们测试时候可以使用,如果面向用户使用者似乎这个模板不太友好.
 而且在面对多数据展示时,此模板也显得不是很清晰.</p>
 <p>通过定义了模板,在触发不同警报可以通过AlertManager中,receivers选项来选择模板.</p>
@@ -414,8 +419,9 @@ Prometheus引入文件的方式:</p>
 </span></span><span style="display:flex;"><span>&lt;/pre&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
 </span></span></code></pre></div><p>模板保存后,测试邮件接收情况:
-<img src="https://s2.ax1x.com/2019/10/29/KR89WF.png" alt=""></p>
-<h4 id="模板时区问题">模板时区问题</h4>
+<img loading="lazy" src="https://s2.ax1x.com/2019/10/29/KR89WF.png" alt=""  />
+</p>
+<h4 id="模板时区问题">模板时区问题<a hidden class="anchor" aria-hidden="true" href="#模板时区问题">#</a></h4>
 <p>Prometheus中所有时间都是UTC时间,为了便于我们展示友好时间(东八区),我们需要计算一下时间.
 修改模板时间:</p>
 <div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>&lt;td&gt;{{ ($alert.StartsAt.Add 28800e9).Format &#34;2006-01-02 15:04:05&#34; }}&lt;/td&gt;<span style="color:#bbb">
@@ -425,15 +431,19 @@ Prometheus引入文件的方式:</p>
 <a href="https://prometheus.io/docs/alerting/alertmanager/">prometheus.io</a></p>
 
 
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
+  </div>
 
-  </section>
-  
-  
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/aLong/tags/prometheus/">Prometheus</a></li>
+      <li><a href="http://localhost:1313/aLong/tags/alertmanager/">AlertManager</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
 
-</body>
 </html>

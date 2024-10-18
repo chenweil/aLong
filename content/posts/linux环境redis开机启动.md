@@ -2,6 +2,7 @@
 title: linux环境redis开机启动
 date: 2022-01-11 10:16:39
 tags: ["Redis","Linux"]
+type: "post"
 ---
 
 ## 前提

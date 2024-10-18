@@ -2,6 +2,7 @@
 title: M3DB笔记
 date: 2019-11-29 17:41:43
 tags: ["M3DB"]
+type: "post"
 ---
 
 

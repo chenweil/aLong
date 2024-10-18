@@ -2,6 +2,7 @@
 title: Ubutun下安装Docker
 date: 2019-04-04 14:57:16
 tags: ["Docker","Ubutun","Liunx"]
+type: "post"
 ---
 
 ### Docker简介

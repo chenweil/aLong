@@ -2,6 +2,7 @@
 title: 小米手环解锁MacOS系统笔记本MacBookPro
 date: 2021-05-21 16:51:23
 tags: ["xiaomi"]
+type: "post"
 ---
 
 ## 通过小米手环解锁笔记本

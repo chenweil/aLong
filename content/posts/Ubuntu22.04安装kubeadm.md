@@ -2,6 +2,7 @@
 title: "Ubuntu22.04安装kubeadm"
 date: 2023-01-11T16:30:47+08:00
 tags: ["Ubutun","Liunx","Kubernetes"]
+type: "post"
 ---
 
 # 学习k8s

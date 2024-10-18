@@ -2,6 +2,7 @@
 title: VMware安装MacOS系统
 date: 2019-08-12 11:29:38
 tags: ["VM","MacOs"]
+type: "post"
 ---
 
 ## 虚拟机安装 macOS

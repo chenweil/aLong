@@ -1,6 +1,7 @@
 ---
 title: "Arc"
 date: 2024-09-13T14:23:51+08:00
+type: "post"
 tags: [Tools]
 ---
 # 背景

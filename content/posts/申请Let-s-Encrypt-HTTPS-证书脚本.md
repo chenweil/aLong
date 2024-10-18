@@ -2,6 +2,7 @@
 title: 申请Let's Encrypt HTTPS 证书脚本
 date: 2020-06-24 13:33:18
 tags: ["SSL"]
+type: "post"
 ---
 
 ## 最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件

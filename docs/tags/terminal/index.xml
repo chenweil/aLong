@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>terminal on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/terminal/</link>
-    <description>Recent content in terminal on aLong blog</description>
+    <title>Terminal on aLong blog</title>
+    <link>http://localhost:1313/aLong/tags/terminal/</link>
+    <description>Recent content in Terminal on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jan 2020 08:13:10 +0000</lastBuildDate>
-    <atom:link href="https://blog.51ai.vip/aLong/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jan 2020 08:13:10 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac book pro 终端走代理配置</title>
-      <link>https://blog.51ai.vip/aLong/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</link>
+      <link>http://localhost:1313/aLong/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 20 Jan 2020 08:13:10 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</guid>
-      <description>mac 终端走ssr代理 前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。&#xA;看下自己ssr 代理端口号是多少 高级设置看下 本地Socks5监听端口 记住这个端口号。 后面： mac 现在默认终端是用的zsh 编辑 vi ～/.zshrc 在最后加入 //alias 后面的名字自己可以按照习惯定义， 比如我定义proxy 是 ss。 每当我需要时候 ss 一下就可以了。 不需要的时候执行第二句。&#xA;//端口按照你的来配置alias unproxy=&amp;#39;unset all_proxy&amp;#39; alias proxy=&amp;#39;export all_proxy=socks5://127.0.0.1:1086&amp;#39; 测试： 首先在没有走ss 的时候， curl cip.cc 得到一个国内的信息。 当使用ss之后， 再通过这个查询就可以看到变化了。&#xA;为了便捷，我觉得这个命令也可以设置成别名方式。&#xA;设置一个where 每次当我迷茫不知道自己出没出去的时候，就可以 输入where 看下。 alias where=&#39;curl cip.cc&#39;</description>
+      
+      <guid>http://localhost:1313/aLong/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;h3 id=&#34;mac-终端走ssr代理&#34;&gt;mac 终端走ssr代理&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;看下自己ssr 代理端口号是多少
+高级设置看下 本地Socks5监听端口
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.ax1x.com/2020/01/20/1PYNKs.png&#34; alt=&#34;高级设置&#34;  /&gt;
+
+&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.ax1x.com/2020/01/20/1PYabq.png&#34; alt=&#34;端口号&#34;  /&gt;
+
+记住这个端口号。
+后面：
+mac 现在默认终端是用的zsh
+编辑 &lt;code&gt;vi ～/.zshrc&lt;/code&gt;
+在最后加入
+//alias 后面的名字自己可以按照习惯定义， 比如我定义proxy 是 ss。 每当我需要时候 ss 一下就可以了。 不需要的时候执行第二句。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;//端口按照你的来配置alias unproxy&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;unset all_proxy&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;alias proxy&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;export all_proxy=socks5://127.0.0.1:1086&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;测试：
+首先在没有走ss 的时候， &lt;code&gt;curl cip.cc&lt;/code&gt; 得到一个国内的信息。
+当使用ss之后， 再通过这个查询就可以看到变化了。&lt;/p&gt;
+&lt;p&gt;为了便捷，我觉得这个命令也可以设置成别名方式。&lt;/p&gt;
+&lt;p&gt;设置一个where 每次当我迷茫不知道自己出没出去的时候，就可以 输入where 看下。
+&lt;code&gt;alias where=&#39;curl cip.cc&#39;&lt;/code&gt;&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

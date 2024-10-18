@@ -2,6 +2,7 @@
 title: "zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache"
 date: 2021-10-27 15:06:44
 Tags: ["zabbix"]
+type: "post"
 ---
 
 # zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache

@@ -2,32 +2,211 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/laravel/</link>
+    <link>http://localhost:1313/aLong/tags/laravel/</link>
     <description>Recent content in Laravel on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Aug 2019 10:01:03 +0000</lastBuildDate>
-    <atom:link href="https://blog.51ai.vip/aLong/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Aug 2019 10:01:03 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Laradock安装与使用</title>
-      <link>https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <link>http://localhost:1313/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
-      <description>Laradock 安装与使用 官网&#xA;GitHub: https://github.com/laradock/laradock&#xA;要求 Git Docker &amp;gt;= 17.12 项目的位置 已有项目情况: git submodule add https://github.com/Laradock/laradock.git 克隆到项目根目录. 结构 :&#xA;project-a laradock-a project-b laradock-b 没有项目情况: git clone https://github.com/laradock/laradock.git 克隆后,在同级部署项目. laradock project-x project-y 启动环境 clone下来还没有生成.&#xA;进入laradock目录,编辑Web服务器站点配置. cp env-exalpme .env 环境是laradock环境,里面可以对相应的版本,配置进行修改. 例如指定mysql版本为5.7 ,vim .env ,搜索到mysql部分, 修改MYSQL_VERSION=5.7.26 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)&#xA;例如我们需要启动环境需要 mysql,redis,nginx.&#xA;执行 docker-compose up -d nginx mysql redis&#xA;经过漫长等待后,可以得到我们想要的环境,通过 docker ps 或者 docker-compose ps 查看容器.&#xA;如果先生成容器,在之后编辑环境时,需要停掉容器,修改完 build之后 再start 容器. 例如修改nginx:&#xA;docker-compose stop nginx 修改.env 或者 nginx conf docker-compose build nginx (完全重建,加参数: &amp;ndash;no-cache) docker-compose start nginx Nginx 配置项目 我们再laradock中,进入nginx/sites/ 下.</description>
+      
+      <guid>http://localhost:1313/aLong/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;h3 id=&#34;laradock-安装与使用&#34;&gt;Laradock 安装与使用&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://laradock.io&#34;&gt;官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub: &lt;a href=&#34;https://github.com/laradock/laradock&#34;&gt;https://github.com/laradock/laradock&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;要求&#34;&gt;要求&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Git&lt;/li&gt;
+&lt;li&gt;Docker &amp;gt;= 17.12&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;项目的位置&#34;&gt;项目的位置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;已有项目情况: &lt;code&gt;git submodule add https://github.com/Laradock/laradock.git&lt;/code&gt; 克隆到项目根目录.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;结构 :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;project-a&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;laradock-a&lt;/li&gt;
+&lt;li&gt;project-b
+&lt;ul&gt;
+&lt;li&gt;laradock-b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;没有项目情况: &lt;code&gt;git clone https://github.com/laradock/laradock.git&lt;/code&gt; 克隆后,在同级部署项目.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;laradock&lt;/li&gt;
+&lt;li&gt;project-x&lt;/li&gt;
+&lt;li&gt;project-y&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;启动环境&#34;&gt;启动环境&lt;/h3&gt;
+&lt;p&gt;clone下来还没有生成.&lt;/p&gt;
+&lt;p&gt;进入laradock目录,编辑Web服务器站点配置. &lt;code&gt;cp env-exalpme .env&lt;/code&gt;
+环境是laradock环境,里面可以对相应的版本,配置进行修改.
+例如指定mysql版本为5.7 ,&lt;code&gt;vim .env&lt;/code&gt; ,搜索到mysql部分, 修改&lt;strong&gt;MYSQL_VERSION=5.7.26&lt;/strong&gt; 保存退出.(这里还没生成容器前可以统一配置好需要的环境,再生成容器.)&lt;/p&gt;
+&lt;p&gt;例如我们需要启动环境需要 mysql,redis,nginx.&lt;/p&gt;
+&lt;p&gt;执行 docker-compose up -d nginx mysql redis&lt;/p&gt;
+&lt;p&gt;经过漫长等待后,可以得到我们想要的环境,通过 docker ps 或者 docker-compose ps 查看容器.&lt;/p&gt;
+&lt;p&gt;如果先生成容器,在之后编辑环境时,需要停掉容器,修改完 build之后 再start 容器.
+例如修改nginx:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;docker-compose stop nginx&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;修改.env 或者 nginx conf&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose build nginx&lt;/code&gt; (完全重建,加参数: &amp;ndash;no-cache)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose start nginx&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;nginx-配置项目&#34;&gt;Nginx 配置项目&lt;/h3&gt;
+&lt;p&gt;我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>数据库迁移</title>
-      <link>https://blog.51ai.vip/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link>
+      <link>http://localhost:1313/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link>
       <pubDate>Fri, 26 Jul 2019 14:30:25 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid>
-      <description>Laravel5 数据库迁移笔记 创建迁移文件 命令: make:migration&#xA;举例: php artisan make:migration create_users_table --create=users&#xA;生成位置: 项目/database/migrations/下 文件名已时间开头,后面是自己创建迁移文件名字.&#xA;&amp;ndash;creat 指定数据库中表的名字&#xA;编辑迁移文件 打开迁移文件:&#xA;use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateUsersTable extends Migration { /** * Run the migrations. * * @return void */ public function up() { Schema::create(&amp;#39;users&amp;#39;, function (Blueprint $table) { $table-&amp;gt;bigIncrements(&amp;#39;id&amp;#39;); $table-&amp;gt;string(&amp;#39;name&amp;#39;); $table-&amp;gt;string(&amp;#39;email&amp;#39;)-&amp;gt;unique(); $table-&amp;gt;timestamp(&amp;#39;email_verified_at&amp;#39;)-&amp;gt;nullable(); $table-&amp;gt;string(&amp;#39;password&amp;#39;); $table-&amp;gt;rememberToken(); $table-&amp;gt;timestamps(); }); } /** * Reverse the migrations. * * @return void */ public function down() { Schema::dropIfExists(&amp;#39;users&amp;#39;); } } 文件中有两个方法,up/down .</description>
+      
+      <guid>http://localhost:1313/aLong/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid>
+      <description>&lt;h2 id=&#34;laravel5-数据库迁移笔记&#34;&gt;Laravel5 数据库迁移笔记&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3 id=&#34;创建迁移文件&#34;&gt;创建迁移文件&lt;/h3&gt;
+&lt;p&gt;命令: &lt;code&gt;make:migration&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;举例: &lt;code&gt;php artisan make:migration create_users_table --create=users&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;生成位置: 项目/database/migrations/下 文件名已时间开头,后面是自己创建迁移文件名字.&lt;/p&gt;
+&lt;p&gt;&amp;ndash;creat 指定数据库中表的名字&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h3 id=&#34;编辑迁移文件&#34;&gt;编辑迁移文件&lt;/h3&gt;
+&lt;p&gt;打开迁移文件:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;use&lt;/span&gt; Illuminate\Support\Facades\Schema;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;use&lt;/span&gt; Illuminate\Database\Schema\Blueprint;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;use&lt;/span&gt; Illuminate\Database\Migrations\Migration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#00f;font-weight:bold&#34;&gt;CreateUsersTable&lt;/span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;extends&lt;/span&gt; Migration
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       &lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;        * Run the migrations.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;        *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;        * @return void
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;        */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#00f&#34;&gt;up&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;           Schema&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;create&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;users&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;function&lt;/span&gt; (Blueprint &lt;span style=&#34;color:#19177c&#34;&gt;$table&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#19177c&#34;&gt;$table&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;bigIncrements&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#19177c&#34;&gt;$table&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;string&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#19177c&#34;&gt;$table&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;string&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;email&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;unique&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#19177c&#34;&gt;$table&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;timestamp&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;email_verified_at&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;nullable&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#19177c&#34;&gt;$table&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;string&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#19177c&#34;&gt;$table&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;rememberToken&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#19177c&#34;&gt;$table&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;timestamps&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;           });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       &lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;        * Reverse the migrations.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;        *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;        * @return void
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ba2121;font-style:italic&#34;&gt;        */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#00f&#34;&gt;down&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;           Schema&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;dropIfExists&lt;/span&gt;(&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;users&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;文件中有两个方法,up/down . 可以理解为创建执行时up方法,rollback时候是执行down方法.
+
+up方法中:
+    创建了7个字段,表明为 users.
+    
+    创建字段操作 `$table-&amp;gt;` 后面加上字段类型 `string` ,指定字段名称`(&amp;#39;name&amp;#39;)` 字段被指 `-&amp;gt;comment(&amp;#39;名子&amp;#39;)`; 
+    
+    具体每个字段类型,以及其他属性定义,请查询手册.
+    
+
+
+* ### 执行迁移文件
+
+  这个迁移文件是创建表,所以down是删除表.也就是当我们执行 `php artisan migrate:rollback` 回滚到上一步就是把这表删除(前提创建之后).
+
+  执行命令: `php artisan migrate` 执行迁移文件创建表单.
+  
+  如果我们后悔创建:可以执行回滚. `php artisan migrate:rollback `  --step 指定回滚次数 `php artisan migrate:rollback --step=2` 执行回滚迁移2次钱.
+  
+  `php artisan migrate:reset` 回滚所有迁移
+  
+  `php artisan migrate:fresh` 删除所有回滚
+  
+  
+* ### 为前迁移文件修改字段,改名.
+当我们上面的文件执行后,需要增加一个字段,那么就需要新建一个迁移文件.不要直接操作数据库.
+
+    `php artisan make:migration add_id_to_users_table --table=users` 
+    
+    这里为users表新增身份证字段.
+    
+    打开文件 新建身份证id列. 
+    
+    之后我们执行迁移文件.成功后就能看到新得ID字段已经出现.对于编辑和修改都可以.
+
+    `$table-&amp;gt;renameColumn(&amp;#39;ID&amp;#39;, &amp;#39;id&amp;#39;)` 改名id
+    
+    对应dorop 也需要dropColumn 此字段.
+    
+    最后执行此迁移文件.
+
+
+    
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
+    
     <item>
       <title>Composer笔记</title>
-      <link>https://blog.51ai.vip/aLong/posts/composer%E7%AC%94%E8%AE%B0/</link>
+      <link>http://localhost:1313/aLong/posts/composer%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 15 Jul 2019 17:24:45 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/composer%E7%AC%94%E8%AE%B0/</guid>
-      <description>composer - laravel5 创建laravel项目： conposer create-project laravel/laravel=5.8.* --prefer-dist ./XXX&#xA;laravel=5.8.* 这里代表要部署5.8中最高版本 &amp;ndash;prefer-dist 参数代表优先下载zip&#xA;安装vendor: composer install&#xA;composer install --prefer-dist&#xA;更新： composer update&#xA;composer版本更新： composer self-update&#xA;利用composer 创建laravel控制器： php artisan make:controller HomeController 会在http下 创建一Home的控制器&#xA;如果存在分目录情况，需要指定目录： php artisan make:controller Home/HomeController&#xA;Laravel config: 编写一些类的别名，controller中 use 简短的别名为目的。&#xA;位置：config/app 存在一数组 aliases 在里面添加&#xA;创建模型： 创建一个user 的model&#xA;php artisan make:model User&#xA;指定目录加入目录即可&#xA;获取项目路由： php artisan route:list&#xA;composer在项目中安装三方库时候出现报错： 执行命令： composer Install&#xA;返回错误： Your requirements could not be resolved to an installable set of packages.</description>
+      
+      <guid>http://localhost:1313/aLong/posts/composer%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h3 id=&#34;composer---laravel5&#34;&gt;composer - laravel5&lt;/h3&gt;
+&lt;h4 id=&#34;创建laravel项目&#34;&gt;创建laravel项目：&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;conposer create-project laravel/laravel=5.8.* --prefer-dist  ./XXX&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;laravel=5.8.* 这里代表要部署5.8中最高版本   &amp;ndash;prefer-dist  参数代表优先下载zip&lt;/p&gt;
+&lt;h4 id=&#34;安装vendor&#34;&gt;安装vendor:&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;composer install&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;composer install --prefer-dist&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;更新&#34;&gt;更新：&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;composer update&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;composer版本更新&#34;&gt;composer版本更新：&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;composer self-update&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;利用composer-创建laravel控制器&#34;&gt;利用composer 创建laravel控制器：&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;php artisan make:controller HomeController&lt;/code&gt;
+会在http下 创建一Home的控制器&lt;/p&gt;
+&lt;p&gt;如果存在分目录情况，需要指定目录：
+&lt;code&gt;php artisan make:controller Home/HomeController&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;laravel-config&#34;&gt;Laravel config:&lt;/h4&gt;
+&lt;p&gt;编写一些类的别名，controller中 use 简短的别名为目的。&lt;/p&gt;
+&lt;p&gt;位置：config/app    存在一数组 aliases  在里面添加&lt;/p&gt;
+&lt;h4 id=&#34;创建模型&#34;&gt;创建模型：&lt;/h4&gt;
+&lt;p&gt;创建一个user 的model&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;php artisan make:model User&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;指定目录加入目录即可&lt;/p&gt;
+&lt;h4 id=&#34;获取项目路由&#34;&gt;获取项目路由：&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;php artisan route:list&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;composer在项目中安装三方库时候出现报错&#34;&gt;composer在项目中安装三方库时候出现报错：&lt;/h4&gt;
+&lt;p&gt;执行命令： &lt;code&gt;composer Install&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;返回错误： Your requirements could not be resolved to an installable set of packages.&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

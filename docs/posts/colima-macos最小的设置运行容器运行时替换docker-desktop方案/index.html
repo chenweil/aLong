@@ -1,72 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.122.0">
-  
-  <meta name="description" content="Colima GitHub
-Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。
-Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：
-由于它只是一个容器运行时，因此相对于 Docker Desktop，它的安装和启动速度更快，所需的资源更少。 它使用了轻量级的虚拟化技术，例如 HyperKit 和 VPNKit，以提高容器的性能和安全性。 Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动、停止、删除容器，以及执行其他常见操作。 它还提供了一些有用的功能，例如在本地浏览器中打开容器中运行的应用程序、自动重启容器等。 总的来说，Colima 是一个轻量级、易于使用的容器运行时，旨在为开发者提供一种更快、更安全的容器环境，使得开发和测试容器应用程序变得更加轻松。
-安装 在 macOS 上安装 Colima 很简单，只需要执行以下几个步骤：
-首先，您需要打开终端并使用 Homebrew 包管理器安装 Colima。如果您没有安装 Homebrew，请先安装 Homebrew： /bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
-安装 Colima： brew install colima
-安装完成后，您可以使用 colima 命令来启动 Colima： colima start
-如果您想停止 Colima，可以使用以下命令： colima stop
-要卸载 Colima，请运行以下命令： brew uninstall colima
-安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。
-docker交互 启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 docker 命令来管理容器。">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<html lang="en" dir=" auto">
 
-  <title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案 | aLong blog</title>
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
 </head>
 
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    aLong
-  </h1>
-  <h2 class="project-tagline">
-    Hello world
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/aLong/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/aLong/tags/" class="btn">Tags</a>
-    
-  </nav>
-</section>
+<body class="" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-  <section class="main-content">
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
     
-  <h1>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</h1>
-  <h1 id="colima">Colima</h1>
+    <h1 class="post-title entry-hint-parent">
+      Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案
+    </h1>
+    <div class="post-meta"><span title='2023-04-07 19:33:25 +0800 CST'>2023-04-07</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="colima">Colima<a hidden class="anchor" aria-hidden="true" href="#colima">#</a></h1>
 <p><a href="https://github.com/abiosoft/colima">GitHub</a></p>
 <p>Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。</p>
 <p>Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：</p>
@@ -75,7 +69,7 @@ docker交互 启动 Colima 后，您可以使用 Docker CLI 与容器交互。�
 Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动、停止、删除容器，以及执行其他常见操作。
 它还提供了一些有用的功能，例如在本地浏览器中打开容器中运行的应用程序、自动重启容器等。
 总的来说，Colima 是一个轻量级、易于使用的容器运行时，旨在为开发者提供一种更快、更安全的容器环境，使得开发和测试容器应用程序变得更加轻松。</p>
-<h2 id="安装">安装</h2>
+<h2 id="安装">安装<a hidden class="anchor" aria-hidden="true" href="#安装">#</a></h2>
 <p>在 macOS 上安装 Colima 很简单，只需要执行以下几个步骤：</p>
 <ul>
 <li>
@@ -96,7 +90,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 </ul>
 <p><code>brew uninstall colima</code></p>
 <p>安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。</p>
-<h2 id="docker交互">docker交互</h2>
+<h2 id="docker交互">docker交互<a hidden class="anchor" aria-hidden="true" href="#docker交互">#</a></h2>
 <p>启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 <code>docker</code> 命令来管理容器。</p>
 <p>以下是一些基本的 Docker CLI 命令：</p>
 <ul>
@@ -113,7 +107,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 <p>bash</p>
 <div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#008000">eval</span> <span style="color:#ba2121">&#34;</span><span style="color:#008000;font-weight:bold">$(</span>colima env<span style="color:#008000;font-weight:bold">)</span><span style="color:#ba2121">&#34;</span>
 </span></span></code></pre></div><p>此命令将设置环境变量，使得 <code>docker</code> 命令指向 Colima 虚拟机中的 Docker 服务。在执行此命令后，您就可以直接使用 <code>docker</code> 命令来管理 Colima 中的容器了。</p>
-<h2 id="colima-部分操作命令说明">Colima 部分操作命令说明</h2>
+<h2 id="colima-部分操作命令说明">Colima 部分操作命令说明<a hidden class="anchor" aria-hidden="true" href="#colima-部分操作命令说明">#</a></h2>
 <p>以下是一些常见的 Colima CLI 命令及其说明：</p>
 <ul>
 <li><code>colima start</code> - 启动 Colima 容器运行时。</li>
@@ -126,10 +120,11 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 <li><code>colima doctor</code> - 运行诊断程序以检查 Colima 容器运行时的配置和设置是否正确。</li>
 <li><code>colima web</code> - 在本地浏览器中打开容器中运行的应用程序。</li>
 </ul>
-<p><img src="https://i.imgur.com/isS4jKa.png" alt="isS4jKa"></p>
+<p><img loading="lazy" src="https://i.imgur.com/isS4jKa.png" alt="isS4jKa"  />
+</p>
 <p>比如你想修改docker源的地址，可以通过<code>colima ssh</code> 进去之后，编辑 Docker 的配置文件 <code>/etc/docker/daemon.json</code>。</p>
 <p>除了以上列出的常见命令外，Colima 还提供了许多其他有用的命令和选项。您可以使用 <code>colima --help</code> 命令来查看完整的命令列表和选项说明。</p>
-<h2 id="colima自定义虚拟机">Colima自定义虚拟机</h2>
+<h2 id="colima自定义虚拟机">Colima自定义虚拟机<a hidden class="anchor" aria-hidden="true" href="#colima自定义虚拟机">#</a></h2>
 <p>Colima 使用虚拟机技术来提供容器运行时环境。默认情况下，Colima 会自动创建和配置虚拟机。但是，如果您需要更改虚拟机的配置或行为，可以使用以下命令来配置 Colima 的虚拟机：</p>
 <ul>
 <li><code>colima config set</code> - 设置指定的 Colima 配置项。</li>
@@ -151,21 +146,26 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 </span></span></code></pre></div><p>完成以上命令后，重新启动 Colima 容器运行时即可使设置生效：</p>
 <p><code>colima restart</code></p>
 <p>您可以使用 <code>colima config get</code> 命令来查看当前的 Colima 配置项值。如果需要删除某个配置项，可以使用 <code>colima config unset</code> 命令。如果需要查看所有 Colima 配置项的当前值，可以使用 <code>colima config inspect</code> 命令。</p>
-<h2 id="重启电脑后">重启电脑后</h2>
+<h2 id="重启电脑后">重启电脑后<a hidden class="anchor" aria-hidden="true" href="#重启电脑后">#</a></h2>
 <p>重启电脑后，需要先启动colima的之前创建的虚拟机。 默认启动上次关闭的虚拟机。 <code>colima staer</code> 启动之后，就可以进行docker的操作了。</p>
 <p>完结
 祝好～</p>
 
 
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
+  </div>
 
-  </section>
-  
-  
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/aLong/tags/docker/">Docker</a></li>
+      <li><a href="http://localhost:1313/aLong/tags/container/">Container</a></li>
+      <li><a href="http://localhost:1313/aLong/tags/macos/">MacOS</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
 
-</body>
 </html>

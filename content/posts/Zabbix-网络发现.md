@@ -2,6 +2,7 @@
 title: Zabbix6 网络发现
 date: 2022-01-14 10:15:53
 tags: ["Zabbix"]
+type: "post"
 ---
 
 Zabbix6 网络发现

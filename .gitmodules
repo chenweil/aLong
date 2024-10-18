@@ -1,3 +1,9 @@
 [submodule "cayman-hugo-theme"]
 path = themes/cayman-hugo-theme
 url = https://github.com/zwbetz-gh/cayman-hugo-theme.git
+[submodule "themes/devise"]
+	path = themes/devise
+	url = https://github.com/austingebauer/devise.git
+[submodule "themes/gokarna"]
+	path = themes/gokarna
+	url = https://github.com/526avijitgupta/gokarna.git

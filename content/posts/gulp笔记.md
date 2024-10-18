@@ -2,6 +2,7 @@
 title: gulp笔记
 date: 2019-04-22 18:08:54
 tags: ["gulp"]
+type: "post"
 ---
 
 ### gulp

@@ -1,98 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.122.0">
-  
-  <meta name="description" content="Tools">
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://blog.51ai.vip/aLong/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<html lang="en" dir=" auto">
 
-  <title>Tools | aLong blog</title>
+<head><script src="/aLong/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aLong/livereload" data-no-instant defer></script>
 </head>
 
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    aLong
+<body class=" list" id="
+    top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/aLong/" accesskey="h" title="aLong blog (Alt + H)">aLong blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Tools
   </h1>
-  <h2 class="project-tagline">
-    Hello world
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/aLong/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/aLong/tags/" class="btn">Tags</a>
-    
-  </nav>
-</section>
+</header>
 
-  <section class="main-content">
-    
-<h1>Tools</h1>
-<ul>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Snapbox
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>一款macOS的APP app网站 : https://snapbox.app/
+我在v2ex上看到此贴.
+作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.
+看起来像是spotlight,raycast这种工具的方式启动,调出后实现与AI的一系列操作. 比如翻译、对话、优化内容等工作.
+支持ollama和服务提供商API.
+配置内容简单,支持prompt.
+接入配置 呼出主界面时,进入 settings.
+设置界面中的 SELECT PROVIDER中选择模型的厂商.
+我这里配置过Ollama和Custom Endpoint.Custom Endpoint我选择了 siliconflow.
+配置时,输入完 CUSTOM ENDPOINT URL 和 ** CUSTOM ENDPOINT API KEY**后可以获取模型.
+勾选自己使用的模型名字即可.如果API服务商不支持获取可以自己点击&#43;号添加.
+功能演示 我觉得此软件的特色是:
+此软件支持全局快捷键,呼出程序,快捷进入某特定prompt等.
+选择文字后会被程序捕获. 免去了复制粘贴.
+常规对话 复制粘贴、打字与AI交互. 快捷上支持重新生成、继续、继续输入.
+放个视频演示:
+https://watch.wave.video/6UP7usIlnYJ9vC0B
+Reactor 模式 此模式是监听你的指针选择,剪切板内容.快速响应.
+放个视频演示:
+https://watch.wave.video/KRjgWJQ5nJmSj0yX
+最后 看到作者仅用几天时间借助大模型开发出一个功能丰富的app，令人惊叹。
+既体现了大模型的强大能力，也展示了作者高超的开发技巧和创新思维。
+反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。
+展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。
+完结~ 感谢观看
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-09-14 10:42:26 +0800 CST'>2024-09-14</span></footer>
+  <a class="entry-link" aria-label="post link to Snapbox" href="http://localhost:1313/aLong/posts/snapbox/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Arc
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>背景 使用arc浏览器作为主力之前,更喜欢chrome.
+也考虑edge替代朴素的chrome.事与愿违,在后面使用中edge变越越来越不喜欢的东西.
+加入了很多我不喜欢、不去用的功能展示在界面上. 后面我就没继续使用了,不评价edge的好坏.我不喜欢用它.
+后面看到arc,也是简单尝试了一下,后面我觉得不错的菜就换成了主力.
+喜欢的功能 下面我介绍一下我使用这个arc浏览器喜欢的点.
+space 在每个Space可放不同的标签,做到了管理和分类. 同时还可以定制颜色,样式.
+可以根据不同账号(profile)分配不同的会话信息. 也就是一个浏览器不同space区分账号.满足挂小号、测试等需要多身份在同一个浏览器访问.
+如上图,我新建了一个along的profile,创建了一个space. 在访问linux.do时,如图.如果我有小号就可以这么搞拉.
+Easel 我用这个功能很简单,就是看下动态信息. 比如你想一些动态信息,但又不需要整个页面,是不是想把局部拿出来. 白板可以的,你截取某网页部分放到白板里,开启就可以实现.
+上面是我自己创建的两个页面. 这俩一个是没事看看模型排行. 另一个是关注自己的其他信息.
+可能图片不能直观解释这个用途.放个动图,看那个时间的变化:
+当我想看周刊我就直接在这里点就好了,不需要单独打开此网站去查看这个列表,美滋滋.
+我能想到画架的用途还有: 头脑风暴、协作、笔记、可视化信息、素材灵感搜集、整理内容、组织结构.
+这些做完可以分享.
+Boost 这个功能可更改网页一些元素的颜色，字体类型、字体大小等. 还是以佬友为例:
+主题是默认,我通过boost功能将颜色、字体、英文文字是蛇形、全大写、全小写的配置来自定义一下.
+boost中我最喜欢的是zap. 可以隐藏掉自己不喜欢的页面元素.
+继续以佬友为例: 点击zap后,可以选择页面元素.
+当选择元素后点击 zap this 就可以干掉他.
+这是隐藏掉一些页面元素后的样子.
+Favorite 这是左上角那部分内容,做多可以放12个块.块支持split的组合tab.特定适配过的还有奇效,比如gmail、outlook、slack等等等. 我把常用的网站放在这里,佬友有消息提示,这icon上会有标记的.以便我打开查看消息.
+Split 通过简单拖拽,可实现tab的分屏. 新打开一个网页想和当前tab做分屏,点击链接时按住option就实现了分屏.
+能分能拆,用起来体验不错.但有一点不太好,就是在分屏中关闭的tab就没了.只能重新pinned.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-09-13 14:23:51 +0800 CST'>2024-09-13</span></footer>
+  <a class="entry-link" aria-label="post link to Arc" href="http://localhost:1313/aLong/posts/arc/"></a>
+</article>
 
-  <li>
-    
-    2024-09-14
-    <a href="https://blog.51ai.vip/aLong/posts/snapbox/">
-      Snapbox
-    </a>
-  </li>        
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SwitchHosts管理编辑hosts工具
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>管理Hosts工具 SwitchHosts 地址: SwitchHosts
+开发工程中,针对不同项目设置不同的域名.
+办法很多,例如直接编辑hosts文件,通过环境工具提供的功能设置等.
+现在要安利一款便捷实用的工具. SwitchHosts!!
+为什么,首先这工具是多平台支持的,我们可以在不同系统中使用.如果之前是靠编辑hosts文件的话,那不同的hosts位置还需要记忆一下,当然这也算不了什么难事.
+他的有点不在于能简单编辑hosts文件,也有之前的记录,还可以通过url来读取云端的hosts信息.导入导出功能等. 总之又可以偷懒了.
+主界面:
+我们可以编辑不同host 分组,使用时打开开关按钮即可使用.
+示例中使用的My hosts中的配置
+配置界面:
+支持中文,主题黑白两色.
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-08-14 09:41:55 +0000 UTC'>2019-08-14</span></footer>
+  <a class="entry-link" aria-label="post link to SwitchHosts管理编辑hosts工具" href="http://localhost:1313/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/"></a>
+</article>
+    </main>
+    <footer>
+    // ... 其他页脚内容 ...
+    <a href="http://localhost:1313/aLong/index.xml">订阅RSS</a>
+</footer></body>
 
-  <li>
-    
-    2024-09-13
-    <a href="https://blog.51ai.vip/aLong/posts/arc/">
-      Arc
-    </a>
-  </li>        
-
-  <li>
-    
-    2019-08-14
-    <a href="https://blog.51ai.vip/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/">
-      SwitchHosts管理编辑hosts工具
-    </a>
-  </li>        
-
-</ul>
-
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployed to <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
-
-  </section>
-  
-  
-
-</body>
 </html>

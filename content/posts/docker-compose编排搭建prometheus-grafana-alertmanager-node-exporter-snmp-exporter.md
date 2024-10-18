@@ -2,6 +2,7 @@
 title: docker-compose编排搭建prometheus+grafana+alertmanager+node-exporter+snmp-exporter
 date: 2020-11-17 13:02:50
 tags: ["Prometheus","Grafana"]
+type: "post"
 ---
 
 ## Docker-compose

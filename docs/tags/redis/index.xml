@@ -2,25 +2,189 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Redis on aLong blog</title>
-    <link>https://blog.51ai.vip/aLong/tags/redis/</link>
+    <link>http://localhost:1313/aLong/tags/redis/</link>
     <description>Recent content in Redis on aLong blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jan 2022 10:16:39 +0000</lastBuildDate>
-    <atom:link href="https://blog.51ai.vip/aLong/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 10:16:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux环境redis开机启动</title>
-      <link>https://blog.51ai.vip/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link>
+      <link>http://localhost:1313/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link>
       <pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid>
-      <description>前提 系统部署在ubuntu20.04中，用到redis数据库。 但是测试时候，设备重启发现redis服务没有启动。 由于是变异安装的，系统找不到redis.service。&#xA;解决方案 系统添加服务文件，并执行。&#xA;编写文件 文件路径/usr/lib/systemd/system&#xA;编写文件 vi /usr/lib/systemd/system/redis.service&#xA;[Unit] #服务描述 Description=Redis persistent key-value database #服务依赖 After=network.target After=network-online.target Wants=network-online.target [Service] #启动 命令 ExecStart=/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no #停止命令 ExecStop=/home/monitor/redis-6.0.8/src/redis-cli shutdown # Restart=always #服务类型 Type=forking #User=redis #Group=redis RuntimeDirectory=redis RuntimeDirectoryMode=0755 [Install] #服务安装设置 WantedBy=multi-user.target 服务配置文件分为[Unit]、[Service]和[Install]三部分。 具体详细的解释需要结合linux知识补充。&#xA;服务生效 系统重新读取所有服务文件： systemctl daemon-reload 启用/禁用开机自启动: systemctl enable/disable redis 启动/重启redis： systemctl start/restart redis</description>
+      
+      <guid>http://localhost:1313/aLong/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid>
+      <description>&lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
+&lt;p&gt;系统部署在ubuntu20.04中，用到redis数据库。
+但是测试时候，设备重启发现redis服务没有启动。
+由于是变异安装的，系统找不到redis.service。&lt;/p&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;解决方案&lt;/h2&gt;
+&lt;p&gt;系统添加服务文件，并执行。&lt;/p&gt;
+&lt;h3 id=&#34;编写文件&#34;&gt;编写文件&lt;/h3&gt;
+&lt;p&gt;文件路径&lt;code&gt;/usr/lib/systemd/system&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;编写文件 &lt;code&gt;vi /usr/lib/systemd/system/redis.service&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;[Unit]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#服务描述&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;Description&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;Redis persistent key-value database&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#服务依赖&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;After&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;network.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;After&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;network-online.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;Wants&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;network-online.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;[Service]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#启动 命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;ExecStart&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#停止命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;ExecStop&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;/home/monitor/redis-6.0.8/src/redis-cli shutdown&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;Restart&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;always&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#服务类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;Type&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;forking&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#User=redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#Group=redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;RuntimeDirectory&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;RuntimeDirectoryMode&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;0755&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;[Install]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#服务安装设置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#7d9029&#34;&gt;WantedBy&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ba2121&#34;&gt;multi-user.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;服务配置文件分为[Unit]、[Service]和[Install]三部分。
+具体详细的解释需要结合linux知识补充。&lt;/p&gt;
+&lt;h3 id=&#34;服务生效&#34;&gt;服务生效&lt;/h3&gt;
+&lt;p&gt;系统重新读取所有服务文件： &lt;code&gt;systemctl daemon-reload&lt;/code&gt;
+启用/禁用开机自启动: &lt;code&gt;systemctl enable/disable redis&lt;/code&gt;
+启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>redis笔记</title>
-      <link>https://blog.51ai.vip/aLong/posts/redis%E7%AC%94%E8%AE%B0/</link>
+      <link>http://localhost:1313/aLong/posts/redis%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 25 Apr 2019 17:12:52 +0000</pubDate>
-      <guid>https://blog.51ai.vip/aLong/posts/redis%E7%AC%94%E8%AE%B0/</guid>
-      <description>redis笔记 单进程,默认16库,&#xA;select N 切换库&#xA;flushdb 清空库&#xA;类型 string 字符串 list 列表 set 集合 sorted set有序集合 hash哈希 一个字符串支持512M&#xA;有序集合 每个元素会关联一个double类型分数。成员唯一，分数可以重复。&#xA;常用命令 key： keys * exists key move key db 移除key 从库中 expire key 为key 设置过期时间 ttl key 查看多少秒过期，-1 永不过期， -2已过期 type key 查看类型 del key 删除 string： getrange key 0-N setrange key 0-N XXX 获取字符串范围内容， 设置范围内为XXX&#xA;setex 设置生命值多少秒 setnx key 设置一个不存在的key&#xA;mset mget msetnx&#xA;list： lpush rpush lrange lpop rpop lindex llen lrem key 2 value 删除2个value ltrim key 0-N 截取并复制给key （其他的删除了） rpoplpush 弹出前面key的值 加入后面的key中 lset key index value 设置key中 index下标的值 linsert key before/afrer value1 value2 key中1值得前面后后面加入2值 set： sadd key value 添加到key集合 smembers key 查询集合 sismember key m 查询m是否在key集合中 scard key 集合ket的基数 spop key 随机移除一个元素并返回元素的值 srem key m 移除m从key的集合中 smove K1 K2 m 将k1的m一刀k2里 sinter key1 key2 交集 sunion key1 key2 并集 sdiff key1 key2 差集 hash： hset user name ali hset user age 33 设置user数据 hget user name 获取user.</description>
+      
+      <guid>http://localhost:1313/aLong/posts/redis%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;redis笔记&#34;&gt;redis笔记&lt;/h2&gt;
+&lt;p&gt;单进程,默认16库,&lt;/p&gt;
+&lt;p&gt;select  N  切换库&lt;/p&gt;
+&lt;p&gt;flushdb 清空库&lt;/p&gt;
+&lt;h3 id=&#34;类型&#34;&gt;类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;string 字符串&lt;/li&gt;
+&lt;li&gt;list 列表&lt;/li&gt;
+&lt;li&gt;set 集合&lt;/li&gt;
+&lt;li&gt;sorted set有序集合&lt;/li&gt;
+&lt;li&gt;hash哈希&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个字符串支持512M&lt;/p&gt;
+&lt;p&gt;有序集合 每个元素会关联一个double类型分数。成员唯一，分数可以重复。&lt;/p&gt;
+&lt;h3 id=&#34;常用命令&#34;&gt;常用命令&lt;/h3&gt;
+&lt;h5 id=&#34;key&#34;&gt;key：&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;keys *
+  
+exists key
+
+move key db  移除key 从库中
+
+expire key 为key 设置过期时间
+
+ttl key 查看多少秒过期，-1 永不过期， -2已过期
+
+type key 查看类型
+
+del key 删除
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;string&#34;&gt;string：&lt;/h3&gt;
+&lt;p&gt;getrange key 0-N  setrange key 0-N XXX   获取字符串范围内容， 设置范围内为XXX&lt;/p&gt;
+&lt;p&gt;setex 设置生命值多少秒  setnx key 设置一个不存在的key&lt;/p&gt;
+&lt;p&gt;mset mget msetnx&lt;/p&gt;
+&lt;h3 id=&#34;list&#34;&gt;list：&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;lpush rpush lrange
+ 
+lpop rpop
+ 
+lindex
+ 
+llen
+
+lrem key 2 value 删除2个value
+ 
+ltrim key 0-N  截取并复制给key （其他的删除了）
+
+rpoplpush  弹出前面key的值 加入后面的key中
+
+lset key index value 设置key中 index下标的值
+
+linsert key before/afrer value1 value2 key中1值得前面后后面加入2值 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;set&#34;&gt;set：&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;sadd  key value 添加到key集合
+
+smembers key 查询集合  
+
+sismember key m  查询m是否在key集合中
+
+scard key 集合ket的基数
+
+spop key 随机移除一个元素并返回元素的值
+
+srem key m 移除m从key的集合中
+
+smove K1 K2 m  将k1的m一刀k2里
+
+sinter key1 key2 交集
+
+sunion key1 key2 并集
+
+sdiff key1 key2 差集 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;hash&#34;&gt;hash：&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;hset user name ali 
+
+hset user age 33     设置user数据
+
+hget user name  获取user.name
+
+hmset  human name tom age 44  设置多数据
+
+hmget human name age  获取多数据
+
+hgetall human  
+
+hdel human  name 删除name
+
+hlen human 长度
+
+hexists human age 是否存在
+
+hkeys human 获取所有key 
+
+hvals  human 获取所有value 
+
+hincrby  hincrbyfloat   
+
+hsetnx 不存在添加
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;zset&#34;&gt;zset：&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;zadd key value：score 设置值的分数
+
+zrange key 
+
+zrangebyscore key  min max      （不包含   limit   升序
+
+zrevrangebyscore 降序
+
+zrem key value 
+
+zcount key min max  范围内多少个
+
+zscore key m 返回key 中m的分数值
+
+zrevrange key start stop 降序展示
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;持久化&#34;&gt;持久化：&lt;/h3&gt;
+&lt;h4 id=&#34;rdb-aof&#34;&gt;rdb aof&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;rdb&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Socket on aLong Blog</title><link>http://localhost:1313/aLong/tags/socket/</link><description>Recent content in Socket on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Jun 2019 10:23:11 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/socket/index.xml" rel="self" type="application/rss+xml"/><item><title>Python建立SocketSSL连接</title><link>http://localhost:1313/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link><pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate><guid>http://localhost:1313/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid><description>&lt;h3 id="python-socket连接">Python Socket连接&lt;/h3>
+&lt;p>5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.&lt;/p>
+&lt;p>这块没接触,Python也是hello world水平.&lt;/p>
+&lt;p>赶紧恶补一下:&lt;/p>
+&lt;p>Socket是网络编程的一个抽象概念。&lt;/p>
+&lt;p>通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。&lt;/p>
+&lt;p>服务端我也不知道什么样,这里只记录客户端的相关.&lt;/p>
+&lt;p>这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.&lt;/p>
+&lt;h4 id="非ssl的socket">非ssl的socket:&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> socket
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建一个socket:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>socket(socket&lt;span style="color:#f92672">.&lt;/span>AF_INET, socket&lt;span style="color:#f92672">.&lt;/span>SOCK_STREAM)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 建立连接:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>connect((&lt;span style="color:#e6db74">&amp;#39;192.168.1.230&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">80&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="ssl-socket">SSL socket:&lt;/h4>
+&lt;p>端口是3344,ssl跳过验证,如果验证参数需要修改.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> socket
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>socket(socket&lt;span style="color:#f92672">.&lt;/span>AF_INET, socket&lt;span style="color:#f92672">.&lt;/span>SOCK_STREAM)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#f92672">=&lt;/span> ssl&lt;span style="color:#f92672">.&lt;/span>wrap_socket(s, cert_reqs&lt;span style="color:#f92672">=&lt;/span>ssl&lt;span style="color:#f92672">.&lt;/span>CERT_NONE)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">.&lt;/span>connect((&lt;span style="color:#e6db74">&amp;#39;192.168.1.230&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;3344&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这下与那台设备可以正常通讯了,后面实现具体功能就ok了.&lt;/p></description></item></channel></rss>

@@ -2,6 +2,7 @@
 title: GORM 创建联合约束/索引
 date: 2020-06-11 11:50:55
 tags: ["GORM","Go"]
+type: "post"
 ---
 
 ### GROM创建联合索引
