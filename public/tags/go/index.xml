@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go on aLong Blog</title><link>https://blog.51ai.vip/tags/go/</link><description>Recent content in Go on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 15 May 2023 14:53:11 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Roadmap&amp;Go</title><link>https://blog.51ai.vip/posts/roadmapgo/</link><pubDate>Mon, 15 May 2023 14:53:11 +0800</pubDate><guid>https://blog.51ai.vip/posts/roadmapgo/</guid><description>&lt;p>技术类的Roadmap（路线图）具有许多好处，下面是其中几个主要的好处：&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/go/</link><description>Recent content in Go on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 15 May 2023 14:53:11 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Roadmap&amp;Go</title><link>https://blog.51ai.vip/aLong/posts/roadmapgo/</link><pubDate>Mon, 15 May 2023 14:53:11 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/roadmapgo/</guid><description>&lt;p>技术类的Roadmap（路线图）具有许多好处，下面是其中几个主要的好处：&lt;/p>
 &lt;ol>
 &lt;li>明确目标：Roadmap可以帮助技术团队明确目标和愿景。它提供了一个清晰的计划，使团队成员知道他们正在朝着什么方向前进，并且可以更好地集中精力和资源。&lt;/li>
 &lt;li>规划优先级：Roadmap可以帮助团队确定优先级和时间表。通过将不同的功能、项目和任务安排在时间轴上，团队可以了解何时开始和完成每个任务，从而更好地分配资源和人力。&lt;/li>
@@ -26,7 +26,7 @@
 &lt;p>个人认为技术类的Roadmap可以帮助团队提高效率、降低风险、改善沟通和协作，并为实现技术目标提供清晰的指导。它是一个重要的管理工具，有助于组织和规划技术团队的工作，使其能够更好地满足业务需求并取得成功。&lt;/p>
 &lt;p>完结
 祝好
-～&lt;/p></description></item><item><title>解决/usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied问题</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</link><pubDate>Mon, 22 Feb 2021 09:06:08 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</guid><description>&lt;h3 id="最近goland在run的时候发现一个问题">最近Goland在run的时候发现一个问题&lt;/h3>
+～&lt;/p></description></item><item><title>解决/usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied问题</title><link>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</link><pubDate>Mon, 22 Feb 2021 09:06:08 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</guid><description>&lt;h3 id="最近goland在run的时候发现一个问题">最近Goland在run的时候发现一个问题&lt;/h3>
 &lt;p>&lt;code>open /usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied&lt;/code>&lt;/p>
 &lt;p>情况具体是当我run的时候有问题。debug可以。根据错误提示看到是权限的事。&lt;/p>
 &lt;h3 id="解决方式">解决方式&lt;/h3>
@@ -37,7 +37,7 @@
 &lt;p>当前用户名 常用命令 &lt;code>who am i&lt;/code>
 查看当前用户名和组 &lt;code>ls -la&lt;/code>&lt;/p>
 &lt;h3 id="参考">参考&lt;/h3>
-&lt;p>&lt;a href="https://github.com/golang/go/issues/37962">https://github.com/golang/go/issues/37962&lt;/a>&lt;/p></description></item><item><title>GORM 创建联合约束/索引</title><link>https://blog.51ai.vip/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link><pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate><guid>https://blog.51ai.vip/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid><description>&lt;h3 id="grom创建联合索引">GROM创建联合索引&lt;/h3>
+&lt;p>&lt;a href="https://github.com/golang/go/issues/37962">https://github.com/golang/go/issues/37962&lt;/a>&lt;/p></description></item><item><title>GORM 创建联合约束/索引</title><link>https://blog.51ai.vip/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link><pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid><description>&lt;h3 id="grom创建联合索引">GROM创建联合索引&lt;/h3>
 &lt;p>之前提到一个联合约束，那么根据需求再次做一个演示：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Demo&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">ID&lt;/span> &lt;span style="color:#66d9ef">uint&lt;/span> &lt;span style="color:#e6db74">`gorm:&amp;#34;primary_key&amp;#34;`&lt;/span>
@@ -48,7 +48,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">Status&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过demo 迁移后，&lt;code>deleted_at&lt;/code> 与 &lt;code>name&lt;/code> 会形成一个联合约束。&lt;/p>
-&lt;p>-OK,完结-&lt;/p></description></item><item><title>golang.org/x/xerrors：undefined: errors.Frame</title><link>https://blog.51ai.vip/posts/golang-org-x-xerrorsundefined-errors-frame/</link><pubDate>Thu, 16 Jan 2020 19:05:39 +0000</pubDate><guid>https://blog.51ai.vip/posts/golang-org-x-xerrorsundefined-errors-frame/</guid><description>&lt;h3 id="项目初始化遇到问题">项目初始化遇到问题&lt;/h3>
+&lt;p>-OK,完结-&lt;/p></description></item><item><title>golang.org/x/xerrors：undefined: errors.Frame</title><link>https://blog.51ai.vip/aLong/posts/golang-org-x-xerrorsundefined-errors-frame/</link><pubDate>Thu, 16 Jan 2020 19:05:39 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/golang-org-x-xerrorsundefined-errors-frame/</guid><description>&lt;h3 id="项目初始化遇到问题">项目初始化遇到问题&lt;/h3>
 &lt;p>错误为：&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-bahs" data-lang="bahs">../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/adaptor_go1_13.go:16:14: undefined: errors.Frame
 ../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/format_go1_13.go:12:18: undefined: errors.Formatter
@@ -56,7 +56,7 @@ exit status 2
 exit status 1
 &lt;/code>&lt;/pre>&lt;p>通过科普得到一个方法：
 &lt;code>go get -u golang.org/x/xerrors&lt;/code>&lt;/p>
-&lt;p>问题解决了。&lt;/p></description></item><item><title>Golang 环境准备</title><link>https://blog.51ai.vip/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</link><pubDate>Thu, 16 Jan 2020 18:51:34 +0000</pubDate><guid>https://blog.51ai.vip/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid><description>&lt;h2 id="安装golang">安装GOlang&lt;/h2>
+&lt;p>问题解决了。&lt;/p></description></item><item><title>Golang 环境准备</title><link>https://blog.51ai.vip/aLong/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</link><pubDate>Thu, 16 Jan 2020 18:51:34 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid><description>&lt;h2 id="安装golang">安装GOlang&lt;/h2>
 &lt;p>环境:macOS&lt;/p>
 &lt;p>shell: zsh&lt;/p>
 &lt;ul>
@@ -80,7 +80,7 @@ exit status 1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PATH&lt;span style="color:#f92672">=&lt;/span>$PATH:$GOPATH/bin
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>退出保存后，使文件生效 &lt;code>source ~/.zshrc=&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Go学习笔记</title><link>https://blog.51ai.vip/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 15 May 2019 11:05:52 +0000</pubDate><guid>https://blog.51ai.vip/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="变量">变量&lt;/h3>
+&lt;/ul></description></item><item><title>Go学习笔记</title><link>https://blog.51ai.vip/aLong/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 15 May 2019 11:05:52 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="变量">变量&lt;/h3>
 &lt;p>var 声明,支持类型判断.&lt;/p>
 &lt;p>&lt;code>var name string&lt;/code> string类型 name&lt;/p>
 &lt;p>&lt;code>var s string&lt;/code> 值初始化&lt;/p>
