@@ -1,31 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>GORM on aLong blog</title>
-    <link>http://localhost:1313/aLong/tags/gorm/</link>
-    <description>Recent content in GORM on aLong blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2020 11:50:55 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/gorm/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GORM 创建联合约束/索引</title>
-      <link>http://localhost:1313/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link>
-      <pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate>
-      
-      <guid>http://localhost:1313/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid>
-      <description>&lt;h3 id=&#34;grom创建联合索引&#34;&gt;GROM创建联合索引&lt;/h3&gt;
-&lt;p&gt;之前提到一个联合约束，那么根据需求再次做一个演示：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;type&lt;/span&gt; Demo &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	ID           &lt;span style=&#34;color:#b00040&#34;&gt;uint&lt;/span&gt;          &lt;span style=&#34;color:#ba2121&#34;&gt;`gorm:&amp;#34;primary_key&amp;#34;`&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	CreatedAt    time.Time
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	UpdatedAt    time.Time
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	DeletedAt    &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;time.Time    &lt;span style=&#34;color:#ba2121&#34;&gt;`gorm:&amp;#34;index;unique_index:name_d&amp;#34;`&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Name     &lt;span style=&#34;color:#b00040&#34;&gt;string&lt;/span&gt;            &lt;span style=&#34;color:#ba2121&#34;&gt;`gorm:&amp;#34;unique_index:name_d&amp;#34;`&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	Status       &lt;span style=&#34;color:#b00040&#34;&gt;int&lt;/span&gt;         
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过demo 迁移后，&lt;code&gt;deleted_at&lt;/code&gt; 与 &lt;code&gt;name&lt;/code&gt; 会形成一个联合约束。&lt;/p&gt;
-&lt;p&gt;-OK,完结-&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GORM on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/gorm/</link><description>Recent content in GORM on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 11 Jun 2020 11:50:55 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/gorm/index.xml" rel="self" type="application/rss+xml"/><item><title>GORM 创建联合约束/索引</title><link>https://blog.51ai.vip/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link><pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid><description>&lt;h3 id="grom创建联合索引">GROM创建联合索引&lt;/h3>
+&lt;p>之前提到一个联合约束，那么根据需求再次做一个演示：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Demo&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">ID&lt;/span> &lt;span style="color:#66d9ef">uint&lt;/span> &lt;span style="color:#e6db74">`gorm:&amp;#34;primary_key&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">CreatedAt&lt;/span> &lt;span style="color:#a6e22e">time&lt;/span>.&lt;span style="color:#a6e22e">Time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">UpdatedAt&lt;/span> &lt;span style="color:#a6e22e">time&lt;/span>.&lt;span style="color:#a6e22e">Time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">DeletedAt&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">time&lt;/span>.&lt;span style="color:#a6e22e">Time&lt;/span> &lt;span style="color:#e6db74">`gorm:&amp;#34;index;unique_index:name_d&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">Name&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#e6db74">`gorm:&amp;#34;unique_index:name_d&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">Status&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过demo 迁移后，&lt;code>deleted_at&lt;/code> 与 &lt;code>name&lt;/code> 会形成一个联合约束。&lt;/p>
+&lt;p>-OK,完结-&lt;/p></description></item></channel></rss>
