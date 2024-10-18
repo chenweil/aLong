@@ -1,158 +1,108 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tools on aLong blog</title>
-    <link>http://localhost:1313/aLong/tags/tools/</link>
-    <description>Recent content in Tools on aLong blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2024 10:42:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/tools/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Snapbox</title>
-      <link>http://localhost:1313/aLong/posts/snapbox/</link>
-      <pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate>
-      
-      <guid>http://localhost:1313/aLong/posts/snapbox/</guid>
-      <description>&lt;h1 id=&#34;一款macos的app&#34;&gt;一款macOS的APP&lt;/h1&gt;
-&lt;p&gt;app网站 : &lt;a href=&#34;https://snapbox.app/&#34;&gt;https://snapbox.app/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;我在&lt;a href=&#34;https://www.v2ex.com/t/1062087&#34;&gt;v2ex&lt;/a&gt;上看到此贴.&lt;/p&gt;
-&lt;p&gt;作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.&lt;/p&gt;
-&lt;p&gt;看起来像是&lt;code&gt;spotlight&lt;/code&gt;,&lt;code&gt;raycast&lt;/code&gt;这种工具的方式启动,调出后实现与AI的一系列操作.
-比如翻译、对话、优化内容等工作.&lt;/p&gt;
-&lt;p&gt;支持ollama和服务提供商API.&lt;/p&gt;
-&lt;p&gt;配置内容简单,支持prompt.&lt;/p&gt;
-&lt;h1 id=&#34;接入配置&#34;&gt;接入配置&lt;/h1&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/14/z83RnpaOZh56Hwu.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;呼出主界面时,进入 &lt;code&gt;settings&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/14/CpLyGafc6xA7eRm.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;设置界面中的 &lt;strong&gt;SELECT PROVIDER&lt;/strong&gt;中选择模型的厂商.&lt;/p&gt;
-&lt;p&gt;我这里配置过&lt;code&gt;Ollama&lt;/code&gt;和&lt;code&gt;Custom Endpoint&lt;/code&gt;.&lt;code&gt;Custom Endpoint&lt;/code&gt;我选择了 &lt;strong&gt;siliconflow&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;配置时,输入完 &lt;strong&gt;CUSTOM ENDPOINT URL&lt;/strong&gt; 和 ** CUSTOM ENDPOINT API KEY**后可以获取模型.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/14/itNTZsmAGuX17Ik.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;勾选自己使用的模型名字即可.如果API服务商不支持获取可以自己点击&lt;code&gt;+&lt;/code&gt;号添加.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/14/Gmbf93cek286JBT.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;h1 id=&#34;功能演示&#34;&gt;功能演示&lt;/h1&gt;
-&lt;p&gt;我觉得此软件的特色是:&lt;/p&gt;
-&lt;p&gt;此软件支持全局快捷键,呼出程序,快捷进入某特定prompt等.&lt;/p&gt;
-&lt;p&gt;选择文字后会被程序捕获. 免去了复制粘贴.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;常规对话&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/14/jAsTeFm9kKUSqGV.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;复制粘贴、打字与AI交互. 快捷上支持重新生成、继续、继续输入.&lt;/p&gt;
-&lt;p&gt;放个视频演示:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://watch.wave.video/6UP7usIlnYJ9vC0B&#34;&gt;https://watch.wave.video/6UP7usIlnYJ9vC0B&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Reactor 模式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;此模式是监听你的指针选择,剪切板内容.快速响应.&lt;/p&gt;
-&lt;p&gt;放个视频演示:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://watch.wave.video/KRjgWJQ5nJmSj0yX&#34;&gt;https://watch.wave.video/KRjgWJQ5nJmSj0yX&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;最后&#34;&gt;最后&lt;/h1&gt;
-&lt;p&gt;看到作者仅用几天时间借助大模型开发出一个功能丰富的app，令人惊叹。&lt;/p&gt;
-&lt;p&gt;既体现了大模型的强大能力，也展示了作者高超的开发技巧和创新思维。&lt;/p&gt;
-&lt;p&gt;反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。&lt;/p&gt;
-&lt;p&gt;展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。&lt;/p&gt;
-&lt;p&gt;完结~
-感谢观看&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Arc</title>
-      <link>http://localhost:1313/aLong/posts/arc/</link>
-      <pubDate>Fri, 13 Sep 2024 14:23:51 +0800</pubDate>
-      
-      <guid>http://localhost:1313/aLong/posts/arc/</guid>
-      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-&lt;p&gt;使用arc浏览器作为主力之前,更喜欢chrome.&lt;/p&gt;
-&lt;p&gt;也考虑edge替代朴素的chrome.事与愿违,在后面使用中edge变越越来越不喜欢的东西.&lt;/p&gt;
-&lt;p&gt;加入了很多我不喜欢、不去用的功能展示在界面上. 后面我就没继续使用了,不评价edge的好坏.我不喜欢用它.&lt;/p&gt;
-&lt;p&gt;后面看到arc,也是简单尝试了一下,后面我觉得不错的菜就换成了主力.&lt;/p&gt;
-&lt;h1 id=&#34;喜欢的功能&#34;&gt;喜欢的功能&lt;/h1&gt;
-&lt;p&gt;下面我介绍一下我使用这个arc浏览器喜欢的点.&lt;/p&gt;
-&lt;h2 id=&#34;space&#34;&gt;space&lt;/h2&gt;
-&lt;p&gt;在每个Space可放不同的标签,做到了管理和分类. 同时还可以定制颜色,样式.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/hU8qgeYufw4FO1Z.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;可以根据不同账号(profile)分配不同的&lt;strong&gt;会话信息&lt;/strong&gt;. 也就是一个浏览器不同space区分账号.满足挂小号、测试等需要多身份在同一个浏览器访问.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/HP3ZGCYNQDEjoFe.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;如上图,我新建了一个along的profile,创建了一个space.
-在访问linux.do时,如图.如果我有小号就可以这么搞拉.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/VGZ7zqwAcmxr5kR.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;h2 id=&#34;easel&#34;&gt;Easel&lt;/h2&gt;
-&lt;p&gt;我用这个功能很简单,就是看下动态信息.
-比如你想一些动态信息,但又不需要整个页面,是不是想把局部拿出来. 白板可以的,你截取某网页部分放到白板里,开启就可以实现.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/olkLjYzgICXZR5y.png&#34; alt=&#34;&#34;  /&gt;
-
-&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/dAZMsg9fh7xcSXW.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;上面是我自己创建的两个页面. 这俩一个是没事看看模型排行. 另一个是关注自己的其他信息.&lt;/p&gt;
-&lt;p&gt;可能图片不能直观解释这个用途.放个动图,看那个时间的变化:&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/l8gcuOXb7v2QU3B.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;当我想看周刊我就直接在这里点就好了,不需要单独打开此网站去查看这个列表,美滋滋.&lt;/p&gt;
-&lt;p&gt;我能想到画架的用途还有: 头脑风暴、协作、笔记、可视化信息、素材灵感搜集、整理内容、组织结构.&lt;/p&gt;
-&lt;p&gt;这些做完可以分享.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/hjCG9XRnslwztSo.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;h2 id=&#34;boost&#34;&gt;Boost&lt;/h2&gt;
-&lt;p&gt;这个功能可更改网页一些元素的颜色，字体类型、字体大小等.
-还是以佬友为例:&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/XScBNmgVJFWzdUC.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;主题是默认,我通过boost功能将颜色、字体、英文文字是蛇形、全大写、全小写的配置来自定义一下.&lt;/p&gt;
-&lt;p&gt;boost中我最喜欢的是zap.
-可以隐藏掉自己不喜欢的页面元素.&lt;/p&gt;
-&lt;p&gt;继续以佬友为例:
-点击zap后,可以选择页面元素.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/Ahv7iQMr49Dd1Vt.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;当选择元素后点击 zap this 就可以干掉他.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/F3lUHbRMhV8qmcD.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;这是隐藏掉一些页面元素后的样子.&lt;/p&gt;
-&lt;h2 id=&#34;favorite&#34;&gt;Favorite&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/UoHBwWDEJAt1ZQP.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;这是左上角那部分内容,做多可以放12个块.块支持split的组合tab.特定适配过的还有奇效,比如gmail、outlook、slack等等等. 我把常用的网站放在这里,佬友有消息提示,这icon上会有标记的.以便我打开查看消息.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.loli.net/2024/09/13/tBoPcZLpj1lVADx.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
-&lt;h2 id=&#34;split&#34;&gt;Split&lt;/h2&gt;
-&lt;p&gt;通过简单拖拽,可实现tab的分屏.
-新打开一个网页想和当前tab做分屏,点击链接时按住&lt;code&gt;option&lt;/code&gt;就实现了分屏.&lt;/p&gt;
-&lt;p&gt;能分能拆,用起来体验不错.但有一点不太好,就是在分屏中关闭的tab就没了.只能重新pinned.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SwitchHosts管理编辑hosts工具</title>
-      <link>http://localhost:1313/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate>
-      
-      <guid>http://localhost:1313/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</guid>
-      <description>&lt;h2 id=&#34;管理hosts工具-switchhosts&#34;&gt;管理Hosts工具 SwitchHosts&lt;/h2&gt;
-&lt;p&gt;地址: &lt;a href=&#34;https://github.com/oldj/SwitchHosts&#34;&gt;SwitchHosts&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;开发工程中,针对不同项目设置不同的域名.&lt;/p&gt;
-&lt;p&gt;办法很多,例如直接编辑hosts文件,通过环境工具提供的功能设置等.&lt;/p&gt;
-&lt;p&gt;现在要安利一款便捷实用的工具. &lt;a href=&#34;https://github.com/oldj/SwitchHosts&#34;&gt;SwitchHosts&lt;/a&gt;!!&lt;/p&gt;
-&lt;p&gt;为什么,首先这工具是多平台支持的,我们可以在不同系统中使用.如果之前是靠编辑hosts文件的话,那不同的hosts位置还需要记忆一下,当然这也算不了什么难事.&lt;/p&gt;
-&lt;p&gt;他的有点不在于能简单编辑hosts文件,也有之前的记录,还可以通过url来读取云端的hosts信息.导入导出功能等. 总之又可以偷懒了.&lt;/p&gt;
-&lt;p&gt;主界面:&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.ax1x.com/2019/08/14/mPOsoT.png&#34; alt=&#34;界面&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;我们可以编辑不同host 分组,使用时打开开关按钮即可使用.&lt;br&gt;
-示例中使用的My hosts中的配置&lt;/p&gt;
-&lt;p&gt;配置界面:&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.ax1x.com/2019/08/14/mPOgW4.png&#34; alt=&#34;配置&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;支持中文,主题黑白两色.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/tools/</link><description>Recent content in Tools on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 14 Sep 2024 10:42:26 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Snapbox</title><link>https://blog.51ai.vip/aLong/posts/snapbox/</link><pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/snapbox/</guid><description>&lt;h1 id="一款macos的app">一款macOS的APP&lt;/h1>
+&lt;p>app网站 : &lt;a href="https://snapbox.app/">https://snapbox.app/&lt;/a>&lt;/p>
+&lt;p>我在&lt;a href="https://www.v2ex.com/t/1062087">v2ex&lt;/a>上看到此贴.&lt;/p>
+&lt;p>作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.&lt;/p>
+&lt;p>看起来像是&lt;code>spotlight&lt;/code>,&lt;code>raycast&lt;/code>这种工具的方式启动,调出后实现与AI的一系列操作.
+比如翻译、对话、优化内容等工作.&lt;/p>
+&lt;p>支持ollama和服务提供商API.&lt;/p>
+&lt;p>配置内容简单,支持prompt.&lt;/p>
+&lt;h1 id="接入配置">接入配置&lt;/h1>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/14/z83RnpaOZh56Hwu.png" alt="">&lt;/p>
+&lt;p>呼出主界面时,进入 &lt;code>settings&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/14/CpLyGafc6xA7eRm.png" alt="">&lt;/p>
+&lt;p>设置界面中的 &lt;strong>SELECT PROVIDER&lt;/strong>中选择模型的厂商.&lt;/p>
+&lt;p>我这里配置过&lt;code>Ollama&lt;/code>和&lt;code>Custom Endpoint&lt;/code>.&lt;code>Custom Endpoint&lt;/code>我选择了 &lt;strong>siliconflow&lt;/strong>.&lt;/p>
+&lt;p>配置时,输入完 &lt;strong>CUSTOM ENDPOINT URL&lt;/strong> 和 ** CUSTOM ENDPOINT API KEY**后可以获取模型.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/14/itNTZsmAGuX17Ik.png" alt="">&lt;/p>
+&lt;p>勾选自己使用的模型名字即可.如果API服务商不支持获取可以自己点击&lt;code>+&lt;/code>号添加.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/14/Gmbf93cek286JBT.png" alt="">&lt;/p>
+&lt;h1 id="功能演示">功能演示&lt;/h1>
+&lt;p>我觉得此软件的特色是:&lt;/p>
+&lt;p>此软件支持全局快捷键,呼出程序,快捷进入某特定prompt等.&lt;/p>
+&lt;p>选择文字后会被程序捕获. 免去了复制粘贴.&lt;/p>
+&lt;ul>
+&lt;li>常规对话&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/14/jAsTeFm9kKUSqGV.png" alt="">&lt;/p>
+&lt;p>复制粘贴、打字与AI交互. 快捷上支持重新生成、继续、继续输入.&lt;/p>
+&lt;p>放个视频演示:&lt;/p>
+&lt;p>&lt;a href="https://watch.wave.video/6UP7usIlnYJ9vC0B">https://watch.wave.video/6UP7usIlnYJ9vC0B&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Reactor 模式&lt;/li>
+&lt;/ul>
+&lt;p>此模式是监听你的指针选择,剪切板内容.快速响应.&lt;/p>
+&lt;p>放个视频演示:&lt;/p>
+&lt;p>&lt;a href="https://watch.wave.video/KRjgWJQ5nJmSj0yX">https://watch.wave.video/KRjgWJQ5nJmSj0yX&lt;/a>&lt;/p>
+&lt;h1 id="最后">最后&lt;/h1>
+&lt;p>看到作者仅用几天时间借助大模型开发出一个功能丰富的app，令人惊叹。&lt;/p>
+&lt;p>既体现了大模型的强大能力，也展示了作者高超的开发技巧和创新思维。&lt;/p>
+&lt;p>反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。&lt;/p>
+&lt;p>展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。&lt;/p>
+&lt;p>完结~
+感谢观看&lt;/p></description></item><item><title>Arc</title><link>https://blog.51ai.vip/aLong/posts/arc/</link><pubDate>Fri, 13 Sep 2024 14:23:51 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/arc/</guid><description>&lt;h1 id="背景">背景&lt;/h1>
+&lt;p>使用arc浏览器作为主力之前,更喜欢chrome.&lt;/p>
+&lt;p>也考虑edge替代朴素的chrome.事与愿违,在后面使用中edge变越越来越不喜欢的东西.&lt;/p>
+&lt;p>加入了很多我不喜欢、不去用的功能展示在界面上. 后面我就没继续使用了,不评价edge的好坏.我不喜欢用它.&lt;/p>
+&lt;p>后面看到arc,也是简单尝试了一下,后面我觉得不错的菜就换成了主力.&lt;/p>
+&lt;h1 id="喜欢的功能">喜欢的功能&lt;/h1>
+&lt;p>下面我介绍一下我使用这个arc浏览器喜欢的点.&lt;/p>
+&lt;h2 id="space">space&lt;/h2>
+&lt;p>在每个Space可放不同的标签,做到了管理和分类. 同时还可以定制颜色,样式.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/hU8qgeYufw4FO1Z.png" alt="">&lt;/p>
+&lt;p>可以根据不同账号(profile)分配不同的&lt;strong>会话信息&lt;/strong>. 也就是一个浏览器不同space区分账号.满足挂小号、测试等需要多身份在同一个浏览器访问.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/HP3ZGCYNQDEjoFe.png" alt="">&lt;/p>
+&lt;p>如上图,我新建了一个along的profile,创建了一个space.
+在访问linux.do时,如图.如果我有小号就可以这么搞拉.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/VGZ7zqwAcmxr5kR.png" alt="">&lt;/p>
+&lt;h2 id="easel">Easel&lt;/h2>
+&lt;p>我用这个功能很简单,就是看下动态信息.
+比如你想一些动态信息,但又不需要整个页面,是不是想把局部拿出来. 白板可以的,你截取某网页部分放到白板里,开启就可以实现.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/olkLjYzgICXZR5y.png" alt="">
+&lt;img src="https://s2.loli.net/2024/09/13/dAZMsg9fh7xcSXW.png" alt="">&lt;/p>
+&lt;p>上面是我自己创建的两个页面. 这俩一个是没事看看模型排行. 另一个是关注自己的其他信息.&lt;/p>
+&lt;p>可能图片不能直观解释这个用途.放个动图,看那个时间的变化:&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/l8gcuOXb7v2QU3B.gif" alt="">&lt;/p>
+&lt;p>当我想看周刊我就直接在这里点就好了,不需要单独打开此网站去查看这个列表,美滋滋.&lt;/p>
+&lt;p>我能想到画架的用途还有: 头脑风暴、协作、笔记、可视化信息、素材灵感搜集、整理内容、组织结构.&lt;/p>
+&lt;p>这些做完可以分享.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/hjCG9XRnslwztSo.png" alt="">&lt;/p>
+&lt;h2 id="boost">Boost&lt;/h2>
+&lt;p>这个功能可更改网页一些元素的颜色，字体类型、字体大小等.
+还是以佬友为例:&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/XScBNmgVJFWzdUC.png" alt="">&lt;/p>
+&lt;p>主题是默认,我通过boost功能将颜色、字体、英文文字是蛇形、全大写、全小写的配置来自定义一下.&lt;/p>
+&lt;p>boost中我最喜欢的是zap.
+可以隐藏掉自己不喜欢的页面元素.&lt;/p>
+&lt;p>继续以佬友为例:
+点击zap后,可以选择页面元素.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/Ahv7iQMr49Dd1Vt.png" alt="">&lt;/p>
+&lt;p>当选择元素后点击 zap this 就可以干掉他.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/F3lUHbRMhV8qmcD.png" alt="">&lt;/p>
+&lt;p>这是隐藏掉一些页面元素后的样子.&lt;/p>
+&lt;h2 id="favorite">Favorite&lt;/h2>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/UoHBwWDEJAt1ZQP.png" alt="">&lt;/p>
+&lt;p>这是左上角那部分内容,做多可以放12个块.块支持split的组合tab.特定适配过的还有奇效,比如gmail、outlook、slack等等等. 我把常用的网站放在这里,佬友有消息提示,这icon上会有标记的.以便我打开查看消息.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/tBoPcZLpj1lVADx.png" alt="">&lt;/p>
+&lt;h2 id="split">Split&lt;/h2>
+&lt;p>通过简单拖拽,可实现tab的分屏.
+新打开一个网页想和当前tab做分屏,点击链接时按住&lt;code>option&lt;/code>就实现了分屏.&lt;/p>
+&lt;p>能分能拆,用起来体验不错.但有一点不太好,就是在分屏中关闭的tab就没了.只能重新pinned.&lt;/p>
+&lt;h2 id="搜索">搜索&lt;/h2>
+&lt;p>默认地址栏输入内容能搜索,或者自己访问搜索引擎.&lt;/p>
+&lt;p>我更喜欢在&lt;code>command + T&lt;/code> 弹出来的对话框里进行搜索. 他像 &lt;code>raycast&lt;/code> 功能那样快捷搜索.&lt;/p>
+&lt;p>GitHub:&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/09/13/aQN8Z9GPMEFWfnY.gif" alt="">&lt;/p>
+&lt;p>linux.do:&lt;/p></description></item><item><title>SwitchHosts管理编辑hosts工具</title><link>https://blog.51ai.vip/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</link><pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="管理hosts工具-switchhosts">管理Hosts工具 SwitchHosts&lt;/h2>
+&lt;p>地址: &lt;a href="https://github.com/oldj/SwitchHosts">SwitchHosts&lt;/a>&lt;/p>
+&lt;p>开发工程中,针对不同项目设置不同的域名.&lt;/p>
+&lt;p>办法很多,例如直接编辑hosts文件,通过环境工具提供的功能设置等.&lt;/p>
+&lt;p>现在要安利一款便捷实用的工具. &lt;a href="https://github.com/oldj/SwitchHosts">SwitchHosts&lt;/a>!!&lt;/p>
+&lt;p>为什么,首先这工具是多平台支持的,我们可以在不同系统中使用.如果之前是靠编辑hosts文件的话,那不同的hosts位置还需要记忆一下,当然这也算不了什么难事.&lt;/p>
+&lt;p>他的有点不在于能简单编辑hosts文件,也有之前的记录,还可以通过url来读取云端的hosts信息.导入导出功能等. 总之又可以偷懒了.&lt;/p>
+&lt;p>主界面:&lt;/p>
+&lt;p>&lt;img src="https://s2.ax1x.com/2019/08/14/mPOsoT.png" alt="界面">&lt;/p>
+&lt;p>我们可以编辑不同host 分组,使用时打开开关按钮即可使用.&lt;br>
+示例中使用的My hosts中的配置&lt;/p>
+&lt;p>配置界面:&lt;/p>
+&lt;p>&lt;img src="https://s2.ax1x.com/2019/08/14/mPOgW4.png" alt="配置">&lt;/p>
+&lt;p>支持中文,主题黑白两色.&lt;/p></description></item></channel></rss>

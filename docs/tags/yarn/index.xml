@@ -1,34 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Yarn on aLong blog</title>
-    <link>http://localhost:1313/aLong/tags/yarn/</link>
-    <description>Recent content in Yarn on aLong blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jan 2020 14:21:26 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/yarn/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>yarn install phantomjs-prebuilt: Command failed.</title>
-      <link>http://localhost:1313/aLong/posts/yarn-install-phantomjs-prebuilt-command-failed/</link>
-      <pubDate>Thu, 16 Jan 2020 14:21:26 +0000</pubDate>
-      
-      <guid>http://localhost:1313/aLong/posts/yarn-install-phantomjs-prebuilt-command-failed/</guid>
-      <description>&lt;h3 id=&#34;项目yarn-install-出现phantomjs-prebuilt-command-failed&#34;&gt;项目yarn install 出现phantomjs-prebuilt： Command failed.&lt;/h3&gt;
-&lt;p&gt;自己在项目中发现执行 &lt;code&gt;yarn install&lt;/code&gt;时候，一直卡住没走完。&lt;/p&gt;
-&lt;p&gt;最后报错， &lt;em&gt;error phantomjs-prebuilt： Command failed.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;可以看到错误中，他是从 github.com/Medium/&amp;hellip;   感觉就是没下载成功吧。&lt;/p&gt;
-&lt;p&gt;最开始以为网络问题，翻墙等方式都试过后发现还是没完成。&lt;/p&gt;
-&lt;p&gt;没办法，借助网络得知。可以轻松搞定：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;npm config set phantomjs_cdnurl=&lt;a href=&#34;http://cdn.npm.taobao.org/dist/phantomjs_cdnurl&#34;&gt;http://cdn.npm.taobao.org/dis&amp;hellip;&lt;/a&gt;
-yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;&lt;a href=&#34;https://npm.taobao.org/mirrors/phantomjs%22&#34;&gt;https://npm.taobao.org/mirrors/phantomjs&amp;quot;&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;看你是npm 还是node。按照上面方式设置一下。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;rm -rf path/node_moudels&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;yarn install&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;解决问题，美滋滋。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/q/1010000010278132&#34;&gt;引用地址&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Yarn on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/yarn/</link><description>Recent content in Yarn on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 16 Jan 2020 14:21:26 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/yarn/index.xml" rel="self" type="application/rss+xml"/><item><title>yarn install phantomjs-prebuilt: Command failed.</title><link>https://blog.51ai.vip/aLong/posts/yarn-install-phantomjs-prebuilt-command-failed/</link><pubDate>Thu, 16 Jan 2020 14:21:26 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/yarn-install-phantomjs-prebuilt-command-failed/</guid><description>&lt;h3 id="项目yarn-install-出现phantomjs-prebuilt-command-failed">项目yarn install 出现phantomjs-prebuilt： Command failed.&lt;/h3>
+&lt;p>自己在项目中发现执行 &lt;code>yarn install&lt;/code>时候，一直卡住没走完。&lt;/p>
+&lt;p>最后报错， &lt;em>error phantomjs-prebuilt： Command failed.&lt;/em>&lt;/p>
+&lt;p>可以看到错误中，他是从 github.com/Medium/&amp;hellip; 感觉就是没下载成功吧。&lt;/p>
+&lt;p>最开始以为网络问题，翻墙等方式都试过后发现还是没完成。&lt;/p>
+&lt;p>没办法，借助网络得知。可以轻松搞定：&lt;/p>
+&lt;blockquote>
+&lt;p>npm config set phantomjs_cdnurl=&lt;a href="http://cdn.npm.taobao.org/dist/phantomjs_cdnurl">http://cdn.npm.taobao.org/dis&amp;hellip;&lt;/a>
+yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;&lt;a href="https://npm.taobao.org/mirrors/phantomjs%22">https://npm.taobao.org/mirrors/phantomjs&amp;quot;&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>看你是npm 还是node。按照上面方式设置一下。&lt;/p>
+&lt;p>&lt;code>rm -rf path/node_moudels&lt;/code>&lt;/p>
+&lt;p>&lt;code>yarn install&lt;/code>&lt;/p>
+&lt;p>解决问题，美滋滋。&lt;/p>
+&lt;p>&lt;a href="https://segmentfault.com/q/1010000010278132">引用地址&lt;/a>&lt;/p></description></item></channel></rss>

@@ -6,6 +6,8 @@ languageCode = "en"
 theme = "gokarna"
 title = "aLong Blog"
 
+publishDir = "docs"
+
 [params]
   accentColor = "#FF4D4D"
   dateFormat = "2006/01/02"

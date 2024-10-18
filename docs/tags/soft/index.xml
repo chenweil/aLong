@@ -1,64 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Soft on aLong blog</title>
-    <link>http://localhost:1313/aLong/tags/soft/</link>
-    <description>Recent content in Soft on aLong blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 23 Oct 2019 17:31:55 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/soft/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>网络传输速度测试工具</title>
-      <link>http://localhost:1313/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate>
-      
-      <guid>http://localhost:1313/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
-      <description>&lt;h2 id=&#34;网络传输测试软件&#34;&gt;网络传输测试软件&lt;/h2&gt;
-&lt;p&gt;最近公司测试限速,搜集软件发现两款,iperf,LANSpeedTest.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Soft on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/soft/</link><description>Recent content in Soft on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 23 Oct 2019 17:31:55 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/soft/index.xml" rel="self" type="application/rss+xml"/><item><title>网络传输速度测试工具</title><link>https://blog.51ai.vip/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link><pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="网络传输测试软件">网络传输测试软件&lt;/h2>
+&lt;p>最近公司测试限速,搜集软件发现两款,iperf,LANSpeedTest.
 iperf,多平台.
 LANSpeedTest,读写显示,操作简单.
-&lt;strong&gt;局域网测试传输,优先考虑UDP.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;iperf&#34;&gt;iperf&lt;/h3&gt;
-&lt;p&gt;Iperf可以报告带宽,延迟抖动和数据包丢失.
-&lt;a href=&#34;https://iperf.fr/iperf-doc.php&#34;&gt;官方文档&lt;/a&gt;
-安装不写了.跳过&lt;/p&gt;
-&lt;p&gt;iperf常用参数介绍&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-i 2	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#表示每2秒显示一次报告&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-w 80k	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#对于TCP方式，此设置为TCP窗口大小。对于UDP方式，此设置为接受UDP数据包的缓冲区大小，限制可以接受数据包的最大值&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-B 192.168.122.1	
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#绑定到主机的多个地址中的一个。对于客户端来说，这个参数设置了出栈接口。对于服务器端来说，这个参数设置入栈接口。这个参数只用于具有多网络接口的主机。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#在Iperf的UDP模式下，此参数用于绑 定和加入一个多播组。使用范围在224.0.0.0至239.255.255.255的多播地址&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#常用客户端参数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-b 100m	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#用于udp测试时，设置测试发送的带宽，单位：bit/秒，不设置时默认为：1Mbit/秒&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-c 	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#指定服务端ip地址&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-d 	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#同时测试上行和下行&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-t 10	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#设置传输时间，为10秒	&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	-P 5	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#指定发起5个线程&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;udp测试&#34;&gt;UDP测试&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;服务端
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	iperf -u -s 		&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;# -u表示以udp模式运行，-s表示作为服务端, 这里需要设置ip&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;客户端
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	iperf -u -c 192.168.100.11 -b 100M -t &lt;span style=&#34;color:#666&#34;&gt;60&lt;/span&gt; -i &lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#解释：在udp模式下，以100Mbps为数据发送速率，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	iperf -u -c 192.168.100.11 5M -P &lt;span style=&#34;color:#666&#34;&gt;30&lt;/span&gt; -t 6		&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#客户端同时向服务器端发起30个连接线程，以5Mbps为数据发送速率&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	iperf -u -c 192.168.100.11 -b 100M -d -t &lt;span style=&#34;color:#666&#34;&gt;60&lt;/span&gt; 	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#以100M为数据发送速率，进行上下行带宽测试&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;tcp测试&#34;&gt;TCP测试&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;服务端
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	iperf -s
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;客户端
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	iperf -c 192.168.100.11 -t 60			&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#在tcp模式下，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒。 &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	iperf -c 192.168.100.11 -P &lt;span style=&#34;color:#666&#34;&gt;30&lt;/span&gt; -t 60		&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#客户端同时向服务器端发起30个连接线程。 &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	iperf -c 192.168.100.11 -d -t &lt;span style=&#34;color:#666&#34;&gt;60&lt;/span&gt; -i 2	&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;#进行上下行带宽测试。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;测试结果&#34;&gt;测试结果&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://s2.ax1x.com/2019/10/24/KNIyt0.png&#34; alt=&#34;&#34;  /&gt;
-
+&lt;strong>局域网测试传输,优先考虑UDP.&lt;/strong>&lt;/p>
+&lt;h3 id="iperf">iperf&lt;/h3>
+&lt;p>Iperf可以报告带宽,延迟抖动和数据包丢失.
+&lt;a href="https://iperf.fr/iperf-doc.php">官方文档&lt;/a>
+安装不写了.跳过&lt;/p>
+&lt;p>iperf常用参数介绍&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>	-i 2	&lt;span style="color:#75715e">#表示每2秒显示一次报告&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	-w 80k	&lt;span style="color:#75715e">#对于TCP方式，此设置为TCP窗口大小。对于UDP方式，此设置为接受UDP数据包的缓冲区大小，限制可以接受数据包的最大值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	-B 192.168.122.1	
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#75715e">#绑定到主机的多个地址中的一个。对于客户端来说，这个参数设置了出栈接口。对于服务器端来说，这个参数设置入栈接口。这个参数只用于具有多网络接口的主机。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#75715e">#在Iperf的UDP模式下，此参数用于绑 定和加入一个多播组。使用范围在224.0.0.0至239.255.255.255的多播地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#常用客户端参数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	-b 100m	&lt;span style="color:#75715e">#用于udp测试时，设置测试发送的带宽，单位：bit/秒，不设置时默认为：1Mbit/秒&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	-c 	&lt;span style="color:#75715e">#指定服务端ip地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	-d 	&lt;span style="color:#75715e">#同时测试上行和下行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	-t 10	&lt;span style="color:#75715e">#设置传输时间，为10秒	&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	-P 5	&lt;span style="color:#75715e">#指定发起5个线程&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="udp测试">UDP测试&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>服务端
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	iperf -u -s 		&lt;span style="color:#75715e"># -u表示以udp模式运行，-s表示作为服务端, 这里需要设置ip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>客户端
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	iperf -u -c 192.168.100.11 -b 100M -t &lt;span style="color:#ae81ff">60&lt;/span> -i &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">#解释：在udp模式下，以100Mbps为数据发送速率，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	iperf -u -c 192.168.100.11 5M -P &lt;span style="color:#ae81ff">30&lt;/span> -t 6		&lt;span style="color:#75715e">#客户端同时向服务器端发起30个连接线程，以5Mbps为数据发送速率&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	iperf -u -c 192.168.100.11 -b 100M -d -t &lt;span style="color:#ae81ff">60&lt;/span> 	&lt;span style="color:#75715e">#以100M为数据发送速率，进行上下行带宽测试&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="tcp测试">TCP测试&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>服务端
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	iperf -s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>客户端
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	iperf -c 192.168.100.11 -t 60			&lt;span style="color:#75715e">#在tcp模式下，客户端到服务器192.168.100.11上传带宽测试，测试时间为60秒。 &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	iperf -c 192.168.100.11 -P &lt;span style="color:#ae81ff">30&lt;/span> -t 60		&lt;span style="color:#75715e">#客户端同时向服务器端发起30个连接线程。 &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	iperf -c 192.168.100.11 -d -t &lt;span style="color:#ae81ff">60&lt;/span> -i 2	&lt;span style="color:#75715e">#进行上下行带宽测试。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="测试结果">测试结果&lt;/h3>
+&lt;p>&lt;img src="https://s2.ax1x.com/2019/10/24/KNIyt0.png" alt="">
 结果中可以看到:
-30秒(-t)的测试,传递数据 70+ (-b参数), 监测的带宽约为20M .&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+30秒(-t)的测试,传递数据 70+ (-b参数), 监测的带宽约为20M .&lt;/p></description></item></channel></rss>

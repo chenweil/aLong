@@ -1,77 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Python on aLong blog</title>
-    <link>http://localhost:1313/aLong/tags/python/</link>
-    <description>Recent content in Python on aLong blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jun 2019 10:23:11 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python建立SocketSSL连接</title>
-      <link>http://localhost:1313/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link>
-      <pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate>
-      
-      <guid>http://localhost:1313/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid>
-      <description>&lt;h3 id=&#34;python-socket连接&#34;&gt;Python Socket连接&lt;/h3&gt;
-&lt;p&gt;5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.&lt;/p&gt;
-&lt;p&gt;这块没接触,Python也是hello world水平.&lt;/p&gt;
-&lt;p&gt;赶紧恶补一下:&lt;/p&gt;
-&lt;p&gt;Socket是网络编程的一个抽象概念。&lt;/p&gt;
-&lt;p&gt;通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。&lt;/p&gt;
-&lt;p&gt;服务端我也不知道什么样,这里只记录客户端的相关.&lt;/p&gt;
-&lt;p&gt;这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.&lt;/p&gt;
-&lt;h4 id=&#34;非ssl的socket&#34;&gt;非ssl的socket:&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#00f;font-weight:bold&#34;&gt;socket&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;# 创建一个socket:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;socket(socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;AF_INET, socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;SOCK_STREAM)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#408080;font-style:italic&#34;&gt;# 建立连接:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;connect((&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;192.168.1.230&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#666&#34;&gt;80&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;ssl-socket&#34;&gt;SSL socket:&lt;/h4&gt;
-&lt;p&gt;端口是3344,ssl跳过验证,如果验证参数需要修改.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#00f;font-weight:bold&#34;&gt;socket&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; s &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;socket(socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;AF_INET, socket&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;SOCK_STREAM)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; c &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; ssl&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;wrap_socket(s, cert_reqs&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;ssl&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;CERT_NONE)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;try&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    c&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;connect((&lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;192.168.1.230&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;3344&amp;#39;&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;except&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这下与那台设备可以正常通讯了,后面实现具体功能就ok了.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Ubutun16.04安装Python</title>
-      <link>http://localhost:1313/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link>
-      <pubDate>Fri, 24 May 2019 11:17:59 +0000</pubDate>
-      
-      <guid>http://localhost:1313/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid>
-      <description>&lt;h3 id=&#34;目的&#34;&gt;目的&lt;/h3&gt;
-&lt;p&gt;安装python3.7.3
-安装pip&lt;/p&gt;
-&lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;系统内置python2.X,去除默认python的软链, &lt;code&gt;sudo rm /usr/bin/python&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;安装一些软件包&amp;amp;软件包保持最新状态.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装python&#34;&gt;安装Python&lt;/h3&gt;
-&lt;p&gt;通过编译安装python&lt;/p&gt;
-&lt;p&gt;默认我下载在home里, &lt;code&gt;cd&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;下载新python文件, &lt;code&gt;wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz &lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;解压文件, &lt;code&gt;tar zxf Python-3.7.3.tgz&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;把这个文件拷贝到放置的位置. 这里我放到/usr/local/python &lt;code&gt;mkdir -p /usr/local/python&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;进入这个目录, 执行 &lt;code&gt;./configure --enable-optimizations&lt;/code&gt;
-之后执行 &lt;code&gt;sudo make -j 8&lt;/code&gt;  这里8根据设备cpu核心数来的,不知道你可以写1(手动滑稽)&lt;/p&gt;
-&lt;p&gt;make之后 该 &lt;del&gt;make install&lt;/del&gt; 嘛? NO! 是 &lt;code&gt;sudo make altinstall&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在.
-需要手动添加一下,我这个是没有给我创建成功.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ln -s /usr/local/Python-3.7.3/python /usr/bin/python&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/python/</link><description>Recent content in Python on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Jun 2019 10:23:11 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Python建立SocketSSL连接</title><link>https://blog.51ai.vip/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link><pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid><description>&lt;h3 id="python-socket连接">Python Socket连接&lt;/h3>
+&lt;p>5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.&lt;/p>
+&lt;p>这块没接触,Python也是hello world水平.&lt;/p>
+&lt;p>赶紧恶补一下:&lt;/p>
+&lt;p>Socket是网络编程的一个抽象概念。&lt;/p>
+&lt;p>通常我们用一个Socket表示“打开了一个网络链接”，打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型。&lt;/p>
+&lt;p>服务端我也不知道什么样,这里只记录客户端的相关.&lt;/p>
+&lt;p>这里我们得到一个文档说,需要建立socket SSL 连接,通过XML格式发送数据.&lt;/p>
+&lt;h4 id="非ssl的socket">非ssl的socket:&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> socket
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建一个socket:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>socket(socket&lt;span style="color:#f92672">.&lt;/span>AF_INET, socket&lt;span style="color:#f92672">.&lt;/span>SOCK_STREAM)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 建立连接:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>connect((&lt;span style="color:#e6db74">&amp;#39;192.168.1.230&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">80&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="ssl-socket">SSL socket:&lt;/h4>
+&lt;p>端口是3344,ssl跳过验证,如果验证参数需要修改.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> socket
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>socket(socket&lt;span style="color:#f92672">.&lt;/span>AF_INET, socket&lt;span style="color:#f92672">.&lt;/span>SOCK_STREAM)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#f92672">=&lt;/span> ssl&lt;span style="color:#f92672">.&lt;/span>wrap_socket(s, cert_reqs&lt;span style="color:#f92672">=&lt;/span>ssl&lt;span style="color:#f92672">.&lt;/span>CERT_NONE)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c&lt;span style="color:#f92672">.&lt;/span>connect((&lt;span style="color:#e6db74">&amp;#39;192.168.1.230&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;3344&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这下与那台设备可以正常通讯了,后面实现具体功能就ok了.&lt;/p></description></item><item><title>Ubutun16.04安装Python</title><link>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link><pubDate>Fri, 24 May 2019 11:17:59 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid><description>&lt;h3 id="目的">目的&lt;/h3>
+&lt;p>安装python3.7.3
+安装pip&lt;/p>
+&lt;h3 id="准备工作">准备工作&lt;/h3>
+&lt;ul>
+&lt;li>系统内置python2.X,去除默认python的软链, &lt;code>sudo rm /usr/bin/python&lt;/code>&lt;/li>
+&lt;li>安装一些软件包&amp;amp;软件包保持最新状态.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>sudo apt-get update&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget&lt;/code>&lt;/p>
+&lt;h3 id="安装python">安装Python&lt;/h3>
+&lt;p>通过编译安装python&lt;/p>
+&lt;p>默认我下载在home里, &lt;code>cd&lt;/code>&lt;/p>
+&lt;p>下载新python文件, &lt;code>wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz &lt;/code>&lt;/p>
+&lt;p>解压文件, &lt;code>tar zxf Python-3.7.3.tgz&lt;/code>&lt;/p>
+&lt;p>把这个文件拷贝到放置的位置. 这里我放到/usr/local/python &lt;code>mkdir -p /usr/local/python&lt;/code>&lt;/p>
+&lt;p>进入这个目录, 执行 &lt;code>./configure --enable-optimizations&lt;/code>
+之后执行 &lt;code>sudo make -j 8&lt;/code> 这里8根据设备cpu核心数来的,不知道你可以写1(手动滑稽)&lt;/p>
+&lt;p>make之后 该 &lt;del>make install&lt;/del> 嘛? NO! 是 &lt;code>sudo make altinstall&lt;/code>&lt;/p>
+&lt;p>装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在.
+需要手动添加一下,我这个是没有给我创建成功.&lt;/p>
+&lt;p>&lt;code>sudo ln -s /usr/local/Python-3.7.3/python /usr/bin/python&lt;/code>&lt;/p></description></item></channel></rss>
