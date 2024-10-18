@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zabbix on aLong Blog</title><link>http://localhost:1313/aLong/tags/zabbix/</link><description>Recent content in Zabbix on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 12 Oct 2022 11:15:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/zabbix/index.xml" rel="self" type="application/rss+xml"/><item><title>Zabbix自动发现SNMP设备</title><link>http://localhost:1313/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link><pubDate>Wed, 12 Oct 2022 11:15:29 +0800</pubDate><guid>http://localhost:1313/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zabbix on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/zabbix/</link><description>Recent content in Zabbix on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 12 Oct 2022 11:15:29 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/zabbix/index.xml" rel="self" type="application/rss+xml"/><item><title>Zabbix自动发现SNMP设备</title><link>https://blog.51ai.vip/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link><pubDate>Wed, 12 Oct 2022 11:15:29 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid><description>&lt;blockquote>
 &lt;p>Zabbix提供高效灵活的网络自动发现功能。
 网络发现的优势：&lt;/p>
 &lt;ul>
@@ -45,7 +45,7 @@
 &lt;li>关联模版，Link to templates：模版名。&lt;/li>
 &lt;li>开启Host。&lt;/li>
 &lt;/ol>
-&lt;p>通过这个配置后，发现的主机会根据这个配置进行操作。&lt;/p></description></item><item><title>Zabbix6 网络发现</title><link>http://localhost:1313/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link><pubDate>Fri, 14 Jan 2022 10:15:53 +0000</pubDate><guid>http://localhost:1313/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid><description>&lt;p>Zabbix6 网络发现&lt;/p>
+&lt;p>通过这个配置后，发现的主机会根据这个配置进行操作。&lt;/p></description></item><item><title>Zabbix6 网络发现</title><link>https://blog.51ai.vip/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link><pubDate>Fri, 14 Jan 2022 10:15:53 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid><description>&lt;p>Zabbix6 网络发现&lt;/p>
 &lt;h3 id="功能">功能&lt;/h3>
 &lt;ul>
 &lt;li>
@@ -117,7 +117,7 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。&lt;/p>
 &lt;li>
 &lt;p>Visible name：描述名&lt;/p>
 &lt;p>&lt;img src="https://s2.loli.net/2022/05/30/8azsd4mVbDPU39L.png" alt="ohbmIZ.png">&lt;/p>
-&lt;p>这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。&lt;/p></description></item><item><title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title><link>http://localhost:1313/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link><pubDate>Wed, 27 Oct 2021 15:06:44 +0000</pubDate><guid>http://localhost:1313/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid><description>&lt;h1 id="zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache">zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache&lt;/h1>
+&lt;p>这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。&lt;/p></description></item><item><title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title><link>https://blog.51ai.vip/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link><pubDate>Wed, 27 Oct 2021 15:06:44 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid><description>&lt;h1 id="zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache">zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache&lt;/h1>
 &lt;h2 id="情况">情况&lt;/h2>
 &lt;p>接上次做完容器部署proxy后，为其添加host进行添加任务。&lt;/p>
 &lt;p>发现一直没有数据，就到item里面执行 &lt;code>execute now&lt;/code>。&lt;/p>
@@ -156,7 +156,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>--restart&lt;span style="color:#f92672">=&lt;/span>always &lt;span style="color:#ae81ff">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>zabbix/zabbix-proxy-sqlite3:alpine-trunk
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&amp;ndash;祝好&lt;/p>
-&lt;p>本文结束&lt;/p></description></item><item><title>Zabbix-Proxy 部署运行</title><link>http://localhost:1313/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link><pubDate>Thu, 24 Jun 2021 17:20:40 +0000</pubDate><guid>http://localhost:1313/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid><description>&lt;h2 id="前提">前提&lt;/h2>
+&lt;p>本文结束&lt;/p></description></item><item><title>Zabbix-Proxy 部署运行</title><link>https://blog.51ai.vip/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link><pubDate>Thu, 24 Jun 2021 17:20:40 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid><description>&lt;h2 id="前提">前提&lt;/h2>
 &lt;p>版本： zabbix-server 5.4&lt;/p>
 &lt;p>任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。&lt;/p>
 &lt;h2 id="安装zabbix-proxy">安装Zabbix-Proxy&lt;/h2>
