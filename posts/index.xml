@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on aLong Blog</title><link>https://blog.51ai.vip/aLong/posts/</link><description>Recent content in Posts on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 14 Sep 2024 10:42:26 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Snapbox</title><link>https://blog.51ai.vip/aLong/posts/snapbox/</link><pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/snapbox/</guid><description>&lt;h1 id="一款macos的app">一款macOS的APP&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on aLong Blog</title><link>https://blog.51ai.vip/aLong/posts/</link><description>Recent content in Posts on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 21 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Arc Search小记</title><link>https://blog.51ai.vip/aLong/posts/arc-search%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/arc-search%E5%B0%8F%E8%AE%B0/</guid><description>&lt;h1 id="起因">起因&lt;/h1>
+&lt;p>由于safari访问论坛或者网页提示版本低,所以就升级了iOS系统.
+升级到了iOS17.7,舍弃了巨魔老弟啊. 拥抱一些之前装不上的APP.&lt;/p>
+&lt;h1 id="基本功能介绍">基本功能介绍&lt;/h1>
+&lt;p>在macOS上已经使用了几个月的arc浏览器了,之前在手机安装过一个arc手机版除了能同步标签好像没啥新鲜玩意儿就卸载了.&lt;/p>
+&lt;p>现在新的 Arc Search有一些新功能.下面简单记录一下.&lt;/p>
+&lt;h2 id="界面很简约">界面很简约&lt;/h2>
+&lt;p>🎬: &lt;a href="https://watch.wave.video/Z84ahCqYM5UO97hl">https://watch.wave.video/Z84ahCqYM5UO97hl&lt;/a>&lt;/p>
+&lt;p>打开App后很简约,上面有个大大的logo. 这玩意儿可以拖拽,旋转.拿来解闷的吗?
+底部三个按钮,左侧是同步的电脑标签(提前已经登陆与电脑版账号).中间➕号快速启动,长按这个可以呼出arc那个小助手.右侧是设置按钮.&lt;/p>
+&lt;p>底栏上划和➕号功能一样.&lt;/p>
+&lt;p>输入右侧支持语音助手和快速切换隐私模式👀. 这个👀切换相当丝滑.&lt;/p>
+&lt;p>这个页面可以pin一些常用的网页.便于快速打开. 最顶部的搜索输入默认是走搜索引擎,输入的同时下面会有提示,这些提示功能是通过AI帮你返回搜索信息内容.&lt;/p>
+&lt;h2 id="网页总结">网页总结&lt;/h2>
+&lt;p>🎬: &lt;a href="https://watch.wave.video/wjieIYr66NLni9YG">https://watch.wave.video/wjieIYr66NLni9YG&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/10/21/z8bCDf1pVjEI6KU.png" alt="">&lt;/p>
+&lt;p>网页总结有一个手势,双指捏合网页缩小后开始总结.&lt;/p>
+&lt;h2 id="pin">Pin&lt;/h2>
+&lt;p>&lt;img src="https://s2.loli.net/2024/10/21/EqzNLCnTQvxm3Vi.jpg" alt="">&lt;/p>
+&lt;p>和PC功能一样,支持pin到pc同步的空间.第一个&lt;code>Favorite in App&lt;/code> 是钉在App的启动页上,当点击下栏+号或者上划是能看到钉的链接.&lt;/p>
+&lt;h2 id="翻译">翻译&lt;/h2>
+&lt;p>🎬: &lt;a href="https://watch.wave.video/wLN3YbdOkwouKosc">https://watch.wave.video/wLN3YbdOkwouKosc&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/10/21/aEqjQkBb3pT7JDs.png" alt="">&lt;/p>
+&lt;p>翻译和chrome体验是类似的,可能就是一个功能.我不清楚,单我发现一个不错的看书方式,就是之前提到过的Flow加载书,用它来翻译.有个缺点是字体颜色不知道为什么会变色. 翻译速度挺快的.&lt;/p>
+&lt;h2 id="设置">设置&lt;/h2>
+&lt;p>&lt;img src="https://s2.loli.net/2024/10/21/Fz1jbEVpcX2AfHg.png" alt="">&lt;/p>
+&lt;p>其他设置中有个 &lt;code>Raise to Call Arc&lt;/code> 这个功能有点意思,当你打开arc,拿起手机像打电话一样可以呼出来助手,你说话它去处理(播放🎵),最后播放处理结果.&lt;/p>
+&lt;h2 id="站点设置">站点设置&lt;/h2>
+&lt;p>&lt;img src="https://s2.loli.net/2024/10/21/IO5T8t4eivjCDNB.jpg" alt="">&lt;/p>
+&lt;p>广告,禁提示cookie,禁止跟踪这些默认开启.&lt;/p>
+&lt;h2 id="ui交互">UI交互&lt;/h2>
+&lt;p>🎬: &lt;a href="https://watch.wave.video/0u8ckdJkSUejvaPc">https://watch.wave.video/0u8ckdJkSUejvaPc&lt;/a>&lt;/p>
+&lt;p>底栏左侧按钮上划时快速切换打开的网页,点击打开打开页面的预览,上划关闭网页.长按打开PC同步的&lt;code>space&lt;/code>内容.&lt;/p>
+&lt;p>大概就这些,感谢浏览.&lt;/p>
+&lt;p>完结
+祝好&lt;/p></description></item><item><title>Snapbox</title><link>https://blog.51ai.vip/aLong/posts/snapbox/</link><pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/snapbox/</guid><description>&lt;h1 id="一款macos的app">一款macOS的APP&lt;/h1>
 &lt;p>app网站 : &lt;a href="https://snapbox.app/">https://snapbox.app/&lt;/a>&lt;/p>
 &lt;p>我在&lt;a href="https://www.v2ex.com/t/1062087">v2ex&lt;/a>上看到此贴.&lt;/p>
 &lt;p>作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.&lt;/p>
