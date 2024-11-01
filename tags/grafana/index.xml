@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grafana on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/grafana/</link><description>Recent content in Grafana on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 30 Nov 2020 13:46:47 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/grafana/index.xml" rel="self" type="application/rss+xml"/><item><title>Grafana插件Plugin中文汉化</title><link>https://blog.51ai.vip/aLong/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</link><pubDate>Mon, 30 Nov 2020 13:46:47 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</guid><description>&lt;h2 id="汉化三方插件">汉化三方插件&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grafana on aLong Blog</title><link>http://localhost:1313/aLong/tags/grafana/</link><description>Recent content in Grafana on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 30 Nov 2020 13:46:47 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/grafana/index.xml" rel="self" type="application/rss+xml"/><item><title>Grafana插件Plugin中文汉化</title><link>http://localhost:1313/aLong/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</link><pubDate>Mon, 30 Nov 2020 13:46:47 +0000</pubDate><guid>http://localhost:1313/aLong/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</guid><description>&lt;h2 id="汉化三方插件">汉化三方插件&lt;/h2>
 &lt;p>前面说过汉化Grafana的工作。目前在7.2.1上面，大部分已经完成。细节继续完善。
 今天考虑在第三方插件上做一些汉化。点到插件一看全是英文感觉很突出。领导看到了也不爽啊-.-！。&lt;/p>
 &lt;h2 id="找个软的捏">找个软的捏&lt;/h2>
@@ -51,7 +51,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p>
 &lt;h2 id="持续改进">持续改进&lt;/h2>
 &lt;p>考虑持续处理某个插件，可以考虑fork原插件项目，remote add XXX源。
 然后新建分之来做自己的处理。master fetch XXX源 以跟踪上游的更新。
-这样自己项目安装插件时候拉自己的就好啦，美滋滋。&lt;/p></description></item><item><title>docker-compose编排搭建prometheus+grafana+alertmanager+node-exporter+snmp-exporter</title><link>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link><pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid><description>&lt;h2 id="docker-compose">Docker-compose&lt;/h2>
+这样自己项目安装插件时候拉自己的就好啦，美滋滋。&lt;/p></description></item><item><title>docker-compose编排搭建prometheus+grafana+alertmanager+node-exporter+snmp-exporter</title><link>http://localhost:1313/aLong/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link><pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate><guid>http://localhost:1313/aLong/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid><description>&lt;h2 id="docker-compose">Docker-compose&lt;/h2>
 &lt;p>目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。&lt;/p>
 &lt;p>科普之后感觉自己对k8s还有有些发怵的。从简单的一个入手吧，选择了docker-compose。&lt;/p>
 &lt;blockquote>
@@ -96,7 +96,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p>
  └── blackbox.yml
 &lt;/code>&lt;/pre>&lt;ol start="2">
 &lt;li>
-&lt;p>根据结构编写&lt;/p></description></item><item><title>Grafana中文化</title><link>https://blog.51ai.vip/aLong/posts/grafana%E6%B1%89%E5%8C%96/</link><pubDate>Mon, 16 Sep 2019 15:37:46 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/grafana%E6%B1%89%E5%8C%96/</guid><description>&lt;h2 id="可视化图表">可视化图表&lt;/h2>
+&lt;p>根据结构编写&lt;/p></description></item><item><title>Grafana中文化</title><link>http://localhost:1313/aLong/grafana%E6%B1%89%E5%8C%96/</link><pubDate>Mon, 16 Sep 2019 15:37:46 +0000</pubDate><guid>http://localhost:1313/aLong/grafana%E6%B1%89%E5%8C%96/</guid><description>&lt;h2 id="可视化图表">可视化图表&lt;/h2>
 &lt;p>Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。&lt;/p>
 &lt;h3 id="仪表盘dashboard">仪表盘Dashboard&lt;/h3>
 &lt;p>通过数据源定义好可视化的数据来源之后，对于用户而言最重要的事情就是实现数据的可视化。&lt;/p>
@@ -131,7 +131,7 @@ Grafana中所有的面板均以插件的形式进行使用，当前内置了5种
 &lt;p>当我们yarn start 执行后，等待一段时间，build at 时间证明准备工作已完成，下面就需要我们在调试模式下测试了。&lt;/p>
 &lt;p>还需要一个调试的Grafana服务程序，这里是windows环境，所以直接从官方下载了zip包，执行bin下的grafana-server.exe 来启动服务。需要再conf文件夹修改一下public前端资源的配置，如果不修改那么你翻译的信息是看不到的，服务会直接读取的当前的public，我们这需要读取翻译的public文件位置。&lt;/p>
 &lt;p>配置在windows服务程序的 /conf/defaults.ini
-修改内容：&lt;/p></description></item><item><title>Prometheus+Grafana安装搭建</title><link>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link><pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid><description>&lt;h2 id="介绍">介绍&lt;/h2>
+修改内容：&lt;/p></description></item><item><title>Prometheus+Grafana安装搭建</title><link>http://localhost:1313/aLong/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link><pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate><guid>http://localhost:1313/aLong/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid><description>&lt;h2 id="介绍">介绍&lt;/h2>
 &lt;blockquote>
 &lt;p>Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。
 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。
