@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Obsidian on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/obsidian/</link><description>Recent content in Obsidian on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/obsidian/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian插件使用</title><link>https://blog.51ai.vip/aLong/posts/obsidian%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/obsidian%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</guid><description>&lt;h1 id="场景">场景&lt;/h1>
+&lt;p>一直使用Obsidian进行记录内容,网页上很多内容觉得不错想摘录一下. 之前使用过的内容是简悦和一个Safari的脚本.&lt;/p>
+&lt;p>前阵子看到有人分享Obsidian的插件,装上一直没用,本周体验完记录一下.&lt;/p>
+&lt;p>本次记录时演示的浏览器是 &lt;code>zen browser&lt;/code> .&lt;/p>
+&lt;h1 id="安装插件">安装插件&lt;/h1>
+&lt;p>下面是支持浏览器的地址:&lt;/p>
+&lt;p>&lt;a href="https://chromewebstore.google.com/detail/obsidian-web-clipper/cnjifjpddelmedmihgijeibhnjfabmlf">hrome Web Store&lt;/a> for Chrome, Brave, Edge, Arc, Orion, and other Chromium-based browsers.&lt;/p>
+&lt;p>&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/web-clipper-obsidian/">Firefox Add-Ons&lt;/a> for Firefox and Firefox Mobile.&lt;/p>
+&lt;p>&lt;a href="https://apps.apple.com/us/app/obsidian-web-clipper/id6720708363">Safari Extensions&lt;/a> for macOS, iOS, and iPadOS.&lt;/p>
+&lt;h1 id="使用">使用&lt;/h1>
+&lt;p>安装完再浏览器上可以看到插件图标.&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/11/01/NUjCu9ZJ2rwm7LT.png" alt="">&lt;/p>
+&lt;p>在使用之前我们先进行一些配置,点击图标后点击设置按钮:&lt;/p>
+&lt;h2 id="基本设置">基本设置&lt;/h2>
+&lt;p>&lt;img src="https://s2.loli.net/2024/11/01/BTVvyZdahUwWQSF.png" alt="">&lt;/p>
+&lt;p>基本设置中,最需要设置的是 Vaults 目录,可以配置一个或多个,当在插件上保存时可以切换不同的 Vault 进行保存.&lt;/p>
+&lt;p>输入Vault名字,回车添加.&lt;/p>
+&lt;h2 id="属性配置">属性配置&lt;/h2>
+&lt;p>&lt;img src="https://s2.loli.net/2024/11/01/69vpVCsSYlARt1q.png" alt="">&lt;/p>
+&lt;p>属性我没有调整,使用的默认值.等需要进阶或者修改时候再考虑.&lt;/p>
+&lt;h2 id="荧光笔配置">荧光笔配置&lt;/h2>
+&lt;p>&lt;img src="https://s2.loli.net/2024/11/01/1GdZfazujbJRBCD.png" alt="">&lt;/p>
+&lt;p>荧光笔目前用起来不是很好用. 他能给网页进行高亮,通知在配置时是否显示,已经再导出内容是,是否用高亮的内容替换原文.&lt;/p>
+&lt;p>白话就是仅导出高亮内容.看你选择,我选择默认替换原文.&lt;/p>
+&lt;h2 id="模版配置">模版配置&lt;/h2>
+&lt;p>&lt;img src="https://s2.loli.net/2024/11/01/X5tsYpaM3GK7WLV.png" alt="">&lt;/p>
+&lt;p>模版我修改的地方不多,我仅把Vault设置了默认的名字,没有选择LastUsed. 如果多个库可以用lastUsed更合适.&lt;/p>
+&lt;p>模版有一处配置会影响导出结果:&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/11/01/kfPMwS8hQOURaXJ.png" alt="">&lt;/p>
+&lt;p>默认是创建新文件. 如果需要进行同名称追加和日记可以自行选择测试.&lt;/p>
+&lt;h1 id="导出测试">导出测试&lt;/h1>
+&lt;p>插件图标上也有些按钮,下面进行简单介绍:&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2024/11/01/93d1LTeYuZv5mjQ.png" alt="">&lt;/p>
+&lt;p>在Add to obsidian 按钮上面是选择输出的&lt;code>vault&lt;/code>,后面的输入是指定输出目录, 默认是&lt;strong>Clippings&lt;/strong> .&lt;/p></description></item></channel></rss>
