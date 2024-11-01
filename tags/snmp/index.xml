@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SNMP on aLong Blog</title><link>http://localhost:1313/aLong/tags/snmp/</link><description>Recent content in SNMP on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 16 Nov 2021 16:38:35 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/snmp/index.xml" rel="self" type="application/rss+xml"/><item><title>S5720 SNMP v3配置</title><link>http://localhost:1313/aLong/s5720-snmp-v3/</link><pubDate>Tue, 16 Nov 2021 16:38:35 +0000</pubDate><guid>http://localhost:1313/aLong/s5720-snmp-v3/</guid><description>&lt;h2 id="s5720-snmp-v3配置">S5720 SNMP v3配置&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SNMP on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/snmp/</link><description>Recent content in SNMP on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 16 Nov 2021 16:38:35 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/snmp/index.xml" rel="self" type="application/rss+xml"/><item><title>S5720 SNMP v3配置</title><link>https://blog.51ai.vip/aLong/posts/s5720-snmp-v3/</link><pubDate>Tue, 16 Nov 2021 16:38:35 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/s5720-snmp-v3/</guid><description>&lt;h2 id="s5720-snmp-v3配置">S5720 SNMP v3配置&lt;/h2>
 &lt;h3 id="系统视图">系统视图&lt;/h3>
 &lt;p>&lt;code>system-view&lt;/code>&lt;/p>
 &lt;h3 id="snmp服务">SNMP服务&lt;/h3>
@@ -15,7 +15,7 @@
 &lt;h3 id="配置用户认证密码">配置用户认证密码&lt;/h3>
 &lt;p>&lt;code>snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]&lt;/code>&lt;/p>
 &lt;h3 id="配置加密密码">配置加密密码&lt;/h3>
-&lt;p>&lt;code>snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]&lt;/code>&lt;/p></description></item><item><title>Prometheus-SNMP_Exporter Generator</title><link>http://localhost:1313/aLong/prometheus-snmp-exporter-generator/</link><pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate><guid>http://localhost:1313/aLong/prometheus-snmp-exporter-generator/</guid><description>&lt;h2 id="prometheus-snmp-exporter">Prometheus-SNMP Exporter&lt;/h2>
+&lt;p>&lt;code>snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]&lt;/code>&lt;/p></description></item><item><title>Prometheus-SNMP_Exporter Generator</title><link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</link><pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid><description>&lt;h2 id="prometheus-snmp-exporter">Prometheus-SNMP Exporter&lt;/h2>
 &lt;blockquote>
 &lt;p>生成器从generator.yml读取并写入snmp.yml。&lt;/p>
 &lt;/blockquote>
@@ -123,7 +123,7 @@ make mibs(不建议直接make)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># EnumAsInfo: 为其创建单个时间序列的枚举。适用于恒定值。&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># EnumAsStateSet: 每个状态具有时间序列的枚举。适用于可变低基数枚举。&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Bits: 一种RFC2578位结构，它产生一个具有每位时间序列的状态集。&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下面提供一个自己编写的generator.yml&lt;/p></description></item><item><title>Prometheus-snmp_export部署</title><link>http://localhost:1313/aLong/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link><pubDate>Thu, 29 Aug 2019 10:06:01 +0000</pubDate><guid>http://localhost:1313/aLong/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="snmp">SNMP&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下面提供一个自己编写的generator.yml&lt;/p></description></item><item><title>Prometheus-snmp_export部署</title><link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link><pubDate>Thu, 29 Aug 2019 10:06:01 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="snmp">SNMP&lt;/h2>
 &lt;p>SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。&lt;/p>
 &lt;h2 id="目的">目的&lt;/h2>
 &lt;p>通过snmp_export,获取设备信息.&lt;/p>

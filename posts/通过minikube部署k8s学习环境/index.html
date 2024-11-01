@@ -1,0 +1,86 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{--accent-color:#FF4D4D}</style><title>通过minikube部署K8S学习环境</title>
+<meta name=description content="Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。
+MacOS部署方式: 官方教程
+本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：
+curl -LO …"><meta name=keywords content='blog,aLong,blog.51ai.vip,Linux,Kubernetes'><meta property="og:url" content="https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/"><meta property="og:type" content="website"><meta property="og:title" content="通过minikube部署K8S学习环境"><meta property="og:description" content="Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。
+MacOS部署方式: 官方教程
+本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：
+curl -LO …"><meta property="og:image" content="https://blog.51ai.vip/aLong/"><meta property="og:image:secure_url" content="https://blog.51ai.vip/aLong/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="通过minikube部署K8S学习环境"><meta name=twitter:description content="Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。
+MacOS部署方式: 官方教程
+本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：
+curl -LO …"><meta property="twitter:domain" content="https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/"><meta property="twitter:url" content="https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/"><meta name=twitter:image content="https://blog.51ai.vip/aLong/"><link rel=canonical href=https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/><link rel=stylesheet type=text/css href=/aLong/css/normalize.min.css media=print><link rel=stylesheet type=text/css href=/aLong/css/main.min.css><link id=dark-theme rel=stylesheet href=/aLong/css/dark.min.css><script src=/aLong/js/bundle.min.9a920d7dabdbad8363b6a0a94e29a9dfebdb7ee64cfcb193a0145e512ef2bdab.js integrity="sha256-mpINfavbrYNjtqCpTimp3+vbfuZM/LGToBReUS7yvas="></script></head><body><script>setThemeByUserPref()</script><header class=header><nav class=header-nav><div class=nav-title><a class=nav-brand href=https://blog.51ai.vip/aLong/>aLong Blog</a></div><div class=nav-links><div class=nav-link><a href=https://blog.51ai.vip/aLong/><span data-feather=home></span> Home</a></div><div class=nav-link><a href=https://blog.51ai.vip/aLong/posts/>Posts</a></div><div class=nav-link><a href=https://blog.51ai.vip/aLong/tags/>Tags</a></div><div class=nav-link><a href=https://blog.51ai.vip/aLong/index.xml><span data-feather=rss></span></a></div><span class=nav-icons-divider></span><div class="nav-link dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+<a><span class=theme-toggle-icon data-feather=moon></span></a></div><div class=nav-link id=hamburger-menu-toggle><span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+<a><span data-feather=menu></span></a></div><ul class="nav-hamburger-list visibility-hidden"><li class=nav-item><a href=https://blog.51ai.vip/aLong/><span data-feather=home></span> Home</a></li><li class=nav-item><a href=https://blog.51ai.vip/aLong/posts/>Posts</a></li><li class=nav-item><a href=https://blog.51ai.vip/aLong/tags/>Tags</a></li><li class=nav-item><a href=https://blog.51ai.vip/aLong/index.xml><span data-feather=rss></span></a></li><li class="nav-item dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+<a><span class=theme-toggle-icon data-feather=moon></span></a></li></ul></div></nav></header><main id=content><div class="post container"><div class=post-header-section><h1>通过minikube部署K8S学习环境</h1><small role=doc-subtitle></small><p class=post-date>2023/01/06</p><ul class=post-tags><li class=post-tag><a href=https://blog.51ai.vip/aLong/tags/linux>Linux</a></li><li class=post-tag><a href=https://blog.51ai.vip/aLong/tags/kubernetes>Kubernetes</a></li></ul></div><div class=post-content><p>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。</p><h1 id=macos部署方式>MacOS部署方式:</h1><p><a href=https://minikube.sigs.k8s.io/docs/start/>官方教程</a></p><p>本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
+安装kubectl：<code>brew install kubectl</code>
+安装minikube：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo install minikube-darwin-amd64 /usr/local/bin/minikube
+</span></span></code></pre></div><h3 id=通过minikube启动集群>通过minikube启动集群</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>minikube start <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--kubernetes-version<span style=color:#f92672>=</span>v1.23.9 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--image-mirror-country<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;cn&#39;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--registry-mirror<span style=color:#f92672>=</span>https://？？？？？.mirror.aliyuncs.com
+</span></span></code></pre></div><p>因为是国内，所以<code>--image-mirror-country='cn'</code>。通过<code>--registry-mirror</code>为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。
+因为我学习的版本是1.23.x，所以制定了版本<code>--kubernetes-version=v1.23.9</code>。
+默认他读去了驱动配置，识别是<code>parallels</code>,自己定义方式<code>--driver=hyperkit</code>。</p><p>安装结果：
+<img src=https://s2.loli.net/2023/01/06/C3AFxdiPbq8aIuR.jpg alt=C3AFxdiPbq8aIuR></p><p><em>错误</em>：
+如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。</p><h4 id=驱动选择>驱动选择：</h4><p>使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见<a href=https://minikube.sigs.k8s.io/docs/drivers/>drivers page</a></p><h3 id=验证结果>验证结果</h3><ul><li><p>查询minikube状态
+<img src=https://s2.loli.net/2023/01/06/otU8LYBjuFeDa31.png alt=otU8LYBjuFeDa31></p></li><li><p>进入面板
+<img src=https://s2.loli.net/2023/01/06/FmrBXOTJ1N2AZgU.png alt=FmrBXOTJ1N2AZgU>
+<img src=https://s2.loli.net/2023/01/06/IPBCwUSx7Fb28Ee.png alt=IPBCwUSx7Fb28Ee></p></li><li><p>kubectl控制
+<code>minikube kubectl -- get pods -A</code>
+<img src=https://s2.loli.net/2023/01/06/EziUHcpln27ufeB.png alt=EziUHcpln27ufeB></p></li></ul><p>kubectl在minikube中使用，需要写 <code>nimikune kubectl --</code>后面加入执行的命令。
+macos默认使用的zsh，在zsh加入alias就可以敲的少的了。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>vi ~/.zshrc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#加入一行</span>
+</span></span><span style=display:flex><span>alias kubectl<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;minikube kubectl --&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#退出</span>
+</span></span><span style=display:flex><span>source ~/.zshrc
+</span></span></code></pre></div><ul><li>再创建一个Pod
+创建：
+<code>kubectl run nginx --image=nginx:alpine</code>
+查询：
+<code>kubectl get pods nginx</code>
+详情：
+<code>kubectl describe pods nginx</code>
+<img src=https://s2.loli.net/2023/01/06/pYPqIgt84LzBcEU.png alt=pYPqIgt84LzBcEU></li></ul><p>到这里k8s可以使用了。</p><h1 id=ubuntu2204部署方式>Ubuntu22.04部署方式</h1><p>我在续集上安装了一个Ubuntu的操作系统。在上面安装一遍，这次驱动是docker。
+装完系统后，安装docker。
+<a href=https://docs.docker.com/engine/install/ubuntu/>官方手册</a></p><ol><li>准备源操作</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt-get remove docker docker-engine docker.io containerd runc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt-get update
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt-get -y install <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>ca-certificates <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>curl <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>gnupg <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>lsb-release
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>sudo mkdir -p /etc/apt/keyrings <span style=color:#f92672>&amp;&amp;</span> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  <span style=color:#e6db74>&#34;deb [arch=</span><span style=color:#66d9ef>$(</span>dpkg --print-architecture<span style=color:#66d9ef>)</span><span style=color:#e6db74> signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  </span><span style=color:#66d9ef>$(</span>lsb_release -cs<span style=color:#66d9ef>)</span><span style=color:#e6db74> stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span></code></pre></div><ol start=2><li>安装Docker Engine</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>sudo apt-get update
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#给当前用户加入docker组，加入完成注销再登陆</span>
+</span></span><span style=display:flex><span>sudo usermod -aG docker $USER
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 自启</span>
+</span></span><span style=display:flex><span>sudo systemctl enable docker.service
+</span></span></code></pre></div><ol start=3><li>安装minikube</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo install minikube-linux-amd64 /usr/local/bin/minikube
+</span></span></code></pre></div><p><img src=https://s2.loli.net/2023/01/06/b8ZMAqLeOviN19D.jpg alt=b8ZMAqLeOviN19D></p><ol start=4><li>部署k8s</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>minikube start <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--kubernetes-version<span style=color:#f92672>=</span>v1.23.9 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--image-mirror-country<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;cn&#39;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--registry-mirror<span style=color:#f92672>=</span>https://????????.mirror.aliyuncs.com
+</span></span></code></pre></div><p><img src=https://s2.loli.net/2023/01/06/CkRH2nNBodxzh6F.jpg alt=CkRH2nNBodxzh6F></p><p>可以看到装完他还提示我 kubectl没有。
+5. 安装kubectl
+<code>curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl</code></p><p><code>sudo chmod +x kubectl && sudo mv ./kubectl /usr/local/bin/kubectl</code></p><p><img src=https://s2.loli.net/2023/01/06/rOksbmSFMdhXipu.jpg alt=rOksbmSFMdhXipu></p><p>到此再Ubuntu2204也部署完成。</p><p>后面继续学习</p><p>祝好～</p></div><div class=prev-next></div><svg id="btt-button" class="arrow-logo" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6.0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9.0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9.0L7 329.7c-9.4-9.4-9.4-24.6.0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
+<script>let backToTopButton=document.getElementById("btt-button");window.onscroll=function(){scrollFunction()};function scrollFunction(){document.body.scrollTop>20||document.documentElement.scrollTop>20?backToTopButton.style.display="block":backToTopButton.style.display="none"}function scrollToTop(){window.scrollTo(0,0)}</script></div></main><footer class=footer><span>&copy; 2023 aLong</span>
+<span>Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a></span></footer></body></html>
