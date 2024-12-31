@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prometheus on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/prometheus/</link><description>Recent content in Prometheus on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 17 Nov 2020 13:02:50 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/prometheus/index.xml" rel="self" type="application/rss+xml"/><item><title>docker-compose编排搭建prometheus+grafana+alertmanager+node-exporter+snmp-exporter</title><link>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link><pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid><description>&lt;h2 id="docker-compose">Docker-compose&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prometheus on aLong Blog</title><link>http://localhost:1313/aLong/tags/prometheus/</link><description>Recent content in Prometheus on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/aLong/tags/prometheus/index.xml" rel="self" type="application/rss+xml"/><item><title>Nightingle夜莺Docker版SNMP监控</title><link>http://localhost:1313/aLong/posts/nightingle%E5%A4%9C%E8%8E%BAdocker%E7%89%88snmp%E7%9B%91%E6%8E%A7/</link><pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/aLong/posts/nightingle%E5%A4%9C%E8%8E%BAdocker%E7%89%88snmp%E7%9B%91%E6%8E%A7/</guid><description>&lt;h2 id="起因">起因&lt;/h2>
+&lt;p>对夜莺很感兴趣，想使用一下。我看官方提供了v6版本的docker-compose。而且我之前有使用过promtheus和grafana，虽然很好但是总觉得还是得二开。总有一天有人去搞一个不错的玩意儿出来。&lt;a href="https://flashcat.cloud/docs/">官方文档地址&lt;/a>&lt;/p>
+&lt;h2 id="安装与配置">安装与配置&lt;/h2>
+&lt;p>直接运行docker版本的demo，启动后，我发现有prometheus和categraf。但我想根据官方文档使用VictoriaMetrics单机版本。&lt;/p>
+&lt;h3 id="使用victoriametrics">使用VictoriaMetrics&lt;/h3>
+&lt;p>我在compose中去掉了prometheus，然后在主机安装了VictoriaMetrics。我没用在compose中添加，我懒改了。直接看官当文档多香。&lt;/p>
+&lt;p>后面启动后修改数据源：
+&lt;img src="https://img-blog.csdnimg.cn/img_convert/13af579a7f90bfb9a5d197de818b08ab.png" alt="ZviA7j7">&lt;/p>
+&lt;p>添加好数据源后，看下是否正常：
+时序指标随便敲敲看有没指标
+&lt;img src="https://img-blog.csdnimg.cn/img_convert/3cb79c47b991fef817056f3dc5bab48c.png" alt="WxPg5Rs">
+看到有指标我很自信的说成了。&lt;/p>
+&lt;p>后面我加了两个Ping，发现可以没问题的。&lt;/p>
+&lt;p>&lt;img src="https://img-blog.csdnimg.cn/img_convert/60fd758e67e9dc0fd712bae376735e00.png" alt="JoY5v64">
+使用内置的展示仪表盘美滋滋。&lt;/p>
+&lt;h3 id="snmp部分">SNMP部分&lt;/h3>
+&lt;p>之后我想测试SNMP部分，这是我工作需要的内容。&lt;/p>
+&lt;p>首先默认的官方demo没有提供相关categraf插件配置。他的插件都是在github上面的。下载一份放到demo的categraf/conf目录下。
+我的路径： &lt;code>home/xxx/nightingate/docker/categraf/conf&lt;/code>&lt;/p>
+&lt;p>我这里用到snmp， 就拷贝input.snmp 这个目录到上面路径内。&lt;/p>
+&lt;p>进入这个&lt;code>input.snmp&lt;/code>,里面有两个文件,一个 &lt;code>snmp.toml&lt;/code>另一个是&lt;code>snmp.toml.example&lt;/code> 。实际使用的是第一个，在里面编辑内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">instances&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">agents&lt;/span> = [&lt;span style="color:#e6db74">&amp;#34;udp://10.10.10.2:161&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">timeout&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;5s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">version&lt;/span> = &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">path&lt;/span> = [&lt;span style="color:#e6db74">&amp;#34;/usr/share/snmp/mibs&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">community&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;public&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">agent_host_tag&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;switch&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">retries&lt;/span> = &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">instances&lt;/span>.&lt;span style="color:#a6e22e">field&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">oid&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;.1.3.6.1.2.1.1.3.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;uptime&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">instances&lt;/span>.&lt;span style="color:#a6e22e">field&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">oid&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;.1.3.6.1.2.1.1.5.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;source&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">is_tag&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">instances&lt;/span>.&lt;span style="color:#a6e22e">table&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">oid&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;IF-MIB::ifTable&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;interface&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">inherit_tags&lt;/span> = [&lt;span style="color:#e6db74">&amp;#34;source&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">index_as_tag&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">include_filter&lt;/span> = [&lt;span style="color:#e6db74">&amp;#34;ifIndex:2&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;ifIndex:4&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">instances&lt;/span>.&lt;span style="color:#a6e22e">table&lt;/span>.&lt;span style="color:#a6e22e">field&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">oid&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;IF-MIB::ifDescr&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;ifDescr&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">is_tag&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[[&lt;span style="color:#a6e22e">instances&lt;/span>.&lt;span style="color:#a6e22e">table&lt;/span>.&lt;span style="color:#a6e22e">field&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">oid&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;IF-MIB::ifPhysAddress&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;ifPhysAddress&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">is_tag&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="遇到问题">遇到问题&lt;/h3>
+&lt;p>保存重启categraf后，我只看到了一个指标&lt;code>snmp_uptime&lt;/code>。我单独取&lt;code>uptime&lt;/code>这个是有的，就好像没办法执行&lt;code>snmpwalk&lt;/code> 只能搞&lt;code>snmpget&lt;/code>。&lt;/p></description></item><item><title>docker-compose编排搭建prometheus+grafana+alertmanager+node-exporter+snmp-exporter</title><link>http://localhost:1313/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link><pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate><guid>http://localhost:1313/aLong/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid><description>&lt;h2 id="docker-compose">Docker-compose&lt;/h2>
 &lt;p>目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。&lt;/p>
 &lt;p>科普之后感觉自己对k8s还有有些发怵的。从简单的一个入手吧，选择了docker-compose。&lt;/p>
 &lt;blockquote>
@@ -43,7 +98,7 @@
  └── blackbox.yml
 &lt;/code>&lt;/pre>&lt;ol start="2">
 &lt;li>
-&lt;p>根据结构编写&lt;/p></description></item><item><title>Prometheus-SNMP_Exporter Generator</title><link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</link><pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid><description>&lt;h2 id="prometheus-snmp-exporter">Prometheus-SNMP Exporter&lt;/h2>
+&lt;p>根据结构编写&lt;/p></description></item><item><title>Prometheus-SNMP_Exporter Generator</title><link>http://localhost:1313/aLong/posts/prometheus-snmp-exporter-generator/</link><pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate><guid>http://localhost:1313/aLong/posts/prometheus-snmp-exporter-generator/</guid><description>&lt;h2 id="prometheus-snmp-exporter">Prometheus-SNMP Exporter&lt;/h2>
 &lt;blockquote>
 &lt;p>生成器从generator.yml读取并写入snmp.yml。&lt;/p>
 &lt;/blockquote>
@@ -151,7 +206,7 @@ make mibs(不建议直接make)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># EnumAsInfo: 为其创建单个时间序列的枚举。适用于恒定值。&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># EnumAsStateSet: 每个状态具有时间序列的枚举。适用于可变低基数枚举。&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Bits: 一种RFC2578位结构，它产生一个具有每位时间序列的状态集。&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下面提供一个自己编写的generator.yml&lt;/p></description></item><item><title>Prometheus告警模板详解</title><link>https://blog.51ai.vip/aLong/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</link><pubDate>Wed, 04 Dec 2019 11:51:43 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</guid><description>&lt;h2 id="目的">目的&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下面提供一个自己编写的generator.yml&lt;/p></description></item><item><title>Prometheus告警模板详解</title><link>http://localhost:1313/aLong/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</link><pubDate>Wed, 04 Dec 2019 11:51:43 +0000</pubDate><guid>http://localhost:1313/aLong/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</guid><description>&lt;h2 id="目的">目的&lt;/h2>
 &lt;p>之前配置告警之后,可以发送告警信息.但对于数据具体的结构信息,在模板中数据读取都比较懵.原因是不太清除警报都提供了哪些数据,除了我们设置的信息,还有没有其他的信息.&lt;/p>
 &lt;h3 id="告警数据结构">告警数据结构&lt;/h3>
 &lt;p>&lt;a href="https://prometheus.io/docs/alerting/notifications/#alert">官方docs&lt;/a>&lt;/p>
@@ -215,7 +270,7 @@ make mibs(不建议直接make)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{- end -}}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- end -}}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- end -}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>其中告警设备 server 这个标签是自定义的.如果没有可以删除此行或根据自己标签定义.&lt;/strong>&lt;/p></description></item><item><title>Prometheus标签处理&amp;服务发现</title><link>https://blog.51ai.vip/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link><pubDate>Tue, 03 Dec 2019 15:14:16 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid><description>&lt;h3 id="标签处理的重要性">标签处理的重要性&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>其中告警设备 server 这个标签是自定义的.如果没有可以删除此行或根据自己标签定义.&lt;/strong>&lt;/p></description></item><item><title>Prometheus标签处理&amp;服务发现</title><link>http://localhost:1313/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link><pubDate>Tue, 03 Dec 2019 15:14:16 +0000</pubDate><guid>http://localhost:1313/aLong/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid><description>&lt;h3 id="标签处理的重要性">标签处理的重要性&lt;/h3>
 &lt;p>之前的[配置](&lt;a href="https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/">https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/&lt;/a>中提到了标签的处理,不过由于写的是静态的配置,标签可以自己设置或者不设置都可以.&lt;/p>
 &lt;p>当使用服务发现之后发现标签处理的重要性提升了更高的级别.&lt;/p>
 &lt;h3 id="标签处理">标签处理&lt;/h3>
@@ -268,7 +323,7 @@ make mibs(不建议直接make)
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;localhost:9090&amp;#39;&lt;/span>] &lt;span style="color:#75715e"># 监控目标&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">labels&lt;/span>: &lt;span style="color:#75715e"># 配置标签&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">server&lt;/span>: &lt;span style="color:#ae81ff">local &lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Prometheus-AlertManager警告管理搭建与配置</title><link>https://blog.51ai.vip/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 19 Oct 2019 09:40:15 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="alertmanager">AlertManager&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Prometheus-AlertManager警告管理搭建与配置</title><link>http://localhost:1313/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 19 Oct 2019 09:40:15 +0000</pubDate><guid>http://localhost:1313/aLong/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="alertmanager">AlertManager&lt;/h2>
 &lt;blockquote>
 &lt;p>AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。
 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。
@@ -353,7 +408,7 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 或者定义的匹配规则，并且已发送的告警与新产生的告警中equal定义的标签完全相同，&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 则启动抑制机制，新的告警不会发送。&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;p>以下是官方文档配置翻译的文档.供参考具体详细的配置介绍.不细看先略过到下个步骤.&lt;/p></description></item><item><title>Prometueus.yml配置文件说明</title><link>https://blog.51ai.vip/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</link><pubDate>Wed, 09 Oct 2019 15:20:58 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</guid><description>&lt;h2 id="整体配置">整体配置&lt;/h2>
+&lt;p>以下是官方文档配置翻译的文档.供参考具体详细的配置介绍.不细看先略过到下个步骤.&lt;/p></description></item><item><title>Prometueus.yml配置文件说明</title><link>http://localhost:1313/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</link><pubDate>Wed, 09 Oct 2019 15:20:58 +0000</pubDate><guid>http://localhost:1313/aLong/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</guid><description>&lt;h2 id="整体配置">整体配置&lt;/h2>
 &lt;p>prometueus.yml 配置文件注解与说明&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">global&lt;/span>: &lt;span style="color:#75715e"># 全局配置&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">scrape_interval&lt;/span>: &lt;span style="color:#ae81ff">15s &lt;/span> &lt;span style="color:#75715e"># 默认值为 1m，用于设置每次数据收集的间隔&lt;/span>
@@ -406,7 +461,7 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">replacement&lt;/span>: &lt;span style="color:#ae81ff">172.16.23.12&lt;/span>:&lt;span style="color:#ae81ff">9117&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="各部分详解">各部分详解&lt;/h2>
 &lt;hr>
-&lt;p>部分官方文档的译文&lt;/p></description></item><item><title>Prometheus+Grafana安装搭建</title><link>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link><pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid><description>&lt;h2 id="介绍">介绍&lt;/h2>
+&lt;p>部分官方文档的译文&lt;/p></description></item><item><title>Prometheus+Grafana安装搭建</title><link>http://localhost:1313/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link><pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate><guid>http://localhost:1313/aLong/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid><description>&lt;h2 id="介绍">介绍&lt;/h2>
 &lt;blockquote>
 &lt;p>Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。
 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。
