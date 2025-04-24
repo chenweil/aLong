@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>部署 on aLong Blog</title><link>https://blog.51ai.vip/tags/%E9%83%A8%E7%BD%B2/</link><description>Recent content in 部署 on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml"/><item><title>zabbix6.0+docker-compose部署</title><link>https://blog.51ai.vip/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。&lt;/p>
+&lt;p>根据踩坑，记录docker-compose 执行后遇到的一些问题。&lt;/p>
+&lt;h2 id="zabbix-60-lts已发布">zabbix 6.0 LTS已发布&lt;/h2>
+&lt;p>本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发布。
+请结合 &lt;a href="https://hub.docker.com/u/zabbix">官方镜像&lt;/a>&lt;/p>
+&lt;h2 id="部署">部署&lt;/h2>
+&lt;p>主机安装好docker、docker-compose。&lt;/p>
+&lt;p>文件包含:&lt;a href="https://url21.ctfile.com/f/2802921-534381915-0158c8">env_vars&lt;/a> ,&lt;/p>
+&lt;p>&lt;a href="https://url21.ctfile.com/f/2802921-534383227-cb4ab7">docker-compose.yml&lt;/a>。&lt;/p>
+&lt;p>&lt;em>密码6387&lt;/em>&lt;/p>
+&lt;p>下载完成后解压到同一目录， 并执行&lt;code>docker-compose up -d&lt;/code>&lt;/p>
+&lt;p>这时候可以看到各服务拉取镜像并启动。&lt;/p>
+&lt;h2 id="docker-compose-文件内容">docker-compose 文件内容&lt;/h2>
+&lt;pre tabindex="0">&lt;code>version: &amp;#39;3.5&amp;#39;
+services:
+ m-server:
+ container_name: m-server
+ image: zabbix/zabbix-server-mysql:alpine-trunk
+ restart: always
+ ports:
+ - &amp;#34;10051:10051&amp;#34;
+ volumes:
+ - /etc/localtime:/etc/localtime:ro
+ - /etc/timezone:/etc/timezone:ro
+ - ./zbx_env/usr/lib/zabbix/alertscripts:/usr/lib/zabbix/alertscripts:ro
+ - ./zbx_env/usr/lib/zabbix/externalscripts:/usr/lib/zabbix/externalscripts:ro
+ - ./zbx_env/var/lib/zabbix/export:/var/lib/zabbix/export:rw
+ - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro
+ - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro
+ - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro
+ - ./zbx_env/var/lib/zabbix/mibs:/var/lib/zabbix/mibs:ro
+ env_file:
+ - ./env_vars/.env_db_mysql
+ - ./env_vars/.env_srv
+ secrets:
+ - MYSQL_USER
+ - MYSQL_PASSWORD
+ - MYSQL_ROOT_PASSWORD
+ # - client-key.pem
+ # - client-cert.pem
+ # - root-ca.pem
+ depends_on:
+ - mysql-server
+ networks:
+ zbx_net_backend:
+ aliases:
+ - m-erver
+ - m-server-mysql
+ - m-server-alpine-mysql
+ - m-server-mysql-alpine
+ zbx_net_frontend: null
+ # devices:
+ # - &amp;#34;/dev/ttyUSB0:/dev/ttyUSB0&amp;#34;
+ stop_grace_period: 30s
+ sysctls:
+ - net.ipv4.ip_local_port_range=1024 65000
+ - net.ipv4.conf.all.accept_redirects=0
+ - net.ipv4.conf.all.secure_redirects=0
+ - net.ipv4.conf.all.send_redirects=0
+ labels:
+ com.zabbix.description: &amp;#34;Zabbix server with MySQL database support&amp;#34;
+ com.zabbix.company: &amp;#34;Zabbix LLC&amp;#34;
+ com.zabbix.component: &amp;#34;m-server&amp;#34;
+ com.zabbix.dbtype: &amp;#34;mysql&amp;#34;
+ com.zabbix.os: &amp;#34;alpine&amp;#34;
+ m-web-nginx-mysql:
+ container_name: m-web-nginx-mysql
+ # image: zabbix/zabbix-web-nginx-mysql:alpine-trunk
+ image: chenwl2016/m-web-nginx-mysql:v1-alpine-trunk
+ ports:
+ - &amp;#34;8082:8080&amp;#34;
+ - &amp;#34;8443:8443&amp;#34;
+ volumes:
+ - /etc/localtime:/etc/localtime:ro
+ - /etc/timezone:/etc/timezone:ro
+ - ./zbx_env/etc/ssl/nginx:/etc/ssl/nginx:ro
+ - ./zbx_env/usr/share/zabbix/modules/:/usr/share/zabbix/modules/:ro
+ env_file:
+ - ./env_vars/.env_db_mysql
+ - ./env_vars/.env_web
+ secrets:
+ - MYSQL_USER
+ - MYSQL_PASSWORD
+ # - client-key.pem
+ # - client-cert.pem
+ # - root-ca.pem
+ depends_on:
+ - mysql-server
+ - m-server
+ healthcheck:
+ test: [ &amp;#34;CMD&amp;#34;, &amp;#34;curl&amp;#34;, &amp;#34;-f&amp;#34;, &amp;#34;http://localhost:8080/&amp;#34; ]
+ interval: 10s
+ timeout: 5s
+ retries: 3
+ start_period: 30s
+ networks:
+ zbx_net_backend:
+ aliases:
+ - m-web-nginx-mysql
+ - m-web-nginx-alpine-mysql
+ - m-web-nginx-mysql-alpine
+ zbx_net_frontend: null
+ stop_grace_period: 10s
+ sysctls:
+ - net.core.somaxconn=65535
+ labels:
+ com.zabbix.description: &amp;#34;Zabbix frontend on Nginx web-server with MySQL database support&amp;#34;
+ com.zabbix.company: &amp;#34;Zabbix LLC&amp;#34;
+ com.zabbix.component: &amp;#34;m-frontend&amp;#34;
+ com.zabbix.webserver: &amp;#34;nginx&amp;#34;
+ com.zabbix.dbtype: &amp;#34;mysql&amp;#34;
+ com.zabbix.os: &amp;#34;alpine&amp;#34;
+ m-agent:
+ container_name: m-agent
+ image: zabbix/zabbix-agent:alpine-trunk
+ restart: always
+ ports:
+ - &amp;#34;10050:10050&amp;#34;
+ volumes:
+ - /etc/localtime:/etc/localtime:ro
+ - /etc/timezone:/etc/timezone:ro
+ - ./zbx_env/etc/zabbix/zabbix_agentd.d:/etc/zabbix/zabbix_agentd.d:ro
+ - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro
+ - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro
+ - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro
+ env_file:
+ - ./env_vars/.env_agent
+ privileged: true
+ pid: &amp;#34;host&amp;#34;
+ networks:
+ zbx_net_backend:
+ aliases:
+ - zabbix-agent
+ - zabbix-agent-passive
+ - zabbix-agent-alpine
+ stop_grace_period: 5s
+ labels:
+ com.zabbix.description: &amp;#34;Zabbix agent&amp;#34;
+ com.zabbix.company: &amp;#34;Zabbix LLC&amp;#34;
+ com.zabbix.component: &amp;#34;zabbix-agentd&amp;#34;
+ com.zabbix.os: &amp;#34;alpine&amp;#34;
+ mysql-server:
+ container_name: mysql-server
+ image: mysql:8.0
+ restart: always
+ security_opt:
+ - seccomp:unconfined
+ ports:
+ - &amp;#34;3316:3306&amp;#34;
+ command:
+ - mysqld
+ - --character-set-client=utf8mb4
+ - --character-set-connection=utf8mb4
+ - --character-set-results=utf8mb4
+ - --character-set-server=utf8mb4
+ - --collation-server=utf8mb4_bin
+ - --default-authentication-plugin=mysql_native_password
+ # - --require-secure-transport
+ # - --ssl-ca=/run/secrets/root-ca.pem
+ # - --ssl-cert=/run/secrets/server-cert.pem
+ # - --ssl-key=/run/secrets/server-key.pem
+ volumes:
+ - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
+ env_file:
+ - ./env_vars/.env_db_mysql
+ secrets:
+ - MYSQL_USER
+ - MYSQL_PASSWORD
+ - MYSQL_ROOT_PASSWORD
+ # - server-key.pem
+ # - server-cert.pem
+ # - root-ca.pem
+ stop_grace_period: 1m
+ networks:
+ zbx_net_backend:
+ aliases:
+ - mysql-server
+ - m-database
+ - mysql-database
+ db_data_mysql:
+ image: busybox
+ volumes:
+ - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
+
+networks:
+ zbx_net_frontend:
+ driver: bridge
+ driver_opts:
+ com.docker.network.enable_ipv6: &amp;#34;false&amp;#34;
+ ipam:
+ driver: default
+ config:
+ - subnet: 172.16.238.0/24
+ zbx_net_backend:
+ driver: bridge
+ driver_opts:
+ com.docker.network.enable_ipv6: &amp;#34;false&amp;#34;
+ internal: true
+ ipam:
+ driver: default
+ config:
+ - subnet: 172.16.239.0/24
+secrets:
+ MYSQL_USER:
+ file: ./env_vars/.MYSQL_USER
+ MYSQL_PASSWORD:
+ file: ./env_vars/.MYSQL_PASSWORD
+ MYSQL_ROOT_PASSWORD:
+ file: ./env_vars/.MYSQL_ROOT_PASSWORD
+
+# client-key.pem:
+# file: ./env_vars/.ZBX_DB_KEY_FILE
+# client-cert.pem:
+# file: ./env_vars/.ZBX_DB_CERT_FILE
+# root-ca.pem:
+# file: ./env_vars/.ZBX_DB_CA_FILE
+# server-cert.pem:
+# file: ./env_vars/.DB_CERT_FILE
+# server-key.pem:
+# file: ./env_vars/.DB_KEY_FILE
+&lt;/code>&lt;/pre>&lt;p>其中有基础更改，主要是使用的镜像非zabbix镜像。数据库考虑暴露3316端口（但是这里没有成功）
+使用非官方容器的目的是遇到一些情况。&lt;/p></description></item></channel></rss>

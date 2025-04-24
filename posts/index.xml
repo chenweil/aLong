@@ -54,7 +54,7 @@
 &lt;h1 id="导出测试">导出测试&lt;/h1>
 &lt;p>插件图标上也有些按钮,下面进行简单介绍:&lt;/p>
 &lt;p>&lt;img src="https://s2.loli.net/2024/11/01/93d1LTeYuZv5mjQ.png" alt="">&lt;/p>
-&lt;p>在Add to obsidian 按钮上面是选择输出的&lt;code>vault&lt;/code>,后面的输入是指定输出目录, 默认是&lt;strong>Clippings&lt;/strong> .&lt;/p></description></item><item><title>zabbix6.0+docker-compose部署</title><link>https://blog.51ai.vip/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</link><pubDate>Sun, 27 Oct 2024 15:43:25 +0800</pubDate><guid>https://blog.51ai.vip/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。&lt;/p>
+&lt;p>在Add to obsidian 按钮上面是选择输出的&lt;code>vault&lt;/code>,后面的输入是指定输出目录, 默认是&lt;strong>Clippings&lt;/strong> .&lt;/p></description></item><item><title>zabbix6.0+docker-compose部署</title><link>https://blog.51ai.vip/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。&lt;/p>
 &lt;p>根据踩坑，记录docker-compose 执行后遇到的一些问题。&lt;/p>
 &lt;h2 id="zabbix-60-lts已发布">zabbix 6.0 LTS已发布&lt;/h2>
 &lt;p>本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发布。

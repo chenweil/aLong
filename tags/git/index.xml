@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on aLong Blog</title><link>https://blog.51ai.vip/tags/git/</link><description>Recent content in Git on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>通过gitlog用AI整理项目记录</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87gitlog%E7%94%A8ai%E6%95%B4%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/</link><pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87gitlog%E7%94%A8ai%E6%95%B4%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/</guid><description>&lt;h1 id="git-log-列出时间段内容">git log 列出时间段内容&lt;/h1>
+&lt;p>导出2024全年内容到文本： &lt;code>git log --since=&amp;quot;2024-01-01&amp;quot; --until=&amp;quot;2024-12-30&amp;quot; --pretty=format:&amp;quot;%h - %an, %ad : %s&amp;quot; --date=iso &amp;gt; commits_2024.txt&lt;/code>&lt;/p>
+&lt;h1 id="讲这个文件加入单独的知识库中">讲这个文件加入单独的知识库中&lt;/h1>
+&lt;p>此处使用&lt;a href="">cherry studio&lt;/a>进行知识库添加操作。&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2025/02/19/t9unavDreIF3q8h.png" alt="">&lt;/p>
+&lt;p>但文件直接加入，模型我选的 &lt;code>baai/bge-m3&lt;/code>。&lt;/p>
+&lt;h1 id="使用模型对导出的内容进行处理">使用模型对导出的内容进行处理&lt;/h1>
+&lt;p>&lt;code>请根据提供的gitcommitlog进行总结。 总结的内容是2024年1月1日至2024年12月31日一共开发多少新功能，主要功能名称是什么，修复或优化多少功能点其中调整优化次数多的top3。&lt;/code>&lt;/p>
+&lt;p>总结内容如下：
+&lt;img src="https://s2.loli.net/2025/02/19/G586pqHcAFCornu.png" alt="">&lt;/p>
+&lt;p>通过总结，我们可以将此段内容加入总结中或者用来PPT内容的中。&lt;/p></description></item></channel></rss>
