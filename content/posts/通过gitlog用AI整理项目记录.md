@@ -1,11 +1,9 @@
 ---
-date: 2025-02-19
-# description: ""
-# image: ""
-lastmod: 2025-02-19
-showTableOfContents: false
-# tags: ["",]
 title: "通过gitlog用AI整理项目记录"
+date: 2025-02-19
+lastmod: 2025-02-19
+draft: false
+tags: ["git", "AI"]
 type: "post"
 ---
 

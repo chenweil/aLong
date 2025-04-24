@@ -1,9 +1,9 @@
 ---
 title: "zabbix6.0+docker-compose部署"
-date: 2024-10-27T15:43:25+08:00
-tags:
-  - zabbix
+date: 2024-10-27
+lastmod: 2024-10-27
 draft: false
+tags: ["zabbix", "docker", "部署"]
 type: "post"
 ---
 

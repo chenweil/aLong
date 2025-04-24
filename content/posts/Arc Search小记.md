@@ -1,11 +1,9 @@
 ---
-date: 2024-10-19
-# description: ""
-# image: ""
-lastmod: 2024-10-21
-showTableOfContents: false
-# tags: ["Tools"]
 title: "Arc Search小记"
+date: 2024-10-19
+lastmod: 2024-10-19
+draft: false
+tags: ["Arc", "工具"]
 type: "post"
 ---
 

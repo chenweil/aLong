@@ -1,8 +1,10 @@
 ---
-date: 2024-11-01
 title: "Obsidian插件使用"
+date: 2024-11-01
+lastmod: 2024-11-01
+draft: false
+tags: ["Obsidian", "工具"]
 type: "post"
-tags: ["Obsidian"]
 ---
 
 # 场景
