@@ -1,8 +1,9 @@
 ---
-title: "zabbix 6.0 docker-compose 部署"
-date: 2022-01-10T14:33:10+08:00
-draft: true
-tags: "zabbix"
+title: "zabbix6.0+docker-compose部署"
+date: 2024-10-27T15:43:25+08:00
+tags:
+  - zabbix
+draft: false
 type: "post"
 ---
 
