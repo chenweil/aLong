@@ -1,10 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>aLong Blog</title><link>https://blog.51ai.vip/aLong/</link><description>Recent content on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 31 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/index.xml" rel="self" type="application/rss+xml"/><item><title>观《李继刚：当我们说「提示词」时，到底在说什么？》所感</title><link>https://blog.51ai.vip/aLong/posts/%E8%A7%82%E6%9D%8E%E7%BB%A7%E5%88%9A%E5%BD%93%E6%88%91%E4%BB%AC%E8%AF%B4%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%97%B6%E5%88%B0%E5%BA%95%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88%E6%89%80%E6%84%9F/</link><pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/%E8%A7%82%E6%9D%8E%E7%BB%A7%E5%88%9A%E5%BD%93%E6%88%91%E4%BB%AC%E8%AF%B4%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%97%B6%E5%88%B0%E5%BA%95%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88%E6%89%80%E6%84%9F/</guid><description>&lt;p>文中看到一两句觉得不错的话:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>aLong Blog</title><link>https://blog.51ai.vip/aLong/</link><description>Recent content on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/index.xml" rel="self" type="application/rss+xml"/><item><title>通过gitlog用AI整理项目记录</title><link>https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87gitlog%E7%94%A8ai%E6%95%B4%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/</link><pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/%E9%80%9A%E8%BF%87gitlog%E7%94%A8ai%E6%95%B4%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/</guid><description>&lt;h1 id="git-log-列出时间段内容">git log 列出时间段内容&lt;/h1>
+&lt;p>导出2024全年内容到文本： &lt;code>git log --since=&amp;quot;2024-01-01&amp;quot; --until=&amp;quot;2024-12-30&amp;quot; --pretty=format:&amp;quot;%h - %an, %ad : %s&amp;quot; --date=iso &amp;gt; commits_2024.txt&lt;/code>&lt;/p>
+&lt;h1 id="讲这个文件加入单独的知识库中">讲这个文件加入单独的知识库中&lt;/h1>
+&lt;p>此处使用&lt;a href="">cherry studio&lt;/a>进行知识库添加操作。&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2025/02/19/t9unavDreIF3q8h.png" alt="">&lt;/p>
+&lt;p>但文件直接加入，模型我选的 &lt;code>baai/bge-m3&lt;/code>。&lt;/p>
+&lt;h1 id="使用模型对导出的内容进行处理">使用模型对导出的内容进行处理&lt;/h1>
+&lt;p>&lt;code>请根据提供的gitcommitlog进行总结。 总结的内容是2024年1月1日至2024年12月31日一共开发多少新功能，主要功能名称是什么，修复或优化多少功能点其中调整优化次数多的top3。&lt;/code>&lt;/p>
+&lt;p>总结内容如下：
+&lt;img src="https://s2.loli.net/2025/02/19/G586pqHcAFCornu.png" alt="">&lt;/p>
+&lt;p>通过总结，我们可以将此段内容加入总结中或者用来PPT内容的中。&lt;/p></description></item><item><title>观《李继刚：当我们说「提示词」时，到底在说什么？》所感</title><link>https://blog.51ai.vip/aLong/posts/%E8%A7%82%E6%9D%8E%E7%BB%A7%E5%88%9A%E5%BD%93%E6%88%91%E4%BB%AC%E8%AF%B4%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%97%B6%E5%88%B0%E5%BA%95%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88%E6%89%80%E6%84%9F/</link><pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/%E8%A7%82%E6%9D%8E%E7%BB%A7%E5%88%9A%E5%BD%93%E6%88%91%E4%BB%AC%E8%AF%B4%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%97%B6%E5%88%B0%E5%BA%95%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88%E6%89%80%E6%84%9F/</guid><description>&lt;p>文中看到一两句觉得不错的话:&lt;/p>
 &lt;blockquote>
-&lt;p>能让提示词产生惊艳效果的往往是，让模型不按照训练时候的权重、参数结构等既定的默认路径输出，人类的提示词要能唤醒模型与之『共振』。&lt;/p>
-&lt;/blockquote>
+&lt;p>能让提示词产生惊艳效果的往往是，让模型不按照训练时候的权重、参数结构等既定的默认路径输出，人类的提示词要能唤醒模型与之『共振』。&lt;/p>&lt;/blockquote>
 &lt;blockquote>
-&lt;p>AI 来了。……人类的宇宙是什么？是我脑海中的认知宇宙。AI 的宇宙是什么？是参数宇宙。现在这两个宇宙要产生交流，这个交流的宇宙语，我们把它定义为提示词。&lt;/p>
-&lt;/blockquote>
+&lt;p>AI 来了。……人类的宇宙是什么？是我脑海中的认知宇宙。AI 的宇宙是什么？是参数宇宙。现在这两个宇宙要产生交流，这个交流的宇宙语，我们把它定义为提示词。&lt;/p>&lt;/blockquote>
 &lt;p>我没有美丽的词汇去描述那些,正巧前几天看到有话题再提这个. 也看到不少佬友跟帖在说是与非.&lt;/p>
 &lt;p>别人怎么看都是别人的,我要考虑是对方是否说明什么,我能理解到什么地步.我要学习那些内容.&lt;/p>
 &lt;p>有些好的 提示词、提示片段就是能达到一定预期.这说明效果是有的,但也别像短视频那种傻吹就好. 各厂家也在发布模型的prompt文档内容.&lt;/p>
@@ -46,7 +54,228 @@
 &lt;h1 id="导出测试">导出测试&lt;/h1>
 &lt;p>插件图标上也有些按钮,下面进行简单介绍:&lt;/p>
 &lt;p>&lt;img src="https://s2.loli.net/2024/11/01/93d1LTeYuZv5mjQ.png" alt="">&lt;/p>
-&lt;p>在Add to obsidian 按钮上面是选择输出的&lt;code>vault&lt;/code>,后面的输入是指定输出目录, 默认是&lt;strong>Clippings&lt;/strong> .&lt;/p></description></item><item><title>Arc Search小记</title><link>https://blog.51ai.vip/aLong/posts/arc-search%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/arc-search%E5%B0%8F%E8%AE%B0/</guid><description>&lt;h1 id="起因">起因&lt;/h1>
+&lt;p>在Add to obsidian 按钮上面是选择输出的&lt;code>vault&lt;/code>,后面的输入是指定输出目录, 默认是&lt;strong>Clippings&lt;/strong> .&lt;/p></description></item><item><title>zabbix6.0+docker-compose部署</title><link>https://blog.51ai.vip/aLong/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</link><pubDate>Sun, 27 Oct 2024 15:43:25 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。&lt;/p>
+&lt;p>根据踩坑，记录docker-compose 执行后遇到的一些问题。&lt;/p>
+&lt;h2 id="zabbix-60-lts已发布">zabbix 6.0 LTS已发布&lt;/h2>
+&lt;p>本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发布。
+请结合 &lt;a href="https://hub.docker.com/u/zabbix">官方镜像&lt;/a>&lt;/p>
+&lt;h2 id="部署">部署&lt;/h2>
+&lt;p>主机安装好docker、docker-compose。&lt;/p>
+&lt;p>文件包含:&lt;a href="https://url21.ctfile.com/f/2802921-534381915-0158c8">env_vars&lt;/a> ,&lt;/p>
+&lt;p>&lt;a href="https://url21.ctfile.com/f/2802921-534383227-cb4ab7">docker-compose.yml&lt;/a>。&lt;/p>
+&lt;p>&lt;em>密码6387&lt;/em>&lt;/p>
+&lt;p>下载完成后解压到同一目录， 并执行&lt;code>docker-compose up -d&lt;/code>&lt;/p>
+&lt;p>这时候可以看到各服务拉取镜像并启动。&lt;/p>
+&lt;h2 id="docker-compose-文件内容">docker-compose 文件内容&lt;/h2>
+&lt;pre tabindex="0">&lt;code>version: &amp;#39;3.5&amp;#39;
+services:
+ m-server:
+ container_name: m-server
+ image: zabbix/zabbix-server-mysql:alpine-trunk
+ restart: always
+ ports:
+ - &amp;#34;10051:10051&amp;#34;
+ volumes:
+ - /etc/localtime:/etc/localtime:ro
+ - /etc/timezone:/etc/timezone:ro
+ - ./zbx_env/usr/lib/zabbix/alertscripts:/usr/lib/zabbix/alertscripts:ro
+ - ./zbx_env/usr/lib/zabbix/externalscripts:/usr/lib/zabbix/externalscripts:ro
+ - ./zbx_env/var/lib/zabbix/export:/var/lib/zabbix/export:rw
+ - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro
+ - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro
+ - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro
+ - ./zbx_env/var/lib/zabbix/mibs:/var/lib/zabbix/mibs:ro
+ env_file:
+ - ./env_vars/.env_db_mysql
+ - ./env_vars/.env_srv
+ secrets:
+ - MYSQL_USER
+ - MYSQL_PASSWORD
+ - MYSQL_ROOT_PASSWORD
+ # - client-key.pem
+ # - client-cert.pem
+ # - root-ca.pem
+ depends_on:
+ - mysql-server
+ networks:
+ zbx_net_backend:
+ aliases:
+ - m-erver
+ - m-server-mysql
+ - m-server-alpine-mysql
+ - m-server-mysql-alpine
+ zbx_net_frontend: null
+ # devices:
+ # - &amp;#34;/dev/ttyUSB0:/dev/ttyUSB0&amp;#34;
+ stop_grace_period: 30s
+ sysctls:
+ - net.ipv4.ip_local_port_range=1024 65000
+ - net.ipv4.conf.all.accept_redirects=0
+ - net.ipv4.conf.all.secure_redirects=0
+ - net.ipv4.conf.all.send_redirects=0
+ labels:
+ com.zabbix.description: &amp;#34;Zabbix server with MySQL database support&amp;#34;
+ com.zabbix.company: &amp;#34;Zabbix LLC&amp;#34;
+ com.zabbix.component: &amp;#34;m-server&amp;#34;
+ com.zabbix.dbtype: &amp;#34;mysql&amp;#34;
+ com.zabbix.os: &amp;#34;alpine&amp;#34;
+ m-web-nginx-mysql:
+ container_name: m-web-nginx-mysql
+ # image: zabbix/zabbix-web-nginx-mysql:alpine-trunk
+ image: chenwl2016/m-web-nginx-mysql:v1-alpine-trunk
+ ports:
+ - &amp;#34;8082:8080&amp;#34;
+ - &amp;#34;8443:8443&amp;#34;
+ volumes:
+ - /etc/localtime:/etc/localtime:ro
+ - /etc/timezone:/etc/timezone:ro
+ - ./zbx_env/etc/ssl/nginx:/etc/ssl/nginx:ro
+ - ./zbx_env/usr/share/zabbix/modules/:/usr/share/zabbix/modules/:ro
+ env_file:
+ - ./env_vars/.env_db_mysql
+ - ./env_vars/.env_web
+ secrets:
+ - MYSQL_USER
+ - MYSQL_PASSWORD
+ # - client-key.pem
+ # - client-cert.pem
+ # - root-ca.pem
+ depends_on:
+ - mysql-server
+ - m-server
+ healthcheck:
+ test: [ &amp;#34;CMD&amp;#34;, &amp;#34;curl&amp;#34;, &amp;#34;-f&amp;#34;, &amp;#34;http://localhost:8080/&amp;#34; ]
+ interval: 10s
+ timeout: 5s
+ retries: 3
+ start_period: 30s
+ networks:
+ zbx_net_backend:
+ aliases:
+ - m-web-nginx-mysql
+ - m-web-nginx-alpine-mysql
+ - m-web-nginx-mysql-alpine
+ zbx_net_frontend: null
+ stop_grace_period: 10s
+ sysctls:
+ - net.core.somaxconn=65535
+ labels:
+ com.zabbix.description: &amp;#34;Zabbix frontend on Nginx web-server with MySQL database support&amp;#34;
+ com.zabbix.company: &amp;#34;Zabbix LLC&amp;#34;
+ com.zabbix.component: &amp;#34;m-frontend&amp;#34;
+ com.zabbix.webserver: &amp;#34;nginx&amp;#34;
+ com.zabbix.dbtype: &amp;#34;mysql&amp;#34;
+ com.zabbix.os: &amp;#34;alpine&amp;#34;
+ m-agent:
+ container_name: m-agent
+ image: zabbix/zabbix-agent:alpine-trunk
+ restart: always
+ ports:
+ - &amp;#34;10050:10050&amp;#34;
+ volumes:
+ - /etc/localtime:/etc/localtime:ro
+ - /etc/timezone:/etc/timezone:ro
+ - ./zbx_env/etc/zabbix/zabbix_agentd.d:/etc/zabbix/zabbix_agentd.d:ro
+ - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro
+ - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro
+ - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro
+ env_file:
+ - ./env_vars/.env_agent
+ privileged: true
+ pid: &amp;#34;host&amp;#34;
+ networks:
+ zbx_net_backend:
+ aliases:
+ - zabbix-agent
+ - zabbix-agent-passive
+ - zabbix-agent-alpine
+ stop_grace_period: 5s
+ labels:
+ com.zabbix.description: &amp;#34;Zabbix agent&amp;#34;
+ com.zabbix.company: &amp;#34;Zabbix LLC&amp;#34;
+ com.zabbix.component: &amp;#34;zabbix-agentd&amp;#34;
+ com.zabbix.os: &amp;#34;alpine&amp;#34;
+ mysql-server:
+ container_name: mysql-server
+ image: mysql:8.0
+ restart: always
+ security_opt:
+ - seccomp:unconfined
+ ports:
+ - &amp;#34;3316:3306&amp;#34;
+ command:
+ - mysqld
+ - --character-set-client=utf8mb4
+ - --character-set-connection=utf8mb4
+ - --character-set-results=utf8mb4
+ - --character-set-server=utf8mb4
+ - --collation-server=utf8mb4_bin
+ - --default-authentication-plugin=mysql_native_password
+ # - --require-secure-transport
+ # - --ssl-ca=/run/secrets/root-ca.pem
+ # - --ssl-cert=/run/secrets/server-cert.pem
+ # - --ssl-key=/run/secrets/server-key.pem
+ volumes:
+ - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
+ env_file:
+ - ./env_vars/.env_db_mysql
+ secrets:
+ - MYSQL_USER
+ - MYSQL_PASSWORD
+ - MYSQL_ROOT_PASSWORD
+ # - server-key.pem
+ # - server-cert.pem
+ # - root-ca.pem
+ stop_grace_period: 1m
+ networks:
+ zbx_net_backend:
+ aliases:
+ - mysql-server
+ - m-database
+ - mysql-database
+ db_data_mysql:
+ image: busybox
+ volumes:
+ - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
+
+networks:
+ zbx_net_frontend:
+ driver: bridge
+ driver_opts:
+ com.docker.network.enable_ipv6: &amp;#34;false&amp;#34;
+ ipam:
+ driver: default
+ config:
+ - subnet: 172.16.238.0/24
+ zbx_net_backend:
+ driver: bridge
+ driver_opts:
+ com.docker.network.enable_ipv6: &amp;#34;false&amp;#34;
+ internal: true
+ ipam:
+ driver: default
+ config:
+ - subnet: 172.16.239.0/24
+secrets:
+ MYSQL_USER:
+ file: ./env_vars/.MYSQL_USER
+ MYSQL_PASSWORD:
+ file: ./env_vars/.MYSQL_PASSWORD
+ MYSQL_ROOT_PASSWORD:
+ file: ./env_vars/.MYSQL_ROOT_PASSWORD
+
+# client-key.pem:
+# file: ./env_vars/.ZBX_DB_KEY_FILE
+# client-cert.pem:
+# file: ./env_vars/.ZBX_DB_CERT_FILE
+# root-ca.pem:
+# file: ./env_vars/.ZBX_DB_CA_FILE
+# server-cert.pem:
+# file: ./env_vars/.DB_CERT_FILE
+# server-key.pem:
+# file: ./env_vars/.DB_KEY_FILE
+&lt;/code>&lt;/pre>&lt;p>其中有基础更改，主要是使用的镜像非zabbix镜像。数据库考虑暴露3316端口（但是这里没有成功）
+使用非官方容器的目的是遇到一些情况。&lt;/p></description></item><item><title>Arc Search小记</title><link>https://blog.51ai.vip/aLong/posts/arc-search%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/arc-search%E5%B0%8F%E8%AE%B0/</guid><description>&lt;h1 id="起因">起因&lt;/h1>
 &lt;p>由于safari访问论坛或者网页提示版本低,所以就升级了iOS系统.
 升级到了iOS17.7,舍弃了巨魔老弟啊. 拥抱一些之前装不上的APP.&lt;/p>
 &lt;h1 id="基本功能介绍">基本功能介绍&lt;/h1>
@@ -448,8 +677,7 @@ hostname = mb3admin.com
 &lt;li>简化管理&lt;/li>
 &lt;li>在快速变化的环境中避免过度管理
 &lt;a href="https://www.zabbix.com/documentation/6.0/zh/manual/discovery/network_discovery">manual-zh&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;h2 id="发现snmp例子">发现SNMP例子&lt;/h2>
 &lt;p>&lt;em>网段内存在几天设备，其中一台是SNMPv2，一台SNMPv3，通过发现将他们加入并监控&lt;/em>&lt;/p>
 &lt;p>大概流程：&lt;/p>
@@ -572,8 +800,7 @@ IP段: 192.168.1-10.1-255. 范围受限于覆盖地址的总数（小于64K）�
 支持的子网掩码:
 /16 - /30 for IPv4 addresses
 /112 - /128 for IPv6 addresses\IP列表: 192.168.1.1-255, 192.168.2.1-100, 192.168.2.200, 192.168.4.0/24
-Zabbix 3.0.0起，此字段支持空格，表格和多行。&lt;/p>
-&lt;/blockquote>
+Zabbix 3.0.0起，此字段支持空格，表格和多行。&lt;/p>&lt;/blockquote>
 &lt;ul>
 &lt;li>
 &lt;p>Update interval: Zabbix执行规则的频率&lt;/p>
@@ -898,10 +1125,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p>
 &lt;blockquote>
 &lt;blockquote>
 &lt;blockquote>
-&lt;p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
+&lt;p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。&lt;/p>&lt;/blockquote>&lt;/blockquote>&lt;/blockquote>
 &lt;h3 id="安装">安装&lt;/h3>
 &lt;p>安装方式看了一下，我选择直接下载bin文件方式：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-&lt;span style="color:#e6db74">`&lt;/span>uname -s&lt;span style="color:#e6db74">`&lt;/span>-&lt;span style="color:#e6db74">`&lt;/span>uname -m&lt;span style="color:#e6db74">`&lt;/span> &amp;gt; /usr/local/bin/docker-compose
@@ -947,8 +1171,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>两行命令后，输入密码就可以了。&lt;/p></description></item><item><title>申请Let's Encrypt HTTPS 证书脚本</title><link>https://blog.51ai.vip/aLong/posts/%E7%94%B3%E8%AF%B7let-s-encrypt-https-%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</link><pubDate>Wed, 24 Jun 2020 13:33:18 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/%E7%94%B3%E8%AF%B7let-s-encrypt-https-%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</guid><description>&lt;h2 id="最近需要到ssl证书又想免懒选择脚本来更新ssl证书文件">最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件&lt;/h2>
 &lt;blockquote>
 &lt;p>Let’s Encrypt是一个由非营利性组织互联网安全研究小组（ISRG）提供的免费、自动化和开放的证书颁发机构（CA）。
-简单的说，借助Let’s Encrypt颁发的证书可以为我们的网站免费启用HTTPS(SSL/TLS) 。&lt;/p>
-&lt;/blockquote>
+简单的说，借助Let’s Encrypt颁发的证书可以为我们的网站免费启用HTTPS(SSL/TLS) 。&lt;/p>&lt;/blockquote>
 &lt;p>那我们通过一个脚本来申请：&lt;/p>
 &lt;p>脚本名称： &lt;a href="https://github.com/acmesh-official/acme.sh">acme.sh&lt;/a>&lt;/p>
 &lt;h3 id="安装acmesh">安装acme.sh：&lt;/h3>
@@ -1124,8 +1347,7 @@ exit status 1
 &lt;p>没办法，借助网络得知。可以轻松搞定：&lt;/p>
 &lt;blockquote>
 &lt;p>npm config set phantomjs_cdnurl=&lt;a href="http://cdn.npm.taobao.org/dist/phantomjs_cdnurl">http://cdn.npm.taobao.org/dis&amp;hellip;&lt;/a>
-yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;&lt;a href="https://npm.taobao.org/mirrors/phantomjs%22">https://npm.taobao.org/mirrors/phantomjs&amp;quot;&lt;/a>&lt;/p>
-&lt;/blockquote>
+yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;&lt;a href="https://npm.taobao.org/mirrors/phantomjs%22">https://npm.taobao.org/mirrors/phantomjs&amp;quot;&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>看你是npm 还是node。按照上面方式设置一下。&lt;/p>
 &lt;p>&lt;code>rm -rf path/node_moudels&lt;/code>&lt;/p>
 &lt;p>&lt;code>yarn install&lt;/code>&lt;/p>
@@ -1169,8 +1391,7 @@ yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;&lt;a href="ht
 &lt;/ul>
 &lt;p>最后可以通过设置的密码登陆数据库了。&lt;/p></description></item><item><title>Prometheus-SNMP_Exporter Generator</title><link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</link><pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid><description>&lt;h2 id="prometheus-snmp-exporter">Prometheus-SNMP Exporter&lt;/h2>
 &lt;blockquote>
-&lt;p>生成器从generator.yml读取并写入snmp.yml。&lt;/p>
-&lt;/blockquote>
+&lt;p>生成器从generator.yml读取并写入snmp.yml。&lt;/p>&lt;/blockquote>
 &lt;p>之前在说&lt;a href="https://blog.51ai.vip/2019/08/29/Prometheus-snmp-export%E9%83%A8%E7%BD%B2/">Prometheus-snmp_export部署&lt;/a>时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的&lt;a href="https://github.com/prometheus/snmp_exporter/blob/master/snmp.yml">snmp.yml&lt;/a>文件(只在demo中添加了auth配置).&lt;/p>
 &lt;p>因为刚好所有通用的指标都取得通用的mib树. 在后期我搜集设备的信息需要一些私有mib的数据,这时候需要自己通过生成器来生成snmp.yml.&lt;/p>
 &lt;h2 id="generator-的操作步骤">Generator 的操作步骤&lt;/h2>
@@ -1408,8 +1629,7 @@ make mibs(不建议直接make)
 &lt;h3 id="简介">简介&lt;/h3>
 &lt;blockquote>
 &lt;p>M3可以在较长的保留时间内可靠地存储大规模指标。为了向更广泛的社区中的其他人提供这些好处，我们决定开放M3平台作为Prometheus的远程存储后端，Prometheus是一种流行的监控和警报解决方案。正如其文档所述，Prometheus的可扩展性和耐用性受到单个节点的限制。 M3平台旨在为Prometheus指标提供安全，可扩展且可配置的多租户的存储。&lt;/p>
-&lt;p>M3于2015年发布，目前拥有超过66亿个时间序列。 M3每秒聚合5亿个指标，并在全球范围内（使用M3DB）每秒持续存储2000万个度量指标，批量写入将每个指标持久保存到区域中的三个副本。它还允许工程师编写度量策略，告诉M3以更短或更长的保留时间（两天，一个月，六个月，一年，三年，五年等）以特定的粒度（一秒，十秒，一分钟，十分钟等）。这允许工程师和数据科学家使用与定义的存储策略匹配的度量标签（标签），在精细和粗粒度范围内智能地存储不同保留的时间序列。例如，工程师可以选择存储“应用程序”标记为“mobile_api”且“端点”标记为“注册”的所有度量标准，这些标记在10秒粒度下为30天，在一小时粒度下为5年。&lt;/p>
-&lt;/blockquote>
+&lt;p>M3于2015年发布，目前拥有超过66亿个时间序列。 M3每秒聚合5亿个指标，并在全球范围内（使用M3DB）每秒持续存储2000万个度量指标，批量写入将每个指标持久保存到区域中的三个副本。它还允许工程师编写度量策略，告诉M3以更短或更长的保留时间（两天，一个月，六个月，一年，三年，五年等）以特定的粒度（一秒，十秒，一分钟，十分钟等）。这允许工程师和数据科学家使用与定义的存储策略匹配的度量标签（标签），在精细和粗粒度范围内智能地存储不同保留的时间序列。例如，工程师可以选择存储“应用程序”标记为“mobile_api”且“端点”标记为“注册”的所有度量标准，这些标记在10秒粒度下为30天，在一小时粒度下为5年。&lt;/p>&lt;/blockquote>
 &lt;h3 id="相关组件">相关组件&lt;/h3>
 &lt;blockquote>
 &lt;h4 id="m3-coordinator">M3 Coordinator&lt;/h4>
@@ -1419,8 +1639,7 @@ make mibs(不建议直接make)
 &lt;h4 id="m3-query">M3 Query&lt;/h4>
 &lt;p>M3 Query是一种服务，它包含一个分布式查询引擎，用于查询实时和历史指标，支持多种不同的查询语言。它旨在支持低延迟实时查询和可能需要更长时间执行的查询，聚合更大的数据集，用于分析用例&lt;/p>
 &lt;h4 id="m3-aggregator">M3 Aggregator&lt;/h4>
-&lt;p>M3 Aggregator是一种作为专用度量聚合器运行的服务，它基于存储在etcd中的动态规则提供基于流的下采样。它使用领导者选举和聚合窗口跟踪，利用etcd来管理此状态，从而可靠地为低采样度量标准发送至少一次聚合到长期存储。这提供了成本有效且可靠的下采样和汇总指标。这些功能也存在于M3协调器中，但专用聚合器是分片和复制的，而M3协调器则不需要并且需要谨慎部署和以高可用性方式运行。还有一些工作要使用户更容易访问聚合器，而无需他们编写自己的兼容生产者和消费者。&lt;/p>
-&lt;/blockquote>
+&lt;p>M3 Aggregator是一种作为专用度量聚合器运行的服务，它基于存储在etcd中的动态规则提供基于流的下采样。它使用领导者选举和聚合窗口跟踪，利用etcd来管理此状态，从而可靠地为低采样度量标准发送至少一次聚合到长期存储。这提供了成本有效且可靠的下采样和汇总指标。这些功能也存在于M3协调器中，但专用聚合器是分片和复制的，而M3协调器则不需要并且需要谨慎部署和以高可用性方式运行。还有一些工作要使用户更容易访问聚合器，而无需他们编写自己的兼容生产者和消费者。&lt;/p>&lt;/blockquote>
 &lt;h3 id="入门">入门&lt;/h3>
 &lt;p>&lt;img src="https://t1.picb.cc/uploads/2019/11/29/kIj7yu.png" alt="">&lt;/p>
 &lt;p>上面的组件通俗讲:&lt;/p>
@@ -1479,8 +1698,7 @@ LANSpeedTest,读写显示,操作简单.
 &lt;blockquote>
 &lt;p>AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。
 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。
-它还负责消除和抑制警报。&lt;/p>
-&lt;/blockquote>
+它还负责消除和抑制警报。&lt;/p>&lt;/blockquote>
 &lt;p>通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具.
 AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.&lt;/p>
 &lt;p>Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发送警报到指定通知渠道.&lt;/p>
@@ -1792,8 +2010,7 @@ npm -v&lt;/p></description></item><item><title>Prometheus-snmp_export部署</tit
 &lt;blockquote>
 &lt;p>Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。
 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。
-Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。&lt;/p>
-&lt;/blockquote>
+Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Prometheus的特点:&lt;/p>
 &lt;ol>
@@ -1804,8 +2021,7 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 &lt;li>可以通过中间网关进行时序列数据推送。&lt;/li>
 &lt;li>通过服务发现或者静态配置来发现目标服务对象。&lt;/li>
 &lt;li>支持多种多样的图表和界面展示，比如Grafana等。&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
+&lt;/ol>&lt;/blockquote>
 &lt;h2 id="架构图">架构图&lt;/h2>
 &lt;p>&lt;img src="https://t1.picb.cc/uploads/2019/08/29/gjevPW.png" alt="结构图">&lt;/p>
 &lt;h2 id="prometheus服务大致过程">Prometheus服务大致过程：&lt;/h2>
@@ -1841,8 +2057,7 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数&lt;a href="https://prometheus.io/docs/prometheus/latest/querying/functions/#histogram_quantile">histogram_quantile()&lt;/a>计算出来。 Summary则是在应用程序中直接计算出了分位数。
 &lt;a href="https://prometheus.io/docs/practices/histograms/">Histograms and summaries&lt;/a>中阐述了两者的区别，特别是Summary的的分位数不能被聚合。
 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。
-&lt;a href="https://latencytipoftheday.blogspot.com/2014/06/latencytipoftheday-you-cant-average.html">LatencyTipOfTheDay: You can’t average percentiles. Period&lt;/a>中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。&lt;/p>
-&lt;/blockquote>
+&lt;a href="https://latencytipoftheday.blogspot.com/2014/06/latencytipoftheday-you-cant-average.html">LatencyTipOfTheDay: You can’t average percentiles. Period&lt;/a>中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。&lt;/p>&lt;/blockquote>
 &lt;p>主要我们监控用到最上面两种,下面两种类型目前我没有接触,上面这段文字与介绍引用自&lt;a href="https://www.lijiaocn.com/%E9%A1%B9%E7%9B%AE/2018/08/03/prometheus-usage.html#metric%E7%B1%BB%E5%9E%8B">lijiaocn&lt;/a>&lt;/p>
 &lt;h2 id="安装prometheus">安装Prometheus&lt;/h2>
 &lt;p>&lt;strong>本次搭建利用docker方式.整体搭建完成需要两个容器.暂不配置告警相关,只做监控数据&lt;/strong>&lt;/p>
@@ -1852,16 +2067,7 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 &lt;p>搭建位置: &lt;em>/home/aLong/prometheus/&lt;/em>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>环境:docker19.03.1 需要指定版本请查阅官方文档.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>系统:centos7&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="准备工作">准备工作&lt;/h3>
-&lt;p>Prometheus的配置文件: prometheus.yml
-我们建立在搭建位置的根下: &lt;code>touch prometheus.yml&lt;/code>
-在配置文件中加入测试演示配置&lt;/p></description></item><item><title>Centos5不升级内核更新</title><link>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link><pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid><description>&lt;h3 id="前提">前提&lt;/h3>
+&lt;p>环境:docker19.03.1 需要指定版本请查阅官方文档.&lt;/p></description></item><item><title>Centos5不升级内核更新</title><link>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link><pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid><description>&lt;h3 id="前提">前提&lt;/h3>
 &lt;p>公司需要环境Centos5, 又不能升级内核.&lt;/p>
 &lt;p>查了一下 大概是 需要 &lt;code>yum –exclude=kernel* update&lt;/code> 或者修改 yum.conf&lt;/p>
 &lt;h3 id="测试一下-出现一个问题">测试一下 出现一个问题:&lt;/h3>
@@ -1931,8 +2137,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
 &lt;ul>
 &lt;li>Git&lt;/li>
 &lt;li>Docker &amp;gt;= 17.12&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;h3 id="项目的位置">项目的位置&lt;/h3>
 &lt;ol>
 &lt;li>已有项目情况: &lt;code>git submodule add https://github.com/Laradock/laradock.git&lt;/code> 克隆到项目根目录.&lt;/li>
@@ -1941,8 +2146,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
 &lt;blockquote>
 &lt;ul>
 &lt;li>project-a&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;ul>
 &lt;li>laradock-a&lt;/li>
 &lt;li>project-b
@@ -2419,8 +2623,7 @@ gulp.task(&amp;#39;default&amp;#39;,function(){
 &lt;p>gulp src
 &lt;code>gulp.src(globs[, options])&lt;/code>&lt;/p>
 &lt;blockquote>
-&lt;p>输出（Emits）符合所提供的匹配模式（glob）或者匹配模式的数组（array of globs）的文件。 将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中。&lt;/p>
-&lt;/blockquote>
+&lt;p>输出（Emits）符合所提供的匹配模式（glob）或者匹配模式的数组（array of globs）的文件。 将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中。&lt;/p>&lt;/blockquote>
 &lt;/li>
 &lt;/ul>
 &lt;p>文档这意思看着有点费劲，理解为获取文件路径。gulp通过这个方法获取到处理的文件流。&lt;/p></description></item><item><title>Centos7时间设置</title><link>https://blog.51ai.vip/aLong/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link><pubDate>Fri, 19 Apr 2019 11:42:02 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h3 id="centos7时间相关">Centos7时间相关&lt;/h3>
@@ -2506,8 +2709,7 @@ graphical.target = init5
 &lt;code>docker exec -it xx /bin/bash&lt;/code> 这可以进入xx镜像，并打开bash。 相比这个比上面的attach 好多了。&lt;/p></description></item><item><title>Ubutun下安装Docker</title><link>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介">Docker简介&lt;/h3>
 &lt;blockquote>
 &lt;p>一个能够把开发的应用程序自动部署到容器的开源引擎
-三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p>
-&lt;/blockquote>
+三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p>&lt;/blockquote>
 &lt;p>具体信息请参考官方。&lt;a href="https://docs.docker.com/engine/docker-overview/">官方概述&lt;/a>（养成看文档习惯）&lt;/p>
 &lt;h3 id="安装环境">安装环境&lt;/h3>
 &lt;p>Ubuntu 16.04 LTS&lt;/p>

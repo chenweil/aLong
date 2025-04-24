@@ -73,8 +73,7 @@
 &lt;p>&lt;code>sudo ln -s /usr/local/Python-3.7.3/python /usr/bin/python&lt;/code>&lt;/p></description></item><item><title>Ubutun下安装Docker</title><link>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介">Docker简介&lt;/h3>
 &lt;blockquote>
 &lt;p>一个能够把开发的应用程序自动部署到容器的开源引擎
-三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p>
-&lt;/blockquote>
+三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p>&lt;/blockquote>
 &lt;p>具体信息请参考官方。&lt;a href="https://docs.docker.com/engine/docker-overview/">官方概述&lt;/a>（养成看文档习惯）&lt;/p>
 &lt;h3 id="安装环境">安装环境&lt;/h3>
 &lt;p>Ubuntu 16.04 LTS&lt;/p>

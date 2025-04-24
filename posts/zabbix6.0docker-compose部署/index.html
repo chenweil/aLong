@@ -1,0 +1,224 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{--accent-color:#FF4D4D}</style><title>zabbix6.0+docker-compose部署</title>
+<meta name=description content="zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。
+根据踩坑，记录docker-compose 执行后遇到的一些问题。
+zabbix 6.0 LTS已发布 本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发 …"><meta name=keywords content='blog,aLong,blog.51ai.vip,zabbix'><meta property="og:url" content="https://blog.51ai.vip/aLong/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/"><meta property="og:type" content="website"><meta property="og:title" content="zabbix6.0+docker-compose部署"><meta property="og:description" content="zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。
+根据踩坑，记录docker-compose 执行后遇到的一些问题。
+zabbix 6.0 LTS已发布 本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发 …"><meta property="og:image" content="https://blog.51ai.vip/aLong/"><meta property="og:image:secure_url" content="https://blog.51ai.vip/aLong/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="zabbix6.0+docker-compose部署"><meta name=twitter:description content="zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。
+根据踩坑，记录docker-compose 执行后遇到的一些问题。
+zabbix 6.0 LTS已发布 本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发 …"><meta property="twitter:domain" content="https://blog.51ai.vip/aLong/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/"><meta property="twitter:url" content="https://blog.51ai.vip/aLong/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/"><meta name=twitter:image content="https://blog.51ai.vip/aLong/"><link rel=canonical href=https://blog.51ai.vip/aLong/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/><link rel=stylesheet type=text/css href=/aLong/css/normalize.min.css media=print><link rel=stylesheet type=text/css href=/aLong/css/main.min.css><link id=dark-theme rel=stylesheet href=/aLong/css/dark.min.css><script src=/aLong/js/bundle.min.9a920d7dabdbad8363b6a0a94e29a9dfebdb7ee64cfcb193a0145e512ef2bdab.js integrity="sha256-mpINfavbrYNjtqCpTimp3+vbfuZM/LGToBReUS7yvas="></script></head><body><script>setThemeByUserPref()</script><header class=header><nav class=header-nav><div class=nav-title><a class=nav-brand href=https://blog.51ai.vip/aLong/>aLong Blog</a></div><div class=nav-links><div class=nav-link><a href=https://blog.51ai.vip/aLong/><span data-feather=home></span> Home</a></div><div class=nav-link><a href=https://blog.51ai.vip/aLong/posts/>Posts</a></div><div class=nav-link><a href=https://blog.51ai.vip/aLong/tags/>Tags</a></div><div class=nav-link><a href=https://blog.51ai.vip/aLong/index.xml><span data-feather=rss></span></a></div><span class=nav-icons-divider></span><div class="nav-link dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+<a><span class=theme-toggle-icon data-feather=moon></span></a></div><div class=nav-link id=hamburger-menu-toggle><span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+<a><span data-feather=menu></span></a></div><ul class="nav-hamburger-list visibility-hidden"><li class=nav-item><a href=https://blog.51ai.vip/aLong/><span data-feather=home></span> Home</a></li><li class=nav-item><a href=https://blog.51ai.vip/aLong/posts/>Posts</a></li><li class=nav-item><a href=https://blog.51ai.vip/aLong/tags/>Tags</a></li><li class=nav-item><a href=https://blog.51ai.vip/aLong/index.xml><span data-feather=rss></span></a></li><li class="nav-item dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+<a><span class=theme-toggle-icon data-feather=moon></span></a></li></ul></div></nav></header><main id=content><div class="post container"><div class=post-header-section><h1>zabbix6.0+docker-compose部署</h1><small role=doc-subtitle></small><p class=post-date>2024/10/27</p><ul class=post-tags><li class=post-tag><a href=https://blog.51ai.vip/aLong/tags/zabbix>zabbix</a></li></ul></div><div class=post-content><p>zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。</p><p>根据踩坑，记录docker-compose 执行后遇到的一些问题。</p><h2 id=zabbix-60-lts已发布>zabbix 6.0 LTS已发布</h2><p>本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发布。
+请结合 <a href=https://hub.docker.com/u/zabbix>官方镜像</a></p><h2 id=部署>部署</h2><p>主机安装好docker、docker-compose。</p><p>文件包含:<a href=https://url21.ctfile.com/f/2802921-534381915-0158c8>env_vars</a> ,</p><p><a href=https://url21.ctfile.com/f/2802921-534383227-cb4ab7>docker-compose.yml</a>。</p><p><em>密码6387</em></p><p>下载完成后解压到同一目录， 并执行<code>docker-compose up -d</code></p><p>这时候可以看到各服务拉取镜像并启动。</p><h2 id=docker-compose-文件内容>docker-compose 文件内容</h2><pre tabindex=0><code>version: &#39;3.5&#39;
+services:
+  m-server:
+    container_name: m-server
+    image: zabbix/zabbix-server-mysql:alpine-trunk
+    restart: always
+    ports:
+      - &#34;10051:10051&#34;
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./zbx_env/usr/lib/zabbix/alertscripts:/usr/lib/zabbix/alertscripts:ro
+      - ./zbx_env/usr/lib/zabbix/externalscripts:/usr/lib/zabbix/externalscripts:ro
+      - ./zbx_env/var/lib/zabbix/export:/var/lib/zabbix/export:rw
+      - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro
+      - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro
+      - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro
+      - ./zbx_env/var/lib/zabbix/mibs:/var/lib/zabbix/mibs:ro
+    env_file:
+      - ./env_vars/.env_db_mysql
+      - ./env_vars/.env_srv
+    secrets:
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_ROOT_PASSWORD
+    #   - client-key.pem
+    #   - client-cert.pem
+    #   - root-ca.pem
+    depends_on:
+      - mysql-server
+    networks:
+      zbx_net_backend:
+        aliases:
+          - m-erver
+          - m-server-mysql
+          - m-server-alpine-mysql
+          - m-server-mysql-alpine
+      zbx_net_frontend: null
+        #  devices:
+        #   - &#34;/dev/ttyUSB0:/dev/ttyUSB0&#34;
+    stop_grace_period: 30s
+    sysctls:
+      - net.ipv4.ip_local_port_range=1024 65000
+      - net.ipv4.conf.all.accept_redirects=0
+      - net.ipv4.conf.all.secure_redirects=0
+      - net.ipv4.conf.all.send_redirects=0
+    labels:
+      com.zabbix.description: &#34;Zabbix server with MySQL database support&#34;
+      com.zabbix.company: &#34;Zabbix LLC&#34;
+      com.zabbix.component: &#34;m-server&#34;
+      com.zabbix.dbtype: &#34;mysql&#34;
+      com.zabbix.os: &#34;alpine&#34;
+  m-web-nginx-mysql:
+    container_name: m-web-nginx-mysql
+    #  image: zabbix/zabbix-web-nginx-mysql:alpine-trunk
+    image: chenwl2016/m-web-nginx-mysql:v1-alpine-trunk
+    ports:
+      - &#34;8082:8080&#34;
+      - &#34;8443:8443&#34;
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./zbx_env/etc/ssl/nginx:/etc/ssl/nginx:ro
+      - ./zbx_env/usr/share/zabbix/modules/:/usr/share/zabbix/modules/:ro
+    env_file:
+      - ./env_vars/.env_db_mysql
+      - ./env_vars/.env_web
+    secrets:
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+    #   - client-key.pem
+    #   - client-cert.pem
+    #   - root-ca.pem
+    depends_on:
+      - mysql-server
+      - m-server
+    healthcheck:
+      test: [ &#34;CMD&#34;, &#34;curl&#34;, &#34;-f&#34;, &#34;http://localhost:8080/&#34; ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    networks:
+      zbx_net_backend:
+        aliases:
+          - m-web-nginx-mysql
+          - m-web-nginx-alpine-mysql
+          - m-web-nginx-mysql-alpine
+      zbx_net_frontend: null
+    stop_grace_period: 10s
+    sysctls:
+      - net.core.somaxconn=65535
+    labels:
+      com.zabbix.description: &#34;Zabbix frontend on Nginx web-server with MySQL database support&#34;
+      com.zabbix.company: &#34;Zabbix LLC&#34;
+      com.zabbix.component: &#34;m-frontend&#34;
+      com.zabbix.webserver: &#34;nginx&#34;
+      com.zabbix.dbtype: &#34;mysql&#34;
+      com.zabbix.os: &#34;alpine&#34;
+  m-agent:
+    container_name: m-agent
+    image: zabbix/zabbix-agent:alpine-trunk
+    restart: always
+    ports:
+      - &#34;10050:10050&#34;
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./zbx_env/etc/zabbix/zabbix_agentd.d:/etc/zabbix/zabbix_agentd.d:ro
+      - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro
+      - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro
+      - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro
+    env_file:
+      - ./env_vars/.env_agent
+    privileged: true
+    pid: &#34;host&#34;
+    networks:
+      zbx_net_backend:
+        aliases:
+          - zabbix-agent
+          - zabbix-agent-passive
+          - zabbix-agent-alpine
+    stop_grace_period: 5s
+    labels:
+      com.zabbix.description: &#34;Zabbix agent&#34;
+      com.zabbix.company: &#34;Zabbix LLC&#34;
+      com.zabbix.component: &#34;zabbix-agentd&#34;
+      com.zabbix.os: &#34;alpine&#34;
+  mysql-server:
+    container_name: mysql-server
+    image: mysql:8.0
+    restart: always
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - &#34;3316:3306&#34;
+    command:
+      - mysqld
+      - --character-set-client=utf8mb4
+      - --character-set-connection=utf8mb4
+      - --character-set-results=utf8mb4
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_bin
+      - --default-authentication-plugin=mysql_native_password
+    #   - --require-secure-transport
+    #   - --ssl-ca=/run/secrets/root-ca.pem
+    #   - --ssl-cert=/run/secrets/server-cert.pem
+    #   - --ssl-key=/run/secrets/server-key.pem
+    volumes:
+      - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
+    env_file:
+      - ./env_vars/.env_db_mysql
+    secrets:
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_ROOT_PASSWORD
+    #   - server-key.pem
+    #   - server-cert.pem
+    #   - root-ca.pem
+    stop_grace_period: 1m
+    networks:
+      zbx_net_backend:
+        aliases:
+          - mysql-server
+          - m-database
+          - mysql-database
+  db_data_mysql:
+    image: busybox
+    volumes:
+      - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
+
+networks:
+  zbx_net_frontend:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: &#34;false&#34;
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
+  zbx_net_backend:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: &#34;false&#34;
+    internal: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.239.0/24
+secrets:
+  MYSQL_USER:
+    file: ./env_vars/.MYSQL_USER
+  MYSQL_PASSWORD:
+    file: ./env_vars/.MYSQL_PASSWORD
+  MYSQL_ROOT_PASSWORD:
+    file: ./env_vars/.MYSQL_ROOT_PASSWORD
+
+#  client-key.pem:
+#    file: ./env_vars/.ZBX_DB_KEY_FILE
+#  client-cert.pem:
+#    file: ./env_vars/.ZBX_DB_CERT_FILE
+#  root-ca.pem:
+#    file: ./env_vars/.ZBX_DB_CA_FILE
+#  server-cert.pem:
+#    file: ./env_vars/.DB_CERT_FILE
+#  server-key.pem:
+#    file: ./env_vars/.DB_KEY_FILE
+</code></pre><p>其中有基础更改，主要是使用的镜像非zabbix镜像。数据库考虑暴露3316端口（但是这里没有成功）
+使用非官方容器的目的是遇到一些情况。</p><h3 id=zabbix-图字体口口口>zabbix 图字体口口口</h3><p>这个问题之前有写过，可以查看之前那篇<a href=https://blog.csdn.net/u011105410/article/details/118364266>《解决zabbix5字体中文口口乱码》</a>。主要就是zabbix提供的字体<strong>DejaVuSans.ttf</strong> 不支持中文。通过无版权字体替换此字体。生成自己的镜像。</p><h3 id=数据库字符集问题>数据库字符集问题</h3><p><img src=https://img-blog.csdnimg.cn/img_convert/a90d61cd41027a2fc827c981cf1f8af7.png alt=iShot2022-01-0700.13.16>
+在测试中，我发现我有一些item显示的中文是????，开始以为字体问题，经过多方查询，发现这个问题是字符集问题。 也就是数据库这块的配置。具体大家自行科普，我这里主要就是设置了mysql8中字符集的配置，默认改成utf8mb4。
+在官方的mysql镜像中，可以配置两处字符集，但无法设置全面。导致中文出现????。</p><p>结束～</p><p>祝好。</p></div><div class=prev-next></div><svg id="btt-button" class="arrow-logo" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6.0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9.0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9.0L7 329.7c-9.4-9.4-9.4-24.6.0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
+<script>let backToTopButton=document.getElementById("btt-button");window.onscroll=function(){scrollFunction()};function scrollFunction(){document.body.scrollTop>20||document.documentElement.scrollTop>20?backToTopButton.style.display="block":backToTopButton.style.display="none"}function scrollToTop(){window.scrollTo(0,0)}</script></div></main><footer class=footer><span>&copy; 2024 aLong</span>
+<span>Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a></span></footer></body></html>

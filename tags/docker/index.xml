@@ -63,8 +63,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;ul>
 &lt;li>Git&lt;/li>
 &lt;li>Docker &amp;gt;= 17.12&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;h3 id="项目的位置">项目的位置&lt;/h3>
 &lt;ol>
 &lt;li>已有项目情况: &lt;code>git submodule add https://github.com/Laradock/laradock.git&lt;/code> 克隆到项目根目录.&lt;/li>
@@ -73,8 +72,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;blockquote>
 &lt;ul>
 &lt;li>project-a&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;ul>
 &lt;li>laradock-a&lt;/li>
 &lt;li>project-b
@@ -134,8 +132,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;code>docker exec -it xx /bin/bash&lt;/code> 这可以进入xx镜像，并打开bash。 相比这个比上面的attach 好多了。&lt;/p></description></item><item><title>Ubutun下安装Docker</title><link>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介">Docker简介&lt;/h3>
 &lt;blockquote>
 &lt;p>一个能够把开发的应用程序自动部署到容器的开源引擎
-三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p>
-&lt;/blockquote>
+三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p>&lt;/blockquote>
 &lt;p>具体信息请参考官方。&lt;a href="https://docs.docker.com/engine/docker-overview/">官方概述&lt;/a>（养成看文档习惯）&lt;/p>
 &lt;h3 id="安装环境">安装环境&lt;/h3>
 &lt;p>Ubuntu 16.04 LTS&lt;/p>

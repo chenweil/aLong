@@ -66,8 +66,7 @@
 &lt;blockquote>
 &lt;p>AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。
 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。
-它还负责消除和抑制警报。&lt;/p>
-&lt;/blockquote>
+它还负责消除和抑制警报。&lt;/p>&lt;/blockquote>
 &lt;p>通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具.
 AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.&lt;/p>
 &lt;p>Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发送警报到指定通知渠道.&lt;/p>

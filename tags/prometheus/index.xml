@@ -59,10 +59,7 @@
 &lt;blockquote>
 &lt;blockquote>
 &lt;blockquote>
-&lt;p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
+&lt;p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。&lt;/p>&lt;/blockquote>&lt;/blockquote>&lt;/blockquote>
 &lt;h3 id="安装">安装&lt;/h3>
 &lt;p>安装方式看了一下，我选择直接下载bin文件方式：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-&lt;span style="color:#e6db74">`&lt;/span>uname -s&lt;span style="color:#e6db74">`&lt;/span>-&lt;span style="color:#e6db74">`&lt;/span>uname -m&lt;span style="color:#e6db74">`&lt;/span> &amp;gt; /usr/local/bin/docker-compose
@@ -100,8 +97,7 @@
 &lt;li>
 &lt;p>根据结构编写&lt;/p></description></item><item><title>Prometheus-SNMP_Exporter Generator</title><link>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</link><pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/prometheus-snmp-exporter-generator/</guid><description>&lt;h2 id="prometheus-snmp-exporter">Prometheus-SNMP Exporter&lt;/h2>
 &lt;blockquote>
-&lt;p>生成器从generator.yml读取并写入snmp.yml。&lt;/p>
-&lt;/blockquote>
+&lt;p>生成器从generator.yml读取并写入snmp.yml。&lt;/p>&lt;/blockquote>
 &lt;p>之前在说&lt;a href="https://blog.51ai.vip/2019/08/29/Prometheus-snmp-export%E9%83%A8%E7%BD%B2/">Prometheus-snmp_export部署&lt;/a>时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的&lt;a href="https://github.com/prometheus/snmp_exporter/blob/master/snmp.yml">snmp.yml&lt;/a>文件(只在demo中添加了auth配置).&lt;/p>
 &lt;p>因为刚好所有通用的指标都取得通用的mib树. 在后期我搜集设备的信息需要一些私有mib的数据,这时候需要自己通过生成器来生成snmp.yml.&lt;/p>
 &lt;h2 id="generator-的操作步骤">Generator 的操作步骤&lt;/h2>
@@ -327,8 +323,7 @@ make mibs(不建议直接make)
 &lt;blockquote>
 &lt;p>AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。
 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。
-它还负责消除和抑制警报。&lt;/p>
-&lt;/blockquote>
+它还负责消除和抑制警报。&lt;/p>&lt;/blockquote>
 &lt;p>通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具.
 AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.&lt;/p>
 &lt;p>Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发送警报到指定通知渠道.&lt;/p>
@@ -465,8 +460,7 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 &lt;blockquote>
 &lt;p>Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。
 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。
-Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。&lt;/p>
-&lt;/blockquote>
+Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Prometheus的特点:&lt;/p>
 &lt;ol>
@@ -477,8 +471,7 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 &lt;li>可以通过中间网关进行时序列数据推送。&lt;/li>
 &lt;li>通过服务发现或者静态配置来发现目标服务对象。&lt;/li>
 &lt;li>支持多种多样的图表和界面展示，比如Grafana等。&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
+&lt;/ol>&lt;/blockquote>
 &lt;h2 id="架构图">架构图&lt;/h2>
 &lt;p>&lt;img src="https://t1.picb.cc/uploads/2019/08/29/gjevPW.png" alt="结构图">&lt;/p>
 &lt;h2 id="prometheus服务大致过程">Prometheus服务大致过程：&lt;/h2>
@@ -514,8 +507,7 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数&lt;a href="https://prometheus.io/docs/prometheus/latest/querying/functions/#histogram_quantile">histogram_quantile()&lt;/a>计算出来。 Summary则是在应用程序中直接计算出了分位数。
 &lt;a href="https://prometheus.io/docs/practices/histograms/">Histograms and summaries&lt;/a>中阐述了两者的区别，特别是Summary的的分位数不能被聚合。
 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。
-&lt;a href="https://latencytipoftheday.blogspot.com/2014/06/latencytipoftheday-you-cant-average.html">LatencyTipOfTheDay: You can’t average percentiles. Period&lt;/a>中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。&lt;/p>
-&lt;/blockquote>
+&lt;a href="https://latencytipoftheday.blogspot.com/2014/06/latencytipoftheday-you-cant-average.html">LatencyTipOfTheDay: You can’t average percentiles. Period&lt;/a>中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。&lt;/p>&lt;/blockquote>
 &lt;p>主要我们监控用到最上面两种,下面两种类型目前我没有接触,上面这段文字与介绍引用自&lt;a href="https://www.lijiaocn.com/%E9%A1%B9%E7%9B%AE/2018/08/03/prometheus-usage.html#metric%E7%B1%BB%E5%9E%8B">lijiaocn&lt;/a>&lt;/p>
 &lt;h2 id="安装prometheus">安装Prometheus&lt;/h2>
 &lt;p>&lt;strong>本次搭建利用docker方式.整体搭建完成需要两个容器.暂不配置告警相关,只做监控数据&lt;/strong>&lt;/p>
@@ -525,13 +517,4 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 &lt;p>搭建位置: &lt;em>/home/aLong/prometheus/&lt;/em>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>环境:docker19.03.1 需要指定版本请查阅官方文档.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>系统:centos7&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="准备工作">准备工作&lt;/h3>
-&lt;p>Prometheus的配置文件: prometheus.yml
-我们建立在搭建位置的根下: &lt;code>touch prometheus.yml&lt;/code>
-在配置文件中加入测试演示配置&lt;/p></description></item></channel></rss>
+&lt;p>环境:docker19.03.1 需要指定版本请查阅官方文档.&lt;/p></description></item></channel></rss>

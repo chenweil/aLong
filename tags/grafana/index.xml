@@ -57,10 +57,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p>
 &lt;blockquote>
 &lt;blockquote>
 &lt;blockquote>
-&lt;p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
+&lt;p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。&lt;/p>&lt;/blockquote>&lt;/blockquote>&lt;/blockquote>
 &lt;h3 id="安装">安装&lt;/h3>
 &lt;p>安装方式看了一下，我选择直接下载bin文件方式：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-&lt;span style="color:#e6db74">`&lt;/span>uname -s&lt;span style="color:#e6db74">`&lt;/span>-&lt;span style="color:#e6db74">`&lt;/span>uname -m&lt;span style="color:#e6db74">`&lt;/span> &amp;gt; /usr/local/bin/docker-compose
@@ -135,8 +132,7 @@ Grafana中所有的面板均以插件的形式进行使用，当前内置了5种
 &lt;blockquote>
 &lt;p>Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。
 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。
-Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。&lt;/p>
-&lt;/blockquote>
+Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的性能数据。)相比功能更完善、更全面。Prometheus性能也足够支撑上万台规模的集群。&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>Prometheus的特点:&lt;/p>
 &lt;ol>
@@ -147,8 +143,7 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 &lt;li>可以通过中间网关进行时序列数据推送。&lt;/li>
 &lt;li>通过服务发现或者静态配置来发现目标服务对象。&lt;/li>
 &lt;li>支持多种多样的图表和界面展示，比如Grafana等。&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
+&lt;/ol>&lt;/blockquote>
 &lt;h2 id="架构图">架构图&lt;/h2>
 &lt;p>&lt;img src="https://t1.picb.cc/uploads/2019/08/29/gjevPW.png" alt="结构图">&lt;/p>
 &lt;h2 id="prometheus服务大致过程">Prometheus服务大致过程：&lt;/h2>
@@ -184,8 +179,7 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 通过Histogram获得分位数，要将直方图指标数据收集prometheus中， 然后用prometheus的查询函数&lt;a href="https://prometheus.io/docs/prometheus/latest/querying/functions/#histogram_quantile">histogram_quantile()&lt;/a>计算出来。 Summary则是在应用程序中直接计算出了分位数。
 &lt;a href="https://prometheus.io/docs/practices/histograms/">Histograms and summaries&lt;/a>中阐述了两者的区别，特别是Summary的的分位数不能被聚合。
 注意，这个不能聚合不是说功能上不支持，而是说对分位数做聚合操作通常是没有意义的。
-&lt;a href="https://latencytipoftheday.blogspot.com/2014/06/latencytipoftheday-you-cant-average.html">LatencyTipOfTheDay: You can’t average percentiles. Period&lt;/a>中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。&lt;/p>
-&lt;/blockquote>
+&lt;a href="https://latencytipoftheday.blogspot.com/2014/06/latencytipoftheday-you-cant-average.html">LatencyTipOfTheDay: You can’t average percentiles. Period&lt;/a>中对“分位数”不能被相加平均的做了很详细的说明：分位数本身是用来切分数据的，它们的平均数没有同样的分位效果。&lt;/p>&lt;/blockquote>
 &lt;p>主要我们监控用到最上面两种,下面两种类型目前我没有接触,上面这段文字与介绍引用自&lt;a href="https://www.lijiaocn.com/%E9%A1%B9%E7%9B%AE/2018/08/03/prometheus-usage.html#metric%E7%B1%BB%E5%9E%8B">lijiaocn&lt;/a>&lt;/p>
 &lt;h2 id="安装prometheus">安装Prometheus&lt;/h2>
 &lt;p>&lt;strong>本次搭建利用docker方式.整体搭建完成需要两个容器.暂不配置告警相关,只做监控数据&lt;/strong>&lt;/p>
@@ -195,13 +189,4 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 &lt;p>搭建位置: &lt;em>/home/aLong/prometheus/&lt;/em>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>环境:docker19.03.1 需要指定版本请查阅官方文档.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>系统:centos7&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="准备工作">准备工作&lt;/h3>
-&lt;p>Prometheus的配置文件: prometheus.yml
-我们建立在搭建位置的根下: &lt;code>touch prometheus.yml&lt;/code>
-在配置文件中加入测试演示配置&lt;/p></description></item></channel></rss>
+&lt;p>环境:docker19.03.1 需要指定版本请查阅官方文档.&lt;/p></description></item></channel></rss>

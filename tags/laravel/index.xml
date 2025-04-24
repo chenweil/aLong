@@ -6,8 +6,7 @@
 &lt;ul>
 &lt;li>Git&lt;/li>
 &lt;li>Docker &amp;gt;= 17.12&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;h3 id="项目的位置">项目的位置&lt;/h3>
 &lt;ol>
 &lt;li>已有项目情况: &lt;code>git submodule add https://github.com/Laradock/laradock.git&lt;/code> 克隆到项目根目录.&lt;/li>
@@ -16,8 +15,7 @@
 &lt;blockquote>
 &lt;ul>
 &lt;li>project-a&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
+&lt;/ul>&lt;/blockquote>
 &lt;ul>
 &lt;li>laradock-a&lt;/li>
 &lt;li>project-b
