@@ -1,149 +1,166 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AlertManager on aLong Blog</title><link>https://blog.51ai.vip/tags/alertmanager/</link><description>Recent content in AlertManager on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Dec 2019 11:51:43 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/alertmanager/index.xml" rel="self" type="application/rss+xml"/><item><title>Prometheus告警模板详解</title><link>https://blog.51ai.vip/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</link><pubDate>Wed, 04 Dec 2019 11:51:43 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</guid><description>&lt;h2 id="目的">目的&lt;/h2>
-&lt;p>之前配置告警之后,可以发送告警信息.但对于数据具体的结构信息,在模板中数据读取都比较懵.原因是不太清除警报都提供了哪些数据,除了我们设置的信息,还有没有其他的信息.&lt;/p>
-&lt;h3 id="告警数据结构">告警数据结构&lt;/h3>
-&lt;p>&lt;a href="https://prometheus.io/docs/alerting/notifications/#alert">官方docs&lt;/a>&lt;/p>
-&lt;p>推送数据结构:&lt;/p>
-&lt;!-- raw HTML omitted -->
-&lt;h3 id="alerts数据">Alerts数据&lt;/h3>
-&lt;!-- raw HTML omitted -->
-&lt;h3 id="kv数据的处理方式">KV数据的处理方式&lt;/h3>
-&lt;p>KV结构很简单,键值对.通过键获取对应的值.下面提供了一些方法处理这种结构的一些方法.&lt;/p>
-&lt;!-- raw HTML omitted -->
-&lt;h3 id="字符串相关方法">字符串相关方法&lt;/h3>
-&lt;p>警报提供的数据是通过GO模板解析的,GO模板的功能通过&lt;a href="https://golang.org/pkg/text/template/#hdr-Functions">GO模板文档&lt;/a>可以了解.&lt;/p>
-&lt;p>下面提供了一些处理字符串的方法:&lt;/p>
-&lt;p>&lt;img src="https://t1.picb.cc/uploads/2019/12/05/kngppe.png" alt="">&lt;/p>
-&lt;h3 id="微信通知的demo">微信通知的DEMO&lt;/h3>
-&lt;p>&lt;img src="https://t1.picb.cc/uploads/2019/12/05/kngxOt.png" alt="">&lt;/p>
-&lt;p>上图中是微信接受的通知,下面展示通知模板的代码.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tmpl" data-lang="tmpl">&lt;span style="display:flex;">&lt;span>{{- define &amp;#34;_alert_list&amp;#34; -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- range .Alerts.Firing -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-----------------------
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警类型：{{ .Labels.alertname }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警主题: {{ .Annotations.summary }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警详情: {{ .Annotations.description }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>触发时间: {{ (.StartsAt.Add 28800e9).Format &amp;#34;2006-01-02 15:04:05&amp;#34; }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ end -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---------结束-----------------
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- end -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- define &amp;#34;_resolve_list&amp;#34; -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- range .Alerts.Resolved -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>**************************
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警类型：{{ .Labels.alertname }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警主题: {{ .Annotations.summary }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警详情: {{ .Annotations.description }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>触发时间: {{ (.StartsAt.Add 28800e9).Format &amp;#34;2006-01-02 15:04:05&amp;#34; }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>恢复时间: {{ (.EndsAt.Add 28800e9).Format &amp;#34;2006-01-02 15:04:05&amp;#34; }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ end -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>************结束*****************
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- end -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- define &amp;#34;wechat.message&amp;#34; -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- if and (gt (len .Alerts.Firing) 0) (gt (len .Alerts.Resolved) 0) -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警数量:{{.Alerts.Firing | len}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警设备:{{ .GroupLabels.server}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ template &amp;#34;_alert_list&amp;#34; . }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>====================================
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警恢复:{{len .Alerts.Resolved}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警设备:{{ .GroupLabels.server}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ template &amp;#34;_resolve_list&amp;#34; . }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- else -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{- if gt (len .Alerts.Firing) 0 -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警数量:{{.Alerts.Firing | len}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警设备:{{ .GroupLabels.server}} 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ template &amp;#34;_alert_list&amp;#34; . }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{- end -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{- if gt (len .Alerts.Resolved) 0 -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警恢复:{{len .Alerts.Resolved}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>告警设备:{{ .GroupLabels.server}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ template &amp;#34;_resolve_list&amp;#34; . }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{- end -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- end -}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{- end -}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>其中告警设备 server 这个标签是自定义的.如果没有可以删除此行或根据自己标签定义.&lt;/strong>&lt;/p></description></item><item><title>Prometheus-AlertManager警告管理搭建与配置</title><link>https://blog.51ai.vip/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 19 Oct 2019 09:40:15 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="alertmanager">AlertManager&lt;/h2>
-&lt;blockquote>
-&lt;p>AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。
-它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。
-它还负责消除和抑制警报。&lt;/p>&lt;/blockquote>
-&lt;p>通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具.
-AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器.&lt;/p>
-&lt;p>Prometheus-&amp;gt;触发定义的警报规则-&amp;gt;AlertManager-&amp;gt;发送警报到指定通知渠道.&lt;/p>
-&lt;p>为了能让Prometheus发送警报,我们需要:&lt;/p>
-&lt;ol>
-&lt;li>搭建AlertManager服务.&lt;/li>
-&lt;li>定义AlertManager通知配置.&lt;/li>
-&lt;li>定义Prometheus警报规则并引入.&lt;/li>
-&lt;li>测试警报.&lt;/li>
-&lt;li>定义通知模板.&lt;/li>
-&lt;/ol>
-&lt;h2 id="定义alertmanager通知配置">定义AlertManager通知配置&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">global&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">smtp_smarthost&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;smtp.163.com:25&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 邮箱smtp服务器代理&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">smtp_from&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;shitu-0071@163.com&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 发送邮箱名称&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">resolve_timeout&lt;/span>: &lt;span style="color:#ae81ff">5m &lt;/span> &lt;span style="color:#75715e"># 处理超时时间，默认为5min&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">smtp_auth_username&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;shitu-0071@163.com&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 邮箱帐户&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">smtp_auth_password&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;******&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 邮箱授权码(注意是授权码,不知道自己查一下)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">wechat_api_url&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://qyapi.weixin.qq.com/cgi-bin/&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 企业微信地址&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 定义模板信心&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">templates&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#39;template/*.tmpl&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 定义路由树信息&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">route&lt;/span>: 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">group_by&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;alertname&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;cluster&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;service&amp;#39;&lt;/span>] &lt;span style="color:#75715e"># 报警分组依据,设置后会按照设定值分组,例如instance,alertname等&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 同标签警告会在作为一组警报发送&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">group_wait&lt;/span>: &lt;span style="color:#ae81ff">10s &lt;/span> &lt;span style="color:#75715e"># 组内等待时间,触发阈值后,XXs后发送本组警报&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">group_interval&lt;/span>: &lt;span style="color:#ae81ff">10s &lt;/span> &lt;span style="color:#75715e"># 每个组之前间隔时间(group_by设定的值划分的组)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">repeat_interval&lt;/span>: &lt;span style="color:#ae81ff">1m &lt;/span> &lt;span style="color:#75715e"># 重复发送警报的周期&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">(对于email配置中，此项不可以设置过低，否则将会由于邮件发送太多频繁，被smtp服务器拒绝)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">receiver&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;email&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 发送警报的接收者的名称&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 以下receivers name的名称&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">routes&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">match&lt;/span>: &lt;span style="color:#75715e"># 普通匹配&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">serverity&lt;/span>: &lt;span style="color:#ae81ff">critical &lt;/span> &lt;span style="color:#75715e"># 警告级别critical&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">receiver&lt;/span>: &lt;span style="color:#ae81ff">email &lt;/span> &lt;span style="color:#75715e"># 通过邮件发送&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">match_re&lt;/span>: &lt;span style="color:#75715e"># 正则匹配&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">severity&lt;/span>: &lt;span style="color:#ae81ff">^(warning)$ &lt;/span> &lt;span style="color:#75715e"># 匹配警告级别为warning的&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">receiver&lt;/span>: &lt;span style="color:#ae81ff">wechat &lt;/span> &lt;span style="color:#75715e"># 通过微信发送告警&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">receiver&lt;/span>: &lt;span style="color:#ae81ff">along &lt;/span> &lt;span style="color:#75715e"># 定义接收者&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">match&lt;/span>: &lt;span style="color:#75715e"># 匹配&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">severity&lt;/span>: &lt;span style="color:#ae81ff">test &lt;/span> &lt;span style="color:#75715e"># 等级为test&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 定义警报接收者信息&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">receivers&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;email&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 警报&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">email_configs&lt;/span>: &lt;span style="color:#75715e"># 邮箱配置&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">to&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;******@163.com&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 接收警报的email配置&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">html&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;{{ template &amp;#34;test.html&amp;#34; . }}&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 设定邮箱的内容模板&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">headers&lt;/span>: { &lt;span style="color:#f92672">Subject&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;[WARN] 报警邮件&amp;#34;&lt;/span>} &lt;span style="color:#75715e"># 接收邮件的标题&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">webhook_configs&lt;/span>: &lt;span style="color:#75715e"># webhook配置&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;http://127.0.0.1:5001&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">send_resolved&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;wechat&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">wechat_configs&lt;/span>: &lt;span style="color:#75715e"># 企业微信报警配置&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">send_resolved&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">to_party&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;1&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 接收组的id&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">agent_id&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;1000002&amp;#39;&lt;/span> &lt;span style="color:#75715e"># (企业微信--&amp;gt;自定应用--&amp;gt;AgentId)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">corp_id&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;******&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 企业信息(我的企业--&amp;gt;CorpId[在底部])&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">api_secret&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;******&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 企业微信(企业微信--&amp;gt;自定应用--&amp;gt;Secret)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">message&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;{{ template &amp;#34;test_wechat.html&amp;#34; . }}&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 发送消息模板的设定&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 一个inhibition规则是在与另一组匹配器匹配的警报存在的条件下，&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使匹配一组匹配器的警报失效的规则。两个警报必须具有一组相同的标签。 &lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">inhibit_rules&lt;/span>: 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">source_match&lt;/span>: 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">severity&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;critical&amp;#39;&lt;/span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">target_match&lt;/span>: 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">severity&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;critical&amp;#39;&lt;/span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">equal&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;instance&amp;#39;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 已经发送的告警通知匹配到target_match和target_match_re规则，&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 再有新的告警规则如果满足source_match&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 或者定义的匹配规则，并且已发送的告警与新产生的告警中equal定义的标签完全相同，&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 则启动抑制机制，新的告警不会发送。&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;p>以下是官方文档配置翻译的文档.供参考具体详细的配置介绍.不细看先略过到下个步骤.&lt;/p></description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>aLong Blog</title><link>https://blog.51ai.vip/tags/alertmanager/</link><description>Recent content on aLong Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 04 Dec 2019 11:51:43 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/alertmanager/" rel="self" type="application/rss+xml"/><follow_challenge><feedId>138265218615266304</feedId><userId>55876347710175232</userId></follow_challenge><item><title>通过gitlog用AI整理项目记录</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87gitlog%E7%94%A8ai%E6%95%B4%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/</link><pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87gitlog%E7%94%A8ai%E6%95%B4%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/</guid><description>git log 列出时间段内容 导出2024全年内容到文本： git log --since="2024-01-01" --until="2024-12-30" --pretty=format:"%h - %an, %ad : %s" --date=iso > commits_2024.txt
+讲这个文件加入单独的知识库中 此处使用cherry studio进行知识库添加操作。
+但文件直接加入，模型我选的 baai/bge-m3。
+使用模型对导出的内容进行处理 请根据提供的gitcommitlog进行总结。 总结的内容是2024年1月1日至2024年12月31日一共开发多少新功能，主要功能名称是什么，修复或优化多少功能点其中调整优化次数多的top3。
+总结内容如下： 通过总结，我们可以将此段内容加入总结中或者用来PPT内容的中。</description></item><item><title>观《李继刚：当我们说「提示词」时，到底在说什么？》所感</title><link>https://blog.51ai.vip/posts/%E8%A7%82%E6%9D%8E%E7%BB%A7%E5%88%9A%E5%BD%93%E6%88%91%E4%BB%AC%E8%AF%B4%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%97%B6%E5%88%B0%E5%BA%95%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88%E6%89%80%E6%84%9F/</link><pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%82%E6%9D%8E%E7%BB%A7%E5%88%9A%E5%BD%93%E6%88%91%E4%BB%AC%E8%AF%B4%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%97%B6%E5%88%B0%E5%BA%95%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88%E6%89%80%E6%84%9F/</guid><description>文中看到一两句觉得不错的话:
+能让提示词产生惊艳效果的往往是，让模型不按照训练时候的权重、参数结构等既定的默认路径输出，人类的提示词要能唤醒模型与之『共振』。
+AI 来了。……人类的宇宙是什么？是我脑海中的认知宇宙。AI 的宇宙是什么？是参数宇宙。现在这两个宇宙要产生交流，这个交流的宇宙语，我们把它定义为提示词。
+我没有美丽的词汇去描述那些,正巧前几天看到有话题再提这个. 也看到不少佬友跟帖在说是与非.
+别人怎么看都是别人的,我要考虑是对方是否说明什么,我能理解到什么地步.我要学习那些内容.
+有些好的 提示词、提示片段就是能达到一定预期.这说明效果是有的,但也别像短视频那种傻吹就好. 各厂家也在发布模型的prompt文档内容.
+从中我想到自己记住的几句:
+*「万物本虚，万法本无，得虚无之窍者，知法术之要乎！」
+*「法本无祖，术本无状，师之于心，得之于象。」
+原文: https://mp.weixin.qq.com/s/c4RRQP7UfdgZiVDvaN4LwA</description></item><item><title>11.19日记</title><link>https://blog.51ai.vip/posts/11.19%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/11.19%E6%97%A5%E8%AE%B0/</guid><description>
+因为针灸，我需要下班后吃完饭再去。然而，针灸附近不仅没什么好吃的，连炒菜都没有。每次下班，我习惯去老乡鸡，选菜简单，通常是西红柿鸡蛋加上其他随意的搭配。今天写这段笔记是因为我又见到了她。几乎每次去都能遇见她，不免让我注意到她的存在。
+我发现她吃饭时总是很忙活。每当我都已经吃完，她还在餐区来回穿梭，拿这个拿那个。我不禁疑惑，她是不是有什么问题？转念一想，嗐，我自己没病也不会在这儿吃饭了。或许，每个人心里都有那么一点点小问题吧。</description></item><item><title>Obsidian插件使用</title><link>https://blog.51ai.vip/posts/obsidian%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/obsidian%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</guid><description>场景 一直使用Obsidian进行记录内容,网页上很多内容觉得不错想摘录一下. 之前使用过的内容是简悦和一个Safari的脚本.
+前阵子看到有人分享Obsidian的插件,装上一直没用,本周体验完记录一下.
+本次记录时演示的浏览器是 zen browser .
+安装插件 下面是支持浏览器的地址:
+hrome Web Store for Chrome, Brave, Edge, Arc, Orion, and other Chromium-based browsers.
+Firefox Add-Ons for Firefox and Firefox Mobile.
+Safari Extensions for macOS, iOS, and iPadOS.
+使用 安装完再浏览器上可以看到插件图标.
+在使用之前我们先进行一些配置,点击图标后点击设置按钮:
+基本设置 基本设置中,最需要设置的是 Vaults 目录,可以配置一个或多个,当在插件上保存时可以切换不同的 Vault 进行保存.
+输入Vault名字,回车添加.
+属性配置 属性我没有调整,使用的默认值.等需要进阶或者修改时候再考虑.
+荧光笔配置 荧光笔目前用起来不是很好用. 他能给网页进行高亮,通知在配置时是否显示,已经再导出内容是,是否用高亮的内容替换原文.
+白话就是仅导出高亮内容.看你选择,我选择默认替换原文.
+模版配置 模版我修改的地方不多,我仅把Vault设置了默认的名字,没有选择LastUsed. 如果多个库可以用lastUsed更合适.
+模版有一处配置会影响导出结果:
+默认是创建新文件. 如果需要进行同名称追加和日记可以自行选择测试.
+导出测试 插件图标上也有些按钮,下面进行简单介绍:
+在Add to obsidian 按钮上面是选择输出的vault,后面的输入是指定输出目录, 默认是Clippings .</description></item><item><title>zabbix6.0+docker-compose部署</title><link>https://blog.51ai.vip/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix6.0docker-compose%E9%83%A8%E7%BD%B2/</guid><description>zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。
+根据踩坑，记录docker-compose 执行后遇到的一些问题。
+zabbix 6.0 LTS已发布 本文中的镜像为当时为zabbix6.0预发布版本（trunk）。目前zabbix6.0LTS版本已发布。 请结合 官方镜像
+部署 主机安装好docker、docker-compose。
+文件包含:env_vars ,
+docker-compose.yml。
+密码6387
+下载完成后解压到同一目录， 并执行docker-compose up -d
+这时候可以看到各服务拉取镜像并启动。
+docker-compose 文件内容 version: '3.5' services: m-server: container_name: m-server image: zabbix/zabbix-server-mysql:alpine-trunk restart: always ports: - "10051:10051" volumes: - /etc/localtime:/etc/localtime:ro - /etc/timezone:/etc/timezone:ro - ./zbx_env/usr/lib/zabbix/alertscripts:/usr/lib/zabbix/alertscripts:ro - ./zbx_env/usr/lib/zabbix/externalscripts:/usr/lib/zabbix/externalscripts:ro - ./zbx_env/var/lib/zabbix/export:/var/lib/zabbix/export:rw - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro - ./zbx_env/var/lib/zabbix/mibs:/var/lib/zabbix/mibs:ro env_file: - ./env_vars/.env_db_mysql - ./env_vars/.env_srv secrets: - MYSQL_USER - MYSQL_PASSWORD - MYSQL_ROOT_PASSWORD # - client-key.pem # - client-cert.pem # - root-ca.pem depends_on: - mysql-server networks: zbx_net_backend: aliases: - m-erver - m-server-mysql - m-server-alpine-mysql - m-server-mysql-alpine zbx_net_frontend: null # devices: # - "/dev/ttyUSB0:/dev/ttyUSB0" stop_grace_period: 30s sysctls: - net.ipv4.ip_local_port_range=1024 65000 - net.ipv4.conf.all.accept_redirects=0 - net.ipv4.conf.all.secure_redirects=0 - net.ipv4.conf.all.send_redirects=0 labels: com.zabbix.description: "Zabbix server with MySQL database support" com.zabbix.company: "Zabbix LLC" com.zabbix.component: "m-server" com.zabbix.dbtype: "mysql" com.zabbix.os: "alpine" m-web-nginx-mysql: container_name: m-web-nginx-mysql # image: zabbix/zabbix-web-nginx-mysql:alpine-trunk image: chenwl2016/m-web-nginx-mysql:v1-alpine-trunk ports: - "8082:8080" - "8443:8443" volumes: - /etc/localtime:/etc/localtime:ro - /etc/timezone:/etc/timezone:ro - ./zbx_env/etc/ssl/nginx:/etc/ssl/nginx:ro - ./zbx_env/usr/share/zabbix/modules/:/usr/share/zabbix/modules/:ro env_file: - ./env_vars/.env_db_mysql - ./env_vars/.env_web secrets: - MYSQL_USER - MYSQL_PASSWORD # - client-key.pem # - client-cert.pem # - root-ca.pem depends_on: - mysql-server - m-server healthcheck: test: [ "CMD", "curl", "-f", "http://localhost:8080/" ] interval: 10s timeout: 5s retries: 3 start_period: 30s networks: zbx_net_backend: aliases: - m-web-nginx-mysql - m-web-nginx-alpine-mysql - m-web-nginx-mysql-alpine zbx_net_frontend: null stop_grace_period: 10s sysctls: - net.core.somaxconn=65535 labels: com.zabbix.description: "Zabbix frontend on Nginx web-server with MySQL database support" com.zabbix.company: "Zabbix LLC" com.zabbix.component: "m-frontend" com.zabbix.webserver: "nginx" com.zabbix.dbtype: "mysql" com.zabbix.os: "alpine" m-agent: container_name: m-agent image: zabbix/zabbix-agent:alpine-trunk restart: always ports: - "10050:10050" volumes: - /etc/localtime:/etc/localtime:ro - /etc/timezone:/etc/timezone:ro - ./zbx_env/etc/zabbix/zabbix_agentd.d:/etc/zabbix/zabbix_agentd.d:ro - ./zbx_env/var/lib/zabbix/modules:/var/lib/zabbix/modules:ro - ./zbx_env/var/lib/zabbix/enc:/var/lib/zabbix/enc:ro - ./zbx_env/var/lib/zabbix/ssh_keys:/var/lib/zabbix/ssh_keys:ro env_file: - ./env_vars/.env_agent privileged: true pid: "host" networks: zbx_net_backend: aliases: - zabbix-agent - zabbix-agent-passive - zabbix-agent-alpine stop_grace_period: 5s labels: com.zabbix.description: "Zabbix agent" com.zabbix.company: "Zabbix LLC" com.zabbix.component: "zabbix-agentd" com.zabbix.os: "alpine" mysql-server: container_name: mysql-server image: mysql:8.0 restart: always security_opt: - seccomp:unconfined ports: - "3316:3306" command: - mysqld - --character-set-client=utf8mb4 - --character-set-connection=utf8mb4 - --character-set-results=utf8mb4 - --character-set-server=utf8mb4 - --collation-server=utf8mb4_bin - --default-authentication-plugin=mysql_native_password # - --require-secure-transport # - --ssl-ca=/run/secrets/root-ca.pem # - --ssl-cert=/run/secrets/server-cert.pem # - --ssl-key=/run/secrets/server-key.pem volumes: - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw env_file: - ./env_vars/.env_db_mysql secrets: - MYSQL_USER - MYSQL_PASSWORD - MYSQL_ROOT_PASSWORD # - server-key.pem # - server-cert.pem # - root-ca.pem stop_grace_period: 1m networks: zbx_net_backend: aliases: - mysql-server - m-database - mysql-database db_data_mysql: image: busybox volumes: - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw networks: zbx_net_frontend: driver: bridge driver_opts: com.docker.network.enable_ipv6: "false" ipam: driver: default config: - subnet: 172.16.238.0/24 zbx_net_backend: driver: bridge driver_opts: com.docker.network.enable_ipv6: "false" internal: true ipam: driver: default config: - subnet: 172.16.239.0/24 secrets: MYSQL_USER: file: ./env_vars/.MYSQL_USER MYSQL_PASSWORD: file: ./env_vars/.MYSQL_PASSWORD MYSQL_ROOT_PASSWORD: file: ./env_vars/.MYSQL_ROOT_PASSWORD # client-key.pem: # file: ./env_vars/.ZBX_DB_KEY_FILE # client-cert.pem: # file: ./env_vars/.ZBX_DB_CERT_FILE # root-ca.pem: # file: ./env_vars/.ZBX_DB_CA_FILE # server-cert.pem: # file: ./env_vars/.DB_CERT_FILE # server-key.pem: # file: ./env_vars/.DB_KEY_FILE 其中有基础更改，主要是使用的镜像非zabbix镜像。数据库考虑暴露3316端口（但是这里没有成功） 使用非官方容器的目的是遇到一些情况。</description></item><item><title>Arc Search小记</title><link>https://blog.51ai.vip/posts/arc-search%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/arc-search%E5%B0%8F%E8%AE%B0/</guid><description>起因 由于safari访问论坛或者网页提示版本低,所以就升级了iOS系统. 升级到了iOS17.7,舍弃了巨魔老弟啊. 拥抱一些之前装不上的APP.
+基本功能介绍 在macOS上已经使用了几个月的arc浏览器了,之前在手机安装过一个arc手机版除了能同步标签好像没啥新鲜玩意儿就卸载了.
+现在新的 Arc Search有一些新功能.下面简单记录一下.
+界面很简约 🎬: https://watch.wave.video/Z84ahCqYM5UO97hl
+打开App后很简约,上面有个大大的logo. 这玩意儿可以拖拽,旋转.拿来解闷的吗? 底部三个按钮,左侧是同步的电脑标签(提前已经登陆与电脑版账号).中间➕号快速启动,长按这个可以呼出arc那个小助手.右侧是设置按钮.
+底栏上划和➕号功能一样.
+输入右侧支持语音助手和快速切换隐私模式👀. 这个👀切换相当丝滑.
+这个页面可以pin一些常用的网页.便于快速打开. 最顶部的搜索输入默认是走搜索引擎,输入的同时下面会有提示,这些提示功能是通过AI帮你返回搜索信息内容.
+网页总结 🎬: https://watch.wave.video/wjieIYr66NLni9YG
+网页总结有一个手势,双指捏合网页缩小后开始总结.
+Pin 和PC功能一样,支持pin到pc同步的空间.第一个Favorite in App 是钉在App的启动页上,当点击下栏+号或者上划是能看到钉的链接.
+翻译 🎬: https://watch.wave.video/wLN3YbdOkwouKosc
+翻译和chrome体验是类似的,可能就是一个功能.我不清楚,单我发现一个不错的看书方式,就是之前提到过的Flow加载书,用它来翻译.有个缺点是字体颜色不知道为什么会变色. 翻译速度挺快的.
+设置 其他设置中有个 Raise to Call Arc 这个功能有点意思,当你打开arc,拿起手机像打电话一样可以呼出来助手,你说话它去处理(播放🎵),最后播放处理结果.
+站点设置 广告,禁提示cookie,禁止跟踪这些默认开启.
+UI交互 🎬: https://watch.wave.video/0u8ckdJkSUejvaPc
+底栏左侧按钮上划时快速切换打开的网页,点击打开打开页面的预览,上划关闭网页.长按打开PC同步的space内容.
+大概就这些,感谢浏览.
+完结 祝好</description></item><item><title>Snapbox</title><link>https://blog.51ai.vip/posts/snapbox/</link><pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate><guid>https://blog.51ai.vip/posts/snapbox/</guid><description>一款macOS的APP app网站 : https://snapbox.app/
+我在v2ex上看到此贴.
+作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.
+看起来像是spotlight,raycast这种工具的方式启动,调出后实现与AI的一系列操作. 比如翻译、对话、优化内容等工作.
+支持ollama和服务提供商API.
+配置内容简单,支持prompt.
+接入配置 呼出主界面时,进入 settings.
+设置界面中的 SELECT PROVIDER中选择模型的厂商.
+我这里配置过Ollama和Custom Endpoint.Custom Endpoint我选择了 siliconflow.
+配置时,输入完 CUSTOM ENDPOINT URL 和 ** CUSTOM ENDPOINT API KEY**后可以获取模型.
+勾选自己使用的模型名字即可.如果API服务商不支持获取可以自己点击+号添加.
+功能演示 我觉得此软件的特色是:
+此软件支持全局快捷键,呼出程序,快捷进入某特定prompt等.
+选择文字后会被程序捕获. 免去了复制粘贴.
+常规对话 复制粘贴、打字与AI交互. 快捷上支持重新生成、继续、继续输入.
+放个视频演示:
+https://watch.wave.video/6UP7usIlnYJ9vC0B
+Reactor 模式 此模式是监听你的指针选择,剪切板内容.快速响应.
+放个视频演示:
+https://watch.wave.video/KRjgWJQ5nJmSj0yX
+最后 看到作者仅用几天时间借助大模型开发出一个功能丰富的app，令人惊叹。
+既体现了大模型的强大能力，也展示了作者高超的开发技巧和创新思维。
+反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。
+展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。
+完结~ 感谢观看</description></item><item><title>Arc</title><link>https://blog.51ai.vip/posts/arc/</link><pubDate>Fri, 13 Sep 2024 14:23:51 +0800</pubDate><guid>https://blog.51ai.vip/posts/arc/</guid><description>背景 使用arc浏览器作为主力之前,更喜欢chrome.
+也考虑edge替代朴素的chrome.事与愿违,在后面使用中edge变越越来越不喜欢的东西.
+加入了很多我不喜欢、不去用的功能展示在界面上. 后面我就没继续使用了,不评价edge的好坏.我不喜欢用它.
+后面看到arc,也是简单尝试了一下,后面我觉得不错的菜就换成了主力.
+喜欢的功能 下面我介绍一下我使用这个arc浏览器喜欢的点.
+space 在每个Space可放不同的标签,做到了管理和分类. 同时还可以定制颜色,样式.
+可以根据不同账号(profile)分配不同的会话信息. 也就是一个浏览器不同space区分账号.满足挂小号、测试等需要多身份在同一个浏览器访问.
+如上图,我新建了一个along的profile,创建了一个space. 在访问linux.do时,如图.如果我有小号就可以这么搞拉.
+Easel 我用这个功能很简单,就是看下动态信息. 比如你想一些动态信息,但又不需要整个页面,是不是想把局部拿出来. 白板可以的,你截取某网页部分放到白板里,开启就可以实现.
+上面是我自己创建的两个页面. 这俩一个是没事看看模型排行. 另一个是关注自己的其他信息.
+可能图片不能直观解释这个用途.放个动图,看那个时间的变化:
+当我想看周刊我就直接在这里点就好了,不需要单独打开此网站去查看这个列表,美滋滋.
+我能想到画架的用途还有: 头脑风暴、协作、笔记、可视化信息、素材灵感搜集、整理内容、组织结构.
+这些做完可以分享.
+Boost 这个功能可更改网页一些元素的颜色，字体类型、字体大小等. 还是以佬友为例:
+主题是默认,我通过boost功能将颜色、字体、英文文字是蛇形、全大写、全小写的配置来自定义一下.
+boost中我最喜欢的是zap. 可以隐藏掉自己不喜欢的页面元素.
+继续以佬友为例: 点击zap后,可以选择页面元素.
+当选择元素后点击 zap this 就可以干掉他.
+这是隐藏掉一些页面元素后的样子.
+Favorite 这是左上角那部分内容,做多可以放12个块.块支持split的组合tab.特定适配过的还有奇效,比如gmail、outlook、slack等等等. 我把常用的网站放在这里,佬友有消息提示,这icon上会有标记的.以便我打开查看消息.
+Split 通过简单拖拽,可实现tab的分屏. 新打开一个网页想和当前tab做分屏,点击链接时按住option就实现了分屏.
+能分能拆,用起来体验不错.但有一点不太好,就是在分屏中关闭的tab就没了.只能重新pinned.
+搜索 默认地址栏输入内容能搜索,或者自己访问搜索引擎.
+我更喜欢在command + T 弹出来的对话框里进行搜索. 他像 raycast 功能那样快捷搜索.
+GitHub:
+linux.do:</description></item><item><title>LLM_fine Tuning</title><link>https://blog.51ai.vip/posts/llm_fine-tuning/</link><pubDate>Thu, 15 Aug 2024 13:39:15 +0800</pubDate><guid>https://blog.51ai.vip/posts/llm_fine-tuning/</guid><description>微调 fine-tuning 微调是一种监督学习过程,在这个过程中可以使用一组带标签的示例数据来更新LLM的权重.使其为特定任务生成良好完成的能力.
+指令微调特别擅长提高模型在各种任务中的性能. 比如想让模型翻译能力增强,那就给他一些示例是包括翻译这句话之类的说明.即时完成示例允许模型学习生成遵循给定说明的响应.
+微调大致步骤 准备训练数据,需要特定的格式. 也可以通过数据集+模版来处理使其既是模版又是数据集(指令数据集). 将数据集划分为训练验证和测试.然后使用计算出的损失来更新标准反向传播中的模型权重(standard backpropagation)。多批次重复操作. 更新完进行最终的性能评估.通过测试得出精度. 最终得到一个微调模型(Instruct LLM).</description></item><item><title>Nightingle夜莺Docker版SNMP监控</title><link>https://blog.51ai.vip/posts/nightingle%E5%A4%9C%E8%8E%BAdocker%E7%89%88snmp%E7%9B%91%E6%8E%A7/</link><pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/nightingle%E5%A4%9C%E8%8E%BAdocker%E7%89%88snmp%E7%9B%91%E6%8E%A7/</guid><description>起因 对夜莺很感兴趣，想使用一下。我看官方提供了v6版本的docker-compose。而且我之前有使用过promtheus和grafana，虽然很好但是总觉得还是得二开。总有一天有人去搞一个不错的玩意儿出来。官方文档地址
+安装与配置 直接运行docker版本的demo，启动后，我发现有prometheus和categraf。但我想根据官方文档使用VictoriaMetrics单机版本。
+使用VictoriaMetrics 我在compose中去掉了prometheus，然后在主机安装了VictoriaMetrics。我没用在compose中添加，我懒改了。直接看官当文档多香。
+后面启动后修改数据源： 添加好数据源后，看下是否正常： 时序指标随便敲敲看有没指标 看到有指标我很自信的说成了。
+后面我加了两个Ping，发现可以没问题的。
+使用内置的展示仪表盘美滋滋。
+SNMP部分 之后我想测试SNMP部分，这是我工作需要的内容。
+首先默认的官方demo没有提供相关categraf插件配置。他的插件都是在github上面的。下载一份放到demo的categraf/conf目录下。 我的路径： home/xxx/nightingate/docker/categraf/conf
+我这里用到snmp， 就拷贝input.snmp 这个目录到上面路径内。
+进入这个input.snmp,里面有两个文件,一个 snmp.toml另一个是snmp.toml.example 。实际使用的是第一个，在里面编辑内容：
+[[instances]] agents = ["udp://10.10.10.2:161"] timeout = "5s" version = 2 path = ["/usr/share/snmp/mibs"] community = "public" agent_host_tag = "switch" retries = 1 [[instances.field]] oid = ".1.3.6.1.2.1.1.3.0" name = "uptime" [[instances.field]] oid = ".1.3.6.1.2.1.1.5.0" name = "source" is_tag = true [[instances.table]] oid = "IF-MIB::ifTable" name = "interface" inherit_tags = ["source"] index_as_tag = true include_filter = ["ifIndex:2","ifIndex:4"] [[instances.table.field]] oid = "IF-MIB::ifDescr" name = "ifDescr" is_tag = true [[instances.table.field]] oid = "IF-MIB::ifPhysAddress" name = "ifPhysAddress" is_tag = true 遇到问题 保存重启categraf后，我只看到了一个指标snmp_uptime。我单独取uptime这个是有的，就好像没办法执行snmpwalk 只能搞snmpget。</description></item><item><title>Roadmap&amp;Go</title><link>https://blog.51ai.vip/posts/roadmapgo/</link><pubDate>Mon, 15 May 2023 14:53:11 +0800</pubDate><guid>https://blog.51ai.vip/posts/roadmapgo/</guid><description>技术类的Roadmap（路线图）具有许多好处，下面是其中几个主要的好处：
+明确目标：Roadmap可以帮助技术团队明确目标和愿景。它提供了一个清晰的计划，使团队成员知道他们正在朝着什么方向前进，并且可以更好地集中精力和资源。 规划优先级：Roadmap可以帮助团队确定优先级和时间表。通过将不同的功能、项目和任务安排在时间轴上，团队可以了解何时开始和完成每个任务，从而更好地分配资源和人力。 沟通和协作：Roadmap是与团队成员、管理层和利益相关者进行沟通和协作的重要工具。它提供了一个共同的视觉框架，帮助各方理解技术发展的方向和计划，从而促进更好的合作和决策制定。 风险管理：Roadmap有助于识别和管理潜在的风险和挑战。通过在Roadmap中考虑外部因素、技术依赖关系和风险因素，团队可以更好地规划和应对可能的问题，降低项目失败的风险。 激励和动力：Roadmap可以为团队提供激励和动力。清晰的目标和规划可以激发团队成员的工作热情和投入，使他们感到对项目和组织的价值和重要性。 我之前保存过GitHub: Alikhll/golang-developer-roadmap的roadmap。正好在上周末想看看自己找一块内容来学习学习。我发现作者还是2021年的版本，后面也没有更新什么。那我想在obsidian中把这个图复刻一个，然后根据内容去做计划去学习。后来我又想到另一个roadmap也不错。正好两个整合一下。那么就有了一个我魔改的内容。
+此图是通过Obsidian的canvas 功能进行的制作。并且我后面打算通过双链来完成此图中部分内容的笔记。
+此图整体可以看到通过颜色来区分了一些作者划分的知识点优先级，以便确定哪些内容应优先进行。此图我觉得有个遗憾就是没能够持续进行更新。后面还好我找到另一个认为不错的roadmap进行补充和完善。
+主体还是golang-developer-roadmap，顺便在前后加入了 Backend Developer ,后面加入了Full Stack Developer。 其实还有很多roadmap相关，比如devops，docker，Frontend Developer等等吧都会涉及到一些内容。并且这个roadmap还可以在图中交互，我觉得不错。
+主要不错地方包含：
+可交互。 此roadmap是持续更新的。 比如这个后端内容中，你点击 What is HTTP？ 在右侧弹出内容中，可以看到具体内容，并有相关的链接可以去访问。 最上面还有个状态，可通过状态编辑此内容是否已经达到目的。
+点击Update Status后可以看到有三个选项。
+点击Done之后，图中将做出变化：
+个人认为是个不错的方式。
+个人认为技术类的Roadmap可以帮助团队提高效率、降低风险、改善沟通和协作，并为实现技术目标提供清晰的指导。它是一个重要的管理工具，有助于组织和规划技术团队的工作，使其能够更好地满足业务需求并取得成功。
+完结 祝好 ～</description></item><item><title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title><link>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 07 Apr 2023 19:33:25 +0800</pubDate><guid>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid><description>Colima GitHub
+Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。
+Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：
+由于它只是一个容器运行时，因此相对于 Docker Desktop，它的安装和启动速度更快，所需的资源更少。 它使用了轻量级的虚拟化技术，例如 HyperKit 和 VPNKit，以提高容器的性能和安全性。 Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动、停止、删除容器，以及执行其他常见操作。 它还提供了一些有用的功能，例如在本地浏览器中打开容器中运行的应用程序、自动重启容器等。 总的来说，Colima 是一个轻量级、易于使用的容器运行时，旨在为开发者提供一种更快、更安全的容器环境，使得开发和测试容器应用程序变得更加轻松。
+安装 在 macOS 上安装 Colima 很简单，只需要执行以下几个步骤：
+首先，您需要打开终端并使用 Homebrew 包管理器安装 Colima。如果您没有安装 Homebrew，请先安装 Homebrew： /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+安装 Colima： brew install colima
+安装完成后，您可以使用 colima 命令来启动 Colima： colima start
+如果您想停止 Colima，可以使用以下命令： colima stop
+要卸载 Colima，请运行以下命令： brew uninstall colima
+安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。
+docker交互 启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 docker 命令来管理容器。</description></item><item><title>Ubuntu22.04安装kubeadm</title><link>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link><pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate><guid>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid><description>学习k8s 学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04
+系统安装docker Docker官方手册
+master、node设备各安装docker、kubelet、 kubeadm、 kubectl。
+为kubeadm准备 master、node进行准备工作：
+将cgroup处理改成systemd nano /etc/docker/daemon.json
+{ "exec-opts": ["native.cgroupdriver=systemd"], "log-driver": "json-file", "log-opts": { "max-size": "100m" }, "storage-driver": "overlay2" } sudo systemctl enable docker sudo systemctl daemon-reload sudo systemctl restart docker
+为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块 nano /etc/modules-load.d/k8s.conf
+br_netfilter nano /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward=1 sudo sysctl --system
+修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能 sudo swapoff -a sudo sed -ri '/\sswap\s/s/^#?/#/' /etc/fstab 安装kubeadm Kuneadm官方手册 在master、node上都需要安装
+更新 apt 包索引并安装使用 Kubernetes apt 仓库所需要的包： sudo apt-get update sudo apt-get install -y apt-transport-https ca-certificates curl (有条件)下载 Google Cloud 公开签名秘钥： sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg 如果上面访问不到，可选择其他,例如清华源提供： 导入gpg key</description></item><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。
+MacOS部署方式: 官方教程
+本次使用的驱动是 parallels驱动。所以本机需要安装此软件。 安装kubectl：brew install kubectl 安装minikube：
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 sudo install minikube-darwin-amd64 /usr/local/bin/minikube 通过minikube启动集群 minikube start \ --kubernetes-version=v1.23.9 \ --image-mirror-country='cn' \ --registry-mirror=https://？？？？？.mirror.aliyuncs.com 因为是国内，所以--image-mirror-country='cn'。通过--registry-mirror为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。 因为我学习的版本是1.23.x，所以制定了版本--kubernetes-version=v1.23.9。 默认他读去了驱动配置，识别是parallels,自己定义方式--driver=hyperkit。
+安装结果： 错误： 如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。
+驱动选择： 使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见drivers page
+验证结果 查询minikube状态 进入面板 kubectl控制 minikube kubectl -- get pods -A kubectl在minikube中使用，需要写 nimikune kubectl --后面加入执行的命令。 macos默认使用的zsh，在zsh加入alias就可以敲的少的了。
+vi ~/.zshrc #加入一行 alias kubectl="minikube kubectl --" #退出 source ~/.zshrc 再创建一个Pod 创建： kubectl run nginx --image=nginx:alpine 查询： kubectl get pods nginx 详情： kubectl describe pods nginx 到这里k8s可以使用了。</description></item><item><title>IOS使用Shadowrocket激活Emby</title><link>https://blog.51ai.vip/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</link><pubDate>Wed, 16 Nov 2022 10:44:11 +0800</pubDate><guid>https://blog.51ai.vip/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</guid><description>前提需要手机安装ShadowRocket。没有可以自己去找共享ID。 长按后弹出选项： 打开配置，例如在default上添加规则。点击default，编辑纯文本。 在文本最下面加入内容：
+[Script] EmbyPremiere = type=http-response,script-path=https://gitlab.com/iptv-org/embypublic/-/raw/master/Script/EmbyPremiere.js,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,max-size=131072,requires-body=true,timeout=10,enable=true [MITM] hostname = mb3admin.com 点击保存后，点右侧!进入。点击HTTPS解密。 开启HTTPS加密，会生成证书。同意安装描述文件。右上角点击勾。 去手机设置中，通用->描述文件与设备管理->点击描述文件(名称大概有Shadowrocket那个)->安装。 注意在Shadowrocket的首页上，全局路由选择配置。
+最后进入Emby软件。可能会提示证书点OK。如果没有提示，点一个影片后也会提示，点OK。如果Shadowrocket开启通知可以看到提示认证成功。 后面就可以畅快看影视啦。
+下次进入Emby时不需要Shadowrocket的配置了。当出现付费提示再开启那个配置就可以激活了。
+完结～ 祝好！</description></item></channel></rss>
