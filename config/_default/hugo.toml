@@ -1,4 +1,4 @@
-baseURL = "https://blog.51ai.vip/aLong/"
+baseURL = "https://blog.51ai.vip"
 enableEmoji = true
 defaultContentLanguage = "en"
 enableRobotsTXT = true
