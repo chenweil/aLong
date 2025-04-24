@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on aLong Blog</title><link>https://blog.51ai.vip/aLong/tags/tools/</link><description>Recent content in Tools on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 14 Sep 2024 10:42:26 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/aLong/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Snapbox</title><link>https://blog.51ai.vip/aLong/posts/snapbox/</link><pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/snapbox/</guid><description>&lt;h1 id="一款macos的app">一款macOS的APP&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on aLong Blog</title><link>https://blog.51ai.vip/tags/tools/</link><description>Recent content in Tools on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 14 Sep 2024 10:42:26 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Snapbox</title><link>https://blog.51ai.vip/posts/snapbox/</link><pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate><guid>https://blog.51ai.vip/posts/snapbox/</guid><description>&lt;h1 id="一款macos的app">一款macOS的APP&lt;/h1>
 &lt;p>app网站 : &lt;a href="https://snapbox.app/">https://snapbox.app/&lt;/a>&lt;/p>
 &lt;p>我在&lt;a href="https://www.v2ex.com/t/1062087">v2ex&lt;/a>上看到此贴.&lt;/p>
 &lt;p>作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.&lt;/p>
@@ -39,7 +39,7 @@
 &lt;p>反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。&lt;/p>
 &lt;p>展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。&lt;/p>
 &lt;p>完结~
-感谢观看&lt;/p></description></item><item><title>Arc</title><link>https://blog.51ai.vip/aLong/posts/arc/</link><pubDate>Fri, 13 Sep 2024 14:23:51 +0800</pubDate><guid>https://blog.51ai.vip/aLong/posts/arc/</guid><description>&lt;h1 id="背景">背景&lt;/h1>
+感谢观看&lt;/p></description></item><item><title>Arc</title><link>https://blog.51ai.vip/posts/arc/</link><pubDate>Fri, 13 Sep 2024 14:23:51 +0800</pubDate><guid>https://blog.51ai.vip/posts/arc/</guid><description>&lt;h1 id="背景">背景&lt;/h1>
 &lt;p>使用arc浏览器作为主力之前,更喜欢chrome.&lt;/p>
 &lt;p>也考虑edge替代朴素的chrome.事与愿违,在后面使用中edge变越越来越不喜欢的东西.&lt;/p>
 &lt;p>加入了很多我不喜欢、不去用的功能展示在界面上. 后面我就没继续使用了,不评价edge的好坏.我不喜欢用它.&lt;/p>
@@ -92,7 +92,7 @@
 &lt;p>我更喜欢在&lt;code>command + T&lt;/code> 弹出来的对话框里进行搜索. 他像 &lt;code>raycast&lt;/code> 功能那样快捷搜索.&lt;/p>
 &lt;p>GitHub:&lt;/p>
 &lt;p>&lt;img src="https://s2.loli.net/2024/09/13/aQN8Z9GPMEFWfnY.gif" alt="">&lt;/p>
-&lt;p>linux.do:&lt;/p></description></item><item><title>SwitchHosts管理编辑hosts工具</title><link>https://blog.51ai.vip/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</link><pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate><guid>https://blog.51ai.vip/aLong/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="管理hosts工具-switchhosts">管理Hosts工具 SwitchHosts&lt;/h2>
+&lt;p>linux.do:&lt;/p></description></item><item><title>SwitchHosts管理编辑hosts工具</title><link>https://blog.51ai.vip/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</link><pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate><guid>https://blog.51ai.vip/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="管理hosts工具-switchhosts">管理Hosts工具 SwitchHosts&lt;/h2>
 &lt;p>地址: &lt;a href="https://github.com/oldj/SwitchHosts">SwitchHosts&lt;/a>&lt;/p>
 &lt;p>开发工程中,针对不同项目设置不同的域名.&lt;/p>
 &lt;p>办法很多,例如直接编辑hosts文件,通过环境工具提供的功能设置等.&lt;/p>
