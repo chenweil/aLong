@@ -14,15 +14,17 @@ type: post
 *也有个缺点就是不展示思考信息。*
 
 看图：
-输入内容 tab 
-![[Pasted image 20250611010440.png]]
+输入内容 tab
+
+![](https://s2.loli.net/2025/06/11/fLgcZpzUxAyRt7X.png)
 
 继续对话：
 command+J  *切换模型有提示 *
-![[Pasted image 20250611012320.png]] 
-选择模型和配置prompt：
 
-![[Pasted image 20250611010643.png]]
+![](https://s2.loli.net/2025/06/11/at6ZRziu3hwfGec.png)
+
+选择模型和配置prompt：
+![](https://s2.loli.net/2025/06/11/LgIF2jqBhVPcZ3U.png)
 
 ## 部署+配置
 ### 克隆项目后
@@ -79,14 +81,13 @@ BASE_URL="https://ark.cn-beijing.volces.com/api/v3"   # 我这里配置的火山
 
 调整默认模型：
 
-![[Pasted image 20250611011846.png]]
-
+![](https://s2.loli.net/2025/06/11/dNVuhj4RW1CAFc2.png)
 
 之后接可以聊天了，Raycast AI 支持MCP。 我没体验。
 
-特别喜欢通过配置文件配置API的程序，之前也使用过一阵子 [intellibar](https://intellibar.app/) 但这个软件竟然对话换行有BUG。 弃了～ 
+特别喜欢通过配置文件配置API的程序，之前也使用过一阵子 [intellibar](https://intellibar.app/) 但这个软件竟然对话换行有BUG。 弃了～
 
-cherry studio 我也在用，但有时候只有几句话或者一句话的对话时。我默认还是喜欢通过Raycast或者小一点的窗口进行对话。 
+`cherry studio` 也在用，但有时候几句话或者一句话对话时。我更习惯通过Raycast或者小一点的窗口进行对话。
 
 完结
 祝好
