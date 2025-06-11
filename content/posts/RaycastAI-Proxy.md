@@ -19,7 +19,7 @@ type: post
 ![](https://s2.loli.net/2025/06/11/fLgcZpzUxAyRt7X.png)
 
 继续对话：
-command+J  *切换模型有提示 *
+command+J  *切换模型有提示*
 
 ![](https://s2.loli.net/2025/06/11/at6ZRziu3hwfGec.png)
 
