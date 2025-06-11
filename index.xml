@@ -3,13 +3,13 @@
 &lt;p>就是直接使用官方的AI功能，通过一个服务来实现接入其他平台的LLM API。&lt;/p>
 &lt;p>&lt;em>也有个缺点就是不展示思考信息。&lt;/em>&lt;/p>
 &lt;p>看图：
-输入内容 tab
-![[Pasted image 20250611010440.png]]&lt;/p>
+输入内容 tab&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2025/06/11/fLgcZpzUxAyRt7X.png" alt="">&lt;/p>
 &lt;p>继续对话：
-command+J *切换模型有提示 *
-![[Pasted image 20250611012320.png]]
-选择模型和配置prompt：&lt;/p>
-&lt;p>![[Pasted image 20250611010643.png]]&lt;/p>
+command+J *切换模型有提示 *&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2025/06/11/at6ZRziu3hwfGec.png" alt="">&lt;/p>
+&lt;p>选择模型和配置prompt：
+&lt;img src="https://s2.loli.net/2025/06/11/LgIF2jqBhVPcZ3U.png" alt="">&lt;/p>
 &lt;h2 id="部署配置">部署+配置&lt;/h2>
 &lt;h3 id="克隆项目后">克隆项目后&lt;/h3>
 &lt;p>我稍微调整了一下compose&lt;/p>
