@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>aLong Blog</title><link>https://blog.51ai.vip/</link><description>Recent content on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/index.xml" rel="self" type="application/rss+xml"/><item><title>Gemini制作AppleScritp一次过</title><link>https://blog.51ai.vip/posts/gemini%E5%88%B6%E4%BD%9Capplescritp%E4%B8%80%E6%AC%A1%E8%BF%87/</link><pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/gemini%E5%88%B6%E4%BD%9Capplescritp%E4%B8%80%E6%AC%A1%E8%BF%87/</guid><description>&lt;h1 id="前提">前提&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>aLong Blog</title><link>https://blog.51ai.vip/</link><description>Recent content on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/index.xml" rel="self" type="application/rss+xml"/><item><title>RaycastAI Proxy</title><link>https://blog.51ai.vip/posts/raycastai-proxy/</link><pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/raycastai-proxy/</guid><description>&lt;p>一直在重度使用Raycast，AI方面之前一直使用chatGPT插件但是他有个缺点，不能继续对话。&lt;/p>
+&lt;p>前天reddit发现一个项目： &lt;a href="https://github.com/miikkaylisiurunen/raycast-ai-openrouter-proxy.git">raycast-ai-openrouter-proxy&lt;/a>&lt;/p>
+&lt;p>就是直接使用官方的AI功能，通过一个服务来实现接入其他平台的LLM API。&lt;/p>
+&lt;p>&lt;em>也有个缺点就是不展示思考信息。&lt;/em>&lt;/p>
+&lt;p>看图：
+输入内容 tab
+![[Pasted image 20250611010440.png]]&lt;/p>
+&lt;p>继续对话：
+command+J *切换模型有提示 *
+![[Pasted image 20250611012320.png]]
+选择模型和配置prompt：&lt;/p>
+&lt;p>![[Pasted image 20250611010643.png]]&lt;/p>
+&lt;h2 id="部署配置">部署+配置&lt;/h2>
+&lt;h3 id="克隆项目后">克隆项目后&lt;/h3>
+&lt;p>我稍微调整了一下compose&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-compose" data-lang="compose">services:
+ raycast-ai-proxy:
+ restart: unless-stopped
+ build: .
+ ports:
+ - &amp;#39;11435:3000&amp;#39;
+ volumes:
+ - ./models.json:/app/models.json:ro
+ environment:
+	 # 配置通过 .env 导入
+ - API_KEY=${API_KEY}
+ - BASE_URL=${BASE_URL}
+&lt;/code>&lt;/pre>&lt;h3 id="配置参数">配置参数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-.env" data-lang=".env">&lt;span style="display:flex;">&lt;span>API_KEY&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sk-xxx&amp;#34;&lt;/span> &lt;span style="color:#75715e"># 你的key&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BASE_URL&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://ark.cn-beijing.volces.com/api/v3&amp;#34;&lt;/span> &lt;span style="color:#75715e"># 我这里配置的火山&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># BASE_URL=&amp;#34;https://openrouter.ai/api/v1&amp;#34; # 默认写的 openrouter&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置模型-modeljson">配置模型 model.json&lt;/h3>
+&lt;p>默认model.json提供了一些案例。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Doubao-1.5-vision-pro-32k&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;ep-xxx-xxx&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;contextLength&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">10240&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;capabilities&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;vision&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;tools&amp;#34;&lt;/span>], &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">支持多模态和tools&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;temperature&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">0.8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;DeepSeek-V3-0324&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;ep-xxx-xxx&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;contextLength&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">10240&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;capabilities&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;tools&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;temperature&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">0.6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="启动服务">启动服务&lt;/h3>
+&lt;p>这些搞定后启动服务： &lt;code>docker compose up -d&lt;/code>&lt;/p></description></item><item><title>Gemini制作AppleScritp一次过</title><link>https://blog.51ai.vip/posts/gemini%E5%88%B6%E4%BD%9Capplescritp%E4%B8%80%E6%AC%A1%E8%BF%87/</link><pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/gemini%E5%88%B6%E4%BD%9Capplescritp%E4%B8%80%E6%AC%A1%E8%BF%87/</guid><description>&lt;h1 id="前提">前提&lt;/h1>
 &lt;p>我喜欢使用Arc浏览器，自从同厂出的Dia出来后体验AI部分功能不错。但用它当作主力还是有点Chrome的感觉。我还是喜欢使用Arc，我想能否使用插件或者脚本来实现这个功能呢。没写过插件、脚本我问了大模型告诉我 &lt;code>open -a &amp;quot;Dia&amp;quot; &amp;quot;https://example.com&amp;quot;&lt;/code> 能实现我的想法💡。 哈哈，没错可以的。&lt;/p>
 &lt;h2 id="处理过程">处理过程&lt;/h2>
 &lt;p>但当我问怎么通过Arc浏览器去实现时，大模型就说法不一了。我测试了qwen3、claude3.7还有gemini2.5 pro。国内qwen3、扣子空间都是拒绝回答这个，提示违规😓。&lt;/p>
