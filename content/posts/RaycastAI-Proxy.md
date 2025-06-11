@@ -1,10 +1,9 @@
 ---
 date: 2025-06-11
-# image: ""
 lastmod: 2025-06-11
 showTableOfContents: false
-title: "RaycastAI Proxy"
-type: "page"
+title: RaycastAI Proxy
+type: post
 ---
 一直在重度使用Raycast，AI方面之前一直使用chatGPT插件但是他有个缺点，不能继续对话。
 
