@@ -81,7 +81,7 @@ BASE_URL="https://ark.cn-beijing.volces.com/api/v3"   # 我这里配置的火山
 
 调整默认模型：
 
-![](https://s2.loli.net/2025/06/11/dNVuhj4RW1CAFc2.png)
+![](https://s2.loli.net/2025/06/11/I8wmsjZztPHYAe1.png)
 
 之后接可以聊天了，Raycast AI 支持MCP。 我没体验。
 
