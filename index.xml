@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>aLong Blog</title><link>https://blog.51ai.vip/</link><description>Recent content on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/index.xml" rel="self" type="application/rss+xml"/><item><title>RaycastAI Proxy</title><link>https://blog.51ai.vip/posts/raycastai-proxy/</link><pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/raycastai-proxy/</guid><description>&lt;p>一直在重度使用Raycast，AI方面之前一直使用chatGPT插件但是他有个缺点，不能继续对话。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>aLong Blog</title><link>https://blog.51ai.vip/</link><description>Recent content on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 13 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/index.xml" rel="self" type="application/rss+xml"/><item><title>Dia浏览器体验记录</title><link>https://blog.51ai.vip/posts/dia%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/</link><pubDate>Fri, 13 Jun 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/dia%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>早在论坛拿到邀请🐎，下载打开一看，这啥啊这事？ 这么简约？&lt;/p>
+&lt;h1 id="当个ai提问">&lt;strong>当个AI提问&lt;/strong>&lt;/h1>
+&lt;p>最开始就用它来当个AI，做一些简单事情。 比如打开一个文章、帖子，问他讲了什么。 根据内容再提出其他问题。&lt;/p>
+&lt;p>在浏览的内容点击 &lt;code>chat&lt;/code> 按钮或者快捷键 &lt;code>command(ctrl) + e&lt;/code>。&lt;/p>
+&lt;p>也可以在地址栏输入 选择chat。&lt;/p>
+&lt;p>对话支持文件上传。&lt;/p>
+&lt;p>例子：&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2025/06/13/8CAzPBVKm2Hvxl3.png" alt="">
+&lt;em>演示图片瑕疵，我后面又看了其他主题。截图时没注意。 &amp;#x1f92b;&lt;/em>&lt;/p>
+&lt;h1 id="生成内容">&lt;strong>生成内容&lt;/strong>&lt;/h1>
+&lt;p>好看完了帖子，想表达却又不知道怎么说呢？ 让他搞吧。&lt;/p>
+&lt;p>此时输出内容UI不同，这个insert按钮需要你在网页定位到能输入的地方。&lt;/p>
+&lt;p>另一个例子：&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2025/06/13/RCmoUHdLqVfFDxI.png" alt="">&lt;/p>
+&lt;h1 id="个性化设置">&lt;strong>个性化设置&lt;/strong>&lt;/h1>
+&lt;p>&lt;img src="https://s2.loli.net/2025/06/13/aH5LtABcV8P47f1.png" alt="">&lt;/p>
+&lt;h2 id="personalize-四个选项我的理解">Personalize 四个选项我的理解&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>第一项看起来是品味。 我不太理解，大概是你喜欢什么品牌、作家等的风格吧。比如鲁迅分、川普风。🐒&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第二项那里，如果你常看见他时不时出来英文，也可以在这里提醒他 speak chinese。 具体描述你喜欢什么形式内容更容易接受。比如分段落展示、脑图、图标等等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第三项 我理解是输出的风格、形式等吧。比如加不加emoji。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第四项是关于编程偏好的设定，比如你用什么语言、什么架构、什么框架等等等。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>每个选项不一样，我这里演示第三个 关于 &lt;strong>Wirte&lt;/strong> 的风格。&lt;/p>
+&lt;p>这里我需要提醒他，如果我访问的内容是英文时，你输入内容也相同。&lt;/p>
+&lt;p>这样才能与世界通话嘛。 😂&lt;/p>
+&lt;p>🔔提示内容：
+&lt;code>If the tab content is in English, please generate content that is also in English.&lt;/code>&lt;/p>
+&lt;p>输出：&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2025/06/13/3IhGqwVxMu4X1id.png" alt="">&lt;/p>
+&lt;p>如果没有这句提示，他会根据对话语言，输出中文夸赞内容。😮‍💨&lt;/p>
+&lt;p>&lt;img src="https://s2.loli.net/2025/06/13/iPckQz3Ajgpl9eS.png" alt="">&lt;/p>
+&lt;h1 id="多标签对话">&lt;strong>多标签对话&lt;/strong>&lt;/h1>
+&lt;p>比如以Hugo 文档为例，他有四个页面。 抛出quick start 还有三个。如果我直接问模型可能他会告诉我内容，但我想自己再去看看文档又不知道再哪段（比如内容多很多）时。 可以都打他 用&lt;code>@&lt;/code>去选择这些tab页。&lt;/p></description></item><item><title>RaycastAI Proxy</title><link>https://blog.51ai.vip/posts/raycastai-proxy/</link><pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/raycastai-proxy/</guid><description>&lt;p>一直在重度使用Raycast，AI方面之前一直使用chatGPT插件但是他有个缺点，不能继续对话。&lt;/p>
 &lt;p>前天reddit发现一个项目： &lt;a href="https://github.com/miikkaylisiurunen/raycast-ai-openrouter-proxy.git">raycast-ai-openrouter-proxy&lt;/a>&lt;/p>
 &lt;p>就是直接使用官方的AI功能，通过一个服务来实现接入其他平台的LLM API。&lt;/p>
 &lt;p>&lt;em>也有个缺点就是不展示思考信息。&lt;/em>&lt;/p>
@@ -2849,7 +2890,7 @@ widows，mac，linux 都有对应的安装方法。根据自己的环境来安�
 &lt;li>命令 &lt;code>hexo g&lt;/code> , &lt;code>hexo s&lt;/code> 得到信息：Hexo is running at http：//lcoalhost:4000` 注意4000端口需要未被占用。 访问地址就可以看到初始化的站点了。 &lt;em>（不喜欢默认主题可以修改主题）&lt;/em>&lt;/li>
 &lt;/ul>
 &lt;h3 id="写文章">写文章&lt;/h3>
-&lt;p>写文章需要先创建文档，这个文档默认生成在_post 文件夹下。&lt;/p></description></item><item><title/><link>https://blog.51ai.vip/index-about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/index-about/</guid><description>&lt;h1 id="-welcome-to-my-blog">😊 welcome to my blog&lt;/h1>
+&lt;p>写文章需要先创建文档，这个文档默认生成在_post 文件夹下。&lt;/p></description></item><item><title/><link>https://blog.51ai.vip/index-about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/index-about/</guid><description>&lt;h1 id="-welcome">😊 welcome&lt;/h1>
 &lt;ul>
 &lt;li>👉🏻 &lt;a href="https://blog.51ai.vip/posts/">Posts&lt;/a>&lt;/li>
 &lt;li>👉🏻 &lt;a href="https://blog.51ai.vip/tags/">Tags&lt;/a>&lt;/li>
