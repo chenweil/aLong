@@ -81,9 +81,7 @@ Agentic浏览器可以自动识别和处理网页上的各种元素，如文本�
 
 * 录制一个短视频体现他Agentic的特性
 
-<iframe src="https://embed.wave.video/JgizvBqMzroXHFN1" height="377" width="360" frameborder="0" allow="autoplay; fullscreen" scrolling="no"></iframe>
-
-<!-- 🔗 [点击查看Fellou浏览器Agentic特性演示视频](https://watch.wave.video/JgizvBqMzroXHFN1) -->
+🔗 [点击查看Fellou浏览器Agentic特性演示视频](https://watch.wave.video/JgizvBqMzroXHFN1)
 
 通过以上几个例子，我想佬友们会体会到agentic是什么感觉。和Dia的区别是什么。
 
