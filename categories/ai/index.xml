@@ -67,4 +67,4 @@
 &lt;h4 id="1-cherry-studio">1. Cherry Studio&lt;/h4>
 &lt;p>配置时注意URL补全问题：
 &lt;img src="https://s2.loli.net/2025/07/22/6GbOwiNZPMRxnmL.png" alt="">
-✅ 推荐填写完整路径如 &lt;code>http://localhost:4000/v1&lt;/code>&lt;/p></description></item></channel></rss>
+✅ 推荐填写 &lt;code>http://localhost:4000&lt;/code> 或 &lt;code>http://localhost:4000/v1/&lt;/code>&lt;/p></description></item></channel></rss>
