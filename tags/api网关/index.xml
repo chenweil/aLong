@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API网关 on aLong Blog</title><link>https://blog.51ai.vip/tags/api%E7%BD%91%E5%85%B3/</link><description>Recent content in API网关 on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 21 Jul 2025 15:00:00 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/api%E7%BD%91%E5%85%B3/index.xml" rel="self" type="application/rss+xml"/><item><title>一站式解决多API管理痛点</title><link>https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/</link><pubDate>Mon, 21 Jul 2025 15:00:00 +0800</pubDate><guid>https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/</guid><description>&lt;p>虽然许多平台提供丰富的API福利，但大多数被闲置了：有些有效期短暂，有些注册后就被遗忘。更麻烦的是不同平台的模型命名混乱、接入方式各异。&lt;/p>
+&lt;p>最近发现&lt;strong>LiteLLM&lt;/strong>这个项目深得我心——它能统一管理所有AI模型API！通过搭建代理网关，只需一个URL和Key就能调用任意模型，就像把法宝都装进乾坤袋✨&lt;/p>
+&lt;blockquote>
+&lt;p>📌 &lt;strong>解决的核心问题：&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>自动容错&lt;/strong>：API失效时自动冷却重试，避免手动切换&lt;/li>
+&lt;li>&lt;strong>福利整合&lt;/strong>：集中管理所有API Key，告别Cherry Studio重复注册&lt;/li>
+&lt;li>&lt;strong>名称统一&lt;/strong>：自定义模型组名（如&lt;code>gemini-2.5-flash&lt;/code>兼容多版本）&lt;/li>
+&lt;li>&lt;strong>跨工具兼容&lt;/strong>：通过统一接口接入ChatGPT/Claude等客户端&lt;/li>
+&lt;/ol>&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="-搭建实录本地版">🛠 搭建实录（本地版）&lt;/h3>
+&lt;blockquote>
+&lt;p>因代理环境在本地，选择本地部署。服务器部署需注意规避网络限制问题&lt;/p>&lt;/blockquote>
+&lt;h4 id="-目录结构">📂 目录结构&lt;/h4>
+&lt;pre tabindex="0">&lt;code>.
+├── docker-compose.yml
+├── .env # 密钥管理
+└── config/
+ ├── config.yaml # 主配置
+ ├── router.yaml # 路由策略
+ └── models/ # 模型配置集
+&lt;/code>&lt;/pre>&lt;h4 id="-关键配置">⚙️ 关键配置&lt;/h4>
+&lt;p>&lt;strong>1. Docker-Compose&lt;/strong>（精简版）&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">litellm&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">ghcr.io/berriai/litellm:main-stable&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">./config:/app/config &lt;/span> &lt;span style="color:#75715e"># 挂载整个配置目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: --&lt;span style="color:#ae81ff">config=/app/config/config.yaml&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;4000:4000&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">env_file&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">.env &lt;/span> &lt;span style="color:#75715e"># 安全加载密钥&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>2. 配置分层设计&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>config.yaml&lt;/code> 引用子配置，核心参数示例：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">include&lt;/span>: [&lt;span style="color:#ae81ff">models.yaml, router.yaml]&lt;/span> &lt;span style="color:#75715e"># 模块化加载&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">litellm_settings&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">num_retries&lt;/span>: &lt;span style="color:#ae81ff">3&lt;/span> &lt;span style="color:#75715e"># 失败重试&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">request_timeout&lt;/span>: &lt;span style="color:#ae81ff">10&lt;/span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">drop_params&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 清理冗余参数&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>router.yaml&lt;/code> 路由策略（关键！）&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">router_settings&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">routing_strategy&lt;/span>: &lt;span style="color:#ae81ff">latency-based-routing&lt;/span> &lt;span style="color:#75715e"># 延迟优先&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">fallbacks&lt;/span>: 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">&amp;#34;*&amp;#34;: &lt;/span>[&lt;span style="color:#e6db74">&amp;#34;gemini-2.5-flash&amp;#34;&lt;/span>] &lt;span style="color:#75715e"># 全局备用模型&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">model_groups&lt;/span>: &lt;span style="color:#75715e"># !!!模型名称标准化!!!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">model_name&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;claude-3-5-sonnet&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">model_list&lt;/span>: &lt;span style="color:#75715e"># 聚合不同命名格式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;claude-3-5-sonnet-20241022&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;claude-3.5-sonnet&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>模型配置&lt;/strong>
+&lt;img src="https://s2.loli.net/2025/07/22/YMwVufQy5nqioSm.png" alt="">
+每个模型单独文件，通过&lt;code>models.yaml&lt;/code>加载&lt;/li>
+&lt;li>&lt;strong>密钥安全&lt;/strong>
+&lt;img src="https://s2.loli.net/2025/07/22/3ua7dzSUEcp1GHl.png" alt="">
+用&lt;code>.env&lt;/code>隔离敏感信息，避免Git泄露&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-客户端接入实战">🔌 客户端接入实战&lt;/h3>
+&lt;h4 id="1-cherry-studio">1. Cherry Studio&lt;/h4>
+&lt;p>配置时注意URL补全问题：
+&lt;img src="https://s2.loli.net/2025/07/22/6GbOwiNZPMRxnmL.png" alt="">
+✅ 推荐填写完整路径如 &lt;code>http://localhost:4000/v1&lt;/code>&lt;/p></description></item></channel></rss>
