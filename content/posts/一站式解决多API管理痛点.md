@@ -97,7 +97,7 @@ router_settings:
 
 配置时注意URL补全问题：
 ![](https://s2.loli.net/2025/07/22/6GbOwiNZPMRxnmL.png)
-✅ 推荐填写完整路径如 `http://localhost:4000/v1`
+✅ 推荐填写 `http://localhost:4000` 或 `http://localhost:4000/v1/`
 
 #### 2. Claude Code
 
