@@ -1,12 +1,12 @@
 ---
 title: "一站式解决多API管理痛点"
-date: 2025-07-21T15:00:00+08:00
-draft: false
-categories: 
-  - API管理
+date: 2025-07-21 02:31:11
+categories:
+  - AI
 tags:
   - API网关
   - 开发工具
+type: "post"
 ---
 
 虽然许多平台提供丰富的API福利，但大多数被闲置了：有些有效期短暂，有些注册后就被遗忘。更麻烦的是不同平台的模型命名混乱、接入方式各异。
@@ -14,7 +14,7 @@ tags:
 最近发现**LiteLLM**这个项目深得我心——它能统一管理所有AI模型API！通过搭建代理网关，只需一个URL和Key就能调用任意模型，就像把法宝都装进乾坤袋✨
 
 > 📌 **解决的核心问题：**
-> 
+>
 > 1. **自动容错**：API失效时自动冷却重试，避免手动切换
 > 2. **福利整合**：集中管理所有API Key，告别Cherry Studio重复注册
 > 3. **名称统一**：自定义模型组名（如`gemini-2.5-flash`兼容多版本）
@@ -64,7 +64,7 @@ include: [models.yaml, router.yaml] # 模块化加载
 
 litellm_settings:
   num_retries: 3     # 失败重试
-  request_timeout: 10 
+  request_timeout: 10
   drop_params: true  # 清理冗余参数
 ```
 
@@ -73,7 +73,7 @@ litellm_settings:
 ```yaml
 router_settings:
   routing_strategy: latency-based-routing # 延迟优先
-  fallbacks: 
+  fallbacks:
     - "*": ["gemini-2.5-flash"]  # 全局备用模型
   model_groups:                 # !!!模型名称标准化!!!
     - model_name: "claude-3-5-sonnet"
@@ -128,7 +128,7 @@ claude 切换模型：
     {
       "name": "litellm",
       "api_base_url": "http://localhost:4000/v1",
-      "models": ["claude-3-7-sonnet", "gemini-2.5-pro"] 
+      "models": ["claude-3-7-sonnet", "gemini-2.5-pro"]
     },
     {
       "name": "deepseek",
@@ -137,7 +137,7 @@ claude 切换模型：
     }
   ],
   "Router": {
-    "default": "litellm,claude-3-7-sonnet", 
+    "default": "litellm,claude-3-7-sonnet",
     "think": "deepseek,deepseek-r1" # 指定场景路由
   }
 }
