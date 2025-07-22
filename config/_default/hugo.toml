@@ -15,7 +15,7 @@ publishDir = "docs"
   metaKeywords = ["blog", "aLong", "blog.51ai.vip"]
   numberPostsOnHomePage = 4 
   showBackToTopButton = true
-  showPostsOnHomePage = ""
+  showPostsOnHomePage = "recent"
   pygmentsStyle = "monokai"
 
   socialIcons = [
