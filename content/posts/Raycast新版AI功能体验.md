@@ -39,7 +39,7 @@ MCP支持有问题，我不知道是模型的事还是什么。比如通过exa�
 使用raycast支持的模型，比如填写gemini key 的模型支持联网，调用MCP都OK。
 如图：
 
-![](https://s2.loli.net/2025/07/31/G9EXKmlwScCxt34.png)
+![](https://s2.loli.net/2025/07/31/dNvUeG8r3li1yZY.png)
 在raycast可以判断你接入的模型支持什么：
 ![](https://s2.loli.net/2025/07/31/qugM3Ep9HzT8thJ.png)
 
