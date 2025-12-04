@@ -1,111 +1,111 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on aLong Blog</title><link>https://blog.51ai.vip/tags/kubernetes/</link><description>Recent content in Kubernetes on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Jan 2023 16:30:47 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu22.04安装kubeadm</title><link>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link><pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate><guid>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid><description>&lt;h1 id="学习k8s">学习k8s&lt;/h1>
-&lt;p>学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04&lt;/p>
-&lt;h2 id="系统安装docker">系统安装docker&lt;/h2>
-&lt;p>&lt;a href="https://docs.docker.com/engine/install/ubuntu/">Docker官方手册&lt;/a>&lt;/p>
-&lt;p>master、node设备各安装docker、kubelet、 kubeadm、 kubectl。&lt;/p>
-&lt;h2 id="为kubeadm准备">为kubeadm准备&lt;/h2>
-&lt;p>master、node进行准备工作：&lt;/p>
-&lt;ol>
-&lt;li>将cgroup处理改成systemd&lt;/li>
-&lt;/ol>
-&lt;p>nano /etc/docker/daemon.json&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;exec-opts&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;native.cgroupdriver=systemd&amp;#34;&lt;/span>],
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;log-driver&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;json-file&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;log-opts&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;max-size&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;100m&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;storage-driver&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;overlay2&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>sudo systemctl enable docker&lt;/code>
-&lt;code>sudo systemctl daemon-reload&lt;/code>
-&lt;code>sudo systemctl restart docker&lt;/code>&lt;/p>
-&lt;ol start="2">
-&lt;li>为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块&lt;/li>
-&lt;/ol>
-&lt;p>&lt;code>nano /etc/modules-load.d/k8s.conf&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">br_netfilter&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>nano /etc/sysctl.d/k8s.conf&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">net.bridge.bridge-nf-call-ip6tables&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">net.bridge.bridge-nf-call-iptables&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">net.ipv4.ip_forward&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">1&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>sudo sysctl --system&lt;/code>&lt;/p>
-&lt;ol start="3">
-&lt;li>修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">sudo swapoff -a&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">sudo sed -ri &amp;#39;/\sswap\s/s/^#?/#/&amp;#39; /etc/fstab&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安装kubeadm">安装kubeadm&lt;/h3>
-&lt;p>&lt;a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">Kuneadm官方手册&lt;/a>
-&lt;strong>在master、node上都需要安装&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>更新 &lt;code>apt&lt;/code> 包索引并安装使用 Kubernetes &lt;code>apt&lt;/code> 仓库所需要的包：&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt-get update
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt-get install -y apt-transport-https ca-certificates curl
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>(有条件)下载 Google Cloud 公开签名秘钥：&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果上面访问不到，可选择其他,例如&lt;a href="https://mirrors.tuna.tsinghua.edu.cn/help/kubernetes/">清华源&lt;/a>提供：
-导入gpg key&lt;/p></description></item><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>&lt;p>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p>
-&lt;h1 id="macos部署方式">MacOS部署方式:&lt;/h1>
-&lt;p>&lt;a href="https://minikube.sigs.k8s.io/docs/start/">官方教程&lt;/a>&lt;/p>
-&lt;p>本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
-安装kubectl：&lt;code>brew install kubectl&lt;/code>
-安装minikube：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo install minikube-darwin-amd64 /usr/local/bin/minikube
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="通过minikube启动集群">通过minikube启动集群&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>minikube start &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>--kubernetes-version&lt;span style="color:#f92672">=&lt;/span>v1.23.9 &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>--image-mirror-country&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;cn&amp;#39;&lt;/span> &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>--registry-mirror&lt;span style="color:#f92672">=&lt;/span>https://？？？？？.mirror.aliyuncs.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>因为是国内，所以&lt;code>--image-mirror-country='cn'&lt;/code>。通过&lt;code>--registry-mirror&lt;/code>为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。
-因为我学习的版本是1.23.x，所以制定了版本&lt;code>--kubernetes-version=v1.23.9&lt;/code>。
-默认他读去了驱动配置，识别是&lt;code>parallels&lt;/code>,自己定义方式&lt;code>--driver=hyperkit&lt;/code>。&lt;/p>
-&lt;p>安装结果：
-&lt;img src="https://s2.loli.net/2023/01/06/C3AFxdiPbq8aIuR.jpg" alt="C3AFxdiPbq8aIuR">&lt;/p>
-&lt;p>&lt;em>错误&lt;/em>：
-如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。&lt;/p>
-&lt;h4 id="驱动选择">驱动选择：&lt;/h4>
-&lt;p>使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见&lt;a href="https://minikube.sigs.k8s.io/docs/drivers/">drivers page&lt;/a>&lt;/p>
-&lt;h3 id="验证结果">验证结果&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>查询minikube状态
-&lt;img src="https://s2.loli.net/2023/01/06/otU8LYBjuFeDa31.png" alt="otU8LYBjuFeDa31">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>进入面板
-&lt;img src="https://s2.loli.net/2023/01/06/FmrBXOTJ1N2AZgU.png" alt="FmrBXOTJ1N2AZgU">
-&lt;img src="https://s2.loli.net/2023/01/06/IPBCwUSx7Fb28Ee.png" alt="IPBCwUSx7Fb28Ee">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>kubectl控制
-&lt;code>minikube kubectl -- get pods -A&lt;/code>
-&lt;img src="https://s2.loli.net/2023/01/06/EziUHcpln27ufeB.png" alt="EziUHcpln27ufeB">&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>kubectl在minikube中使用，需要写 &lt;code>nimikune kubectl --&lt;/code>后面加入执行的命令。
-macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>vi ~/.zshrc
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#加入一行&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias kubectl&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;minikube kubectl --&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#退出&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source ~/.zshrc
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>再创建一个Pod
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on aLong Blog</title><link>https://blog.51ai.vip/tags/kubernetes/</link><description>Recent content in Kubernetes on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Jan 2023 16:30:47 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu22.04安装kubeadm</title><link>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link><pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate><guid>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid><description>&lt;h1 id="学习k8s"&gt;学习k8s&lt;/h1&gt;
+&lt;p&gt;学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04&lt;/p&gt;
+&lt;h2 id="系统安装docker"&gt;系统安装docker&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;Docker官方手册&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;master、node设备各安装docker、kubelet、 kubeadm、 kubectl。&lt;/p&gt;
+&lt;h2 id="为kubeadm准备"&gt;为kubeadm准备&lt;/h2&gt;
+&lt;p&gt;master、node进行准备工作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将cgroup处理改成systemd&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;nano /etc/docker/daemon.json&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;exec-opts&amp;#34;&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#34;native.cgroupdriver=systemd&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;log-driver&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;json-file&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;log-opts&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;max-size&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;100m&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;storage-driver&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;overlay2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;sudo systemctl enable docker&lt;/code&gt;
+&lt;code&gt;sudo systemctl daemon-reload&lt;/code&gt;
+&lt;code&gt;sudo systemctl restart docker&lt;/code&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;nano /etc/modules-load.d/k8s.conf&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;br_netfilter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;nano /etc/sysctl.d/k8s.conf&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;net.bridge.bridge-nf-call-ip6tables&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;net.bridge.bridge-nf-call-iptables&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;net.ipv4.ip_forward&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;sudo sysctl --system&lt;/code&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;sudo swapoff -a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;sudo sed -ri &amp;#39;/\sswap\s/s/^#?/#/&amp;#39; /etc/fstab&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="安装kubeadm"&gt;安装kubeadm&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/"&gt;Kuneadm官方手册&lt;/a&gt;
+&lt;strong&gt;在master、node上都需要安装&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;更新 &lt;code&gt;apt&lt;/code&gt; 包索引并安装使用 Kubernetes &lt;code&gt;apt&lt;/code&gt; 仓库所需要的包：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt-get install -y apt-transport-https ca-certificates curl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;(有条件)下载 Google Cloud 公开签名秘钥：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果上面访问不到，可选择其他,例如&lt;a href="https://mirrors.tuna.tsinghua.edu.cn/help/kubernetes/"&gt;清华源&lt;/a&gt;提供：
+导入gpg key&lt;/p&gt;</description></item><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>&lt;p&gt;Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p&gt;
+&lt;h1 id="macos部署方式"&gt;MacOS部署方式:&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://minikube.sigs.k8s.io/docs/start/"&gt;官方教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
+安装kubectl：&lt;code&gt;brew install kubectl&lt;/code&gt;
+安装minikube：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo install minikube-darwin-amd64 /usr/local/bin/minikube
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="通过minikube启动集群"&gt;通过minikube启动集群&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;minikube start &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--kubernetes-version&lt;span style="color:#f92672"&gt;=&lt;/span&gt;v1.23.9 &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--image-mirror-country&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;cn&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--registry-mirror&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https://？？？？？.mirror.aliyuncs.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;因为是国内，所以&lt;code&gt;--image-mirror-country='cn'&lt;/code&gt;。通过&lt;code&gt;--registry-mirror&lt;/code&gt;为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。
+因为我学习的版本是1.23.x，所以制定了版本&lt;code&gt;--kubernetes-version=v1.23.9&lt;/code&gt;。
+默认他读去了驱动配置，识别是&lt;code&gt;parallels&lt;/code&gt;,自己定义方式&lt;code&gt;--driver=hyperkit&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;安装结果：
+&lt;img src="https://s2.loli.net/2023/01/06/C3AFxdiPbq8aIuR.jpg" alt="C3AFxdiPbq8aIuR"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;错误&lt;/em&gt;：
+如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。&lt;/p&gt;
+&lt;h4 id="驱动选择"&gt;驱动选择：&lt;/h4&gt;
+&lt;p&gt;使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见&lt;a href="https://minikube.sigs.k8s.io/docs/drivers/"&gt;drivers page&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="验证结果"&gt;验证结果&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;查询minikube状态
+&lt;img src="https://s2.loli.net/2023/01/06/otU8LYBjuFeDa31.png" alt="otU8LYBjuFeDa31"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入面板
+&lt;img src="https://s2.loli.net/2023/01/06/FmrBXOTJ1N2AZgU.png" alt="FmrBXOTJ1N2AZgU"&gt;
+&lt;img src="https://s2.loli.net/2023/01/06/IPBCwUSx7Fb28Ee.png" alt="IPBCwUSx7Fb28Ee"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;kubectl控制
+&lt;code&gt;minikube kubectl -- get pods -A&lt;/code&gt;
+&lt;img src="https://s2.loli.net/2023/01/06/EziUHcpln27ufeB.png" alt="EziUHcpln27ufeB"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;kubectl在minikube中使用，需要写 &lt;code&gt;nimikune kubectl --&lt;/code&gt;后面加入执行的命令。
+macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;vi ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#加入一行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias kubectl&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;minikube kubectl --&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#退出&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;source ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;再创建一个Pod
 创建：
-&lt;code>kubectl run nginx --image=nginx:alpine&lt;/code>
+&lt;code&gt;kubectl run nginx --image=nginx:alpine&lt;/code&gt;
 查询：
-&lt;code>kubectl get pods nginx&lt;/code>
+&lt;code&gt;kubectl get pods nginx&lt;/code&gt;
 详情：
-&lt;code>kubectl describe pods nginx&lt;/code>
-&lt;img src="https://s2.loli.net/2023/01/06/pYPqIgt84LzBcEU.png" alt="pYPqIgt84LzBcEU">&lt;/li>
-&lt;/ul>
-&lt;p>到这里k8s可以使用了。&lt;/p></description></item></channel></rss>
+&lt;code&gt;kubectl describe pods nginx&lt;/code&gt;
+&lt;img src="https://s2.loli.net/2023/01/06/pYPqIgt84LzBcEU.png" alt="pYPqIgt84LzBcEU"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到这里k8s可以使用了。&lt;/p&gt;</description></item></channel></rss>

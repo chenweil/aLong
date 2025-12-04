@@ -1,142 +1,142 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on aLong Blog</title><link>https://blog.51ai.vip/tags/linux/</link><description>Recent content in Linux on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 06 Jan 2023 15:35:43 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>&lt;p>Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p>
-&lt;h1 id="macos部署方式">MacOS部署方式:&lt;/h1>
-&lt;p>&lt;a href="https://minikube.sigs.k8s.io/docs/start/">官方教程&lt;/a>&lt;/p>
-&lt;p>本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
-安装kubectl：&lt;code>brew install kubectl&lt;/code>
-安装minikube：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo install minikube-darwin-amd64 /usr/local/bin/minikube
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="通过minikube启动集群">通过minikube启动集群&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>minikube start &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>--kubernetes-version&lt;span style="color:#f92672">=&lt;/span>v1.23.9 &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>--image-mirror-country&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;cn&amp;#39;&lt;/span> &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>--registry-mirror&lt;span style="color:#f92672">=&lt;/span>https://？？？？？.mirror.aliyuncs.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>因为是国内，所以&lt;code>--image-mirror-country='cn'&lt;/code>。通过&lt;code>--registry-mirror&lt;/code>为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。
-因为我学习的版本是1.23.x，所以制定了版本&lt;code>--kubernetes-version=v1.23.9&lt;/code>。
-默认他读去了驱动配置，识别是&lt;code>parallels&lt;/code>,自己定义方式&lt;code>--driver=hyperkit&lt;/code>。&lt;/p>
-&lt;p>安装结果：
-&lt;img src="https://s2.loli.net/2023/01/06/C3AFxdiPbq8aIuR.jpg" alt="C3AFxdiPbq8aIuR">&lt;/p>
-&lt;p>&lt;em>错误&lt;/em>：
-如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。&lt;/p>
-&lt;h4 id="驱动选择">驱动选择：&lt;/h4>
-&lt;p>使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见&lt;a href="https://minikube.sigs.k8s.io/docs/drivers/">drivers page&lt;/a>&lt;/p>
-&lt;h3 id="验证结果">验证结果&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>查询minikube状态
-&lt;img src="https://s2.loli.net/2023/01/06/otU8LYBjuFeDa31.png" alt="otU8LYBjuFeDa31">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>进入面板
-&lt;img src="https://s2.loli.net/2023/01/06/FmrBXOTJ1N2AZgU.png" alt="FmrBXOTJ1N2AZgU">
-&lt;img src="https://s2.loli.net/2023/01/06/IPBCwUSx7Fb28Ee.png" alt="IPBCwUSx7Fb28Ee">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>kubectl控制
-&lt;code>minikube kubectl -- get pods -A&lt;/code>
-&lt;img src="https://s2.loli.net/2023/01/06/EziUHcpln27ufeB.png" alt="EziUHcpln27ufeB">&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>kubectl在minikube中使用，需要写 &lt;code>nimikune kubectl --&lt;/code>后面加入执行的命令。
-macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>vi ~/.zshrc
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#加入一行&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alias kubectl&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;minikube kubectl --&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#退出&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source ~/.zshrc
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>再创建一个Pod
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on aLong Blog</title><link>https://blog.51ai.vip/tags/linux/</link><description>Recent content in Linux on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 06 Jan 2023 15:35:43 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>&lt;p&gt;Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p&gt;
+&lt;h1 id="macos部署方式"&gt;MacOS部署方式:&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://minikube.sigs.k8s.io/docs/start/"&gt;官方教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
+安装kubectl：&lt;code&gt;brew install kubectl&lt;/code&gt;
+安装minikube：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo install minikube-darwin-amd64 /usr/local/bin/minikube
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="通过minikube启动集群"&gt;通过minikube启动集群&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;minikube start &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--kubernetes-version&lt;span style="color:#f92672"&gt;=&lt;/span&gt;v1.23.9 &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--image-mirror-country&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;cn&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--registry-mirror&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https://？？？？？.mirror.aliyuncs.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;因为是国内，所以&lt;code&gt;--image-mirror-country='cn'&lt;/code&gt;。通过&lt;code&gt;--registry-mirror&lt;/code&gt;为 Docker daemon 配置镜像加速。例如上面是阿里云镜像服务地址。
+因为我学习的版本是1.23.x，所以制定了版本&lt;code&gt;--kubernetes-version=v1.23.9&lt;/code&gt;。
+默认他读去了驱动配置，识别是&lt;code&gt;parallels&lt;/code&gt;,自己定义方式&lt;code&gt;--driver=hyperkit&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;安装结果：
+&lt;img src="https://s2.loli.net/2023/01/06/C3AFxdiPbq8aIuR.jpg" alt="C3AFxdiPbq8aIuR"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;错误&lt;/em&gt;：
+如果存在错误请看具体上面的问题，很多情况都能直观看到提示。其中图标是❗️提示一些问题、💡给你一些建议等等。&lt;/p&gt;
+&lt;h4 id="驱动选择"&gt;驱动选择：&lt;/h4&gt;
+&lt;p&gt;使用docker驱动需要安装docker desktop。其他驱动：virtualbox、vmware、ssh、Hyperkit等。具体详见&lt;a href="https://minikube.sigs.k8s.io/docs/drivers/"&gt;drivers page&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="验证结果"&gt;验证结果&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;查询minikube状态
+&lt;img src="https://s2.loli.net/2023/01/06/otU8LYBjuFeDa31.png" alt="otU8LYBjuFeDa31"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入面板
+&lt;img src="https://s2.loli.net/2023/01/06/FmrBXOTJ1N2AZgU.png" alt="FmrBXOTJ1N2AZgU"&gt;
+&lt;img src="https://s2.loli.net/2023/01/06/IPBCwUSx7Fb28Ee.png" alt="IPBCwUSx7Fb28Ee"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;kubectl控制
+&lt;code&gt;minikube kubectl -- get pods -A&lt;/code&gt;
+&lt;img src="https://s2.loli.net/2023/01/06/EziUHcpln27ufeB.png" alt="EziUHcpln27ufeB"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;kubectl在minikube中使用，需要写 &lt;code&gt;nimikune kubectl --&lt;/code&gt;后面加入执行的命令。
+macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;vi ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#加入一行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias kubectl&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;minikube kubectl --&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#退出&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;source ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;再创建一个Pod
 创建：
-&lt;code>kubectl run nginx --image=nginx:alpine&lt;/code>
+&lt;code&gt;kubectl run nginx --image=nginx:alpine&lt;/code&gt;
 查询：
-&lt;code>kubectl get pods nginx&lt;/code>
+&lt;code&gt;kubectl get pods nginx&lt;/code&gt;
 详情：
-&lt;code>kubectl describe pods nginx&lt;/code>
-&lt;img src="https://s2.loli.net/2023/01/06/pYPqIgt84LzBcEU.png" alt="pYPqIgt84LzBcEU">&lt;/li>
-&lt;/ul>
-&lt;p>到这里k8s可以使用了。&lt;/p></description></item><item><title>linux环境redis开机启动</title><link>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="前提">前提&lt;/h2>
-&lt;p>系统部署在ubuntu20.04中，用到redis数据库。
+&lt;code&gt;kubectl describe pods nginx&lt;/code&gt;
+&lt;img src="https://s2.loli.net/2023/01/06/pYPqIgt84LzBcEU.png" alt="pYPqIgt84LzBcEU"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到这里k8s可以使用了。&lt;/p&gt;</description></item><item><title>linux环境redis开机启动</title><link>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;系统部署在ubuntu20.04中，用到redis数据库。
 但是测试时候，设备重启发现redis服务没有启动。
-由于是变异安装的，系统找不到redis.service。&lt;/p>
-&lt;h2 id="解决方案">解决方案&lt;/h2>
-&lt;p>系统添加服务文件，并执行。&lt;/p>
-&lt;h3 id="编写文件">编写文件&lt;/h3>
-&lt;p>文件路径&lt;code>/usr/lib/systemd/system&lt;/code>&lt;/p>
-&lt;p>编写文件 &lt;code>vi /usr/lib/systemd/system/redis.service&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Unit]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#服务描述&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Description&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">Redis persistent key-value database&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#服务依赖&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">After&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">network.target&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">After&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">network-online.target&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Wants&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">network-online.target&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Service]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#启动 命令&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">ExecStart&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#停止命令&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">ExecStop&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">/home/monitor/redis-6.0.8/src/redis-cli shutdown&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Restart&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">always&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#服务类型&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">forking&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#User=redis&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#Group=redis&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">RuntimeDirectory&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">redis&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">RuntimeDirectoryMode&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">0755&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Install]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#服务安装设置&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">WantedBy&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">multi-user.target&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>服务配置文件分为[Unit]、[Service]和[Install]三部分。
-具体详细的解释需要结合linux知识补充。&lt;/p>
-&lt;h3 id="服务生效">服务生效&lt;/h3>
-&lt;p>系统重新读取所有服务文件： &lt;code>systemctl daemon-reload&lt;/code>
-启用/禁用开机自启动: &lt;code>systemctl enable/disable redis&lt;/code>
-启动/重启redis： &lt;code>systemctl start/restart redis&lt;/code>&lt;/p></description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动">Linux系统重启后Docker自动启动&lt;/h2>
-&lt;p>系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。
+由于是变异安装的，系统找不到redis.service。&lt;/p&gt;
+&lt;h2 id="解决方案"&gt;解决方案&lt;/h2&gt;
+&lt;p&gt;系统添加服务文件，并执行。&lt;/p&gt;
+&lt;h3 id="编写文件"&gt;编写文件&lt;/h3&gt;
+&lt;p&gt;文件路径&lt;code&gt;/usr/lib/systemd/system&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;编写文件 &lt;code&gt;vi /usr/lib/systemd/system/redis.service&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Unit]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#服务描述&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Description&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;Redis persistent key-value database&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#服务依赖&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;After&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;network.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;After&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;network-online.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Wants&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;network-online.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Service]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#启动 命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;ExecStart&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;/home/monitor/redis-6.0.8/src/redis-server /home/monitor/redis-6.0.8/redis.conf --protected-mode no&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#停止命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;ExecStop&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;/home/monitor/redis-6.0.8/src/redis-cli shutdown&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Restart&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;always&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#服务类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;forking&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#User=redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#Group=redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;RuntimeDirectory&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;RuntimeDirectoryMode&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;0755&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Install]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#服务安装设置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;WantedBy&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;multi-user.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;服务配置文件分为[Unit]、[Service]和[Install]三部分。
+具体详细的解释需要结合linux知识补充。&lt;/p&gt;
+&lt;h3 id="服务生效"&gt;服务生效&lt;/h3&gt;
+&lt;p&gt;系统重新读取所有服务文件： &lt;code&gt;systemctl daemon-reload&lt;/code&gt;
+启用/禁用开机自启动: &lt;code&gt;systemctl enable/disable redis&lt;/code&gt;
+启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动"&gt;Linux系统重启后Docker自动启动&lt;/h2&gt;
+&lt;p&gt;系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。
 配置过一次总是忘记命令，这里特意记录一下：
-&lt;code>systemctl enable docker.service&lt;/code>&lt;/p>
-&lt;h2 id="容器自动启动配置">容器自动启动配置&lt;/h2>
-&lt;p>容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。
+&lt;code&gt;systemctl enable docker.service&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="容器自动启动配置"&gt;容器自动启动配置&lt;/h2&gt;
+&lt;p&gt;容器配置好自动启动后，当docker运行后，容器也自动启动。这样能保证服务的稳定性。不用再登录到系统来操作各种容易启动问题。
 涉及到的参数为：
-&lt;code>--restart=always&lt;/code>&lt;/p>
-&lt;p>参数有：&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>no，默认策略，在容器退出时不重启容器&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>on-failure，在容器非正常退出时（退出状态非0），才会重启容器。例如：on-failure:3，在容器非正常退出时重启容器，最多重启3次&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>always，在容器退出时总是重启容器&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="容器已存在更新重启配置">容器已存在更新重启配置&lt;/h3>
-&lt;p>可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令：
-&lt;code>docker container update --restart=always 容器名XXX&lt;/code>
-这样就达到了想要的目的。&lt;/p></description></item><item><title>Centos5不升级内核更新</title><link>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link><pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid><description>&lt;h3 id="前提">前提&lt;/h3>
-&lt;p>公司需要环境Centos5, 又不能升级内核.&lt;/p>
-&lt;p>查了一下 大概是 需要 &lt;code>yum –exclude=kernel* update&lt;/code> 或者修改 yum.conf&lt;/p>
-&lt;h3 id="测试一下-出现一个问题">测试一下 出现一个问题:&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Loaded plugins: fastestmirror, security
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Loading mirror speeds from cached hostfile
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>YumRepo Error: All mirror URLs are not using ftp, http&lt;span style="color:#f92672">[&lt;/span>s&lt;span style="color:#f92672">]&lt;/span> or file.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Eg. Invalid release/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error: Cannot find a valid baseurl &lt;span style="color:#66d9ef">for&lt;/span> repo: base
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>根据查询到的信息是,没有正常的源.&lt;/p>
-&lt;h3 id="解决问题-根据网上的源地址-修改一下">解决问题 根据网上的源地址 修改一下:&lt;/h3>
-&lt;p>位置: &lt;em>/etc/yum.repos.d/CentOS-Base.repo&lt;/em>&lt;/p>
-&lt;h3 id="修改内容">修改内容:&lt;/h3>
-&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">[base]
+&lt;code&gt;--restart=always&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参数有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;no，默认策略，在容器退出时不重启容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;on-failure，在容器非正常退出时（退出状态非0），才会重启容器。例如：on-failure:3，在容器非正常退出时重启容器，最多重启3次&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;always，在容器退出时总是重启容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;unless-stopped，在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="容器已存在更新重启配置"&gt;容器已存在更新重启配置&lt;/h3&gt;
+&lt;p&gt;可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令：
+&lt;code&gt;docker container update --restart=always 容器名XXX&lt;/code&gt;
+这样就达到了想要的目的。&lt;/p&gt;</description></item><item><title>Centos5不升级内核更新</title><link>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link><pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid><description>&lt;h3 id="前提"&gt;前提&lt;/h3&gt;
+&lt;p&gt;公司需要环境Centos5, 又不能升级内核.&lt;/p&gt;
+&lt;p&gt;查了一下 大概是 需要 &lt;code&gt;yum –exclude=kernel* update&lt;/code&gt; 或者修改 yum.conf&lt;/p&gt;
+&lt;h3 id="测试一下-出现一个问题"&gt;测试一下 出现一个问题:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Loaded plugins: fastestmirror, security
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Loading mirror speeds from cached hostfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;YumRepo Error: All mirror URLs are not using ftp, http&lt;span style="color:#f92672"&gt;[&lt;/span&gt;s&lt;span style="color:#f92672"&gt;]&lt;/span&gt; or file.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Eg. Invalid release/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;removing mirrorlist with no valid mirrors: /var/cache/yum/base/mirrorlist.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Error: Cannot find a valid baseurl &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; repo: base
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;根据查询到的信息是,没有正常的源.&lt;/p&gt;
+&lt;h3 id="解决问题-根据网上的源地址-修改一下"&gt;解决问题 根据网上的源地址 修改一下:&lt;/h3&gt;
+&lt;p&gt;位置: &lt;em&gt;/etc/yum.repos.d/CentOS-Base.repo&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id="修改内容"&gt;修改内容:&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-conf" data-lang="conf"&gt;[base]
 name=CentOS-5.11 - Base
 #mirrorlist=http://mirrorlist.centos.org/?release=5.11&amp;amp;arch=$basearch&amp;amp;repo=os
 baseurl=http://vault.centos.org/5.11/os/$basearch/
@@ -184,63 +184,63 @@ baseurl=http://vault.centos.org/5.11/contrib/$basearch/
 gpgcheck=1
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-&lt;/code>&lt;/pre>&lt;p>之后 再使用上面的yum 去更新,发现yum 语句是有问题的.&lt;/p></description></item><item><title>Centos7时间设置</title><link>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link><pubDate>Fri, 19 Apr 2019 11:42:02 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h3 id="centos7时间相关">Centos7时间相关&lt;/h3>
-&lt;h4 id="查看时间">查看时间&lt;/h4>
-&lt;p>date
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后 再使用上面的yum 去更新,发现yum 语句是有问题的.&lt;/p&gt;</description></item><item><title>Centos7时间设置</title><link>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link><pubDate>Fri, 19 Apr 2019 11:42:02 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h3 id="centos7时间相关"&gt;Centos7时间相关&lt;/h3&gt;
+&lt;h4 id="查看时间"&gt;查看时间&lt;/h4&gt;
+&lt;p&gt;date
 hwclock 硬件时间
-timedatectl 各时间状态&lt;/p>
-&lt;h4 id="设置更新服务时间">设置&amp;amp;更新服务时间&lt;/h4>
-&lt;p>安装ntpdate
-&lt;code>yum install utp ntpdate&lt;/code>&lt;/p>
-&lt;h4 id="设置同步">设置同步&lt;/h4>
-&lt;p>&lt;code>ntpdate cn.pool.ntp.org&lt;/code> (time.windows.com) 地址看喜好&lt;/p>
-&lt;h4 id="设置硬件时间">设置硬件时间&lt;/h4>
-&lt;p>hwclock &amp;ndash;systohc&lt;/p>
-&lt;h4 id="设置时区">设置时区&lt;/h4>
-&lt;p>timedatectl set-timezone Asia/Shanghai （上海）&lt;/p>
-&lt;p>timedatectl 很多设置，需要请查相关资料。&lt;/p></description></item><item><title>Centos7防火墙相关设置</title><link>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link><pubDate>Thu, 18 Apr 2019 17:44:22 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7与之前不太一样">Centos7与之前不太一样&lt;/h4>
-&lt;p>以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。
-这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。&lt;/p>
-&lt;h4 id="查看防火墙服务状态">查看防火墙服务状态&lt;/h4>
-&lt;p>&lt;code>systemctl status firewalld&lt;/code>&lt;/p>
-&lt;p>####查看f防火墙状态
-&lt;code>firewall-cmd --state&lt;/code>&lt;/p>
-&lt;h4 id="查看规则">查看规则&lt;/h4>
-&lt;p>&lt;code>firewall-cmd --list-all &lt;/code>&lt;/p>
-&lt;p>####停止&amp;amp;开启防&amp;amp;重启火墙
-&lt;code>systemctl stop firewalld.service&lt;/code>
-&lt;code>systemctl start firewalld.service&lt;/code>
-&lt;code>systemctl restart firewalld.service&lt;/code>&lt;/p>
-&lt;h4 id="关闭防火墙">关闭防火墙&lt;/h4>
-&lt;p>&lt;code>systemctl disable firewalld.service&lt;/code>&lt;/p>
-&lt;h4 id="重载防火墙">重载防火墙&lt;/h4>
-&lt;p>&lt;code>firewall-cmd —reload&lt;/code>&lt;/p>
-&lt;h4 id="查询开放端口">查询开放端口&lt;/h4>
-&lt;p>&lt;code>firewall-cmd --list-ports&lt;/code>&lt;/p>
-&lt;h4 id="开放一个端口-例如tcp-8010">开放一个端口 例如tcp 8010&lt;/h4>
-&lt;p>firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=80/tcp &amp;ndash;permanent&lt;/p>
-&lt;p>–zone #作用域
+timedatectl 各时间状态&lt;/p&gt;
+&lt;h4 id="设置更新服务时间"&gt;设置&amp;amp;更新服务时间&lt;/h4&gt;
+&lt;p&gt;安装ntpdate
+&lt;code&gt;yum install utp ntpdate&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="设置同步"&gt;设置同步&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;ntpdate cn.pool.ntp.org&lt;/code&gt; (time.windows.com) 地址看喜好&lt;/p&gt;
+&lt;h4 id="设置硬件时间"&gt;设置硬件时间&lt;/h4&gt;
+&lt;p&gt;hwclock &amp;ndash;systohc&lt;/p&gt;
+&lt;h4 id="设置时区"&gt;设置时区&lt;/h4&gt;
+&lt;p&gt;timedatectl set-timezone Asia/Shanghai （上海）&lt;/p&gt;
+&lt;p&gt;timedatectl 很多设置，需要请查相关资料。&lt;/p&gt;</description></item><item><title>Centos7防火墙相关设置</title><link>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link><pubDate>Thu, 18 Apr 2019 17:44:22 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7与之前不太一样"&gt;Centos7与之前不太一样&lt;/h4&gt;
+&lt;p&gt;以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。
+这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。&lt;/p&gt;
+&lt;h4 id="查看防火墙服务状态"&gt;查看防火墙服务状态&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;systemctl status firewalld&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####查看f防火墙状态
+&lt;code&gt;firewall-cmd --state&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="查看规则"&gt;查看规则&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --list-all &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####停止&amp;amp;开启防&amp;amp;重启火墙
+&lt;code&gt;systemctl stop firewalld.service&lt;/code&gt;
+&lt;code&gt;systemctl start firewalld.service&lt;/code&gt;
+&lt;code&gt;systemctl restart firewalld.service&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="关闭防火墙"&gt;关闭防火墙&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;systemctl disable firewalld.service&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="重载防火墙"&gt;重载防火墙&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd —reload&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="查询开放端口"&gt;查询开放端口&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --list-ports&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="开放一个端口-例如tcp-8010"&gt;开放一个端口 例如tcp 8010&lt;/h4&gt;
+&lt;p&gt;firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=80/tcp &amp;ndash;permanent&lt;/p&gt;
+&lt;p&gt;–zone #作用域
 –add-port=8010/tcp #添加端口，格式为：端口/通讯协议
-–permanent #永久生效，没有此参数重启后失效&lt;/p>
-&lt;h4 id="查询某端口是否开放8010">查询某端口是否开放(8010)&lt;/h4>
-&lt;p>&lt;code>firewall-cmd --query-port=8010/tcp&lt;/code>&lt;/p>
-&lt;h4 id="移除端口规则">移除端口规则&lt;/h4>
-&lt;p>&lt;code>firewall-cmd --permanent --remove-port=8010/tcp&lt;/code>&lt;/p></description></item><item><title>Centos7启动等级设置</title><link>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 15 Apr 2019 16:55:19 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7启动级别">Centos7启动级别&lt;/h4>
-&lt;p>启动级别分为7个：
+–permanent #永久生效，没有此参数重启后失效&lt;/p&gt;
+&lt;h4 id="查询某端口是否开放8010"&gt;查询某端口是否开放(8010)&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --query-port=8010/tcp&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id="移除端口规则"&gt;移除端口规则&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --permanent --remove-port=8010/tcp&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Centos7启动等级设置</title><link>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 15 Apr 2019 16:55:19 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7启动级别"&gt;Centos7启动级别&lt;/h4&gt;
+&lt;p&gt;启动级别分为7个：
 0 - 系统停机状态
 1 - 单用户工作状态
 2 - 多用户状态（没有NFS）
 3 - 多用户状态（有NFS）
 4 - 系统未使用，留给用户
 5 - 图形界面
-6 - 系统正常关闭并重新启动&lt;/p>
-&lt;h4 id="切换启动级别">切换启动级别&lt;/h4>
-&lt;p>之前一直都是在种端中输入指令 init3 切换启动级别。
-设置永久启动3级别， &lt;code>vi /etc/inittab&lt;/code> 把init3设置默认即可。&lt;/p>
-&lt;p>&lt;strong>centos7 设置出现不同&lt;/strong>
+6 - 系统正常关闭并重新启动&lt;/p&gt;
+&lt;h4 id="切换启动级别"&gt;切换启动级别&lt;/h4&gt;
+&lt;p&gt;之前一直都是在种端中输入指令 init3 切换启动级别。
+设置永久启动3级别， &lt;code&gt;vi /etc/inittab&lt;/code&gt; 把init3设置默认即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;centos7 设置出现不同&lt;/strong&gt;
 runlevels被targets所取代，即CentOS7采用加载target的方式来替代之前的启动级别。
 multi-user.target = init3
 graphical.target = init5
 我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。
-&lt;code>systemctl set-default multi-user.target&lt;/code> 设置为init3
-&lt;code>systemctl set-default graphical.target&lt;/code> 设置为init5&lt;/p></description></item></channel></rss>
+&lt;code&gt;systemctl set-default multi-user.target&lt;/code&gt; 设置为init3
+&lt;code&gt;systemctl set-default graphical.target&lt;/code&gt; 设置为init5&lt;/p&gt;</description></item></channel></rss>
