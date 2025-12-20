@@ -5,3 +5,4 @@ docs/
 public/
 .hugo_build.lock
 temp/
+.claude/settings.local.json
