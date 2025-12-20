@@ -22,7 +22,7 @@ type: "post"
 
 # 结果
 
-![](https://i.imgur.com/IwlLZw7.png)
+![](https://cdn.img2ipfs.com/ipfs/QmR52o19UiES626MLNjkPhAoxqVatSbmFYYNrudMAEEJWt?filename=5c214388c07ec7eb2d91433f37d272df4d07eccc.png)
 
 一种✅结束完成通知，另一种🔔权限等提示的通知。
 
