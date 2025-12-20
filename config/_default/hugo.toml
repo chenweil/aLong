@@ -4,7 +4,7 @@ defaultContentLanguage = "en"
 enableRobotsTXT = true
 languageCode = "en"
 theme = "gokarna"
-title = "aLong Blog"
+title = "aLong"
 
 publishDir = "docs"
 
