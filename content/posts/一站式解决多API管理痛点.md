@@ -38,6 +38,8 @@ type: "post"
     └── models/     # 模型配置集
 ```
 
+![](https://cdn.img2ipfs.com/ipfs/QmW6SGg6y18UQoQAW7cMNTB61N1jVj5qY8hSsWnCVWCHxf?filename=f1873b2e4928ebc46314373ea547f493802c5ae0_2_508x1000.png)
+
 #### ⚙️ 关键配置
 
 **1. Docker-Compose**（精简版）
@@ -83,10 +85,16 @@ router_settings:
 ```
 
 - **模型配置**
-  ![](https://s2.loli.net/2025/07/22/YMwVufQy5nqioSm.png)
+
+	![](https://cdn.img2ipfs.com/ipfs/QmTuR59WTVJGE8oRq67Zpet5yLFZAUUWDeKLUp9WwCng7s?filename=d5f4cfe3341d5d118a28778da218e526f3b7676f_2_582x998.png)
+
+	![](https://cdn.img2ipfs.com/ipfs/QmWkSuVvDf6i3XpAitwrEcVBd3tz6LbthxpEr7yN1S8FAG?filename=e2001e0829bff91314c146374584ca0ec8dcaacd_2_1210x1000.webp)
   每个模型单独文件，通过`models.yaml`加载
+  
 - **密钥安全**
-  ![](https://s2.loli.net/2025/07/22/3ua7dzSUEcp1GHl.png)
+
+	![](https://cdn.img2ipfs.com/ipfs/QmeGUm7QZpySt9t6KFhARE6gWib5iDrcGauPxubhKSJvAS?filename=9fa341e6e62789ea17e861caa7ba5cab564457a8_2_1380x932.png)
+
   用`.env`隔离敏感信息，避免Git泄露
 
 ---
@@ -96,7 +104,9 @@ router_settings:
 #### 1. Cherry Studio
 
 配置时注意URL补全问题：
-![](https://s2.loli.net/2025/07/22/6GbOwiNZPMRxnmL.png)
+
+![](https://cdn.img2ipfs.com/ipfs/QmdcrqKrv41w9Atc7UaXEFsLdP9xuQ41BvCF7bkBqLJPnS?filename=a5fbb5a36a0193d0dcbbb7042828bf00e79b4239_2_1172x1000.png)
+
 ✅ 推荐填写 `http://localhost:4000` 或 `http://localhost:4000/v1/`
 
 #### 2. Claude Code
@@ -115,7 +125,8 @@ router_settings:
 
 ```
 claude 切换模型：
-![](https://s2.loli.net/2025/07/22/D8PuYnF1dCOgpJG.png)
+
+![](https://cdn.img2ipfs.com/ipfs/QmSY7Z6ULdxXdwADKUvf8TrkNNFU1sv94BrtLepA8aVeqQ?filename=56059eb3ecf2176fdf8941f4011030c57c24af4f_2_1380x510.png)
 
 
 #### 3. CCR路由进阶
@@ -144,16 +155,57 @@ claude 切换模型：
 ```
 
 启动：
-![](https://s2.loli.net/2025/07/22/1EKP7rqVYTilZCo.png)
+
+![](https://cdn.img2ipfs.com/ipfs/QmWF7QUFA5vzL99QCx6HFqYpXfWV8YpMnABPPdok1pBLQL?filename=9ef06aa785cf8b2b9d22537745511a17365219a4_2_1380x400.png)
 
 端口3456，证明走的ccr。
 
 ccr 切换模型注意语法，他需要 加入name的。
 
 操作效果：
-![](https://s2.loli.net/2025/07/22/8mjsbGoe7HFB4QC.png)
+
+![](https://cdn.img2ipfs.com/ipfs/QmdaVi8PEJnRERgZ9vvPsdobntQxZxWHfk6MPCvWHEjwkF?filename=8d157436d1dd2b1a613c030006ee0d31aff0ac57_2_798x998.png)
 
 哈哈 这家伙的话让我不爽，结果👌。
+
+使用ccr 可以实现，注意litellm貌似再支持claude code的功能上不支持模型大写。这是个bug。 ccr接入litellm没问题，cherry studio 接入没问题。
+
+ccr 配置：
+```
+{
+  "LOG": false,
+  "Providers": [
+    {
+      "name": "litellm",
+      "api_base_url": "http://localhost:4000/v1/chat/completions",
+      "api_key": "sk-2015",
+      "models": [
+        "claude-3-5-sonnet",
+        "claude-3-7-sonnet",
+        "claude-4-sonnet",
+        "claude-4-sonnet-think",
+        "claude-3-7-sonnet-think",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro-preview-05-06",
+        "gpt-4o",
+        "gpt-4o-mini",
+        "o4-mini",
+        "gpt-4.1",
+        "gpt-4.1-mini",
+        "doubao-1.6-thinking",
+        "kimi-k2",
+        "Qwen3-235B-A22B-Instruct-2507",
+        "Qwen3-Coder-480B-A35B-Instruct"
+      ]
+    },
+  "Router": {
+      "default": "litellm,Qwen3-Coder-480B-A35B-Instruct",
+      "background": "litellm,gpt-4.1-mini",
+      "think": "deepseek,deepseek-r1",
+      "longContext": "litellm,gemini-2.5-flash"
+    }
+}
+```
 
 ---
 
@@ -164,7 +216,7 @@ ccr 切换模型注意语法，他需要 加入name的。
 
 > 项目启动：`docker-compose up -d`
 > 排错提示：通过日志观察路由策略
-> ![](https://s2.loli.net/2025/07/22/5lu4DQLga81P6sj.png)
+> ![](https://cdn.img2ipfs.com/ipfs/QmYzKtZ3xkR6krQe3hx6VCxCyjf8JiPjeMMRS86JCBGnkx?filename=7a8d07dc2f3551cad7a8de60040fc065fff23cc3_2_1380x608.png)
 
 
 完结
