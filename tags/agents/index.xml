@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Agents on aLong Blog</title><link>https://blog.51ai.vip/tags/agents/</link><description>Recent content in Agents on aLong Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 04 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/agents/index.xml" rel="self" type="application/rss+xml"/><item><title>Iflow通过hooks增加提醒</title><link>https://blog.51ai.vip/posts/iflow%E9%80%9A%E8%BF%87hooks%E5%A2%9E%E5%8A%A0%E6%8F%90%E9%86%92/</link><pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/iflow%E9%80%9A%E8%BF%87hooks%E5%A2%9E%E5%8A%A0%E6%8F%90%E9%86%92/</guid><description>&lt;h1 id="iflow通过hooks增加提醒"&gt;iflow通过hooks增加提醒&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Agents on aLong</title><link>https://blog.51ai.vip/tags/agents/</link><description>Recent content in Agents on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 04 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/agents/index.xml" rel="self" type="application/rss+xml"/><item><title>Iflow通过hooks增加提醒</title><link>https://blog.51ai.vip/posts/iflow%E9%80%9A%E8%BF%87hooks%E5%A2%9E%E5%8A%A0%E6%8F%90%E9%86%92/</link><pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/iflow%E9%80%9A%E8%BF%87hooks%E5%A2%9E%E5%8A%A0%E6%8F%90%E9%86%92/</guid><description>&lt;h1 id="iflow通过hooks增加提醒"&gt;iflow通过hooks增加提醒&lt;/h1&gt;
 &lt;h1 id="背景需求"&gt;背景需求&lt;/h1&gt;
 &lt;p&gt;使用iflow cli 时当我们下发一个任务或对话时在等待响应时，可能抽空做点别的事情。如果忘记了查看结果，那可能错过很久才想起来。&lt;/p&gt;
 &lt;p&gt;此时我希望让iflow给我一个反馈，这个功能iflow提供了 &lt;code&gt;hooks&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;我的电脑时macOS系统，所以一下基本都是按照我自己环境进行的调整，其他他做系统类似适当调整即可。&lt;/p&gt;
 &lt;h1 id="结果"&gt;结果&lt;/h1&gt;
-&lt;p&gt;&lt;img src="https://i.imgur.com/IwlLZw7.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmR52o19UiES626MLNjkPhAoxqVatSbmFYYNrudMAEEJWt?filename=5c214388c07ec7eb2d91433f37d272df4d07eccc.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;一种✅结束完成通知，另一种🔔权限等提示的通知。&lt;/p&gt;
 &lt;h2 id="准备"&gt;准备&lt;/h2&gt;
 &lt;p&gt;我们需要在用户的iflow目录下调整&lt;code&gt;settings.json&lt;/code&gt; 。&lt;/p&gt;
@@ -37,7 +37,7 @@
 &lt;h3 id="脚本文件"&gt;脚本文件&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;stop.sh&lt;/em&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;# Stop hook脚本 - 任务完成通知&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Stop hook脚本 - 任务完成通知&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 参数1: 标题&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 参数2: 消息内容&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
@@ -46,7 +46,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 显示通知（使用 osascript 作为备用方案）&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;osascript -e &lt;span style="color:#e6db74"&gt;&amp;#34;display notification \&amp;#34;&lt;/span&gt;$MESSAGE&lt;span style="color:#e6db74"&gt;\&amp;#34; with title \&amp;#34;&lt;/span&gt;$TITLE&lt;span style="color:#e6db74"&gt;\&amp;#34; subtitle \&amp;#34;请查看 iflow\&amp;#34;&amp;#34;&lt;/span&gt; 2&amp;gt;/dev/null &lt;span style="color:#f92672"&gt;||&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# terminal-notifier \&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# -message &amp;#34;$MESSAGE&amp;#34; \&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# -title &amp;#34;$TITLE&amp;#34; \&lt;/span&gt;
