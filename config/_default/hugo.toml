@@ -5,6 +5,7 @@ enableRobotsTXT = true
 languageCode = "en"
 theme = "gokarna"
 title = "aLong"
+buildFuture = true
 
 publishDir = "docs"
 
@@ -13,7 +14,7 @@ publishDir = "docs"
   dateFormat = "2006/01/02"
   footer = "aLong"
   metaKeywords = ["blog", "aLong", "blog.51ai.vip"]
-  numberPostsOnHomePage = 4 
+  numberPostsOnHomePage = 4
   showBackToTopButton = true
   showPostsOnHomePage = "recent"
   pygmentsStyle = "monokai"
@@ -28,7 +29,7 @@ publishDir = "docs"
     endLevel = 3
     ordered = false
   [minify]
-    minifyOutput = true  
+    minifyOutput = true
 
   [menu]
     [[menu.main]]
@@ -52,7 +53,7 @@ publishDir = "docs"
       name = "Tags"
       url = "/tags/"
       weight = 2
-    
+
     [[menu.main]]
       identifier = "rss"
       pre = "<span data-feather='rss'></span>"

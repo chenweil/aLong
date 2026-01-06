@@ -1,6 +1,5 @@
 ---
 date: 2026-01-07
-# image: ""
 lastmod: 2026-01-07
 title: "iFlow将command转换成skill"
 type: "post"
