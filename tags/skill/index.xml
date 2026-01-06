@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Skill on aLong</title><link>https://blog.51ai.vip/tags/skill/</link><description>Recent content in Skill on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 07 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/skill/index.xml" rel="self" type="application/rss+xml"/><item><title>iFlow将command转换成skill</title><link>https://blog.51ai.vip/posts/iflow%E5%B0%86command%E8%BD%AC%E6%8D%A2%E6%88%90skill/</link><pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/iflow%E5%B0%86command%E8%BD%AC%E6%8D%A2%E6%88%90skill/</guid><description>&lt;p&gt;&lt;a href="https://vibex.iflow.cn/t/topic/1222?u=10008834122"&gt;之前帖子&lt;/a&gt; 提到通过iflow编写&lt;code&gt;mdt&lt;/code&gt;指令。 我懒得通过指令去执了，所以让模型自己执行skill更舒服。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.imgur.com/4pfiQv1.png" alt=""&gt;&lt;/p&gt;
+&lt;h1 id="修改的经过"&gt;修改的经过&lt;/h1&gt;
+&lt;p&gt;因为已经有了指令，所以我直接 &lt;code&gt;@~/.iflow/commands/mdt.md&lt;/code&gt; 让他分析是否可以做成skill。&lt;/p&gt;
+&lt;p&gt;iflow回复没问题，问我要不要开始。&lt;/p&gt;
+&lt;p&gt;因为我已经安装了 &lt;code&gt;skill-creator&lt;/code&gt; 这个任务他肯定会调用skill去实现。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.imgur.com/ybnTDlw.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.imgur.com/c6SciwF.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;中间他希望删除掉示例文件，我没同意。&lt;/p&gt;
+&lt;p&gt;后面做完就有了开头的结果。&lt;/p&gt;
+&lt;p&gt;翻译的文件内容片段&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.imgur.com/dApyPLB.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iflow&lt;/strong&gt; 操作简单、功能强大。 &amp;#x1f44d;&lt;/p&gt;</description></item></channel></rss>
