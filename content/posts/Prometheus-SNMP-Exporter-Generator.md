@@ -2,6 +2,7 @@
 title: Prometheus-SNMP_Exporter Generator
 date: 2019-12-24 15:26:33
 tags: ["SNMP","Prometheus"]
+type: "post"
 ---
 
 ## Prometheus-SNMP Exporter

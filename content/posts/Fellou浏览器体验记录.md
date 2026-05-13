@@ -1,12 +1,10 @@
 ---
 date: 2025-06-16
-# description: ""
-# image: ""
 lastmod: 2025-06-16
 showTableOfContents: false
-# tags: ["",]
 title: "Fellou浏览器体验记录"
 type: "post"
+tags: ["browser", "AI", "Fellou"]
 ---
 
 上一篇水文写了[Dia浏览器的体验](https://blog.51ai.vip/posts/dia浏览器体验记录/)，佬友问我是否可以使用Fellou浏览器。我开始不知道他是什么。 佬友私信给我一个邀请码，我注册了账号，体验了一下，感觉还不错。所以我记录一下体验。在此感谢佬友分享🫰。

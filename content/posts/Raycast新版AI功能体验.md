@@ -4,7 +4,7 @@ lastmod: 2025-07-31
 showTableOfContents: false
 title: Raycast新版AI功能Custom Providers体验
 type: post
-categories: AI
+tags: ["Raycast", "AI"]
 ---
 之前使用第三方的转发体验了三方API的接入。现在最新版支持**Custom Providers** 功能了。
 # 通过Custom Providers 接入API

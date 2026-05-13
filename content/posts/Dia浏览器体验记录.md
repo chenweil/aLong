@@ -3,6 +3,7 @@ date: 2025-06-13
 lastmod: 2025-06-13
 title: "Dia浏览器体验记录"
 type: "post"
+tags: ["browser", "AI", "Dia"]
 ---
 
 早在论坛拿到邀请🐎，下载打开一看，这啥啊这事？ 这么简约？
