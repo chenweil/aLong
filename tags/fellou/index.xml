@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fellou on aLong</title><link>https://blog.51ai.vip/tags/fellou/</link><description>Recent content in Fellou on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/fellou/index.xml" rel="self" type="application/rss+xml"/><item><title>Fellou浏览器体验记录</title><link>https://blog.51ai.vip/posts/fellou%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/</link><pubDate>Mon, 16 Jun 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/fellou%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/</guid><description>&lt;p&gt;上一篇水文写了&lt;a href="https://blog.51ai.vip/posts/dia%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/"&gt;Dia浏览器的体验&lt;/a&gt;，佬友问我是否可以使用Fellou浏览器。我开始不知道他是什么。 佬友私信给我一个邀请码，我注册了账号，体验了一下，感觉还不错。所以我记录一下体验。在此感谢佬友分享🫰。&lt;/p&gt;
+&lt;h1 id="fellou是什么-agentic是什么"&gt;Fellou是什么， Agentic是什么&lt;/h1&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmbvV3RA4NbBEz5QJ3ggbuAufJ1pEkADqjTyGr6ZGHLYdt?filename=5c05749f32abc5722d3b77eea4ac5ee17681df70.png" alt="5c05749f32abc5722d3b77eea4ac5ee17681df70.png"&gt;&lt;/p&gt;
+&lt;p&gt;在看到Fellou的官网，世界首款Agentic浏览器。 这么说我还真不了解什么是agentic。&lt;/p&gt;
+&lt;p&gt;询问llama4 得知：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmbnQW2uVb6H5EyyeLEMUpAp32ZjKQdexoJJ9rnDMVzUWb?filename=70aa99f52c1f9ddc1371cbb8b34cb7b764f14879.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;原来Agentic是Fellou浏览器的特色之一，它是一种基于人工智能的浏览器，可以自动识别和处理网页上的各种元素，如文本、图片、视频等，从而提供更加智能和高效的浏览体验。&lt;/p&gt;
+&lt;p&gt;我感觉可能AI浏览器就像安装了插件，智能识别内容、总结和帮你生成内容。虽然Dia内置了一些功能。但他还没有实现类似Fellou的Agentic。&lt;/p&gt;
+&lt;p&gt;Agentic浏览器可以自动识别和处理网页上的各种元素，如文本、图片、视频等，从而提供更加智能和高效的浏览体验。简单理解为，他帮你做了一些事情使你更加方便。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例子1:
+我让他打开百度地图，然后给我从国贸到团结湖的骑行路线。结果是：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmXoYGLQhcTzBgRiavtroBjLyUuYNKcpGEMvJF6HUZCh4d?filename=a3bdfb7ddc1b89f622f038f69ddb230e27522396_2_1380x892.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmXG3qzgRpN8ecBUj3nccYF7B8c7YhYxjSPcMqDmCn5NNz?filename=f9625476cbe7356090f90e4805a3dfa138664d55_2_566x1000.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;这目前Dia是完成不了啊，这就是AI和Agentic的区别之一吧。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例子2:
+访问论坛时，看到一个提问。 *这时候在底下询问我需要我帮你查找有关的资料吗？ *&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;点开这个，右侧就开始DeepSearch了。
+&lt;img src="https://cdn.img2ipfs.com/ipfs/QmV7jfdM5dB3j78Q7TsKqAH32b8QmonuDufSXFDV7LMSnU?filename=b915917319a301ab9f75eb31588f4fcd0f203f6f.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;看这个搜索的内容可不是简单的OP标题，是理解后进行的理解问题再规划查询。&lt;/p&gt;
+&lt;p&gt;右侧能看到结果：值得注意在最底下有个run，你点击他就开始执行了。
+&lt;img src="https://cdn.img2ipfs.com/ipfs/QmUEQX2kHm8K3CnUQEYGEfAnvvGKK3yBkRfc9sA2dj2hAo?filename=448f3682eb0ce087160add297f7d55d40a086fe8_2_1082x1000.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;点击run就在浏览器单开一个tab开始执行了。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmQ74C1Wn7nKieJ4nG6dBmrnkfGB1W3XYEowvdkwiBWeaQ?filename=0e04e3511cd76347000c4c82386b8860a7106bea.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;直到他完成返回结果。&lt;/p&gt;
+&lt;p&gt;生成搜索结果时的界面：&lt;/p&gt;
+&lt;p&gt;左侧正在生成一个HTML的报告页面，右侧的对话中进行了报告内容的摘要信息。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmVLBobfnju2uybmVC22RBPKussq397PNCzeTPUKSWu5Ux?filename=5e30b46f44c667b3beda8ab3ab8cd4decff52481_2_1082x1000.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;最终结果😱，一个问题让他一搞变成了一大篇。好在能分享 &lt;a href="https://chat.fellou.ai/report/7833279e-8ae7-4e69-9500-236044c7f263"&gt;结果太恐怖点这看&lt;/a&gt;
+够deep，够search，够cool！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例子3:
+我还是想对比一下Dia和Fellou的话题总结。 结果好坏老友们自品一下，我个人感觉Fellou比Dia总结的好些。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Dia内容里还能看到一个神奇的qq新闻地址。😨&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmbmVP5CGvZEqv8VcbhYLobFs8jTZ8GHF3Vyh3oit1F7q6?filename=cc61841d5a51da556ee1a0d7e10a5bc5115560d4_2_1122x1000.jpg" alt=""&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例子4：
+类似Dia的水贴回复，我就是举个例子我可没真水啊🥹。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmPoBxQMwm6Z65gftDPfSqLUYQM8Z2QyvdnYJ7JYq4vkPK?filename=c2d360052b9d897d4d15322df50f43e849014792_2_262x1000.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;这又体现他Agentic的特性了。他不仅帮你生成了内容，还给你回复了🤩。 自动水贴成功啊。就是慢点，他规划好怎么去做这个事，通过截屏寻找要操作的位置按步骤最后执行成功。 🎊 但我改了，他那句不太好，也为了避免老友举报，我编辑人工调整了。&lt;/p&gt;
+&lt;p&gt;类似像YTB视频总结，文章总结等等都OK的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;录制一个短视频体现他Agentic的特性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://watch.wave.video/JgizvBqMzroXHFN1"&gt;点击查看Fellou浏览器Agentic特性演示视频&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通过以上几个例子，我想佬友们会体会到agentic是什么感觉。和Dia的区别是什么。&lt;/p&gt;
+&lt;h1 id="ui交互"&gt;UI、交互&lt;/h1&gt;
+&lt;p&gt;Dia我很喜欢，他的UI，交互等等。这里页简单对Fellou进行一些观察吧。&lt;/p&gt;
+&lt;p&gt;打开主界面看起还也是简约的：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmPVSk9bvAKhfVmygzgaQhJAfbpGcVnToc3r94GVTULRSp?filename=db6a6527c829a031d67157aa33c8dbfb12d50f78_2_1014x1000.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;操作类似的，在中间的input框或地址栏，会弹出来一个黑色input框神奇🤨。
+输入可以可以进行对话、访问网站或其他指令。&lt;/p&gt;
+&lt;p&gt;当使用浏览的起Deep Action是，窗口会像类似苹果那种窗口边框变换颜色的效果。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;输入&lt;code&gt;/&lt;/code&gt;各种搜索
+&lt;img src="https://cdn.img2ipfs.com/ipfs/QmeZ1eGtBuYQGX31E67U8LwsHH5XbKWZHrCL55vmwKNk99?filename=392ffd61fcb8a537e48d8a6608e41520245e079e.png" alt=""&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入&lt;code&gt;@&lt;/code&gt; 选择上下文&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入&lt;code&gt;tab&lt;/code&gt; 切换到Fellou搜索&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmWJZxJe29jpsCQke55CPPDyzEMzoYSnD2vjQr7BrjNaBY?filename=239f1e81c603b442418e1cf542cfcc5a4cf1b07d.gif" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="设置简洁支持多profiles"&gt;设置简洁，支持多Profiles&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmVyMX4X6M4pHUc2fPAZtuCHtDjptzXSz5RhkcJGPXuT79?filename=c6dd7357e474ae6626785adb2ebc0f6f5ace64a0.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;完结&lt;br&gt;
+祝好
+🍀&lt;/p&gt;</description></item></channel></rss>

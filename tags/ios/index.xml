@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IOS on aLong</title><link>https://blog.51ai.vip/tags/ios/</link><description>Recent content in IOS on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 16 Nov 2022 10:44:11 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/ios/index.xml" rel="self" type="application/rss+xml"/><item><title>IOS使用Shadowrocket激活Emby</title><link>https://blog.51ai.vip/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</link><pubDate>Wed, 16 Nov 2022 10:44:11 +0800</pubDate><guid>https://blog.51ai.vip/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</guid><description>&lt;p&gt;前提需要手机安装ShadowRocket。没有可以自己去找共享ID。
+&lt;img src="https://s2.loli.net/2022/11/16/aMKuwbEe1Y3BVgF.png" alt="aMKuwbEe1Y3BVgF"&gt;
+长按后弹出选项：
+&lt;img src="https://s2.loli.net/2022/11/16/1HKa2Vywfq9uU8L.png" alt="1HKa2Vywfq9uU8L"&gt;
+打开配置，例如在default上添加规则。点击default，编辑纯文本。
+&lt;img src="https://s2.loli.net/2022/11/16/aMNLtnGY6TxwuHS.png" alt="aMNLtnGY6TxwuHS"&gt;
+在文本最下面加入内容：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-conf" data-lang="conf"&gt;[Script]
+EmbyPremiere = type=http-response,script-path=https://gitlab.com/iptv-org/embypublic/-/raw/master/Script/EmbyPremiere.js,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,max-size=131072,requires-body=true,timeout=10,enable=true
+
+[MITM]
+hostname = mb3admin.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://s2.loli.net/2022/11/16/S3tpX5xZlwqKCYe.png" alt="S3tpX5xZlwqKCYe"&gt;
+点击保存后，点右侧!进入。点击HTTPS解密。
+&lt;img src="https://s2.loli.net/2022/11/16/oP4D65aX2MKbwxO.png" alt="oP4D65aX2MKbwxO"&gt;
+&lt;img src="https://s2.loli.net/2022/11/16/5pQf9oy73ISxi1M.png" alt="5pQf9oy73ISxi1M"&gt;
+开启HTTPS加密，会生成证书。同意安装描述文件。右上角点击勾。
+&lt;img src="https://s2.loli.net/2022/11/16/gnRNIqTBvfZVsMd.png" alt="gnRNIqTBvfZVsMd"&gt;
+&lt;img src="https://s2.loli.net/2022/11/16/3gsU81y6Av9OoFT.png" alt="3gsU81y6Av9OoFT"&gt;
+去手机设置中，通用-&amp;gt;描述文件与设备管理-&amp;gt;点击描述文件(名称大概有Shadowrocket那个)-&amp;gt;安装。
+&lt;img src="https://s2.loli.net/2022/11/16/wVqbC231FH945Zn.png" alt="wVqbC231FH945Zn"&gt;
+注意在Shadowrocket的首页上，全局路由选择配置。&lt;/p&gt;
+&lt;p&gt;最后进入Emby软件。可能会提示证书点OK。如果没有提示，点一个影片后也会提示，点OK。如果Shadowrocket开启通知可以看到提示认证成功。
+&lt;img src="https://s2.loli.net/2022/11/16/TgfoqKyI2pFNrt8.png" alt="TgfoqKyI2pFNrt8"&gt;
+后面就可以畅快看影视啦。&lt;/p&gt;
+&lt;p&gt;下次进入Emby时不需要Shadowrocket的配置了。当出现付费提示再开启那个配置就可以激活了。&lt;/p&gt;
+&lt;p&gt;完结～
+祝好！&lt;/p&gt;</description></item></channel></rss>

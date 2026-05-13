@@ -3,6 +3,6 @@
 &lt;p&gt;暴力可不是我喜欢的方式，所以选择后者。&lt;/p&gt;
 &lt;p&gt;方法：&lt;/p&gt;
 &lt;p&gt;打开终端&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd /Library/Application&lt;span style="color:#ae81ff"&gt;\ &lt;/span&gt;Support/Microsoft/MAU2.0
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd /Library/Application&lt;span style="color:#ae81ff"&gt;\ &lt;/span&gt;Support/Microsoft/MAU2.0
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo chmod &lt;span style="color:#ae81ff"&gt;000&lt;/span&gt; Microsoft&lt;span style="color:#ae81ff"&gt;\ &lt;/span&gt;AutoUpdate.app 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;两行命令后，输入密码就可以了。&lt;/p&gt;</description></item></channel></rss>

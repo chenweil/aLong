@@ -5,7 +5,7 @@
 &lt;li&gt;需要创建一个脚本. 如果你没有编辑器,那么可以创建一个文本文档.&lt;/li&gt;
 &lt;li&gt;复制下面一段到本文中.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@echo off
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@echo off
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;pushd &lt;span style="color:#e6db74"&gt;&amp;#34;%~dp0&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dir /b C:&lt;span style="color:#ae81ff"&gt;\W&lt;/span&gt;indows&lt;span style="color:#ae81ff"&gt;\s&lt;/span&gt;ervicing&lt;span style="color:#ae81ff"&gt;\P&lt;/span&gt;ackages&lt;span style="color:#ae81ff"&gt;\M&lt;/span&gt;icrosoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &amp;gt;List.txt
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dir /b C:&lt;span style="color:#ae81ff"&gt;\W&lt;/span&gt;indows&lt;span style="color:#ae81ff"&gt;\s&lt;/span&gt;ervicing&lt;span style="color:#ae81ff"&gt;\P&lt;/span&gt;ackages&lt;span style="color:#ae81ff"&gt;\M&lt;/span&gt;icrosoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &amp;gt;&amp;gt;List.txt

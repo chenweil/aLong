@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Raycast on aLong</title><link>https://blog.51ai.vip/tags/raycast/</link><description>Recent content in Raycast on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 31 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/raycast/index.xml" rel="self" type="application/rss+xml"/><item><title>Raycast新版AI功能Custom Providers体验</title><link>https://blog.51ai.vip/posts/raycast%E6%96%B0%E7%89%88ai%E5%8A%9F%E8%83%BD%E4%BD%93%E9%AA%8C/</link><pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/raycast%E6%96%B0%E7%89%88ai%E5%8A%9F%E8%83%BD%E4%BD%93%E9%AA%8C/</guid><description>&lt;p&gt;之前使用第三方的转发体验了三方API的接入。现在最新版支持&lt;strong&gt;Custom Providers&lt;/strong&gt; 功能了。&lt;/p&gt;
+&lt;h1 id="通过custom-providers-接入api"&gt;通过Custom Providers 接入API&lt;/h1&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmTxSPrSUnnUTvjxssZeEfbvwCycqtBJwvNAPLuq9rMKRg?filename=Pasted%20image%2020251220165549.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;在 Raycast 中，添加自定义模型（Custom Providers）的具体位置如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 &lt;strong&gt;Raycast&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;进入 &lt;strong&gt;Settings&lt;/strong&gt;（设置）。&lt;/li&gt;
+&lt;li&gt;点击左侧的 &lt;strong&gt;AI&lt;/strong&gt; 选项卡。&lt;/li&gt;
+&lt;li&gt;第一次需要在&lt;strong&gt;AI&lt;/strong&gt;选项最底下的&lt;strong&gt;Experiments&lt;/strong&gt;中开启&lt;strong&gt;Custom Providers&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;在 &lt;strong&gt;AI&lt;/strong&gt; 选项卡页面，找到 &lt;strong&gt;Custom Providers&lt;/strong&gt;（自定义提供商）部分。&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Reveal Providers Config&lt;/strong&gt;（显示提供商配置）按钮，这会在 Finder 中打开配置文件目录。
+&lt;img src="https://cdn.img2ipfs.com/ipfs/QmdKVpFQKKb7WHNiam7aVz4cooLQhhY3LVJMvT9FRxTbBk?filename=Pasted%20image%2020251220165604.png" alt=""&gt;
+点击后会跳转到具体目录中。默认是有一个&lt;strong&gt;providers.template.yaml&lt;/strong&gt;名字的文件。这个文件是一个模板，根据模板创建一个名称为&lt;strong&gt;providers.yaml&lt;/strong&gt; 。
+&lt;img src="https://cdn.img2ipfs.com/ipfs/QmP89KBF9H5HhKdpsz5tS5WBh37qa1W4asodZx9G6Hv1U2?filename=Pasted%20image%2020251220165613.png" alt=""&gt;
+通过dia 我询问了一下，可能 &lt;strong&gt;raycast仅加载此文件。&lt;/strong&gt; 其他名称的我没做测试。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmR3zWHdBNbu88pE6LFDcA1zL4aLLhqjQZKDvJLufC6GMy?filename=Pasted%20image%2020251220165649.png" alt="Pasted%20image%2020251220165649.png"&gt;&lt;/p&gt;
+&lt;h2 id="配置providers"&gt;配置providers&lt;/h2&gt;
+&lt;p&gt;我这里偷个懒，直接使用claude code进行配置，告诉他一些参数。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmXFs1NUdAYnHQ85qTUHXDScXFa6okpEVd21ngH7dsLM2U?filename=Pasted%20image%2020251220165850.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;他呱唧呱唧的写完了大致的配置，我在base_url 加入了/v1，不加实际测试不正常。
+api_key 我也改写成真实的(之前告诉他的是一个假的为了隐私)。&lt;/p&gt;
+&lt;p&gt;通过测试没问题，可以使用。但有些能力限制。&lt;/p&gt;
+&lt;h1 id="custum-providers-体验"&gt;custum providers 体验&lt;/h1&gt;
+&lt;p&gt;接入后，对话是没问题的。gemini 2.5 支持联网搜索，但实际体验下来不可以。
+可以打开本地的一些程序，比如浏览器，apple music等等。
+MCP支持有问题，我不知道是模型的事还是什么。比如通过exa搜索会返回error。 这是我在其他工具中没遇到的。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/Qmad4KXvCeu5g5KALnvt3niNCrt12rkWy8d56CQzKmtMGP?filename=Pasted%20image%2020251220165919.png" alt="Pasted%20image%2020251220165919.png"&gt;&lt;/p&gt;
+&lt;p&gt;使用raycast支持的模型，比如填写gemini key 的模型支持联网，调用MCP都OK。
+如图：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmaG4shM62KQDMCjZuxkF7jkagfpPatQEHLp7drP6sGqE1?filename=Pasted%20image%2020251220165932.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;在raycast可以判断你接入的模型支持什么：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/Qmf3ARKSB1DEG8eurY9HKTo9NfEX69ZxFhB7m8syMSahTX?filename=Pasted%20image%2020251220165940.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;我在dia询问大致也是类似的回答吧：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmbLyCukN7pgbWdq7A52Vyd98Lmbe23edHzGrC3JVFHShj?filename=Pasted%20image%2020251220165947.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;以上就是大致的体验。Custom Providers给接入第三方接入提供了便利，让我不需要在本机开启其他proxy。 直接使用自定义的API，期待这方面后续的发展。&lt;/p&gt;</description></item><item><title>RaycastAI Proxy</title><link>https://blog.51ai.vip/posts/raycastai-proxy/</link><pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/raycastai-proxy/</guid><description>&lt;p&gt;一直在重度使用Raycast，AI方面之前一直使用chatGPT插件但是他有个缺点，不能继续对话。&lt;/p&gt;
+&lt;p&gt;前天reddit发现一个项目： &lt;a href="https://github.com/miikkaylisiurunen/raycast-ai-openrouter-proxy.git"&gt;raycast-ai-openrouter-proxy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;就是直接使用官方的AI功能，通过一个服务来实现接入其他平台的LLM API。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;也有个缺点就是不展示思考信息。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;看图：
+输入内容 tab&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmRAqtRdvNYfSTSimncV79KorXj4jSrgYRPdX5DWM3V3Mu?filename=56bdf324ae260e74f5532d8d830eb4b45b156254_2_1380x874.webp" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;继续对话：
+command+J &lt;em&gt;切换模型有提示&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmeF75RMggMNsTcTi5Q4ghX9r2M8RMnfdH7jH7Ccr15YVG?filename=91725b3edf3692bb1ec263ed0b22938c5bd57783_2_770x1000.webp" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;选择模型和配置prompt：
+&lt;img src="https://cdn.img2ipfs.com/ipfs/QmRrcmfzeS1RvUHnhzHvnicfMHzPTqkM6YHxyCQZo837oS?filename=817779c1b82f5341814fbc5fc580bb1ec3b8aabc_2_1322x1000.webp" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="部署配置"&gt;部署+配置&lt;/h2&gt;
+&lt;h3 id="克隆项目后"&gt;克隆项目后&lt;/h3&gt;
+&lt;p&gt;我稍微调整了一下compose&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-compose" data-lang="compose"&gt;services:
+ raycast-ai-proxy:
+ restart: unless-stopped
+ build: .
+ ports:
+ - &amp;#39;11435:3000&amp;#39;
+ volumes:
+ - ./models.json:/app/models.json:ro
+ environment:
+	 # 配置通过 .env 导入
+ - API_KEY=${API_KEY}
+ - BASE_URL=${BASE_URL}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="配置参数"&gt;配置参数&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-.env" data-lang=".env"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;API_KEY&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;sk-xxx&amp;#34;&lt;/span&gt; &lt;span style="color:#75715e"&gt;# 你的key&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;BASE_URL&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://ark.cn-beijing.volces.com/api/v3&amp;#34;&lt;/span&gt; &lt;span style="color:#75715e"&gt;# 我这里配置的火山&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# BASE_URL=&amp;#34;https://openrouter.ai/api/v1&amp;#34; # 默认写的 openrouter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="配置模型-modeljson"&gt;配置模型 model.json&lt;/h3&gt;
+&lt;p&gt;默认model.json提供了一些案例。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Doubao-1.5-vision-pro-32k&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;id&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;ep-xxx-xxx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;contextLength&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;10240&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;capabilities&amp;#34;&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#34;vision&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;], &lt;span style="color:#960050;background-color:#1e0010"&gt;#&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;支持多模态和tools&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;temperature&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0.8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;DeepSeek-V3-0324&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;id&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;ep-xxx-xxx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;contextLength&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;10240&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;capabilities&amp;#34;&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;temperature&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0.6&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="启动服务"&gt;启动服务&lt;/h3&gt;
+&lt;p&gt;这些搞定后启动服务： &lt;code&gt;docker compose up -d&lt;/code&gt;&lt;/p&gt;</description></item></channel></rss>

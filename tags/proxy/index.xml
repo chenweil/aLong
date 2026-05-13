@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Proxy on aLong</title><link>https://blog.51ai.vip/tags/proxy/</link><description>Recent content in Proxy on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/proxy/index.xml" rel="self" type="application/rss+xml"/><item><title>RaycastAI Proxy</title><link>https://blog.51ai.vip/posts/raycastai-proxy/</link><pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/raycastai-proxy/</guid><description>&lt;p&gt;一直在重度使用Raycast，AI方面之前一直使用chatGPT插件但是他有个缺点，不能继续对话。&lt;/p&gt;
+&lt;p&gt;前天reddit发现一个项目： &lt;a href="https://github.com/miikkaylisiurunen/raycast-ai-openrouter-proxy.git"&gt;raycast-ai-openrouter-proxy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;就是直接使用官方的AI功能，通过一个服务来实现接入其他平台的LLM API。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;也有个缺点就是不展示思考信息。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;看图：
+输入内容 tab&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmRAqtRdvNYfSTSimncV79KorXj4jSrgYRPdX5DWM3V3Mu?filename=56bdf324ae260e74f5532d8d830eb4b45b156254_2_1380x874.webp" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;继续对话：
+command+J &lt;em&gt;切换模型有提示&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmeF75RMggMNsTcTi5Q4ghX9r2M8RMnfdH7jH7Ccr15YVG?filename=91725b3edf3692bb1ec263ed0b22938c5bd57783_2_770x1000.webp" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;选择模型和配置prompt：
+&lt;img src="https://cdn.img2ipfs.com/ipfs/QmRrcmfzeS1RvUHnhzHvnicfMHzPTqkM6YHxyCQZo837oS?filename=817779c1b82f5341814fbc5fc580bb1ec3b8aabc_2_1322x1000.webp" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="部署配置"&gt;部署+配置&lt;/h2&gt;
+&lt;h3 id="克隆项目后"&gt;克隆项目后&lt;/h3&gt;
+&lt;p&gt;我稍微调整了一下compose&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-compose" data-lang="compose"&gt;services:
+ raycast-ai-proxy:
+ restart: unless-stopped
+ build: .
+ ports:
+ - &amp;#39;11435:3000&amp;#39;
+ volumes:
+ - ./models.json:/app/models.json:ro
+ environment:
+	 # 配置通过 .env 导入
+ - API_KEY=${API_KEY}
+ - BASE_URL=${BASE_URL}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="配置参数"&gt;配置参数&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-.env" data-lang=".env"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;API_KEY&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;sk-xxx&amp;#34;&lt;/span&gt; &lt;span style="color:#75715e"&gt;# 你的key&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;BASE_URL&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://ark.cn-beijing.volces.com/api/v3&amp;#34;&lt;/span&gt; &lt;span style="color:#75715e"&gt;# 我这里配置的火山&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# BASE_URL=&amp;#34;https://openrouter.ai/api/v1&amp;#34; # 默认写的 openrouter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="配置模型-modeljson"&gt;配置模型 model.json&lt;/h3&gt;
+&lt;p&gt;默认model.json提供了一些案例。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Doubao-1.5-vision-pro-32k&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;id&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;ep-xxx-xxx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;contextLength&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;10240&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;capabilities&amp;#34;&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#34;vision&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;], &lt;span style="color:#960050;background-color:#1e0010"&gt;#&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;支持多模态和tools&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;temperature&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0.8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;DeepSeek-V3-0324&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;id&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;ep-xxx-xxx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;contextLength&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;10240&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;capabilities&amp;#34;&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;temperature&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0.6&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="启动服务"&gt;启动服务&lt;/h3&gt;
+&lt;p&gt;这些搞定后启动服务： &lt;code&gt;docker compose up -d&lt;/code&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -4,11 +4,11 @@
 &lt;p&gt;本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
 安装kubectl：&lt;code&gt;brew install kubectl&lt;/code&gt;
 安装minikube：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo install minikube-darwin-amd64 /usr/local/bin/minikube
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="通过minikube启动集群"&gt;通过minikube启动集群&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;minikube start &lt;span style="color:#ae81ff"&gt;\
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;minikube start &lt;span style="color:#ae81ff"&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;--kubernetes-version&lt;span style="color:#f92672"&gt;=&lt;/span&gt;v1.23.9 &lt;span style="color:#ae81ff"&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;--image-mirror-country&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;cn&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;--registry-mirror&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https://？？？？？.mirror.aliyuncs.com
@@ -40,7 +40,7 @@
 &lt;/ul&gt;
 &lt;p&gt;kubectl在minikube中使用，需要写 &lt;code&gt;nimikune kubectl --&lt;/code&gt;后面加入执行的命令。
 macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;vi ~/.zshrc
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-zsh" data-lang="zsh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;vi ~/.zshrc
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#加入一行&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias kubectl&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;minikube kubectl --&amp;#34;&lt;/span&gt;
@@ -66,7 +66,7 @@ macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
 &lt;h3 id="编写文件"&gt;编写文件&lt;/h3&gt;
 &lt;p&gt;文件路径&lt;code&gt;/usr/lib/systemd/system&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;编写文件 &lt;code&gt;vi /usr/lib/systemd/system/redis.service&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Unit]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;[Unit]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#服务描述&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;Description&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;Redis persistent key-value database&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#服务依赖&lt;/span&gt;
@@ -126,7 +126,7 @@ macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
 &lt;p&gt;公司需要环境Centos5, 又不能升级内核.&lt;/p&gt;
 &lt;p&gt;查了一下 大概是 需要 &lt;code&gt;yum –exclude=kernel* update&lt;/code&gt; 或者修改 yum.conf&lt;/p&gt;
 &lt;h3 id="测试一下-出现一个问题"&gt;测试一下 出现一个问题:&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Loaded plugins: fastestmirror, security
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Loaded plugins: fastestmirror, security
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Loading mirror speeds from cached hostfile
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;YumRepo Error: All mirror URLs are not using ftp, http&lt;span style="color:#f92672"&gt;[&lt;/span&gt;s&lt;span style="color:#f92672"&gt;]&lt;/span&gt; or file.
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Eg. Invalid release/

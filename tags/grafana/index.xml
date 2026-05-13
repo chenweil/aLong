@@ -11,7 +11,7 @@
 &lt;p&gt;项目地址：&lt;a href="https://github.com/grafana/piechart-panel"&gt;piechart-panel&lt;/a&gt;
 文件结构：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://t1.picb.cc/uploads/2020/11/30/ZVbHPT.jpg" alt=""&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone git@github.com:grafana/piechart-panel.git
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone git@github.com:grafana/piechart-panel.git
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd piechart-panel &lt;span style="color:#75715e"&gt;# 进入到目录&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yarn install 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;我直接把项目clone到grafana存放插件的位置，我的grafana是为了测试run的一个docker镜像。把插件目录挂载到本机，代码clone到目录中。&lt;/strong&gt;&lt;/p&gt;
@@ -28,7 +28,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p&gt;
 &lt;p&gt;修改完需要的内容之后，grafana是能识别到有一个插件，但没有build时候他会提示你没有build插件。就是他不认识你的项目代码。&lt;/p&gt;
 &lt;p&gt;这个怎么处理呢？看&lt;a href="https://grafana.com/tutorials/build-a-panel-plugin/#3"&gt;&lt;strong&gt;官方的文档&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;执行 &lt;code&gt;yarn dev&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 执行结束提示，美滋滋～&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 执行结束提示，美滋滋～&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;✔ Bundling plugin in dev mode
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;✨ Done in 4.91s.
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行完毕我们重启grafana就可以看到成果了。&lt;/p&gt;
@@ -63,7 +63,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id="安装"&gt;安装&lt;/h3&gt;
 &lt;p&gt;安装方式看了一下，我选择直接下载bin文件方式：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;uname -s&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;-&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;uname -m&lt;span style="color:#e6db74"&gt;`&lt;/span&gt; &amp;gt; /usr/local/bin/docker-compose
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;uname -s&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;-&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;uname -m&lt;span style="color:#e6db74"&gt;`&lt;/span&gt; &amp;gt; /usr/local/bin/docker-compose
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;chmod +x /usr/local/bin/docker-compose&lt;span style="color:#e6db74"&gt;```&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过 &lt;code&gt;docker-compose version&lt;/code&gt; 看到版本信息算是安装完成。&lt;/p&gt;

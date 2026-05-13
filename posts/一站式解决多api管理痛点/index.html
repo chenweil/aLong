@@ -1,0 +1,110 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{--accent-color:#FF4D4D}</style><title>一站式解决多API管理痛点</title><meta name=description content="虽然许多平台提供丰富的API福利，但大多数被闲置了：有些有效期短暂，有些注册后就被遗忘。更麻烦的是不同平台的模型命名混乱、接入方式各异。
+最近发现LiteLLM这个项目深得我心——它能统一管理所有AI模型API！通过搭建代理网关，只需一个URL和Key就能调用任意模型，就像把法宝都装进乾坤袋✨
+📌 解决的核心问题：
+自 …"><meta name=keywords content='blog,aLong,blog.51ai.vip,API网关,开发工具'><meta property="og:url" content="https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/"><meta property="og:type" content="website"><meta property="og:title" content="一站式解决多API管理痛点"><meta property="og:description" content="虽然许多平台提供丰富的API福利，但大多数被闲置了：有些有效期短暂，有些注册后就被遗忘。更麻烦的是不同平台的模型命名混乱、接入方式各异。
+最近发现LiteLLM这个项目深得我心——它能统一管理所有AI模型API！通过搭建代理网关，只需一个URL和Key就能调用任意模型，就像把法宝都装进乾坤袋✨
+📌 解决的核心问题：
+自 …"><meta property="og:image" content="https://blog.51ai.vip/"><meta property="og:image:secure_url" content="https://blog.51ai.vip/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="一站式解决多API管理痛点"><meta name=twitter:description content="虽然许多平台提供丰富的API福利，但大多数被闲置了：有些有效期短暂，有些注册后就被遗忘。更麻烦的是不同平台的模型命名混乱、接入方式各异。
+最近发现LiteLLM这个项目深得我心——它能统一管理所有AI模型API！通过搭建代理网关，只需一个URL和Key就能调用任意模型，就像把法宝都装进乾坤袋✨
+📌 解决的核心问题：
+自 …"><meta property="twitter:domain" content="https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/"><meta property="twitter:url" content="https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/"><meta name=twitter:image content="https://blog.51ai.vip/"><link rel=canonical href=https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/><link rel=stylesheet type=text/css href=/css/normalize.min.css media=print><link rel=stylesheet type=text/css href=/css/main.min.css><link id=dark-theme rel=stylesheet href=/css/dark.min.css><script src=/js/bundle.min.c617e217c3a47d3dc46f90f6c21df6ff64f6cd5d7a8505ca2f3a9059217dd3d2.js integrity="sha256-xhfiF8OkfT3Eb5D2wh32/2T2zV16hQXKLzqQWSF909I="></script></head><body><script>setThemeByUserPref()</script><header class=header><nav class=header-nav><div class=nav-title><a class=nav-brand href=https://blog.51ai.vip/>aLong</a></div><div class=nav-links><div class=nav-link><a href=https://blog.51ai.vip/><span data-feather=home></span> Home</a></div><div class=nav-link><a href=https://blog.51ai.vip/posts/>Posts</a></div><div class=nav-link><a href=https://blog.51ai.vip/tags/>Tags</a></div><div class=nav-link><a href=https://blog.51ai.vip/index.xml><span data-feather=rss></span></a></div><span class=nav-icons-divider></span><div class="nav-link dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+<a><span class=theme-toggle-icon data-feather=moon></span></a></div><div class=nav-link id=hamburger-menu-toggle><span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+<a><span data-feather=menu></span></a></div><ul class="nav-hamburger-list visibility-hidden"><li class=nav-item><a href=https://blog.51ai.vip/><span data-feather=home></span> Home</a></li><li class=nav-item><a href=https://blog.51ai.vip/posts/>Posts</a></li><li class=nav-item><a href=https://blog.51ai.vip/tags/>Tags</a></li><li class=nav-item><a href=https://blog.51ai.vip/index.xml><span data-feather=rss></span></a></li><li class="nav-item dark-theme-toggle"><span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+<a><span class=theme-toggle-icon data-feather=moon></span></a></li></ul></div></nav></header><main id=content><div class="post container"><div class=post-header-section><h1>一站式解决多API管理痛点</h1><small role=doc-subtitle></small><p class=post-date>2025/07/21</p><ul class=post-tags><li class=post-tag><a href=https://blog.51ai.vip/tags/api%E7%BD%91%E5%85%B3>API网关</a></li><li class=post-tag><a href=https://blog.51ai.vip/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7>开发工具</a></li></ul></div><div class=post-content><p>虽然许多平台提供丰富的API福利，但大多数被闲置了：有些有效期短暂，有些注册后就被遗忘。更麻烦的是不同平台的模型命名混乱、接入方式各异。</p><p>最近发现<strong>LiteLLM</strong>这个项目深得我心——它能统一管理所有AI模型API！通过搭建代理网关，只需一个URL和Key就能调用任意模型，就像把法宝都装进乾坤袋✨</p><blockquote><p>📌 <strong>解决的核心问题：</strong></p><ol><li><strong>自动容错</strong>：API失效时自动冷却重试，避免手动切换</li><li><strong>福利整合</strong>：集中管理所有API Key，告别Cherry Studio重复注册</li><li><strong>名称统一</strong>：自定义模型组名（如<code>gemini-2.5-flash</code>兼容多版本）</li><li><strong>跨工具兼容</strong>：通过统一接口接入ChatGPT/Claude等客户端</li></ol></blockquote><hr><h3 id=-搭建实录本地版>🛠 搭建实录（本地版）</h3><blockquote><p>因代理环境在本地，选择本地部署。服务器部署需注意规避网络限制问题</p></blockquote><h4 id=-目录结构>📂 目录结构</h4><pre tabindex=0><code>.
+├── docker-compose.yml
+├── .env            # 密钥管理
+└── config/
+    ├── config.yaml # 主配置
+    ├── router.yaml # 路由策略
+    └── models/     # 模型配置集
+</code></pre><p><img src="https://cdn.img2ipfs.com/ipfs/QmW6SGg6y18UQoQAW7cMNTB61N1jVj5qY8hSsWnCVWCHxf?filename=f1873b2e4928ebc46314373ea547f493802c5ae0_2_508x1000.png" alt></p><h4 id=-关键配置>⚙️ 关键配置</h4><p><strong>1. Docker-Compose</strong>（精简版）</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>services</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>litellm</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>ghcr.io/berriai/litellm:main-stable</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>volumes</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>./config:/app/config  </span> <span style=color:#75715e># 挂载整个配置目录</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>command</span>: --<span style=color:#ae81ff>config=/app/config/config.yaml</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;4000:4000&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>env_file</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>.env </span> <span style=color:#75715e># 安全加载密钥</span>
+</span></span></code></pre></div><p><strong>2. 配置分层设计</strong></p><ul><li><code>config.yaml</code> 引用子配置，核心参数示例：</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>include</span>: [<span style=color:#ae81ff>models.yaml, router.yaml]</span> <span style=color:#75715e># 模块化加载</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>litellm_settings</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>num_retries</span>: <span style=color:#ae81ff>3</span>     <span style=color:#75715e># 失败重试</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>request_timeout</span>: <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>drop_params</span>: <span style=color:#66d9ef>true</span>  <span style=color:#75715e># 清理冗余参数</span>
+</span></span></code></pre></div><ul><li><code>router.yaml</code> 路由策略（关键！）</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>router_settings</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>routing_strategy</span>: <span style=color:#ae81ff>latency-based-routing</span> <span style=color:#75715e># 延迟优先</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>fallbacks</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>&#34;*&#34;: </span>[<span style=color:#e6db74>&#34;gemini-2.5-flash&#34;</span>]  <span style=color:#75715e># 全局备用模型</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>model_groups</span>:                 <span style=color:#75715e># !!!模型名称标准化!!!</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>model_name</span>: <span style=color:#e6db74>&#34;claude-3-5-sonnet&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>model_list</span>: <span style=color:#75715e># 聚合不同命名格式</span>
+</span></span><span style=display:flex><span>        - <span style=color:#e6db74>&#34;claude-3-5-sonnet-20241022&#34;</span>
+</span></span><span style=display:flex><span>        - <span style=color:#e6db74>&#34;claude-3.5-sonnet&#34;</span>
+</span></span></code></pre></div><ul><li><p><strong>模型配置</strong></p><p><img src="https://cdn.img2ipfs.com/ipfs/QmTuR59WTVJGE8oRq67Zpet5yLFZAUUWDeKLUp9WwCng7s?filename=d5f4cfe3341d5d118a28778da218e526f3b7676f_2_582x998.png" alt></p><p><img src="https://cdn.img2ipfs.com/ipfs/QmWkSuVvDf6i3XpAitwrEcVBd3tz6LbthxpEr7yN1S8FAG?filename=e2001e0829bff91314c146374584ca0ec8dcaacd_2_1210x1000.webp" alt>
+每个模型单独文件，通过<code>models.yaml</code>加载</p></li><li><p><strong>密钥安全</strong></p><p><img src="https://cdn.img2ipfs.com/ipfs/QmeGUm7QZpySt9t6KFhARE6gWib5iDrcGauPxubhKSJvAS?filename=9fa341e6e62789ea17e861caa7ba5cab564457a8_2_1380x932.png" alt></p><p>用<code>.env</code>隔离敏感信息，避免Git泄露</p></li></ul><hr><h3 id=-客户端接入实战>🔌 客户端接入实战</h3><h4 id=1-cherry-studio>1. Cherry Studio</h4><p>配置时注意URL补全问题：</p><p><img src="https://cdn.img2ipfs.com/ipfs/QmdcrqKrv41w9Atc7UaXEFsLdP9xuQ41BvCF7bkBqLJPnS?filename=a5fbb5a36a0193d0dcbbb7042828bf00e79b4239_2_1172x1000.png" alt></p><p>✅ 推荐填写 <code>http://localhost:4000</code> 或 <code>http://localhost:4000/v1/</code></p><h4 id=2-claude-code>2. Claude Code</h4><p>通过环境变量指向LiteLLM网关：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#75715e>// claude.json
+</span></span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;env&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;ANTHROPIC_BASE_URL&#34;</span>: <span style=color:#e6db74>&#34;http://localhost:4000&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;ANTHROPIC_AUTH_TOKEN&#34;</span>: <span style=color:#e6db74>&#34;sk-2015&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>claude 切换模型：</p><p><img src="https://cdn.img2ipfs.com/ipfs/QmSY7Z6ULdxXdwADKUvf8TrkNNFU1sv94BrtLepA8aVeqQ?filename=56059eb3ecf2176fdf8941f4011030c57c24af4f_2_1380x510.png" alt></p><h4 id=3-ccr路由进阶>3. CCR路由进阶</h4><p>使用Claude Code Router实现动态模型分配：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;Providers&#34;</span>: [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;litellm&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;api_base_url&#34;</span>: <span style=color:#e6db74>&#34;http://localhost:4000/v1&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;models&#34;</span>: [<span style=color:#e6db74>&#34;claude-3-7-sonnet&#34;</span>, <span style=color:#e6db74>&#34;gemini-2.5-pro&#34;</span>]
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;deepseek&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;api_base_url&#34;</span>: <span style=color:#e6db74>&#34;http://localhost:4000/v1&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;models&#34;</span>: [<span style=color:#e6db74>&#34;deepseek-r1&#34;</span>]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;Router&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;default&#34;</span>: <span style=color:#e6db74>&#34;litellm,claude-3-7-sonnet&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;think&#34;</span>: <span style=color:#e6db74>&#34;deepseek,deepseek-r1&#34;</span> <span style=color:#960050;background-color:#1e0010>#</span> <span style=color:#960050;background-color:#1e0010>指定场景路由</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>启动：</p><p><img src="https://cdn.img2ipfs.com/ipfs/QmWF7QUFA5vzL99QCx6HFqYpXfWV8YpMnABPPdok1pBLQL?filename=9ef06aa785cf8b2b9d22537745511a17365219a4_2_1380x400.png" alt></p><p>端口3456，证明走的ccr。</p><p>ccr 切换模型注意语法，他需要 加入name的。</p><p>操作效果：</p><p><img src="https://cdn.img2ipfs.com/ipfs/QmdaVi8PEJnRERgZ9vvPsdobntQxZxWHfk6MPCvWHEjwkF?filename=8d157436d1dd2b1a613c030006ee0d31aff0ac57_2_798x998.png" alt></p><p>哈哈 这家伙的话让我不爽，结果👌。</p><p>使用ccr 可以实现，注意litellm貌似再支持claude code的功能上不支持模型大写。这是个bug。 ccr接入litellm没问题，cherry studio 接入没问题。</p><p>ccr 配置：</p><pre tabindex=0><code>{
+  &#34;LOG&#34;: false,
+  &#34;Providers&#34;: [
+    {
+      &#34;name&#34;: &#34;litellm&#34;,
+      &#34;api_base_url&#34;: &#34;http://localhost:4000/v1/chat/completions&#34;,
+      &#34;api_key&#34;: &#34;sk-2015&#34;,
+      &#34;models&#34;: [
+        &#34;claude-3-5-sonnet&#34;,
+        &#34;claude-3-7-sonnet&#34;,
+        &#34;claude-4-sonnet&#34;,
+        &#34;claude-4-sonnet-think&#34;,
+        &#34;claude-3-7-sonnet-think&#34;,
+        &#34;gemini-2.5-flash&#34;,
+        &#34;gemini-2.5-pro-preview-05-06&#34;,
+        &#34;gpt-4o&#34;,
+        &#34;gpt-4o-mini&#34;,
+        &#34;o4-mini&#34;,
+        &#34;gpt-4.1&#34;,
+        &#34;gpt-4.1-mini&#34;,
+        &#34;doubao-1.6-thinking&#34;,
+        &#34;kimi-k2&#34;,
+        &#34;Qwen3-235B-A22B-Instruct-2507&#34;,
+        &#34;Qwen3-Coder-480B-A35B-Instruct&#34;
+      ]
+    },
+  &#34;Router&#34;: {
+      &#34;default&#34;: &#34;litellm,Qwen3-Coder-480B-A35B-Instruct&#34;,
+      &#34;background&#34;: &#34;litellm,gpt-4.1-mini&#34;,
+      &#34;think&#34;: &#34;deepseek,deepseek-r1&#34;,
+      &#34;longContext&#34;: &#34;litellm,gemini-2.5-flash&#34;
+    }
+}
+</code></pre><hr><h3 id=-小结>💡 小结</h3><p>这套方案显著降低了多平台API的管理成本——建议有类似需求的朋友尝试！也再次感谢提供福利的各位大佬 🙏</p><blockquote><p>项目启动：<code>docker-compose up -d</code>
+排错提示：通过日志观察路由策略
+<img src="https://cdn.img2ipfs.com/ipfs/QmYzKtZ3xkR6krQe3hx6VCxCyjf8JiPjeMMRS86JCBGnkx?filename=7a8d07dc2f3551cad7a8de60040fc065fff23cc3_2_1380x608.png" alt></p></blockquote><p>完结
+祝好
+🍀</p></div><div class=prev-next></div><svg id="btt-button" class="arrow-logo" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6.0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9.0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9.0L7 329.7c-9.4-9.4-9.4-24.6.0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
+<script>let backToTopButton=document.getElementById("btt-button");window.onscroll=function(){scrollFunction()};function scrollFunction(){document.body.scrollTop>20||document.documentElement.scrollTop>20?backToTopButton.style.display="block":backToTopButton.style.display="none"}function scrollToTop(){window.scrollTo(0,0)}</script></div></main><footer class=footer><span>&copy; 2025 aLong</span>
+<span>Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a></span></footer></body></html>

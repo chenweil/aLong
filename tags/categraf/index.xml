@@ -19,7 +19,7 @@
 我的路径： &lt;code&gt;home/xxx/nightingate/docker/categraf/conf&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;我这里用到snmp， 就拷贝input.snmp 这个目录到上面路径内。&lt;/p&gt;
 &lt;p&gt;进入这个&lt;code&gt;input.snmp&lt;/code&gt;,里面有两个文件,一个 &lt;code&gt;snmp.toml&lt;/code&gt;另一个是&lt;code&gt;snmp.toml.example&lt;/code&gt; 。实际使用的是第一个，在里面编辑内容：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[[&lt;span style="color:#a6e22e"&gt;instances&lt;/span&gt;]]
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[[&lt;span style="color:#a6e22e"&gt;instances&lt;/span&gt;]]
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;agents&lt;/span&gt; = [&lt;span style="color:#e6db74"&gt;&amp;#34;udp://10.10.10.2:161&amp;#34;&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;timeout&lt;/span&gt; = &lt;span style="color:#e6db74"&gt;&amp;#34;5s&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;version&lt;/span&gt; = &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;
