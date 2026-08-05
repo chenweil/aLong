@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on aLong</title><link>https://blog.51ai.vip/tags/redis/</link><description>Recent content in Redis on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 11 Jan 2022 10:16:39 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/redis/index.xml" rel="self" type="application/rss+xml"/><item><title>linux环境redis开机启动</title><link>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on aLong</title><link>https://blog.51ai.vip/tags/redis/</link><description>Recent content in Redis on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/redis/index.xml" rel="self" type="application/rss+xml"/><item><title>linux环境redis开机启动</title><link>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
 &lt;p&gt;系统部署在ubuntu20.04中，用到redis数据库。
 但是测试时候，设备重启发现redis服务没有启动。
 由于是变异安装的，系统找不到redis.service。&lt;/p&gt;
@@ -37,7 +37,7 @@
 &lt;h3 id="服务生效"&gt;服务生效&lt;/h3&gt;
 &lt;p&gt;系统重新读取所有服务文件： &lt;code&gt;systemctl daemon-reload&lt;/code&gt;
 启用/禁用开机自启动: &lt;code&gt;systemctl enable/disable redis&lt;/code&gt;
-启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description></item><item><title>redis笔记</title><link>https://blog.51ai.vip/posts/redis%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 25 Apr 2019 17:12:52 +0000</pubDate><guid>https://blog.51ai.vip/posts/redis%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="redis笔记"&gt;redis笔记&lt;/h2&gt;
+启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description></item><item><title>redis笔记</title><link>https://blog.51ai.vip/posts/redis%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/redis%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="redis笔记"&gt;redis笔记&lt;/h2&gt;
 &lt;p&gt;单进程,默认16库,&lt;/p&gt;
 &lt;p&gt;select N 切换库&lt;/p&gt;
 &lt;p&gt;flushdb 清空库&lt;/p&gt;

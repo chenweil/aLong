@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Laravel on aLong</title><link>https://blog.51ai.vip/tags/laravel/</link><description>Recent content in Laravel on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 15 Aug 2019 10:01:03 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/laravel/index.xml" rel="self" type="application/rss+xml"/><item><title>Laradock安装与使用</title><link>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate><guid>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;h3 id="laradock-安装与使用"&gt;Laradock 安装与使用&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Laravel on aLong</title><link>https://blog.51ai.vip/tags/laravel/</link><description>Recent content in Laravel on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/laravel/index.xml" rel="self" type="application/rss+xml"/><item><title>Laradock安装与使用</title><link>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;h3 id="laradock-安装与使用"&gt;Laradock 安装与使用&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://laradock.io"&gt;官网&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GitHub: &lt;a href="https://github.com/laradock/laradock"&gt;https://github.com/laradock/laradock&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="要求"&gt;要求&lt;/h3&gt;
@@ -53,7 +53,7 @@
 &lt;li&gt;&lt;code&gt;docker-compose start nginx&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="nginx-配置项目"&gt;Nginx 配置项目&lt;/h3&gt;
-&lt;p&gt;我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.&lt;/p&gt;</description></item><item><title>数据库迁移</title><link>https://blog.51ai.vip/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link><pubDate>Fri, 26 Jul 2019 14:30:25 +0000</pubDate><guid>https://blog.51ai.vip/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid><description>&lt;h2 id="laravel5-数据库迁移笔记"&gt;Laravel5 数据库迁移笔记&lt;/h2&gt;
+&lt;p&gt;我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.&lt;/p&gt;</description></item><item><title>数据库迁移</title><link>https://blog.51ai.vip/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link><pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid><description>&lt;h2 id="laravel5-数据库迁移笔记"&gt;Laravel5 数据库迁移笔记&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h3 id="创建迁移文件"&gt;创建迁移文件&lt;/h3&gt;
@@ -145,7 +145,7 @@ up方法中:
 
 
  
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Composer笔记</title><link>https://blog.51ai.vip/posts/composer%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 15 Jul 2019 17:24:45 +0000</pubDate><guid>https://blog.51ai.vip/posts/composer%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="composer---laravel5"&gt;composer - laravel5&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Composer笔记</title><link>https://blog.51ai.vip/posts/composer%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/composer%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="composer---laravel5"&gt;composer - laravel5&lt;/h3&gt;
 &lt;h4 id="创建laravel项目"&gt;创建laravel项目：&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;conposer create-project laravel/laravel=5.8.* --prefer-dist ./XXX&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;laravel=5.8.* 这里代表要部署5.8中最高版本 &amp;ndash;prefer-dist 参数代表优先下载zip&lt;/p&gt;

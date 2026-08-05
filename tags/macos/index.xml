@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MacOs on aLong</title><link>https://blog.51ai.vip/tags/macos/</link><description>Recent content in MacOs on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 07 Apr 2023 19:33:25 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/macos/index.xml" rel="self" type="application/rss+xml"/><item><title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title><link>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 07 Apr 2023 19:33:25 +0800</pubDate><guid>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="colima"&gt;Colima&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Macos on aLong</title><link>https://blog.51ai.vip/tags/macos/</link><description>Recent content in Macos on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 07 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/macos/index.xml" rel="self" type="application/rss+xml"/><item><title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title><link>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="colima"&gt;Colima&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://github.com/abiosoft/colima"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。&lt;/p&gt;
 &lt;p&gt;Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：&lt;/p&gt;
@@ -29,7 +29,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;p&gt;&lt;code&gt;brew uninstall colima&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。&lt;/p&gt;
 &lt;h2 id="docker交互"&gt;docker交互&lt;/h2&gt;
-&lt;p&gt;启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 &lt;code&gt;docker&lt;/code&gt; 命令来管理容器。&lt;/p&gt;</description></item><item><title>Mac OS自己安装的小软件</title><link>https://blog.51ai.vip/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</link><pubDate>Thu, 06 May 2021 11:06:20 +0000</pubDate><guid>https://blog.51ai.vip/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h2 id="自己使用mac一年多"&gt;自己使用Mac一年多&lt;/h2&gt;
+&lt;p&gt;启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 &lt;code&gt;docker&lt;/code&gt; 命令来管理容器。&lt;/p&gt;</description></item><item><title>Mac OS自己安装的小软件</title><link>https://blog.51ai.vip/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</link><pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h2 id="自己使用mac一年多"&gt;自己使用Mac一年多&lt;/h2&gt;
 &lt;p&gt;自己在19年12月换了mac 16&amp;quot; 笔记本。之前一直windwos，后来看很多讲师在讲课的时候都是mac本本。又觉得windws10更新频繁，还强制让我很不爽。&lt;/p&gt;
 &lt;p&gt;最后凑巧16&amp;quot;出来后，自己媳妇送了我一台。美滋滋～&lt;/p&gt;
 &lt;h2 id="讲讲我说的小软件"&gt;讲讲我说的小软件&lt;/h2&gt;
@@ -46,7 +46,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;li&gt;electerm&lt;/li&gt;
 &lt;li&gt;BLEUnlock&lt;/li&gt;
 &lt;li&gt;Clipy&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>解决MAC软件提示已损坏或移到废纸篓</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</link><pubDate>Fri, 07 Feb 2020 20:24:02 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</guid><description>&lt;h3 id="系统版本"&gt;系统版本&lt;/h3&gt;
+&lt;/ol&gt;</description></item><item><title>解决MAC软件提示已损坏或移到废纸篓</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</link><pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</guid><description>&lt;h3 id="系统版本"&gt;系统版本&lt;/h3&gt;
 &lt;p&gt;macOS Catalina 10.15.1&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -64,7 +64,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;p&gt;&lt;em&gt;或者在Applications目录下输入名称补全&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s2.ax1x.com/2020/02/07/12ElE6.jpg" alt=""&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Mac book pro 终端走代理配置</title><link>https://blog.51ai.vip/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</link><pubDate>Mon, 20 Jan 2020 08:13:10 +0000</pubDate><guid>https://blog.51ai.vip/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</guid><description>&lt;h3 id="mac-终端走ssr代理"&gt;mac 终端走ssr代理&lt;/h3&gt;
+&lt;/ul&gt;</description></item><item><title>Mac book pro 终端走代理配置</title><link>https://blog.51ai.vip/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</link><pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</guid><description>&lt;h3 id="mac-终端走ssr代理"&gt;mac 终端走ssr代理&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;看下自己ssr 代理端口号是多少
 高级设置看下 本地Socks5监听端口
@@ -83,7 +83,7 @@ mac 现在默认终端是用的zsh
 当使用ss之后， 再通过这个查询就可以看到变化了。&lt;/p&gt;
 &lt;p&gt;为了便捷，我觉得这个命令也可以设置成别名方式。&lt;/p&gt;
 &lt;p&gt;设置一个where 每次当我迷茫不知道自己出没出去的时候，就可以 输入where 看下。
-&lt;code&gt;alias where='curl cip.cc'&lt;/code&gt;&lt;/p&gt;</description></item><item><title>VMware安装MacOS系统</title><link>https://blog.51ai.vip/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 12 Aug 2019 11:29:38 +0000</pubDate><guid>https://blog.51ai.vip/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h2 id="虚拟机安装-macos"&gt;虚拟机安装 macOS&lt;/h2&gt;
+&lt;code&gt;alias where='curl cip.cc'&lt;/code&gt;&lt;/p&gt;</description></item><item><title>VMware安装MacOS系统</title><link>https://blog.51ai.vip/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h2 id="虚拟机安装-macos"&gt;虚拟机安装 macOS&lt;/h2&gt;
 &lt;h4 id="准备工作"&gt;准备工作:&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;VM关闭进程,利用macOS Unlocker修改VM使其能安装macOS系统, 执行程序 win-install.cmd 使用管理员权限运行脚本.&lt;/li&gt;

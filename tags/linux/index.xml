@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on aLong</title><link>https://blog.51ai.vip/tags/linux/</link><description>Recent content in Linux on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 06 Jan 2023 15:35:43 +0800</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>&lt;p&gt;Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on aLong</title><link>https://blog.51ai.vip/tags/linux/</link><description>Recent content in Linux on aLong</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 11 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.51ai.vip/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntu22.04安装kubeadm</title><link>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid><description>&lt;h1 id="学习k8s"&gt;学习k8s&lt;/h1&gt;
+&lt;p&gt;学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04&lt;/p&gt;
+&lt;h2 id="系统安装docker"&gt;系统安装docker&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;Docker官方手册&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;master、node设备各安装docker、kubelet、 kubeadm、 kubectl。&lt;/p&gt;
+&lt;h2 id="为kubeadm准备"&gt;为kubeadm准备&lt;/h2&gt;
+&lt;p&gt;master、node进行准备工作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将cgroup处理改成systemd&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;nano /etc/docker/daemon.json&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;exec-opts&amp;#34;&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#34;native.cgroupdriver=systemd&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;log-driver&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;json-file&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;log-opts&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;max-size&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;100m&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;storage-driver&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;overlay2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;sudo systemctl enable docker&lt;/code&gt;
+&lt;code&gt;sudo systemctl daemon-reload&lt;/code&gt;
+&lt;code&gt;sudo systemctl restart docker&lt;/code&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;为了让 Kubernetes 能够检查、转发网络流量，你需要修改 iptables 的配置，启用“br_netfilter”模块&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;nano /etc/modules-load.d/k8s.conf&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;br_netfilter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;nano /etc/sysctl.d/k8s.conf&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;net.bridge.bridge-nf-call-ip6tables&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;net.bridge.bridge-nf-call-iptables&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;net.ipv4.ip_forward&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;sudo sysctl --system&lt;/code&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;修改“/etc/fstab”，关闭 Linux 的 swap 分区，提升 Kubernetes 的性能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;sudo swapoff -a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;sudo sed -ri &amp;#39;/\sswap\s/s/^#?/#/&amp;#39; /etc/fstab&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="安装kubeadm"&gt;安装kubeadm&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/"&gt;Kuneadm官方手册&lt;/a&gt;
+&lt;strong&gt;在master、node上都需要安装&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;更新 &lt;code&gt;apt&lt;/code&gt; 包索引并安装使用 Kubernetes &lt;code&gt;apt&lt;/code&gt; 仓库所需要的包：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt-get install -y apt-transport-https ca-certificates curl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;(有条件)下载 Google Cloud 公开签名秘钥：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果上面访问不到，可选择其他,例如&lt;a href="https://mirrors.tuna.tsinghua.edu.cn/help/kubernetes/"&gt;清华源&lt;/a&gt;提供：
+导入gpg key&lt;/p&gt;</description></item><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>&lt;p&gt;Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p&gt;
 &lt;h1 id="macos部署方式"&gt;MacOS部署方式:&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://minikube.sigs.k8s.io/docs/start/"&gt;官方教程&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
@@ -57,7 +108,7 @@ macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
 &lt;code&gt;kubectl describe pods nginx&lt;/code&gt;
 &lt;img src="https://s2.loli.net/2023/01/06/pYPqIgt84LzBcEU.png" alt="pYPqIgt84LzBcEU"&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;到这里k8s可以使用了。&lt;/p&gt;</description></item><item><title>linux环境redis开机启动</title><link>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;到这里k8s可以使用了。&lt;/p&gt;</description></item><item><title>linux环境redis开机启动</title><link>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
 &lt;p&gt;系统部署在ubuntu20.04中，用到redis数据库。
 但是测试时候，设备重启发现redis服务没有启动。
 由于是变异安装的，系统找不到redis.service。&lt;/p&gt;
@@ -96,7 +147,7 @@ macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
 &lt;h3 id="服务生效"&gt;服务生效&lt;/h3&gt;
 &lt;p&gt;系统重新读取所有服务文件： &lt;code&gt;systemctl daemon-reload&lt;/code&gt;
 启用/禁用开机自启动: &lt;code&gt;systemctl enable/disable redis&lt;/code&gt;
-启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动"&gt;Linux系统重启后Docker自动启动&lt;/h2&gt;
+启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动"&gt;Linux系统重启后Docker自动启动&lt;/h2&gt;
 &lt;p&gt;系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。
 配置过一次总是忘记命令，这里特意记录一下：
 &lt;code&gt;systemctl enable docker.service&lt;/code&gt;&lt;/p&gt;
@@ -122,7 +173,7 @@ macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
 &lt;h3 id="容器已存在更新重启配置"&gt;容器已存在更新重启配置&lt;/h3&gt;
 &lt;p&gt;可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令：
 &lt;code&gt;docker container update --restart=always 容器名XXX&lt;/code&gt;
-这样就达到了想要的目的。&lt;/p&gt;</description></item><item><title>Centos5不升级内核更新</title><link>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link><pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid><description>&lt;h3 id="前提"&gt;前提&lt;/h3&gt;
+这样就达到了想要的目的。&lt;/p&gt;</description></item><item><title>Centos5不升级内核更新</title><link>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link><pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid><description>&lt;h3 id="前提"&gt;前提&lt;/h3&gt;
 &lt;p&gt;公司需要环境Centos5, 又不能升级内核.&lt;/p&gt;
 &lt;p&gt;查了一下 大概是 需要 &lt;code&gt;yum –exclude=kernel* update&lt;/code&gt; 或者修改 yum.conf&lt;/p&gt;
 &lt;h3 id="测试一下-出现一个问题"&gt;测试一下 出现一个问题:&lt;/h3&gt;
@@ -184,7 +235,28 @@ baseurl=http://vault.centos.org/5.11/contrib/$basearch/
 gpgcheck=1
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后 再使用上面的yum 去更新,发现yum 语句是有问题的.&lt;/p&gt;</description></item><item><title>Centos7时间设置</title><link>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link><pubDate>Fri, 19 Apr 2019 11:42:02 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h3 id="centos7时间相关"&gt;Centos7时间相关&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后 再使用上面的yum 去更新,发现yum 语句是有问题的.&lt;/p&gt;</description></item><item><title>Ubutun16.04安装Python</title><link>https://blog.51ai.vip/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link><pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid><description>&lt;h3 id="目的"&gt;目的&lt;/h3&gt;
+&lt;p&gt;安装python3.7.3
+安装pip&lt;/p&gt;
+&lt;h3 id="准备工作"&gt;准备工作&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;系统内置python2.X,去除默认python的软链, &lt;code&gt;sudo rm /usr/bin/python&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安装一些软件包&amp;amp;软件包保持最新状态.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="安装python"&gt;安装Python&lt;/h3&gt;
+&lt;p&gt;通过编译安装python&lt;/p&gt;
+&lt;p&gt;默认我下载在home里, &lt;code&gt;cd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;下载新python文件, &lt;code&gt;wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压文件, &lt;code&gt;tar zxf Python-3.7.3.tgz&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;把这个文件拷贝到放置的位置. 这里我放到/usr/local/python &lt;code&gt;mkdir -p /usr/local/python&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;进入这个目录, 执行 &lt;code&gt;./configure --enable-optimizations&lt;/code&gt;
+之后执行 &lt;code&gt;sudo make -j 8&lt;/code&gt; 这里8根据设备cpu核心数来的,不知道你可以写1(手动滑稽)&lt;/p&gt;
+&lt;p&gt;make之后 该 &lt;del&gt;make install&lt;/del&gt; 嘛? NO! 是 &lt;code&gt;sudo make altinstall&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在.
+需要手动添加一下,我这个是没有给我创建成功.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo ln -s /usr/local/Python-3.7.3/python /usr/bin/python&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Centos7时间设置</title><link>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link><pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h3 id="centos7时间相关"&gt;Centos7时间相关&lt;/h3&gt;
 &lt;h4 id="查看时间"&gt;查看时间&lt;/h4&gt;
 &lt;p&gt;date
 hwclock 硬件时间
@@ -198,7 +270,7 @@ timedatectl 各时间状态&lt;/p&gt;
 &lt;p&gt;hwclock &amp;ndash;systohc&lt;/p&gt;
 &lt;h4 id="设置时区"&gt;设置时区&lt;/h4&gt;
 &lt;p&gt;timedatectl set-timezone Asia/Shanghai （上海）&lt;/p&gt;
-&lt;p&gt;timedatectl 很多设置，需要请查相关资料。&lt;/p&gt;</description></item><item><title>Centos7防火墙相关设置</title><link>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link><pubDate>Thu, 18 Apr 2019 17:44:22 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7与之前不太一样"&gt;Centos7与之前不太一样&lt;/h4&gt;
+&lt;p&gt;timedatectl 很多设置，需要请查相关资料。&lt;/p&gt;</description></item><item><title>Centos7防火墙相关设置</title><link>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link><pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7与之前不太一样"&gt;Centos7与之前不太一样&lt;/h4&gt;
 &lt;p&gt;以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。
 这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。&lt;/p&gt;
 &lt;h4 id="查看防火墙服务状态"&gt;查看防火墙服务状态&lt;/h4&gt;
@@ -225,7 +297,7 @@ timedatectl 各时间状态&lt;/p&gt;
 &lt;h4 id="查询某端口是否开放8010"&gt;查询某端口是否开放(8010)&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;firewall-cmd --query-port=8010/tcp&lt;/code&gt;&lt;/p&gt;
 &lt;h4 id="移除端口规则"&gt;移除端口规则&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;firewall-cmd --permanent --remove-port=8010/tcp&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Centos7启动等级设置</title><link>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 15 Apr 2019 16:55:19 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7启动级别"&gt;Centos7启动级别&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --permanent --remove-port=8010/tcp&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Centos7启动等级设置</title><link>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7启动级别"&gt;Centos7启动级别&lt;/h4&gt;
 &lt;p&gt;启动级别分为7个：
 0 - 系统停机状态
 1 - 单用户工作状态
@@ -243,4 +315,28 @@ multi-user.target = init3
 graphical.target = init5
 我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。
 &lt;code&gt;systemctl set-default multi-user.target&lt;/code&gt; 设置为init3
-&lt;code&gt;systemctl set-default graphical.target&lt;/code&gt; 设置为init5&lt;/p&gt;</description></item></channel></rss>
+&lt;code&gt;systemctl set-default graphical.target&lt;/code&gt; 设置为init5&lt;/p&gt;</description></item><item><title>Ubutun下安装Docker</title><link>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介"&gt;Docker简介&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一个能够把开发的应用程序自动部署到容器的开源引擎
+三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;具体信息请参考官方。&lt;a href="https://docs.docker.com/engine/docker-overview/"&gt;官方概述&lt;/a&gt;（养成看文档习惯）&lt;/p&gt;
+&lt;h3 id="安装环境"&gt;安装环境&lt;/h3&gt;
+&lt;p&gt;Ubuntu 16.04 LTS&lt;/p&gt;
+&lt;h3 id="docker安装"&gt;Docker安装&lt;/h3&gt;
+&lt;p&gt;根据官方doc安装。&lt;a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/"&gt;官方doc&lt;/a&gt;
+1.如果你之前装过，命令卸载。
+&lt;code&gt;sudo apt-get remove docker docker-engine docker.io containerd runc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;2.更新包索引
+&lt;code&gt;apt-get update&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;3.安装包以允许apt通过HTTPS使用存储库:
+&lt;code&gt;sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common&lt;/code&gt;
+（斜线换行，一条命令）&lt;/p&gt;
+&lt;p&gt;4.添加Docker的官方GPG密钥:
+&lt;code&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -&lt;/code&gt;
+&lt;code&gt;sudo apt-key fingerprint 0EBFCD88&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;5.使用以下命令设置稳定存储库。要添加 夜间或测试存储库，请在下面的命令中的单词后添加单词nightly或test（或两者）stable。
+&lt;code&gt;$ sudo add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot;&lt;/code&gt;
+(lsb_release -cs子命令返回Ubuntu发行版的名称)&lt;/p&gt;
+&lt;p&gt;6.安装最新版本的Docker CE和containerd，或者转到下一步安装特定版本：
+&lt;code&gt;sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code&gt;&lt;/p&gt;</description></item></channel></rss>

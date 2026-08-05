@@ -107,7 +107,7 @@ MCP支持有问题，我不知道是模型的事还是什么。比如通过exa�
 &lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/Qmf3ARKSB1DEG8eurY9HKTo9NfEX69ZxFhB7m8syMSahTX?filename=Pasted%20image%2020251220165940.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;我在dia询问大致也是类似的回答吧：&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://cdn.img2ipfs.com/ipfs/QmbLyCukN7pgbWdq7A52Vyd98Lmbe23edHzGrC3JVFHShj?filename=Pasted%20image%2020251220165947.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;以上就是大致的体验。Custom Providers给接入第三方接入提供了便利，让我不需要在本机开启其他proxy。 直接使用自定义的API，期待这方面后续的发展。&lt;/p&gt;</description></item><item><title>一站式解决多API管理痛点</title><link>https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/</link><pubDate>Mon, 21 Jul 2025 02:31:11 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/</guid><description>&lt;p&gt;虽然许多平台提供丰富的API福利，但大多数被闲置了：有些有效期短暂，有些注册后就被遗忘。更麻烦的是不同平台的模型命名混乱、接入方式各异。&lt;/p&gt;
+&lt;p&gt;以上就是大致的体验。Custom Providers给接入第三方接入提供了便利，让我不需要在本机开启其他proxy。 直接使用自定义的API，期待这方面后续的发展。&lt;/p&gt;</description></item><item><title>一站式解决多API管理痛点</title><link>https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/</link><pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E4%B8%80%E7%AB%99%E5%BC%8F%E8%A7%A3%E5%86%B3%E5%A4%9Aapi%E7%AE%A1%E7%90%86%E7%97%9B%E7%82%B9/</guid><description>&lt;p&gt;虽然许多平台提供丰富的API福利，但大多数被闲置了：有些有效期短暂，有些注册后就被遗忘。更麻烦的是不同平台的模型命名混乱、接入方式各异。&lt;/p&gt;
 &lt;p&gt;最近发现&lt;strong&gt;LiteLLM&lt;/strong&gt;这个项目深得我心——它能统一管理所有AI模型API！通过搭建代理网关，只需一个URL和Key就能调用任意模型，就像把法宝都装进乾坤袋✨&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;📌 &lt;strong&gt;解决的核心问题：&lt;/strong&gt;&lt;/p&gt;
@@ -684,7 +684,7 @@ secrets:
 &lt;p&gt;底栏左侧按钮上划时快速切换打开的网页,点击打开打开页面的预览,上划关闭网页.长按打开PC同步的&lt;code&gt;space&lt;/code&gt;内容.&lt;/p&gt;
 &lt;p&gt;大概就这些,感谢浏览.&lt;/p&gt;
 &lt;p&gt;完结
-祝好&lt;/p&gt;</description></item><item><title>Snapbox</title><link>https://blog.51ai.vip/posts/snapbox/</link><pubDate>Sat, 14 Sep 2024 10:42:26 +0800</pubDate><guid>https://blog.51ai.vip/posts/snapbox/</guid><description>&lt;h1 id="一款macos的app"&gt;一款macOS的APP&lt;/h1&gt;
+祝好&lt;/p&gt;</description></item><item><title>Snapbox</title><link>https://blog.51ai.vip/posts/snapbox/</link><pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/snapbox/</guid><description>&lt;h1 id="一款macos的app"&gt;一款macOS的APP&lt;/h1&gt;
 &lt;p&gt;app网站 : &lt;a href="https://snapbox.app/"&gt;https://snapbox.app/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;我在&lt;a href="https://www.v2ex.com/t/1062087"&gt;v2ex&lt;/a&gt;上看到此贴.&lt;/p&gt;
 &lt;p&gt;作者3.5天的时间通过Claude 3.5 Sonnet协助开发的macOS App.需要M系列芯片的设备.&lt;/p&gt;
@@ -725,7 +725,7 @@ secrets:
 &lt;p&gt;反思自己也在日常工作中尝试利用AI模型来优化脚本编写和项目代码调整，确实感受到了效率的提升。&lt;/p&gt;
 &lt;p&gt;展望未来，AI辅助开发很可能成为主流趋势。but我们仍需谨慎对待，在享受AI带来便利的同时，也要注意培养自身解决问题的能力，而不是过度依赖AI。&lt;/p&gt;
 &lt;p&gt;完结~
-感谢观看&lt;/p&gt;</description></item><item><title>Arc</title><link>https://blog.51ai.vip/posts/arc/</link><pubDate>Fri, 13 Sep 2024 14:23:51 +0800</pubDate><guid>https://blog.51ai.vip/posts/arc/</guid><description>&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
+感谢观看&lt;/p&gt;</description></item><item><title>Arc</title><link>https://blog.51ai.vip/posts/arc/</link><pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/arc/</guid><description>&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
 &lt;p&gt;使用arc浏览器作为主力之前,更喜欢chrome.&lt;/p&gt;
 &lt;p&gt;也考虑edge替代朴素的chrome.事与愿违,在后面使用中edge变越越来越不喜欢的东西.&lt;/p&gt;
 &lt;p&gt;加入了很多我不喜欢、不去用的功能展示在界面上. 后面我就没继续使用了,不评价edge的好坏.我不喜欢用它.&lt;/p&gt;
@@ -778,7 +778,7 @@ secrets:
 &lt;p&gt;我更喜欢在&lt;code&gt;command + T&lt;/code&gt; 弹出来的对话框里进行搜索. 他像 &lt;code&gt;raycast&lt;/code&gt; 功能那样快捷搜索.&lt;/p&gt;
 &lt;p&gt;GitHub:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s2.loli.net/2024/09/13/aQN8Z9GPMEFWfnY.gif" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;linux.do:&lt;/p&gt;</description></item><item><title>LLM_fine Tuning</title><link>https://blog.51ai.vip/posts/llm_fine-tuning/</link><pubDate>Thu, 15 Aug 2024 13:39:15 +0800</pubDate><guid>https://blog.51ai.vip/posts/llm_fine-tuning/</guid><description>&lt;h1 id="微调-fine-tuning"&gt;微调 fine-tuning&lt;/h1&gt;
+&lt;p&gt;linux.do:&lt;/p&gt;</description></item><item><title>LLM_fine Tuning</title><link>https://blog.51ai.vip/posts/llm_fine-tuning/</link><pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/llm_fine-tuning/</guid><description>&lt;h1 id="微调-fine-tuning"&gt;微调 fine-tuning&lt;/h1&gt;
 &lt;p&gt;微调是一种监督学习过程,在这个过程中可以使用一组带标签的示例数据来更新LLM的权重.使其为特定任务生成良好完成的能力.&lt;/p&gt;
 &lt;p&gt;指令微调特别擅长提高模型在各种任务中的性能.
 &lt;img src="https://s2.loli.net/2024/08/15/zdjLFeb17cpSwvO.png" alt="image.png"&gt;&lt;/p&gt;
@@ -847,7 +847,7 @@ secrets:
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;name&lt;/span&gt; = &lt;span style="color:#e6db74"&gt;&amp;#34;ifPhysAddress&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;is_tag&lt;/span&gt; = &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="遇到问题"&gt;遇到问题&lt;/h3&gt;
-&lt;p&gt;保存重启categraf后，我只看到了一个指标&lt;code&gt;snmp_uptime&lt;/code&gt;。我单独取&lt;code&gt;uptime&lt;/code&gt;这个是有的，就好像没办法执行&lt;code&gt;snmpwalk&lt;/code&gt; 只能搞&lt;code&gt;snmpget&lt;/code&gt;。&lt;/p&gt;</description></item><item><title>Roadmap&amp;Go</title><link>https://blog.51ai.vip/posts/roadmapgo/</link><pubDate>Mon, 15 May 2023 14:53:11 +0800</pubDate><guid>https://blog.51ai.vip/posts/roadmapgo/</guid><description>&lt;p&gt;技术类的Roadmap（路线图）具有许多好处，下面是其中几个主要的好处：&lt;/p&gt;
+&lt;p&gt;保存重启categraf后，我只看到了一个指标&lt;code&gt;snmp_uptime&lt;/code&gt;。我单独取&lt;code&gt;uptime&lt;/code&gt;这个是有的，就好像没办法执行&lt;code&gt;snmpwalk&lt;/code&gt; 只能搞&lt;code&gt;snmpget&lt;/code&gt;。&lt;/p&gt;</description></item><item><title>Roadmap&amp;Go</title><link>https://blog.51ai.vip/posts/roadmapgo/</link><pubDate>Mon, 15 May 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/roadmapgo/</guid><description>&lt;p&gt;技术类的Roadmap（路线图）具有许多好处，下面是其中几个主要的好处：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;明确目标：Roadmap可以帮助技术团队明确目标和愿景。它提供了一个清晰的计划，使团队成员知道他们正在朝着什么方向前进，并且可以更好地集中精力和资源。&lt;/li&gt;
 &lt;li&gt;规划优先级：Roadmap可以帮助团队确定优先级和时间表。通过将不同的功能、项目和任务安排在时间轴上，团队可以了解何时开始和完成每个任务，从而更好地分配资源和人力。&lt;/li&gt;
@@ -875,7 +875,7 @@ secrets:
 &lt;p&gt;个人认为技术类的Roadmap可以帮助团队提高效率、降低风险、改善沟通和协作，并为实现技术目标提供清晰的指导。它是一个重要的管理工具，有助于组织和规划技术团队的工作，使其能够更好地满足业务需求并取得成功。&lt;/p&gt;
 &lt;p&gt;完结
 祝好
-～&lt;/p&gt;</description></item><item><title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title><link>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 07 Apr 2023 19:33:25 +0800</pubDate><guid>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="colima"&gt;Colima&lt;/h1&gt;
+～&lt;/p&gt;</description></item><item><title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title><link>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="colima"&gt;Colima&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://github.com/abiosoft/colima"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。&lt;/p&gt;
 &lt;p&gt;Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：&lt;/p&gt;
@@ -906,7 +906,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;p&gt;&lt;code&gt;brew uninstall colima&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。&lt;/p&gt;
 &lt;h2 id="docker交互"&gt;docker交互&lt;/h2&gt;
-&lt;p&gt;启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 &lt;code&gt;docker&lt;/code&gt; 命令来管理容器。&lt;/p&gt;</description></item><item><title>Ubuntu22.04安装kubeadm</title><link>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link><pubDate>Wed, 11 Jan 2023 16:30:47 +0800</pubDate><guid>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid><description>&lt;h1 id="学习k8s"&gt;学习k8s&lt;/h1&gt;
+&lt;p&gt;启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 &lt;code&gt;docker&lt;/code&gt; 命令来管理容器。&lt;/p&gt;</description></item><item><title>Ubuntu22.04安装kubeadm</title><link>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubuntu22.04%E5%AE%89%E8%A3%85kubeadm/</guid><description>&lt;h1 id="学习k8s"&gt;学习k8s&lt;/h1&gt;
 &lt;p&gt;学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04&lt;/p&gt;
 &lt;h2 id="系统安装docker"&gt;系统安装docker&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;Docker官方手册&lt;/a&gt;&lt;/p&gt;
@@ -957,7 +957,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果上面访问不到，可选择其他,例如&lt;a href="https://mirrors.tuna.tsinghua.edu.cn/help/kubernetes/"&gt;清华源&lt;/a&gt;提供：
-导入gpg key&lt;/p&gt;</description></item><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 15:35:43 +0800</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>&lt;p&gt;Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p&gt;
+导入gpg key&lt;/p&gt;</description></item><item><title>通过minikube部署K8S学习环境</title><link>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E9%80%9A%E8%BF%87minikube%E9%83%A8%E7%BD%B2k8s%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</guid><description>&lt;p&gt;Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。&lt;/p&gt;
 &lt;h1 id="macos部署方式"&gt;MacOS部署方式:&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://minikube.sigs.k8s.io/docs/start/"&gt;官方教程&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;本次使用的驱动是 parallels驱动。所以本机需要安装此软件。
@@ -1016,7 +1016,7 @@ macos默认使用的zsh，在zsh加入alias就可以敲的少的了。&lt;/p&gt;
 &lt;code&gt;kubectl describe pods nginx&lt;/code&gt;
 &lt;img src="https://s2.loli.net/2023/01/06/pYPqIgt84LzBcEU.png" alt="pYPqIgt84LzBcEU"&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;到这里k8s可以使用了。&lt;/p&gt;</description></item><item><title>IOS使用Shadowrocket激活Emby</title><link>https://blog.51ai.vip/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</link><pubDate>Wed, 16 Nov 2022 10:44:11 +0800</pubDate><guid>https://blog.51ai.vip/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</guid><description>&lt;p&gt;前提需要手机安装ShadowRocket。没有可以自己去找共享ID。
+&lt;p&gt;到这里k8s可以使用了。&lt;/p&gt;</description></item><item><title>IOS使用Shadowrocket激活Emby</title><link>https://blog.51ai.vip/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</link><pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ios%E4%BD%BF%E7%94%A8shadowrocket%E6%BF%80%E6%B4%BBembyx/</guid><description>&lt;p&gt;前提需要手机安装ShadowRocket。没有可以自己去找共享ID。
 &lt;img src="https://s2.loli.net/2022/11/16/aMKuwbEe1Y3BVgF.png" alt="aMKuwbEe1Y3BVgF"&gt;
 长按后弹出选项：
 &lt;img src="https://s2.loli.net/2022/11/16/1HKa2Vywfq9uU8L.png" alt="1HKa2Vywfq9uU8L"&gt;
@@ -1043,7 +1043,7 @@ hostname = mb3admin.com
 后面就可以畅快看影视啦。&lt;/p&gt;
 &lt;p&gt;下次进入Emby时不需要Shadowrocket的配置了。当出现付费提示再开启那个配置就可以激活了。&lt;/p&gt;
 &lt;p&gt;完结～
-祝好！&lt;/p&gt;</description></item><item><title>Zabbix自动发现SNMP设备</title><link>https://blog.51ai.vip/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link><pubDate>Wed, 12 Oct 2022 11:15:29 +0800</pubDate><guid>https://blog.51ai.vip/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid><description>&lt;blockquote&gt;
+祝好！&lt;/p&gt;</description></item><item><title>Zabbix自动发现SNMP设备</title><link>https://blog.51ai.vip/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link><pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;Zabbix提供高效灵活的网络自动发现功能。
 网络发现的优势：&lt;/p&gt;
 &lt;ul&gt;
@@ -1090,7 +1090,7 @@ hostname = mb3admin.com
 &lt;li&gt;关联模版，Link to templates：模版名。&lt;/li&gt;
 &lt;li&gt;开启Host。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;通过这个配置后，发现的主机会根据这个配置进行操作。&lt;/p&gt;</description></item><item><title>Lux视频下载工具</title><link>https://blog.51ai.vip/posts/lux%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/</link><pubDate>Thu, 01 Sep 2022 13:03:41 +0800</pubDate><guid>https://blog.51ai.vip/posts/lux%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
+&lt;p&gt;通过这个配置后，发现的主机会根据这个配置进行操作。&lt;/p&gt;</description></item><item><title>Lux视频下载工具</title><link>https://blog.51ai.vip/posts/lux%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/</link><pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/lux%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
 &lt;p&gt;是一个下载视频的软件. 我一般通过此软件下载b站视频.支持专辑下载.
 支持的站点: &lt;a href="https://github.com/iawia002/lux#supported-sites"&gt;介绍&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="仓库"&gt;仓库&lt;/h2&gt;
@@ -1122,7 +1122,7 @@ hostname = mb3admin.com
 &lt;img src="https://s2.loli.net/2022/08/24/41QIMdEcWzi2s5K.png" alt="41QIMdEcWzi2s5K"&gt;&lt;/li&gt;
 &lt;li&gt;查询清晰度
 &lt;img src="https://s2.loli.net/2022/08/24/mEfOYcG9Uq76L2D.png" alt="mEfOYcG9Uq76L2D"&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Zabbix6 网络发现</title><link>https://blog.51ai.vip/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link><pubDate>Fri, 14 Jan 2022 10:15:53 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid><description>&lt;p&gt;Zabbix6 网络发现&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>Zabbix6 网络发现</title><link>https://blog.51ai.vip/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid><description>&lt;p&gt;Zabbix6 网络发现&lt;/p&gt;
 &lt;h3 id="功能"&gt;功能&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1194,7 +1194,7 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Visible name：描述名&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s2.loli.net/2022/05/30/8azsd4mVbDPU39L.png" alt="ohbmIZ.png"&gt;&lt;/p&gt;
-&lt;p&gt;这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。&lt;/p&gt;</description></item><item><title>linux环境redis开机启动</title><link>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Tue, 11 Jan 2022 10:16:39 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。&lt;/p&gt;</description></item><item><title>linux环境redis开机启动</title><link>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E7%8E%AF%E5%A2%83redis%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
 &lt;p&gt;系统部署在ubuntu20.04中，用到redis数据库。
 但是测试时候，设备重启发现redis服务没有启动。
 由于是变异安装的，系统找不到redis.service。&lt;/p&gt;
@@ -1233,7 +1233,7 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。&lt;/p&gt;
 &lt;h3 id="服务生效"&gt;服务生效&lt;/h3&gt;
 &lt;p&gt;系统重新读取所有服务文件： &lt;code&gt;systemctl daemon-reload&lt;/code&gt;
 启用/禁用开机自启动: &lt;code&gt;systemctl enable/disable redis&lt;/code&gt;
-启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description></item><item><title>S5720 SNMP v3配置</title><link>https://blog.51ai.vip/posts/s5720-snmp-v3/</link><pubDate>Tue, 16 Nov 2021 16:38:35 +0000</pubDate><guid>https://blog.51ai.vip/posts/s5720-snmp-v3/</guid><description>&lt;h2 id="s5720-snmp-v3配置"&gt;S5720 SNMP v3配置&lt;/h2&gt;
+启动/重启redis： &lt;code&gt;systemctl start/restart redis&lt;/code&gt;&lt;/p&gt;</description></item><item><title>S5720 SNMP v3配置</title><link>https://blog.51ai.vip/posts/s5720-snmp-v3/</link><pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/s5720-snmp-v3/</guid><description>&lt;h2 id="s5720-snmp-v3配置"&gt;S5720 SNMP v3配置&lt;/h2&gt;
 &lt;h3 id="系统视图"&gt;系统视图&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;system-view&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id="snmp服务"&gt;SNMP服务&lt;/h3&gt;
@@ -1250,7 +1250,7 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。&lt;/p&gt;
 &lt;h3 id="配置用户认证密码"&gt;配置用户认证密码&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;snmp-agent usm-user v3 *user-name* authentication-mode { md5 | sha } [ cipher *password* ]&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id="配置加密密码"&gt;配置加密密码&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]&lt;/code&gt;&lt;/p&gt;</description></item><item><title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title><link>https://blog.51ai.vip/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link><pubDate>Wed, 27 Oct 2021 15:06:44 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid><description>&lt;h1 id="zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache"&gt;zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;snmp-agent usm-user v3 *user-name* privacy-mode { des56 | aes128 |aes192 | aes256 | 3des } [ cipher *password* ]&lt;/code&gt;&lt;/p&gt;</description></item><item><title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title><link>https://blog.51ai.vip/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link><pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid><description>&lt;h1 id="zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache"&gt;zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache&lt;/h1&gt;
 &lt;h2 id="情况"&gt;情况&lt;/h2&gt;
 &lt;p&gt;接上次做完容器部署proxy后，为其添加host进行添加任务。&lt;/p&gt;
 &lt;p&gt;发现一直没有数据，就到item里面执行 &lt;code&gt;execute now&lt;/code&gt;。&lt;/p&gt;
@@ -1289,7 +1289,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;--restart&lt;span style="color:#f92672"&gt;=&lt;/span&gt;always &lt;span style="color:#ae81ff"&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zabbix/zabbix-proxy-sqlite3:alpine-trunk
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&amp;ndash;祝好&lt;/p&gt;
-&lt;p&gt;本文结束&lt;/p&gt;</description></item><item><title>Zabbix-Proxy 部署运行</title><link>https://blog.51ai.vip/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link><pubDate>Thu, 24 Jun 2021 17:20:40 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;本文结束&lt;/p&gt;</description></item><item><title>Zabbix-Proxy 部署运行</title><link>https://blog.51ai.vip/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link><pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
 &lt;p&gt;版本： zabbix-server 5.4&lt;/p&gt;
 &lt;p&gt;任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。&lt;/p&gt;
 &lt;h2 id="安装zabbix-proxy"&gt;安装Zabbix-Proxy&lt;/h2&gt;
@@ -1331,7 +1331,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;li&gt;在zabbix-server 中添加proxy，然后在对应的host主机上选择proxy。
 &lt;img src="https://img-blog.csdnimg.cn/img_convert/c869c5c2e48a6d94965c4ee9afd1d3a3.png#id=XryPJ&amp;amp;originHeight=1252&amp;amp;originWidth=1686&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none" alt=""&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src="https://img-blog.csdnimg.cn/img_convert/4236f0501054b223da6b5dde07a340a0.png#id=UMgsH&amp;amp;originHeight=930&amp;amp;originWidth=3870&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none" alt=""&gt;&lt;/p&gt;</description></item><item><title>小米手环解锁MacOS系统笔记本MacBookPro</title><link>https://blog.51ai.vip/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</link><pubDate>Fri, 21 May 2021 16:51:23 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</guid><description>&lt;h2 id="通过小米手环解锁笔记本"&gt;通过小米手环解锁笔记本&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://img-blog.csdnimg.cn/img_convert/4236f0501054b223da6b5dde07a340a0.png#id=UMgsH&amp;amp;originHeight=930&amp;amp;originWidth=3870&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none" alt=""&gt;&lt;/p&gt;</description></item><item><title>小米手环解锁MacOS系统笔记本MacBookPro</title><link>https://blog.51ai.vip/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</link><pubDate>Fri, 21 May 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E8%A7%A3%E9%94%81macbookpro%E7%AC%94%E8%AE%B0%E6%9C%AC/</guid><description>&lt;h2 id="通过小米手环解锁笔记本"&gt;通过小米手环解锁笔记本&lt;/h2&gt;
 &lt;p&gt;官方windows是提供了方法的。
 我目前用的MacBookPro，所以说下苹果笔记本的解锁方式。&lt;/p&gt;
 &lt;h2 id="安装软件bleunlock"&gt;安装软件&lt;code&gt;BLEUnlock&lt;/code&gt;&lt;/h2&gt;
@@ -1356,7 +1356,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;p&gt;为啥呢，他唤醒了设备啊 还解锁了～&lt;/p&gt;
 &lt;p&gt;这点我不知道怎么搞定呢，好 结束～&lt;/p&gt;
 &lt;p&gt;祝好&lt;/p&gt;
-&lt;p&gt;拜拜～&lt;/p&gt;</description></item><item><title>小米手环表盘自定义</title><link>https://blog.51ai.vip/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</link><pubDate>Thu, 20 May 2021 16:34:55 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</guid><description>&lt;p&gt;前阵子媳妇给买了个手环。小米手环5NFC，价格还可以。
+&lt;p&gt;拜拜～&lt;/p&gt;</description></item><item><title>小米手环表盘自定义</title><link>https://blog.51ai.vip/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</link><pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E5%8F%98%E7%9B%98%E8%87%AA%E5%AE%9A%E4%B9%89/</guid><description>&lt;p&gt;前阵子媳妇给买了个手环。小米手环5NFC，价格还可以。
 &lt;img src="https://i.loli.net/2021/05/20/pSb2DolBKGYfd38.jpg" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="定义表盘"&gt;定义表盘&lt;/h2&gt;
 &lt;p&gt;手环就不做评价了，我感觉续航不错。屏幕划痕太容了吧。&lt;/p&gt;
@@ -1404,7 +1404,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;p&gt;真的结束了吗？！ 还要下载好多一个个去试～ 哈哈哈哈&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;结束
 祝好
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Mac OS自己安装的小软件</title><link>https://blog.51ai.vip/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</link><pubDate>Thu, 06 May 2021 11:06:20 +0000</pubDate><guid>https://blog.51ai.vip/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h2 id="自己使用mac一年多"&gt;自己使用Mac一年多&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Mac OS自己安装的小软件</title><link>https://blog.51ai.vip/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</link><pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/mac-os%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h2 id="自己使用mac一年多"&gt;自己使用Mac一年多&lt;/h2&gt;
 &lt;p&gt;自己在19年12月换了mac 16&amp;quot; 笔记本。之前一直windwos，后来看很多讲师在讲课的时候都是mac本本。又觉得windws10更新频繁，还强制让我很不爽。&lt;/p&gt;
 &lt;p&gt;最后凑巧16&amp;quot;出来后，自己媳妇送了我一台。美滋滋～&lt;/p&gt;
 &lt;h2 id="讲讲我说的小软件"&gt;讲讲我说的小软件&lt;/h2&gt;
@@ -1421,7 +1421,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;li&gt;electerm&lt;/li&gt;
 &lt;li&gt;BLEUnlock&lt;/li&gt;
 &lt;li&gt;Clipy&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>SSH 指定端口访问</title><link>https://blog.51ai.vip/posts/ssh-%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E8%AE%BF%E9%97%AE/</link><pubDate>Sat, 13 Mar 2021 18:21:50 +0000</pubDate><guid>https://blog.51ai.vip/posts/ssh-%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E8%AE%BF%E9%97%AE/</guid><description>&lt;h2 id="很尴尬"&gt;很尴尬&lt;/h2&gt;
+&lt;/ol&gt;</description></item><item><title>SSH 指定端口访问</title><link>https://blog.51ai.vip/posts/ssh-%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E8%AE%BF%E9%97%AE/</link><pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ssh-%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E8%AE%BF%E9%97%AE/</guid><description>&lt;h2 id="很尴尬"&gt;很尴尬&lt;/h2&gt;
 &lt;p&gt;今天测试，一个通过隧道远程到设备的功能。&lt;/p&gt;
 &lt;p&gt;隧道创建完成，然后我就要ssh到哪台设备。反复连接一直不通，心里万马奔腾啊！～&lt;/p&gt;
 &lt;p&gt;查看配置没问题啊，怎么就！@#¥%！！！&lt;/p&gt;
@@ -1431,7 +1431,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;h3 id="指定端口"&gt;指定端口&lt;/h3&gt;
 &lt;p&gt;指定端口 我很少用，即便是改端口的我也大部分终端软件去连的。&lt;/p&gt;
 &lt;p&gt;正确方式： &lt;code&gt;ssh -p port user@ip&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;记忆深刻，这下很尴尬。 特此记录。&lt;/p&gt;</description></item><item><title>解决/usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied问题</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</link><pubDate>Mon, 22 Feb 2021 09:06:08 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</guid><description>&lt;h3 id="最近goland在run的时候发现一个问题"&gt;最近Goland在run的时候发现一个问题&lt;/h3&gt;
+&lt;p&gt;记忆深刻，这下很尴尬。 特此记录。&lt;/p&gt;</description></item><item><title>解决/usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied问题</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3-usr-local-go-pkg-darwin-amd64-runtime-cgo-a-permission-denied%E9%97%AE%E9%A2%98/</guid><description>&lt;h3 id="最近goland在run的时候发现一个问题"&gt;最近Goland在run的时候发现一个问题&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;open /usr/local/go/pkg/darwin_amd64/runtime/cgo.a: permission denied&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;情况具体是当我run的时候有问题。debug可以。根据错误提示看到是权限的事。&lt;/p&gt;
 &lt;h3 id="解决方式"&gt;解决方式&lt;/h3&gt;
@@ -1442,7 +1442,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;p&gt;当前用户名 常用命令 &lt;code&gt;who am i&lt;/code&gt;
 查看当前用户名和组 &lt;code&gt;ls -la&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id="参考"&gt;参考&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/golang/go/issues/37962"&gt;https://github.com/golang/go/issues/37962&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Grafana插件Plugin中文汉化</title><link>https://blog.51ai.vip/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</link><pubDate>Mon, 30 Nov 2020 13:46:47 +0000</pubDate><guid>https://blog.51ai.vip/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</guid><description>&lt;h2 id="汉化三方插件"&gt;汉化三方插件&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/golang/go/issues/37962"&gt;https://github.com/golang/go/issues/37962&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Grafana插件Plugin中文汉化</title><link>https://blog.51ai.vip/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</link><pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/grafana%E6%8F%92%E4%BB%B6plugin%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96/</guid><description>&lt;h2 id="汉化三方插件"&gt;汉化三方插件&lt;/h2&gt;
 &lt;p&gt;前面说过汉化Grafana的工作。目前在7.2.1上面，大部分已经完成。细节继续完善。
 今天考虑在第三方插件上做一些汉化。点到插件一看全是英文感觉很突出。领导看到了也不爽啊-.-！。&lt;/p&gt;
 &lt;h2 id="找个软的捏"&gt;找个软的捏&lt;/h2&gt;
@@ -1495,7 +1495,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p&gt;
 &lt;h2 id="持续改进"&gt;持续改进&lt;/h2&gt;
 &lt;p&gt;考虑持续处理某个插件，可以考虑fork原插件项目，remote add XXX源。
 然后新建分之来做自己的处理。master fetch XXX源 以跟踪上游的更新。
-这样自己项目安装插件时候拉自己的就好啦，美滋滋。&lt;/p&gt;</description></item><item><title>docker-compose编排搭建prometheus+grafana+alertmanager+node-exporter+snmp-exporter</title><link>https://blog.51ai.vip/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link><pubDate>Tue, 17 Nov 2020 13:02:50 +0000</pubDate><guid>https://blog.51ai.vip/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid><description>&lt;h2 id="docker-compose"&gt;Docker-compose&lt;/h2&gt;
+这样自己项目安装插件时候拉自己的就好啦，美滋滋。&lt;/p&gt;</description></item><item><title>docker-compose编排搭建prometheus+grafana+alertmanager+node-exporter+snmp-exporter</title><link>https://blog.51ai.vip/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/docker-compose%E7%BC%96%E6%8E%92%E6%90%AD%E5%BB%BAprometheus-grafana-alertmanager-node-exporter-snmp-exporter/</guid><description>&lt;h2 id="docker-compose"&gt;Docker-compose&lt;/h2&gt;
 &lt;p&gt;目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。&lt;/p&gt;
 &lt;p&gt;科普之后感觉自己对k8s还有有些发怵的。从简单的一个入手吧，选择了docker-compose。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1540,14 +1540,14 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p&gt;
  └── blackbox.yml
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start="2"&gt;
 &lt;li&gt;
-&lt;p&gt;根据结构编写&lt;/p&gt;</description></item><item><title>关闭Mac的Microsoft AutoUpdate</title><link>https://blog.51ai.vip/posts/%E5%85%B3%E9%97%ADmac%E7%9A%84microsoft-autoupdate/</link><pubDate>Tue, 13 Oct 2020 13:14:34 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E5%85%B3%E9%97%ADmac%E7%9A%84microsoft-autoupdate/</guid><description>&lt;p&gt;最近使用Office 发现AutoUpdate一直会启动。我也不需要里面的更新。每次还要把它推出。&lt;/p&gt;
+&lt;p&gt;根据结构编写&lt;/p&gt;</description></item><item><title>关闭Mac的Microsoft AutoUpdate</title><link>https://blog.51ai.vip/posts/%E5%85%B3%E9%97%ADmac%E7%9A%84microsoft-autoupdate/</link><pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E5%85%B3%E9%97%ADmac%E7%9A%84microsoft-autoupdate/</guid><description>&lt;p&gt;最近使用Office 发现AutoUpdate一直会启动。我也不需要里面的更新。每次还要把它推出。&lt;/p&gt;
 &lt;p&gt;网上看到有两种方法，一种是暴力删除，另一种是通过权限限制。&lt;/p&gt;
 &lt;p&gt;暴力可不是我喜欢的方式，所以选择后者。&lt;/p&gt;
 &lt;p&gt;方法：&lt;/p&gt;
 &lt;p&gt;打开终端&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd /Library/Application&lt;span style="color:#ae81ff"&gt;\ &lt;/span&gt;Support/Microsoft/MAU2.0
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo chmod &lt;span style="color:#ae81ff"&gt;000&lt;/span&gt; Microsoft&lt;span style="color:#ae81ff"&gt;\ &lt;/span&gt;AutoUpdate.app 
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;两行命令后，输入密码就可以了。&lt;/p&gt;</description></item><item><title>申请Let's Encrypt HTTPS 证书脚本</title><link>https://blog.51ai.vip/posts/%E7%94%B3%E8%AF%B7let-s-encrypt-https-%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</link><pubDate>Wed, 24 Jun 2020 13:33:18 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E7%94%B3%E8%AF%B7let-s-encrypt-https-%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</guid><description>&lt;h2 id="最近需要到ssl证书又想免懒选择脚本来更新ssl证书文件"&gt;最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;两行命令后，输入密码就可以了。&lt;/p&gt;</description></item><item><title>申请Let's Encrypt HTTPS 证书脚本</title><link>https://blog.51ai.vip/posts/%E7%94%B3%E8%AF%B7let-s-encrypt-https-%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</link><pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E7%94%B3%E8%AF%B7let-s-encrypt-https-%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</guid><description>&lt;h2 id="最近需要到ssl证书又想免懒选择脚本来更新ssl证书文件"&gt;最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Let’s Encrypt是一个由非营利性组织互联网安全研究小组（ISRG）提供的免费、自动化和开放的证书颁发机构（CA）。
 简单的说，借助Let’s Encrypt颁发的证书可以为我们的网站免费启用HTTPS(SSL/TLS) 。&lt;/p&gt;
@@ -1593,7 +1593,7 @@ IDE打开此项目，在src中修改需要编辑的文件。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;...&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;到此基本上配置完成了。
-Acme.sh 通过定时任务可以实现定期更新。 查看 &lt;code&gt;crontab -l&lt;/code&gt;&lt;/p&gt;</description></item><item><title>GORM 创建联合约束/索引</title><link>https://blog.51ai.vip/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link><pubDate>Thu, 11 Jun 2020 11:50:55 +0000</pubDate><guid>https://blog.51ai.vip/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid><description>&lt;h3 id="grom创建联合索引"&gt;GROM创建联合索引&lt;/h3&gt;
+Acme.sh 通过定时任务可以实现定期更新。 查看 &lt;code&gt;crontab -l&lt;/code&gt;&lt;/p&gt;</description></item><item><title>GORM 创建联合约束/索引</title><link>https://blog.51ai.vip/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</link><pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/gorm-%E5%88%9B%E5%BB%BA%E8%81%94%E5%90%88%E7%BA%A6%E6%9D%9F-%E7%B4%A2%E5%BC%95/</guid><description>&lt;h3 id="grom创建联合索引"&gt;GROM创建联合索引&lt;/h3&gt;
 &lt;p&gt;之前提到一个联合约束，那么根据需求再次做一个演示：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;type&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Demo&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;struct&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	&lt;span style="color:#a6e22e"&gt;ID&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt; &lt;span style="color:#e6db74"&gt;`gorm:&amp;#34;primary_key&amp;#34;`&lt;/span&gt;
@@ -1604,7 +1604,7 @@ Acme.sh 通过定时任务可以实现定期更新。 查看 &lt;code&gt;crontab
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	&lt;span style="color:#a6e22e"&gt;Status&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过demo 迁移后，&lt;code&gt;deleted_at&lt;/code&gt; 与 &lt;code&gt;name&lt;/code&gt; 会形成一个联合约束。&lt;/p&gt;
-&lt;p&gt;-OK,完结-&lt;/p&gt;</description></item><item><title>解决约束与软删除冲突</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3%E7%BA%A6%E6%9D%9F-%E8%BD%AF%E5%88%A0%E9%99%A4%E5%86%B2%E7%AA%81/</link><pubDate>Thu, 11 Jun 2020 11:15:55 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3%E7%BA%A6%E6%9D%9F-%E8%BD%AF%E5%88%A0%E9%99%A4%E5%86%B2%E7%AA%81/</guid><description>&lt;h3 id="约束软删除冲突"&gt;约束&amp;amp;软删除冲突&lt;/h3&gt;
+&lt;p&gt;-OK,完结-&lt;/p&gt;</description></item><item><title>解决约束与软删除冲突</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3%E7%BA%A6%E6%9D%9F-%E8%BD%AF%E5%88%A0%E9%99%A4%E5%86%B2%E7%AA%81/</link><pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3%E7%BA%A6%E6%9D%9F-%E8%BD%AF%E5%88%A0%E9%99%A4%E5%86%B2%E7%AA%81/</guid><description>&lt;h3 id="约束软删除冲突"&gt;约束&amp;amp;软删除冲突&lt;/h3&gt;
 &lt;p&gt;本咸鱼对数据库方面研究甚少。能存数据就没多考虑其他问题。尤其是在设计方面。都是按照接口或者业务推到一下就好了。
 这次考虑一个问题，学习了一个小问题的处理。
 就是标题所述 约束与软删除的冲突。&lt;/p&gt;
@@ -1624,7 +1624,7 @@ Acme.sh 通过定时任务可以实现定期更新。 查看 &lt;code&gt;crontab
 &lt;p&gt;&lt;code&gt;u_number&lt;/code&gt; 因为唯一，导致后续使用此前删除的数据是不可行的，如果直接删前者数据也是不太有B格，不科学的事情。
 通过 联合的约束来完善此事，&lt;code&gt;deleted_at&lt;/code&gt; 正好是时间， 与其联合使用即解决此事。&lt;/p&gt;
 &lt;p&gt;约束不再是单一约束 &lt;code&gt;u_number&lt;/code&gt; 修改成 &lt;code&gt;u_number,deleted_at&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;-OK，完结。-&lt;/p&gt;</description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动"&gt;Linux系统重启后Docker自动启动&lt;/h2&gt;
+&lt;p&gt;-OK，完结。-&lt;/p&gt;</description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动"&gt;Linux系统重启后Docker自动启动&lt;/h2&gt;
 &lt;p&gt;系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。
 配置过一次总是忘记命令，这里特意记录一下：
 &lt;code&gt;systemctl enable docker.service&lt;/code&gt;&lt;/p&gt;
@@ -1650,7 +1650,7 @@ Acme.sh 通过定时任务可以实现定期更新。 查看 &lt;code&gt;crontab
 &lt;h3 id="容器已存在更新重启配置"&gt;容器已存在更新重启配置&lt;/h3&gt;
 &lt;p&gt;可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令：
 &lt;code&gt;docker container update --restart=always 容器名XXX&lt;/code&gt;
-这样就达到了想要的目的。&lt;/p&gt;</description></item><item><title>解决MAC软件提示已损坏或移到废纸篓</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</link><pubDate>Fri, 07 Feb 2020 20:24:02 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</guid><description>&lt;h3 id="系统版本"&gt;系统版本&lt;/h3&gt;
+这样就达到了想要的目的。&lt;/p&gt;</description></item><item><title>解决MAC软件提示已损坏或移到废纸篓</title><link>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</link><pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E8%A7%A3%E5%86%B3mac%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%88%96%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</guid><description>&lt;h3 id="系统版本"&gt;系统版本&lt;/h3&gt;
 &lt;p&gt;macOS Catalina 10.15.1&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1668,7 +1668,7 @@ Acme.sh 通过定时任务可以实现定期更新。 查看 &lt;code&gt;crontab
 &lt;p&gt;&lt;em&gt;或者在Applications目录下输入名称补全&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s2.ax1x.com/2020/02/07/12ElE6.jpg" alt=""&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Mac book pro 终端走代理配置</title><link>https://blog.51ai.vip/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</link><pubDate>Mon, 20 Jan 2020 08:13:10 +0000</pubDate><guid>https://blog.51ai.vip/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</guid><description>&lt;h3 id="mac-终端走ssr代理"&gt;mac 终端走ssr代理&lt;/h3&gt;
+&lt;/ul&gt;</description></item><item><title>Mac book pro 终端走代理配置</title><link>https://blog.51ai.vip/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</link><pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/mac-book-pro-%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</guid><description>&lt;h3 id="mac-终端走ssr代理"&gt;mac 终端走ssr代理&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;看下自己ssr 代理端口号是多少
 高级设置看下 本地Socks5监听端口
@@ -1687,15 +1687,7 @@ mac 现在默认终端是用的zsh
 当使用ss之后， 再通过这个查询就可以看到变化了。&lt;/p&gt;
 &lt;p&gt;为了便捷，我觉得这个命令也可以设置成别名方式。&lt;/p&gt;
 &lt;p&gt;设置一个where 每次当我迷茫不知道自己出没出去的时候，就可以 输入where 看下。
-&lt;code&gt;alias where='curl cip.cc'&lt;/code&gt;&lt;/p&gt;</description></item><item><title>golang.org/x/xerrors：undefined: errors.Frame</title><link>https://blog.51ai.vip/posts/golang-org-x-xerrorsundefined-errors-frame/</link><pubDate>Thu, 16 Jan 2020 19:05:39 +0000</pubDate><guid>https://blog.51ai.vip/posts/golang-org-x-xerrorsundefined-errors-frame/</guid><description>&lt;h3 id="项目初始化遇到问题"&gt;项目初始化遇到问题&lt;/h3&gt;
-&lt;p&gt;错误为：&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-bahs" data-lang="bahs"&gt;../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/adaptor_go1_13.go:16:14: undefined: errors.Frame
-../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/format_go1_13.go:12:18: undefined: errors.Formatter
-exit status 2
-exit status 1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过科普得到一个方法：
-&lt;code&gt;go get -u golang.org/x/xerrors&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;问题解决了。&lt;/p&gt;</description></item><item><title>Golang 环境准备</title><link>https://blog.51ai.vip/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</link><pubDate>Thu, 16 Jan 2020 18:51:34 +0000</pubDate><guid>https://blog.51ai.vip/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid><description>&lt;h2 id="安装golang"&gt;安装GOlang&lt;/h2&gt;
+&lt;code&gt;alias where='curl cip.cc'&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Golang 环境准备</title><link>https://blog.51ai.vip/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</link><pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/golang-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/</guid><description>&lt;h2 id="安装golang"&gt;安装GOlang&lt;/h2&gt;
 &lt;p&gt;环境:macOS&lt;/p&gt;
 &lt;p&gt;shell: zsh&lt;/p&gt;
 &lt;ul&gt;
@@ -1719,7 +1711,15 @@ exit status 1
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export PATH&lt;span style="color:#f92672"&gt;=&lt;/span&gt;$PATH:$GOPATH/bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;退出保存后，使文件生效 &lt;code&gt;source ~/.zshrc=&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>yarn install phantomjs-prebuilt: Command failed.</title><link>https://blog.51ai.vip/posts/yarn-install-phantomjs-prebuilt-command-failed/</link><pubDate>Thu, 16 Jan 2020 14:21:26 +0000</pubDate><guid>https://blog.51ai.vip/posts/yarn-install-phantomjs-prebuilt-command-failed/</guid><description>&lt;h3 id="项目yarn-install-出现phantomjs-prebuilt-command-failed"&gt;项目yarn install 出现phantomjs-prebuilt： Command failed.&lt;/h3&gt;
+&lt;/ul&gt;</description></item><item><title>golang.org/x/xerrors：undefined: errors.Frame</title><link>https://blog.51ai.vip/posts/golang-org-x-xerrorsundefined-errors-frame/</link><pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/golang-org-x-xerrorsundefined-errors-frame/</guid><description>&lt;h3 id="项目初始化遇到问题"&gt;项目初始化遇到问题&lt;/h3&gt;
+&lt;p&gt;错误为：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-bahs" data-lang="bahs"&gt;../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/adaptor_go1_13.go:16:14: undefined: errors.Frame
+../go/pkg/mod/golang.org/x/xerrors@v0.0.0-20190410155217-1f06c39b4373/format_go1_13.go:12:18: undefined: errors.Formatter
+exit status 2
+exit status 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过科普得到一个方法：
+&lt;code&gt;go get -u golang.org/x/xerrors&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;问题解决了。&lt;/p&gt;</description></item><item><title>yarn install phantomjs-prebuilt: Command failed.</title><link>https://blog.51ai.vip/posts/yarn-install-phantomjs-prebuilt-command-failed/</link><pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/yarn-install-phantomjs-prebuilt-command-failed/</guid><description>&lt;h3 id="项目yarn-install-出现phantomjs-prebuilt-command-failed"&gt;项目yarn install 出现phantomjs-prebuilt： Command failed.&lt;/h3&gt;
 &lt;p&gt;自己在项目中发现执行 &lt;code&gt;yarn install&lt;/code&gt;时候，一直卡住没走完。&lt;/p&gt;
 &lt;p&gt;最后报错， &lt;em&gt;error phantomjs-prebuilt： Command failed.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;可以看到错误中，他是从 github.com/Medium/&amp;hellip; 感觉就是没下载成功吧。&lt;/p&gt;
@@ -1733,7 +1733,7 @@ yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;&lt;a href="ht
 &lt;p&gt;&lt;code&gt;rm -rf path/node_moudels&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;yarn install&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;解决问题，美滋滋。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://segmentfault.com/q/1010000010278132"&gt;引用地址&lt;/a&gt;&lt;/p&gt;</description></item><item><title>MySQL5.7修改root密码</title><link>https://blog.51ai.vip/posts/mysql5-7%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81/</link><pubDate>Wed, 15 Jan 2020 15:23:54 +0000</pubDate><guid>https://blog.51ai.vip/posts/mysql5-7%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81/</guid><description>&lt;p&gt;最近维护一个MySQL数据库，由于各种原因，密码已经不知道了。现在让我在这台服务器上使用里面的MySQL数据库。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://segmentfault.com/q/1010000010278132"&gt;引用地址&lt;/a&gt;&lt;/p&gt;</description></item><item><title>MySQL5.7修改root密码</title><link>https://blog.51ai.vip/posts/mysql5-7%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81/</link><pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/mysql5-7%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81/</guid><description>&lt;p&gt;最近维护一个MySQL数据库，由于各种原因，密码已经不知道了。现在让我在这台服务器上使用里面的MySQL数据库。&lt;/p&gt;
 &lt;p&gt;怎么办？&lt;/p&gt;
 &lt;p&gt;首先问了一圈没有人知道。那么只能靠自己了。&lt;/p&gt;
 &lt;p&gt;查看软件版本: &lt;code&gt;mysql --version&lt;/code&gt;&lt;/p&gt;
@@ -1770,7 +1770,7 @@ yarn config set &amp;ldquo;phantomjs_cdnurl&amp;rdquo; &amp;ldquo;&lt;a href="ht
 &lt;p&gt;重启mysql服务&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;最后可以通过设置的密码登陆数据库了。&lt;/p&gt;</description></item><item><title>Prometheus-SNMP_Exporter Generator</title><link>https://blog.51ai.vip/posts/prometheus-snmp-exporter-generator/</link><pubDate>Tue, 24 Dec 2019 15:26:33 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-snmp-exporter-generator/</guid><description>&lt;h2 id="prometheus-snmp-exporter"&gt;Prometheus-SNMP Exporter&lt;/h2&gt;
+&lt;p&gt;最后可以通过设置的密码登陆数据库了。&lt;/p&gt;</description></item><item><title>Prometheus-SNMP_Exporter Generator</title><link>https://blog.51ai.vip/posts/prometheus-snmp-exporter-generator/</link><pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-snmp-exporter-generator/</guid><description>&lt;h2 id="prometheus-snmp-exporter"&gt;Prometheus-SNMP Exporter&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成器从generator.yml读取并写入snmp.yml。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1878,7 +1878,7 @@ make mibs(不建议直接make)
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# EnumAsInfo: 为其创建单个时间序列的枚举。适用于恒定值。&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# EnumAsStateSet: 每个状态具有时间序列的枚举。适用于可变低基数枚举。&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Bits: 一种RFC2578位结构，它产生一个具有每位时间序列的状态集。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下面提供一个自己编写的generator.yml&lt;/p&gt;</description></item><item><title>Prometheus告警模板详解</title><link>https://blog.51ai.vip/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</link><pubDate>Wed, 04 Dec 2019 11:51:43 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</guid><description>&lt;h2 id="目的"&gt;目的&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下面提供一个自己编写的generator.yml&lt;/p&gt;</description></item><item><title>Prometheus告警模板详解</title><link>https://blog.51ai.vip/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</link><pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus%E5%91%8A%E8%AD%A6%E6%A8%A1%E6%9D%BF%E8%AF%A6%E8%A7%A3/</guid><description>&lt;h2 id="目的"&gt;目的&lt;/h2&gt;
 &lt;p&gt;之前配置告警之后,可以发送告警信息.但对于数据具体的结构信息,在模板中数据读取都比较懵.原因是不太清除警报都提供了哪些数据,除了我们设置的信息,还有没有其他的信息.&lt;/p&gt;
 &lt;h3 id="告警数据结构"&gt;告警数据结构&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://prometheus.io/docs/alerting/notifications/#alert"&gt;官方docs&lt;/a&gt;&lt;/p&gt;
@@ -1942,7 +1942,7 @@ make mibs(不建议直接make)
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {{- end -}}
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{{- end -}}
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{{- end -}}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;其中告警设备 server 这个标签是自定义的.如果没有可以删除此行或根据自己标签定义.&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Prometheus标签处理&amp;服务发现</title><link>https://blog.51ai.vip/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link><pubDate>Tue, 03 Dec 2019 15:14:16 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid><description>&lt;h3 id="标签处理的重要性"&gt;标签处理的重要性&lt;/h3&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;其中告警设备 server 这个标签是自定义的.如果没有可以删除此行或根据自己标签定义.&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Prometheus标签处理&amp;服务发现</title><link>https://blog.51ai.vip/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link><pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus%E6%A0%87%E7%AD%BE%E5%A4%84%E7%90%86-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid><description>&lt;h3 id="标签处理的重要性"&gt;标签处理的重要性&lt;/h3&gt;
 &lt;p&gt;之前的[配置](&lt;a href="https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/"&gt;https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/&lt;/a&gt;中提到了标签的处理,不过由于写的是静态的配置,标签可以自己设置或者不设置都可以.&lt;/p&gt;
 &lt;p&gt;当使用服务发现之后发现标签处理的重要性提升了更高的级别.&lt;/p&gt;
 &lt;h3 id="标签处理"&gt;标签处理&lt;/h3&gt;
@@ -1995,7 +1995,7 @@ make mibs(不建议直接make)
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;- &lt;span style="color:#f92672"&gt;targets&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#39;localhost:9090&amp;#39;&lt;/span&gt;] &lt;span style="color:#75715e"&gt;# 监控目标&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;labels&lt;/span&gt;: &lt;span style="color:#75715e"&gt;# 配置标签&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;server&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;local &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>M3DB笔记</title><link>https://blog.51ai.vip/posts/m3db%E7%AC%94%E8%AE%B0/</link><pubDate>Fri, 29 Nov 2019 17:41:43 +0000</pubDate><guid>https://blog.51ai.vip/posts/m3db%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="m3db笔记"&gt;M3DB笔记&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>M3DB笔记</title><link>https://blog.51ai.vip/posts/m3db%E7%AC%94%E8%AE%B0/</link><pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/m3db%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="m3db笔记"&gt;M3DB笔记&lt;/h2&gt;
 &lt;p&gt;前阵子研究prometheus,初期没有考虑存储问题.本地默认存储30天数据.&lt;/p&gt;
 &lt;p&gt;监控已经折腾完毕,现在需要来处理存储的方案.&lt;/p&gt;
 &lt;p&gt;通过互联网的科普,发现目前有两个方案可以解决这个问题.&lt;/p&gt;
@@ -2035,7 +2035,7 @@ make mibs(不建议直接make)
 &lt;p&gt;启动名为m3db容器:&lt;code&gt;docker run -d -p 7201:7201 -p 7203:7203 -p 9003:9003 --name m3db -v $(pwd)/m3db_data:/var/lib/m3db quay.io/m3db/m3dbnode:latest&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;该容器的端口为7201（用于管理集群拓扑），端口为7203，Prometheus用来刮除M3DB和M3Coordinator生成的度量，端口9003（用于读取和写入度量）已公开。&lt;/p&gt;
 &lt;p&gt;这时候m3db已经启动,需要创建一个初始命名空间.官方镜象默认是type:local,namespace:default. 这个可以进入容器查看到配置位置&lt;code&gt;/etc/d3dbnode/m3dbnode.yml&lt;/code&gt;.如果我们创建其他命名空间需要在m3coordinator中配置好.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;curl -X POST http://localhost:7201/api/v1/database/create -d '{ &amp;quot;type&amp;quot;: &amp;quot;local&amp;quot;, &amp;quot;namespaceName&amp;quot;: &amp;quot;default&amp;quot;, &amp;quot;retentionTime&amp;quot;: &amp;quot;24h&amp;quot; }'&lt;/code&gt;&lt;/p&gt;</description></item><item><title>网络传输速度测试工具</title><link>https://blog.51ai.vip/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link><pubDate>Wed, 23 Oct 2019 17:31:55 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="网络传输测试软件"&gt;网络传输测试软件&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;curl -X POST http://localhost:7201/api/v1/database/create -d '{ &amp;quot;type&amp;quot;: &amp;quot;local&amp;quot;, &amp;quot;namespaceName&amp;quot;: &amp;quot;default&amp;quot;, &amp;quot;retentionTime&amp;quot;: &amp;quot;24h&amp;quot; }'&lt;/code&gt;&lt;/p&gt;</description></item><item><title>网络传输速度测试工具</title><link>https://blog.51ai.vip/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link><pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="网络传输测试软件"&gt;网络传输测试软件&lt;/h2&gt;
 &lt;p&gt;最近公司测试限速,搜集软件发现两款,iperf,LANSpeedTest.
 iperf,多平台.
 LANSpeedTest,读写显示,操作简单.
@@ -2078,7 +2078,7 @@ LANSpeedTest,读写显示,操作简单.
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="测试结果"&gt;测试结果&lt;/h3&gt;
 &lt;p&gt;&lt;img src="https://s2.ax1x.com/2019/10/24/KNIyt0.png" alt=""&gt;
 结果中可以看到:
-30秒(-t)的测试,传递数据 70+ (-b参数), 监测的带宽约为20M .&lt;/p&gt;</description></item><item><title>Prometheus-AlertManager警告管理搭建与配置</title><link>https://blog.51ai.vip/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 19 Oct 2019 09:40:15 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="alertmanager"&gt;AlertManager&lt;/h2&gt;
+30秒(-t)的测试,传递数据 70+ (-b参数), 监测的带宽约为20M .&lt;/p&gt;</description></item><item><title>Prometheus-AlertManager警告管理搭建与配置</title><link>https://blog.51ai.vip/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-alertmanager%E8%AD%A6%E5%91%8A%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="alertmanager"&gt;AlertManager&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。
 它负责重复数据消除、分组，并将它们路由到正确的接收器集成（如电子邮件、PagerDuty或OpsGenie）。
@@ -2163,7 +2163,7 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# 或者定义的匹配规则，并且已发送的告警与新产生的告警中equal定义的标签完全相同，&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# 则启动抑制机制，新的告警不会发送。&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;p&gt;以下是官方文档配置翻译的文档.供参考具体详细的配置介绍.不细看先略过到下个步骤.&lt;/p&gt;</description></item><item><title>windows10家庭版启用组策略gpedit.msc</title><link>https://blog.51ai.vip/posts/windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%90%AF%E7%94%A8%E7%BB%84%E7%AD%96%E7%95%A5gpedit-msc/</link><pubDate>Tue, 15 Oct 2019 11:35:11 +0000</pubDate><guid>https://blog.51ai.vip/posts/windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%90%AF%E7%94%A8%E7%BB%84%E7%AD%96%E7%95%A5gpedit-msc/</guid><description>&lt;h2 id="启用组策略gpeditmsc"&gt;启用组策略gpedit.msc&lt;/h2&gt;
+&lt;p&gt;以下是官方文档配置翻译的文档.供参考具体详细的配置介绍.不细看先略过到下个步骤.&lt;/p&gt;</description></item><item><title>windows10家庭版启用组策略gpedit.msc</title><link>https://blog.51ai.vip/posts/windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%90%AF%E7%94%A8%E7%BB%84%E7%AD%96%E7%95%A5gpedit-msc/</link><pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%90%AF%E7%94%A8%E7%BB%84%E7%AD%96%E7%95%A5gpedit-msc/</guid><description>&lt;h2 id="启用组策略gpeditmsc"&gt;启用组策略gpedit.msc&lt;/h2&gt;
 &lt;p&gt;家庭版很多功能不能使用,凑巧用的就是家庭版. 还想使用gpedit.msc来关闭windows10的更新.
 找到一个可行的方法.&lt;/p&gt;
 &lt;ol&gt;
@@ -2184,7 +2184,20 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 &lt;ol&gt;
 &lt;li&gt;win+r 输入gpedit.msc.&lt;/li&gt;
 &lt;li&gt;“本地计算机策略”-“计算机配置”-“管理模板”-“Windows组件”-“Windows 更新”-“配置自动更新”. 点击配置自动更新设置为&lt;em&gt;禁用&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>Prometueus.yml配置文件说明</title><link>https://blog.51ai.vip/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</link><pubDate>Wed, 09 Oct 2019 15:20:58 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</guid><description>&lt;h2 id="整体配置"&gt;整体配置&lt;/h2&gt;
+&lt;/ol&gt;</description></item><item><title>curl: (3) Illegal characters found in URL</title><link>https://blog.51ai.vip/posts/curl-3-illegal-characters-found-in-url/</link><pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/curl-3-illegal-characters-found-in-url/</guid><description>&lt;h3 id="curl-3-illegal-characters-found-in-url"&gt;curl: (3) Illegal characters found in URL&lt;/h3&gt;
+&lt;p&gt;昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里.
+结果执行的时候报错了. 问题就是 curl:(3)Illegal characters found in URL&lt;/p&gt;
+&lt;p&gt;看着一脸懵逼啊!~&lt;/p&gt;
+&lt;p&gt;google了一下,看到几个方法.其中一个我感觉还不错:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先vi 进入sh脚本 &lt;code&gt;vi XXX.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:set ff?&lt;/code&gt; # 这里我现实的是 &lt;em&gt;fileforma=dos&lt;/em&gt; 我这里显示是这个&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:set fileformat=unix&lt;/code&gt; # 把fileforma 设置好&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:wq&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过这个方式,可以解决这个问题,网上也有人提出其他方法把\r\n 手动替换\n的.&lt;/p&gt;
+&lt;p&gt;参考:
+&lt;a href="http://www.itbiancheng.com/linux/4885.html"&gt;http://www.itbiancheng.com/linux/4885.html&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Prometueus.yml配置文件说明</title><link>https://blog.51ai.vip/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</link><pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/</guid><description>&lt;h2 id="整体配置"&gt;整体配置&lt;/h2&gt;
 &lt;p&gt;prometueus.yml 配置文件注解与说明&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;global&lt;/span&gt;: &lt;span style="color:#75715e"&gt;# 全局配置&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;scrape_interval&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;15s &lt;/span&gt; &lt;span style="color:#75715e"&gt;# 默认值为 1m，用于设置每次数据收集的间隔&lt;/span&gt;
@@ -2237,20 +2250,7 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;replacement&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;172.16.23.12&lt;/span&gt;:&lt;span style="color:#ae81ff"&gt;9117&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="各部分详解"&gt;各部分详解&lt;/h2&gt;
 &lt;hr&gt;
-&lt;p&gt;部分官方文档的译文&lt;/p&gt;</description></item><item><title>curl: (3) Illegal characters found in URL</title><link>https://blog.51ai.vip/posts/curl-3-illegal-characters-found-in-url/</link><pubDate>Wed, 09 Oct 2019 14:45:13 +0000</pubDate><guid>https://blog.51ai.vip/posts/curl-3-illegal-characters-found-in-url/</guid><description>&lt;h3 id="curl-3-illegal-characters-found-in-url"&gt;curl: (3) Illegal characters found in URL&lt;/h3&gt;
-&lt;p&gt;昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里.
-结果执行的时候报错了. 问题就是 curl:(3)Illegal characters found in URL&lt;/p&gt;
-&lt;p&gt;看着一脸懵逼啊!~&lt;/p&gt;
-&lt;p&gt;google了一下,看到几个方法.其中一个我感觉还不错:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;首先vi 进入sh脚本 &lt;code&gt;vi XXX.sh&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;:set ff?&lt;/code&gt; # 这里我现实的是 &lt;em&gt;fileforma=dos&lt;/em&gt; 我这里显示是这个&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;:set fileformat=unix&lt;/code&gt; # 把fileforma 设置好&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;:wq&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;通过这个方式,可以解决这个问题,网上也有人提出其他方法把\r\n 手动替换\n的.&lt;/p&gt;
-&lt;p&gt;参考:
-&lt;a href="http://www.itbiancheng.com/linux/4885.html"&gt;http://www.itbiancheng.com/linux/4885.html&lt;/a&gt;&lt;/p&gt;</description></item><item><title>yaml规则</title><link>https://blog.51ai.vip/posts/yaml%E8%A7%84%E5%88%99/</link><pubDate>Tue, 24 Sep 2019 10:20:31 +0000</pubDate><guid>https://blog.51ai.vip/posts/yaml%E8%A7%84%E5%88%99/</guid><description>&lt;h2 id="yml-语法"&gt;yml 语法&lt;/h2&gt;
+&lt;p&gt;部分官方文档的译文&lt;/p&gt;</description></item><item><title>yaml规则</title><link>https://blog.51ai.vip/posts/yaml%E8%A7%84%E5%88%99/</link><pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/yaml%E8%A7%84%E5%88%99/</guid><description>&lt;h2 id="yml-语法"&gt;yml 语法&lt;/h2&gt;
 &lt;p&gt;最近经常配置一些服务，发现大部分都是yml类型文件。小记一下。&lt;/p&gt;
 &lt;h3 id="规则"&gt;规则&lt;/h3&gt;
 &lt;ol&gt;
@@ -2277,7 +2277,7 @@ AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警�
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;snmp-sw01&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;target&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;192.168.1.88&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Grafana中文化</title><link>https://blog.51ai.vip/posts/grafana%E6%B1%89%E5%8C%96/</link><pubDate>Mon, 16 Sep 2019 15:37:46 +0000</pubDate><guid>https://blog.51ai.vip/posts/grafana%E6%B1%89%E5%8C%96/</guid><description>&lt;h2 id="可视化图表"&gt;可视化图表&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Grafana中文化</title><link>https://blog.51ai.vip/posts/grafana%E6%B1%89%E5%8C%96/</link><pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/grafana%E6%B1%89%E5%8C%96/</guid><description>&lt;h2 id="可视化图表"&gt;可视化图表&lt;/h2&gt;
 &lt;p&gt;Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。&lt;/p&gt;
 &lt;h3 id="仪表盘dashboard"&gt;仪表盘Dashboard&lt;/h3&gt;
 &lt;p&gt;通过数据源定义好可视化的数据来源之后，对于用户而言最重要的事情就是实现数据的可视化。&lt;/p&gt;
@@ -2312,7 +2312,7 @@ Grafana中所有的面板均以插件的形式进行使用，当前内置了5种
 &lt;p&gt;当我们yarn start 执行后，等待一段时间，build at 时间证明准备工作已完成，下面就需要我们在调试模式下测试了。&lt;/p&gt;
 &lt;p&gt;还需要一个调试的Grafana服务程序，这里是windows环境，所以直接从官方下载了zip包，执行bin下的grafana-server.exe 来启动服务。需要再conf文件夹修改一下public前端资源的配置，如果不修改那么你翻译的信息是看不到的，服务会直接读取的当前的public，我们这需要读取翻译的public文件位置。&lt;/p&gt;
 &lt;p&gt;配置在windows服务程序的 /conf/defaults.ini
-修改内容：&lt;/p&gt;</description></item><item><title>Centos7安装nodejs</title><link>https://blog.51ai.vip/posts/centos7%E5%AE%89%E8%A3%85nodejs/</link><pubDate>Mon, 02 Sep 2019 10:15:01 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E5%AE%89%E8%A3%85nodejs/</guid><description>&lt;h2 id="安装nodejs"&gt;安装nodejs&lt;/h2&gt;
+修改内容：&lt;/p&gt;</description></item><item><title>Centos7安装nodejs</title><link>https://blog.51ai.vip/posts/centos7%E5%AE%89%E8%A3%85nodejs/</link><pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E5%AE%89%E8%A3%85nodejs/</guid><description>&lt;h2 id="安装nodejs"&gt;安装nodejs&lt;/h2&gt;
 &lt;h3 id="下载官方node的tar包"&gt;下载官方node的tar包:&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href="https://nodejs.org/en/download/"&gt;https://nodejs.org/en/download/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz&lt;/code&gt;&lt;/p&gt;
@@ -2325,7 +2325,7 @@ Grafana中所有的面板均以插件的形式进行使用，当前内置了5种
 &lt;p&gt;一个是node 另一个是npm&lt;/p&gt;
 &lt;h3 id="验证"&gt;验证&lt;/h3&gt;
 &lt;p&gt;node -v
-npm -v&lt;/p&gt;</description></item><item><title>Prometheus-snmp_export部署</title><link>https://blog.51ai.vip/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link><pubDate>Thu, 29 Aug 2019 10:06:01 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="snmp"&gt;SNMP&lt;/h2&gt;
+npm -v&lt;/p&gt;</description></item><item><title>Prometheus-snmp_export部署</title><link>https://blog.51ai.vip/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</link><pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-snmp-export%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="snmp"&gt;SNMP&lt;/h2&gt;
 &lt;p&gt;SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。&lt;/p&gt;
 &lt;h2 id="目的"&gt;目的&lt;/h2&gt;
 &lt;p&gt;通过snmp_export,获取设备信息.&lt;/p&gt;
@@ -2391,7 +2391,7 @@ npm -v&lt;/p&gt;</description></item><item><title>Prometheus-snmp_export部署</
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;replacement&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;172.16.23.12&lt;/span&gt;:&lt;span style="color:#ae81ff"&gt;9116&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;action&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;replace&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之前部署prometheus 有一个参数是为了热加载配置的.
-这里需要reload一下配置,&lt;code&gt;curl -X POST http://IP:9090/-/reload&lt;/code&gt;,如果你没有就重启服务吧.&lt;/p&gt;</description></item><item><title>Prometheus+Grafana安装搭建</title><link>https://blog.51ai.vip/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link><pubDate>Wed, 28 Aug 2019 16:23:05 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid><description>&lt;h2 id="介绍"&gt;介绍&lt;/h2&gt;
+这里需要reload一下配置,&lt;code&gt;curl -X POST http://IP:9090/-/reload&lt;/code&gt;,如果你没有就重启服务吧.&lt;/p&gt;</description></item><item><title>Prometheus+Grafana安装搭建</title><link>https://blog.51ai.vip/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/prometheus-grafana%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/</guid><description>&lt;h2 id="介绍"&gt;介绍&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。
 2016年由Google发起Linux基金会旗下的原生云基金会(Cloud Native Computing Foundation), 将Prometheus纳入其下第二大开源项目。Prometheus目前在开源社区相当活跃。
@@ -2464,7 +2464,7 @@ Prometheus和Heapster(Heapster是K8S的一个子项目，用于获取集群的�
 &lt;h3 id="准备工作"&gt;准备工作&lt;/h3&gt;
 &lt;p&gt;Prometheus的配置文件: prometheus.yml
 我们建立在搭建位置的根下: &lt;code&gt;touch prometheus.yml&lt;/code&gt;
-在配置文件中加入测试演示配置&lt;/p&gt;</description></item><item><title>Centos5不升级内核更新</title><link>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link><pubDate>Fri, 23 Aug 2019 17:37:03 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid><description>&lt;h3 id="前提"&gt;前提&lt;/h3&gt;
+在配置文件中加入测试演示配置&lt;/p&gt;</description></item><item><title>Centos5不升级内核更新</title><link>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</link><pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos5%E4%B8%8D%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0/</guid><description>&lt;h3 id="前提"&gt;前提&lt;/h3&gt;
 &lt;p&gt;公司需要环境Centos5, 又不能升级内核.&lt;/p&gt;
 &lt;p&gt;查了一下 大概是 需要 &lt;code&gt;yum –exclude=kernel* update&lt;/code&gt; 或者修改 yum.conf&lt;/p&gt;
 &lt;h3 id="测试一下-出现一个问题"&gt;测试一下 出现一个问题:&lt;/h3&gt;
@@ -2526,7 +2526,7 @@ baseurl=http://vault.centos.org/5.11/contrib/$basearch/
 gpgcheck=1
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后 再使用上面的yum 去更新,发现yum 语句是有问题的.&lt;/p&gt;</description></item><item><title>Laradock安装与使用</title><link>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate><guid>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;h3 id="laradock-安装与使用"&gt;Laradock 安装与使用&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后 再使用上面的yum 去更新,发现yum 语句是有问题的.&lt;/p&gt;</description></item><item><title>Laradock安装与使用</title><link>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;h3 id="laradock-安装与使用"&gt;Laradock 安装与使用&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://laradock.io"&gt;官网&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GitHub: &lt;a href="https://github.com/laradock/laradock"&gt;https://github.com/laradock/laradock&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="要求"&gt;要求&lt;/h3&gt;
@@ -2581,7 +2581,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
 &lt;li&gt;&lt;code&gt;docker-compose start nginx&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="nginx-配置项目"&gt;Nginx 配置项目&lt;/h3&gt;
-&lt;p&gt;我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.&lt;/p&gt;</description></item><item><title>SwitchHosts管理编辑hosts工具</title><link>https://blog.51ai.vip/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</link><pubDate>Wed, 14 Aug 2019 09:41:55 +0000</pubDate><guid>https://blog.51ai.vip/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="管理hosts工具-switchhosts"&gt;管理Hosts工具 SwitchHosts&lt;/h2&gt;
+&lt;p&gt;我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.&lt;/p&gt;</description></item><item><title>SwitchHosts管理编辑hosts工具</title><link>https://blog.51ai.vip/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</link><pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/switchhosts%E7%AE%A1%E7%90%86%E7%BC%96%E8%BE%91hosts%E5%B7%A5%E5%85%B7/</guid><description>&lt;h2 id="管理hosts工具-switchhosts"&gt;管理Hosts工具 SwitchHosts&lt;/h2&gt;
 &lt;p&gt;地址: &lt;a href="https://github.com/oldj/SwitchHosts"&gt;SwitchHosts&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;开发工程中,针对不同项目设置不同的域名.&lt;/p&gt;
 &lt;p&gt;办法很多,例如直接编辑hosts文件,通过环境工具提供的功能设置等.&lt;/p&gt;
@@ -2594,7 +2594,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
 示例中使用的My hosts中的配置&lt;/p&gt;
 &lt;p&gt;配置界面:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s2.ax1x.com/2019/08/14/mPOgW4.png" alt="配置"&gt;&lt;/p&gt;
-&lt;p&gt;支持中文,主题黑白两色.&lt;/p&gt;</description></item><item><title>VMware安装MacOS系统</title><link>https://blog.51ai.vip/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 12 Aug 2019 11:29:38 +0000</pubDate><guid>https://blog.51ai.vip/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h2 id="虚拟机安装-macos"&gt;虚拟机安装 macOS&lt;/h2&gt;
+&lt;p&gt;支持中文,主题黑白两色.&lt;/p&gt;</description></item><item><title>VMware安装MacOS系统</title><link>https://blog.51ai.vip/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/vmware%E5%AE%89%E8%A3%85macos%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h2 id="虚拟机安装-macos"&gt;虚拟机安装 macOS&lt;/h2&gt;
 &lt;h4 id="准备工作"&gt;准备工作:&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;VM关闭进程,利用macOS Unlocker修改VM使其能安装macOS系统, 执行程序 win-install.cmd 使用管理员权限运行脚本.&lt;/li&gt;
@@ -2623,7 +2623,7 @@ serialNumber.reflectHost = &amp;ldquo;FALSE&amp;rdquo;
 serialNumber = &amp;ldquo;C02JJ8B3DH2G&amp;rdquo;
 smbios.reflectHost = &amp;ldquo;FALSE&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;这段信息中的board-id 与 serialNumber 不要与例子的相同.其他可以参考.最后保存,重启.&lt;/p&gt;
-&lt;p&gt;重启之后尝试是否可以登陆市场.&lt;/p&gt;</description></item><item><title>数据库迁移</title><link>https://blog.51ai.vip/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link><pubDate>Fri, 26 Jul 2019 14:30:25 +0000</pubDate><guid>https://blog.51ai.vip/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid><description>&lt;h2 id="laravel5-数据库迁移笔记"&gt;Laravel5 数据库迁移笔记&lt;/h2&gt;
+&lt;p&gt;重启之后尝试是否可以登陆市场.&lt;/p&gt;</description></item><item><title>数据库迁移</title><link>https://blog.51ai.vip/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link><pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/laravel5%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid><description>&lt;h2 id="laravel5-数据库迁移笔记"&gt;Laravel5 数据库迁移笔记&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h3 id="创建迁移文件"&gt;创建迁移文件&lt;/h3&gt;
@@ -2715,7 +2715,7 @@ up方法中:
 
 
  
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Composer笔记</title><link>https://blog.51ai.vip/posts/composer%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 15 Jul 2019 17:24:45 +0000</pubDate><guid>https://blog.51ai.vip/posts/composer%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="composer---laravel5"&gt;composer - laravel5&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Composer笔记</title><link>https://blog.51ai.vip/posts/composer%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/composer%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="composer---laravel5"&gt;composer - laravel5&lt;/h3&gt;
 &lt;h4 id="创建laravel项目"&gt;创建laravel项目：&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;conposer create-project laravel/laravel=5.8.* --prefer-dist ./XXX&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;laravel=5.8.* 这里代表要部署5.8中最高版本 &amp;ndash;prefer-dist 参数代表优先下载zip&lt;/p&gt;
@@ -2742,7 +2742,7 @@ up方法中:
 &lt;p&gt;&lt;code&gt;php artisan route:list&lt;/code&gt;&lt;/p&gt;
 &lt;h4 id="composer在项目中安装三方库时候出现报错"&gt;composer在项目中安装三方库时候出现报错：&lt;/h4&gt;
 &lt;p&gt;执行命令： &lt;code&gt;composer Install&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;返回错误： Your requirements could not be resolved to an installable set of packages.&lt;/p&gt;</description></item><item><title>无版权素材站点</title><link>https://blog.51ai.vip/posts/%E6%97%A0%E7%89%88%E6%9D%83%E7%B4%A0%E6%9D%90%E7%AB%99%E7%82%B9/</link><pubDate>Thu, 27 Jun 2019 09:58:04 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E6%97%A0%E7%89%88%E6%9D%83%E7%B4%A0%E6%9D%90%E7%AB%99%E7%82%B9/</guid><description>&lt;h4 id="最近找素材收集一些站点"&gt;最近找素材收集一些站点&lt;/h4&gt;
+&lt;p&gt;返回错误： Your requirements could not be resolved to an installable set of packages.&lt;/p&gt;</description></item><item><title>无版权素材站点</title><link>https://blog.51ai.vip/posts/%E6%97%A0%E7%89%88%E6%9D%83%E7%B4%A0%E6%9D%90%E7%AB%99%E7%82%B9/</link><pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/%E6%97%A0%E7%89%88%E6%9D%83%E7%B4%A0%E6%9D%90%E7%AB%99%E7%82%B9/</guid><description>&lt;h4 id="最近找素材收集一些站点"&gt;最近找素材收集一些站点&lt;/h4&gt;
 &lt;pre&gt;&lt;code&gt;无版权对于我们来说可以放心使用
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;列表如下：&lt;/p&gt;
@@ -2774,7 +2774,7 @@ up方法中:
 &lt;p&gt;&lt;a href="http://www.polayoutu.com/collections"&gt;http://www.polayoutu.com/collections&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://negativespace.co/"&gt;https://negativespace.co/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://freeforcommercialuse.net/"&gt;https://freeforcommercialuse.net/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mmtstock.com/"&gt;https://mmtstock.com/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Hexo笔记</title><link>https://blog.51ai.vip/posts/hexo%E7%AC%94%E8%AE%B0/</link><pubDate>Tue, 04 Jun 2019 10:46:48 +0000</pubDate><guid>https://blog.51ai.vip/posts/hexo%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="多tag"&gt;多tag&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://mmtstock.com/"&gt;https://mmtstock.com/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Hexo笔记</title><link>https://blog.51ai.vip/posts/hexo%E7%AC%94%E8%AE%B0/</link><pubDate>Tue, 04 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/hexo%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="多tag"&gt;多tag&lt;/h3&gt;
 &lt;p&gt;文章中 多tag时,无法直接, 空格这种.&lt;/p&gt;
 &lt;p&gt;方式一:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;tags: [tag1,tag2]&lt;/code&gt;&lt;/p&gt;
@@ -2782,7 +2782,7 @@ up方法中:
 &lt;pre tabindex="0"&gt;&lt;code&gt;tags:
 - tag1
 - tag2 
-&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Python建立SocketSSL连接</title><link>https://blog.51ai.vip/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link><pubDate>Tue, 04 Jun 2019 10:23:11 +0000</pubDate><guid>https://blog.51ai.vip/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid><description>&lt;h3 id="python-socket连接"&gt;Python Socket连接&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Python建立SocketSSL连接</title><link>https://blog.51ai.vip/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</link><pubDate>Tue, 04 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/python%E5%BB%BA%E7%AB%8Bsocketssl%E8%BF%9E%E6%8E%A5/</guid><description>&lt;h3 id="python-socket连接"&gt;Python Socket连接&lt;/h3&gt;
 &lt;p&gt;5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.&lt;/p&gt;
 &lt;p&gt;这块没接触,Python也是hello world水平.&lt;/p&gt;
 &lt;p&gt;赶紧恶补一下:&lt;/p&gt;
@@ -2809,7 +2809,7 @@ up方法中:
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; c&lt;span style="color:#f92672"&gt;.&lt;/span&gt;connect((&lt;span style="color:#e6db74"&gt;&amp;#39;192.168.1.230&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;3344&amp;#39;&lt;/span&gt;))
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;except&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这下与那台设备可以正常通讯了,后面实现具体功能就ok了.&lt;/p&gt;</description></item><item><title>Ubutun16.04安装Python</title><link>https://blog.51ai.vip/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link><pubDate>Fri, 24 May 2019 11:17:59 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid><description>&lt;h3 id="目的"&gt;目的&lt;/h3&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这下与那台设备可以正常通讯了,后面实现具体功能就ok了.&lt;/p&gt;</description></item><item><title>Ubutun16.04安装Python</title><link>https://blog.51ai.vip/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</link><pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubutun16-04%E5%AE%89%E8%A3%85python/</guid><description>&lt;h3 id="目的"&gt;目的&lt;/h3&gt;
 &lt;p&gt;安装python3.7.3
 安装pip&lt;/p&gt;
 &lt;h3 id="准备工作"&gt;准备工作&lt;/h3&gt;
@@ -2830,7 +2830,7 @@ up方法中:
 &lt;p&gt;make之后 该 &lt;del&gt;make install&lt;/del&gt; 嘛? NO! 是 &lt;code&gt;sudo make altinstall&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;装完之后, 可以尝试 python &amp;ndash;version 看看有没有, 如果没有或者版本不对.可能是准备里你没有删除 /usr/bin/python 或者这个不存在.
 需要手动添加一下,我这个是没有给我创建成功.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ln -s /usr/local/Python-3.7.3/python /usr/bin/python&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Go学习笔记</title><link>https://blog.51ai.vip/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 15 May 2019 11:05:52 +0000</pubDate><guid>https://blog.51ai.vip/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="变量"&gt;变量&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sudo ln -s /usr/local/Python-3.7.3/python /usr/bin/python&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Go学习笔记</title><link>https://blog.51ai.vip/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="变量"&gt;变量&lt;/h3&gt;
 &lt;p&gt;var 声明,支持类型判断.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;var name string&lt;/code&gt; string类型 name&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;var s string&lt;/code&gt; 值初始化&lt;/p&gt;
@@ -2871,7 +2871,7 @@ bool 初始化默认fasle&lt;/p&gt;
 &lt;p&gt;字符串&lt;/p&gt;
 &lt;p&gt;双引号或``,UTF8编码,\转义&lt;/p&gt;
 &lt;p&gt;初始化默认值&amp;quot;&amp;quot;&lt;/p&gt;
-&lt;p&gt;修改需要转换类型为 rune或byte 操作后再转换&lt;/p&gt;</description></item><item><title>redis笔记</title><link>https://blog.51ai.vip/posts/redis%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 25 Apr 2019 17:12:52 +0000</pubDate><guid>https://blog.51ai.vip/posts/redis%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="redis笔记"&gt;redis笔记&lt;/h2&gt;
+&lt;p&gt;修改需要转换类型为 rune或byte 操作后再转换&lt;/p&gt;</description></item><item><title>redis笔记</title><link>https://blog.51ai.vip/posts/redis%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/redis%E7%AC%94%E8%AE%B0/</guid><description>&lt;h2 id="redis笔记"&gt;redis笔记&lt;/h2&gt;
 &lt;p&gt;单进程,默认16库,&lt;/p&gt;
 &lt;p&gt;select N 切换库&lt;/p&gt;
 &lt;p&gt;flushdb 清空库&lt;/p&gt;
@@ -2993,7 +2993,7 @@ zrevrange key start stop 降序展示
 &lt;h4 id="rdb-aof"&gt;rdb aof&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;rdb&lt;/p&gt;</description></item><item><title>gulp笔记</title><link>https://blog.51ai.vip/posts/gulp%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 22 Apr 2019 18:08:54 +0000</pubDate><guid>https://blog.51ai.vip/posts/gulp%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="gulp"&gt;gulp&lt;/h3&gt;
+&lt;p&gt;rdb&lt;/p&gt;</description></item><item><title>gulp笔记</title><link>https://blog.51ai.vip/posts/gulp%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/gulp%E7%AC%94%E8%AE%B0/</guid><description>&lt;h3 id="gulp"&gt;gulp&lt;/h3&gt;
 &lt;p&gt;gulp.js是一个前端构建工具。&lt;/p&gt;
 &lt;h3 id="安装"&gt;安装&lt;/h3&gt;
 &lt;ol&gt;
@@ -3026,7 +3026,7 @@ gulp.task(&amp;#39;default&amp;#39;,function(){
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;文档这意思看着有点费劲，理解为获取文件路径。gulp通过这个方法获取到处理的文件流。&lt;/p&gt;</description></item><item><title>Centos7时间设置</title><link>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link><pubDate>Fri, 19 Apr 2019 11:42:02 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h3 id="centos7时间相关"&gt;Centos7时间相关&lt;/h3&gt;
+&lt;p&gt;文档这意思看着有点费劲，理解为获取文件路径。gulp通过这个方法获取到处理的文件流。&lt;/p&gt;</description></item><item><title>Centos7时间设置</title><link>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</link><pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h3 id="centos7时间相关"&gt;Centos7时间相关&lt;/h3&gt;
 &lt;h4 id="查看时间"&gt;查看时间&lt;/h4&gt;
 &lt;p&gt;date
 hwclock 硬件时间
@@ -3040,7 +3040,7 @@ timedatectl 各时间状态&lt;/p&gt;
 &lt;p&gt;hwclock &amp;ndash;systohc&lt;/p&gt;
 &lt;h4 id="设置时区"&gt;设置时区&lt;/h4&gt;
 &lt;p&gt;timedatectl set-timezone Asia/Shanghai （上海）&lt;/p&gt;
-&lt;p&gt;timedatectl 很多设置，需要请查相关资料。&lt;/p&gt;</description></item><item><title>Centos7防火墙相关设置</title><link>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link><pubDate>Thu, 18 Apr 2019 17:44:22 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7与之前不太一样"&gt;Centos7与之前不太一样&lt;/h4&gt;
+&lt;p&gt;timedatectl 很多设置，需要请查相关资料。&lt;/p&gt;</description></item><item><title>Centos7防火墙相关设置</title><link>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</link><pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7与之前不太一样"&gt;Centos7与之前不太一样&lt;/h4&gt;
 &lt;p&gt;以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。
 这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。&lt;/p&gt;
 &lt;h4 id="查看防火墙服务状态"&gt;查看防火墙服务状态&lt;/h4&gt;
@@ -3067,7 +3067,7 @@ timedatectl 各时间状态&lt;/p&gt;
 &lt;h4 id="查询某端口是否开放8010"&gt;查询某端口是否开放(8010)&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;firewall-cmd --query-port=8010/tcp&lt;/code&gt;&lt;/p&gt;
 &lt;h4 id="移除端口规则"&gt;移除端口规则&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;firewall-cmd --permanent --remove-port=8010/tcp&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Centos7启动等级设置</title><link>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 15 Apr 2019 16:55:19 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7启动级别"&gt;Centos7启动级别&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;firewall-cmd --permanent --remove-port=8010/tcp&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Centos7启动等级设置</title><link>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/centos7%E5%90%AF%E5%8A%A8%E7%AD%89%E7%BA%A7%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h4 id="centos7启动级别"&gt;Centos7启动级别&lt;/h4&gt;
 &lt;p&gt;启动级别分为7个：
 0 - 系统停机状态
 1 - 单用户工作状态
@@ -3085,7 +3085,7 @@ multi-user.target = init3
 graphical.target = init5
 我们日常实用图形窗口init5，我们不需要图形，可以切换到init3等启动级别上。
 &lt;code&gt;systemctl set-default multi-user.target&lt;/code&gt; 设置为init3
-&lt;code&gt;systemctl set-default graphical.target&lt;/code&gt; 设置为init5&lt;/p&gt;</description></item><item><title>Docker常用命令</title><link>https://blog.51ai.vip/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 11 Apr 2019 15:09:19 +0000</pubDate><guid>https://blog.51ai.vip/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="docker常用命令"&gt;Docker常用命令&lt;/h2&gt;
+&lt;code&gt;systemctl set-default graphical.target&lt;/code&gt; 设置为init5&lt;/p&gt;</description></item><item><title>Docker常用命令</title><link>https://blog.51ai.vip/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="docker常用命令"&gt;Docker常用命令&lt;/h2&gt;
 &lt;p&gt;说常用不如说自己用到的命令。&lt;/p&gt;
 &lt;h3 id="容器相关"&gt;容器相关&lt;/h3&gt;
 &lt;p&gt;学习了一下docker，基础常用命令记录下。
@@ -3106,7 +3106,7 @@ graphical.target = init5
 这个命令我学习时候用过，感觉有时候不太好使。命令执行完卡那不动。&lt;/p&gt;
 &lt;h4 id="docker-exec"&gt;docker exec&lt;/h4&gt;
 &lt;p&gt;可以在容器内直接执行任意命令。
-&lt;code&gt;docker exec -it xx /bin/bash&lt;/code&gt; 这可以进入xx镜像，并打开bash。 相比这个比上面的attach 好多了。&lt;/p&gt;</description></item><item><title>Ubutun下安装Docker</title><link>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介"&gt;Docker简介&lt;/h3&gt;
+&lt;code&gt;docker exec -it xx /bin/bash&lt;/code&gt; 这可以进入xx镜像，并打开bash。 相比这个比上面的attach 好多了。&lt;/p&gt;</description></item><item><title>Ubutun下安装Docker</title><link>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介"&gt;Docker简介&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;一个能够把开发的应用程序自动部署到容器的开源引擎
 三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p&gt;
@@ -3130,7 +3130,7 @@ graphical.target = init5
 &lt;code&gt;$ sudo add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot;&lt;/code&gt;
 (lsb_release -cs子命令返回Ubuntu发行版的名称)&lt;/p&gt;
 &lt;p&gt;6.安装最新版本的Docker CE和containerd，或者转到下一步安装特定版本：
-&lt;code&gt;sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Hexo博客安装与配置</title><link>https://blog.51ai.vip/posts/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Mon, 01 Apr 2019 17:59:31 +0000</pubDate><guid>https://blog.51ai.vip/posts/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;h3 id="wordpress-之后"&gt;wordpress 之后&lt;/h3&gt;
+&lt;code&gt;sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Hexo博客安装与配置</title><link>https://blog.51ai.vip/posts/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;h3 id="wordpress-之后"&gt;wordpress 之后&lt;/h3&gt;
 &lt;p&gt;wordpress 使用很方便，但是折腾几次之后。由于一次意外，导致管理者把我的vps被停掉。虽然有些文章还是保留了。但是这次之后感觉自己还是找一个稳妥的家。连接hexo搭建的博客之后，打算自己来折腾一下。&lt;/p&gt;
 &lt;h3 id="记录笔记环境"&gt;记录笔记环境&lt;/h3&gt;
 &lt;p&gt;在windows上写笔记，环境目前是windows下操作。linux，mac系统中需要注意一些细节吧。存在提不到情况，先做好出现问题考虑自行排查。&lt;/p&gt;

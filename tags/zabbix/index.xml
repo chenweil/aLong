@@ -219,7 +219,7 @@ secrets:
 # server-key.pem:
 # file: ./env_vars/.DB_KEY_FILE
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中有基础更改，主要是使用的镜像非zabbix镜像。数据库考虑暴露3316端口（但是这里没有成功）
-使用非官方容器的目的是遇到一些情况。&lt;/p&gt;</description></item><item><title>Zabbix自动发现SNMP设备</title><link>https://blog.51ai.vip/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link><pubDate>Wed, 12 Oct 2022 11:15:29 +0800</pubDate><guid>https://blog.51ai.vip/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid><description>&lt;blockquote&gt;
+使用非官方容器的目的是遇到一些情况。&lt;/p&gt;</description></item><item><title>Zabbix自动发现SNMP设备</title><link>https://blog.51ai.vip/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</link><pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0snmp%E8%AE%BE%E5%A4%87/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;Zabbix提供高效灵活的网络自动发现功能。
 网络发现的优势：&lt;/p&gt;
 &lt;ul&gt;
@@ -266,7 +266,7 @@ secrets:
 &lt;li&gt;关联模版，Link to templates：模版名。&lt;/li&gt;
 &lt;li&gt;开启Host。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;通过这个配置后，发现的主机会根据这个配置进行操作。&lt;/p&gt;</description></item><item><title>Zabbix6 网络发现</title><link>https://blog.51ai.vip/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link><pubDate>Fri, 14 Jan 2022 10:15:53 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid><description>&lt;p&gt;Zabbix6 网络发现&lt;/p&gt;
+&lt;p&gt;通过这个配置后，发现的主机会根据这个配置进行操作。&lt;/p&gt;</description></item><item><title>Zabbix6 网络发现</title><link>https://blog.51ai.vip/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-%E7%BD%91%E7%BB%9C%E5%8F%91%E7%8E%B0/</guid><description>&lt;p&gt;Zabbix6 网络发现&lt;/p&gt;
 &lt;h3 id="功能"&gt;功能&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -338,7 +338,7 @@ Zabbix 3.0.0起，此字段支持空格，表格和多行。&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Visible name：描述名&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://s2.loli.net/2022/05/30/8azsd4mVbDPU39L.png" alt="ohbmIZ.png"&gt;&lt;/p&gt;
-&lt;p&gt;这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。&lt;/p&gt;</description></item><item><title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title><link>https://blog.51ai.vip/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link><pubDate>Wed, 27 Oct 2021 15:06:44 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid><description>&lt;h1 id="zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache"&gt;zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache&lt;/h1&gt;
+&lt;p&gt;这三个选项是根据，checks里面的相关类型出来的数据。基本上都有IP地址，当checks Type 选择了 SNMP或者zabbix agent时，下面选项可以提供这两种对应的数据作为选项。&lt;/p&gt;</description></item><item><title>zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache</title><link>https://blog.51ai.vip/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</link><pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache/</guid><description>&lt;h1 id="zabbix-proxy-cannot-perform-check-now-for-itemid-xxxxx-item-is-not-in-cache"&gt;zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache&lt;/h1&gt;
 &lt;h2 id="情况"&gt;情况&lt;/h2&gt;
 &lt;p&gt;接上次做完容器部署proxy后，为其添加host进行添加任务。&lt;/p&gt;
 &lt;p&gt;发现一直没有数据，就到item里面执行 &lt;code&gt;execute now&lt;/code&gt;。&lt;/p&gt;
@@ -377,7 +377,7 @@ Host是1小时之后开始有数据的，也就是他同步后就开始执行监
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;--restart&lt;span style="color:#f92672"&gt;=&lt;/span&gt;always &lt;span style="color:#ae81ff"&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zabbix/zabbix-proxy-sqlite3:alpine-trunk
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&amp;ndash;祝好&lt;/p&gt;
-&lt;p&gt;本文结束&lt;/p&gt;</description></item><item><title>Zabbix-Proxy 部署运行</title><link>https://blog.51ai.vip/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link><pubDate>Thu, 24 Jun 2021 17:20:40 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;本文结束&lt;/p&gt;</description></item><item><title>Zabbix-Proxy 部署运行</title><link>https://blog.51ai.vip/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</link><pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/zabbix-proxy-%E9%83%A8%E7%BD%B2-%E8%BF%90%E8%A1%8C/</guid><description>&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
 &lt;p&gt;版本： zabbix-server 5.4&lt;/p&gt;
 &lt;p&gt;任务： 通过SNMP监控网络设备，需要需通过zabbix-proxy 发送到zabbix-server。&lt;/p&gt;
 &lt;h2 id="安装zabbix-proxy"&gt;安装Zabbix-Proxy&lt;/h2&gt;

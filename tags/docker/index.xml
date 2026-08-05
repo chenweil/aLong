@@ -219,7 +219,7 @@ secrets:
 # server-key.pem:
 # file: ./env_vars/.DB_KEY_FILE
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中有基础更改，主要是使用的镜像非zabbix镜像。数据库考虑暴露3316端口（但是这里没有成功）
-使用非官方容器的目的是遇到一些情况。&lt;/p&gt;</description></item><item><title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title><link>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 07 Apr 2023 19:33:25 +0800</pubDate><guid>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="colima"&gt;Colima&lt;/h1&gt;
+使用非官方容器的目的是遇到一些情况。&lt;/p&gt;</description></item><item><title>Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案</title><link>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/colima-macos%E6%9C%80%E5%B0%8F%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9B%BF%E6%8D%A2docker-desktop%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="colima"&gt;Colima&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://github.com/abiosoft/colima"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Colima 是一个轻量级的容器运行时，专门针对开发者在本地环境中运行容器应用。它的目标是提供一种比 Docker Desktop 更简单、更快速、更安全的容器运行时解决方案。&lt;/p&gt;
 &lt;p&gt;Colima 基于 Moby 和 LinuxKit 构建，具有以下特点：&lt;/p&gt;
@@ -250,7 +250,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;p&gt;&lt;code&gt;brew uninstall colima&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;安装完成后，您就可以使用 Colima 运行和管理容器应用程序了。&lt;/p&gt;
 &lt;h2 id="docker交互"&gt;docker交互&lt;/h2&gt;
-&lt;p&gt;启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 &lt;code&gt;docker&lt;/code&gt; 命令来管理容器。&lt;/p&gt;</description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 11:03:48 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动"&gt;Linux系统重启后Docker自动启动&lt;/h2&gt;
+&lt;p&gt;启动 Colima 后，您可以使用 Docker CLI 与容器交互。在 Colima 中，Docker CLI 已经预先安装了，所以您可以直接使用 &lt;code&gt;docker&lt;/code&gt; 命令来管理容器。&lt;/p&gt;</description></item><item><title>Linux重启后Docker设置自动启动&amp;容器自动启动设置</title><link>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</link><pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/linux%E9%87%8D%E5%90%AF%E5%90%8Edocker%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8-%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</guid><description>&lt;h2 id="linux系统重启后docker自动启动"&gt;Linux系统重启后Docker自动启动&lt;/h2&gt;
 &lt;p&gt;系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。
 配置过一次总是忘记命令，这里特意记录一下：
 &lt;code&gt;systemctl enable docker.service&lt;/code&gt;&lt;/p&gt;
@@ -276,7 +276,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;h3 id="容器已存在更新重启配置"&gt;容器已存在更新重启配置&lt;/h3&gt;
 &lt;p&gt;可能容器我们已经生成了，后面想实现always这个参数，可以用到下面的命令：
 &lt;code&gt;docker container update --restart=always 容器名XXX&lt;/code&gt;
-这样就达到了想要的目的。&lt;/p&gt;</description></item><item><title>Laradock安装与使用</title><link>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 15 Aug 2019 10:01:03 +0000</pubDate><guid>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;h3 id="laradock-安装与使用"&gt;Laradock 安装与使用&lt;/h3&gt;
+这样就达到了想要的目的。&lt;/p&gt;</description></item><item><title>Laradock安装与使用</title><link>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/laradock%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid><description>&lt;h3 id="laradock-安装与使用"&gt;Laradock 安装与使用&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://laradock.io"&gt;官网&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GitHub: &lt;a href="https://github.com/laradock/laradock"&gt;https://github.com/laradock/laradock&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="要求"&gt;要求&lt;/h3&gt;
@@ -331,7 +331,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 &lt;li&gt;&lt;code&gt;docker-compose start nginx&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="nginx-配置项目"&gt;Nginx 配置项目&lt;/h3&gt;
-&lt;p&gt;我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.&lt;/p&gt;</description></item><item><title>Docker常用命令</title><link>https://blog.51ai.vip/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 11 Apr 2019 15:09:19 +0000</pubDate><guid>https://blog.51ai.vip/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="docker常用命令"&gt;Docker常用命令&lt;/h2&gt;
+&lt;p&gt;我们再laradock中,进入nginx/sites/ 下.复制laravel.conf.example 命名为我们的项目.&lt;/p&gt;</description></item><item><title>Docker常用命令</title><link>https://blog.51ai.vip/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h2 id="docker常用命令"&gt;Docker常用命令&lt;/h2&gt;
 &lt;p&gt;说常用不如说自己用到的命令。&lt;/p&gt;
 &lt;h3 id="容器相关"&gt;容器相关&lt;/h3&gt;
 &lt;p&gt;学习了一下docker，基础常用命令记录下。
@@ -352,7 +352,7 @@ Colima 提供了一组简单的 CLI 命令，使得用户可以轻松地启动�
 这个命令我学习时候用过，感觉有时候不太好使。命令执行完卡那不动。&lt;/p&gt;
 &lt;h4 id="docker-exec"&gt;docker exec&lt;/h4&gt;
 &lt;p&gt;可以在容器内直接执行任意命令。
-&lt;code&gt;docker exec -it xx /bin/bash&lt;/code&gt; 这可以进入xx镜像，并打开bash。 相比这个比上面的attach 好多了。&lt;/p&gt;</description></item><item><title>Ubutun下安装Docker</title><link>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 14:57:16 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介"&gt;Docker简介&lt;/h3&gt;
+&lt;code&gt;docker exec -it xx /bin/bash&lt;/code&gt; 这可以进入xx镜像，并打开bash。 相比这个比上面的attach 好多了。&lt;/p&gt;</description></item><item><title>Ubutun下安装Docker</title><link>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</link><pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.51ai.vip/posts/ubutun%E4%B8%8B%E5%AE%89%E8%A3%85docker/</guid><description>&lt;h3 id="docker简介"&gt;Docker简介&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;一个能够把开发的应用程序自动部署到容器的开源引擎
 三大概念：镜像（Image）容器（Container）仓库（Repository）&lt;/p&gt;
