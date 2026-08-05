@@ -1,11 +1,11 @@
 ---
 title: 'curl: (3) Illegal characters found in URL'
-date: 2019-10-09 14:45:13
+date: 2019-10-09
 tags: ["curl"]
 type: "post"
+description: "昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里. 结果执行的时候报错了. 问题就是 curl:(3)Illegal characters found in URL"
+lastmod: 2019-10-09
 ---
-
-
 ### curl: (3) Illegal characters found in URL
 
 昨天在服务器上执行一个脚本,在linux新建的sh,把本地编辑器的内容粘贴到文件里.

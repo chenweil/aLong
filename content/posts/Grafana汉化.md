@@ -1,10 +1,11 @@
 ---
 title: Grafana中文化
-date: 2019-09-16 15:37:46
-tags: ["Grafana"]
+date: 2019-09-16
+tags: [grafana]
 type: "post"
+description: "Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。"
+lastmod: 2019-09-16
 ---
-
 ## 可视化图表
 
 Grafana是一个通用的可视化工具。通过Grafana可以管理用户权限，数据分析，查看，导出，设置告警等。

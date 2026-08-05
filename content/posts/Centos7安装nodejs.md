@@ -1,10 +1,11 @@
 ---
 title: Centos7安装nodejs
-date: 2019-09-02 10:15:01
-tags: ["Nodejs"]
+date: 2019-09-02
+tags: [nodejs]
 type: "post"
+description: "wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz"
+lastmod: 2019-09-02
 ---
-
 ## 安装nodejs
 
 ### 下载官方node的tar包:

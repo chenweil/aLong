@@ -1,10 +1,11 @@
 ---
 title: Go学习笔记
-date: 2019-05-15 11:05:52
-tags: ["Go"]
+date: 2019-05-15
+tags: [go]
 type: "post"
+description: "var 声明,支持类型判断."
+lastmod: 2019-05-15
 ---
-
 ### 变量
 
 var 声明,支持类型判断.

@@ -3,10 +3,10 @@ title: "通过gitlog用AI整理项目记录"
 date: 2025-02-19
 lastmod: 2025-02-19
 draft: false
-tags: ["git", "AI"]
+tags: [git, ai]
 type: "post"
+description: "导出2024全年内容到文本： git log --since=\"2024-01-01\" --until=\"2024-12-30\" --pretty=format:\"%h - %an, %ad : %s\" --date=iso > commits2024.txt"
 ---
-
 # git log 列出时间段内容
 导出2024全年内容到文本： `git log --since="2024-01-01" --until="2024-12-30" --pretty=format:"%h - %an, %ad : %s" --date=iso > commits_2024.txt`
 

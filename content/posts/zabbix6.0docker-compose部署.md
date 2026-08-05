@@ -3,10 +3,10 @@ title: "zabbix6.0+docker-compose部署"
 date: 2024-10-27
 lastmod: 2024-10-27
 draft: false
-tags: ["zabbix", "docker", "部署"]
+tags: [zabbix, docker, deploy]
 type: "post"
+description: "zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。"
 ---
-
 zabbix6.0 已是新LTS版本。根据zabbix-docker上的trunk版本来搭建zabbix6.0。
 
 根据踩坑，记录docker-compose 执行后遇到的一些问题。

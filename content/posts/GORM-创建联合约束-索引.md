@@ -1,10 +1,11 @@
 ---
 title: GORM 创建联合约束/索引
-date: 2020-06-11 11:50:55
-tags: ["GORM","Go"]
+date: 2020-06-11
+tags: [gorm, go]
 type: "post"
+description: "之前提到一个联合约束，那么根据需求再次做一个演示："
+lastmod: 2020-06-11
 ---
-
 ### GROM创建联合索引
 
 之前提到一个联合约束，那么根据需求再次做一个演示：

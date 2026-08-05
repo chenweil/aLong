@@ -1,10 +1,11 @@
 ---
 title: Python建立SocketSSL连接
-date: 2019-06-04 10:23:11
-tags: ["Python","Socket"]
+date: 2019-06-04
+tags: [python, socket]
 type: "post"
+description: "5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据."
+lastmod: 2019-06-04
 ---
-
 ### Python Socket连接
 
 5月中旬遇到一个功能,需要利用Python建立Socket tcp连接,于设备通讯发送相关数据.

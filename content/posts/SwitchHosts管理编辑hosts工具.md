@@ -1,10 +1,11 @@
 ---
 title: SwitchHosts管理编辑hosts工具
-date: 2019-08-14 09:41:55
-tags: ["hosts","Tools"]
+date: 2019-08-14
+tags: [hosts, tools]
 type: "post"
+description: "地址: SwitchHosts"
+lastmod: 2019-08-14
 ---
-
 ## 管理Hosts工具 SwitchHosts
 
 地址: [SwitchHosts](https://github.com/oldj/SwitchHosts)

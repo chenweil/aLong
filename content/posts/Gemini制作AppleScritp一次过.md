@@ -4,9 +4,8 @@ lastmod: 2025-05-20
 showTableOfContents: false
 title: Gemini制作AppleScritp一次过
 type: post
-tags:
-  - AI
-  - Arc
+tags: [ai, arc]
+description: "我喜欢使用Arc浏览器，自从同厂出的Dia出来后体验AI部分功能不错。但用它当作主力还是有点Chrome的感觉。我还是喜欢使用Arc，我想能否使用插件或者脚本来实现这个功能呢。没写过插件、脚本我问了大模型告诉我 open -a \"Dia\" \"https://example.com\" 能实现我的想法💡…"
 ---
 # 前提
 我喜欢使用Arc浏览器，自从同厂出的Dia出来后体验AI部分功能不错。但用它当作主力还是有点Chrome的感觉。我还是喜欢使用Arc，我想能否使用插件或者脚本来实现这个功能呢。没写过插件、脚本我问了大模型告诉我 `open -a "Dia" "https://example.com"` 能实现我的想法💡。 哈哈，没错可以的。 

@@ -1,10 +1,11 @@
 ---
 title: "Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案"
-date: 2023-04-07T19:33:25+08:00
-tags: [Docker, Container, MacOS]
+date: 2023-04-07
+tags: [docker, container, macos]
 type: "post"
+description: "\"Colima MacOS最小的设置运行容器运行时,替换Docker Desktop方案\""
+lastmod: 2023-04-07
 ---
-
 # Colima
 [GitHub](https://github.com/abiosoft/colima)
 

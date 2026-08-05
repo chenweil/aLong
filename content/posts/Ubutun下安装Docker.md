@@ -1,10 +1,11 @@
 ---
 title: Ubutun下安装Docker
-date: 2019-04-04 14:57:16
-tags: ["Docker","Ubutun","Liunx"]
+date: 2019-04-04
+tags: [docker, ubuntu, linux]
 type: "post"
+description: "具体信息请参考官方。官方概述（养成看文档习惯）"
+lastmod: 2019-04-04
 ---
-
 ### Docker简介
 > 一个能够把开发的应用程序自动部署到容器的开源引擎 
 > 三大概念：镜像（Image）容器（Container）仓库（Repository）

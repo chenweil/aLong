@@ -1,10 +1,11 @@
 ---
 title: 小米手环解锁MacOS系统笔记本MacBookPro
-date: 2021-05-21 16:51:23
+date: 2021-05-21
 tags: ["xiaomi"]
 type: "post"
+description: "官方windows是提供了方法的。 我目前用的MacBookPro，所以说下苹果笔记本的解锁方式。"
+lastmod: 2021-05-21
 ---
-
 ## 通过小米手环解锁笔记本
 官方windows是提供了方法的。
 我目前用的MacBookPro，所以说下苹果笔记本的解锁方式。

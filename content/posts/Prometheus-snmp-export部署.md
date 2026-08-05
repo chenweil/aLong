@@ -1,10 +1,11 @@
 ---
 title: Prometheus-snmp_export部署
-date: 2019-08-29 10:06:01
-tags: ["SNMP","Promethues"]
+date: 2019-08-29
+tags: [snmp, prometheus]
 type: "post"
+description: "SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management…"
+lastmod: 2019-08-29
 ---
-
 ## SNMP
 
 SNMP(simple network management protocol)是因特网架构委员会IAB定义的一个应用层协议。SNMP广泛用于管理和监控网络设备，大多数专业的网络设备都有SNMP agent代理，这些代理被激活和配置后用于和SNMP管理 NMS(network management system)网络管理系统通信。

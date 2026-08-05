@@ -1,11 +1,11 @@
 ---
 title: "golang.org/x/xerrors：undefined: errors.Frame"
-date: 2020-01-16 19:05:39
-tags: ["Go"]
+date: 2020-01-16
+tags: [go]
 type: "post"
+description: "\"golang.org/x/xerrors：undefined: errors.Frame\""
+lastmod: 2020-01-16
 ---
-
-
 ### 项目初始化遇到问题
 错误为：
 

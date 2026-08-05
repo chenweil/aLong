@@ -1,11 +1,12 @@
 ---
 title: "Lux视频下载工具"
-date: 2022-09-01T13:03:41+08:00
+date: 2022-09-01
 draft: false
 type: "post"
 tags: ["tools", "video"]
+description: "是一个下载视频的软件. 我一般通过此软件下载b站视频.支持专辑下载. 支持的站点: 介绍"
+lastmod: 2022-09-01
 ---
-
 ## 简介
 是一个下载视频的软件. 我一般通过此软件下载b站视频.支持专辑下载.
 支持的站点: [介绍](https://github.com/iawia002/lux#supported-sites)

@@ -1,10 +1,11 @@
 ---
 title: Laradock安装与使用
-date: 2019-08-15 10:01:03
-tags: ["Laravel","docker"]
+date: 2019-08-15
+tags: [laravel, docker]
 type: "post"
+description: "Laradock安装与使用"
+lastmod: 2019-08-15
 ---
-
 ### Laradock 安装与使用
 
 [官网](https://laradock.io) 

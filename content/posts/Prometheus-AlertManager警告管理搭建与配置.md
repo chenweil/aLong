@@ -1,10 +1,11 @@
 ---
 title: Prometheus-AlertManager警告管理搭建与配置
-date: 2019-10-19 09:40:15
-tags: ["Prometheus","AlertManager"]
+date: 2019-10-19
+tags: [prometheus, alertmanager]
 type: "post"
+description: "通过翻译官方文档可以了解到,AlertManager是负责为Prometheus(本身不会发送警报)发送警报的工具. AlertManager不是简单发送警报,可以消除重复警报,分组,抑制警报功能.并支持多接收器."
+lastmod: 2019-10-19
 ---
-
 ## AlertManager
 
 > AlertManager处理由客户端应用程序（如Prometheus服务器）发送的警报。

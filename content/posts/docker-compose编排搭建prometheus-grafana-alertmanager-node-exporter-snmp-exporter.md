@@ -1,10 +1,11 @@
 ---
 title: docker-compose编排搭建prometheus+grafana+alertmanager+node-exporter+snmp-exporter
-date: 2020-11-17 13:02:50
-tags: ["Prometheus","Grafana"]
+date: 2020-11-17
+tags: [prometheus, grafana]
 type: "post"
+description: "目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。"
+lastmod: 2020-11-17
 ---
-
 ## Docker-compose
 
 目前集成很多Exporter，加上grafana的image-renderer，后面又加上ping-exporter，很多东西加起来发现操作一次docker 很烦啊。

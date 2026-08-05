@@ -1,10 +1,11 @@
 ---
 title: Prometheus-SNMP_Exporter Generator
-date: 2019-12-24 15:26:33
-tags: ["SNMP","Prometheus"]
+date: 2019-12-24
+tags: [snmp, prometheus]
 type: "post"
+description: "之前在说Prometheus-snmpexport部署时,没有具体提到snmp.yml的生成器是怎么生成的.几乎用的都是github上的snmp.yml文件(只在demo中添加了auth配置)."
+lastmod: 2019-12-24
 ---
-
 ## Prometheus-SNMP Exporter
 
 >  生成器从generator.yml读取并写入snmp.yml。

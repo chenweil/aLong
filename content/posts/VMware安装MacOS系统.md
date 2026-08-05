@@ -1,10 +1,11 @@
 ---
 title: VMware安装MacOS系统
-date: 2019-08-12 11:29:38
-tags: ["VM","MacOs"]
+date: 2019-08-12
+tags: [vm, macos]
 type: "post"
+description: "修改虚机镜象文件.vmx 在smc.present = “TRUE”下面插入一行代码: smc.version = 0"
+lastmod: 2019-08-12
 ---
-
 ## 虚拟机安装 macOS
 #### 准备工作:
 * VM关闭进程,利用macOS Unlocker修改VM使其能安装macOS系统, 执行程序 win-install.cmd 使用管理员权限运行脚本.

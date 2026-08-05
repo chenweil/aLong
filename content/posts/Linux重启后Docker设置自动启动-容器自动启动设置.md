@@ -1,10 +1,11 @@
 ---
 title: Linux重启后Docker设置自动启动&容器自动启动设置
-date: 2020-05-18 11:03:48
-tags: ["Linux","Docker"]
+date: 2020-05-18
+tags: [linux, docker]
 type: "post"
+description: "系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。 配置过一次总是忘记命令，这里特意记录一下： systemctl enable docker.service"
+lastmod: 2020-05-18
 ---
-
 ## Linux系统重启后Docker自动启动
   系统重启后，如果docker没有启动，那么docker下所有的服务就都挂了。
   配置过一次总是忘记命令，这里特意记录一下：

@@ -1,11 +1,12 @@
 ---
 layout: laravel5
 title: 数据库迁移
-date: 2019-07-26 14:30:25
-tags: ["Laravel"]
+date: 2019-07-26
+tags: [laravel]
 type: "post"
+description: "命令: make:migration"
+lastmod: 2019-07-26
 ---
-
 ## Laravel5 数据库迁移笔记
 
 * ### 创建迁移文件

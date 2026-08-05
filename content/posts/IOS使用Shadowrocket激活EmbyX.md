@@ -1,11 +1,12 @@
 ---
 title: "IOS使用Shadowrocket激活Emby"
-date: 2022-11-16T10:44:11+08:00
+date: 2022-11-16
 draft: false
 type: "post"
-tags: ["iOS", "Shadowrocket", "Emby"]
+tags: [ios, shadowrocket, emby]
+description: "前提需要手机安装ShadowRocket。没有可以自己去找共享ID。 长按后弹出选项： 打开配置，例如在default上添加规则。点击default，编辑纯文本。 在文本最下面加入内容： 点击保存后，点右侧!进入。点击HTTPS解密。 开启HTTPS加密，会生成证书。同意安装描述文件。右上角点击勾…"
+lastmod: 2022-11-16
 ---
-
 前提需要手机安装ShadowRocket。没有可以自己去找共享ID。
 ![aMKuwbEe1Y3BVgF](https://s2.loli.net/2022/11/16/aMKuwbEe1Y3BVgF.png)
 长按后弹出选项：

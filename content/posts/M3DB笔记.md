@@ -1,12 +1,11 @@
 ---
 title: M3DB笔记
-date: 2019-11-29 17:41:43
-tags: ["M3DB"]
+date: 2019-11-29
+tags: [m3db]
 type: "post"
+description: "前阵子研究prometheus,初期没有考虑存储问题.本地默认存储30天数据."
+lastmod: 2019-11-29
 ---
-
-
-
 ## M3DB笔记
 
 前阵子研究prometheus,初期没有考虑存储问题.本地默认存储30天数据.

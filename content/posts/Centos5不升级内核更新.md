@@ -1,10 +1,11 @@
 ---
 title: Centos5不升级内核更新
-date: 2019-08-23 17:37:03
-tags: ["Linux"]
+date: 2019-08-23
+tags: [linux]
 type: "post"
+description: "公司需要环境Centos5, 又不能升级内核."
+lastmod: 2019-08-23
 ---
-
 ### 前提
 公司需要环境Centos5, 又不能升级内核.
 

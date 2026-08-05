@@ -1,10 +1,11 @@
 ---
 title: MySQL5.7修改root密码
-date: 2020-01-15 15:23:54
-tags: ["MySQL"]
+date: 2020-01-15
+tags: [mysql]
 type: "post"
+description: "最近维护一个MySQL数据库，由于各种原因，密码已经不知道了。现在让我在这台服务器上使用里面的MySQL数据库。"
+lastmod: 2020-01-15
 ---
-
 最近维护一个MySQL数据库，由于各种原因，密码已经不知道了。现在让我在这台服务器上使用里面的MySQL数据库。
 
 怎么办？ 

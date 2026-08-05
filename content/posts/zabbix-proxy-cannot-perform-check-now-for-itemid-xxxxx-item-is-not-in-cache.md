@@ -1,10 +1,11 @@
 ---
 title: "zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache"
-date: 2021-10-27 15:06:44
+date: 2021-10-27
 tags: ["zabbix"]
 type: "post"
+description: "接上次做完容器部署proxy后，为其添加host进行添加任务。"
+lastmod: 2021-10-27
 ---
-
 # zabbix proxy cannot perform check now for itemid [xxxxx]: item is not in cache
 
 ## 情况

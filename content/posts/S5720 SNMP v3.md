@@ -1,11 +1,11 @@
 ---
 title: S5720 SNMP v3配置
-date: 2021-11-16 16:38:35
-tags: ["NetWork","SNMP"]
+date: 2021-11-16
+tags: [network, snmp]
 type: "post"
+description: "system-view"
+lastmod: 2021-11-16
 ---
-
-
 ##  S5720 SNMP v3配置
 ### 系统视图
 `system-view`

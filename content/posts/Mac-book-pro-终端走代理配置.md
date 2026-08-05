@@ -1,12 +1,11 @@
 ---
 title: Mac book pro 终端走代理配置
-date: 2020-01-20 08:13:10
-tags: ["terminal","MacOS"]
+date: 2020-01-20
+tags: [terminal, macos]
 type: "post"
+description: "前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。"
+lastmod: 2020-01-20
 ---
-
-
-
 ### mac 终端走ssr代理
 
 **前提是你已经知道怎么使用shadowsocks软件，并且可以出去之后。**

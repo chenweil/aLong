@@ -1,10 +1,11 @@
 ---
 title: Centos7防火墙相关设置
-date: 2019-04-18 17:44:22
-tags: ["Linux"]
+date: 2019-04-18
+tags: [linux]
 type: "post"
+description: "以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。 这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。"
+lastmod: 2019-04-18
 ---
-
 #### Centos7与之前不太一样
 以前都是用iptables，公司服务器环境事7，凑巧不熟一台新服务。我为了测试，再本地虚机上装了一台。
 这里默认防火墙是 firewall，其实为了省事还是可以安装一个iptables的。这里学习一下firewall一些操作。

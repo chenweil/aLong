@@ -1,10 +1,11 @@
 ---
 title: linux环境redis开机启动
-date: 2022-01-11 10:16:39
-tags: ["Redis","Linux"]
+date: 2022-01-11
+tags: [redis, linux]
 type: "post"
+description: "系统部署在ubuntu20.04中，用到redis数据库。 但是测试时候，设备重启发现redis服务没有启动。 由于是变异安装的，系统找不到redis.service。"
+lastmod: 2022-01-11
 ---
-
 ## 前提
 系统部署在ubuntu20.04中，用到redis数据库。
 但是测试时候，设备重启发现redis服务没有启动。 

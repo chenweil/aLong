@@ -3,10 +3,10 @@ title: "Arc Search小记"
 date: 2024-10-19
 lastmod: 2024-10-19
 draft: false
-tags: ["Arc", "工具"]
+tags: [arc, tools]
 type: "post"
+description: "由于safari访问论坛或者网页提示版本低,所以就升级了iOS系统. 升级到了iOS17.7,舍弃了巨魔老弟啊. 拥抱一些之前装不上的APP."
 ---
-
 # 起因
 
 由于safari访问论坛或者网页提示版本低,所以就升级了iOS系统.

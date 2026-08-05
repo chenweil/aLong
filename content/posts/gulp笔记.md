@@ -1,10 +1,11 @@
 ---
 title: gulp笔记
-date: 2019-04-22 18:08:54
+date: 2019-04-22
 tags: ["gulp"]
 type: "post"
+description: "gulp.js是一个前端构建工具。"
+lastmod: 2019-04-22
 ---
-
 ### gulp
 gulp.js是一个前端构建工具。
 

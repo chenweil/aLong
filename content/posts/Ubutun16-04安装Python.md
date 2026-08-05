@@ -1,10 +1,11 @@
 ---
 title: Ubutun16.04安装Python
-date: 2019-05-24 11:17:59
-tags: ["Python","Ubutun","Liunx"]
+date: 2019-05-24
+tags: [python, ubuntu, linux]
 type: "post"
+description: "安装python3.7.3 安装pip"
+lastmod: 2019-05-24
 ---
-
 ### 目的 
 安装python3.7.3 
 安装pip

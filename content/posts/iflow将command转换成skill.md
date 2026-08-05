@@ -4,10 +4,10 @@ lastmod: 2026-01-07
 title: "iFlow将command转换成skill"
 type: "post"
 draft: false
-tags: ["AI", "Skill", "iFlow"]
+tags: [ai, skill, iflow]
 showTableOfContents: false
+description: "之前帖子 提到通过iflow编写mdt指令。 我懒得通过指令去执了，所以让模型自己执行skill更舒服。"
 ---
-
 [之前帖子](https://vibex.iflow.cn/t/topic/1222?u=10008834122) 提到通过iflow编写`mdt`指令。 我懒得通过指令去执了，所以让模型自己执行skill更舒服。 
 
 ![](https://i.imgur.com/4pfiQv1.png)

@@ -1,10 +1,11 @@
 ---
 title: Prometheus标签处理&服务发现
-date: 2019-12-03 15:14:16
-tags: ["Prometheus"]
+date: 2019-12-03
+tags: [prometheus]
 type: "post"
+description: "之前的配置中提到了标签的处理,不过由于写的是静态的配置,标签可以自己设置或者不设置都可以."
+lastmod: 2019-12-03
 ---
-
 ### 标签处理的重要性
 
 之前的[配置]([https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/](https://blog.51ai.vip/2019/10/09/prometueus-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/)中提到了标签的处理,不过由于写的是静态的配置,标签可以自己设置或者不设置都可以.

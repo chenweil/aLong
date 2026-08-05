@@ -1,10 +1,11 @@
 ---
 title: 'yarn install phantomjs-prebuilt: Command failed.'
-date: 2020-01-16 14:21:26
+date: 2020-01-16
 tags: ["yarn"]
 type: "post"
+description: "自己在项目中发现执行 yarn install时候，一直卡住没走完。"
+lastmod: 2020-01-16
 ---
-
 ### 项目yarn install 出现phantomjs-prebuilt： Command failed.
 
 自己在项目中发现执行 `yarn install`时候，一直卡住没走完。

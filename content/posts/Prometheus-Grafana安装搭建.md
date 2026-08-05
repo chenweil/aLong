@@ -1,10 +1,11 @@
 ---
 title: Prometheus+Grafana安装搭建
-date: 2019-08-28 16:23:05
-tags: ["Prometheus","Grafana"]
+date: 2019-08-28
+tags: [prometheus, grafana]
 type: "post"
+description: "主要我们监控用到最上面两种,下面两种类型目前我没有接触,上面这段文字与介绍引用自lijiaocn"
+lastmod: 2019-08-28
 ---
-
 ## 介绍
 
 >   Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)。Prometheus使用Go语言开发，是Google BorgMon监控系统的开源版本。

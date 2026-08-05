@@ -1,11 +1,11 @@
 ---
 title: windows10家庭版启用组策略gpedit.msc
-date: 2019-10-15 11:35:11
-tags: ["Windows"]
+date: 2019-10-15
+tags: [windows]
 type: "post"
+description: "家庭版很多功能不能使用,凑巧用的就是家庭版. 还想使用gpedit.msc来关闭windows10的更新. 找到一个可行的方法."
+lastmod: 2019-10-15
 ---
-
-
 ## 启用组策略gpedit.msc
 家庭版很多功能不能使用,凑巧用的就是家庭版. 还想使用gpedit.msc来关闭windows10的更新.
 找到一个可行的方法.

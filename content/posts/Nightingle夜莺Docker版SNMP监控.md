@@ -7,8 +7,8 @@ showTableOfContents: false
 tags: [prometheus,categraf]
 title: "Nightingle夜莺Docker版SNMP监控"
 type: "post"
+description: "对夜莺很感兴趣，想使用一下。我看官方提供了v6版本的docker-compose。而且我之前有使用过promtheus和grafana，虽然很好但是总觉得还是得二开。总有一天有人去搞一个不错的玩意儿出来。官方文档地址"
 ---
-
 ## 起因
 对夜莺很感兴趣，想使用一下。我看官方提供了v6版本的docker-compose。而且我之前有使用过promtheus和grafana，虽然很好但是总觉得还是得二开。总有一天有人去搞一个不错的玩意儿出来。[官方文档地址](https://flashcat.cloud/docs/)
 

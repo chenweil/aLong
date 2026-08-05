@@ -1,11 +1,12 @@
 ---
 title: yaml规则
-date: 2019-09-24 10:20:31
+date: 2019-09-24
 categories: yaml
 tags: ["yaml"]
 type: "post"
+description: "最近经常配置一些服务，发现大部分都是yml类型文件。小记一下。"
+lastmod: 2019-09-24
 ---
-
 ## yml 语法
 
 最近经常配置一些服务，发现大部分都是yml类型文件。小记一下。

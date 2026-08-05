@@ -1,10 +1,11 @@
 ---
 title: Hexo笔记
-date: 2019-06-04 10:46:48
-tags: ["Hexo"]
+date: 2019-06-04
+tags: [hexo]
 type: "post"
+description: "文章中 多tag时,无法直接, 空格这种."
+lastmod: 2019-06-04
 ---
-
 ### 多tag
 
 文章中 多tag时,无法直接, 空格这种.

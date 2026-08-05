@@ -1,10 +1,11 @@
 ---
 title: "Zabbix-Proxy 部署运行"
-date: 2021-06-24 17:20:40
-tags: ["Zabbix"]
+date: 2021-06-24
+tags: [zabbix]
 type: "post"
+description: "版本： zabbix-server 5.4"
+lastmod: 2021-06-24
 ---
-
 ## 前提
 
 版本： zabbix-server 5.4

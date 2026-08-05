@@ -1,11 +1,11 @@
 ---
 title: "Golang 环境准备"
-date: 2020-01-16 18:51:34
-tags: ["Go"]
+date: 2020-01-16
+tags: [go]
 type: "post"
+description: "\"Golang 环境准备\""
+lastmod: 2020-01-16
 ---
-
-
 ## 安装GOlang
 
 环境:macOS

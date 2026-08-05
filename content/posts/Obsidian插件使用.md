@@ -3,10 +3,10 @@ title: "Obsidian插件使用"
 date: 2024-11-01
 lastmod: 2024-11-01
 draft: false
-tags: ["Obsidian", "工具"]
+tags: [obsidian, tools]
 type: "post"
+description: "一直使用Obsidian进行记录内容,网页上很多内容觉得不错想摘录一下. 之前使用过的内容是简悦和一个Safari的脚本."
 ---
-
 # 场景
 一直使用Obsidian进行记录内容,网页上很多内容觉得不错想摘录一下. 之前使用过的内容是简悦和一个Safari的脚本.
 

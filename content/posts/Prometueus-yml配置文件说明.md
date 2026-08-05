@@ -1,10 +1,11 @@
 ---
 title: Prometueus.yml配置文件说明
-date: 2019-10-09 15:20:58
-tags: ["Prometheus"]
+date: 2019-10-09
+tags: [prometheus]
 type: "post"
+description: "prometueus.yml 配置文件注解与说明"
+lastmod: 2019-10-09
 ---
-
 ## 整体配置
 
 prometueus.yml 配置文件注解与说明

@@ -1,10 +1,11 @@
 ---
 title: Mac OS自己安装的小软件
-date: 2021-05-06 11:06:20
-tags: ["MacOs"]
+date: 2021-05-06
+tags: [macos]
 type: "post"
+description: "自己在19年12月换了mac 16\" 笔记本。之前一直windwos，后来看很多讲师在讲课的时候都是mac本本。又觉得windws10更新频繁，还强制让我很不爽。"
+lastmod: 2021-05-06
 ---
-
 ## 自己使用Mac一年多
 
 自己在19年12月换了mac 16" 笔记本。之前一直windwos，后来看很多讲师在讲课的时候都是mac本本。又觉得windws10更新频繁，还强制让我很不爽。

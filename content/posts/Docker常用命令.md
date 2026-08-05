@@ -1,11 +1,11 @@
 ---
 title: Docker常用命令
-date: 2019-04-11 15:09:19
-tags: ["Docker"]
+date: 2019-04-11
+tags: [docker]
 type: "post"
+description: "说常用不如说自己用到的命令。"
+lastmod: 2019-04-11
 ---
-
-
 ## Docker常用命令
 说常用不如说自己用到的命令。
 

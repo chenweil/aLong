@@ -5,11 +5,11 @@ date: 2025-12-04
 lastmod: 2025-12-04
 showTableOfContents: false
 draft: false
-tags: ["agents", "ai"]
+tags: [agent, ai]
 title: "Iflow通过hooks增加提醒"
 type: "post"
+description: "使用iflow cli 时当我们下发一个任务或对话时在等待响应时，可能抽空做点别的事情。如果忘记了查看结果，那可能错过很久才想起来。"
 ---
-
 # iflow通过hooks增加提醒
 
 # 背景需求

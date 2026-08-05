@@ -1,10 +1,11 @@
 ---
 title: Centos7时间设置
-date: 2019-04-19 11:42:02
-tags: ["Linux"]
+date: 2019-04-19
+tags: [linux]
 type: "post"
+description: "date hwclock 硬件时间 timedatectl 各时间状态"
+lastmod: 2019-04-19
 ---
-
 ### Centos7时间相关
 #### 查看时间
 date 

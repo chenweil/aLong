@@ -1,8 +1,10 @@
 ---
 title: "Arc"
-date: 2024-09-13T14:23:51+08:00
+date: 2024-09-13
 type: "post"
-tags: [Tools]
+tags: [tools]
+description: "使用arc浏览器作为主力之前,更喜欢chrome."
+lastmod: 2024-09-13
 ---
 # 背景
 使用arc浏览器作为主力之前,更喜欢chrome.

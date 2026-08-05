@@ -1,10 +1,11 @@
 ---
 title: Composer笔记
-date: 2019-07-15 17:24:45
-tags: ["Composer","Laravel"]
+date: 2019-07-15
+tags: [composer, laravel]
 type: "post"
+description: "conposer create-project laravel/laravel=5.8. --prefer-dist ./XXX"
+lastmod: 2019-07-15
 ---
-
 ### composer - laravel5
 
 #### 创建laravel项目：

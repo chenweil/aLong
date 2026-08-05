@@ -1,10 +1,11 @@
 ---
 title: Zabbix6 网络发现
-date: 2022-01-14 10:15:53
-tags: ["Zabbix"]
+date: 2022-01-14
+tags: [zabbix]
 type: "post"
+description: "Zabbix6 网络发现"
+lastmod: 2022-01-14
 ---
-
 Zabbix6 网络发现
 
 ### 功能

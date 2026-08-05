@@ -1,10 +1,11 @@
 ---
 title: redis笔记
-date: 2019-04-25 17:12:52
-tags: ["Redis"]
+date: 2019-04-25
+tags: [redis]
 type: "post"
+description: "单进程,默认16库,"
+lastmod: 2019-04-25
 ---
-
 ## redis笔记 
 单进程,默认16库,
 

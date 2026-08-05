@@ -1,10 +1,11 @@
 ---
 title: "通过minikube部署K8S学习环境"
-date: 2023-01-06T15:35:43+08:00
-tags: ["Linux","Kubernetes"]
+date: 2023-01-06
+tags: [linux, kubernetes]
 type: "post"
+description: "Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。"
+lastmod: 2023-01-06
 ---
-
 Minikube 是本地 Kubernetes，专注于让 Kubernetes 易于学习和开发。
 
 # MacOS部署方式:

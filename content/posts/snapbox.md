@@ -1,10 +1,11 @@
 ---
 title: "Snapbox"
-date: 2024-09-14T10:42:26+08:00
-tags: [Tools]
+date: 2024-09-14
+tags: [tools]
 type: "post"
+description: "app网站 : https://snapbox.app/"
+lastmod: 2024-09-14
 ---
-
 # 一款macOS的APP
 app网站 : https://snapbox.app/
 

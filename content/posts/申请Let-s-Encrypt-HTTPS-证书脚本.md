@@ -1,10 +1,11 @@
 ---
 title: 申请Let's Encrypt HTTPS 证书脚本
-date: 2020-06-24 13:33:18
-tags: ["SSL"]
+date: 2020-06-24
+tags: [ssl]
 type: "post"
+description: "简单的说，借助Let’s Encrypt颁发的证书可以为我们的网站免费启用HTTPS(SSL/TLS) 。"
+lastmod: 2020-06-24
 ---
-
 ## 最近需要到SSL证书，又想免懒。选择脚本来更新SSL证书文件
 
 > Let’s Encrypt是一个由非营利性组织互联网安全研究小组（ISRG）提供的免费、自动化和开放的证书颁发机构（CA）。

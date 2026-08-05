@@ -1,12 +1,11 @@
 ---
 title: 解决MAC软件提示已损坏或移到废纸篓
-date: 2020-02-07 20:24:02
-tags: ["MacOS"]
+date: 2020-02-07
+tags: [macos]
 type: "post"
+description: "macOS Catalina 10.15.1"
+lastmod: 2020-02-07
 ---
-
-
-
 ### 系统版本
 
 macOS Catalina 10.15.1

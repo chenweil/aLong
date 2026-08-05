@@ -1,10 +1,11 @@
 ---
 title: "Ubuntu22.04安装kubeadm"
-date: 2023-01-11T16:30:47+08:00
-tags: ["Ubutun","Liunx","Kubernetes"]
+date: 2023-01-11
+tags: [ubuntu, linux, kubernetes]
 type: "post"
+description: "学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04"
+lastmod: 2023-01-11
 ---
-
 # 学习k8s
 学习k8s做笔记，通过kubeadm搭建1master、2node。网络插件：flannel。系统Ubuntu22.04
 
