@@ -66,11 +66,14 @@ showTableOfContents: true
 - `FISH_BUBBLE_GAP` 从 2 改为 1，让气泡更靠近小鱼。
 - 鱼转向时，气泡始终跟随鱼头切换到对应一侧，已逐帧验证。
 
+zen地址: https://github.com/chenweil/playpi/tree/main/extensions/zen
+
 ### 效果
 
 ![](https://img.51ai.vip/2026-08-06-03.25-ykw9R4m0.gif)
 
 一只小鱼在水里游，等待结果；滚动内容已屏蔽。
+
 
 ## 3. status lines 调整
 
