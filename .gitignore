@@ -7,3 +7,6 @@ public/
 temp/
 .claude/settings.local.json
 .claude/settings.local.json
+.pi/
+.pi-glla/
+.workbuddy/

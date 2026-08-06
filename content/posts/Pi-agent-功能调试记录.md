@@ -2,7 +2,7 @@
 title: "Pi agent 功能调试记录"
 date: 2026-08-05
 lastmod: 2026-08-05
-draft: true
+draft: false
 tags: [pi, agent, cli, ai]
 type: "post"
 description: "记录 Pi agent 中删除保护、小鱼（zen）、状态栏和 hjob 任务管理等功能的调试过程与实现结果。"

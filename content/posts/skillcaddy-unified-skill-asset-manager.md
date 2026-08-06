@@ -2,7 +2,7 @@
 title: "Skillcaddy：统一管理 AI Agent Skill 的轻量方案"
 date: 2026-06-30
 lastmod: 2026-07-17
-draft: true
+draft: false
 type: "post"
 description: "在多 Agent 协作场景下，全局装 skill 会膨胀上下文、项目间拷贝又难同步版本。Skillcaddy 用「中央仓库 + 按需软链」的思路，把 skill 抽离到项目级管理，同时保持单一来源。"
 categories: []
