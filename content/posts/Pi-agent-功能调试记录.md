@@ -68,7 +68,7 @@ showTableOfContents: true
 
 ### 效果
 
-![](https://i.imgur.com/c32vwtI.png)
+![](https://img.51ai.vip/2026-08-06-03.25-ykw9R4m0.gif)
 
 一只小鱼在水里游，等待结果；滚动内容已屏蔽。
 
