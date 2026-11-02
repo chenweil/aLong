@@ -17,16 +17,36 @@ lastmod: 2019-12-04
 [官方docs](https://prometheus.io/docs/alerting/notifications/#alert)
 
 推送数据结构:
-<html><table><tr><td>名称</td><td>类型</td><td>解释</td><td>备注</td></tr><tr><td>Receiver</td><td>string</td><td>定义将通知发送到的接收者的名称(slack，电子邮件等)</td><td>接收者名称</td></tr><tr><td>Status</td><td>string</td><td>如果至少一个警报正在触发，则定义为触发，否则解决(Firing/Resolved)</td><td>通过状态可以知道,是触发警报,还是警报已经恢复.便于区分状态.只有这两个状态,要么触发,要么恢复.</td></tr><tr><td>Alerts</td><td>Alert</td><td>该组中所有警报对象的列表(请参见下文)</td><td>警报提供的数据都在此列表中.列表下面会详细解读</td></tr><tr><td>GroupLabels</td><td>KV</td><td>这些警报按标签分组</td><td>键值对数据,里面是我们在alertManager中配置分组(group_by)的数据</td></tr><tr><td>CommonLabels</td><td>KV</td><td>所有警报共有的标签</td><td>很好理解,所有警报都共同有的标签.</td></tr><tr><td>CommonAnnotations</td><td>KV</td><td>所有警报的通用注释集。用于获取有关警报的更多其他信息字符串</td><td>通用的注释(Annotations)</td></tr><tr><td>ExternalURL</td><td>string</td><td>反向链接到发送通知的Alertmanager</td><td>此连接,点击会跳转到AlertManager.警报管理地址.</td></tr></table></html>
+| 名称 | 类型 | 解释 | 备注 |
+| --- | --- | --- | --- |
+| Receiver | string | 定义将通知发送到的接收者的名称(slack，电子邮件等) | 接收者名称 |
+| Status | string | 如果至少一个警报正在触发，则定义为触发，否则解决(Firing/Resolved) | 通过状态可以知道,是触发警报,还是警报已经恢复.便于区分状态.只有这两个状态,要么触发,要么恢复. |
+| Alerts | Alert | 该组中所有警报对象的列表(请参见下文) | 警报提供的数据都在此列表中.列表下面会详细解读 |
+| GroupLabels | KV | 这些警报按标签分组 | 键值对数据,里面是我们在alertManager中配置分组(group_by)的数据 |
+| CommonLabels | KV | 所有警报共有的标签 | 很好理解,所有警报都共同有的标签. |
+| CommonAnnotations | KV | 所有警报的通用注释集。用于获取有关警报的更多其他信息字符串 | 通用的注释(Annotations) |
+| ExternalURL | string | 反向链接到发送通知的Alertmanager | 此连接,点击会跳转到AlertManager.警报管理地址. |
 
 
 ### Alerts数据
-<div><table>	<tr>		<td>名称</td>		<td>类型</td>		<td>解释</td>		<td>备注</td>	</tr>	<tr>		<td>Status</td>		<td>string</td>		<td>定义警报是否已解决或当前正在触发</td>		<td>警报状态(Firing/Resolved)</td>	</tr>	<tr>		<td>Labels</td>		<td>KV</td>		<td>警报上要贴的一组标签</td>		<td>警报设置中附加的标签</td>	</tr>	<tr>		<td>Annotations</td>		<td>KV</td>		<td>警报的一组注释</td>		<td>顾名思义</td>	</tr>	<tr>		<td>StartsAt</td>		<td>time.Time</td>		<td>警报开始触发的时间。如果省略，则当前时间由Alertmanager分配</td>		<td>警报触发时间</td>	</tr>	<tr>		<td>EndsAt</td>		<td>time.Time</td>		<td>仅在知道警报的结束时间时设置。否则设置为自收到最后一个警报以来的时间的可配置超时时间</td>		<td>警报恢复时间(这个时间我不太清除到底是不是正确的,配置中也会有恢复超时时间,如果超时了,应该也会被认为恢复吧)</td>	</tr>	<tr>		<td>GeneratorURL</td>		<td>string</td>		<td>标识此警报的原因实体的反向链接</td>		<td>跳转警报图形数据的连接</td>	</tr></table></div>
+| 名称 | 类型 | 解释 | 备注 |
+| --- | --- | --- | --- |
+| Status | string | 定义警报是否已解决或当前正在触发 | 警报状态(Firing/Resolved) |
+| Labels | KV | 警报上要贴的一组标签 | 警报设置中附加的标签 |
+| Annotations | KV | 警报的一组注释 | 顾名思义 |
+| StartsAt | time.Time | 警报开始触发的时间。如果省略，则当前时间由Alertmanager分配 | 警报触发时间 |
+| EndsAt | time.Time | 仅在知道警报的结束时间时设置。否则设置为自收到最后一个警报以来的时间的可配置超时时间 | 警报恢复时间(这个时间我不太清除到底是不是正确的,配置中也会有恢复超时时间,如果超时了,应该也会被认为恢复吧) |
+| GeneratorURL | string | 标识此警报的原因实体的反向链接 | 跳转警报图形数据的连接 |
 
 ### KV数据的处理方式
 
 KV结构很简单,键值对.通过键获取对应的值.下面提供了一些方法处理这种结构的一些方法.
-<div><table>	<tr>		<td>方法名</td>		<td>参数</td>		<td>返回值</td>		<td>解释</td>		<td>说明</td>	</tr>	<tr>		<td>SortedPairs</td>		<td>-</td>		<td>对（键/值字符串对的列表）</td>		<td>返回键/值对的排序列表</td>		<td>通过此方法可以获得排序后的键值对列表数据</td>	</tr>	<tr>		<td>Remove</td>		<td>[]string</td>		<td>KV</td>		<td>返回没有给定键的键/值映射的副本</td>		<td>当我们不希望KV数据种出现某些字段,通过此方法可以得到</td>	</tr>	<tr>		<td>Names</td>		<td>-</td>		<td>[]string</td>		<td>返回LabelSet中标签名称的名称</td>		<td>通过此方法可以获得KV数据中所有键</td>	</tr>	<tr>		<td>Values</td>		<td>-</td>		<td>[]string</td>		<td>返回LabelSet中值的列表</td>		<td>通过此方法可以获得KV数据中所有值</td>	</tr>	</table></div>
+| 方法名 | 参数 | 返回值 | 解释 | 说明 |
+| --- | --- | --- | --- | --- |
+| SortedPairs | - | 对（键/值字符串对的列表） | 返回键/值对的排序列表 | 通过此方法可以获得排序后的键值对列表数据 |
+| Remove | []string | KV | 返回没有给定键的键/值映射的副本 | 当我们不希望KV数据种出现某些字段,通过此方法可以得到 |
+| Names | - | []string | 返回LabelSet中标签名称的名称 | 通过此方法可以获得KV数据中所有键 |
+| Values | - | []string | 返回LabelSet中值的列表 | 通过此方法可以获得KV数据中所有值 |
 
 ### 字符串相关方法
 

@@ -2,7 +2,7 @@ baseURL = "https://blog.51ai.vip"
 enableEmoji = true
 defaultContentLanguage = "en"
 enableRobotsTXT = true
-languageCode = "en"
+locale = "en"
 theme = "gokarna"
 title = "aLong"
 buildFuture = true
@@ -18,6 +18,14 @@ publishDir = "docs"
   showBackToTopButton = true
   showPostsOnHomePage = "recent"
   pygmentsStyle = "monokai"
+  customHeadHTML = """
+  <style>
+    .markdown-content {
+      line-height: 1.7;
+      text-align: center;
+    }
+  </style>
+  """
 
   socialIcons = [
     {name = "email", url = "mailto:longlhero@gmail.com"}

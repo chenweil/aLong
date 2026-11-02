@@ -102,7 +102,7 @@ inhibit_rules:
 
 ***
 
-<route>
+### route
 
 路由块定义路由树中的节点及其子节点。如果未设置，则其可选配置参数将从其父节点继承。
 每个警报都在配置的顶级路由处进入路由树，该路由树必须与所有警报匹配（即没有任何配置的匹配器）。
@@ -146,7 +146,7 @@ routes:
   [ - <route> ... ]
 ```
 
-<inhibit_rule>
+### inhibit_rule
 当与另一组匹配器匹配的警报（源）存在时，禁止规则静默匹配匹配器集合的警报（目标）。
 对于相等列表中的标签名称，目标和源警报必须具有相同的标签值。
 从语义上讲，缺失的标签和空值的标签是一样的。
@@ -171,7 +171,7 @@ source_match_re:
 [ equal: '[' <labelname>, ... ']' ]
 ```
 
-<receiver>
+### receiver
 
 ```yaml
 # 接收者的唯一名称
@@ -186,7 +186,7 @@ wechat_configs:
   [ - <wechat_config>, ... ]
 ```
 
-<email_config>
+### email_config
 ```yaml
 # 是否通知已解决的警报
 [ send_resolved: <boolean> | default = false ]
@@ -239,7 +239,7 @@ tls_config:
 
 ```
 
-<webhook_config>
+### webhook_config
 ```yaml
 # 是否通知已解决的警报
 [ send_resolved: <boolean> | default = true ]
@@ -277,7 +277,7 @@ url: <string>
 }
 ```
 
-<wechat_config>
+### wechat_config
 
 ```yaml
 # 是否通知已解决的警报
