@@ -37,7 +37,7 @@
 		<link>{{ .Permalink }}</link>
 		<description>Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>
 		<generator>Hugo</generator>
-		<language>{{ site.Language.Locale }}</language>
+		<language>{{ site.Language.Lang }}</language>
 		{{ with $authorEmail }}
 			<managingEditor>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>
 		{{ end }}
@@ -61,7 +61,7 @@
 				<pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
 				{{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
 				<guid>{{ .Permalink }}</guid>
-				{{ $rssDesc := .Description | default .Summary | plainify | truncate 300 }}<description>{{ printf `%s <a href="%s">阅读全文 →</a>` $rssDesc .Permalink | transform.XMLEscape | safeHTML }}</description>
+				{{ $rssDesc := .Description | default .Summary | plainify | truncate 300 }}<description>{{ $rssDesc | htmlEscape | safeHTML }}<a href="{{ .Permalink }}">阅读全文 →</a></description>
 			</item>
 		{{- end }}
 	</channel>
